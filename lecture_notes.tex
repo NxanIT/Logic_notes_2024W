@@ -1,0 +1,259 @@
+\documentclass{report}
+\usepackage{amsthm,amssymb}
+%\usepackage{amsmath} %already loaded by mathtools
+\usepackage{titlesec}%required for \titleformat
+%\usepackage{fancyhdr}
+\usepackage{mathtools}%automatically loads amsmath and is required for \defeq macro
+\usepackage{tcolorbox}%required for \definecolor
+\usepackage[colorlinks=true, linkcolor=purple]{hyperref}
+\usepackage{geometry}
+\usepackage[inline]{enumitem}%for "enumerate*" (i.e. horizontal lists)
+\usepackage{ifthen}%for "ifthenelse"
+\usepackage[twoside]{fancyhdr}
+\usepackage{lastpage}
+\usepackage{tocloft}
+
+\setlength{\headheight}{18.0pt}
+
+\newcommand{\listdefinitionsname}{\Large List of definitions}
+\newlistof{definitions}{dfn}{\listdefinitionsname}
+
+\newcommand{\listofabbreviationsname}{\Large List of Abbreviations}
+\newlistof{abbreviations}{abf}{\listofabbreviationsname}
+\newcommand{\addAbbrev}[2]{
+    \addcontentsline{abf}{section}{#1 \hspace{1em} - \hspace{1em} #2}
+}
+
+\geometry{
+ a4paper,
+ left=20mm,
+ right=20mm,
+ bottom=15mm,
+ top=20mm
+}
+
+\titleformat{\chapter}[display]{\bfseries\Large} % format
+{\fontfamily{phv}\selectfont\scshape Chapter \thechapter} % label
+{1ex} % sep
+{   \fontfamily{phv}\selectfont
+    \bfseries\huge\centering
+} % before-code
+[\vspace{-0.7cm}] % after-code
+
+\titleformat{\section}[display]{\Large} % format
+{} % label
+{-0.2cm} % sep
+{   \fontfamily{phv}\selectfont \scshape\thesection\quad 
+} % before-code
+[\vspace{-0.2cm}] % after-code
+
+\definecolor{purple2}{HTML}{660099}
+\definecolor{yellow}{HTML}{FCF434}
+\definecolor{purple}{HTML}{9C59d1}
+\definecolor{darkgray}{HTML}{2C2C2C}
+\definecolor{lightgray}{HTML}{C2C2C2}
+
+%Highlight
+\newcommand{\purplebf}[1]{\color{purple}\textbf{#1 }\color{black}}
+\newcommand{\graybf}[1]{\color{darkgray}\textbf{#1 }\color{black}}
+\newcommand{\bigemph}[1]{\fontfamily{qag}\selectfont\color{darkgray}\textbf{#1 }\color{black}\normalfont}
+
+\newcommand{\defeq}{\vcentcolon=}
+\newcommand{\eqdef}{=\vcentcolon}
+\newcommand{\defaq}{\vcentcolon\Leftrightarrow}
+\newcommand{\sledom}{\Relbar\joinrel\mathrel{|}}
+\renewcommand{\AA}{\mathbb{A}}
+\newcommand{\KK}{\mathbb{K}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\DeclareMathOperator{\Erf}{Erf}
+\DeclareMathOperator{\nicht}{nicht}
+\DeclareMathOperator{\Successor}{S}
+\DeclareMathOperator{\varS}{var}
+\DeclareMathOperator{\TA}{TA}
+\DeclareMathOperator{\frei}{frei}
+
+\DeclareMathOperator{\propM}{Prop} % for example in boolean algebra
+%\DeclareMathOperator{\gdw}{\quad:gdw\quad}
+
+\newif\ifSimplifiedVersion
+%\SimplifiedVersiontrue
+
+%%\newtheorem{name}[counter]{Printed output}
+\newcounter{defcount}[chapter]
+\renewcommand{\thedefcount}{Definition \theHchapter.\arabic{defcount}}
+
+\newtheorem{defi}[defcount]{}
+\newcommand{\defin}[2]{
+%    \begin{defi}
+%        \addcontentsline{dfn}{section}{\protect\numberline{\thedefi} #1}
+%        \textbf{\fontfamily{txtt}\selectfont{#1}:} \normalfont \color{black}
+%        #2
+%        \thedefcount
+%    \end{defi}
+
+    \ifSimplifiedVersion
+        #1
+    \else 
+        \color{purple}   
+        \begin{defi}
+            \addcontentsline{dfn}{section}{\protect{{\thedefi \hspace{5px} #1}\hspace{-4px}} } 
+            \textbf{\fontfamily{txtt}\selectfont{#1}:}
+            \normalfont\color{black}
+            #2
+        \end{defi}
+        \color{black}
+    \fi
+}
+%\newtheorem{notes}[]{Bemerkung}
+\newcommand{\note}[2]{
+    \ifSimplifiedVersion
+        Bem: #1 - #2
+
+    \else 
+        \color{purple}   
+        %\begin{notes}
+            \noindent Note\fontfamily{txtt}\selectfont{#1}: \normalfont\color{black}
+            #2
+
+        %\end{notes}
+        \color{black}
+    \fi
+}
+\newcounter{propcount}[chapter]
+\renewcommand{\thepropcount}{Theorem \theHchapter.\arabic{propcount}}
+
+\newtheorem{propo}[propcount]{}
+\newcommand{\prop}[3]{
+    %Input: 1-Name, 2-statement, 3-proof
+    \stepcounter{corollcount}
+    \ifSimplifiedVersion
+        Prop: #1 - #2
+
+    \else 
+        \color{purple}   
+        \begin{propo}
+            \textbf{\fontfamily{txtt}\selectfont{#1}:} \normalfont\color{black}
+            #2
+            \ifx\foo#3\foo
+            \else
+                \begin{proof}
+                    #3%\vspace{5pt}
+                \end{proof}
+            \fi
+        \end{propo}
+        \color{black}
+    \fi
+}
+\newcounter{lemmacount}[chapter]
+\renewcommand{\thelemmacount}{Lemma \theHchapter.\arabic{lemmacount}}
+
+\newtheorem{lemmata}[lemmacount]{}
+\newcommand{\lemma}[3]{
+    %Input: 1-Name, 2-statement, 3-proof
+    \ifSimplifiedVersion
+        Lemma: #1 - #2
+
+    \else 
+        \color{purple}   
+        \begin{lemmata}
+            \textbf{\fontfamily{txtt}\selectfont{#1}:} \normalfont\color{black}
+            #2
+            \ifx\foo#3\foo
+            \else
+                \begin{proof}
+                    #3%\vspace{5pt}
+                \end{proof}
+            \fi
+% legacy: throws errror on listings in #3
+%            \ifthenelse{\equal{#3}{}}{}{
+%                %\vspace{-5pt}
+%                \begin{proof}
+%                    #3\vspace{5pt}
+%                \end{proof}
+%            }
+        \end{lemmata}
+        \color{black}
+    \fi
+}
+
+\newcounter{corollcount}[chapter]
+\renewcommand{\thecorollcount}{Corollary \theHchapter.\arabic{corollcount}}
+
+\newtheorem{corollary}[corollcount]{}
+\newcommand{\coroll}[1]{
+    \addtocounter{corollcount}{-1}
+    %Input: 1-Statement
+    \ifSimplifiedVersion
+        Cor: #1
+
+    \else 
+        \color{purple}   
+        \begin{corollary}
+            \color{black}\normalfont#1\vspace{-5px}
+        \end{corollary}
+        \color{black}
+    \fi
+}
+
+\newcounter{excount}[chapter]
+\renewcommand{\theexcount}{\theHchapter.\arabic{excount}}
+\newtheorem{example}[excount]{Example}
+\newcommand{\bsp}[2]{
+    \ifSimplifiedVersion
+        Bsp(#1): #2
+
+    \else 
+        %\color{purple}   
+        \begin{example}
+            \fontfamily{txtt}\selectfont{#1}: \normalfont\color{black}
+            #2
+        \end{example}
+        \color{black}
+    \fi
+}
+
+
+\newcommand*{\claimproofname}{proof of claim.}
+\newenvironment{claimproof}[1][\claimproofname]{\vspace*{-10px}\begin{proof}[#1]\renewcommand*{\qedsymbol}{\(\boxtimes\)}}{\end{proof}}
+
+\begin{document}
+
+\fancypagestyle{plain}{}
+\pagestyle{fancy}   %needed for changing headers/footers
+\fancyhf{}          %cleares headers and footers
+\fancyhead[LE,RO]{\small\rightmark} 
+\fancyhead[LO,RE]{Logic Lecture Notes 2024W}
+\fancyfoot[C]{V0.1 - \today}
+\fancyfoot[LO,RE]{Jana}
+\fancyfoot[LE,RO]{Seite \thepage \hspace{3pt}von \pageref{LastPage}}
+
+
+\begin{center}
+    \fontfamily{qag}\selectfont
+    \Huge\textbf{Lecture notes\\ Einführung in die Logik 2024W}\\
+    \normalfont
+\end{center}
+\begin{center}
+    \emph{Petermann}
+\end{center}
+\setlength{\cftaftertoctitleskip}{0em}
+\tableofcontents
+\listofabbreviations
+\newpage
+
+    
+\input{PropositionalLogic.tex}
+\input{FirstOrderLogic.tex}
+\input{BooleanAlgebra.tex}
+\input{SetTheory.tex}
+\listofdefinitions
+\end{document}
+
+
+
+% List of abbreviations: 
+% append element with
+% \addAbbrev{abb}{text}

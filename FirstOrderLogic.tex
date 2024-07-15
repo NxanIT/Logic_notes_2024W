@@ -1,0 +1,105 @@
+\chapter{Predicate - / first order logic}
+\defin{A First order Language}{
+    consists of infinetely many distinct symbols such that no symbol is a proper 
+    initial segment of another symbol and the symbols are divided into 2 groups:
+    \begin{enumerate}
+        \item logical symbols (These elements have a fixed meaning and the equivalence symbol $=$ is optional)
+        \begin{flalign*}
+            (,),\lnot, \to, v_1,v_2,\dots,=&&
+        \end{flalign*}
+        \item parameters
+        \begin{itemize}
+            \item quantifier symbol: $\forall$ (the range is subject of interpretation)
+            \item predicate symbols: $\forall n>0$ we have a set of $n$-ary predicates
+            \item constant symbols: Some set of constants (could be $\varnothing$)
+            \item function symbols: $\forall n>0$ we have a set of $n$-ary function symbols
+        \end{itemize}
+    \end{enumerate}
+}
+\note{}{
+    \begin{itemize}
+        \item We could drop constants and instead introduce $0$-ary function symbols
+        \item to specify language we need to specify the parameters and say if $=$ is included
+    \end{itemize}
+}
+\bsp{}{
+    \begin{itemize}
+        \item $\mathcal{L}_\text{set} = \{\in\}$, \quad $=$ included
+        \item $\mathcal{L}_\text{arith} = \{<,0,S,E,+,\cdot\}$
+        \begin{itemize}
+            \item [$=$] included
+            \item [$<$] is a binary rel. symbol
+            \item [$0$] is a constant
+            \item [$S$] is a unary function symbol
+            \item [$E$] exponentiation TODO
+            \item [$+,\cdot$] binary function symbols
+        \end{itemize}
+    \end{itemize}
+}
+
+\section{Formulas}
+\defin{Expression}{An \graybf{expression} is any finite sequence of symbols.
+    There exist two kinds of expressions
+    \begin{itemize}[leftmargin=1.6cm]
+        \item[Terms:] \begin{itemize}
+            \item the names of objects
+            \item they are built up from variables and constants (by use of polish notation)
+        \end{itemize}
+        \item[Formulas:]\begin{itemize}
+            \item They express assertions about objects,
+            \item they are built up from atomic formulas 
+            \item atomic formulas these are built up from terms using predicate symbols and $=$
+        \end{itemize}
+    \end{itemize}
+}
+\defin{Building Operations}{
+    $\forall n>0$ and for every $n$-place function symbol $f$ let $\mathcal{F}_f$ be an $n$-place term building operation,
+    that is $\mathcal{F}_f (\alpha_1,\dots \alpha_n)\defeq f(\alpha_1,\dots \alpha_n)$
+    The Set of Terms we then define as the set of expressions that are built up from variables and constants by applying the building operations
+    finitely many times.
+}
+\bsp{}{Let $\mathcal{L} = \mathcal{L}_{arith}$ then the set of terms will contain $0$, $v_{42}$, $S0$, $SSS0$, $Sv_1$, $+SOv_1$}
+\defin{Atomic formula}{Any expression of the form 
+    $$t_1=t_2 \text{ of } P(t_1,\dots t_n), \text{ where $t_1,\dots t_n$ are terms and $P$ is an $n$-ary predicate symbol}$$}
+\note{}{Atomic formulas are not defined inductively.}
+\bsp{}{\emph{cont.}\quad $=v_1 v_{42}$, $<S0 SS0$ are atomic formulas, but $\lnot = v_1 v_{42}$ is not.}
+\defin{Formulas}{Let $\varepsilon_\lnot$, $\varepsilon_\to, Q_i$ be fla. building operations
+    $\varepsilon_\lnot(\alpha) = (\lnot \alpha)$, $\varepsilon_\to = (\alpha \to \beta)$ and
+    $Q_i(\gamma) = \forall v_i \gamma$
+    The set of formulas is the set of expressions built up from atomic formulas by applying the fla. building operations finitely many times.
+}
+\subsubsection*{Free variables}
+\bsp{}{"Every non-zero natual number is a succsesor" $\forall x (x\neq 0\to \exists y S(y)=x)$
+    is different then "if a number is not $0$, then it is a succsesor" $x\neq 0\to \exists y S(y)=x$. In the latter, $x$ occures free in the fla.
+}
+\defin{Free variables}{
+    Let $x$ be a variable. $x$ occurs \graybf{free in $\phi$} is defined inductively as follows:
+    \begin{enumerate}
+        \item If $\phi$ is an atomic fla. then $x$ occurs \graybf{free} in $\phi$ iff $x$ occurs in $\phi$
+        \item If $\phi = (\lnot \alpha)$ then $x$ occurs free in $\phi$ iff $x$ occurs free in $\alpha$
+        \item If $\phi = (\alpha \to \beta)$ then $x$ occurs free in $\phi$ iff $x$ occurs free in $\alpha$ or $\beta$
+        \item If $\phi = \forall v_i \alpha$ then $x$ occurs free in $\phi$ iff $x$ occurs free in $\alpha$ and $x\lnot v_i$
+    \end{enumerate}
+}
+TODO
+\section{Semantics of first order logic}
+\defin{structure}{A \graybf{structure} $\mathcal{A}$ for a first order language $\mathcal{L}$ is a non-empty set
+    set $A$ called \graybf{universe} or \graybf{underlying set of $\mathcal{A}$} together with an interpretation of each parameter of $\mathcal{L}$ i.e.
+    \begin{itemize}
+        \item $\forall$ ranges over the universe $A$
+        \item for an $n$-ary pred. symbol $P\in \mathcal{L}$ its interpretation $P\mathcal{A}$ is a subset of $A^n$
+        \item for a constant $c\in \mathcal{L}$ its interpretation $c\mathcal{A}$ is an element of $A$
+        \item for an $n$-ary function symbol $f\in \mathcal{L}$ its interpretation $f^\mathcal{A}$ is a total function $f^\mathcal{A}: A^n \to A$
+    \end{itemize}
+}   
+\bsp{}{Let $\mathcal{L} = \{\in\}$ where $\in$ is a binary relation "
+    An example of an $\mathcal{L}$ structure is $(\NN, \in^\NN)$ where $\in^\NN = \{(x,y)\in \NN^2 : x<y\}$}
+
+\section{logical implication}
+\section{definability in a structure}
+\section{Homomorphisms of structures}
+\section{A parsing algorithm for first order logic}
+\section{Unique readability for terms}
+\section{Deductions (formal proofs)}
+\section{Generalization and deduction theorem}
+TODO evt noch sectioons

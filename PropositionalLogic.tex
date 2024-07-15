@@ -1,0 +1,355 @@
+\chapter{Propositional logic}
+\addAbbrev{prop.}{propositional}
+\defin{Language of PL}{The Language of Propositional logic is a set containing
+    \begin{itemize}
+        \item logical symbols: consisting of the \graybf{sentential connective} symbols $\lnot, \land, \lor, \to, \leftrightarrow$ and parenthesis $(,)$
+        \item non-logical symbols: $ A_1, A_2,A_3,\dots$ (also called sentential atoms, variables)
+    \end{itemize}
+    from which we assume (for unique readability) that no symbol is a finite sequence of any other symbols.
+}
+\note{}{
+    \begin{enumerate}
+        \item The role of the logical symbols doesn't change, the sentential atoms we see as variables, they function as placeholders or variables.
+        \item we assumed the set of non-logical symbols is countable, for most of our conclusions you could use any set of prop. atoms of any size
+    \end{enumerate}
+}
+\addAbbrev{exp.}{expression(s)}
+\defin{Expression / prop. sentence}{An \graybf{expression} is a any finite sequence of symbols
+    We define \graybf{grammatically correct exp.} recursive
+    \begin{enumerate}
+        \item every prop. atom is a prop. sentence
+        \item if $\alpha, \beta$ are prop. sentences, then also $\lnot \alpha, \alpha \land \beta, \alpha \lor \beta, \alpha \to \beta, \alpha \leftrightarrow \beta$
+        \item nothing else
+    \end{enumerate}
+    and call them \graybf{prop. sentences.}
+    Equivalently stated every prop. sentence. is built up by applying finitly many operations
+    TODO
+    This allows us to symbolize the \graybf{expression tree} 
+}
+\defin{Construction sequence}{
+    Given a prop. sentence $\alpha$ a construction sequence of $\alpha$ is a finite sequence $\left\langle \alpha_1,\dots \alpha_{n-1},\alpha\right\rangle$ such that for all $i\leq n$
+    the following holds
+    \begin{itemize}
+        \item $\alpha_i$ is a sentential atom
+        \item or $\alpha_i= \varepsilon_\lnot(\alpha_j)$ for some $j< i$
+        \item or $\alpha_i= \varepsilon_{\square }(\alpha_j,\alpha_k)$ for some $j,k<i$ and $\square\in\{\land,\lor,\to,\leftrightarrow\}$
+    \end{itemize}
+}
+\defin{}{Let $S$ be a set. We say $S$ is \graybf{closed} under an $n$-ary operational symbol $f$
+    iff for all $s\in S$ it holds $f(s)\in S$
+}
+\addAbbrev{sent.}{sentence(s)}
+\addAbbrev{seq.}{sequence}
+\noindent\graybf{Induction principle:} Suppose $S$ is a set of prop. sentences
+containing all prop. atoms and closed under the 5 formula building operations, 
+then $S$ is the set of all prop. sentences.
+\begin{proof}
+    let $PS = \text{set of all prop. sent.}$
+    \begin{itemize}[leftmargin=2cm]
+        \item[$S\subseteq PS$:] is clear
+        \item[$S\supseteq PS$:] let $\alpha\in PS$ then $\alpha$ has a construction seq. $\left\langle \alpha_1,\dots \alpha_{n-1},\alpha\right\rangle$ and $\alpha_1\in S$
+        lets assume that $\alpha_k$ for $k<n$ is in $S$ then $\alpha_{k+1}$ is either an atom and therefore in $S$ or its obtained by one of the formula building operations 
+        and therefore $\alpha_{k+1}\in S$
+    \end{itemize}
+\end{proof}
+\addAbbrev{TA}{truth assignment}
+\section{Truth assignments}
+We will answer the question when does a prop. sent. follow from other prop. sentences.
+\addAbbrev{fla.}{formula}
+\addAbbrev{TV}{truth value}
+\defin{Truth assignment}{\label{TAConditions}
+Let $\{0,1\}$ be the set of truth values. A truth assignment (TA) for a set $S$ of prop. atoms is a map $\nu:S\to\{0,1\}$}
+We now want to extend $\nu$ to $\overline{\nu}: \overline{S}\to \{0,1\}$, where $\overline{S}$ is the closure of $S$ under the 5 fla. building operations such that
+\begin{enumerate}
+    \item $\overline{\nu}(A) = \nu(A)$
+    \item $\overline{\nu}(\lnot \alpha) = 1- \nu(\alpha)$
+    \item $\overline{\nu}(\alpha \land \beta) = \begin{cases}
+        1 & \text{iff } \overline{\nu}(\alpha) = 1 = \overline{\nu}(\beta)\\
+        0 & \text{otherwise}
+    \end{cases}$
+    \item $\overline{\nu}(\alpha \lor \beta) = \begin{cases}
+        1 & \text{iff } \overline{\nu}(\alpha) = 1 \text{ or } \overline{\nu}(\beta) = 1\\
+        0 & \text{otherwise}
+    \end{cases}$
+    \item $\overline{\nu}(\alpha \to \beta) = \begin{cases}
+        1 & \text{iff } \overline{\nu}(\alpha) = 0 \text{ or } \overline{\nu}(\beta) = 1\\
+        0 & \text{otherwise}
+    \end{cases}$
+    \item $\overline{\nu}(\alpha \leftrightarrow \beta) = \begin{cases}
+        1 & \text{iff } \overline{\nu}(\alpha) =  \overline{\nu}(\beta)\\
+        0 & \text{otherwise}
+    \end{cases}$
+\end{enumerate}
+\prop{}{\label{extendetTruthAss}\label{ThrmUniqueExt}
+    $\forall$ TA $\nu$ for a set $S$ $\exists ! \overline{\nu}:\overline{S}\to\{0,1\}$ satisfying the above properties}{}
+    We will proof this later
+\defin{Satisfaction}{A TA $\nu$ satisfies a prop. sent. $\alpha$ 
+    iff $\overline{\nu}(\alpha)=1$ (that is, provided that everery atom of $\alpha$ is in the domain of $\nu$)}
+\defin{Tautological implication}{
+    Let $\Sigma$ be a set of prop. sent. and $\alpha$ a prop. sent. then we say:
+    $\Sigma$ tautologically imlies $\alpha$ iff $\forall$ TA that satisfies $\Sigma$ then $\alpha$ is also satisfied and we write $\Sigma\models \alpha$\\
+    If $\Sigma = \{\beta\}$, we simply write $\beta \models \alpha$ If $\Sigma = \varnothing$ then we write $\models \alpha$ for $\varnothing \models \alpha$ and $\alpha$ is called a \graybf{tautology}\\
+    $\alpha, \beta$ are called \graybf{tautologically equivalent} iff $\alpha\models \beta$ and $\beta\models \alpha$ we then write $\alpha \sledom \models \beta$
+}
+\note{}{Suppose there is no TA that satisfies $\Sigma$, then we have $\Sigma \models \alpha$ for every prop. sent. $\alpha$}
+\bsp{}{$\{\lnot A \lor B\} \sledom \models A \to B$ }
+\note{}{In order to check if a prop. sent. is satisfiable we need to check $2^N$ TAs, where $N=\text{\# of atoms}$. It is unknown if this can be done by an algorithm in polynomial time. Answering this 
+    would settle the debate whether $P=NP$}
+TODO: Add section here?
+\prop{Compactness theorem}{Let $\Sigma$ be an infinite set op prop. sent. such that 
+    $$\forall \Sigma_0 \subseteq \Sigma, \Sigma_0 \text{finite} \exists \text{ TA satisfying every member of } \Sigma_0$$
+    then there is a TA satsfying every member of $\Sigma$.}
+{
+    Let $\mathcal{A} = \{A_0, A_1,\dots\}$ be the set of all prop. atoms. We are going to identify TAs 
+    with elements in $\{0,1\}^\mathcal{A}\defeq \{f: \mathcal{A}\to \{0,1\}\}$
+    TODO
+}
+\section{A parsing algorithm}
+To prove Thm. \ref{extendetTruthAss} we essentially need to show that we have enough parenthesis to make the reading of a prop. sent. unique.
+TODO Bsp
+\addAbbrev{w/}{with}
+\lemma{}{Every prop. sent. has the same number of left and right parenthesis.}{
+    Let $M = \text{set of prop. sent. w/ \# left parenthesis = \# right parenthesis}$ and \\
+    $PS = \text{set of all prop. sent.}$
+    We have $M\subseteq PS$. Since atoms have no parenthesis, they are in $M$. we just need to show that
+    $M$ is closed under the 5 construction operations.\\
+    $\varepsilon_{\lnot} = (\lnot \alpha)$ \dots
+}
+\lemma{}{No proper initial segment of a prop. sent. is itself a prop. sent.}{
+    Let $\alpha = \alpha_1\alpha_2\dots \alpha_n$ be a prop. sent. By proper initial segment we understand $\beta = \alpha_1\dots \alpha_i$ for $1\leq i<n$.
+    We will prove that every proper initial segment has an excess of left parenthesis, then we use the previous lemma.
+    \begin{itemize}
+        \item Atoms: since the empty sequence is no prop. sent. they have no proper initial segment.
+        \item If the above is true for $\alpha, \beta$ then the proper initial segments of $(\lnot \alpha)$ are of the form
+        \begin{itemize}
+            \item[] $(\lnot \alpha$
+            \item[] $(\lnot \alpha'$ where $\alpha'$ is a propper initial segment of $\alpha$
+            \item[] $($ \qquad or
+            \item[] $(\lnot$
+        \end{itemize}
+        Therefore $\varepsilon_\lnot$ preserves this property and 
+        under $\varepsilon_\land, \varepsilon_\lor, \varepsilon_\to, \varepsilon_\leftrightarrow$ this is also the case.
+    \end{itemize}
+}
+\subsubsection*{Parsing algorithm}
+We now give a parsing algorithm procedure. For input we take some expression $\tau$ and the algorithm will determine if $\tau$ is a prop. sent.
+If so, it will generate a unique construction tree (in form of a rooted tree) for $\tau$.
+\begin{enumerate}
+    \item[0.] create the root and label it $\tau$
+    \item HALT if all leaves are labled w/ prop. atom and return: "$\tau$ is a prop. sent."
+    \item select a leaf of the graph which is not labled w/ prop. atom
+    \item if the first symbol of label under consideration is not a left parenthesis, then halt and return: "$\tau$ is not a prop. sent."
+    \item if the second symbol of the label is "$\lnot$" then GOTO 6.
+    \item scan the expression from left to right\\
+    if we reach a proper initial segment of the form "$(\beta$" where $\# lp(\beta) = \#rp(\beta)$ and $\beta$ is followed by one of thesection
+    $\land,\lor,\to,\leftrightarrow$ and the remainder of the expression is of the form $\beta')$, where $\# lp(\beta') = \#rp(\beta')$
+    \begin{itemize}
+        \item [Then:] create two child nodes (left,right) to the selected element and label them (left $\defeq \beta$, right $\defeq \beta'$) GOTO 1.
+        \item [Else:] HALT and return "$\tau$ is not a prop. sent."
+    \end{itemize}
+    
+    \item if the expression is of the form $(\lnot \beta)$ where $\# lp(\beta) = \#rp(\beta)$
+    \begin{itemize}
+        \item [Then:] construct one childnode and label it $\beta$ and GOTO 1.
+        \item [Else:] HALT and return: "$\tau$ is not a prop. sent."
+    \end{itemize}
+\end{enumerate}
+\bsp{
+    TODO
+}{}
+\subsection*{Correctness of the parsing algorithm}
+\begin{itemize}
+    \item The algorithm always halts, because the length of a child is less than the label of a parent.
+    \item If the algorithm halts with the conclusion that $\tau$ is a prop. sent. 
+    then we can prove inductively (starting from the leaves) that each label is a prop. sent
+    \item Unique way to make choices in the algorithm: in particular $\beta, \beta'$ in step 5.
+    If there was a shorter choice for $\beta$ it would be a proper initial segment of $\beta$ but such prop. sent. can not exist.
+    (This also works under the assumption that a longer choice exists).
+    \item rejections are made correctly
+\end{itemize}
+Back to proving the existence and uniqueness of $\overline{\nu}$ in \ref{ThrmUniqueExt}.
+Let $\alpha$ be a prop. sent. of $\overline{S}$. We apply the parsing algorithm to $\alpha$ to get a unique construction tree
+For the leaves, use $\nu$ go get the truth values then work our way up using the conditions (1-6) in \ref{TAConditions}.
+\subsection*{A more formal notation}
+TODO
+\section{Induction and recursion}
+A simple case: let $\mathcal{U}$ be a set and $B\subseteq \mathcal{U}$ our initial set.
+$\mathcal{F} = \{f,g\}$ a class of functions containing just $f$ and $g$, where $$f:\mathcal{U}\times \mathcal{U}\to \mathcal{U}, \qquad g: \mathcal{U}\to \mathcal{U}$$
+We want to construct the smallest subset $\mathcal{C}\subseteq \mathcal{U}$ such that $B\subseteq \mathcal{C}$ and $\mathcal{C}$ is closed under all elements of $\mathcal{F}$.
+\defin{Closedness, Inductiveness}{ We say $\mathcal{C}$ is 
+    \begin{itemize}
+        \item\graybf{closed} under $f$ and $g$ iff $\forall x,y\in \mathcal{C}\: (f(x,y)\in \mathcal{C} \land g(x)\in \mathcal{C})$
+        \item\graybf{inductive} if $B\subseteq \mathcal{C}$ and $\mathcal{C}$ is closed under $\mathcal{F}$
+    \end{itemize}
+}
+Big
+TODO
+\section{Sentential connectives}
+\defin{Tautological equivalence relation}{For $\alpha,\beta$ prop. sent. we define $\alpha ~ \beta$ 
+iff $\alpha \sledom\models  \beta$. This defines an equivalent relation.}
+\bsp{}{$A \to B \sledom\models  \lnot A \lor B$}
+\note{}{
+    A $k$-place boolean function is a functon of the form $f: \{0,1\}^k\to \{0,1\}$ and we 
+    define $0,1$ as the $0$-place boolean functions.\\
+    If $\alpha$ is a prop. sent. then it determines a $k$-place boolean function, 
+    where $k$ is the number of atoms, $\alpha$ is built up from.
+    If $\alpha$ is $A_1\lor \lnot A_2$ then $B_\alpha: \{0,1\}^2\to \{0,1\}$ and asign its values corresponding a truth table.
+    TODO extend / rearange function
+}
+\prop{}{If $\alpha,\beta$ are prop. sent. with at most $n$ prop. Atoms (combined), then
+    \begin{enumerate}
+        \item $\alpha \models \beta $ iff $\forall x\in \{0,1\}^n$ it holds $B_\alpha(x)\leq B_\beta(x)$
+        \item $\alpha \sledom \models \beta $ iff $\forall x\in \{0,1\}^n$ it holds $B_\alpha(x) = B_\beta(x)$
+        \item $\models \alpha $ iff $\forall x\in \{0,1\}^n$ it holds $B_\alpha(x)=1$
+    \end{enumerate}
+}{}
+\prop{Realisation}{
+    Let $G$ be an $n$-ary boolean function for $n\geq 1$. Then there is a prop. sent. $\alpha$ such that. $B_\alpha = G$.
+    We say $\alpha$ realizes $G$.
+}{
+    \begin{enumerate}
+        \item if $G$ is constantly equal to $0$ then set $\alpha$ to $A_1 \land \lnot A_1$.
+        \item Otherwise the set of inputs $\{\vec{x}_1,\vec{x}_2,\dots \vec{x}_k\}$ for which $G(\vec{x}_i)=1$ holds is not empty.\\
+        We denote $\vec{x}_i = (x_{i1},x_{i2},\dots x_{in})$ and define a matrix $(x_{ij})_{k\times n}$
+        We further set $\beta_{ij} = \begin{cases}
+            A_j & \text{iff } x_{ij}=1\\
+            \lnot A_j & \text{iff } x_{ij}=0
+        \end{cases}$\\
+        \graybf{Example:} 
+        \begin{equation*}
+            (x_{ij})=
+            \begin{pmatrix}
+                0&1&0\\
+                1&1&0
+            \end{pmatrix}\leadsto 
+            \begin{pmatrix}
+                \lnot A_1 & A_2 & \lnot A_3\\
+                A_1 & A_2 & \lnot A_3\\
+            \end{pmatrix}=(\beta_{ij})
+        \end{equation*}
+        We define $\gamma_i$ as $\beta_{i1} \land \beta_{i2}\land \dots \beta_{in}$ for $1\leq i\leq k$\\
+    and $\alpha$ as $\gamma_1 \lor \gamma_2\lor \dots \gamma_k = \vee_{i=1}^{k}{\gamma_i} $
+    Then $B_\alpha = G$ is fulfilled.
+    \end{enumerate}
+}
+\note{}{$\alpha$ as constructed in the proof is in the so-called Disjunctive normal form (DNF).}
+\coroll{Every prop. sent. is tautologically equivalent to a sentence in DNF}
+\addAbbrev{i.e.}{id est (that is)}
+\coroll{$\{\lnot,\land,\lor\}$ is a complete set of logical connectives, i.e. every prop. sent. is tautologically 
+    equivalent to a sentence built up from atoms and $\lnot,\land,\lor$.
+}
+\prop{}{Both $\{\lnot, \land\}$ and $\{\lnot, \lor\}$ are complete.}{
+    Its sufficient to show that every $k$-place boolean function is realisable by a prop. sent.
+    built up using only $\lnot$ and $\land$. This is, because $\alpha\land \beta \sledom \models \lnot (\lnot \alpha \lor \lnot \beta)$
+    We prove this by induction over the number of disjuctions of a prop. sent. $\alpha$ in DNF.
+    Suppose the statement is true for $k \leq n$. For $n+1$ and $\alpha = \bigvee_{j=1}^{n+1}{\gamma_j}$ there exists an $\alpha' \sledom \models \bigvee_{j=1}^{n}{\gamma_j}$ and 
+    $$\alpha = \bigvee_{j=1}^{n+1}{\gamma_j} \sledom \models \alpha' \lor \gamma_{n+1} \sledom \models \lnot (\lnot \alpha' \land \lnot \gamma_{n+1})$$
+    %$\alpha\land \beta \sledom \models \lnot (\lnot \alpha \lor \lnot \beta)$
+}
+\note{}{We used the observation that, if $\alpha \sledom \models \beta$ and we replace a subsequence of $\alpha$ by a so called tautological equivalence 
+    then the result is also tautologically equivalent to $\beta$}
+TODO S.10
+\bsp{$\{\to, \land\}$ is not complete.}{Let $\alpha\in PS$ built up from only $\to,\land$ from the atoms $A_1,\dots A_n$ then we claim
+    $$A_1\land A_2\land \dots \land A_n \models \alpha$$
+    %Furhter we can observe that $\{\to, \lor \}$ is not complete, because if $\alpha\in PS$ is only built up from $\to,\lor$ then $\lnot \alpha$
+    %can be built up from $\to, \land$. This is because of
+    %$$\lnot(A\to B)\sledom \models \lnot B \to \lnot A \quad \text{and}\quad \lnot(\alpha\lor \beta) \sledom \models \lnot \alpha \land \lnot \beta$$
+    We can also say $\{\to, \land\}$ is not complete bc. $\lnot A$ is not tautological equivalent to a sent. built up from $\to, \land$
+    \begin{proof}
+        Let $C \defeq \{\alpha \in PS \text{ built up from }\to,\land \text{ and }A_1,\dots A_n \text{ for which } \bigwedge_{i=1}^n{A_i}\models \alpha\}$
+        we want to show that $C = \{\alpha \in PS \text{ built up from }\to,\land \text{ and }A_1,\dots A_n \}$
+        \begin{itemize}
+            \item We have $\{A_1,A_2\dots,A_n\}\subseteq C$
+            \item for $\alpha,\beta\in C$ it holds
+            \begin{itemize}
+                \item[(1)] $A_1\land\dots\land A_n \models \alpha\to\beta$
+                \item[(2)] $A_1\land\dots\land A_n \models \alpha\land \beta$
+            \end{itemize}
+        \end{itemize}
+        Therefore $C$ is closed under the fla. building operations and we have proven our claim.
+    \end{proof}
+    }
+\note{}{$\{\land,\lor,\to,\leftrightarrow \}$ is still not complete.}
+\note{}{The number of $n$-ary boolean functions existing is $2^{2^n}$
+    We define a notation for $n=0$: $\bot$ (for TV = $0$) and $\top$ (for TV = $1$)
+    We can conclude that $\{\lnot,\to\}$ and $\{\to, \bot\}$ are both complete, it holds $\lnot A \sledom \models A\to \bot$
+}
+\defin{Satisfiability}{\\ A set of prop. sent. $\Sigma$ is called \graybf{satisfiable} iff $\exists$ TA that satisfies every member of $\Sigma$.}
+\section{Compactness Theorem}
+\prop{Compactness Theorem}{\label{CompThrm}
+    $\Sigma$ is satisfiable iff every finite subset $\Sigma_0\subseteq \Sigma$ is satisfiable. (i.e. $\Sigma$ is finitely satisfied)}{
+    Let $\Sigma$ be a finitely satisfiable set of prop. sent. Outline of the proof:
+    \begin{enumerate}
+        \item extend $\Sigma$ to a maximal finitely satisfiable set $\Delta$ of prop. sent.
+        \item construct a thruth assigment using $\Delta$
+    \end{enumerate}
+    \begin{enumerate}
+        \item Let $\alpha_1,\alpha_2,\dots$ be an enumeration of all prop. sent. 
+        and define $\Delta_n$ inductively by $\Delta_0 \defeq \Sigma$
+        $$\Delta_{n+1}\defeq \begin{cases}
+            \Delta_n\cup \{\alpha_{n+1}\} & \text{if satisfiable}\\
+            \Delta_n\cup \{\lnot\alpha_{n+1}\} & \text{otherwise}
+        \end{cases}$$
+        \textbf{Claim:} $\Delta_n$ is finitely satisfiable for each $n$
+        \begin{claimproof}
+            By regular induction over $n$. $\Delta_0$ is finitely satisfiable. Let us assume $\Delta_n$ is finitely satisfiable.
+            If $\Delta_{n+1} = \Delta_n\cup \{\alpha_{n+1}\}$ then we are finished. 
+            Otherwise let $\Delta' \subseteq \Delta_n$ be a finite set that $\Delta' \cup \{\alpha_{n+1}\}$ is not satisfiable.
+            It holds $\Delta' \models \lnot \alpha_{n+1}$.
+            We assume that $\Delta_n\cup \{\lnot\alpha_{n+1}\}$ is not finitely satisfiable. 
+            Then there exists a finite subset $\Delta'' \subseteq \Delta_n $ such that $\Delta'' \cup \{\lnot\alpha_{n+1}\}$ is (finite and) not satisfiable.
+            It therefore holds $\Delta'' \models \alpha_{n+1}$
+            But $\Delta'\cup \Delta''$ is a finite subset of $\Delta_n$ and by above observations $\Delta'\cup \Delta''\models \alpha_{n+1}$ and $\Delta'\cup \Delta''\models \lnot \alpha_{n+1}$
+            A contradiction to the assumption that $\Delta_n$ is finitely satisfiable.
+        \end{claimproof}
+        We set $\Delta \defeq \bigcup_{i\in\NN}{\Delta_i}$ and get
+        \begin{enumerate}
+            \item $\Sigma\subseteq \Delta$
+            \item (Maximality): for every prop. sent. $\alpha$ it holds $\alpha\in \Delta$ or $\lnot \alpha\in \Delta$
+            \item (Satisfiability): $\Delta$ is finitely satisfiable. For every finite subset there exists a $\Delta_n$ which is a superset.
+        \end{enumerate}
+        \item Let $\nu$ be a TA for the prop. atoms $A_1, A_2,\dots$ such that $\nu(A) = 1$ iff $A\in \Delta$
+        
+        \textbf{Claim:} For every prop. sent. $\varphi$ it holds $\overline{\nu}(\varphi) =1 $ iff $\varphi\in\Delta$.
+        \begin{claimproof}
+            Let $S = \{\varphi \in PS \text{ s.t. } \overline{\nu}(\varphi) = 1 \text{ iff } \varphi \in \Delta\}$. \\
+            \begin{itemize}
+                \item $PS\supseteq S$ is clear.
+                \item $PS\subseteq S$ 
+                \begin{enumerate}
+                    \item $\{A_1,A_2\dots\}\subseteq S$ by definition of $\nu$
+                    \item closure under $\epsilon_\lnot$: Let $\varphi\in S$ then we get by maximality and satisfiability of $\Delta$: 
+                    \begin{equation*}
+                        \begin{split}
+                            &\overline{\nu}(\lnot\varphi) = 1\\
+                            \text{iff }\quad&\overline{\nu}(\varphi) = 0\\
+                            \text{iff }\quad& \varphi \notin \Delta\\
+                            \text{iff }\quad& (\lnot \varphi)\in \Delta
+                        \end{split}
+                    \end{equation*}
+                    closure under $\epsilon_\to$: Let $\varphi_1,\varphi_2\in S$ similiarly
+                    \begin{equation*}
+                        \begin{split}
+                            &\overline{\nu}(\varphi_1\to \varphi_2) = 0\\
+                            \text{iff }\quad&\overline{\nu}(\varphi_1) = 1 \text{ and } \overline{\nu}(\varphi_2) = 0\\
+                            \text{iff }\quad& \varphi_1 \in \Delta \text{ and }\varphi_2 \notin \Delta\\
+                            \text{iff }\quad& (\varphi_1\to \varphi_2)\notin \Delta 
+                        \end{split}
+                    \end{equation*}
+                    The closure under the other fla. building operations are similar.\qedhere
+                \end{enumerate}
+            \end{itemize}
+        \end{claimproof}
+        By this claim $\overline{\nu}$ satisfies $\Sigma$.\qedhere
+    \end{enumerate}
+}
+\coroll{\label{CorCompThrm}
+    If $\Sigma\models \tau$ then there exists a finite subset $\Sigma' \subseteq \Sigma$ s.t. $\Sigma' \models \tau$}
+\begin{proof}
+    Recall: $\Sigma\models \tau$ iff $\Sigma\cup\{\lnot \tau\}$ is not satisfiable.
+    Suppose $\Sigma\models \tau$ but no finite subset does. \\
+    Then $\forall \Sigma'\subseteq \Sigma \text{ finite } \Sigma'\cup \{\lnot \tau\}$ is satisfiable.
+    By the compactness theorem $\Sigma\cup \{\lnot \tau\}$ is satisfiable which is a contradiction to $\Sigma\models \tau$.
+\end{proof}
+\note{}{\ref{CompThrm} and \ref{CorCompThrm} are equivalent.}
+

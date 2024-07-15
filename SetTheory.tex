@@ -1,0 +1,42 @@
+\chapter{Set Theory}
+\bsp{Russel's paradox}{Let $A = \{a : a\notin a\}$. If any collection of elements is a set, then $A$ would be a set.
+Question: is $A\in A$? if yes, then $A\notin A$, if not then $A\in A$}
+\noindent Trying to resolve this, we will introduce the ZFC (Zermelo-Frankel axioms w/ choice) System.
+Let $\mathcal{L}=\{\in\}$ be a Language of first order, where $\in$ \dots binary relation "beeing element of"
+For $(\mathcal{U},\in)$ 
+If $(\mathcal{U},\in)\models \text{ZFC}$, then the elements of the universe $\mathcal{U}$ are called sets.
+
+TODO
+\section{Axioms of ZFC}
+
+\defin{Axiom of extensionality}{\label{Ax1}
+    $$\forall x \forall y (x=y \leftrightarrow \forall u (u\in x \leftrightarrow u\in y))$$}
+\defin{Pairing Axiom}{for any two sets $a,b$ one can form a set whose elements are precicely $a,b$
+$$\forall x\forall y \exists z (u\in z \leftrightarrow (u = x \lor u = y))$$
+Our notation will be $z=\{x,y\}$
+}
+\note{}{$\{x,y\}$ is unique by \ref{Ax1}}
+\lemma{}{Let $x,y$ be sets. We define $(x,y) \defeq \{\{x\},\{x,y\} \}$. Then it holds $(x,y) = (a,b)$ iff $x = a$ and $y = b$
+}{\begin{itemize}
+    \item if $x=y$, then $(x,y) = \{\{x\} \}$ therefore $a=b$ and by \ref{Ax1} it holds $x=a$.
+    \item if $x\neq y$, then $\{\{x\},\{x,y\} \} = \{\{a\},\{a,b\} \}$ iff $\{x\} = \{a\}$ and $\{x,y\} = \{a,b\}$. That is, iff $x=a$ and $y=b$.
+\end{itemize} }
+TODO oredered n-tuples
+\defin{Union Axiom}{For every set $x$ there is a set $z$ consisting of all elements of the elements of $x$.
+    $$\forall x \exists z \forall y (y\in z \leftrightarrow (\exists u u\in x \land y\in u))$$
+    We call $z$ the union of $x$, notation: $\bigcup_x\defeq z$}
+\defin{Power set Axiom}{Let $x\subseteq y$ be the abbreviation for $\forall z(z \in x \to z\in y)$ The \graybf{Powerset Axiom} states, that for every set $x$
+there exists a set $z$ consisting of all subsetes $y\subseteq x$ that are themselve sets.
+    $$\forall x\exists z \forall y (y\in z \leftrightarrow y\subseteq x)$$
+    Notation: $\mathcal{P}(x)\defeq z$.
+}
+TODO class relations
+\defin{Axiom of replacement / substitution}{
+    Let $\varphi(x,y,\underbar{a})$ a $\mathcal{L}$-fla., w/ free variables among $x,y$ and set-parameters $\underbar{a}$.
+    Suppose $\varphi$ defines a class function on $\mathcal{U}$, than the followoing is an axiom:
+    $$\forall u \exists z \forall y (y\in z \leftrightarrow \exists x (x\in u \land \varphi(x,y,\underbar{a})))$$
+    i.e. the image of a set under a class function is a set.
+}
+\defin{Axiom scheme of comprehension}{
+    TODO
+}
