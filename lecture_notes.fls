@@ -1,6 +1,6 @@
-PWD n:\Uni-Laptop\5-LOG\lecture_notes_2024
+PWD n:\Uni-Laptop\5-LOG\Github_lecture_notes_2024\Logic_notes_2024W
 INPUT C:\Users\Nxan\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT n:\Uni-Laptop\5-LOG\lecture_notes_2024\lecture_notes.tex
+INPUT n:\Uni-Laptop\5-LOG\Github_lecture_notes_2024\Logic_notes_2024W\lecture_notes.tex
 OUTPUT lecture_notes.log
 INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\tex\latex\base\report.cls
 INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\tex\latex\base\report.cls
