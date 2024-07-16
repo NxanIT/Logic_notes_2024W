@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1721083795 "n:/Uni-Laptop/5-LOG/Github_lecture_notes_2024/Logic_notes_2024W/lecture_notes.tex" "lecture_notes.pdf" "lecture_notes" 1721083798 0
+["pdflatex"] 1721131191 "n:/Uni-Laptop/5-LOG/Github_lecture_notes_2024/Logic_notes_2024W/lecture_notes.tex" "lecture_notes.pdf" "lecture_notes" 1721131197 0
   "BooleanAlgebra.tex" 1721083664 6551 d959b0a3b47aad3a25388897f4b1b35e ""
   "C:/Users/Nxan/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1702599081 125549 8ae99d9426475b556c62b24a96e7e758 ""
   "C:/Users/Nxan/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1682112681 11548 e41855b01d0d8e128a1d9691e07157b4 ""
@@ -190,13 +190,13 @@
   "FirstOrderLogic.tex" 1721083664 5794 0c6ff54fa179897b829efd57c0c7fab9 ""
   "PropositionalLogic.tex" 1721083664 22915 9d1565602836f23088f7b0dbf553aca4 ""
   "SetTheory.tex" 1721083664 2587 ef6c39be2380c698c2ed6844a760a329 ""
-  "lecture_notes.abf" 1721083797 797 35d7ea59b0ed1da845a91e85827f3422 "pdflatex"
-  "lecture_notes.aux" 1721083797 9316 d6ceff08cf4bd731aebf2981390f3ad5 "pdflatex"
-  "lecture_notes.dfn" 1721083797 3167 15441ac9ece08a2169943abaddcd27ca "pdflatex"
-  "lecture_notes.out" 1721083797 3271 c36efa640aa947918c38af4e6657eb17 "pdflatex"
-  "lecture_notes.tex" 1721083790 7345 dcf9eb451cf3cd0811676616c5837f73 ""
-  "lecture_notes.toc" 1721083797 1557 434c0e0d4bdf6ee1025c7b6b5f3cce4c "pdflatex"
-  "n:/Uni-Laptop/5-LOG/Github_lecture_notes_2024/Logic_notes_2024W/lecture_notes.tex" 1721083790 7345 dcf9eb451cf3cd0811676616c5837f73 ""
+  "lecture_notes.abf" 1721131196 797 35d7ea59b0ed1da845a91e85827f3422 "pdflatex"
+  "lecture_notes.aux" 1721131196 9316 d6ceff08cf4bd731aebf2981390f3ad5 "pdflatex"
+  "lecture_notes.dfn" 1721131196 3167 15441ac9ece08a2169943abaddcd27ca "pdflatex"
+  "lecture_notes.out" 1721131196 3271 c36efa640aa947918c38af4e6657eb17 "pdflatex"
+  "lecture_notes.tex" 1721131187 7369 5d1f7a6562cc80a208394b1488969ee9 ""
+  "lecture_notes.toc" 1721131196 1557 434c0e0d4bdf6ee1025c7b6b5f3cce4c "pdflatex"
+  "n:/Uni-Laptop/5-LOG/Github_lecture_notes_2024/Logic_notes_2024W/lecture_notes.tex" 1721131187 7369 5d1f7a6562cc80a208394b1488969ee9 ""
   (generated)
   "lecture_notes.abf"
   "lecture_notes.aux"
