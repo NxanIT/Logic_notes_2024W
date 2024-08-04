@@ -884,7 +884,6 @@ INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\tex-gyre\rm-q
 INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\tex-gyre\rm-qagr.tfm
 INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\tex-gyre\rm-qagb.tfm
 INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
-INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
 INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT .\lecture_notes.toc
 INPUT lecture_notes.toc
@@ -913,6 +912,7 @@ INPUT lecture_notes.abf
 INPUT lecture_notes.abf
 OUTPUT lecture_notes.abf
 INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr9.tfm
+INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt9.tfm
 INPUT C:\Users\Nxan\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\tex-gyre\q-rm.enc
 INPUT .\PropositionalLogic.tex
@@ -926,6 +926,7 @@ INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\ot1phv.fd
 INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvb7t.tfm
 INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvbc7t.tfm
 INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvb7t.tfm
+INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
 INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbxti10.tfm
 INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\tex\latex\txfonts\ot1txtt.fd
 INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\tex\latex\txfonts\ot1txtt.fd
@@ -996,6 +997,8 @@ INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm
 INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy7.pfb
 INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti10.pfb
 INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti10.pfb
+INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt9.pfb
+INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt9.pfb
 INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msam10.pfb
 INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msam10.pfb
 INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msam7.pfb

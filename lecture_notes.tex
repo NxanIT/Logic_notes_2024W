@@ -25,11 +25,14 @@
 }
 
 \geometry{
- a4paper,
- left=20mm,
- right=20mm,
- bottom=15mm,
- top=20mm
+    a4paper,
+    twoside,
+    inner=30mm,
+    outer=40mm,
+    bottom=15mm,
+    top=20mm,
+    marginparwidth = 30mm,
+    marginparsep = 5mm
 }
 
 \titleformat{\chapter}[display]{\bfseries\Large} % format
@@ -107,6 +110,11 @@
         \color{black}
     \fi
 }
+
+\newcommand{\outernote}[1]{
+    \marginpar[\raggedleft #1]{\raggedright #1}
+}
+
 %\newtheorem{notes}[]{Bemerkung}
 \newcommand{\note}[2]{
     \ifSimplifiedVersion
@@ -226,9 +234,9 @@
 \fancyhf{}          %cleares headers and footers
 \fancyhead[LE,RO]{\small\rightmark} 
 \fancyhead[LO,RE]{Logic Lecture Notes 2024W}
-\fancyfoot[C]{V0.1 - \today}
-\fancyfoot[LO,RE]{Jana}
-\fancyfoot[LE,RO]{Seite \thepage \hspace{3pt}von \pageref{LastPage}}
+\fancyfoot[C]{}
+\fancyfoot[LO,RE]{\fontfamily{cmtt}\small\color{gray}J.Petermann: LogicNotes [V0.2-\today] \href[]{https://creativecommons.org/licenses/by-nc-nd/3.0/de/}{\color{gray}CC BY-NC-ND 3.0 DE}}
+\fancyfoot[LE,RO]{Seite \thepage \hspace{3pt}von \pageref*{LastPage}}
 
 
 \begin{center}
@@ -237,7 +245,7 @@
     \normalfont
 \end{center}
 \begin{center}
-    \emph{Petermann}
+    \framebox[14cm]{Dieses Skript ist noch nicht vollständig und wird regelmäßig aktualisiert.}
 \end{center}
 \setlength{\cftaftertoctitleskip}{0em}
 \tableofcontents
