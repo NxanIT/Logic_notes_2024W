@@ -1,0 +1,63 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{EndertonHerbertB2001AMIt}{book}{}
+      \name{author}{2}{}{%
+        {{hash=b50c15602a78b51cbc6946ab32488502}{%
+           family={Enderton},
+           familyi={E\bibinitperiod},
+           given={Herbert\bibnamedelima B},
+           giveni={H\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=8b835d828c4be513d24448e3ec176516}{%
+           family={Enderton},
+           familyi={E\bibinitperiod},
+           given={Herbert},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {eng}%
+      }
+      \list{location}{1}{%
+        {United States}%
+      }
+      \list{publisher}{2}{%
+        {Elsevier Science}%
+        {Technology}%
+      }
+      \strng{namehash}{84b59b37e77477f40161b71218785bf9}
+      \strng{fullhash}{84b59b37e77477f40161b71218785bf9}
+      \strng{bibnamehash}{84b59b37e77477f40161b71218785bf9}
+      \strng{authorbibnamehash}{84b59b37e77477f40161b71218785bf9}
+      \strng{authornamehash}{84b59b37e77477f40161b71218785bf9}
+      \strng{authorfullhash}{84b59b37e77477f40161b71218785bf9}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{0122384520}
+      \field{title}{A Mathematical Introduction to Logic}
+      \field{year}{2001}
+      \keyw{Logic Symbolic and mathematical ; Mathematics}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

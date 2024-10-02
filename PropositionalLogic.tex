@@ -37,7 +37,8 @@ The Language \outernote{Language} of Propositional logic is a set containing
     \end{itemize}
 }
 \defin{}{Let $S$ be a set. We say $S$ is \graybf{closed} under an $n$-ary operational symbol $f$
-    iff for all $s\in S$ it holds $f(s)\in S$
+    iff for all $s\in S$ it holds $f(s)\in S$ 
+    TODO: fehler
 }
 \addAbbrev{sent.}{sentence(s)}
 \addAbbrev{seq.}{sequence}
@@ -49,7 +50,8 @@ then $S$ is the set of all prop. sentences.
     \begin{itemize}[leftmargin=2cm]
         \item[$S\subseteq PS$:] is clear
         \item[$S\supseteq PS$:] let $\alpha\in PS$ then $\alpha$ has a construction seq. $\left\langle \alpha_1,\dots \alpha_{n-1},\alpha\right\rangle$ and $\alpha_1\in S$
-        lets assume that $\alpha_k$ for $k<n$ is in $S$ then $\alpha_{k+1}$ is either an atom and therefore in $S$ or its obtained by one of the formula building operations 
+        lets assume that $\alpha_i$ for $i\leq k<n$ is in $S$ then $\alpha_{k+1}$ is either an atom and therefore in $S$ or its obtained by one of the formula building operations 
+        from the 
         and therefore $\alpha_{k+1}\in S$
     \end{itemize}
 \end{proof}
@@ -86,7 +88,7 @@ We now want to extend $\nu$ to $\overline{\nu}: \overline{S}\to \{0,1\}$, where 
     We will proof this later
 \defin{Satisfaction}{A TA $\nu$ satisfies a prop. sent. $\alpha$ 
     iff $\overline{\nu}(\alpha)=1$ (that is, provided that everery atom of $\alpha$ is in the domain of $\nu$)}
-\defin{Tautological implication}{
+\defin{Tautological implication}{\outernote{$\models$}
     Let $\Sigma$ be a set of prop. sent. and $\alpha$ a prop. sent. then we say:
     $\Sigma$ tautologically imlies $\alpha$ iff $\forall$ TA that satisfies $\Sigma$ then $\alpha$ is also satisfied and we write $\Sigma\models \alpha$\\
     If $\Sigma = \{\beta\}$, we simply write $\beta \models \alpha$ If $\Sigma = \varnothing$ then we write $\models \alpha$ for $\varnothing \models \alpha$ and $\alpha$ is called a \graybf{tautology}\\

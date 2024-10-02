@@ -2,7 +2,6 @@
 \usepackage{amsthm,amssymb}
 %\usepackage{amsmath} %already loaded by mathtools
 \usepackage{titlesec}%required for \titleformat
-%\usepackage{fancyhdr}
 \usepackage{mathtools}%automatically loads amsmath and is required for \defeq macro
 \usepackage{tcolorbox}%required for \definecolor
 \usepackage[colorlinks=true, linkcolor=purple]{hyperref}
@@ -11,14 +10,19 @@
 \usepackage{ifthen}%for "ifthenelse"
 \usepackage[twoside]{fancyhdr}
 \usepackage{lastpage}
+\usepackage{datetime2}
 \usepackage{tocloft}
+\usepackage[backend=biber]{biblatex}
 
 \setlength{\headheight}{18.0pt}
+
+\addbibresource{test.bib}
+%\addbibresource{Primo_BibTex_Export.bib} 
 
 \newcommand{\listdefinitionsname}{\Large List of definitions}
 \newlistof{definitions}{dfn}{\listdefinitionsname}
 
-\newcommand{\listofabbreviationsname}{\Large List of Abbreviations}
+\newcommand{\listofabbreviationsname}{\vspace{-1.2em}\Large List of Abbreviations\vspace{-1.5em}}
 \newlistof{abbreviations}{abf}{\listofabbreviationsname}
 \newcommand{\addAbbrev}[2]{
     \addcontentsline{abf}{section}{#1 \hspace{1em} - \hspace{1em} #2}
@@ -51,6 +55,8 @@
 [\vspace{-0.2cm}] % after-code
 
 \definecolor{purple2}{HTML}{660099}
+\definecolor{rhoda}{HTML}{0000B7}
+\definecolor{tanita}{HTML}{5173BD}
 \definecolor{yellow}{HTML}{FCF434}
 \definecolor{purple}{HTML}{9C59d1}
 \definecolor{darkgray}{HTML}{2C2C2C}
@@ -100,10 +106,10 @@
     \ifSimplifiedVersion
         #1
     \else 
-        \color{purple}   
+        \color{rhoda}   
         \begin{defi}
             \addcontentsline{dfn}{section}{\protect{{\thedefi \hspace{5px} #1}\hspace{-4px}} } 
-            \textbf{\fontfamily{txtt}\selectfont{#1}:}
+            \color{tanita}\textbf{\normalfont\fontfamily{txtt}\selectfont{\textbf{#1}}: }%
             \normalfont\color{black}
             #2
         \end{defi}
@@ -121,7 +127,7 @@
         Bem: #1 - #2
 
     \else 
-        \color{purple}   
+        \color{rhoda}   
         %\begin{notes}
             \noindent Note\fontfamily{txtt}\selectfont{#1}: \normalfont\color{black}
             #2
@@ -141,9 +147,9 @@
         Prop: #1 - #2
 
     \else 
-        \color{purple}   
+        \color{rhoda}   
         \begin{propo}
-            \textbf{\fontfamily{txtt}\selectfont{#1}:} \normalfont\color{black}
+            \color{tanita}\textbf{\normalfont\fontfamily{txtt}\selectfont{\textbf{#1}}: }\normalfont\color{black}
             #2
             \ifx\foo#3\foo
             \else
@@ -165,9 +171,9 @@
         Lemma: #1 - #2
 
     \else 
-        \color{purple}   
+        \color{rhoda}   
         \begin{lemmata}
-            \textbf{\fontfamily{txtt}\selectfont{#1}:} \normalfont\color{black}
+            \color{tanita}\textbf{\normalfont\fontfamily{txtt}\selectfont{\textbf{#1}}: }\normalfont\color{black}
             #2
             \ifx\foo#3\foo
             \else
@@ -235,9 +241,8 @@
 \fancyhead[LE,RO]{\small\rightmark} 
 \fancyhead[LO,RE]{Logic Lecture Notes 2024W}
 \fancyfoot[C]{}
-\fancyfoot[LO,RE]{\fontfamily{cmtt}\small\color{gray}J.Petermann: LogicNotes [V0.2-\today] \href[]{https://creativecommons.org/licenses/by-nc-nd/3.0/de/}{\color{gray}CC BY-NC-ND 3.0 DE}}
+\fancyfoot[LO,RE]{\fontfamily{cmtt}\small\color{gray}J.Petermann: LogicNotes [V0.2-\today{ }at \DTMcurrenttime] }% old: \href[]{https://creativecommons.org/licenses/by-nc-nd/3.0/de/}{\color{gray}CC BY-NC-ND 3.0 DE}
 \fancyfoot[LE,RO]{Seite \thepage \hspace{3pt}von \pageref*{LastPage}}
-
 
 \begin{center}
     \fontfamily{qag}\selectfont
@@ -245,8 +250,19 @@
     \normalfont
 \end{center}
 \begin{center}
-    \framebox[14cm]{Dieses Skript ist noch nicht vollständig und wird regelmäßig aktualisiert.}
+    \framebox[14cm]{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{
+    This is a summary of the material discussed in the lecture "Mathematische Logik". 
+    It is still a work in progress and there \textbf{may me mistakes} in this work. 
+    If you find any, feel free to let me know and I will correct them\\\hspace{10px}
+    The content of this script is intended for educational purposes only. 
+    It relies on the book \cite{EndertonHerbertB2001AMIt} for which all rights belong to their respective 
+    owners and I do not claim ownership over this content. 
+    However the \LaTeX code I wrote is entirely my own work and is provided to you by the \href[]{https://choosealicense.com/licenses/mit/}{\color{gray}MIT-Licence}.
+    Dieses Skript ist noch nicht vollständig und wird regelmäßig aktualisiert.}
+}
 \end{center}
+
+\setlength{\cftbeforetoctitleskip}{0em}
 \setlength{\cftaftertoctitleskip}{0em}
 \tableofcontents
 \listofabbreviations
@@ -258,6 +274,7 @@
 \input{BooleanAlgebra.tex}
 \input{SetTheory.tex}
 \listofdefinitions
+\printbibliography
 \end{document}
 
 %You can see this if the commit actually happend
