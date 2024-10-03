@@ -15,20 +15,20 @@ The Language \outernote{Language} of Propositional logic is a set containing
     \end{enumerate}
 }
 \addAbbrev{exp.}{expression(s)}
-\defin{Expression / prop. sentence}{An \graybf{expression} is a any finite sequence of symbols
+\defin{Expression / prop. sentence}{An \graybf{expression}\outernote{expression} is a any finite sequence of symbols
     We define \graybf{grammatically correct exp.} recursive
     \begin{enumerate}
         \item every prop. atom is a prop. sentence
         \item if $\alpha, \beta$ are prop. sentences, then also $\lnot \alpha, \alpha \land \beta, \alpha \lor \beta, \alpha \to \beta, \alpha \leftrightarrow \beta$
         \item nothing else
     \end{enumerate}
-    and call them \graybf{prop. sentences.}
-    Equivalently stated every prop. sentence. is built up by applying finitly many operations
+    and call them \graybf{prop. sentences.}\outernote{prop. sentence} or \graybf{prop. fla.}\outernote{prop. fla.}
+    Equivalently stated every prop. sentence is built up by applying finitly many operations
     TODO
     This allows us to symbolize the \graybf{expression tree} 
 }
 \defin{Construction sequence}{
-    Given a prop. sentence $\alpha$ a construction sequence of $\alpha$ is a finite sequence $\left\langle \alpha_1,\dots \alpha_{n-1},\alpha\right\rangle$ such that for all $i\leq n$
+    Given a prop. sentence $\alpha$ a \graybf{construction sequence}\outernote{construction sequence} of $\alpha$ is a finite sequence $\left\langle \alpha_1,\dots \alpha_{n-1},\alpha\right\rangle$ such that for all $i\leq n$
     the following holds
     \begin{itemize}
         \item $\alpha_i$ is a sentential atom
@@ -36,9 +36,8 @@ The Language \outernote{Language} of Propositional logic is a set containing
         \item or $\alpha_i= \varepsilon_{\square }(\alpha_j,\alpha_k)$ for some $j,k<i$ and $\square\in\{\land,\lor,\to,\leftrightarrow\}$
     \end{itemize}
 }
-\defin{}{Let $S$ be a set. We say $S$ is \graybf{closed} under an $n$-ary operational symbol $f$
-    iff for all $s\in S$ it holds $f(s)\in S$ 
-    TODO: fehler
+\defin{}{Let $S$ be a set. We say $S$ is \graybf{closed}\outernote{closure} under an $n$-ary operational symbol $f$
+    iff for all $s_1,s_2,\dots s_n\in S$ it holds $f(s_1,s_2,\dots s_n)\in S$ 
 }
 \addAbbrev{sent.}{sentence(s)}
 \addAbbrev{seq.}{sequence}
@@ -57,7 +56,11 @@ then $S$ is the set of all prop. sentences.
 \end{proof}
 \addAbbrev{TA}{truth assignment}
 \section{Truth assignments}
-We will answer the question when does a prop. sent. follow from other prop. sentences.
+%We will answer the question when does a prop. sent. follow from other prop. sentences.
+The interpretation of a prop. atom is either true or false, denoted by $0 / 1$ or $T / F$. 
+A truth assigment is simply any map $\nu:S\mapsto \{0,1\}$, where $S$ is a map of prop. sent. 
+Our goal is going to be to extend any truth assigment $v$ to a function $\overline{v}: \overline{S}\mapsto \{0,1\}$, where $\overline{S}$ is the closure
+of $S$ under the $5$ fla. building functions. 
 \addAbbrev{fla.}{formula}
 \addAbbrev{TV}{truth value}
 \defin{Truth assignment}{\label{TAConditions}
@@ -83,32 +86,55 @@ We now want to extend $\nu$ to $\overline{\nu}: \overline{S}\to \{0,1\}$, where 
         0 & \text{otherwise}
     \end{cases}$
 \end{enumerate}
-\prop{}{\label{extendetTruthAss}\label{ThrmUniqueExt}
+We also want the extention to be unique, that is
+\prop{Unique readability}{\label{extendetTruthAss}\label{ThrmUniqueExt}
     $\forall$ TA $\nu$ for a set $S$ $\exists ! \overline{\nu}:\overline{S}\to\{0,1\}$ satisfying the above properties}{}
-    We will proof this later
+We will proof this later\\
+We will be talking about TA satisfying prop. sent.
 \defin{Satisfaction}{A TA $\nu$ satisfies a prop. sent. $\alpha$ 
     iff $\overline{\nu}(\alpha)=1$ (that is, provided that everery atom of $\alpha$ is in the domain of $\nu$)}
 \defin{Tautological implication}{\outernote{$\models$}
     Let $\Sigma$ be a set of prop. sent. and $\alpha$ a prop. sent. then we say:
     $\Sigma$ tautologically imlies $\alpha$ iff $\forall$ TA that satisfies $\Sigma$ then $\alpha$ is also satisfied and we write $\Sigma\models \alpha$\\
     If $\Sigma = \{\beta\}$, we simply write $\beta \models \alpha$ If $\Sigma = \varnothing$ then we write $\models \alpha$ for $\varnothing \models \alpha$ and $\alpha$ is called a \graybf{tautology}\\
-    $\alpha, \beta$ are called \graybf{tautologically equivalent} iff $\alpha\models \beta$ and $\beta\models \alpha$ we then write $\alpha \sledom \models \beta$
+    $\alpha, \beta$ are called \graybf{tautologically equivalent} iff $\alpha\models \beta$ and $\beta\models \alpha$, we then write $\alpha \sledom \models \beta$
 }
-\note{}{Suppose there is no TA that satisfies $\Sigma$, then we have $\Sigma \models \alpha$ for every prop. sent. $\alpha$}
+
+\note{}{In other words, tautological implication $\Sigma\models \alpha$ means that you can not find a TA, that satisfy all members of $\Sigma$ but not $\alpha$.
+    A tautology is satisfied by every TA. Suppose there is no TA that satisfies $\Sigma$, then we have $\Sigma \models \alpha$ for every prop. sent. $\alpha$}
 \bsp{}{$\{\lnot A \lor B\} \sledom \models A \to B$ }
 \note{}{In order to check if a prop. sent. is satisfiable we need to check $2^N$ TAs, where $N=\text{\# of atoms}$. It is unknown if this can be done by an algorithm in polynomial time. Answering this 
     would settle the debate whether $P=NP$}
 TODO: Add section here?
-\prop{Compactness theorem}{Let $\Sigma$ be an infinite set op prop. sent. such that 
+However we can find a way to reduce satisfiability of an infinite set $\Sigma$ of prop. sent. 
+There later will be a more elementary proof of the compactness theorem, this proof is not part of the exam.
+\prop{Compactness theorem}{Let $\Sigma$ be an infinite set of prop. sent. such that 
     $$\forall \Sigma_0 \subseteq \Sigma, \Sigma_0 \text{finite} \exists \text{ TA satisfying every member of } \Sigma_0$$
     then there is a TA satsfying every member of $\Sigma$.}
 {
+    using topology: We have our infinite set of prop. sent. which satisfies above condition. One way to look at TA is as a sequence of $0,1$,
     Let $\mathcal{A} = \{A_0, A_1,\dots\}$ be the set of all prop. atoms. We are going to identify TAs 
-    with elements in $\{0,1\}^\mathcal{A}\defeq \{f: \mathcal{A}\to \{0,1\}\}$
-    TODO
-}
+    with elements in $\{0,1\}^\mathcal{A}\defeq \{f: \mathcal{A}\to \{0,1\}\}$ (set of all TAs)
+    This is a topological space with product topology, which we will view 
+    The basic open sets (called cylinders) will be 
+    \begin{itemize}
+        \item fix finitly many places and set TV on them,
+        \item others beliebig
+    \end{itemize}
+    $U \subseteq \{0,1\}^\mathcal{A}$ such that $p_n(U)=\{0,1\}$ for all but finite many $n$, where $p_n$ is the $n$-th projection.
+    Note: basic open sets are also closed.
+    We now define the open sets as unions of basic open sets.
+    The idea is to use Tychonoffs Thm. which tells us that $\{0,1\}^\mathcal{A}$ is compact. i.e.
+    the intersection of a family of closed subsets w/ the finite intersection property (FIP) is non-empty
+    finite intersection property means the intersection of finitly many sets is non-empty.
+
+    For $\alpha \in \Sigma$ let $T_\alpha \subseteq \{0,1\}^\mathcal{A}$ be the set of TA that satisfy $\alpha$.
+    This $T_\alpha$ is a finite union of cylinders, bc. it only depends on finitly many assigments, hence closed.
+    The family $\{T_\alpha: \alpha\in\Sigma\}$ of closed sets with FIP. Tychonoff tells us, 
+    that $\bigcup_{\alpha\in\Sigma}{T_\alpha}\neq \varnothing$ so there is a TA satisfying $\Sigma$.}
+    useful might be book p. 26-27
 \section{A parsing algorithm}
-To prove Thm. \ref{extendetTruthAss} we essentially need to show that we have enough parenthesis to make the reading of a prop. sent. unique.
+To prove \ref{extendetTruthAss} we essentially need to show that we have enough parenthesis to make the reading of a prop. sent. unique.
 TODO Bsp
 \addAbbrev{w/}{with}
 \lemma{}{Every prop. sent. has the same number of left and right parenthesis.}{
@@ -118,9 +144,13 @@ TODO Bsp
     $M$ is closed under the 5 construction operations.\\
     $\varepsilon_{\lnot} = (\lnot \alpha)$ \dots
 }
-\lemma{}{No proper initial segment of a prop. sent. is itself a prop. sent.}{
-    Let $\alpha = \alpha_1\alpha_2\dots \alpha_n$ be a prop. sent. By proper initial segment we understand $\beta = \alpha_1\dots \alpha_i$ for $1\leq i<n$.
+\lemma{}{No proper initial segment of a prop. sent. is itself a prop. sent.}{\label{NoPropIni}
+    Let $\alpha = \alpha_1\alpha_2\dots \alpha_n$ be a prop. sent. By proper initial segment we understand $\beta = \alpha_1\dots \alpha_i$ for $1\leq i<n$.    
     We will prove that every proper initial segment has an excess of left parenthesis, then we use the previous lemma.
+    Let $PS = \text{set of all prop. sent.}$ and \\
+    $PF = \text{set of prop. sent. s.t. no proper initial segment has \# left parenthesis = \# right parenthesis}$, 
+    we will prove that these sets are the same.\\
+    Let $\alpha \in PF$. By induction over the fla. building operations
     \begin{itemize}
         \item Atoms: since the empty sequence is no prop. sent. they have no proper initial segment.
         \item If the above is true for $\alpha, \beta$ then the proper initial segments of $(\lnot \alpha)$ are of the form
@@ -136,7 +166,8 @@ TODO Bsp
 }
 \subsubsection*{Parsing algorithm}
 We now give a parsing algorithm procedure. For input we take some expression $\tau$ and the algorithm will determine if $\tau$ is a prop. sent.
-If so, it will generate a unique construction tree (in form of a rooted tree) for $\tau$.
+If so, it will generate a unique construction tree (in form of a rooted tree) for $\tau$. (i.e. the construction tree gives us a unique readability)
+That there is a unique way to perform the algorithm is implied by \ref{NoPropIni}
 \begin{enumerate}
     \item[0.] create the root and label it $\tau$
     \item HALT if all leaves are labled w/ prop. atom and return: "$\tau$ is a prop. sent."
@@ -157,9 +188,13 @@ If so, it will generate a unique construction tree (in form of a rooted tree) fo
         \item [Else:] HALT and return: "$\tau$ is not a prop. sent."
     \end{itemize}
 \end{enumerate}
-\bsp{
-    TODO
-}{}
+\bsp{}{TODO The parsing algorithm applied to $((\lnot (A_1\to A_2))\lor A_3)$ returns the following construction tree.
+    \begin{figure*}[H]
+        \centering
+        \includegraphics[scale=0.1]{1-parsing-alg-ex}
+        \caption{title}
+    \end{figure*}
+}
 \subsection*{Correctness of the parsing algorithm}
 \begin{itemize}
     \item The algorithm always halts, because the length of a child is less than the label of a parent.
