@@ -66,9 +66,10 @@ of $S$ under the $5$ fla. building functions.
 \defin{Truth assignment}{\label{TAConditions}
 Let $\{0,1\}$ be the set of truth values. \outernote{Truth assigment} A truth assignment \outernote{TA}(TA) for a set $S$ of prop. atoms is a map $\nu:S\to\{0,1\}$}
 We now want to extend $\nu$ to $\overline{\nu}: \overline{S}\to \{0,1\}$, where $\overline{S}$ is the closure of $S$ under the 5 fla. building operations such that
+for all propositional atoms $A\in S$ and propositional formulas $\alpha,\beta$ in $\overline{S}$
 \begin{enumerate}
-    \item $\overline{\nu}(A) = \nu(A)$
-    \item $\overline{\nu}(\lnot \alpha) = 1- \nu(\alpha)$
+    \item $\overline{\nu}(A) = \nu(A)$ 
+    \item $\overline{\nu}(\lnot \alpha) = 1- \nu(\alpha)$ 
     \item $\overline{\nu}(\alpha \land \beta) = \begin{cases}
         1 & \text{iff } \overline{\nu}(\alpha) = 1 = \overline{\nu}(\beta)\\
         0 & \text{otherwise}
@@ -88,12 +89,13 @@ We now want to extend $\nu$ to $\overline{\nu}: \overline{S}\to \{0,1\}$, where 
 \end{enumerate}
 We also want the extention to be unique, that is
 \prop{Unique readability}{\label{extendetTruthAss}\label{ThrmUniqueExt}
-    $\forall$ TA $\nu$ for a set $S$ $\exists ! \overline{\nu}:\overline{S}\to\{0,1\}$ satisfying the above properties}{}
+    For all TA $\nu$ for a set $S$ $\exists ! \overline{\nu}:\overline{S}\to\{0,1\}$ satisfying the above properties}{}
 We will proof this later\\
 We will be talking about TA satisfying prop. sent.
-\defin{Satisfaction}{A TA $\nu$ satisfies a prop. sent. $\alpha$ 
-    iff $\overline{\nu}(\alpha)=1$ (that is, provided that everery atom of $\alpha$ is in the domain of $\nu$)}
-\defin{Tautological implication}{\outernote{$\models$}
+\defin{Satisfaction}{A TA $\nu$ satisfies\outernote{satisfy} a prop. sent. $\alpha$ 
+    iff $\overline{\nu}(\alpha)=1$ (that is, provided that everery atom of $\alpha$ is in the domain of $\nu$). 
+    We call $\alpha$ satisfiable\outernote{satisfiable} iff there exists a TA that satisfies it.}
+\defin{Tautological implication}{\outernote{taut. implication $\models$}\addAbbrev{taut.}{tautological}
     Let $\Sigma$ be a set of prop. sent. and $\alpha$ a prop. sent. then we say:
     $\Sigma$ tautologically imlies $\alpha$ iff $\forall$ TA that satisfies $\Sigma$ then $\alpha$ is also satisfied and we write $\Sigma\models \alpha$\\
     If $\Sigma = \{\beta\}$, we simply write $\beta \models \alpha$ If $\Sigma = \varnothing$ then we write $\models \alpha$ for $\varnothing \models \alpha$ and $\alpha$ is called a \graybf{tautology}\\
@@ -109,7 +111,9 @@ TODO: Add section here?
 However we can find a way to reduce satisfiability of an infinite set $\Sigma$ of prop. sent. 
 There later will be a more elementary proof of the compactness theorem, this proof is not part of the exam.
 \prop{Compactness theorem}{Let $\Sigma$ be an infinite set of prop. sent. such that 
-    $$\forall \Sigma_0 \subseteq \Sigma, \Sigma_0 \text{finite} \exists \text{ TA satisfying every member of } \Sigma_0$$
+    \begin{equation}\tag{finite satisfiability}
+        \forall \Sigma_0 \subseteq \Sigma, \Sigma_0 \text{finite} \exists \text{ TA satisfying every member of } \Sigma_0
+    \end{equation}
     then there is a TA satsfying every member of $\Sigma$.}
 {
     using topology: We have our infinite set of prop. sent. which satisfies above condition. One way to look at TA is as a sequence of $0,1$,
@@ -197,7 +201,7 @@ That there is a unique way to perform the algorithm is implied by \ref{NoPropIni
 }
 \subsection*{Correctness of the parsing algorithm}
 \begin{itemize}
-    \item The algorithm always halts, because the length of a child is less than the label of a parent.
+    \item The algorithm always halts, because the length of a childs label is less than the label of a parent.
     \item If the algorithm halts with the conclusion that $\tau$ is a prop. sent. 
     then we can prove inductively (starting from the leaves) that each label is a prop. sent
     \item Unique way to make choices in the algorithm: in particular $\beta, \beta'$ in step 5.
@@ -210,20 +214,155 @@ Let $\alpha$ be a prop. sent. of $\overline{S}$. We apply the parsing algorithm 
 For the leaves, use $\nu$ go get the truth values then work our way up using the conditions (1-6) in \ref{TAConditions}.
 \subsection*{A more formal notation}
 TODO
+
+
 \section{Induction and recursion}
-A simple case: let $\mathcal{U}$ be a set and $B\subseteq \mathcal{U}$ our initial set.
+\subsubsection*{Generalization of induction principle:}
+Let $\mathcal{U}$ be a set and $B\subseteq \mathcal{U}$ our initial set.
 $\mathcal{F} = \{f,g\}$ a class of functions containing just $f$ and $g$, where $$f:\mathcal{U}\times \mathcal{U}\to \mathcal{U}, \qquad g: \mathcal{U}\to \mathcal{U}$$
 We want to construct the smallest subset $\mathcal{C}\subseteq \mathcal{U}$ such that $B\subseteq \mathcal{C}$ and $\mathcal{C}$ is closed under all elements of $\mathcal{F}$.
-\defin{Closedness, Inductiveness}{ We say $\mathcal{C}$ is 
+\defin{Closedness, Inductiveness}{ We say $\mathcal{S}\subseteq \mathcal{U}$ is 
     \begin{itemize}
-        \item\graybf{closed} under $f$ and $g$ iff $\forall x,y\in \mathcal{C}\: (f(x,y)\in \mathcal{C} \land g(x)\in \mathcal{C})$
-        \item\graybf{inductive} if $B\subseteq \mathcal{C}$ and $\mathcal{C}$ is closed under $\mathcal{F}$
+        \item\graybf{closed} under $f$ and $g$ iff for all $x,y\in \mathcal{S}$ it holds $ f(x,y)\in \mathcal{S}$ and $ g(x)\in \mathcal{S}$
+        \item\graybf{inductive} if $B\subseteq \mathcal{S}$ and $\mathcal{S}$ is closed under $\mathcal{F}$
     \end{itemize}
 }
-Big
-TODO
+One way is from the top down $\mathcal{C}^* \defeq \bigcap_{\mathcal{S} \text{inductive}}{S}$
+Another is from bottom up: We call $c_1 \defeq \mathcal{B}$, 
+$$C_i \defeq C_{i-1} \cup \{f(x,y) : x,y\in C_{i-1}\}\cup \{g(x) : x\in C_{i-1}\}$$
+and $C_* \defeq \bigcup_{n\geq 1}{C_{n}}$
+Exercise: show that $C^* = C_*\eqdef C$.
+Example:
+\bsp{}{
+    \begin{enumerate}
+        \item Let $\mathcal{U}$ be the set of all expressions, $\mathcal{B}$ the set of atoms and $\mathcal{F}=\{\varepsilon_\square:  \square in \{\lnot, \land,\lor,\to,\leftrightarrow \}\}$
+    Then $\mathcal{C}$ would be the set of all propositional formulas.
+        \item Let $\mathcal{U}$ be $\RR$, $\mathcal{B}$ the set containing $0$ and $\mathcal{F}=\{S\}$, $S(x) = x+1$
+        Then $\mathcal{C}$ would be the set of the natural numbers.
+    \end{enumerate}
+    
+}
+\subsubsection*{Induction principle}
+$\mathcal{C}$ generated from $\mathcal{B}$ by use of elements of $\mathcal{F}$ if $S\subseteq C$ such that $\mathcal{B}\subseteq S$ and $S$ is closed under all
+elements of $\mathcal{F}$, then $S = C$
+proof: 
+$S\subseteq C$ is clear. 
+$S$ is inductive, so $C\subseteq S$.
+Question: under what conditions do we get "generalized unique readability?"
+The goal would be to define a function on $\mathcal{C}$ recursively i.e. to have rules for computing $\overline{h}(x)$ for $x\in B$
+with some rules of computing $\overline{h}(f(x,y))$ and $\overline{h}(g(x))$ from $\overline{h}(x)$ and $\overline{h}(y)$.
+
+\bsp{}{
+    Suppose that $G$ is some additive group, generated from $\mathcal{B}$ (the set of generators), 
+    $h = \mathcal{B}\to H$ where $(H,\cdot,^{-1},1)$ a group.
+    When is there an extention $\overline{h}$ of $h$ s.th.
+    $\overline{h}:G\to H$ is a grouphomomorphism.
+    \begin{itemize}
+        \item $\overline{h}(0) = 1$
+        \item $\overline{h}(a+b) = \overline{h}(a)\cdot \overline{h}(b)$
+        \item $\overline{h}(-a) = \overline{h}(a)^{-1}$
+    \end{itemize}
+    This is not always possible. \textbf{Note:} that it is possible if $G$ is generated freely by the elements of $\mathcal{B}$ and the set of atoms is independent
+    (one element of $\mathcal{B}$ cannot be generated in finitly many steps by other elements of $\mathcal{B}$).
+}
+\defin{}{$\mathcal{C}$ is freely generated from $\mathcal{B}$ by $f,g$ if 
+    \begin{itemize}
+        \item $\mathcal{C}$ is generated from $\mathcal{B}$ by $f,g$ 
+        \item $f|_{C^2}$ and $g|_C$ are such that\begin{itemize}
+            \item $f|_{C^2}$ and $g|_C$ are one-to-one (injective)
+            \item $rng(f|_{C^2})$ and $rng(g|_{C})$ and $\mathcal{B}$ are p.w. disjoint
+        \end{itemize}
+    \end{itemize}
+}
+\prop{recursion Theorem}{
+    $C\subseteq U$ freely generated from $B$ by $f,g$ and $V$ a set and $h:B\to V$, $F:V^2\to V$, $G:V\to V$
+    Then $\exists ! \overline{h}:\mathcal{C}\to V$ s.that 
+    \begin{itemize}
+        \item for all $a$ in $\mathcal{B}$ it holds $\overline{h}(a) = h(a)$
+        \item for all $x,y$ in $\mathcal{C}$ it holds
+        \begin{enumerate}
+            \item $\overline{h}(f(x,y)) = F(\overline{h}(x),\overline{h}(y))$
+            \item $\overline{h}(g(x)) = G(\overline{h}(x))$
+        \end{enumerate}
+    \end{itemize}
+}{}
+\note{}{if given conditions are satisfied then $h$ extends uniquely to a homomorphism $(C,f,g)\to (V,F,G)$}
+Before we proof the recursion theorem, we will show how unique readability easily follows from it.
+\note{}{Recusion Theorem implies unique readability for propositional formulas.
+    What we need to check is that 
+    \textbf{Claim:} The Assumptions of recursion theorem are satisfied.
+    \begin{claimproof}
+        {$\mathcal{F}_\lor$ is one to one, suppose $(\alpha \lor \beta) = (\delta \lor \gamma)$ then $\alpha \lor \beta) = \delta \lor \gamma)$
+            And $\alpha,\delta$ are prop. formulas, so they equal to each other (else one is an initial segment of the other, hence not a prop. fla.)
+            By the same argument we get $\beta$ is equal to $\gamma$.
+        }
+    \end{claimproof}
+    \textbf{Claim: }Disjointment of ranges
+\begin{claimproof}
+    \begin{itemize}
+        \item if $(\alpha\lor \beta)$ is $A$ then $A$ starts with $($ 
+        \item if $(\alpha\lor \beta)$ is $(\gamma \to \delta)$ then by the same argument $\alpha$ is $\gamma$ but $\lor$ and $\to$ are diffrent
+        \item 
+    \end{itemize}
+
+\end{claimproof}
+    
+
+}
+\subsubsection*{Proof of the Rec Thm.}
+$v:C\to V$ TODO partial function pfeil nur oben is called acceptable if $\forall x,y\in C$ 
+\begin{enumerate}
+    \item if $x\in B\cap dom(v)$ then $v(x)=h(x)$
+    \item if $f(x,y)\in dom(v)$ then $x,y\in dom(v)$ and similarly for $g$
+    \begin{itemize}
+        \item $v(f(x,y)) = F(v(x),v(y))$
+        \item $v(g(x)) = G(v(x))$
+    \end{itemize}
+\end{enumerate}
+And when $\mathcal{U} = \{\varGamma_v : v \text{acceptable} \}$, we define
+$\overline{h}\defeq \text{function w/ graph} \bigcup\mathcal{U}$
+
+\textbf{Claim 1:} $\overline{h}$ is a function.
+\begin{claimproof}
+    $$S\defeq \{x\in \mathcal{C} : \exists \text{at most one $y$ w/} (x,y)\in \bigcup \mathcal{U}\}$$
+    We want $S = C$, we have $S\subseteq C$,
+    it is enough to show that $S$ is inductive.
+    \begin{itemize}
+        \item $x\in B\cap dom(v)$ for some $v$ acceptable.
+        then $v(x) = h(x)$ by 1.
+        also $x\notin rng f|_{C^2}$ and $x\notin rng g|_C$
+        \item $x,y in \mathcal{S}$
+        We want $f(x,y),g(x)\in S$
+        there are $v_1,v_2$ acceptable s.t. $f(x,y)\in dom(v_1)\cap dom(v_2)$
+    \end{itemize}
+\end{claimproof}
+\textbf{Claim 2:} $\overline{h}$ is acceptable.
+\begin{claimproof}
+    $\overline{h}: C \rightharpoonup V$ by definition.
+    if $x\in B\cap dom \overline{h}$ then there is a $v$ acceptable, s.t. $x\in dom(v)$
+    then $\overline{h}(x) = v(x)=h(x)$
+    if $f(x,y)\in dom \overline{h}$ then $f(x,y)\in dom (v)$ form some $v$ acceptable.
+    Hence $x,y\in dom(v)$ and therefore $x,y\in dom (\overline{h})$
+    and we have $$\overline{h}(f(x,y)) = v(f(x,y)) = F(v(x),v(y)) = F(\overline{h}(x),\overline{h}(y))$$
+\end{claimproof}
+\textbf{Claim 3:} The domain of $\overline{h}$ equals $\mathcal{C}$. 
+\begin{claimproof}
+    it is enough to show that the domain of $\overline{h}$ is inductive. 
+    $B\subseteq dom (\overline{h})$ bc. $B\subseteq dom (h)$ where $h$ is acceptable.
+    Now we need to show closure under $f,g$. suppose $x',y'\in dom (\overline{h})$ then $x'\in dom (v_1)$ 
+    for some acceptable $v_i$ lets assume $f(x',y')\notin dom (\overline{h})$
+    then we extend $\overline{h}$ to a function with the same graph as $\overline{h}$.
+    Then
+    $\varGamma \cup \{(f(x',y'),F(\overline{x'},\overline{y'}))\}$ 
+    is the graph of an acceptable function.
+\end{claimproof}
+\textbf{Claim 4:} Suppose both $\overline{h},\overline{\overline{h}}$ work, we schow that $S=\{x\in C: \overline{h}(x),\overline{\overline{h}}(x)\}$ is the whole set $C$.
+it is enough to show that $S$ is inductive.
+
+Let $x\in B$ then $\overline{h}(x) = h(x) = \overline{\overline{h}}(x)$.
+Then for $x,y\in S$ \[\overline{h}(f(x,y)) = F(\overline{h}(x),\overline{h}(y))=  F(\overline{\overline{h}}(x),\overline{\overline{h}}(y))=\overline{\overline{h}}\dots \]
 \section{Sentential connectives}
-\defin{Tautological equivalence relation}{For $\alpha,\beta$ prop. sent. we define $\alpha ~ \beta$ 
+\defin{Tautological equivalence relation}{For $\alpha,\beta$ prop. sent. we define $\alpha \sim \beta$ 
 iff $\alpha \sledom\models  \beta$. This defines an equivalent relation.}
 \bsp{}{$A \to B \sledom\models  \lnot A \lor B$}
 \note{}{

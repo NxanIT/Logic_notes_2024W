@@ -10,9 +10,9 @@
         \item parameters
         \begin{itemize}
             \item quantifier symbol: $\forall$ (the range is subject of interpretation)
-            \item predicate symbols: $\forall n>0$ we have a set of $n$-ary predicates
-            \item constant symbols: Some set of constants (could be $\varnothing$)
-            \item function symbols: $\forall n>0$ we have a set of $n$-ary function symbols
+            \item predicate symbols: for every $n>0$ we have a set of $n$-ary predicates $P$
+            \item constant symbols: Some set of constants (could also be $\varnothing$)
+            \item function symbols: for every $n>0$ we have a set of $n$-ary function symbols
         \end{itemize}
     \end{enumerate}
 }
@@ -24,7 +24,7 @@
 }
 \bsp{}{
     \begin{itemize}
-        \item $\mathcal{L}_\text{set} = \{\in\}$, \quad $=$ included
+        \item $\mathcal{L}_\text{set} = \{\in\}$, \quad $=$ included and the binary predicate symbol $\in$ "element in"
         \item $\mathcal{L}_\text{arith} = \{<,0,S,E,+,\cdot\}$
         \begin{itemize}
             \item [$=$] included
@@ -34,68 +34,240 @@
             \item [$E$] exponentiation TODO
             \item [$+,\cdot$] binary function symbols
         \end{itemize}
+        \item $\mathcal{L}_\text{ring} = \{=,+,\cdot,-,0,1\}$
+        \begin{itemize}
+            \item [$=$] included
+            \item [$0,1$] are constants
+            \item [$-$] is a unary function symbol (additive inverse)
+            \item [$+,\cdot$] binary function symbols
+        \end{itemize}
     \end{itemize}
 }
 
 \section{Formulas}
 \defin{Expression}{An \graybf{expression} is any finite sequence of symbols.
-    There exist two kinds of expressions
+    There exist two kinds of expressions that makes sense "grammatically"
     \begin{itemize}[leftmargin=1.6cm]
         \item[Terms:] \begin{itemize}
-            \item the names of objects
-            \item they are built up from variables and constants (by use of polish notation)
+            \item points to an object
+            \item they are built up from variables and constants using function symbols %(by use of polish notation)
         \end{itemize}
         \item[Formulas:]\begin{itemize}
             \item They express assertions about objects,
             \item they are built up from atomic formulas 
-            \item atomic formulas these are built up from terms using predicate symbols and $=$
+            \item atomic formulas these are built up from terms using predicate symbols and $=$, if included
         \end{itemize}
     \end{itemize}
 }
-\defin{Building Operations}{
-    $\forall n>0$ and for every $n$-place function symbol $f$ let $\mathcal{F}_f$ be an $n$-place term building operation,
-    that is $\mathcal{F}_f (\alpha_1,\dots \alpha_n)\defeq f(\alpha_1,\dots \alpha_n)$
-    The Set of Terms we then define as the set of expressions that are built up from variables and constants by applying the building operations
+\defin{Term Building Operations}{
+    For every $n>0$ and for every $n$-place function symbol $f$ let $\mathcal{F}_f$ be an $n$-place term building operation,
+    that is $\mathcal{F}_f (t_1,\dots t_n)\defeq ft_1,\dots t_n$ (polish notation for $f(t_1,\dots t_n)$).
+    The Set of Terms we then define as the set of expressions that are built up from variables and constants by applying the term building operations
     finitely many times.
 }
 \bsp{}{Let $\mathcal{L} = \mathcal{L}_{arith}$ then the set of terms will contain $0$, $v_{42}$, $S0$, $SSS0$, $Sv_1$, $+SOv_1$}
 \defin{Atomic formula}{Any expression of the form 
-    $$t_1=t_2 \text{ of } P(t_1,\dots t_n), \text{ where $t_1,\dots t_n$ are terms and $P$ is an $n$-ary predicate symbol}$$}
+    $$=t_1t_2 \text{ or } Pt_1,\dots t_n, \text{ where $t_1,\dots t_n$ are terms and $P$ is an $n$-ary predicate symbol}$$}
 \note{}{Atomic formulas are not defined inductively.}
 \bsp{}{\emph{cont.}\quad $=v_1 v_{42}$, $<S0 SS0$ are atomic formulas, but $\lnot = v_1 v_{42}$ is not.}
-\defin{Formulas}{Let $\varepsilon_\lnot$, $\varepsilon_\to, Q_i$ be fla. building operations
-    $\varepsilon_\lnot(\alpha) = (\lnot \alpha)$, $\varepsilon_\to = (\alpha \to \beta)$ and
-    $Q_i(\gamma) = \forall v_i \gamma$
+\defin{Formulas}{We define $\varepsilon_\lnot$, $\varepsilon_\to, Q_i$ to be the fla. building operations, defined as follows
+    $\varepsilon_\lnot(\alpha) \defeq (\lnot \alpha)$, $\varepsilon_\to \defeq (\alpha \to \beta)$ and
+    $Q_i(\gamma) \defeq \forall v_i \gamma$.
     The set of formulas is the set of expressions built up from atomic formulas by applying the fla. building operations finitely many times.
 }
+\bsp{}{\emph{cont.} $\forall v_1 (=Sv_10)$ is a formula we get by applying $Q_1$ on the atomic formula $=Sv_1 0$.}
 \subsubsection*{Free variables}
-\bsp{}{"Every non-zero natual number is a succsesor" $\forall x (x\neq 0\to \exists y S(y)=x)$
-    is different then "if a number is not $0$, then it is a succsesor" $x\neq 0\to \exists y S(y)=x$. In the latter, $x$ occures free in the fla.
+\bsp{}{We introduce the $\exists$\outernote{$\exists$ quantifier} quantifier by defining $\exists y \alpha$ means $\lnot \forall y \lnot \alpha$.\\
+    "Every non-zero natual number is a succsesor" $\forall x (x\neq 0\to \exists y S(y)=x)$
+    is different then "if a number is not $0$, then it is a succsesor" $x\neq 0\to \exists y S(y)=x$. 
+    $x$ occurs bounded\outernote{bounded variable} in the first formula, for the latter $x$ occures free in the fla.
+
+    If you have an expression without free variables, it is either true or false, on the other hand
+    if a variable occurs free in a formula, the truth value of it depends on the variable itself.
 }
 \defin{Free variables}{
-    Let $x$ be a variable. $x$ occurs \graybf{free in $\phi$} is defined inductively as follows:
+    Let $x$ be a variable. $x$ occurs \graybf{free in $\varphi$} is defined inductively as follows:
     \begin{enumerate}
-        \item If $\phi$ is an atomic fla. then $x$ occurs \graybf{free} in $\phi$ iff $x$ occurs in $\phi$
-        \item If $\phi = (\lnot \alpha)$ then $x$ occurs free in $\phi$ iff $x$ occurs free in $\alpha$
-        \item If $\phi = (\alpha \to \beta)$ then $x$ occurs free in $\phi$ iff $x$ occurs free in $\alpha$ or $\beta$
-        \item If $\phi = \forall v_i \alpha$ then $x$ occurs free in $\phi$ iff $x$ occurs free in $\alpha$ and $x\lnot v_i$
+        \item If $\varphi$ is an atomic fla. then $x$ occurs \graybf{free} in $\varphi$ iff $x$ occurs in $\varphi$
+        \item If $\varphi = (\lnot \alpha)$ then $x$ occurs free in $\varphi$ iff $x$ occurs free in $\alpha$
+        \item If $\varphi = (\alpha \to \beta)$ then $x$ occurs free in $\varphi$ iff $x$ occurs free in $\alpha$ or $\beta$
+        \item If $\varphi = \forall v_i \alpha$ then $x$ occurs free in $\varphi$ iff $x$ occurs free in $\alpha$ and $x\lnot v_i$
     \end{enumerate}
+    A formula $\alpha$ is called a sentence, if no variable occurs free in $\alpha$
 }
-TODO
+\note{}{The above definition makes sense thanks to the recursion theorem.
+    def function $h$ on the set of atoms: $h(\alpha) = \text{the set of var occ in fla } \alpha$, which is the set of all variables $v_i$ that occur free in $\alpha$.
+    we now want to extend $h$ to $\overline{h}$, which is the set of all formulas.
+    \begin{itemize}
+        \item $\overline{h}(\lnot \alpha) = \overline{h}(\alpha)$
+        \item $\overline{h}( \alpha \to \beta) = \overline{h}(\alpha)\cup \overline{h}(\beta)$
+        \item $\overline{h}(Q_i(\alpha)) = \overline{h}(\alpha)\backslash \{v_i\}$
+    \end{itemize}
+    We say $x$ occurs free in $\alpha$ iff $x\in \overline{h}(\alpha)$.
+}
+\note{}{We will now use $\lnot, \land,\lor,\to, \leftrightarrow, \exists v_i$ (all can be expressed in terms of $\lnot,\to,Q_i$.)
+    We will sometimes drop the $(,)$ and not always be using polish notation.
+}
 \section{Semantics of first order logic}
+The equivalent scheme to our TA in predicate logic. The meaning of formulas is given by \emph{structures}, 
+which also determine the scope of the quantifier $\forall$, the meaning of all parameters.
 \defin{structure}{A \graybf{structure} $\mathcal{A}$ for a first order language $\mathcal{L}$ is a non-empty set
-    set $A$ called \graybf{universe} or \graybf{underlying set of $\mathcal{A}$} together with an interpretation of each parameter of $\mathcal{L}$ i.e.
+    set $A$ called \graybf{universe} or \graybf{underlying set of $\mathcal{A}$} together with an interpretation of each parameters of $\mathcal{L}$ i.e.
     \begin{itemize}
         \item $\forall$ ranges over the universe $A$
-        \item for an $n$-ary pred. symbol $P\in \mathcal{L}$ its interpretation $P\mathcal{A}$ is a subset of $A^n$
-        \item for a constant $c\in \mathcal{L}$ its interpretation $c\mathcal{A}$ is an element of $A$
+        \item for an $n$-ary pred. symbol $P\in \mathcal{L}$ its interpretation $P^\mathcal{A}$ is a subset of $A^n$
+        \item for a constant $c\in \mathcal{L}$ its interpretation $c^\mathcal{A}$ is an element of $A$
         \item for an $n$-ary function symbol $f\in \mathcal{L}$ its interpretation $f^\mathcal{A}$ is a total function $f^\mathcal{A}: A^n \to A$
     \end{itemize}
-}   
+}
+\note{}{$A\neq \varnothing$, and all functions $f^\mathcal{A}$ are total.}
 \bsp{}{Let $\mathcal{L} = \{\in\}$ where $\in$ is a binary relation "
     An example of an $\mathcal{L}$ structure is $(\NN, \in^\NN)$ where $\in^\NN = \{(x,y)\in \NN^2 : x<y\}$}
+\defin{}{Let $\varphi$ be a $\mathcal{L}$-fla. and $\mathcal{A}$ a $\mathcal{L}$-structure. 
+    Let $V$ be the set of all variables in $\mathcal{L}$ and $s:V\to A$ an assignment.
+    We define the extention $\overline{s}$ of $s$ to the set of all $\mathcal{L}$-terms by
+    \begin{itemize}
+        \item $x\in V$ then $\overline{s}(x) \defeq s(x)$
+        \item $c\in \mathcal{L}$ a constant symbol, then $\overline{s}(c) \defeq c^\mathcal{A}$
+        \item $t_1,\dots t_n$ $\mathcal{L}$-terms and $f\in \mathcal{L}$ an $n$-ary function symbol, then 
+        $\overline{s}(ft_1\dots t_n) \defeq f^\mathcal{A}(\overline{s}(t_1),\dots \overline{s}(t_n))$
+    \end{itemize}
+}
 
-\section{logical implication}
+\note{}{in the previous definition point 3. for $n=1$ yields a commutative diagram.
+
+}
+\prop{}{For any given assignment $s$ there exists a unique extention $\overline{s}$ as in the previous definition.}
+{
+    will follow from recursion theorem and unique decomposition of terms.
+}
+\section{Definition of truth}
+\defin{}{ We define '$\mathcal{A}$ satisfy $\varphi$ with $s$' and write
+    $\mathcal{A}\models \varphi [s]$ inductively over the complexity of the formula$\varphi$
+    \begin{itemize}
+        \item if $\varphi$ is atomic: \begin{itemize}
+            \item $\mathcal{A} \models = t_1,t_2 [s] \overline{s}(t_1) = \overline{s}(t_2)$
+            \item $\mathcal{A} \models P t_1,\dots t_n [s] (\overline{s}(t_1),\dots \overline{s}(t_2))\in P^\mathcal{A}$
+        \end{itemize}
+        \item suppose $\mathcal{A}\models \varphi [s]$ and $\mathcal{A}\models \psi [s]$ are defined, then
+        \begin{itemize}
+            \item $\mathcal{A}\models \lnot\varphi [s]$ iff $\mathcal{A}\nvDash \varphi [s]$
+            \item $\mathcal{A}\models \varphi\to \psi [s]$ iff $\mathcal{A}\models \psi [s]$ or $\mathcal{A}\nvDash  \varphi [s]$
+            \item $\mathcal{A}\models \forall x \varphi [s]$ iff for all $a\in A$ $\mathcal{A}\models \varphi [s(x| a)]$
+            where 
+            \begin{equation*}
+                s(x|a)(v) = \begin{cases}
+                s(v) \text{ if } v \neq x\\
+                a \text{ if } v = x
+            \end{cases}
+            \end{equation*}
+            
+        \end{itemize}
+    \end{itemize}
+}
+\bsp{}{
+    $L = \{\forall, \leq, S, 0\}$ 
+    a $L$-structure then could be $\mathcal{N} = (\NN,\leq^\mathcal{N},S^\mathcal{N},0^\mathcal{N})$ and TODO
+    $s: v_n \mapsto n-1$ then $s(v_1) = 0$ 
+    \begin{itemize}
+        \item $\overline{s}(0) = 0^\mathcal{N}$ (a constant is always mapped to its realisation, the interpretation of constant $0$ in the structure $\mathcal{N}$)
+        \item $\overline{s}(Sv_1) = S^\mathcal{N}(\overline{s}(v_1)) = S^\mathcal{N}(0) = 1$\\
+        \item $\mathcal{N}\models \forall v_1 (S(v_1) \neq v_1) [s]$\\
+            iff for all $a\in \NN$ we have that $\mathcal{N}\models (S(v_1) \neq v_1) [s(v_1 | a)]$\\
+            iff \dots \\
+            iff for all $a\in \NN$ we have $S^\mathcal{A}(a) \neq a$, which is true in our structure of the natural numbers.
+        \item Is it true in $\mathcal{N}$ that $\mathcal{N}\models S(0) \leq S(v_1) [s]$? Yes because
+        \begin{equation*}
+            \begin{split}
+                &\mathcal{N}\models S(0) \leq S(v_1) [s] \\
+                &iff 1\leq 1
+            \end{split}
+        \end{equation*}
+        
+    \end{itemize}
+}
+\note{}{To know wheter $\mathcal{A}\models \varphi [s]$ it suffices to know where $s$ maps the variables that are free in $\varphi$}
+
+\prop{}{Suppose $s_1,s_2:V\to A$ agree on all variables that occur free in $\phi$ then 
+ $$\mathcal{A}\models \varphi [s_1] \text{iff }\mathcal{A}\models \varphi [s_2]$$
+}{
+    By complexity of $\varphi$
+    \begin{itemize}
+        \item if $\varphi$ is $P t_1,\dots t_n$ 
+        note: any var that occur in $\varphi$ occur free in $\varphi$, so $s_1,s_2$ agree on all variables that occur in the terms $t_1,\dots t_n$.\\
+        So we Claim: for $t$ a term, $s_1,s_2$ assignments that agree on all variables of $t$ then $\overline{s}_1(t) = \overline{s}_2(t)$
+        \begin{claimproof}
+            By complexity of $t$
+            \begin{itemize}
+                \item[$t = v_m$] then  $\overline{s}_1(t) ={s}_1(v_m) = {s}_2(v_m) =\overline{s}_2(t)$
+                \item[$t = c$] then  $\overline{s}_1(t) =c^\mathcal{A} =\overline{s}_2(t)$
+                \item[$t = ft_1\dots t_n$] inductively, assume $\overline{s}_1(t_i) =\overline{s}_2(t_i)$ for all $1\leq i\leq n$ then  TODO
+            \end{itemize}
+        \end{claimproof}
+        \item $\varphi: =t_1,t_2$ is similar
+        \item $\varphi: \lnot \alpha$ then $\mathcal{A}\models \lnot \alpha [s_1]$ iff $\mathcal{A}\vDash \alpha [s_1]$iff $\mathcal{A}\vDash \alpha [s_2]$ iff $\mathcal{A}\models \lnot \alpha [s_1]$
+        \item $\varphi: \alpha \to \beta$ then $\mathcal{A}\models  \alpha \to \beta [s_1]$ iff .. or .. iff for s2 iff ... or .. 
+        \item $\varphi: \forall x \alpha$ then the assumption is that $s_1,s_2$ .. the free variables of $\alpha$ are the free variables of $\varphi$ exept for $x$.
+        but because $s_1(x|a) = s_2(x|a)$ they both agree on all free variables of $\alpha$.
+        \[\begin{split}
+            \mathcal{A}\models \forall x \varphi [s_1] &iff for all a\in A \mathcal{A}\models \varphi [s_1(x| a)]\\
+            & iff for all a\in A \mathcal{A}\models \varphi [s_2(x| a)]\\
+            & iff \mathcal{A}\models \forall x \varphi [s_2]
+        \end{split}\]
+    \end{itemize}
+    
+}
+Notation: $\mathcal{A}\models \varphi $TODO means that all free variables of $\varphi$ are among $v_1,\dots v_n$ and $\mathcal{A}\models \varphi [s]$ whenever $s(v_i) = a_i$ for all $1\leq i\leq n$.
+\coroll{If $\sigma$ is a sentence then $\mathcal{A}\models \varphi [s]$ for all $s:V\to A$ or 
+$\mathcal{A}\vDash \varphi [s]$ for all $s:V\to A$.
+
+Notation: $\mathcal{A}\models \sigma$ "$\sigma$ is true in $\mathcal{A}$, $\mathcal{A}$ is a model of $\sigma$ or $\sigma$ holds in $\mathcal{A}$.
+}
+\note{}{If $\sigma$ is a sentence then we can not have  $\mathcal{A}\models \sigma$ and  $\mathcal{A}\vDash \sigma$ because $A\neq \varnothing$.}
+\defin{}{$\mathcal{A}$ is a model of a set of sentences $\Sigma$ iff for every sentence $\sigma\in \Sigma$ it holds  $\mathcal{A}\models \sigma$ }
+\bsp{}{$\mathcal{L} = \{0,1,+,-,\cdot\}$
+A realisation could be $\mathcal{R} = (\RR, 0,1,+,-,\cdot)$ or $\mathcal{C} = (\mathbb{C}, 0,1,+,-,\cdot)$
+then the sentence 
+$\sigma: \quad \exists x (x\cdot x = -1)$ then $\mathcal{R}\vDash \sigma$ but $\mathcal{C}\models \sigma$
+
+}
+\note{}{$\land,\lor,\leftrightarrow,\exists$ work as expected. That is 
+ $\mathcal{A}\models (\alpha \land \beta) [s]$ iff $\mathcal{A}\models \alpha [s]$ and $\mathcal{A}\models \beta [s]$
+ $\mathcal{A}\models (\alpha \lor \beta) [s]$ iff $\mathcal{A}\models \alpha [s]$ or $\mathcal{A}\models \beta [s]$
+ $\mathcal{A}\models \exists x \alpha [s]$ iff $\mathcal{A}\models \lnot \forall x \lnot \alpha [s]$\\
+ iff $\mathcal{A}\vDash \forall x \lnot \alpha [s]$\\
+ iff it is not true that forall $a \in A$ $\mathcal{A}\models \lnot \alpha [s(x|a)]$\\
+ iff there is $a\in A$ such that $\mathcal{A}\models \alpha [s(x|a)]$
+}
+
+
+\section{Logical implication}
+Let $\Gamma$ be a set of $\mathcal{L}$-formulas, $\varphi$ a $\mathcal{L}$-formula.
+\defin{}{
+    $\Gamma \models \varphi$ "$\Gamma$ logically implies $\varphi$" if for every $L$-structure $\mathcal{A}$ and for every $s:V\to A$ 
+
+    if $\mathcal{A}\models \gamma [s]$for every $\gamma \in \Gamma$  then $\mathcal{A}\models \varphi [s]$
+
+}
+
+\defin{}{$\varphi,\psi$ are called logically equivalent if 
+$\varphi \models \psi$ and $\psi \models \varphi$.
+}
+\defin{}{$\varphi$ is called valid iff $\models \varphi$ i.e. $\varnothing\models \varphi$ i.e. for every $\mathcal{L}$-structure $\mathcal{A}$ and every $s:V\to A$ it is $\mathcal{A}\models \varphi [s]$
+}
+\bsp{}{
+\begin{enumerate}
+    \item $\forall x_1 P x_1 \models P x_2$\\
+    Suppose $\mathcal{A}\models \forall x_1 P x_1 [s]$.
+    then for all $a\in A$ it is $\mathcal{A}\models P x_1 [s(x_1|a)]$ in particular, $a\in P^\mathcal{A}$ for $a = s(x_2)$
+    \item  $\forall P x_2 \vDash \forall x_1 P x_1$\\
+    We need a counterexample to $\forall P x_2 \models \forall x_1 P x_1$. Let $A = \{a_1,a_2\}$ $s(x_2) = a_1$ and $P^\mathcal{A} = \{a_1\}$
+    then $\mathcal{A}\models Px_2[s]$.
+    \item Is the following valid? $\models \exists x(Px \to \forall y P y)$ yes
+    \item $\Gamma,\alpha\models \varphi$ iff $\Gamma \models \alpha \to \varphi$. (on next problem set, quite impoirtant)
+\end{enumerate}
+
+}
 \section{definability in a structure}
 \section{Homomorphisms of structures}
 \section{A parsing algorithm for first order logic}
