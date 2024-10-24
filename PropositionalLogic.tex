@@ -179,7 +179,7 @@ That there is a unique way to perform the algorithm is implied by \ref{NoPropIni
     \item if the first symbol of label under consideration is not a left parenthesis, then halt and return: "$\tau$ is not a prop. sent."
     \item if the second symbol of the label is "$\lnot$" then GOTO 6.
     \item scan the expression from left to right\\
-    if we reach a proper initial segment of the form "$(\beta$" where $\# lp(\beta) = \#rp(\beta)$ and $\beta$ is followed by one of thesection
+    if we reach a proper initial segment of the form\addAbbrev{lp / rp}{left / right parenthesis} "$(\beta$" where $\# lp(\beta) = \#rp(\beta)$ and $\beta$ is followed by one of thesection
     $\land,\lor,\to,\leftrightarrow$ and the remainder of the expression is of the form $\beta')$, where $\# lp(\beta') = \#rp(\beta')$
     \begin{itemize}
         \item [Then:] create two child nodes (left,right) to the selected element and label them (left $\defeq \beta$, right $\defeq \beta'$) GOTO 1.

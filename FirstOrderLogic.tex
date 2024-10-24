@@ -141,7 +141,7 @@ which also determine the scope of the quantifier $\forall$, the meaning of all p
 {
     will follow from recursion theorem and unique decomposition of terms.
 }
-\section{Definition of truth}
+\subsection*{Definition of truth}
 \defin{}{ We define '$\mathcal{A}$ satisfy $\varphi$ with $s$' and write
     $\mathcal{A}\models \varphi [s]$ inductively over the complexity of the formula$\varphi$
     \begin{itemize}
@@ -210,9 +210,9 @@ which also determine the scope of the quantifier $\forall$, the meaning of all p
         \item $\varphi: \forall x \alpha$ then the assumption is that $s_1,s_2$ .. the free variables of $\alpha$ are the free variables of $\varphi$ exept for $x$.
         but because $s_1(x|a) = s_2(x|a)$ they both agree on all free variables of $\alpha$.
         \[\begin{split}
-            \mathcal{A}\models \forall x \varphi [s_1] &iff for all a\in A \mathcal{A}\models \varphi [s_1(x| a)]\\
-            & iff for all a\in A \mathcal{A}\models \varphi [s_2(x| a)]\\
-            & iff \mathcal{A}\models \forall x \varphi [s_2]
+            \mathcal{A}\models \forall x \varphi [s_1] &\iif \fora a\in A \mathcal{A}\models \varphi [s_1(x| a)]\\
+            & \iif \fora a\in A \mathcal{A}\models \varphi [s_2(x| a)]\\
+            & \iif \mathcal{A}\models \forall x \varphi [s_2]
         \end{split}\]
     \end{itemize}
     
@@ -266,10 +266,120 @@ $\varphi \models \psi$ and $\psi \models \varphi$.
     \item Is the following valid? $\models \exists x(Px \to \forall y P y)$ yes
     \item $\Gamma,\alpha\models \varphi$ iff $\Gamma \models \alpha \to \varphi$. (on next problem set, quite impoirtant)
 \end{enumerate}
+}
+
+\section{definability in a structure}
+\bsp{}{
+    \begin{enumerate}
+        \item $x = x$ would define the entire universe.
+        \item $\lnot x = x$ would define the empty set.
+    \end{enumerate}
+}
+\defin{definability in a structure}{ 
+    We say that a general $n$-ary relation $P$ on $A$ (we will just call it $P$, it does not have to be in the language) is definable in $\mathcal{A}$, if there is a $\mathcal{L}$-formula
+    $\varphi$ with free variables among $\{v_1,\dots,v_n\}$ such that 
+    \[P = \{(a_1,\dots a_n) : \mathcal{A} \models \varphi [a_1,\dots a_n]\}\]
+    We also say that $\varphi$ defines $P$ in the structure $\mathcal{A}$.
+}
+\bsp{}{
+\begin{enumerate}
+    \item decomposition
+    \item $\mathcal{R} = (\RR,0,1,+,-,\cdot)$ Q: is $[0,\infty)$ definable in $\mathcal{R}$
+    Yes because $\exists y (y\cdot y = x)$
+    Indeed we can even define the $\leq$ relation on $\RR^2$ by $x\leq z \defaq \exists y (x+y\cdot y = z)$ 
+\end{enumerate}
+}
+\defin{definability of classes of structures}{
+    Let $\Sigma$ be a set of sentences. $\tau$ a sentence.
+    We will say that the class of models of $\Sigma$ is the class $Mod \Sigma =\{\mathcal{A} : \mathcal{A}\models \Sigma\}$.
+    Let $K$ be a class of structures. We are going to call $K$ an elementary class (EC) if there is a single sentence $\tau$ such that $Mod \tau = K$
+    $K$ is an elementary class in the wider sence (EC$\Delta$) if there is a set of sentences $\Sigma$ such that $Mod \Sigma = K$
 
 }
-\section{definability in a structure}
+\bsp{}{$\mathcal{L} = \{0,1,+,\cdot\}$ 
+    $\tau$ is a sentence that expresses the field axioms (the unary inverse functions are not in our language but are definable.)
+    $Mod \tau$ is the class of all the fields, which is EC.
+    the class of all fields of characteristic $0$. Let $\sigma_p: \lnot(1 + \dots +1 = 0)$ then $\Sigma = \{\tau\} \cup \{\sigma_p : p\in \mathbb{P}\}$ 
+    yields $Mod \Sigma$ is the class of fields with characteristic $0$, therefore EC$\Delta$, we will later see that it is not $EC$.
+
+}
+\bsp{}{
+    Let $E$ be a binary relation, $\mathcal{L} = \{E\}$ then a graph is a realisation $\mathcal{G} = (V,E^\mathcal{G})$ 
+    such that $v\neq \varnothing$, $E^\mathcal{G}$ is irreflexive and symmetric.
+    By definition the universe is not empty, we still have to check irreflexive and symmetric.
+    \begin{itemize}
+        \item irreflexive: $\forall x (\lnot x E x)$
+        \item symmetric: $\forall x \forall y (x E y \to y E x)$
+    \end{itemize}
+    We take $\tau$ to be $\forall x \forall y ((\lnot x E x)\land (x E y \to y E x))$
+    Then $Mod \tau$ is the class of all graphs and is EC
+    Note: the class of all finite graphs is neither EC nor EC$\Delta$. proof later.
+}
+We want to have some notion that tells us when two graphs are the same or at least similar.
 \section{Homomorphisms of structures}
+\defin{}{
+    Suppose that $\mathcal{A},\mathcal{B}$ are two $\mathcal{L}$-structures. then a Homomorphism of $\mathcal{A}$ into $\mathcal{B}$ is a map
+    $h: A \to B$ that satisfy the below conditions
+    \begin{itemize}
+        \item for every $n$-ary predicate $P\in \mathcal{L}$ it is $(a_1,\dots a_n)\in P^\mathcal{A}$ iff $(h(a_1),\dots h(a_n))\in P^\mathcal{B}$ (this def. a strong Homomorphism, other textbooks maybe only reqire $\to$ direction)
+        \item for every $n$-ary function $f\in \mathcal{L}$ and for all $\underline{a} = (a_1,\dots a_n)\in A^n$ it holds $h(f^\mathcal{A}(\underline{a})) = f^\mathcal{B}(h(a_1),\dots h(a_n))$
+        \item for every constant symbol $c\in \mathcal{L}$ it is $h(c^\mathcal{A}) = c^\mathcal{B}$ (could also skip this if we consider constants as $0$-ary functions)
+    \end{itemize}
+}
+\note{}{Intuativly a Homomorphism of $\mathcal{A}$ into $\mathcal{B}$ is a map $A \to B$ that preserve all funciton and relation symbols in some sense, (imp: not the definable relations)}
+\defin{}{
+    \begin{itemize}
+        \item $h:A\to B$  is called isomorphism of $\mathcal{A}$ into $\mathcal{B}$ if $h$ is a Homomorphism and injective (in other textbooks: an isomorphic embedding of $\mathcal{A}$ into $\mathcal{B}$)
+        \item $h:A\to B$  is called isomorphism of $\mathcal{A}$ onto $\mathcal{B}$ if $h$ is a Homomorphism and bijective $A\to B$
+        \item $\mathcal{A}$ and $\mathcal{B}$ are called isomorphic if there is an isomorphism of $\mathcal{A}$ onto $\mathcal{B}$
+    \end{itemize}
+}
+\bsp{}{
+    $\mathcal{L}= \{+,\cdot\}$
+    $\mathcal{N} = (\NN, +^\NN, \cdot^\NN)$ and $\mathcal{B} = (B,+^\mathcal{B},\cdot^\mathcal{B})$ where $B = \{0,1\}$ and 
+    \begin{tabular}{c|c c}
+        $+^\mathcal{B}$ & $e$ & 0\\\hline
+        $e$ & $e$ & 0\\
+        0 & 0 & $e$
+    \end{tabular}
+    \begin{tabular}{c|c c}
+        $\cdot^\mathcal{B}$ & $e$ & 0\\\hline
+        $e$ & $e$ & $e$\\
+        0 & $e$ & 0
+    \end{tabular}
+    let $h:\NN \to B$ a Homomorphism?
+    $h(n) = \begin{cases}
+        e & \text{ if $n$ is even}\\
+        0 & \text{ else}
+    \end{cases}$
+    need at first that $h(m+n ) = h(m) +^\mathcal{B} h(n)$
+    and $h(m\cdot n) = h(m)\cdot^\mathcal{B} h(n)$.
+    it is indeed a Homomorphism.
+}
+\defin{}{Suppose we have two $\mathcal{L}$ structures and $A\subseteq B$ hen $\mathcal{A}$ is a substructure of $\mathcal{B}$ (notation: $\mathcal{A}\subseteq \mathcal{B}$ or we might say $\mathcal{B}$ is an extention of $\mathcal{A}$ ) if
+    \begin{itemize}
+        \item for every $n$-ary relation $P^\mathcal{A} = P^\mathcal{B}|_A$
+        \item for every $n$-ary function $f^\mathcal{A} = f^\mathcal{B}|_A$
+        \item for every constant symbol $c$ in $\mathcal{L}$ it is $c^\mathcal{A} = c^\mathcal{B}$
+    \end{itemize}
+}
+\bsp{}{
+    $\mathcal{L} = \{\leq\}$ then $\mathcal{N} = (\NN, \leq)$ and $\mathcal{P} = (\NN^+, \leq ^\mathcal{P})$ where $\leq^\mathcal{P}$ is the restriction of $\leq$ to the positive natual numbers.
+    $\mathcal{P} \subseteq \mathcal{N}$ and there exists a isomorphic embedding $id: \NN^+\to \NN$ from $\mathcal{P}$ into $\mathcal{N}$
+    They are even isomorphic ($h:\NN \to \NN^+, h(n) = n+1$) so in fact $\mathcal{P} \cong \mathcal{N}$.
+}
+\bsp{}{
+    $(\mathbb{Q},+)\subseteq(\mathbb{C},+)$
+}
+\note{}{If $\mathcal{A}\subseteq \mathcal{B}$ then in particular $\mathcal{A}$ is closed under all constant and functions in $\mathcal{B}$
+    So suppose that $\mathcal{B}$ is a substructure and $A\subseteq B$ and $A\neq \varnothing$ and $A$ is closed under $f^\mathcal{B}$, $c^\mathcal{B}$ 
+    Can then $A$ be made into a substructure $\mathcal{A}$ of $\mathcal{B}$.
+    $f^\mathcal{A}$ would be the restriction of $f^\mathcal{B}$ to $A^n$, constants $c^\mathcal{A} = c^\mathcal{B}$ 
+    and if $P \in \mathcal{L}$ is an $n$-ary predicate then $P^\mathcal{A}$ should be $P^\mathcal{B}\cap A^n$.
+    If $\mathcal{L}$ has no const. or fuction symbols then any subset can be made into a substructure of a structure on $\mathcal{L}$.
+}
+Our next question will be: what is the relation of the above notions with truth and satisfiability
+The answer will be given by the so called Homomorphism theorem.
 \section{A parsing algorithm for first order logic}
 \section{Unique readability for terms}
 \section{Deductions (formal proofs)}
