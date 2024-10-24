@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.4.21)  24 OCT 2024 16:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.4.21)  24 OCT 2024 21:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -942,44 +942,62 @@ File: ot1txtt.fd 2000/12/15 v3.1
 
 LaTeX Warning: Marginpar on page 2 moved.
 
+<./images//1-extree.png, id=132, 1578.49725pt x 1236.41925pt>
+File: ./images//1-extree.png Graphic file (type png)
+<use ./images//1-extree.png>
+Package pdftex.def Info: ./images//1-extree.png  used on input line 33.
+(pdftex.def)             Requested size: 170.71652pt x 133.70485pt.
 [2
 
-{C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}]
+{C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc} <./images//1-extree.png>]
 
 LaTeX Warning: Marginpar on page 3 moved.
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 100--101
+
+ []
+
+
 LaTeX Warning: Marginpar on page 3 moved.
 
-LaTeX Font Info:    Font shape `OT1/txtt/m/it' in size <10> not available
-(Font)              Font shape `OT1/txtt/m/sl' tried instead on input line 107.
 [3]
-Overfull \hbox (38.51268pt too wide) in paragraph at lines 170--170
+LaTeX Font Info:    Font shape `OT1/txtt/m/it' in size <10> not available
+(Font)              Font shape `OT1/txtt/m/sl' tried instead on input line 114.
+ [4]
+Overfull \hbox (38.51268pt too wide) in paragraph at lines 178--178
 \OML/cmm/m/it/10 PF \OT1/cmr/m/n/10 = []$,
  []
 
-[4]
-<./images//1-parsing-alg-ex.png, id=183, 1578.49725pt x 1236.41925pt>
+<./images//1-parsing-alg-ex.png, id=186, 1578.49725pt x 1236.41925pt>
 File: ./images//1-parsing-alg-ex.png Graphic file (type png)
 <use ./images//1-parsing-alg-ex.png>
-Package pdftex.def Info: ./images//1-parsing-alg-ex.png  used on input line 201.
-(pdftex.def)             Requested size: 157.85896pt x 123.64917pt.
- [5]
-Overfull \hbox (10.52559pt too wide) in paragraph at lines 289--289
+Package pdftex.def Info: ./images//1-parsing-alg-ex.png  used on input line 220.
+(pdftex.def)             Requested size: 199.16928pt x 156.00471pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[5] [6
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.276 }
+        <./images//1-parsing-alg-ex.png>]
+Overfull \hbox (10.52559pt too wide) in paragraph at lines 298--298
 \OT1/cmr/m/n/10 Note\OT1/txtt/m/n/10 : []\OT1/cmr/m/n/10 if given con-di-tions are sat-is-fied then $\OML/cmm/m/it/10 h$ \OT1/cmr/m/n/10 ex-tends uniquely to a ho-mo-mor-phism $(\OML/cmm/m/it/10 C; f; g\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 !
  []
 
-[6] [7] [8
+[7] [8] [9
 pdfTeX warning (ext4): destination with the same identifier (name{corollcount.1.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.448     }
-           ]
-Underfull \hbox (badness 10000) in paragraph at lines 522--522
+l.531 }
+       ]
+Underfull \hbox (badness 10000) in paragraph at lines 531--531
 
  []
 
-[9]) (FirstOrderLogic.tex [10]
+) (FirstOrderLogic.tex [10]
 Chapter 2.
 [11
 
@@ -1027,17 +1045,17 @@ Package logreq Info: Writing requests to 'lecture_notes.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32551 strings out of 476331
- 630220 string characters out of 5788237
- 1874660 words of memory out of 5000000
- 52308 multiletter control sequences out of 15000+600000
+ 32561 strings out of 476331
+ 630451 string characters out of 5788237
+ 1875660 words of memory out of 5000000
+ 52316 multiletter control sequences out of 15000+600000
  535437 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  101i,21n,104p,750b,1465s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Nxan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qagb.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txbtt.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txtt.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txtt.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on lecture_notes.pdf (22 pages, 467566 bytes).
+Output written on lecture_notes.pdf (22 pages, 889619 bytes).
 PDF statistics:
- 595 PDF objects out of 1000 (max. 8388607)
- 198 named destinations out of 1000 (max. 500000)
- 170 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 601 PDF objects out of 1000 (max. 8388607)
+ 199 named destinations out of 1000 (max. 500000)
+ 175 words of extra memory for PDF output out of 10000 (max. 10000000)
 
