@@ -1109,14 +1109,14 @@ INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\helvetic\phvrc7
 INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvr8r.tfm
 INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvr8r.tfm
 INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\txttsl.tfm
-INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
-INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT .\images\\1-parsing-alg-ex.png
 INPUT images\\1-parsing-alg-ex.png
 INPUT .\images\\1-parsing-alg-ex.png
 INPUT .\images\\1-parsing-alg-ex.png
 INPUT .\images\\1-parsing-alg-ex.png
 INPUT .\images\\1-parsing-alg-ex.png
+INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
+INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT .\FirstOrderLogic.tex
 INPUT FirstOrderLogic.tex
 INPUT .\FirstOrderLogic.tex

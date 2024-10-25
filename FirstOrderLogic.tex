@@ -31,7 +31,7 @@
             \item [$<$] is a binary rel. symbol
             \item [$0$] is a constant
             \item [$S$] is a unary function symbol
-            \item [$E$] exponentiation TODO
+            \item [$E$] exponentiation function symbol
             \item [$+,\cdot$] binary function symbols
         \end{itemize}
         \item $\mathcal{L}_\text{ring} = \{=,+,\cdot,-,0,1\}$
@@ -123,7 +123,7 @@ which also determine the scope of the quantifier $\forall$, the meaning of all p
 \note{}{$A\neq \varnothing$, and all functions $f^\mathcal{A}$ are total.}
 \bsp{}{Let $\mathcal{L} = \{\in\}$ where $\in$ is a binary relation "
     An example of an $\mathcal{L}$ structure is $(\NN, \in^\NN)$ where $\in^\NN = \{(x,y)\in \NN^2 : x<y\}$}
-\defin{}{Let $\varphi$ be a $\mathcal{L}$-fla. and $\mathcal{A}$ a $\mathcal{L}$-structure. 
+\defin{Extention of an assigment}{Let $\varphi$ be a $\mathcal{L}$-fla. and $\mathcal{A}$ a $\mathcal{L}$-structure. 
     Let $V$ be the set of all variables in $\mathcal{L}$ and $s:V\to A$ an assignment.
     We define the extention $\overline{s}$ of $s$ to the set of all $\mathcal{L}$-terms by
     \begin{itemize}
@@ -142,8 +142,8 @@ which also determine the scope of the quantifier $\forall$, the meaning of all p
     will follow from recursion theorem and unique decomposition of terms.
 }
 \subsection*{Definition of truth}
-\defin{}{ We define '$\mathcal{A}$ satisfy $\varphi$ with $s$' and write
-    $\mathcal{A}\models \varphi [s]$ inductively over the complexity of the formula$\varphi$
+\defin{Satisfy}{ We define '$\mathcal{A}$ satisfies $\varphi$ with $s$' and write
+    $\mathcal{A}\models \varphi [s]$ inductively over the complexity of the formula $\varphi$
     \begin{itemize}
         \item if $\varphi$ is atomic: \begin{itemize}
             \item $\mathcal{A} \models = t_1,t_2 [s] \overline{s}(t_1) = \overline{s}(t_2)$
@@ -166,10 +166,11 @@ which also determine the scope of the quantifier $\forall$, the meaning of all p
     \end{itemize}
 }
 \bsp{}{
-    $L = \{\forall, \leq, S, 0\}$ 
-    a $L$-structure then could be $\mathcal{N} = (\NN,\leq^\mathcal{N},S^\mathcal{N},0^\mathcal{N})$ and TODO
-    $s: v_n \mapsto n-1$ then $s(v_1) = 0$ 
+    $\mathcal{L} = \{\forall, \leq, S, 0\}$ 
+    a $\mathcal{L}$-structure then could be $\mathcal{N} = (\NN,\leq^\mathcal{N},S^\mathcal{N},0^\mathcal{N})$ together with an assignment
+    $s: v_n \mapsto n-1$ then:
     \begin{itemize}
+        \item $s(v_1) = 0$
         \item $\overline{s}(0) = 0^\mathcal{N}$ (a constant is always mapped to its realisation, the interpretation of constant $0$ in the structure $\mathcal{N}$)
         \item $\overline{s}(Sv_1) = S^\mathcal{N}(\overline{s}(v_1)) = S^\mathcal{N}(0) = 1$\\
         \item $\mathcal{N}\models \forall v_1 (S(v_1) \neq v_1) [s]$\\
@@ -188,7 +189,7 @@ which also determine the scope of the quantifier $\forall$, the meaning of all p
 }
 \note{}{To know wheter $\mathcal{A}\models \varphi [s]$ it suffices to know where $s$ maps the variables that are free in $\varphi$}
 
-\prop{}{Suppose $s_1,s_2:V\to A$ agree on all variables that occur free in $\phi$ then 
+\prop{}{Suppose $s_1,s_2:V\to A$ agree on all variables that occur free in $\varphi$ then 
  $$\mathcal{A}\models \varphi [s_1] \text{iff }\mathcal{A}\models \varphi [s_2]$$
 }{
     By complexity of $\varphi$
@@ -224,7 +225,7 @@ $\mathcal{A}\vDash \varphi [s]$ for all $s:V\to A$.
 Notation: $\mathcal{A}\models \sigma$ "$\sigma$ is true in $\mathcal{A}$, $\mathcal{A}$ is a model of $\sigma$ or $\sigma$ holds in $\mathcal{A}$.
 }
 \note{}{If $\sigma$ is a sentence then we can not have  $\mathcal{A}\models \sigma$ and  $\mathcal{A}\vDash \sigma$ because $A\neq \varnothing$.}
-\defin{}{$\mathcal{A}$ is a model of a set of sentences $\Sigma$ iff for every sentence $\sigma\in \Sigma$ it holds  $\mathcal{A}\models \sigma$ }
+\defin{Model}{$\mathcal{A}$ is a model of a set of sentences $\Sigma$ iff for every sentence $\sigma\in \Sigma$ it holds  $\mathcal{A}\models \sigma$ }
 \bsp{}{$\mathcal{L} = \{0,1,+,-,\cdot\}$
 A realisation could be $\mathcal{R} = (\RR, 0,1,+,-,\cdot)$ or $\mathcal{C} = (\mathbb{C}, 0,1,+,-,\cdot)$
 then the sentence 
@@ -243,17 +244,17 @@ $\sigma: \quad \exists x (x\cdot x = -1)$ then $\mathcal{R}\vDash \sigma$ but $\
 
 \section{Logical implication}
 Let $\Gamma$ be a set of $\mathcal{L}$-formulas, $\varphi$ a $\mathcal{L}$-formula.
-\defin{}{
+\defin{Logical implication}{
     $\Gamma \models \varphi$ "$\Gamma$ logically implies $\varphi$" if for every $L$-structure $\mathcal{A}$ and for every $s:V\to A$ 
 
     if $\mathcal{A}\models \gamma [s]$for every $\gamma \in \Gamma$  then $\mathcal{A}\models \varphi [s]$
 
 }
 
-\defin{}{$\varphi,\psi$ are called logically equivalent if 
+\defin{Logical equivalence}{$\varphi,\psi$ are called logically equivalent if 
 $\varphi \models \psi$ and $\psi \models \varphi$.
 }
-\defin{}{$\varphi$ is called valid iff $\models \varphi$ i.e. $\varnothing\models \varphi$ i.e. for every $\mathcal{L}$-structure $\mathcal{A}$ and every $s:V\to A$ it is $\mathcal{A}\models \varphi [s]$
+\defin{Valid}{$\varphi$ is called valid iff $\models \varphi$ i.e. $\varnothing\models \varphi$ i.e. for every $\mathcal{L}$-structure $\mathcal{A}$ and every $s:V\to A$ it is $\mathcal{A}\models \varphi [s]$
 }
 \bsp{}{
 \begin{enumerate}
@@ -317,7 +318,7 @@ $\varphi \models \psi$ and $\psi \models \varphi$.
 }
 We want to have some notion that tells us when two graphs are the same or at least similar.
 \section{Homomorphisms of structures}
-\defin{}{
+\defin{Homomorphism}{
     Suppose that $\mathcal{A},\mathcal{B}$ are two $\mathcal{L}$-structures. then a Homomorphism of $\mathcal{A}$ into $\mathcal{B}$ is a map
     $h: A \to B$ that satisfy the below conditions
     \begin{itemize}
@@ -327,11 +328,11 @@ We want to have some notion that tells us when two graphs are the same or at lea
     \end{itemize}
 }
 \note{}{Intuativly a Homomorphism of $\mathcal{A}$ into $\mathcal{B}$ is a map $A \to B$ that preserve all funciton and relation symbols in some sense, (imp: not the definable relations)}
-\defin{}{
+\defin{Isomorphism}{
     \begin{itemize}
         \item $h:A\to B$  is called isomorphism of $\mathcal{A}$ into $\mathcal{B}$ if $h$ is a Homomorphism and injective (in other textbooks: an isomorphic embedding of $\mathcal{A}$ into $\mathcal{B}$)
         \item $h:A\to B$  is called isomorphism of $\mathcal{A}$ onto $\mathcal{B}$ if $h$ is a Homomorphism and bijective $A\to B$
-        \item $\mathcal{A}$ and $\mathcal{B}$ are called isomorphic if there is an isomorphism of $\mathcal{A}$ onto $\mathcal{B}$
+        \item \outernote{isomorphic}$\mathcal{A}$ and $\mathcal{B}$ are called isomorphic if there is an isomorphism of $\mathcal{A}$ onto $\mathcal{B}$
     \end{itemize}
 }
 \bsp{}{
@@ -356,7 +357,7 @@ We want to have some notion that tells us when two graphs are the same or at lea
     and $h(m\cdot n) = h(m)\cdot^\mathcal{B} h(n)$.
     it is indeed a Homomorphism.
 }
-\defin{}{Suppose we have two $\mathcal{L}$ structures and $A\subseteq B$ hen $\mathcal{A}$ is a substructure of $\mathcal{B}$ (notation: $\mathcal{A}\subseteq \mathcal{B}$ or we might say $\mathcal{B}$ is an extention of $\mathcal{A}$ ) if
+\defin{Substructure}{Suppose we have two $\mathcal{L}$ structures and $A\subseteq B$ hen $\mathcal{A}$ is a substructure of $\mathcal{B}$ (notation: $\mathcal{A}\subseteq \mathcal{B}$ or we might say $\mathcal{B}$ is an extention of $\mathcal{A}$ ) if
     \begin{itemize}
         \item for every $n$-ary relation $P^\mathcal{A} = P^\mathcal{B}|_A$
         \item for every $n$-ary function $f^\mathcal{A} = f^\mathcal{B}|_A$
