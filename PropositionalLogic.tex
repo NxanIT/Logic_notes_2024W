@@ -218,6 +218,14 @@ That there is a unique way to perform the algorithm is implied by \ref{NoPropIni
         \caption{title}
     \end{figure}
 }
+
+\tikz\node {$((\lnot(A_1\to A_2))\lor A_4)$}
+child { node {$A_3$}}
+child { node {$(\lnot(A_1 \to A_2))$}
+child { node {$(A_1 \to A_2$)} 
+child { node {$A_1$}  }
+child { node {$A_2$}  }} };
+
 Back to proving the existence and uniqueness of $\overline{\nu}$ in \ref{ThrmUniqueExt}.
 Let $\alpha$ be a prop. sent. of $\overline{S}$. We apply the parsing algorithm to $\alpha$ to get a unique construction tree
 For the leaves, use $\nu$ go get the truth values then work our way up using the conditions (1-6) in \ref{TAConditions}.
