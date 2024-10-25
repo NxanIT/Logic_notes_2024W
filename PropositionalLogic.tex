@@ -26,7 +26,7 @@ The Language \outernote{Language} of Propositional logic is a set containing
     Equivalently stated every prop. sentence is built up by applying finitly many formula building operations on atoms and the prop. sent. returned from building operations.
     \[\mathcal{E}_\lnot, \mathcal{E}_\lnot(\alpha) \defeq (\lnot \alpha) \text{ for any prop. fla. $\alpha$ and similarly for } \mathcal{E}_\land,\mathcal{E}_\lor \mathcal{E}_\to, \mathcal{E}_\leftrightarrow\]
     This allows us to symbolize the \graybf{expression tree} (Here for example for $((\lnot(A_1\to A_2))\lor A_3))$
-    \begin{figure}[h]
+    \begin{figure}[H]
         \centering\includegraphics[width = 6cm]{1-extree.png}
     \end{figure}
     
@@ -43,7 +43,7 @@ truth value a given prop. sentence might have.
         \item or $\alpha_i= \mathcal{E}_{\square }(\alpha_j,\alpha_k)$ for some $j,k<i$ and $\square\in\{\land,\lor,\to,\leftrightarrow\}$
     \end{itemize}
 }
-\defin{}{Let $S$ be a set. We say $S$ is \graybf{closed}\outernote{closure} under an $n$-ary operational symbol $f$
+\defin{Closedness of a set}{Let $S$ be a set. We say $S$ is \graybf{closed}\outernote{closure} under an $n$-ary operational symbol $f$
     iff for all $s_1,s_2,\dots s_n\in S$ it holds $f(s_1,s_2,\dots s_n)\in S$ 
 }
 \addAbbrev{sent.}{sentence(s)}
@@ -200,6 +200,13 @@ That there is a unique way to perform the algorithm is implied by \ref{NoPropIni
         \item [Else:] HALT and return: "$\tau$ is not a prop. sent."
     \end{itemize}
 \end{enumerate}
+\bsp{}{The parsing algorithm applied to $((\lnot (A_1\to A_2))\lor A_3)$ returns the following construction tree.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width = 6cm]{1-parsing-alg-ex}
+    \end{figure}
+}
 \subsection*{Correctness of the parsing algorithm}
 \begin{itemize}
     \item The algorithm always halts, because the length of a childs label is less than the label of a parent.
@@ -210,60 +217,52 @@ That there is a unique way to perform the algorithm is implied by \ref{NoPropIni
     (This also works under the assumption that a longer choice exists).
     \item rejections are made correctly
 \end{itemize}
-\bsp{}{The parsing algorithm applied to $((\lnot (A_1\to A_2))\lor A_3)$ returns the following construction tree.
 
-    \begin{figure}[h]
-        \centering
-        \includegraphics[width = 7cm]{1-parsing-alg-ex}
-        \caption{title}
-    \end{figure}
-}
 Back to proving the existence and uniqueness of $\overline{\nu}$ in \ref{ThrmUniqueExt}.
 Let $\alpha$ be a prop. sent. of $\overline{S}$. We apply the parsing algorithm to $\alpha$ to get a unique construction tree
 For the leaves, use $\nu$ go get the truth values then work our way up using the conditions (1-6) in \ref{TAConditions}.
-\subsection*{A more formal notation}
-TODO
-
-
+%\subsection*{A more formal notation}
 \section{Induction and recursion}
 \subsubsection*{Generalization of induction principle:}
-Let $\mathcal{U}$ be a set and $B\subseteq \mathcal{U}$ our initial set.
-$\mathcal{F} = \{f,g\}$ a class of functions containing just $f$ and $g$, where $$f:\mathcal{U}\times \mathcal{U}\to \mathcal{U}, \qquad g: \mathcal{U}\to \mathcal{U}$$
-We want to construct the smallest subset $\mathcal{C}\subseteq \mathcal{U}$ such that $B\subseteq \mathcal{C}$ and $\mathcal{C}$ is closed under all elements of $\mathcal{F}$.
-\defin{Closedness, Inductiveness}{ We say $\mathcal{S}\subseteq \mathcal{U}$ is 
+Let $U$ be a set and $B\subseteq U$ our initial set.
+$\mathcal{F} = \{f,g\}$ a class of functions containing just $f$ and $g$, where $$f:U\times U\to U, \qquad g: U\to U$$
+We want to construct the smallest subset $C\subseteq U$ such that $B\subseteq C$ and $C$ is closed under all elements of $\mathcal{F}$.
+\defin{Closedness, Inductiveness}{ We say $\mathcal{S}\subseteq U$ is 
     \begin{itemize}
-        \item\graybf{closed} under $f$ and $g$ iff for all $x,y\in \mathcal{S}$ it holds $ f(x,y)\in \mathcal{S}$ and $ g(x)\in \mathcal{S}$
-        \item\graybf{inductive} if $B\subseteq \mathcal{S}$ and $\mathcal{S}$ is closed under $\mathcal{F}$
+        \item\graybf{closed}\outernote{closed} under $f$ and $g$ iff for all $x,y\in \mathcal{S}$ it holds $ f(x,y)\in \mathcal{S}$ and $ g(x)\in \mathcal{S}$
+        \item\graybf{inductive}\outernote{inductive} if $B\subseteq \mathcal{S}$ and $\mathcal{S}$ is closed under $\mathcal{F}$
     \end{itemize}
 }
-One way is from the top down $\mathcal{C}^* \defeq \bigcap_{\mathcal{S} \text{inductive}}{S}$
-Another is from bottom up: We call $c_1 \defeq \mathcal{B}$, 
+\noindent One way is from the top down $$C^* \defeq \bigcap_{B\subseteq \mathcal{S} \text{ inductive}}{S}$$
+Another is from bottom up: We call $C_1 \defeq B$, 
 $$C_i \defeq C_{i-1} \cup \{f(x,y) : x,y\in C_{i-1}\}\cup \{g(x) : x\in C_{i-1}\}$$
 and $C_* \defeq \bigcup_{n\geq 1}{C_{n}}$
 Exercise: show that $C^* = C_*\eqdef C$.
-Example:
 \bsp{}{
     \begin{enumerate}
-        \item Let $\mathcal{U}$ be the set of all expressions, $\mathcal{B}$ the set of atoms and $\mathcal{F}=\{\mathcal{E}_\square:  \square in \{\lnot, \land,\lor,\to,\leftrightarrow \}\}$
-    Then $\mathcal{C}$ would be the set of all propositional formulas.
-        \item Let $\mathcal{U}$ be $\RR$, $\mathcal{B}$ the set containing $0$ and $\mathcal{F}=\{S\}$, $S(x) = x+1$
-        Then $\mathcal{C}$ would be the set of the natural numbers.
+        \item Let $U$ be the set of all expressions, $B$ the set of atoms and \\
+        $\mathcal{F}=\{\mathcal{E}_\square:  \square \in \{\lnot, \land,\lor,\to,\leftrightarrow \}\}$
+    Then $C$ would be the set of all propositional formulas.
+        \item Let $U$ be $\RR$, $B$ the set containing $0$ and $\mathcal{F}=\{S\}$, $S(x) = x+1$
+        Then $C$ would be the set of the natural numbers.
     \end{enumerate}
     
 }
 \subsubsection*{Induction principle}
-$\mathcal{C}$ generated from $\mathcal{B}$ by use of elements of $\mathcal{F}$ if $S\subseteq C$ such that $\mathcal{B}\subseteq S$ and $S$ is closed under all
+$C$ generated from $B$ by use of elements of $\mathcal{F}$ if $S\subseteq C$ such that $B\subseteq S$ and $S$ is closed under all
 elements of $\mathcal{F}$, then $S = C$
-proof: 
-$S\subseteq C$ is clear. 
-$S$ is inductive, so $C\subseteq S$.
-Question: under what conditions do we get "generalized unique readability?"
-The goal would be to define a function on $\mathcal{C}$ recursively i.e. to have rules for computing $\overline{h}(x)$ for $x\in B$
-with some rules of computing $\overline{h}(f(x,y))$ and $\overline{h}(g(x))$ from $\overline{h}(x)$ and $\overline{h}(y)$.
+\begin{proof}
+    $S\subseteq C$ is clear.
+    $S$ is inductive, so $C\subseteq S$.
+\end{proof}
 
+Question: under what conditions do we get "generalized unique readability?"
+The goal would be to define a function on $C$ recursively i.e. to have rules for computing $\overline{h}(x)$ for $x\in B$
+with some rules of computing $\overline{h}(f(x,y))$ and $\overline{h}(g(x))$ from $\overline{h}(x)$ and $\overline{h}(y)$.
+\newpage
 \bsp{}{
-    Suppose that $G$ is some additive group, generated from $\mathcal{B}$ (the set of generators), 
-    $h = \mathcal{B}\to H$ where $(H,\cdot,^{-1},1)$ a group.
+    Suppose that $G$ is some additive group, generated from $B$ (the set of generators), 
+    $h = B\to H$ where $(H,\cdot,^{-1},1)$ a group.
     When is there an extention $\overline{h}$ of $h$ s.th.
     $\overline{h}:G\to H$ is a grouphomomorphism.
     \begin{itemize}
@@ -271,55 +270,58 @@ with some rules of computing $\overline{h}(f(x,y))$ and $\overline{h}(g(x))$ fro
         \item $\overline{h}(a+b) = \overline{h}(a)\cdot \overline{h}(b)$
         \item $\overline{h}(-a) = \overline{h}(a)^{-1}$
     \end{itemize}
-    This is not always possible. \textbf{Note:} that it is possible if $G$ is generated freely by the elements of $\mathcal{B}$ and the set of atoms is independent
-    (one element of $\mathcal{B}$ cannot be generated in finitly many steps by other elements of $\mathcal{B}$).
+    This is not always possible. \textbf{Note:} that it is possible if $G$ is generated freely by the elements of $B$ and the set of atoms is independent
+    (one element of $B$ cannot be generated in finitly many steps by other elements of $B$).
 }
-\defin{}{$\mathcal{C}$ is freely generated from $\mathcal{B}$ by $f,g$ if 
+\defin{Freely generated set}{$C$ is freely generated from $B$ by $f,g$ if 
     \begin{itemize}
-        \item $\mathcal{C}$ is generated from $\mathcal{B}$ by $f,g$ 
+        \item $C$ is generated from $B$ by $f,g$ 
         \item $f|_{C^2}$ and $g|_C$ are such that\begin{itemize}
             \item $f|_{C^2}$ and $g|_C$ are one-to-one (injective)
-            \item $rng(f|_{C^2})$ and $rng(g|_{C})$ and $\mathcal{B}$ are p.w. disjoint
+            \item $rng(f|_{C^2})$ and $rng(g|_{C})$ and $B$ are p.w. disjoint
         \end{itemize}
     \end{itemize}
 }
-\prop{recursion Theorem}{
+\prop{Recursion Theorem}{
     $C\subseteq U$ freely generated from $B$ by $f,g$ and $V$ a set and $h:B\to V$, $F:V^2\to V$, $G:V\to V$
-    Then $\exists ! \overline{h}:\mathcal{C}\to V$ s.that 
+    Then $\exists ! \overline{h}:C\to V$ s.that 
     \begin{itemize}
-        \item for all $a$ in $\mathcal{B}$ it holds $\overline{h}(a) = h(a)$
-        \item for all $x,y$ in $\mathcal{C}$ it holds
+        \item for all $a$ in $B$ it holds $\overline{h}(a) = h(a)$
+        \item for all $x,y$ in $C$ it holds
         \begin{enumerate}
             \item $\overline{h}(f(x,y)) = F(\overline{h}(x),\overline{h}(y))$
             \item $\overline{h}(g(x)) = G(\overline{h}(x))$
         \end{enumerate}
     \end{itemize}
 }{}
-\note{}{if given conditions are satisfied then $h$ extends uniquely to a homomorphism $(C,f,g)\to (V,F,G)$}
+\note{}{if given conditions are satisfied then $h$ extends uniquely to a homomorphism 
+$$(C,f,g)\to (V,F,G)$$}
 Before we proof the recursion theorem, we will show how unique readability easily follows from it.
+
 \note{}{Recusion Theorem implies unique readability for propositional formulas.
     What we need to check is that 
-    \textbf{Claim:} The Assumptions of recursion theorem are satisfied.
+    the Assumptions of recursion theorem are satisfied.
+    
+    \textbf{Claim:} The formula building operations are one-to-one.
     \begin{claimproof}
         {$\mathcal{F}_\lor$ is one to one, suppose $(\alpha \lor \beta) = (\delta \lor \gamma)$ then $\alpha \lor \beta) = \delta \lor \gamma)$
             And $\alpha,\delta$ are prop. formulas, so they equal to each other (else one is an initial segment of the other, hence not a prop. fla.)
             By the same argument we get $\beta$ is equal to $\gamma$.
         }
     \end{claimproof}
+
     \textbf{Claim: }Disjointment of ranges
 \begin{claimproof}
     \begin{itemize}
-        \item if $(\alpha\lor \beta)$ is $A$ then $A$ starts with $($ 
-        \item if $(\alpha\lor \beta)$ is $(\gamma \to \delta)$ then by the same argument $\alpha$ is $\gamma$ but $\lor$ and $\to$ are diffrent
-        \item 
+        \item if $(\alpha\lor \beta) = A$ then $A$ starts with $($ which can not be the case
+        \item if $(\alpha\lor \beta) = (\gamma \to \delta)$ then by the same argument $\alpha$ is $\gamma$ but $\lor$ and $\to$ are diffrent
+        \item if $(\alpha \lor \beta) = (\lnot \gamma)$, then $\alpha \lor \beta) = \lnot \gamma)$, so $\alpha$ would start with a $\neq$, -no
     \end{itemize}
-
+For all other connectives the proof is similar.
 \end{claimproof}
-    
-
 }
 \subsubsection*{Proof of the Rec Thm.}
-$v:C\to V$ TODO partial function pfeil nur oben is called acceptable if $\forall x,y\in C$ 
+$v:C\rightharpoonup  V$ is called acceptable if $\forall x,y\in C$ 
 \begin{enumerate}
     \item if $x\in B\cap dom(v)$ then $v(x)=h(x)$
     \item if $f(x,y)\in dom(v)$ then $x,y\in dom(v)$ and similarly for $g$
@@ -328,12 +330,12 @@ $v:C\to V$ TODO partial function pfeil nur oben is called acceptable if $\forall
         \item $v(g(x)) = G(v(x))$
     \end{itemize}
 \end{enumerate}
-And when $\mathcal{U} = \{\varGamma_v : v \text{acceptable} \}$, we define
-$\overline{h}\defeq \text{function w/ graph} \bigcup\mathcal{U}$
+And when $U = \{\varGamma_v : v \text{acceptable} \}$, we define
+$\overline{h}\defeq \text{function w/ graph} \bigcup U$
 
 \textbf{Claim 1:} $\overline{h}$ is a function.
 \begin{claimproof}
-    $$S\defeq \{x\in \mathcal{C} : \exists \text{at most one $y$ w/} (x,y)\in \bigcup \mathcal{U}\}$$
+    $$S\defeq \{x\in C : \exists \text{at most one $y$ w/} (x,y)\in \bigcup U\}$$
     We want $S = C$, we have $S\subseteq C$,
     it is enough to show that $S$ is inductive.
     \begin{itemize}
@@ -354,7 +356,7 @@ $\overline{h}\defeq \text{function w/ graph} \bigcup\mathcal{U}$
     Hence $x,y\in dom(v)$ and therefore $x,y\in dom (\overline{h})$
     and we have $$\overline{h}(f(x,y)) = v(f(x,y)) = F(v(x),v(y)) = F(\overline{h}(x),\overline{h}(y))$$
 \end{claimproof}
-\textbf{Claim 3:} The domain of $\overline{h}$ equals $\mathcal{C}$. 
+\textbf{Claim 3:} The domain of $\overline{h}$ equals $C$. 
 \begin{claimproof}
     it is enough to show that the domain of $\overline{h}$ is inductive. 
     $B\subseteq dom (\overline{h})$ bc. $B\subseteq dom (h)$ where $h$ is acceptable.
@@ -379,8 +381,9 @@ iff $\alpha \sledom\models  \beta$. This defines an equivalent relation.}
     define $0,1$ as the $0$-place boolean functions.\\
     If $\alpha$ is a prop. sent. then it determines a $k$-place boolean function, 
     where $k$ is the number of atoms, $\alpha$ is built up from.
-    If $\alpha$ is $A_1\lor \lnot A_2$ then $B_\alpha: \{0,1\}^2\to \{0,1\}$ and asign its values corresponding a truth table.
-    TODO extend / rearange function
+    If $\alpha$ is $(A_1\lor \lnot A_2)$ then $B_\alpha: \{0,1\}^2\to \{0,1\}$ and asign its values corresponding a truth value of $\alpha$.
+    That is for any TA $v:\{A_1,A_2\}\to \{0,1\}$ we define $B_\alpha(v(A_1),v(A_2)) = \overline{v}(\alpha)$
+    %TODO extend / rearange function %edit 24.10. what does that mean?
 }
 \prop{}{If $\alpha,\beta$ are prop. sent. with at most $n$ prop. Atoms (combined), then
     \begin{enumerate}
@@ -397,10 +400,10 @@ iff $\alpha \sledom\models  \beta$. This defines an equivalent relation.}
         \item if $G$ is constantly equal to $0$ then set $\alpha$ to $A_1 \land \lnot A_1$.
         \item Otherwise the set of inputs $\{\vec{x}_1,\vec{x}_2,\dots \vec{x}_k\}$ for which $G(\vec{x}_i)=1$ holds is not empty.\\
         We denote $\vec{x}_i = (x_{i1},x_{i2},\dots x_{in})$ and define a matrix $(x_{ij})_{k\times n}$
-        We further set $\beta_{ij} = \begin{cases}
+        We further set $$\beta_{ij} = \begin{cases}
             A_j & \text{iff } x_{ij}=1\\
             \lnot A_j & \text{iff } x_{ij}=0
-        \end{cases}$\\
+        \end{cases}$$\\
         \graybf{Example:} 
         \begin{equation*}
             (x_{ij})=
@@ -434,7 +437,7 @@ iff $\alpha \sledom\models  \beta$. This defines an equivalent relation.}
 }
 \note{}{We used the observation that, if $\alpha \sledom \models \beta$ and we replace a subsequence of $\alpha$ by a so called tautological equivalence 
     then the result is also tautologically equivalent to $\beta$}
-TODO S.10
+%TODO S.10 %edit 24.10: no longer needed as is similar to proof below
 \bsp{$\{\to, \land\}$ is not complete.}{Let $\alpha\in PS$ built up from only $\to,\land$ from the atoms $A_1,\dots A_n$ then we claim
     $$A_1\land A_2\land \dots \land A_n \models \alpha$$
     %Furhter we can observe that $\{\to, \lor \}$ is not complete, because if $\alpha\in PS$ is only built up from $\to,\lor$ then $\lnot \alpha$
