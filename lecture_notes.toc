@@ -14,7 +14,9 @@
 \contentsline {subsubsection}{Unique readability for terms}{19}{subsubsection*.2}%
 \contentsline {section}{\numberline {2.7}A parsing algorithm for first order logic}{20}{section.2.7}%
 \contentsline {section}{\numberline {2.8}Deductions (formal proofs)}{20}{section.2.8}%
-\contentsline {section}{\numberline {2.9}Generalization and deduction theorem}{20}{section.2.9}%
-\contentsline {chapter}{\numberline {3}Boolean Algebra}{21}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Set Theory}{23}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Axioms of ZFC}{23}{section.4.1}%
+\contentsline {subsubsection}{Logical axioms}{20}{subsubsection*.3}%
+\contentsline {subsubsection}{Ad (1): tautologies}{21}{subsubsection*.4}%
+\contentsline {section}{\numberline {2.9}Generalization and deduction theorem}{22}{section.2.9}%
+\contentsline {chapter}{\numberline {3}Boolean Algebra}{23}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Set Theory}{25}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Axioms of ZFC}{25}{section.4.1}%

@@ -502,8 +502,140 @@ The set of flas. is freely generated from the set of atomic flas. by operations 
         \item p.w. disjointness of ranges
     \end{itemize}
 \end{proof}
+
 \section{A parsing algorithm for first order logic}
 
 \section{Deductions (formal proofs)}
+\defin{Modus Ponens}{Rule of interference: $$\frac{\alpha, \alpha\to \beta}{\beta}$$
+
+}
+\defin{}{A formal proof (decuction) of a fla $\varphi$ from a set of formulas $\Sigma$ is a finite sequence of formulas 
+    $(\alpha_0,\alpha_1,\dots,\alpha_n)$ such that $\alpha_n = \varphi$ and for every $i<n$ $\alpha_i$ is either a logical axiom or $\alpha_i\in\Sigma$ or 
+    $\alpha_i$ is obtained from $\alpha_k$ and $\alpha_l$ where $0\leq k,l<i$ by the use of MP, in particular $\alpha_k = \beta \to \alpha_i$ and $\alpha_l = \beta$.
+    If a deduction of $\varphi$ from $\Sigma$ exists, we say "$\varphi$ is deducible from $\Sigma$" or "$\varphi$ is a theorem of $\Sigma$".
+}
+\note{}{Deductions are not unique. However we do have an induction principle:
+    If a set of formulas contains all logical axioms and all of $\Sigma$ and is closed under MP, then it contains all theorems of $\Sigma$.
+}
+\subsubsection{Logical axioms}
+\defin{Generalization}{$\psi$ is a generalization of $\varphi$ if $\psi = \forall x_{i_1}\dots \forall x_{i_k} \varphi$ 
+
+}
+\defin{Logical axioms}{Let $x,y$ be variables and $\alpha, \beta$ formulas. then the logical axioms are generalizations of the following formulas:
+    \begin{enumerate}
+        \item tautologies
+        \item $\forall x \alpha \to \alpha_t^x$ where $t$ is substitutable for $x$ in $\alpha$ 
+        \item $\forall x (\alpha \to \beta) \to (\forall x \alpha \to \forall x \beta)$
+        \item $\alpha\to \forall x \alpha$ where $x$ does not occur free in $\alpha$
+    \end{enumerate}
+    if our language contains $=$ then 
+    \begin{enumerate}
+        \item $x=x$ 
+        \item $x=y \to (\alpha \to \alpha')$ where $\alpha'$ is obtained from $\alpha$ by replacing some of the occurences of $x$ with $y$.
+    \end{enumerate}
+    
+}
+Ad $2)$ Substitution: 
+\defin{}{Let $\alpha,\beta$ be formulas, $x$ a variable and $t$ a term then $\alpha_t^x$ is expression obtained from $\alpha$ by substituting $t$ for $x$ 
+    We define substitution inductive as follows:
+    \begin{enumerate}
+        \item if $\alpha$ is atomic then $\alpha = \text{expression obtained from $\alpha$ by replacing all $x$'s by $t$'s
+        }$
+        \item $(\lnot \alpha)^x_t = \lnot (\alpha^x_t)$
+        \item $( \alpha\to \beta)^x_t = (\alpha^x_t)\to  (\beta^x_t)$
+        \item $(\forall y \alpha)^x_t = \begin{cases}
+            \forall y  (\alpha^x_t) &\text{ iff } x\neq y\\
+            \forall x \alpha &\text{ iff } x=y
+        \end{cases}$
+    \end{enumerate}
+}
+\bsp{}{
+    \begin{itemize}
+        \item $ \alpha^x_x = \alpha$
+        \item Let $\alpha = \lnot \forall y x = y$ what is $\forall x \alpha \to   \alpha^x_z$?
+        \[\forall x \lnot \forall y x=y \leadsto \lnot \forall y z=y\]
+        What is $\forall x \alpha \to \alpha_y^x$
+        $\forall x \lnot \forall y x=y$ is true in all structures with a universe $A$ with $|A|\geq 2$.
+        \[\forall x \lnot \forall y x=y\leadsto  \lnot \forall y y = y\]
+        and $\lnot \forall y y = y$ is an antitautology (it is always false).
+        \item 
+    \end{itemize}
+}
+So we have to define substitutable
+\defin{}{\addAbbrev{SA}{substitutable}
+    Let $x$ be a variable, $t$ a term. Then $t$ is substitutable for $x$ in $\alpha$ if
+    \begin{enumerate}
+        \item $\alpha$ atomic then $t$ is SA for $x$ in $\alpha$
+        \item then $t$ is SA for $x$ in $\lnot \alpha$ iff then $t$ is SA for $x$ in $\alpha$
+        \item then $t$ is SA for $x$ in $\alpha\to \beta$ iff then $t$ is SA for $x$ in $\alpha$ and $\beta$
+        \item then $t$ is SA for $x$ in $\forall y \alpha$ iff either
+        \begin{itemize}
+            \item $x$ does not occur free in $\forall y \alpha$ or
+            \item $y$ does not occur in $t$ and $t$ is SA for $x$ in $\alpha$
+        \end{itemize}
+    \end{enumerate}
+}
+\bsp{}{For instance the following is a logical axiom.
+    \[\forall x_3 (\forall x_1 (Ax_1 \to \forall x_2 Ax_2)\to (Ax_2\to \forall x_2 A x_2))\]
+    It is a generalization of $\forall x_1 (Ax_1 \to \forall x_2 Ax_2)\to (Ax_2\to \forall x_2 A x_2)$
+    which is by point two a substitution with $\alpha = Ax_1 \to \forall x_2 Ax_2$. Then $\alpha_{x_2}^{x_1} = Ax_2\to \forall x_2 A x_2$
+    And $x_2$ is indeed substitutable for $x_1$ in $\alpha$ because it does not get bounded.
+    
+    \[\forall x_1 (\forall x_2 B x_1 x_2 \to \forall x_2 B x_2 x_2)\]
+    is a generalization of point (2), but $x_2$ is not substitutable for $x_1$ in $\alpha = $, therefore it is not a logical axiom.
+}
+\subsubsection{Ad (1): tautologies}
+\defin{}{Tautologies are the formulas obtained from tautologies of propositional logic by replacing all propositional atoms by formulas of first order logic.
+    
+    An alternative definition is:
+    Divide all formulas of first order logic into two groups:
+    \begin{enumerate}
+        \item atomic formulas and generalizations of first order formulas (these are called prime formulas)
+        \item all other formulas i.e. of the form $\lnot \alpha$ and $\alpha \to \beta$ (non-prime formulas)
+    \end{enumerate}
+    So any first order formula is built up from the prime formulas using finitly many times the formula building operations. $\mathcal{E}_\lnot$ $\mathcal{E}_\to$ 
+    We have unique readability because the set of formulas is freely generated.
+}
+\bsp{}{\[\lnot (\forall y (Px \to Py))\to (Px\to \forall y \lnot Py)\]
+is built up from $\lnot (\forall y (Px \to Py))$ and $Px\to \forall y \lnot Py$.
+which itself $\forall y (Px \to Py)$ and 
+$Px$ and $\forall y \lnot Py$ where they are all prime formulas.
+}
+\bsp{}{Is the following a tautology?
+\[(\forall y (\lnot Py)\to \lnot Px)\to (Px\to \lnot\forall y \lnot Py)\]
+We construct the construction tree into prime formulas and then assign truth values to them and evalue the truth value of the whole formula.
+It is indeed a tautology.
+}
+\note{}{
+    \begin{itemize}
+        \item $\forall x(Px \to Px)$ is a prime formula which corresponds to a propositional atom, and therefore not a tautology.
+But it is a generalization of a tautology and therefore by (1) a logical axiom.
+        \item $\forall x Px \to Px$ is not a tautology but is a logical axiom by group (2).
+    \end{itemize}
+}
+\note{}{
+    $\Gamma \models_{\text{taut}} \varphi$ from propositional logic can be translated to first order logic.
+}
+\lemma{}{If $\Gamma\models_{\text{taut}}\varphi$ then $\Gamma \models\varphi$}{
+    Problem set.
+}
+\note{}{The converse fails. For instance $\forall x Px \models Pc$. However $Pc$ is a diffrent propositional atom 
+then $\forall x Px $ they have no connection between them when viewed in propositional logic. 
+
+We will prove $\Gamma\models \varphi$ iff $\Gamma\vdash \varphi$ (the first direction is completeness and the converse soundness.)}
+\prop{}{$\Gamma\vdash \varphi$ iff $\Gamma \cup \Lambda \models_{\text{taut}}\varphi$}{
+    \begin{itemize}
+        \item Let $\Gamma \vdash \varphi$ and $v$ be a truth assigment that satiesfies every element in $\Gamma \cup \Lambda$. Induction on deduction of $\varphi$ from $\Gamma$.
+            \begin{itemize}
+                \item if $\varphi \in \Gamma\cup \Lambda$ then we are done
+                \item if $\varphi$ is obtained from $\alpha$, $\alpha\to \varphi$ by MP then $v$ satiesfies $\alpha$ and $\alpha \to \varphi$
+                
+                $\{\alpha, \alpha\to \varphi \} \models_{\text{taut}} \varphi$
+            \end{itemize}
+        \item Assume $\Gamma \cup \Lambda \models_{\text{taut}}\varphi$. Then by the compactness theorem for propositional logic there are $\gamma_1\dots, \gamma_n\in\Gamma$ and $\lambda_1,\dots \lambda_m\in\Lambda$ such that
+            \[\gamma_1\to \gamma_2\to \dots \to \gamma_n \to \lambda_1\to \dots \to \lambda_m\]
+            is a tautology (always grouped to the left) because $\Gamma \cup \{\alpha\}\models_{\text{taut}}\beta$ iff $\Gamma \models_{\text{taut}}(\alpha \to \beta)$
+    \end{itemize}
+}
 \section{Generalization and deduction theorem}
 TODO evt noch sectioons

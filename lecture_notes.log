@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.4.21)  30 OCT 2024 11:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.4.21)  31 OCT 2024 11:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -980,7 +980,7 @@ File: ot1txtt.fd 2000/12/15 v3.1
 
 LaTeX Warning: Marginpar on page 2 moved.
 
-<./images//1-extree.png, id=132, 1578.49725pt x 1236.41925pt>
+<./images//1-extree.png, id=134, 1578.49725pt x 1236.41925pt>
 File: ./images//1-extree.png Graphic file (type png)
 <use ./images//1-extree.png>
 Package pdftex.def Info: ./images//1-extree.png  used on input line 33.
@@ -1007,7 +1007,7 @@ Overfull \hbox (38.51268pt too wide) in paragraph at lines 178--178
 \OML/cmm/m/it/10 PF \OT1/cmr/m/n/10 = []$,
  []
 
-<./images//1-parsing-alg-ex.png, id=186, 1578.49725pt x 1236.41925pt>
+<./images//1-parsing-alg-ex.png, id=188, 1578.49725pt x 1236.41925pt>
 File: ./images//1-parsing-alg-ex.png Graphic file (type png)
 <use ./images//1-parsing-alg-ex.png>
 Package pdftex.def Info: ./images//1-parsing-alg-ex.png  used on input line 209.
@@ -1051,9 +1051,9 @@ pdfTeX warning (ext4): destination with the same identifier (name{corollcount.2.
 <to be read again> 
                    \relax 
 l.496 ...oper initial segment of a fla. is a fla.}
-                                                  ) (BooleanAlgebra.tex [20]
+                                                   [20] [21]) (BooleanAlgebra.tex [22]
 Chapter 3.
-[21
+[23
 
 ]
 Overfull \hbox (20.05716pt too wide) detected at line 58
@@ -1065,15 +1065,15 @@ Overfull \hbox (28.27293pt too wide) detected at line 109
 \OT1/cmr/m/n/10 0 []= 0\OML/cmm/m/it/10 =[] \OT1/cmr/m/n/10 1 []= 1\OML/cmm/m/it/10 =[] \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a=[]\OT1/cmr/m/n/10 )[] []= \OML/cmm/m/it/10 a[]=[] a=[] \OMS/cmsy/m/n/10 _ \OML/cmm/m/it/10 b=[] []\OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 a \OMS/cmsy/m/n/10 _ \OML/cmm/m/it/10 b\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 =[] a=[] \OMS/cmsy/m/n/10 ^ \OML/cmm/m/it/10 b=[] []\OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 a \OMS/cmsy/m/n/10 ^ \OML/cmm/m/it/10 b\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 =[]
  []
 
-) (SetTheory.tex [22]
+) (SetTheory.tex [24]
 Chapter 4.
-) (lecture_notes.dfn [23
+) (lecture_notes.dfn [25
 
-])
+] [26])
 \tf@dfn=\write8
 \openout8 = `lecture_notes.dfn'.
 
- [24] [25
+ [27] [28
 
 ] 
 enddocument/afterlastpage: lastpage setting LastPage.
@@ -1085,17 +1085,17 @@ Package logreq Info: Writing requests to 'lecture_notes.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 35207 strings out of 476331
- 693774 string characters out of 5788237
+ 35241 strings out of 476331
+ 694105 string characters out of 5788237
  1875660 words of memory out of 5000000
  54901 multiletter control sequences out of 15000+600000
  535437 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  101i,21n,104p,752b,1465s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Nxan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qagb.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txbtt.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txtt.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txtt.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on lecture_notes.pdf (25 pages, 909220 bytes).
+Output written on lecture_notes.pdf (28 pages, 927915 bytes).
 PDF statistics:
- 649 PDF objects out of 1000 (max. 8388607)
- 225 named destinations out of 1000 (max. 500000)
+ 707 PDF objects out of 1000 (max. 8388607)
+ 259 named destinations out of 1000 (max. 500000)
  175 words of extra memory for PDF output out of 10000 (max. 10000000)
 
