@@ -3,11 +3,12 @@
     consists of infinetely many distinct symbols such that no symbol is a proper 
     initial segment of another symbol and the symbols are divided into 2 groups:
     \begin{enumerate}
-        \item logical symbols (These elements have a fixed meaning and the equivalence symbol $=$ is optional)
+        \item logical symbols\outernote{logical symbols}\\
+        (These elements have a fixed meaning and the equivalence symbol $=$ is optional)
         \begin{flalign*}
             (,),\lnot, \to, v_1,v_2,\dots,=&&
         \end{flalign*}
-        \item parameters
+        \item parameters\outernote{parameters}
         \begin{itemize}
             \item quantifier symbol: $\forall$ (the range is subject of interpretation)
             \item predicate symbols: for every $n>0$ we have a set of $n$-ary predicates $P$
@@ -20,6 +21,8 @@
     \begin{itemize}
         \item We could drop constants and instead introduce $0$-ary function symbols
         \item to specify language we need to specify the parameters and say if $=$ is included
+        \item In the book \cite{EndertonHerbertB2001AMIt} they assume that
+        some $n$-place predicate symbol is present for some $n$.
     \end{itemize}
 }
 \bsp{}{
@@ -62,7 +65,7 @@
 \defin{Term Building Operations}{
     For every $n>0$ and for every $n$-place function symbol $f$ let $\mathcal{F}_f$ be an $n$-place term building operation,
     that is $\mathcal{F}_f (t_1,\dots t_n)\defeq ft_1,\dots t_n$ (polish notation for $f(t_1,\dots t_n)$).
-    The Set of Terms we then define as the set of expressions that are built up from variables and constants by applying the term building operations
+    The Set of terms\outernote{term}we then define as the set of expressions that are built up from variables and constants by applying the term building operations
     finitely many times.
 }
 \bsp{}{Let $\mathcal{L} = \mathcal{L}_{arith}$ then the set of terms will contain $0$, $v_{42}$, $S0$, $SSS0$, $Sv_1$, $+SOv_1$}
@@ -73,7 +76,7 @@
 \defin{Formulas}{We define $\varepsilon_\lnot$, $\varepsilon_\to, Q_i$ to be the fla. building operations, defined as follows
     $\varepsilon_\lnot(\alpha) \defeq (\lnot \alpha)$, $\varepsilon_\to \defeq (\alpha \to \beta)$ and
     $Q_i(\gamma) \defeq \forall v_i \gamma$.
-    The set of formulas is the set of expressions built up from atomic formulas by applying the fla. building operations finitely many times.
+    The set of formulas\outernote{formula}is the set of expressions built up from atomic formulas by applying the fla. building operations finitely many times.
 }
 \bsp{}{\emph{cont.} $\forall v_1 (=Sv_10)$ is a formula we get by applying $Q_1$ on the atomic formula $=Sv_1 0$.}
 \subsubsection*{Free variables}
@@ -93,10 +96,10 @@
         \item If $\varphi = (\alpha \to \beta)$ then $x$ occurs free in $\varphi$ iff $x$ occurs free in $\alpha$ or $\beta$
         \item If $\varphi = \forall v_i \alpha$ then $x$ occurs free in $\varphi$ iff $x$ occurs free in $\alpha$ and $x\lnot v_i$
     \end{enumerate}
-    A formula $\alpha$ is called a sentence, if no variable occurs free in $\alpha$
+    A formula $\alpha$ is called a sentence,\outernote{sentence}if no variable occurs free in $\alpha$
 }
 \note{}{The above definition makes sense thanks to the recursion theorem.
-    def function $h$ on the set of atoms: $h(\alpha) = \text{the set of var occ in fla } \alpha$, which is the set of all variables $v_i$ that occur free in $\alpha$.
+    define the function $h$ on the set of atoms: $h(\alpha) = \text{the set of var occ in fla } \alpha$, which is the set of all variables $v_i$ that occur free in $\alpha$.
     we now want to extend $h$ to $\overline{h}$, which is the set of all formulas.
     \begin{itemize}
         \item $\overline{h}(\lnot \alpha) = \overline{h}(\alpha)$
@@ -115,22 +118,22 @@ which also determine the scope of the quantifier $\forall$, the meaning of all p
     set $A$ called \graybf{universe} or \graybf{underlying set of $\mathcal{A}$} together with an interpretation of each parameters of $\mathcal{L}$ i.e.
     \begin{itemize}
         \item $\forall$ ranges over the universe $A$
-        \item for an $n$-ary pred. symbol $P\in \mathcal{L}$ its interpretation $P^\mathcal{A}$ is a subset of $A^n$
+        \item for an $n$-ary pred. symbol $P\in \mathcal{L}$ its interpretation $P^\mathcal{A}$ is a subset of $A^n$\outernote{interpretation}
         \item for a constant $c\in \mathcal{L}$ its interpretation $c^\mathcal{A}$ is an element of $A$
-        \item for an $n$-ary function symbol $f\in \mathcal{L}$ its interpretation $f^\mathcal{A}$ is a total function $f^\mathcal{A}: A^n \to A$
+        \item for an $n$-ary function symbol $f\in \mathcal{L}$ its interpretation $f^\mathcal{A}$ is a total function $$f^\mathcal{A}: A^n \to A$$
     \end{itemize}
 }
 \note{}{$A\neq \varnothing$, and all functions $f^\mathcal{A}$ are total.}
 \bsp{}{Let $\mathcal{L} = \{\in\}$ where $\in$ is a binary relation "
     An example of an $\mathcal{L}$ structure is $(\NN, \in^\NN)$ where $\in^\NN = \{(x,y)\in \NN^2 : x<y\}$}
-\defin{Extention of an assigment}{Let $\varphi$ be a $\mathcal{L}$-fla. and $\mathcal{A}$ a $\mathcal{L}$-structure. 
-    Let $V$ be the set of all variables in $\mathcal{L}$ and $s:V\to A$ an assignment.
+\defin{Assigment}{Let $\varphi$ be a $\mathcal{L}$-fla. and $\mathcal{A}$ a $\mathcal{L}$-structure. 
+    Let $V$ be the set of all variables in $\mathcal{L}$ and $s:V\to A$ an assignment.\outernote{assigment}
     We define the extention $\overline{s}$ of $s$ to the set of all $\mathcal{L}$-terms by
     \begin{itemize}
-        \item $x\in V$ then $\overline{s}(x) \defeq s(x)$
-        \item $c\in \mathcal{L}$ a constant symbol, then $\overline{s}(c) \defeq c^\mathcal{A}$
-        \item $t_1,\dots t_n$ $\mathcal{L}$-terms and $f\in \mathcal{L}$ an $n$-ary function symbol, then 
-        $\overline{s}(ft_1\dots t_n) \defeq f^\mathcal{A}(\overline{s}(t_1),\dots \overline{s}(t_n))$
+        \item if $x\in V$ then $\overline{s}(x) \defeq s(x)$
+        \item for $c\in \mathcal{L}$ a constant symbol, then $\overline{s}(c) \defeq c^\mathcal{A}$
+        \item for $t_1,\dots t_n$ $\mathcal{L}$-terms and $f\in \mathcal{L}$ an $n$-ary function symbol, then 
+        $$\overline{s}(ft_1\dots t_n) \defeq f^\mathcal{A}(\overline{s}(t_1),\dots \overline{s}(t_n))$$
     \end{itemize}
 }
 
@@ -141,19 +144,20 @@ which also determine the scope of the quantifier $\forall$, the meaning of all p
 {
     will follow from recursion theorem and unique decomposition of terms.
 }
+\newpage
 \subsection*{Definition of truth}
 \defin{Satisfy}{ We define '$\mathcal{A}$ satisfies $\varphi$ with $s$' and write
-    $\mathcal{A}\models \varphi [s]$ inductively over the complexity of the formula $\varphi$
-    \begin{itemize}
+    $\mathcal{A}\models \varphi \:[s]$\outernote{$\models_\mathcal{A}$} or $\models_\mathcal{A} \varphi \:[s]$ inductively over the complexity of the formula $\varphi$
+    \begin{enumerate}
         \item if $\varphi$ is atomic: \begin{itemize}
-            \item $\mathcal{A} \models = t_1,t_2 [s] \overline{s}(t_1) = \overline{s}(t_2)$
-            \item $\mathcal{A} \models P t_1,\dots t_n [s] (\overline{s}(t_1),\dots \overline{s}(t_2))\in P^\mathcal{A}$
+            \item $\mathcal{A} \models\: = t_1,t_2 \: [s]$ iff $ \overline{s}(t_1) = \overline{s}(t_2)$
+            \item $\mathcal{A} \models P t_1,\dots t_n \: [s]$ iff $(\overline{s}(t_1),\dots \overline{s}(t_2))\in P^\mathcal{A}$
         \end{itemize}
-        \item suppose $\mathcal{A}\models \varphi [s]$ and $\mathcal{A}\models \psi [s]$ are defined, then
+        \item suppose $\mathcal{A}\models \varphi \: [s]$ and $\mathcal{A}\models \psi \: [s]$ are defined, then
         \begin{itemize}
-            \item $\mathcal{A}\models \lnot\varphi [s]$ iff $\mathcal{A}\nvDash \varphi [s]$
-            \item $\mathcal{A}\models \varphi\to \psi [s]$ iff $\mathcal{A}\models \psi [s]$ or $\mathcal{A}\nvDash  \varphi [s]$
-            \item $\mathcal{A}\models \forall x \varphi [s]$ iff for all $a\in A$ $\mathcal{A}\models \varphi [s(x| a)]$
+            \item $\mathcal{A}\models \lnot\varphi \: [s]$ iff $\mathcal{A}\nvDash \varphi \: [s]$
+            \item $\mathcal{A}\models \varphi\to \psi \: [s]$ iff $\mathcal{A}\models \psi \: [s]$ or $\mathcal{A}\nvDash  \varphi \: [s]$
+            \item $\mathcal{A}\models \forall x \varphi \: [s]$ iff for all $a\in A$ $\mathcal{A}\models \varphi [s(x| a)]$
             where 
             \begin{equation*}
                 s(x|a)(v) = \begin{cases}
@@ -163,7 +167,7 @@ which also determine the scope of the quantifier $\forall$, the meaning of all p
             \end{equation*}
             
         \end{itemize}
-    \end{itemize}
+    \end{enumerate}
 }
 \bsp{}{
     $\mathcal{L} = \{\forall, \leq, S, 0\}$ 
@@ -173,54 +177,54 @@ which also determine the scope of the quantifier $\forall$, the meaning of all p
         \item $s(v_1) = 0$
         \item $\overline{s}(0) = 0^\mathcal{N}$ (a constant is always mapped to its realisation, the interpretation of constant $0$ in the structure $\mathcal{N}$)
         \item $\overline{s}(Sv_1) = S^\mathcal{N}(\overline{s}(v_1)) = S^\mathcal{N}(0) = 1$\\
-        \item $\mathcal{N}\models \forall v_1 (S(v_1) \neq v_1) [s]$\\
+        \item $\mathcal{N}\models \forall v_1 (S(v_1) \neq v_1) \: [s]$\\
             iff for all $a\in \NN$ we have that $\mathcal{N}\models (S(v_1) \neq v_1) [s(v_1 | a)]$\\
             iff \dots \\
             iff for all $a\in \NN$ we have $S^\mathcal{A}(a) \neq a$, which is true in our structure of the natural numbers.
-        \item Is it true in $\mathcal{N}$ that $\mathcal{N}\models S(0) \leq S(v_1) [s]$? Yes because
+        \item Is it true in $\mathcal{N}$ that $\mathcal{N}\models S(0) \leq S(v_1) \: [s]$? Yes because
         \begin{equation*}
             \begin{split}
-                &\mathcal{N}\models S(0) \leq S(v_1) [s] \\
-                &iff 1\leq 1
+                &\mathcal{N}\models S(0) \leq S(v_1) \: [s] \\
+                &\iif \: 1\leq 1
             \end{split}
         \end{equation*}
         
     \end{itemize}
 }
-\note{}{To know wheter $\mathcal{A}\models \varphi [s]$ it suffices to know where $s$ maps the variables that are free in $\varphi$}
+\note{}{To know wheter $\mathcal{A}\models \varphi \: [s]$ it suffices to know where $s$ maps the variables that are free in $\varphi$}
 
 \prop{}{Suppose $s_1,s_2:V\to A$ agree on all variables that occur free in $\varphi$ then 
- $$\mathcal{A}\models \varphi [s_1] \text{iff }\mathcal{A}\models \varphi [s_2]$$
+ $$\mathcal{A}\models \varphi \:[s_1] \text{ iff }\mathcal{A}\models \varphi \: [s_2]$$
 }{
     By complexity of $\varphi$
-    \begin{itemize}
+    \begin{enumerate}
         \item if $\varphi$ is $P t_1,\dots t_n$ 
         note: any var that occur in $\varphi$ occur free in $\varphi$, so $s_1,s_2$ agree on all variables that occur in the terms $t_1,\dots t_n$.\\
         So we Claim: for $t$ a term, $s_1,s_2$ assignments that agree on all variables of $t$ then $\overline{s}_1(t) = \overline{s}_2(t)$
         \begin{claimproof}
             By complexity of $t$
             \begin{itemize}
-                \item[$t = v_m$] then  $\overline{s}_1(t) ={s}_1(v_m) = {s}_2(v_m) =\overline{s}_2(t)$
-                \item[$t = c$] then  $\overline{s}_1(t) =c^\mathcal{A} =\overline{s}_2(t)$
-                \item[$t = ft_1\dots t_n$] inductively, assume $\overline{s}_1(t_i) =\overline{s}_2(t_i)$ for all $1\leq i\leq n$ then  TODO
+                \item $t = v_m$ then  $\overline{s}_1(t) ={s}_1(v_m) = {s}_2(v_m) =\overline{s}_2(t)$
+                \item $t = c$ then  $\overline{s}_1(t) =c^\mathcal{A} =\overline{s}_2(t)$
+                \item $t = ft_1\dots t_n$ inductively, assume $\overline{s}_1(t_i) =\overline{s}_2(t_i)$ for all $1\leq i\leq n$ then  TODO
             \end{itemize}
         \end{claimproof}
-        \item $\varphi: =t_1,t_2$ is similar
-        \item $\varphi: \lnot \alpha$ then $\mathcal{A}\models \lnot \alpha [s_1]$ iff $\mathcal{A}\vDash \alpha [s_1]$iff $\mathcal{A}\vDash \alpha [s_2]$ iff $\mathcal{A}\models \lnot \alpha [s_1]$
-        \item $\varphi: \alpha \to \beta$ then $\mathcal{A}\models  \alpha \to \beta [s_1]$ iff .. or .. iff for s2 iff ... or .. 
-        \item $\varphi: \forall x \alpha$ then the assumption is that $s_1,s_2$ .. the free variables of $\alpha$ are the free variables of $\varphi$ exept for $x$.
+        \item if $\varphi$ is $ =t_1,t_2$ is similar
+        \item if $\varphi$ is $\lnot \alpha$ then $\mathcal{A}\models \lnot \alpha  \: [s_1]$ iff $\mathcal{A}\vDash \alpha  \: [s_1]$iff $\mathcal{A}\vDash \alpha  \: [s_2]$ iff $\mathcal{A}\models \lnot \alpha  \: [s_1]$
+        \item if $\varphi$ is $\alpha \to \beta$ then $\mathcal{A}\models  \alpha \to \beta  \: [s_1]$ iff .. or .. iff for s2 iff ... or .. 
+        \item if $\varphi$ is $ \forall x \alpha$ then the assumption is that $s_1,s_2$ .. the free variables of $\alpha$ are the free variables of $\varphi$ exept for $x$.
         but because $s_1(x|a) = s_2(x|a)$ they both agree on all free variables of $\alpha$.
         \[\begin{split}
-            \mathcal{A}\models \forall x \varphi [s_1] &\iif \fora a\in A \mathcal{A}\models \varphi [s_1(x| a)]\\
-            & \iif \fora a\in A \mathcal{A}\models \varphi [s_2(x| a)]\\
-            & \iif \mathcal{A}\models \forall x \varphi [s_2]
+            \mathcal{A}\models \forall x \varphi  \: [s_1] &\iif \fora a\in A \mathcal{A}\models \varphi  \: [s_1(x| a)]\\
+            & \iif \fora a\in A \mathcal{A}\models \varphi  \: [s_2(x| a)]\\
+            & \iif \mathcal{A}\models \forall x \varphi  \: [s_2]
         \end{split}\]
-    \end{itemize}
+    \end{enumerate}
     
 }
-Notation: $\mathcal{A}\models \varphi $TODO means that all free variables of $\varphi$ are among $v_1,\dots v_n$ and $\mathcal{A}\models \varphi [s]$ whenever $s(v_i) = a_i$ for all $1\leq i\leq n$.
-\coroll{If $\sigma$ is a sentence then $\mathcal{A}\models \varphi [s]$ for all $s:V\to A$ or 
-$\mathcal{A}\vDash \varphi [s]$ for all $s:V\to A$.
+Notation: $\mathcal{A}\models \varphi $TODO means that all free variables of $\varphi$ are among $v_1,\dots v_n$ and $\mathcal{A}\models \varphi \: [s]$ whenever $s(v_i) = a_i$ for all $1\leq i\leq n$.
+\coroll{If $\sigma$ is a sentence then $\mathcal{A}\models \varphi \: [s]$ for all $s:V\to A$ or 
+$\mathcal{A}\vDash \varphi \: [s]$ for all $s:V\to A$.
 
 Notation: $\mathcal{A}\models \sigma$ "$\sigma$ is true in $\mathcal{A}$, $\mathcal{A}$ is a model of $\sigma$ or $\sigma$ holds in $\mathcal{A}$.
 }
@@ -233,10 +237,10 @@ $\sigma: \quad \exists x (x\cdot x = -1)$ then $\mathcal{R}\vDash \sigma$ but $\
 
 }
 \note{}{$\land,\lor,\leftrightarrow,\exists$ work as expected. That is 
- $\mathcal{A}\models (\alpha \land \beta) [s]$ iff $\mathcal{A}\models \alpha [s]$ and $\mathcal{A}\models \beta [s]$
- $\mathcal{A}\models (\alpha \lor \beta) [s]$ iff $\mathcal{A}\models \alpha [s]$ or $\mathcal{A}\models \beta [s]$
- $\mathcal{A}\models \exists x \alpha [s]$ iff $\mathcal{A}\models \lnot \forall x \lnot \alpha [s]$\\
- iff $\mathcal{A}\vDash \forall x \lnot \alpha [s]$\\
+ $\mathcal{A}\models (\alpha \land \beta) \: [s]$ iff $\mathcal{A}\models \alpha \: [s]$ and $\mathcal{A}\models \beta \: [s]$
+ $\mathcal{A}\models (\alpha \lor \beta) \: [s]$ iff $\mathcal{A}\models \alpha \: [s]$ or $\mathcal{A}\models \beta \: [s]$
+ $\mathcal{A}\models \exists x \alpha \: [s]$ iff $\mathcal{A}\models \lnot \forall x \lnot \alpha \: [s]$\\
+ iff $\mathcal{A}\vDash \forall x \lnot \alpha \: [s]$\\
  iff it is not true that forall $a \in A$ $\mathcal{A}\models \lnot \alpha [s(x|a)]$\\
  iff there is $a\in A$ such that $\mathcal{A}\models \alpha [s(x|a)]$
 }
@@ -247,44 +251,44 @@ Let $\Gamma$ be a set of $\mathcal{L}$-formulas, $\varphi$ a $\mathcal{L}$-formu
 \defin{Logical implication}{
     $\Gamma \models \varphi$ "$\Gamma$ logically implies $\varphi$" if for every $L$-structure $\mathcal{A}$ and for every $s:V\to A$ 
 
-    if $\mathcal{A}\models \gamma [s]$for every $\gamma \in \Gamma$  then $\mathcal{A}\models \varphi [s]$
+    if $\mathcal{A}\models \gamma \: [s]$for every $\gamma \in \Gamma$  then $\mathcal{A}\models \varphi \: [s]$
 
 }
 
 \defin{Logical equivalence}{$\varphi,\psi$ are called logically equivalent if 
 $\varphi \models \psi$ and $\psi \models \varphi$.
 }
-\defin{Valid}{$\varphi$ is called valid iff $\models \varphi$ i.e. $\varnothing\models \varphi$ i.e. for every $\mathcal{L}$-structure $\mathcal{A}$ and every $s:V\to A$ it is $\mathcal{A}\models \varphi [s]$
+\defin{Valid}{$\varphi$ is called valid iff $\models \varphi$ i.e. $\varnothing\models \varphi$ i.e. for every $\mathcal{L}$-structure $\mathcal{A}$ and every $s:V\to A$ it is $\mathcal{A}\models \varphi \: [s]$
 }
 \bsp{}{
 \begin{enumerate}
     \item $\forall x_1 P x_1 \models P x_2$\\
-    Suppose $\mathcal{A}\models \forall x_1 P x_1 [s]$.
+    Suppose $\mathcal{A}\models \forall x_1 P x_1 \: [s]$.
     then for all $a\in A$ it is $\mathcal{A}\models P x_1 [s(x_1|a)]$ in particular, $a\in P^\mathcal{A}$ for $a = s(x_2)$
     \item  $\forall P x_2 \vDash \forall x_1 P x_1$\\
     We need a counterexample to $\forall P x_2 \models \forall x_1 P x_1$. Let $A = \{a_1,a_2\}$ $s(x_2) = a_1$ and $P^\mathcal{A} = \{a_1\}$
-    then $\mathcal{A}\models Px_2[s]$.
+    then $\mathcal{A}\models Px_2 \: [s]$.
     \item Is the following valid? $\models \exists x(Px \to \forall y P y)$ yes
     \item $\Gamma,\alpha\models \varphi$ iff $\Gamma \models \alpha \to \varphi$. (on next problem set, quite impoirtant)
 \end{enumerate}
 }
 
 \section{definability in a structure}
+\defin{definability in a structure}{ 
+    We say that a general $n$-ary relation $P$ on $A$ (we will just call it $P$, it does not have to be in the language) is definable in $\mathcal{A}$, if there is a $\mathcal{L}$-formula
+    $\varphi$ with free variables among $\{v_1,\dots,v_n\}$ such that 
+    \[P = \{(a_1,\dots a_n) : \mathcal{A} \models \varphi\: \llbracket a_1,\dots a_n\rrbracket\}\]
+    We also say that $\varphi$ defines $P$ in the structure $\mathcal{A}$.
+}
 \bsp{}{
     \begin{enumerate}
         \item $x = x$ would define the entire universe.
         \item $\lnot x = x$ would define the empty set.
     \end{enumerate}
 }
-\defin{definability in a structure}{ 
-    We say that a general $n$-ary relation $P$ on $A$ (we will just call it $P$, it does not have to be in the language) is definable in $\mathcal{A}$, if there is a $\mathcal{L}$-formula
-    $\varphi$ with free variables among $\{v_1,\dots,v_n\}$ such that 
-    \[P = \{(a_1,\dots a_n) : \mathcal{A} \models \varphi [a_1,\dots a_n]\}\]
-    We also say that $\varphi$ defines $P$ in the structure $\mathcal{A}$.
-}
 \bsp{}{
 \begin{enumerate}
-    \item decomposition
+    \item TODO
     \item $\mathcal{R} = (\RR,0,1,+,-,\cdot)$ Q: is $[0,\infty)$ definable in $\mathcal{R}$
     Yes because $\exists y (y\cdot y = x)$
     Indeed we can even define the $\leq$ relation on $\RR^2$ by $x\leq z \defaq \exists y (x+y\cdot y = z)$ 
@@ -360,7 +364,8 @@ We want to have some notion that tells us when two graphs are the same or at lea
     and $h(m\cdot n) = h(m)\cdot^\mathcal{B} h(n)$.
     it is indeed a Homomorphism.
 }
-\defin{Substructure}{Suppose we have two $\mathcal{L}$ structures and $A\subseteq B$ hen $\mathcal{A}$ is a substructure of $\mathcal{B}$ (notation: $\mathcal{A}\subseteq \mathcal{B}$ or we might say $\mathcal{B}$ is an extention of $\mathcal{A}$ ) if
+\defin{Substructure}{Suppose we have two $\mathcal{L}$ structures and $A\subseteq B$ hen $\mathcal{A}$ is a substructure of $\mathcal{B}$ 
+    (notation: $\mathcal{A}\subseteq \mathcal{B}$ or we might say $\mathcal{B}$ is an extention of $\mathcal{A}$ ) if
     \begin{itemize}
         \item for every $n$-ary relation $P^\mathcal{A} = P^\mathcal{B}|_A$
         \item for every $n$-ary function $f^\mathcal{A} = f^\mathcal{B}|_A$
@@ -389,7 +394,7 @@ The answer will be given by the so called Homomorphism theorem.
     $h$ homomorphism of $\mathcal{A}$ into $\mathcal{B}$, $s:V\to A$ then
     \begin{enumerate}
         \item for all terms $t$ it is $h(\overline{s}(t))=\overline{(h\circ s)}(t)$
-        \item $\varphi$ a fla. that is quantifier free and does not include $=$ then $\mathcal{A}\models \varphi [s]$ iff $\mathcal{B}\models \varphi [h\circ s]$
+        \item $\varphi$ a fla. that is quantifier free and does not include $=$ then $\mathcal{A}\models \varphi \: [s]$ iff $\mathcal{B}\models \varphi  \: [h\circ s]$
         \item if $h$ is additionally injective then we can drop the requirement " no $=$".
         \item if $h$ is homomorphism of $\mathcal{A}$ onto $\mathcal{B}$ then we can drop the requirement "q.f." in (b)
     \end{enumerate}
@@ -397,19 +402,22 @@ The answer will be given by the so called Homomorphism theorem.
     \begin{enumerate}
         \item problem set
         \item \begin{itemize}
-            \item $\varphi: Pt$ then $\mathcal{A}\models Pt[s]$ iff $\overline{s}(t)\in P^\mathcal{A}$ iff $h(\overline{s}(t))\in P^\mathcal{B}$ iff $\overline{(h\circ s)}(t)\in P^\mathcal{B}$ iff $\mathcal{B}\models Pt [h\circ s]$
-            \item $\varphi: \lnot \psi$ $\mathcal{A}\models \lnot \psi[s]$ iff $\mathcal{A}\vDash \psi[s]$ iff $\mathcal{A}\vDash \psi[s]$ iff %TODO
+            \item $\varphi: Pt$ then $\mathcal{A}\models Pt \: [s]$ iff $\overline{s}(t)\in P^\mathcal{A}$ iff $h(\overline{s}(t))\in P^\mathcal{B}$ iff $\overline{(h\circ s)}(t)\in P^\mathcal{B}$ 
+            iff $\mathcal{B}\models Pt  \: [h\circ s]$
+            \item $\varphi: \lnot \psi$ $\mathcal{A}\models \lnot \psi \: [s]$ iff $\mathcal{A}\vDash \psi \: [s]$ iff $\mathcal{A}\vDash \psi \: [s]$ iff %TODO
             \item $\varphi: \psi \to \alpha$
         \end{itemize}
-        \item $\mathcal{A}\models =t_1t_2 [s]$ iff $\overline{s}(t_1)=\overline{s}(t_2)$ iff $h(\overline{s}(t_1))=h(\overline{s}(t_2))$ iff (by (a))$\overline{(h\circ s)}(t_1) = \overline{(h\circ s)}(t_2)$ iff $\mathcal{B}\models =t_1t_2[h\circ s]$
-        \item $\varphi$ $ \forall s: V\to A$ $\mathcal{A}\models \varphi [s]$ iff $\mathcal{B}\models \varphi [h\circ s]$, want $\mathcal{A}\models \forall x \varphi [s]$ iff $\mathcal{B}\models \forall x \varphi [h \circ s]$
-        1. $\mathcal{B}\models \forall x \varphi [(h\circ s)]$
-        iff for all $s:V\to A$, $a\in A$ (req. surjectivity) it is $\mathcal{B}\models \varphi [(h\circ s)(x | h(a))]$
-        iff $\mathcal{B}\models \varphi [h\circ (s(x |a))]$
-        iff (inductive assumption)$\mathcal{A}\models \varphi [s(x|a)]$ because $a$ was arbitrary it is $\mathcal{A}\models \forall x \varphi [s]$
-        2. Suppose $\mathcal{B}\vDash \forall x \varphi [(h\circ s)]$ then there exists a $b\in B$ such that $\mathcal{B}\models \lnot \varphi [(h\circ s)(x | b)]$
-        by surjectivity we can find $a\in A$ such that $h(a)=b$ and it is $\mathcal{B}\models \lnot \varphi [(h\circ s)(x | h(a))]$
-        By the inductive assumption $\mathcal{A}\models \lnot \varphi [s(x|a)]$ and $\mathcal{A}\vDash \forall x \varphi [s]$
+        \item $\mathcal{A}\models =t_1t_2 \: [s]$ iff $\overline{s}(t_1)=\overline{s}(t_2)$ iff $h(\overline{s}(t_1))=h(\overline{s}(t_2))$ iff (by (a))$\overline{(h\circ s)}(t_1) = \overline{(h\circ s)}(t_2)$ 
+        iff $\mathcal{B}\models =t_1t_2 \: [h\circ s]$
+        \item $\varphi$ $ \forall s: V\to A$ $\mathcal{A}\models \varphi \: [s]$ iff $\mathcal{B}\models \varphi  \: [h\circ s]$, want $\mathcal{A}\models \forall x \varphi \: [s]$ iff 
+        $\mathcal{B}\models \forall x \varphi  \: [h \circ s]$
+        1. $\mathcal{B}\models \forall x \varphi  \: [(h\circ s)]$
+        iff for all $s:V\to A$, $a\in A$ (req. surjectivity) it is $\mathcal{B}\models \varphi  \: [(h\circ s)(x | h(a))]$
+        iff $\mathcal{B}\models \varphi  \: [h\circ (s(x |a))]$
+        iff (inductive assumption)$\mathcal{A}\models \varphi  \: [s(x|a)]$ because $a$ was arbitrary it is $\mathcal{A}\models \forall x \varphi \: [s]$
+        2. Suppose $\mathcal{B}\vDash \forall x \varphi  \: [(h\circ s)]$ then there exists a $b\in B$ such that $\mathcal{B}\models \lnot \varphi  \: [(h\circ s)(x | b)]$
+        by surjectivity we can find $a\in A$ such that $h(a)=b$ and it is $\mathcal{B}\models \lnot \varphi  \: [(h\circ s)(x | h(a))]$
+        By the inductive assumption $\mathcal{A}\models \lnot \varphi  \: [s(x|a)]$ and $\mathcal{A}\vDash \forall x \varphi \: [s]$
     \end{enumerate}
 }
 \note{}{$\mathcal{A}\cong \mathcal{B}$ then $\mathcal{A}$ and $\mathcal{B}$ satisfy exactly the same sentences.}
@@ -424,8 +432,8 @@ The answer will be given by the so called Homomorphism theorem.
     so in part $\mathcal{N} \equiv \mathcal{P}$.
     but $id:\mathcal{P}\to \mathcal{N}$ is only isom embedding, so for example
     $\forall y(x\neq y x\leq y)$  
-    $\mathcal{P}\models \alpha [1]$ but $\mathcal{N}\nvDash \alpha [1]$
-    but $\mathcal{N}\models \alpha [h(1)]$
+    $\mathcal{P}\models \alpha  \: [1]$ but $\mathcal{N}\nvDash \alpha  \: [1]$
+    but $\mathcal{N}\models \alpha  \: [h(1)]$
 }
 \defin{Automorphism}{An automorphism is an isomorphism of the form $h:A\to A$ from $\mathcal{A}$ onto $\mathcal{A}$}
 \note{}{Every structure has a trivial automorphism $id:A\to A$}
@@ -437,7 +445,7 @@ The answer will be given by the so called Homomorphism theorem.
 \coroll{
     Let $h$ be atutom of $\mathcal{A}$, $R\subseteq A^n$ definable in $\mathcal{A}$ then $\forall a\in A^n a\in R \iif (h(a_1),\dots h(a_n))\in R$ 
     Suppose $\varphi$ defines $R$ in $\mathcal{A}$ we want
-    $\mathcal{A}\models \varphi[a]$ iff  $\mathcal{A}\models \varphi[h(a_1),\dots h(a_n)]$ which is true by the homom. thm.
+    $\mathcal{A}\models \varphi \: [a]$ iff  $\mathcal{A}\models \varphi \: [h(a_1),\dots h(a_n)]$ which is true by the homom. thm.
 }
 \note{}{Corol can be used to show that some $R\subseteq A^n$ is not definable in $\mathcal{A}$
 }

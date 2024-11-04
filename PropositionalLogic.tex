@@ -15,7 +15,7 @@ The Language \outernote{Language} of Propositional logic is a set containing
     \end{enumerate}
 }
 \addAbbrev{exp.}{expression(s)}
-\defin{Expression / prop. sentence}{An \graybf{expression}\outernote{expression} is a any finite sequence of symbols
+\defin{Expression / prop. sentence}{An \graybf{expression}\outernote{expression}is a any finite sequence of symbols
     We define \graybf{grammatically correct exp.} recursive
     \begin{enumerate}
         \item every prop. atom is a prop. sentence
@@ -98,7 +98,7 @@ We also want the extention to be unique, that is
 \prop{Unique readability}{\label{extendetTruthAss}\label{ThrmUniqueExt}
     For all TA $\nu$ for a set $S$ $\exists ! \overline{\nu}:\overline{S}\to\{0,1\}$ satisfying the above properties}{}
 We will proof this later\\
-
+\newpage
 \defin{Satisfaction}{A TA $\nu$ satisfies\outernote{satisfy} a prop. sent. $\alpha$ 
     if $\overline{\nu}(\alpha)=1$ (that is, provided that everery atom of $\alpha$ is in the domain of $\nu$). 
     We call $\alpha$ satisfiable\outernote{satisfiable} if there exists a TA that satisfies it.}
@@ -201,11 +201,23 @@ That there is a unique way to perform the algorithm is implied by \ref{NoPropIni
     \end{itemize}
 \end{enumerate}
 \bsp{}{The parsing algorithm applied to $((\lnot (A_1\to A_2))\lor A_3)$ returns the following construction tree.
-
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width = 6cm]{1-parsing-alg-ex}
-    \end{figure}
+    \begin{center}
+        \begin{tikzpicture}
+            [sibling distance=20mm, level distance=10mm]
+            %\draw [help lines] (0,0) grid (-3,-3);
+            \node {$((\lnot(A_1\to A_2))\lor A_3)$}
+            child { node {$(\lnot(A_1 \to A_2))$}
+            child { node {$(A_1 \to A_2$)} 
+            child { node {$A_1$}  }
+            child { node {$A_2$}  }}}
+            child { node {$A_3$}};
+        \end{tikzpicture}
+    \end{center}
+    
+%    \begin{figure}[H]
+%        \centering
+%        \includegraphics[width = 6cm]{1-parsing-alg-ex}
+%    \end{figure}
 }
 \subsection*{Correctness of the parsing algorithm}
 \begin{itemize}
@@ -218,12 +230,7 @@ That there is a unique way to perform the algorithm is implied by \ref{NoPropIni
     \item rejections are made correctly
 \end{itemize}
 
-\tikz\node {$((\lnot(A_1\to A_2))\lor A_4)$}
-child { node {$(\lnot(A_1 \to A_2))$}
-child { node {$(A_1 \to A_2$)} 
-child { node {$A_1$}  }
-child { node {$A_2$}  }}}
-child { node {$A_4$}};
+
 
 Back to proving the existence and uniqueness of $\overline{\nu}$ in \ref{ThrmUniqueExt}.
 Let $\alpha$ be a prop. sent. of $\overline{S}$. We apply the parsing algorithm to $\alpha$ to get a unique construction tree
@@ -280,13 +287,13 @@ with some rules of computing $\overline{h}(f(x,y))$ and $\overline{h}(g(x))$ fro
     This is not always possible. \textbf{Note:} that it is possible if $G$ is generated freely by the elements of $B$ and the set of atoms is independent
     (one element of $B$ cannot be generated in finitly many steps by other elements of $B$).
 }
-\defin{Freely generated set}{$C$ is freely generated from $B$ by $f,g$ if 
+\defin{Freely generated set}{$C$ is \graybf{freely generated}\outernote{freely generated}from $B$ by $f,g$ if 
     \begin{itemize}
         \item $C$ is generated from $B$ by $f,g$ 
-        \item $f|_{C^2}$ and $g|_C$ are such that\begin{itemize}
+        \item $f|_{C^2}$ and $g|_C$ are such that\begin{enumerate}
             \item $f|_{C^2}$ and $g|_C$ are one-to-one (injective)
-            \item $rng(f|_{C^2})$ and $rng(g|_{C})$ and $B$ are p.w. disjoint
-        \end{itemize}
+            \item $\rng(f|_{C^2})$ and $\rng(g|_{C})$ and $B$ are p.w. disjoint
+        \end{enumerate}
     \end{itemize}
 }
 \prop{Recursion Theorem}{
@@ -328,7 +335,7 @@ For all other connectives the proof is similar.
 \end{claimproof}
 }
 \subsubsection*{Proof of the Rec Thm.}
-$v:C\rightharpoonup  V$ is called acceptable if $\forall x,y\in C$ 
+$v:C\rightharpoonup  V$ is called acceptable\outernote{acceptable} if $\forall x,y\in C$ 
 \begin{enumerate}
     \item if $x\in B\cap dom(v)$ then $v(x)=h(x)$
     \item if $f(x,y)\in dom(v)$ then $x,y\in dom(v)$ and similarly for $g$
@@ -338,50 +345,58 @@ $v:C\rightharpoonup  V$ is called acceptable if $\forall x,y\in C$
     \end{itemize}
 \end{enumerate}
 And when $U = \{\varGamma_v : v \text{acceptable} \}$, we define
-$\overline{h}\defeq \text{function w/ graph} \bigcup U$
-
+$\overline{h}\defeq \text{function w/ graph } \bigcup \varGamma_v$
+\newpage
 \textbf{Claim 1:} $\overline{h}$ is a function.
 \begin{claimproof}
-    $$S\defeq \{x\in C : \exists \text{at most one $y$ w/} (x,y)\in \bigcup U\}$$
+    $$S\defeq \{x\in C : \exists \text{at most one $y$ with } (x,y)\in \bigcup \varGamma_v\}$$
     We want $S = C$, we have $S\subseteq C$,
     it is enough to show that $S$ is inductive.
     \begin{itemize}
-        \item $x\in B\cap dom(v)$ for some $v$ acceptable.
+        \item $x\in B\cap \dom(v)$ for some $v$ acceptable.\\
         then $v(x) = h(x)$ by 1.
-        also $x\notin rng f|_{C^2}$ and $x\notin rng g|_C$
-        \item $x,y in \mathcal{S}$
-        We want $f(x,y),g(x)\in S$
-        there are $v_1,v_2$ acceptable s.t. $f(x,y)\in dom(v_1)\cap dom(v_2)$
+        also $x\notin \rng (f|_{C^2})$ and $x\notin \rng (g|_C)$
+        \item $x,y \in \mathcal{S}$
+        We want $f(x,y),g(x)\in S$\\
+        there are $v_1,v_2$ acceptable s.t. $f(x,y)\in \dom(v_1)\cap \dom(v_2)$
     \end{itemize}
 \end{claimproof}
 \textbf{Claim 2:} $\overline{h}$ is acceptable.
 \begin{claimproof}
     $\overline{h}: C \rightharpoonup V$ by definition.
-    if $x\in B\cap dom \overline{h}$ then there is a $v$ acceptable, s.t. $x\in dom(v)$
+    if $x\in B\cap \dom \overline{h}$ then there is a $v$ acceptable, s.t. $x\in dom(v)$
     then $\overline{h}(x) = v(x)=h(x)$
-    if $f(x,y)\in dom \overline{h}$ then $f(x,y)\in dom (v)$ form some $v$ acceptable.
-    Hence $x,y\in dom(v)$ and therefore $x,y\in dom (\overline{h})$
-    and we have $$\overline{h}(f(x,y)) = v(f(x,y)) = F(v(x),v(y)) = F(\overline{h}(x),\overline{h}(y))$$
+    if $f(x,y)\in \dom \overline{h}$ then $f(x,y)\in \dom (v)$ form some $v$ acceptable.
+    Hence $x,y\in \dom(v)$ and therefore $x,y\in\dom (\overline{h})$
+    and we have 
+    $$\overline{h}(f(x,y)) = v(f(x,y)) = F(v(x),v(y)) = F(\overline{h}(x),\overline{h}(y))$$
 \end{claimproof}
 \textbf{Claim 3:} The domain of $\overline{h}$ equals $C$. 
 \begin{claimproof}
     it is enough to show that the domain of $\overline{h}$ is inductive. 
-    $B\subseteq dom (\overline{h})$ bc. $B\subseteq dom (h)$ where $h$ is acceptable.
-    Now we need to show closure under $f,g$. suppose $x',y'\in dom (\overline{h})$ then $x'\in dom (v_1)$ 
-    for some acceptable $v_i$ lets assume $f(x',y')\notin dom (\overline{h})$
+    $B\subseteq\dom (\overline{h})$ bc. $B\subseteq\dom (h)$ where $h$ is acceptable.
+    Now we need to show closure under $f,g$. suppose $x',y'\in\dom (\overline{h})$ then $x'\in\dom (v_1)$ 
+    for some acceptable $v_i$ lets assume $f(x',y')\notin\dom (\overline{h})$
     then we extend $\overline{h}$ to a function with the same graph as $\overline{h}$.
     Then
     $\varGamma \cup \{(f(x',y'),F(\overline{x'},\overline{y'}))\}$ 
     is the graph of an acceptable function.
 \end{claimproof}
-\textbf{Claim 4:} Suppose both $\overline{h},\overline{\overline{h}}$ work, we schow that $S=\{x\in C: \overline{h}(x),\overline{\overline{h}}(x)\}$ is the whole set $C$.
-it is enough to show that $S$ is inductive.
+\textbf{Claim 4:$\overline{h}$ is uniquely constructed}
+\begin{claimproof}
+    Suppose both $\overline{h},\overline{\overline{h}}$ work, we schow that $S=\{x\in C: \overline{h}(x)=\overline{\overline{h}}(x)\}$ is the whole set $C$.
+    it is enough to show that $S$ is inductive.
+    Let $x\in B$ then $\overline{h}(x) = h(x) = \overline{\overline{h}}(x)$.
+Then for $x,y\in S$ 
+\[\overline{h}(f(x,y)) = F(\overline{h}(x),\overline{h}(y))=  F(\overline{\overline{h}}(x),\overline{\overline{h}}(y))=\overline{\overline{h}}(f(x,y)) \]
+\[\overline{h}(g(x)) = G(\overline{h}(x))=  G(\overline{\overline{h}}(x))=\overline{\overline{h}}(g(x)) \]
+and $f(x,y),g(x)\in S$, therefore $S$ is inductive.
+\end{claimproof}
 
-Let $x\in B$ then $\overline{h}(x) = h(x) = \overline{\overline{h}}(x)$.
-Then for $x,y\in S$ \[\overline{h}(f(x,y)) = F(\overline{h}(x),\overline{h}(y))=  F(\overline{\overline{h}}(x),\overline{\overline{h}}(y))=\overline{\overline{h}}\dots \]
+
 \section{Sentential connectives}
-\defin{Tautological equivalence relation}{For $\alpha,\beta$ prop. sent. we define $\alpha \sim \beta$ 
-iff $\alpha \sledom\models  \beta$. This defines an equivalent relation.}
+\defin{Tautological equivalence relation}{\outernote{tautological equivalence}For $\alpha,\beta$ prop. sent. we define $\alpha \sim \beta$ \outernote{$\sim$} \outernote{$\models \sledom$} \outernote{$\sledom \models$}
+iff $\alpha \sledom\models  \beta$ (alternative notation: $\models \sledom$). This defines an equivalent relation.}
 \bsp{}{$A \to B \sledom\models  \lnot A \lor B$}
 \note{}{
     A $k$-place boolean function is a functon of the form $f: \{0,1\}^k\to \{0,1\}$ and we 
@@ -400,7 +415,7 @@ iff $\alpha \sledom\models  \beta$. This defines an equivalent relation.}
     \end{enumerate}
 }{}
 \prop{Realisation}{
-    Let $G$ be an $n$-ary boolean function for $n\geq 1$. Then there is a prop. sent. $\alpha$ such that. $B_\alpha = G$.
+    Let $G$ be an $n$-ary boolean function\outernote{$n$-ary boolean func.} for $n\geq 1$. Then there is a prop. sent. $\alpha$ such that. $B_\alpha = G$.
     We say $\alpha$ realizes $G$.
 }{
     \begin{enumerate}
@@ -428,10 +443,10 @@ iff $\alpha \sledom\models  \beta$. This defines an equivalent relation.}
     Then $B_\alpha = G$ is fulfilled.
     \end{enumerate}
 }
-\note{}{$\alpha$ as constructed in the proof is in the so-called Disjunctive normal form (DNF).}
+\note{}{$\alpha$ as constructed in the proof is in the so-called Disjunctive normal form (DNF).\outernote{DNF\\ Disjunctive normal form}}
 \coroll{Every prop. sent. is tautologically equivalent to a sentence in DNF}
 \addAbbrev{i.e.}{id est (that is)}
-\coroll{$\{\lnot,\land,\lor\}$ is a complete set of logical connectives, i.e. every prop. sent. is tautologically 
+\coroll{$\{\lnot,\land,\lor\}$ is a complete\outernote{complete} set of logical connectives, i.e. every prop. sent. is tautologically 
     equivalent to a sentence built up from atoms and $\lnot,\land,\lor$.
 }
 \prop{}{Both $\{\lnot, \land\}$ and $\{\lnot, \lor\}$ are complete.}{
@@ -470,10 +485,13 @@ iff $\alpha \sledom\models  \beta$. This defines an equivalent relation.}
     We define a notation for $n=0$: $\bot$ (for TV = $0$) and $\top$ (for TV = $1$)
     We can conclude that $\{\lnot,\to\}$ and $\{\to, \bot\}$ are both complete, it holds $\lnot A \sledom \models A\to \bot$
 }
-\defin{Satisfiability}{\\ A set of prop. sent. $\Sigma$ is called \graybf{satisfiable} iff $\exists$ TA that satisfies every member of $\Sigma$.}
+\defin{Satisfiability}{
+    A set of prop. sent. $\Sigma$ is called \graybf{satisfiable}\outernote{satisfiable}if there exists a TA that satisfies every member of $\Sigma$.
+}
+\newpage
 \section{Compactness Theorem}
 \prop{Compactness Theorem}{\label{CompThrm}
-    $\Sigma$ is satisfiable iff every finite subset $\Sigma_0\subseteq \Sigma$ is satisfiable. (i.e. $\Sigma$ is finitely satisfied)}{
+    $\Sigma$ is satisfiable iff every finite subset $\Sigma_0\subseteq \Sigma$ is satisfiable. (i.e. $\Sigma$ is finitely satisfiable)\outernote{finitely satisfiable}}{
     Let $\Sigma$ be a finitely satisfiable set of prop. sent. Outline of the proof:
     \begin{enumerate}
         \item extend $\Sigma$ to a maximal finitely satisfiable set $\Delta$ of prop. sent.

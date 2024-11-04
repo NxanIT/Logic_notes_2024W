@@ -2,21 +2,21 @@
 \contentsline {section}{\numberline {1.1}Truth assignments}{3}{section.1.1}%
 \contentsline {section}{\numberline {1.2}A parsing algorithm}{4}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Induction and recursion}{6}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Sentential connectives}{9}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Compactness Theorem}{11}{section.1.5}%
-\contentsline {chapter}{\numberline {2}Predicate - / first order logic}{12}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Formulas}{13}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Semantics of first order logic}{14}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Logical implication}{16}{section.2.3}%
+\contentsline {section}{\numberline {1.4}Sentential connectives}{8}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Compactness Theorem}{10}{section.1.5}%
+\contentsline {chapter}{\numberline {2}Predicate - / first order logic}{11}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Formulas}{12}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Semantics of first order logic}{13}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Logical implication}{15}{section.2.3}%
 \contentsline {section}{\numberline {2.4}definability in a structure}{16}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Homomorphisms of structures}{17}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Unique readability for terms}{19}{section.2.6}%
+\contentsline {section}{\numberline {2.5}Homomorphisms of structures}{16}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Unique readability for terms}{18}{section.2.6}%
 \contentsline {subsubsection}{Unique readability for terms}{19}{subsubsection*.2}%
-\contentsline {section}{\numberline {2.7}A parsing algorithm for first order logic}{20}{section.2.7}%
-\contentsline {section}{\numberline {2.8}Deductions (formal proofs)}{20}{section.2.8}%
+\contentsline {section}{\numberline {2.7}A parsing algorithm for first order logic}{19}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Deductions (formal proofs)}{19}{section.2.8}%
 \contentsline {subsubsection}{Logical axioms}{20}{subsubsection*.3}%
 \contentsline {subsubsection}{Ad (1): tautologies}{21}{subsubsection*.4}%
-\contentsline {section}{\numberline {2.9}Generalization and deduction theorem}{22}{section.2.9}%
-\contentsline {chapter}{\numberline {3}Boolean Algebra}{23}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Set Theory}{25}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Axioms of ZFC}{25}{section.4.1}%
+\contentsline {section}{\numberline {2.9}Generalization and deduction theorem}{21}{section.2.9}%
+\contentsline {chapter}{\numberline {3}Boolean Algebra}{22}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Set Theory}{24}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Axioms of ZFC}{24}{section.4.1}%

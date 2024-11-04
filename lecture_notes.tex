@@ -16,6 +16,7 @@
 \usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{float}%benötigt für floating point-positionierung eines bildes
+\usepackage{stmaryrd}%for double left brackets
 \graphicspath{ {./images/} }%relativen pfad für bilder eingeben
 
 \setlength{\headheight}{18.0pt}
@@ -68,10 +69,10 @@
 
 %Highlight
 \newcommand{\purplebf}[1]{\color{purple}\textbf{#1 }\color{black}}
-\newcommand{\graybf}[1]{\color{darkgray}\textbf{#1 }\color{black}}
+\newcommand{\graybf}[1]{\color{darkgray}\textbf{#1\hspace{4px}}\color{black}}
 \newcommand{\bigemph}[1]{\fontfamily{qag}\selectfont\color{darkgray}\textbf{#1 }\color{black}\normalfont}
 
-\newcommand{\defeq}{\vcentcolon=}
+\newcommand{\defeq}{\vcentcolon=} 
 \newcommand{\eqdef}{=\vcentcolon}
 \newcommand{\defaq}{\vcentcolon\Leftrightarrow}
 \newcommand{\sledom}{\Relbar\joinrel\mathrel{|}}
@@ -88,8 +89,9 @@
 \DeclareMathOperator{\TA}{TA}
 \DeclareMathOperator{\frei}{frei}
 \DeclareMathOperator{\iif}{iff}
-\DeclareMathOperator{\fora}{forall}
-\DeclareMathOperator{\rng}{ran}
+\DeclareMathOperator{\fora}{for all}
+\DeclareMathOperator{\rng}{ran}%range
+\DeclareMathOperator{\dom}{dom}%domain
 %\DeclareMathOperator{command}{definition}
 
 \DeclareMathOperator{\propM}{Prop} % for example in boolean algebra
@@ -117,7 +119,8 @@
         \color{rhoda}   
         \begin{defi}
             \addcontentsline{dfn}{section}{\protect{{\thedefi \hspace{5px} #1}}} 
-            \color{tanita}\textbf{\normalfont\fontfamily{txtt}\selectfont{\textbf{#1}}: }\normalfont\color{black}#2
+            \color{tanita}\textbf{\normalfont\fontfamily{txtt}\selectfont{\textbf{#1}}:\hspace{5px}}
+            \normalfont\color{black}#2
         \end{defi}
         \color{black}
     \fi
@@ -135,8 +138,7 @@
     \else 
         \color{rhoda}   
         %\begin{notes}
-            \noindent Note\fontfamily{txtt}\selectfont{#1}: \normalfont\color{black}
-            #2
+            \noindent Note\fontfamily{txtt}\selectfont{}#1:\hspace{5px}\normalfont\color{black}#2
 
         %\end{notes}
         \color{black}
@@ -155,7 +157,7 @@
     \else 
         \color{rhoda}   
         \begin{propo}
-            \color{tanita}\textbf{\normalfont\fontfamily{txtt}\selectfont{\textbf{#1}}: }\normalfont\color{black}
+            \color{tanita}\textbf{\normalfont\fontfamily{txtt}\selectfont{\textbf{#1}}:\hspace{5px}}\normalfont\color{black}
             #2
             \ifx\foo#3\foo
             \else
