@@ -114,26 +114,26 @@
 \section{Semantics of first order logic}
 The equivalent scheme to our TA in predicate logic. The meaning of formulas is given by \emph{structures}, 
 which also determine the scope of the quantifier $\forall$, the meaning of all parameters.
-\defin{structure}{A \graybf{structure} $\mathcal{A}$ for a first order language $\mathcal{L}$ is a non-empty set
-    set $A$ called \graybf{universe} or \graybf{underlying set of $\mathcal{A}$} together with an interpretation of each parameters of $\mathcal{L}$ i.e.
+\defin{structure}{A \graybf{structure} $\mathfrak{A}$ for a first order language $\mathcal{L}$ is a non-empty set
+    set $A$ called \graybf{universe} or \graybf{underlying set of $\mathfrak{A}$} together with an interpretation of each parameters of $\mathcal{L}$ i.e.
     \begin{itemize}
         \item $\forall$ ranges over the universe $A$
-        \item for an $n$-ary pred. symbol $P\in \mathcal{L}$ its interpretation $P^\mathcal{A}$ is a subset of $A^n$\outernote{interpretation}
-        \item for a constant $c\in \mathcal{L}$ its interpretation $c^\mathcal{A}$ is an element of $A$
-        \item for an $n$-ary function symbol $f\in \mathcal{L}$ its interpretation $f^\mathcal{A}$ is a total function $$f^\mathcal{A}: A^n \to A$$
+        \item for an $n$-ary pred. symbol $P\in \mathcal{L}$ its interpretation $P^\mathfrak{A}$ is a subset of $A^n$\outernote{interpretation}
+        \item for a constant $c\in \mathcal{L}$ its interpretation $c^\mathfrak{A}$ is an element of $A$
+        \item for an $n$-ary function symbol $f\in \mathcal{L}$ its interpretation $f^\mathfrak{A}$ is a total function $$f^\mathfrak{A}: A^n \to A$$
     \end{itemize}
 }
-\note{}{$A\neq \varnothing$, and all functions $f^\mathcal{A}$ are total.}
+\note{}{$A\neq \varnothing$, and all functions $f^\mathfrak{A}$ are total.}
 \bsp{}{Let $\mathcal{L} = \{\in\}$ where $\in$ is a binary relation "
     An example of an $\mathcal{L}$ structure is $(\NN, \in^\NN)$ where $\in^\NN = \{(x,y)\in \NN^2 : x<y\}$}
-\defin{Assigment}{Let $\varphi$ be a $\mathcal{L}$-fla. and $\mathcal{A}$ a $\mathcal{L}$-structure. 
+\defin{Assigment}{Let $\varphi$ be a $\mathcal{L}$-fla. and $\mathfrak{A}$ a $\mathcal{L}$-structure. 
     Let $V$ be the set of all variables in $\mathcal{L}$ and $s:V\to A$ an assignment.\outernote{assigment}
     We define the extention $\overline{s}$ of $s$ to the set of all $\mathcal{L}$-terms by
     \begin{itemize}
         \item if $x\in V$ then $\overline{s}(x) \defeq s(x)$
-        \item for $c\in \mathcal{L}$ a constant symbol, then $\overline{s}(c) \defeq c^\mathcal{A}$
+        \item for $c\in \mathcal{L}$ a constant symbol, then $\overline{s}(c) \defeq c^\mathfrak{A}$
         \item for $t_1,\dots t_n$ $\mathcal{L}$-terms and $f\in \mathcal{L}$ an $n$-ary function symbol, then 
-        $$\overline{s}(ft_1\dots t_n) \defeq f^\mathcal{A}(\overline{s}(t_1),\dots \overline{s}(t_n))$$
+        $$\overline{s}(ft_1\dots t_n) \defeq f^\mathfrak{A}(\overline{s}(t_1),\dots \overline{s}(t_n))$$
     \end{itemize}
 }
 
@@ -146,18 +146,18 @@ which also determine the scope of the quantifier $\forall$, the meaning of all p
 }
 \newpage
 \subsection*{Definition of truth}
-\defin{Satisfy}{ We define '$\mathcal{A}$ satisfies $\varphi$ with $s$' and write
-    $\mathcal{A}\models \varphi \:[s]$\outernote{$\models_\mathcal{A}$} or $\models_\mathcal{A} \varphi \:[s]$ inductively over the complexity of the formula $\varphi$
+\defin{Satisfy}{ We define '$\mathfrak{A}$ satisfies $\varphi$ with $s$' and write
+    $\mathfrak{A}\models \varphi \:[s]$\outernote{$\models_\mathfrak{A}$} or $\models_\mathfrak{A} \varphi \:[s]$ inductively over the complexity of the formula $\varphi$
     \begin{enumerate}
         \item if $\varphi$ is atomic: \begin{itemize}
-            \item $\mathcal{A} \models\: = t_1,t_2 \: [s]$ iff $ \overline{s}(t_1) = \overline{s}(t_2)$
-            \item $\mathcal{A} \models P t_1,\dots t_n \: [s]$ iff $(\overline{s}(t_1),\dots \overline{s}(t_2))\in P^\mathcal{A}$
+            \item $\mathfrak{A} \models\: = t_1,t_2 \: [s]$ iff $ \overline{s}(t_1) = \overline{s}(t_2)$
+            \item $\mathfrak{A} \models P t_1,\dots t_n \: [s]$ iff $(\overline{s}(t_1),\dots \overline{s}(t_2))\in P^\mathfrak{A}$
         \end{itemize}
-        \item suppose $\mathcal{A}\models \varphi \: [s]$ and $\mathcal{A}\models \psi \: [s]$ are defined, then
+        \item suppose $\mathfrak{A}\models \varphi \: [s]$ and $\mathfrak{A}\models \psi \: [s]$ are defined, then
         \begin{itemize}
-            \item $\mathcal{A}\models \lnot\varphi \: [s]$ iff $\mathcal{A}\nvDash \varphi \: [s]$
-            \item $\mathcal{A}\models \varphi\to \psi \: [s]$ iff $\mathcal{A}\models \psi \: [s]$ or $\mathcal{A}\nvDash  \varphi \: [s]$
-            \item $\mathcal{A}\models \forall x \varphi \: [s]$ iff for all $a\in A$ $\mathcal{A}\models \varphi [s(x| a)]$
+            \item $\mathfrak{A}\models \lnot\varphi \: [s]$ iff $\mathfrak{A}\nvDash \varphi \: [s]$
+            \item $\mathfrak{A}\models \varphi\to \psi \: [s]$ iff $\mathfrak{A}\models \psi \: [s]$ or $\mathfrak{A}\nvDash  \varphi \: [s]$
+            \item $\mathfrak{A}\models \forall x \varphi \: [s]$ iff for all $a\in A$ $\mathfrak{A}\models \varphi [s(x| a)]$
             where 
             \begin{equation*}
                 s(x|a)(v) = \begin{cases}
@@ -171,30 +171,30 @@ which also determine the scope of the quantifier $\forall$, the meaning of all p
 }
 \bsp{}{
     $\mathcal{L} = \{\forall, \leq, S, 0\}$ 
-    a $\mathcal{L}$-structure then could be $\mathcal{N} = (\NN,\leq^\mathcal{N},S^\mathcal{N},0^\mathcal{N})$ together with an assignment
+    a $\mathcal{L}$-structure then could be $\mathfrak{N} = (\NN,\leq^\mathfrak{N},S^\mathfrak{N},0^\mathfrak{N})$ together with an assignment
     $s: v_n \mapsto n-1$ then:
     \begin{itemize}
         \item $s(v_1) = 0$
-        \item $\overline{s}(0) = 0^\mathcal{N}$ (a constant is always mapped to its realisation, the interpretation of constant $0$ in the structure $\mathcal{N}$)
-        \item $\overline{s}(Sv_1) = S^\mathcal{N}(\overline{s}(v_1)) = S^\mathcal{N}(0) = 1$\\
-        \item $\mathcal{N}\models \forall v_1 (S(v_1) \neq v_1) \: [s]$\\
-            iff for all $a\in \NN$ we have that $\mathcal{N}\models (S(v_1) \neq v_1) [s(v_1 | a)]$\\
+        \item $\overline{s}(0) = 0^\mathfrak{N}$ (a constant is always mapped to its realisation, the interpretation of constant $0$ in the structure $\mathfrak{N}$)
+        \item $\overline{s}(Sv_1) = S^\mathfrak{N}(\overline{s}(v_1)) = S^\mathfrak{N}(0) = 1$\\
+        \item $\mathfrak{N}\models \forall v_1 (S(v_1) \neq v_1) \: [s]$\\
+            iff for all $a\in \NN$ we have that $\mathfrak{N}\models (S(v_1) \neq v_1) [s(v_1 | a)]$\\
             iff \dots \\
-            iff for all $a\in \NN$ we have $S^\mathcal{A}(a) \neq a$, which is true in our structure of the natural numbers.
-        \item Is it true in $\mathcal{N}$ that $\mathcal{N}\models S(0) \leq S(v_1) \: [s]$? Yes because
+            iff for all $a\in \NN$ we have $S^\mathfrak{A}(a) \neq a$, which is true in our structure of the natural numbers.
+        \item Is it true in $\mathfrak{N}$ that $\mathfrak{N}\models S(0) \leq S(v_1) \: [s]$? Yes because
         \begin{equation*}
             \begin{split}
-                &\mathcal{N}\models S(0) \leq S(v_1) \: [s] \\
+                &\mathfrak{N}\models S(0) \leq S(v_1) \: [s] \\
                 &\iif \: 1\leq 1
             \end{split}
         \end{equation*}
         
     \end{itemize}
 }
-\note{}{To know wheter $\mathcal{A}\models \varphi \: [s]$ it suffices to know where $s$ maps the variables that are free in $\varphi$}
+\note{}{To know wheter $\mathfrak{A}\models \varphi \: [s]$ it suffices to know where $s$ maps the variables that are free in $\varphi$}
 
 \prop{}{Suppose $s_1,s_2:V\to A$ agree on all variables that occur free in $\varphi$ then 
- $$\mathcal{A}\models \varphi \:[s_1] \text{ iff }\mathcal{A}\models \varphi \: [s_2]$$
+ $$\mathfrak{A}\models \varphi \:[s_1] \text{ iff }\mathfrak{A}\models \varphi \: [s_2]$$
 }{
     By complexity of $\varphi$
     \begin{enumerate}
@@ -205,69 +205,69 @@ which also determine the scope of the quantifier $\forall$, the meaning of all p
             By complexity of $t$
             \begin{itemize}
                 \item $t = v_m$ then  $\overline{s}_1(t) ={s}_1(v_m) = {s}_2(v_m) =\overline{s}_2(t)$
-                \item $t = c$ then  $\overline{s}_1(t) =c^\mathcal{A} =\overline{s}_2(t)$
+                \item $t = c$ then  $\overline{s}_1(t) =c^\mathfrak{A} =\overline{s}_2(t)$
                 \item $t = ft_1\dots t_n$ inductively, assume $\overline{s}_1(t_i) =\overline{s}_2(t_i)$ for all $1\leq i\leq n$ then  TODO
             \end{itemize}
         \end{claimproof}
         \item if $\varphi$ is $ =t_1,t_2$ is similar
-        \item if $\varphi$ is $\lnot \alpha$ then $\mathcal{A}\models \lnot \alpha  \: [s_1]$ iff $\mathcal{A}\vDash \alpha  \: [s_1]$iff $\mathcal{A}\vDash \alpha  \: [s_2]$ iff $\mathcal{A}\models \lnot \alpha  \: [s_1]$
-        \item if $\varphi$ is $\alpha \to \beta$ then $\mathcal{A}\models  \alpha \to \beta  \: [s_1]$ iff .. or .. iff for s2 iff ... or .. 
+        \item if $\varphi$ is $\lnot \alpha$ then $\mathfrak{A}\models \lnot \alpha  \: [s_1]$ iff $\mathfrak{A}\vDash \alpha  \: [s_1]$iff $\mathfrak{A}\vDash \alpha  \: [s_2]$ iff $\mathfrak{A}\models \lnot \alpha  \: [s_1]$
+        \item if $\varphi$ is $\alpha \to \beta$ then $\mathfrak{A}\models  \alpha \to \beta  \: [s_1]$ iff .. or .. iff for s2 iff ... or .. 
         \item if $\varphi$ is $ \forall x \alpha$ then the assumption is that $s_1,s_2$ .. the free variables of $\alpha$ are the free variables of $\varphi$ exept for $x$.
         but because $s_1(x|a) = s_2(x|a)$ they both agree on all free variables of $\alpha$.
         \[\begin{split}
-            \mathcal{A}\models \forall x \varphi  \: [s_1] &\iif \fora a\in A \mathcal{A}\models \varphi  \: [s_1(x| a)]\\
-            & \iif \fora a\in A \mathcal{A}\models \varphi  \: [s_2(x| a)]\\
-            & \iif \mathcal{A}\models \forall x \varphi  \: [s_2]
+            \mathfrak{A}\models \forall x \varphi  \: [s_1] &\iif \fora a\in A \mathfrak{A}\models \varphi  \: [s_1(x| a)]\\
+            & \iif \fora a\in A \mathfrak{A}\models \varphi  \: [s_2(x| a)]\\
+            & \iif \mathfrak{A}\models \forall x \varphi  \: [s_2]
         \end{split}\]
     \end{enumerate}
     
 }
-Notation: $\mathcal{A}\models \varphi $TODO means that all free variables of $\varphi$ are among $v_1,\dots v_n$ and $\mathcal{A}\models \varphi \: [s]$ whenever $s(v_i) = a_i$ for all $1\leq i\leq n$.
-\coroll{If $\sigma$ is a sentence then $\mathcal{A}\models \varphi \: [s]$ for all $s:V\to A$ or 
-$\mathcal{A}\vDash \varphi \: [s]$ for all $s:V\to A$.
+Notation: $\mathfrak{A}\models \varphi $TODO means that all free variables of $\varphi$ are among $v_1,\dots v_n$ and $\mathfrak{A}\models \varphi \: [s]$ whenever $s(v_i) = a_i$ for all $1\leq i\leq n$.
+\coroll{If $\sigma$ is a sentence then $\mathfrak{A}\models \varphi \: [s]$ for all $s:V\to A$ or 
+$\mathfrak{A}\vDash \varphi \: [s]$ for all $s:V\to A$.
 
-Notation: $\mathcal{A}\models \sigma$ "$\sigma$ is true in $\mathcal{A}$, $\mathcal{A}$ is a model of $\sigma$ or $\sigma$ holds in $\mathcal{A}$.
+Notation: $\mathfrak{A}\models \sigma$ "$\sigma$ is true in $\mathfrak{A}$, $\mathfrak{A}$ is a model of $\sigma$ or $\sigma$ holds in $\mathfrak{A}$.
 }
-\note{}{If $\sigma$ is a sentence then we can not have  $\mathcal{A}\models \sigma$ and  $\mathcal{A}\vDash \sigma$ because $A\neq \varnothing$.}
-\defin{Model}{$\mathcal{A}$ is a model of a set of sentences $\Sigma$ iff for every sentence $\sigma\in \Sigma$ it holds  $\mathcal{A}\models \sigma$ }
+\note{}{If $\sigma$ is a sentence then we can not have  $\mathfrak{A}\models \sigma$ and  $\mathfrak{A}\vDash \sigma$ because $A\neq \varnothing$.}
+\defin{Model}{$\mathfrak{A}$ is a model of a set of sentences $\Sigma$ iff for every sentence $\sigma\in \Sigma$ it holds  $\mathfrak{A}\models \sigma$ }
 \bsp{}{$\mathcal{L} = \{0,1,+,-,\cdot\}$
-A realisation could be $\mathcal{R} = (\RR, 0,1,+,-,\cdot)$ or $\mathcal{C} = (\mathbb{C}, 0,1,+,-,\cdot)$
+A realisation could be $\mathfrak{R} = (\RR, 0,1,+,-,\cdot)$ or $\mathcal{C} = (\mathbb{C}, 0,1,+,-,\cdot)$
 then the sentence 
-$\sigma: \quad \exists x (x\cdot x = -1)$ then $\mathcal{R}\vDash \sigma$ but $\mathcal{C}\models \sigma$
+$\sigma: \quad \exists x (x\cdot x = -1)$ then $\mathfrak{R}\vDash \sigma$ but $\mathcal{C}\models \sigma$
 
 }
 \note{}{$\land,\lor,\leftrightarrow,\exists$ work as expected. That is 
- $\mathcal{A}\models (\alpha \land \beta) \: [s]$ iff $\mathcal{A}\models \alpha \: [s]$ and $\mathcal{A}\models \beta \: [s]$
- $\mathcal{A}\models (\alpha \lor \beta) \: [s]$ iff $\mathcal{A}\models \alpha \: [s]$ or $\mathcal{A}\models \beta \: [s]$
- $\mathcal{A}\models \exists x \alpha \: [s]$ iff $\mathcal{A}\models \lnot \forall x \lnot \alpha \: [s]$\\
- iff $\mathcal{A}\vDash \forall x \lnot \alpha \: [s]$\\
- iff it is not true that forall $a \in A$ $\mathcal{A}\models \lnot \alpha [s(x|a)]$\\
- iff there is $a\in A$ such that $\mathcal{A}\models \alpha [s(x|a)]$
+ $\mathfrak{A}\models (\alpha \land \beta) \: [s]$ iff $\mathfrak{A}\models \alpha \: [s]$ and $\mathfrak{A}\models \beta \: [s]$
+ $\mathfrak{A}\models (\alpha \lor \beta) \: [s]$ iff $\mathfrak{A}\models \alpha \: [s]$ or $\mathfrak{A}\models \beta \: [s]$
+ $\mathfrak{A}\models \exists x \alpha \: [s]$ iff $\mathfrak{A}\models \lnot \forall x \lnot \alpha \: [s]$\\
+ iff $\mathfrak{A}\vDash \forall x \lnot \alpha \: [s]$\\
+ iff it is not true that forall $a \in A$ $\mathfrak{A}\models \lnot \alpha [s(x|a)]$\\
+ iff there is $a\in A$ such that $\mathfrak{A}\models \alpha [s(x|a)]$
 }
 
 
 \section{Logical implication}
 Let $\Gamma$ be a set of $\mathcal{L}$-formulas, $\varphi$ a $\mathcal{L}$-formula.
 \defin{Logical implication}{
-    $\Gamma \models \varphi$ "$\Gamma$ logically implies $\varphi$" if for every $L$-structure $\mathcal{A}$ and for every $s:V\to A$ 
+    $\Gamma \models \varphi$ "$\Gamma$ logically implies $\varphi$" if for every $L$-structure $\mathfrak{A}$ and for every $s:V\to A$ 
 
-    if $\mathcal{A}\models \gamma \: [s]$for every $\gamma \in \Gamma$  then $\mathcal{A}\models \varphi \: [s]$
+    if $\mathfrak{A}\models \gamma \: [s]$for every $\gamma \in \Gamma$  then $\mathfrak{A}\models \varphi \: [s]$
 
 }
 
 \defin{Logical equivalence}{$\varphi,\psi$ are called logically equivalent if 
 $\varphi \models \psi$ and $\psi \models \varphi$.
 }
-\defin{Valid}{$\varphi$ is called valid iff $\models \varphi$ i.e. $\varnothing\models \varphi$ i.e. for every $\mathcal{L}$-structure $\mathcal{A}$ and every $s:V\to A$ it is $\mathcal{A}\models \varphi \: [s]$
+\defin{Valid}{$\varphi$ is called valid iff $\models \varphi$ i.e. $\varnothing\models \varphi$ i.e. for every $\mathcal{L}$-structure $\mathfrak{A}$ and every $s:V\to A$ it is $\mathfrak{A}\models \varphi \: [s]$
 }
 \bsp{}{
 \begin{enumerate}
     \item $\forall x_1 P x_1 \models P x_2$\\
-    Suppose $\mathcal{A}\models \forall x_1 P x_1 \: [s]$.
-    then for all $a\in A$ it is $\mathcal{A}\models P x_1 [s(x_1|a)]$ in particular, $a\in P^\mathcal{A}$ for $a = s(x_2)$
+    Suppose $\mathfrak{A}\models \forall x_1 P x_1 \: [s]$.
+    then for all $a\in A$ it is $\mathfrak{A}\models P x_1 [s(x_1|a)]$ in particular, $a\in P^\mathfrak{A}$ for $a = s(x_2)$
     \item  $\forall P x_2 \vDash \forall x_1 P x_1$\\
-    We need a counterexample to $\forall P x_2 \models \forall x_1 P x_1$. Let $A = \{a_1,a_2\}$ $s(x_2) = a_1$ and $P^\mathcal{A} = \{a_1\}$
-    then $\mathcal{A}\models Px_2 \: [s]$.
+    We need a counterexample to $\forall P x_2 \models \forall x_1 P x_1$. Let $A = \{a_1,a_2\}$ $s(x_2) = a_1$ and $P^\mathfrak{A} = \{a_1\}$
+    then $\mathfrak{A}\models Px_2 \: [s]$.
     \item Is the following valid? $\models \exists x(Px \to \forall y P y)$ yes
     \item $\Gamma,\alpha\models \varphi$ iff $\Gamma \models \alpha \to \varphi$. (on next problem set, quite impoirtant)
 \end{enumerate}
@@ -275,10 +275,10 @@ $\varphi \models \psi$ and $\psi \models \varphi$.
 
 \section{definability in a structure}
 \defin{definability in a structure}{ 
-    We say that a general $n$-ary relation $P$ on $A$ (we will just call it $P$, it does not have to be in the language) is definable in $\mathcal{A}$, if there is a $\mathcal{L}$-formula
+    We say that a general $n$-ary relation $P$ on $A$ (we will just call it $P$, it does not have to be in the language) is definable in $\mathfrak{A}$, if there is a $\mathcal{L}$-formula
     $\varphi$ with free variables among $\{v_1,\dots,v_n\}$ such that 
-    \[P = \{(a_1,\dots a_n) : \mathcal{A} \models \varphi\: \llbracket a_1,\dots a_n\rrbracket\}\]
-    We also say that $\varphi$ defines $P$ in the structure $\mathcal{A}$.
+    \[P = \{(a_1,\dots a_n) : \mathfrak{A} \models \varphi\: \llbracket a_1,\dots a_n\rrbracket\}\]
+    We also say that $\varphi$ defines $P$ in the structure $\mathfrak{A}$.
 }
 \bsp{}{
     \begin{enumerate}
@@ -289,54 +289,54 @@ $\varphi \models \psi$ and $\psi \models \varphi$.
 \bsp{}{
 \begin{enumerate}
     \item TODO
-    \item $\mathcal{R} = (\RR,0,1,+,-,\cdot)$ Q: is $[0,\infty)$ definable in $\mathcal{R}$
+    \item $\mathfrak{R} = (\RR,0,1,+,-,\cdot)$ Q: is $[0,\infty)$ definable in $\mathfrak{R}$
     Yes because $\exists y (y\cdot y = x)$
     Indeed we can even define the $\leq$ relation on $\RR^2$ by $x\leq z \defaq \exists y (x+y\cdot y = z)$ 
 \end{enumerate}
 }
 \defin{definability of classes of structures}{
     Let $\Sigma$ be a set of sentences. $\tau$ a sentence.
-    We will say that the class of models of $\Sigma$ is the class $Mod \Sigma =\{\mathcal{A} : \mathcal{A}\models \Sigma\}$.
-    Let $K$ be a class of structures. We are going to call $K$ an elementary class (EC) if there is a single sentence $\tau$ such that $Mod \tau = K$
-    $K$ is an elementary class in the wider sence (EC$\Delta$) if there is a set of sentences $\Sigma$ such that $Mod \Sigma = K$
+    We will say that the class of models of $\Sigma$ is the class $\Mod \Sigma =\{\mathfrak{A} : \mathfrak{A}\models \Sigma\}$.
+    Let $K$ be a class of structures. We are going to call $K$ an elementary class (EC) if there is a single sentence $\tau$ such that $K = \Mod \tau$.
+    $K$ is called an elementary class in the wider sence (EC$_\Delta$) if there is a set of sentences $\Sigma$ such that $K = \Mod \Sigma$
 
 }
 \bsp{}{$\mathcal{L} = \{0,1,+,\cdot\}$ 
     $\tau$ is a sentence that expresses the field axioms (the unary inverse functions are not in our language but are definable.)
-    $Mod \tau$ is the class of all the fields, which is EC.
+    $\Mod \tau$ is the class of all the fields, which is EC.
     the class of all fields of characteristic $0$. Let $\sigma_p: \lnot(1 + \dots +1 = 0)$ then $\Sigma = \{\tau\} \cup \{\sigma_p : p\in \mathbb{P}\}$ 
-    yields $Mod \Sigma$ is the class of fields with characteristic $0$, therefore EC$\Delta$, we will later see that it is not $EC$.
+    yields $\Mod \Sigma$ is the class of fields with characteristic $0$, therefore EC$_\Delta$, we will later see that it is not $EC$.
 
 }
 \bsp{}{
-    Let $E$ be a binary relation, $\mathcal{L} = \{E\}$ then a graph is a realisation $\mathcal{G} = (V,E^\mathcal{G})$ 
-    such that $v\neq \varnothing$, $E^\mathcal{G}$ is irreflexive and symmetric.
+    Let $E$ be a binary relation, $\mathcal{L} = \{E\}$ then a graph is a realisation $\mathfrak{G} = (V,E^\mathfrak{G})$ 
+    such that $v\neq \varnothing$, $E^\mathfrak{G}$ is irreflexive and symmetric.
     By definition the universe is not empty, we still have to check irreflexive and symmetric.
     \begin{itemize}
         \item irreflexive: $\forall x (\lnot x E x)$
         \item symmetric: $\forall x \forall y (x E y \to y E x)$
     \end{itemize}
     We take $\tau$ to be $\forall x \forall y ((\lnot x E x)\land (x E y \to y E x))$
-    Then $Mod \tau$ is the class of all graphs and is EC
-    Note: the class of all finite graphs is neither EC nor EC$\Delta$. proof later.
+    Then $\Mod \tau$ is the class of all graphs and is EC
+    Note: the class of all finite graphs is neither EC nor EC$_\Delta$. proof later.
 }
 We want to have some notion that tells us when two graphs are the same or at least similar.
 \section{Homomorphisms of structures}
 \defin{Homomorphism}{
-    Suppose that $\mathcal{A},\mathcal{B}$ are two $\mathcal{L}$-structures. then a Homomorphism of $\mathcal{A}$ into $\mathcal{B}$ is a map
+    Suppose that $\mathfrak{A},\mathfrak{B}$ are two $\mathcal{L}$-structures. then a Homomorphism of $\mathfrak{A}$ into $\mathfrak{B}$ is a map
     $h: A \to B$ that satisfy the below conditions
     \begin{itemize}
-        \item for every $n$-ary predicate $P\in \mathcal{L}$ it is $(a_1,\dots a_n)\in P^\mathcal{A}$ iff $(h(a_1),\dots h(a_n))\in P^\mathcal{B}$ (this def. a strong Homomorphism, other textbooks maybe only reqire $\to$ direction)
-        \item for every $n$-ary function $f\in \mathcal{L}$ and for all $\underline{a} = (a_1,\dots a_n)\in A^n$ it holds $h(f^\mathcal{A}(\underline{a})) = f^\mathcal{B}(h(a_1),\dots h(a_n))$
-        \item for every constant symbol $c\in \mathcal{L}$ it is $h(c^\mathcal{A}) = c^\mathcal{B}$ (could also skip this if we consider constants as $0$-ary functions)
+        \item for every $n$-ary predicate $P\in \mathcal{L}$ it is $(a_1,\dots a_n)\in P^\mathfrak{A}$ iff $(h(a_1),\dots h(a_n))\in P^\mathfrak{B}$ (this def. a strong Homomorphism, other textbooks maybe only reqire $\to$ direction)
+        \item for every $n$-ary function $f\in \mathcal{L}$ and for all $\underline{a} = (a_1,\dots a_n)\in A^n$ it holds $h(f^\mathfrak{A}(\underline{a})) = f^\mathfrak{B}(h(a_1),\dots h(a_n))$
+        \item for every constant symbol $c\in \mathcal{L}$ it is $h(c^\mathfrak{A}) = c^\mathfrak{B}$ (could also skip this if we consider constants as $0$-ary functions)
     \end{itemize}
 }
-\note{}{Intuativly a Homomorphism of $\mathcal{A}$ into $\mathcal{B}$ is a map $A \to B$ that preserve all funciton and relation symbols in some sense, (imp: not the definable relations)}
+\note{}{Intuativly a Homomorphism of $\mathfrak{A}$ into $\mathfrak{B}$ is a map $A \to B$ that preserve all funciton and relation symbols in some sense, (imp: not the definable relations)}
 \defin{Isomorphism}{
     \begin{itemize}
-        \item $h:A\to B$  is called isomorphism of $\mathcal{A}$ into $\mathcal{B}$ if $h$ is a Homomorphism and injective (in other textbooks: an isomorphic embedding of $\mathcal{A}$ into $\mathcal{B}$)
-        \item $h:A\to B$  is called isomorphism of $\mathcal{A}$ onto $\mathcal{B}$ if $h$ is a Homomorphism and bijective $A\to B$
-        \item \outernote{isomorphic}$\mathcal{A}$ and $\mathcal{B}$ are called isomorphic if there is an isomorphism of $\mathcal{A}$ onto $\mathcal{B}$
+        \item $h:A\to B$  is called isomorphism of $\mathfrak{A}$ into $\mathfrak{B}$ if $h$ is a Homomorphism and injective (in other textbooks: an isomorphic embedding of $\mathfrak{A}$ into $\mathfrak{B}$)
+        \item $h:A\to B$  is called isomorphism of $\mathfrak{A}$ onto $\mathfrak{B}$ if $h$ is a Homomorphism and bijective $A\to B$
+        \item \outernote{isomorphic}$\mathfrak{A}$ and $\mathfrak{B}$ are called isomorphic if there is an isomorphism of $\mathfrak{A}$ onto $\mathfrak{B}$
     \end{itemize}
 }
 \note{}{
@@ -344,14 +344,14 @@ We want to have some notion that tells us when two graphs are the same or at lea
 }
 \bsp{}{
     $\mathcal{L}= \{+,\cdot\}$
-    $\mathcal{N} = (\NN, +^\NN, \cdot^\NN)$ and $\mathcal{B} = (B,+^\mathcal{B},\cdot^\mathcal{B})$ where $B = \{0,1\}$ and 
+    $\mathfrak{N} = (\NN, +^\NN, \cdot^\NN)$ and $\mathfrak{B} = (B,+^\mathfrak{B},\cdot^\mathfrak{B})$ where $B = \{0,1\}$ and 
     \begin{tabular}{c|c c}
-        $+^\mathcal{B}$ & $e$ & 0\\\hline
+        $+^\mathfrak{B}$ & $e$ & 0\\\hline
         $e$ & $e$ & 0\\
         0 & 0 & $e$
     \end{tabular}
     \begin{tabular}{c|c c}
-        $\cdot^\mathcal{B}$ & $e$ & 0\\\hline
+        $\cdot^\mathfrak{B}$ & $e$ & 0\\\hline
         $e$ & $e$ & $e$\\
         0 & $e$ & 0
     \end{tabular}
@@ -360,98 +360,98 @@ We want to have some notion that tells us when two graphs are the same or at lea
         e & \text{ if $n$ is even}\\
         0 & \text{ else}
     \end{cases}$
-    need at first that $h(m+n ) = h(m) +^\mathcal{B} h(n)$
-    and $h(m\cdot n) = h(m)\cdot^\mathcal{B} h(n)$.
+    need at first that $h(m+n ) = h(m) +^\mathfrak{B} h(n)$
+    and $h(m\cdot n) = h(m)\cdot^\mathfrak{B} h(n)$.
     it is indeed a Homomorphism.
 }
-\defin{Substructure}{Suppose we have two $\mathcal{L}$ structures and $A\subseteq B$ hen $\mathcal{A}$ is a substructure of $\mathcal{B}$ 
-    (notation: $\mathcal{A}\subseteq \mathcal{B}$ or we might say $\mathcal{B}$ is an extention of $\mathcal{A}$ ) if
+\defin{Substructure}{Suppose we have two $\mathcal{L}$ structures and $A\subseteq B$ hen $\mathfrak{A}$ is a substructure of $\mathfrak{B}$ 
+    (notation: $\mathfrak{A}\subseteq \mathfrak{B}$ or we might say $\mathfrak{B}$ is an extention of $\mathfrak{A}$ ) if
     \begin{itemize}
-        \item for every $n$-ary relation $P^\mathcal{A} = P^\mathcal{B}|_A$
-        \item for every $n$-ary function $f^\mathcal{A} = f^\mathcal{B}|_A$
-        \item for every constant symbol $c$ in $\mathcal{L}$ it is $c^\mathcal{A} = c^\mathcal{B}$
+        \item for every $n$-ary relation $P^\mathfrak{A} = P^\mathfrak{B}|_A$
+        \item for every $n$-ary function $f^\mathfrak{A} = f^\mathfrak{B}|_A$
+        \item for every constant symbol $c$ in $\mathcal{L}$ it is $c^\mathfrak{A} = c^\mathfrak{B}$
     \end{itemize}
 }
 \bsp{}{
-    $\mathcal{L} = \{\leq\}$ then $\mathcal{N} = (\NN, \leq)$ and $\mathcal{P} = (\NN^+, \leq ^\mathcal{P})$ where $\leq^\mathcal{P}$ is the restriction of $\leq$ to the positive natual numbers.
-    $\mathcal{P} \subseteq \mathcal{N}$ and there exists a isomorphic embedding $id: \NN^+\to \NN$ from $\mathcal{P}$ into $\mathcal{N}$
-    They are even isomorphic ($h:\NN \to \NN^+, h(n) = n+1$) so in fact $\mathcal{P} \cong \mathcal{N}$.
+    $\mathcal{L} = \{\leq\}$ then $\mathfrak{N} = (\NN, \leq)$ and $\mathcal{P} = (\NN^+, \leq ^\mathcal{P})$ where $\leq^\mathcal{P}$ is the restriction of $\leq$ to the positive natual numbers.
+    $\mathcal{P} \subseteq \mathfrak{N}$ and there exists a isomorphic embedding $id: \NN^+\to \NN$ from $\mathcal{P}$ into $\mathfrak{N}$
+    They are even isomorphic ($h:\NN \to \NN^+, h(n) = n+1$) so in fact $\mathcal{P} \cong \mathfrak{N}$.
 }
 \bsp{}{
     $(\mathbb{Q},+)\subseteq(\mathbb{C},+)$
 }
-\note{}{If $\mathcal{A}\subseteq \mathcal{B}$ then in particular $\mathcal{A}$ is closed under all constant and functions in $\mathcal{B}$
-    So suppose that $\mathcal{B}$ is a substructure and $A\subseteq B$ and $A\neq \varnothing$ and $A$ is closed under $f^\mathcal{B}$, $c^\mathcal{B}$ 
-    Can then $A$ be made into a substructure $\mathcal{A}$ of $\mathcal{B}$.
-    $f^\mathcal{A}$ would be the restriction of $f^\mathcal{B}$ to $A^n$, constants $c^\mathcal{A} = c^\mathcal{B}$ 
-    and if $P \in \mathcal{L}$ is an $n$-ary predicate then $P^\mathcal{A}$ should be $P^\mathcal{B}\cap A^n$.
+\note{}{If $\mathfrak{A}\subseteq \mathfrak{B}$ then in particular $\mathfrak{A}$ is closed under all constant and functions in $\mathfrak{B}$
+    So suppose that $\mathfrak{B}$ is a substructure and $A\subseteq B$ and $A\neq \varnothing$ and $A$ is closed under $f^\mathfrak{B}$, $c^\mathfrak{B}$ 
+    Can then $A$ be made into a substructure $\mathfrak{A}$ of $\mathfrak{B}$.
+    $f^\mathfrak{A}$ would be the restriction of $f^\mathfrak{B}$ to $A^n$, constants $c^\mathfrak{A} = c^\mathfrak{B}$ 
+    and if $P \in \mathcal{L}$ is an $n$-ary predicate then $P^\mathfrak{A}$ should be $P^\mathfrak{B}\cap A^n$.
     If $\mathcal{L}$ has no const. or fuction symbols then any subset can be made into a substructure of a structure on $\mathcal{L}$.
 }
 Our next question will be: what is the relation of the above notions with truth and satisfiability
 The answer will be given by the so called Homomorphism theorem.
 
 \prop{Homomorphism theorem}{
-    $h$ homomorphism of $\mathcal{A}$ into $\mathcal{B}$, $s:V\to A$ then
+    $h$ homomorphism of $\mathfrak{A}$ into $\mathfrak{B}$, $s:V\to A$ then
     \begin{enumerate}
         \item for all terms $t$ it is $h(\overline{s}(t))=\overline{(h\circ s)}(t)$
-        \item $\varphi$ a fla. that is quantifier free and does not include $=$ then $\mathcal{A}\models \varphi \: [s]$ iff $\mathcal{B}\models \varphi  \: [h\circ s]$
+        \item $\varphi$ a fla. that is quantifier free and does not include $=$ then $\mathfrak{A}\models \varphi \: [s]$ iff $\mathfrak{B}\models \varphi  \: [h\circ s]$
         \item if $h$ is additionally injective then we can drop the requirement " no $=$".
-        \item if $h$ is homomorphism of $\mathcal{A}$ onto $\mathcal{B}$ then we can drop the requirement "q.f." in (b)
+        \item if $h$ is homomorphism of $\mathfrak{A}$ onto $\mathfrak{B}$ then we can drop the requirement "q.f." in (b)
     \end{enumerate}
 }{
     \begin{enumerate}
         \item problem set
         \item \begin{itemize}
-            \item $\varphi: Pt$ then $\mathcal{A}\models Pt \: [s]$ iff $\overline{s}(t)\in P^\mathcal{A}$ iff $h(\overline{s}(t))\in P^\mathcal{B}$ iff $\overline{(h\circ s)}(t)\in P^\mathcal{B}$ 
-            iff $\mathcal{B}\models Pt  \: [h\circ s]$
-            \item $\varphi: \lnot \psi$ $\mathcal{A}\models \lnot \psi \: [s]$ iff $\mathcal{A}\vDash \psi \: [s]$ iff $\mathcal{A}\vDash \psi \: [s]$ iff %TODO
+            \item $\varphi: Pt$ then $\mathfrak{A}\models Pt \: [s]$ iff $\overline{s}(t)\in P^\mathfrak{A}$ iff $h(\overline{s}(t))\in P^\mathfrak{B}$ iff $\overline{(h\circ s)}(t)\in P^\mathfrak{B}$ 
+            iff $\mathfrak{B}\models Pt  \: [h\circ s]$
+            \item $\varphi: \lnot \psi$ $\mathfrak{A}\models \lnot \psi \: [s]$ iff $\mathfrak{A}\vDash \psi \: [s]$ iff $\mathfrak{A}\vDash \psi \: [s]$ iff %TODO
             \item $\varphi: \psi \to \alpha$
         \end{itemize}
-        \item $\mathcal{A}\models =t_1t_2 \: [s]$ iff $\overline{s}(t_1)=\overline{s}(t_2)$ iff $h(\overline{s}(t_1))=h(\overline{s}(t_2))$ iff (by (a))$\overline{(h\circ s)}(t_1) = \overline{(h\circ s)}(t_2)$ 
-        iff $\mathcal{B}\models =t_1t_2 \: [h\circ s]$
-        \item $\varphi$ $ \forall s: V\to A$ $\mathcal{A}\models \varphi \: [s]$ iff $\mathcal{B}\models \varphi  \: [h\circ s]$, want $\mathcal{A}\models \forall x \varphi \: [s]$ iff 
-        $\mathcal{B}\models \forall x \varphi  \: [h \circ s]$
-        1. $\mathcal{B}\models \forall x \varphi  \: [(h\circ s)]$
-        iff for all $s:V\to A$, $a\in A$ (req. surjectivity) it is $\mathcal{B}\models \varphi  \: [(h\circ s)(x | h(a))]$
-        iff $\mathcal{B}\models \varphi  \: [h\circ (s(x |a))]$
-        iff (inductive assumption)$\mathcal{A}\models \varphi  \: [s(x|a)]$ because $a$ was arbitrary it is $\mathcal{A}\models \forall x \varphi \: [s]$
-        2. Suppose $\mathcal{B}\vDash \forall x \varphi  \: [(h\circ s)]$ then there exists a $b\in B$ such that $\mathcal{B}\models \lnot \varphi  \: [(h\circ s)(x | b)]$
-        by surjectivity we can find $a\in A$ such that $h(a)=b$ and it is $\mathcal{B}\models \lnot \varphi  \: [(h\circ s)(x | h(a))]$
-        By the inductive assumption $\mathcal{A}\models \lnot \varphi  \: [s(x|a)]$ and $\mathcal{A}\vDash \forall x \varphi \: [s]$
+        \item $\mathfrak{A}\models =t_1t_2 \: [s]$ iff $\overline{s}(t_1)=\overline{s}(t_2)$ iff $h(\overline{s}(t_1))=h(\overline{s}(t_2))$ iff (by (a))$\overline{(h\circ s)}(t_1) = \overline{(h\circ s)}(t_2)$ 
+        iff $\mathfrak{B}\models =t_1t_2 \: [h\circ s]$
+        \item $\varphi$ $ \forall s: V\to A$ $\mathfrak{A}\models \varphi \: [s]$ iff $\mathfrak{B}\models \varphi  \: [h\circ s]$, want $\mathfrak{A}\models \forall x \varphi \: [s]$ iff 
+        $\mathfrak{B}\models \forall x \varphi  \: [h \circ s]$
+        1. $\mathfrak{B}\models \forall x \varphi  \: [(h\circ s)]$
+        iff for all $s:V\to A$, $a\in A$ (req. surjectivity) it is $\mathfrak{B}\models \varphi  \: [(h\circ s)(x | h(a))]$
+        iff $\mathfrak{B}\models \varphi  \: [h\circ (s(x |a))]$
+        iff (inductive assumption)$\mathfrak{A}\models \varphi  \: [s(x|a)]$ because $a$ was arbitrary it is $\mathfrak{A}\models \forall x \varphi \: [s]$
+        2. Suppose $\mathfrak{B}\vDash \forall x \varphi  \: [(h\circ s)]$ then there exists a $b\in B$ such that $\mathfrak{B}\models \lnot \varphi  \: [(h\circ s)(x | b)]$
+        by surjectivity we can find $a\in A$ such that $h(a)=b$ and it is $\mathfrak{B}\models \lnot \varphi  \: [(h\circ s)(x | h(a))]$
+        By the inductive assumption $\mathfrak{A}\models \lnot \varphi  \: [s(x|a)]$ and $\mathfrak{A}\vDash \forall x \varphi \: [s]$
     \end{enumerate}
 }
-\note{}{$\mathcal{A}\cong \mathcal{B}$ then $\mathcal{A}$ and $\mathcal{B}$ satisfy exactly the same sentences.}
-\defin{elementarily equivalent}{$\mathcal{A}$ and $\mathcal{B}$ are called elementarily equivalent ($\mathcal{A}\equiv \mathcal{B}$) if $\mathcal{A}$ and $\mathcal{B}$ satisfy the same sentences.}
-\note{}{If $\mathcal{A}\cong \mathcal{B}$ implies $\mathcal{A}\equiv \mathcal{B}$
+\note{}{$\mathfrak{A}\cong \mathfrak{B}$ then $\mathfrak{A}$ and $\mathfrak{B}$ satisfy exactly the same sentences.}
+\defin{elementarily equivalent}{$\mathfrak{A}$ and $\mathfrak{B}$ are called elementarily equivalent ($\mathfrak{A}\equiv \mathfrak{B}$) if $\mathfrak{A}$ and $\mathfrak{B}$ satisfy the same sentences.}
+\note{}{If $\mathfrak{A}\cong \mathfrak{B}$ implies $\mathfrak{A}\equiv \mathfrak{B}$
     The converse is not true.
     For instance DLO (dence linear order) w/o endpoints is complete, so two structures on DLO are equivalent 
     $(\mathbb{Q},<)\equiv (\RR,<)$ but they are not isomorphic because the universes have diffrent cardinality. 
 }
 \bsp{}{
-    $\mathcal{N} = (\NN, \leq)$ and $\mathcal{P}=(\NN^{>0},\leq )$ $h:n\mapsto n-1:\mathcal{P}\to \mathcal{N}$ isom. 
-    so in part $\mathcal{N} \equiv \mathcal{P}$.
-    but $id:\mathcal{P}\to \mathcal{N}$ is only isom embedding, so for example
+    $\mathfrak{N} = (\NN, \leq)$ and $\mathcal{P}=(\NN^{>0},\leq )$ $h:n\mapsto n-1:\mathcal{P}\to \mathfrak{N}$ isom. 
+    so in part $\mathfrak{N} \equiv \mathcal{P}$.
+    but $id:\mathcal{P}\to \mathfrak{N}$ is only isom embedding, so for example
     $\forall y(x\neq y x\leq y)$  
-    $\mathcal{P}\models \alpha  \: [1]$ but $\mathcal{N}\nvDash \alpha  \: [1]$
-    but $\mathcal{N}\models \alpha  \: [h(1)]$
+    $\mathcal{P}\models \alpha  \: [1]$ but $\mathfrak{N}\nvDash \alpha  \: [1]$
+    but $\mathfrak{N}\models \alpha  \: [h(1)]$
 }
-\defin{Automorphism}{An automorphism is an isomorphism of the form $h:A\to A$ from $\mathcal{A}$ onto $\mathcal{A}$}
+\defin{Automorphism}{An automorphism is an isomorphism of the form $h:A\to A$ from $\mathfrak{A}$ onto $\mathfrak{A}$}
 \note{}{Every structure has a trivial automorphism $id:A\to A$}
-\defin{Rigid}{If the only automorphism on $\mathcal{A}$ is the trivial automorphism, then $\mathcal{A}$ is called rigid.}
+\defin{Rigid}{If the only automorphism on $\mathfrak{A}$ is the trivial automorphism, then $\mathfrak{A}$ is called rigid.}
 \bsp{}{ If every element is definable then the structure is rigid.
     For example $(\NN,0,S)$ and $(\NN,<)$ every element is definable, therefore the structures are rigid.
     %TODO examples structures with many automorphism
     }
 \coroll{
-    Let $h$ be atutom of $\mathcal{A}$, $R\subseteq A^n$ definable in $\mathcal{A}$ then $\forall a\in A^n a\in R \iif (h(a_1),\dots h(a_n))\in R$ 
-    Suppose $\varphi$ defines $R$ in $\mathcal{A}$ we want
-    $\mathcal{A}\models \varphi \: [a]$ iff  $\mathcal{A}\models \varphi \: [h(a_1),\dots h(a_n)]$ which is true by the homom. thm.
+    Let $h$ be atutom of $\mathfrak{A}$, $R\subseteq A^n$ definable in $\mathfrak{A}$ then $\forall a\in A^n a\in R \iif (h(a_1),\dots h(a_n))\in R$ 
+    Suppose $\varphi$ defines $R$ in $\mathfrak{A}$ we want
+    $\mathfrak{A}\models \varphi \: [a]$ iff  $\mathfrak{A}\models \varphi \: [h(a_1),\dots h(a_n)]$ which is true by the homom. thm.
 }
-\note{}{Corol can be used to show that some $R\subseteq A^n$ is not definable in $\mathcal{A}$
+\note{}{Corol can be used to show that some $R\subseteq A^n$ is not definable in $\mathfrak{A}$
 }
 \bsp{}{
-    $\mathcal{R}=(\RR,<)$ then $\NN$ is not definable in $\mathcal{R}$.
-    What do automorphisms of $\mathcal{R}$ look right? 
+    $\mathfrak{R}=(\RR,<)$ then $\NN$ is not definable in $\mathfrak{R}$.
+    What do automorphisms of $\mathfrak{R}$ look right? 
     $h:\RR\to \RR$ is a bijection and $x<y$ iff $h(x)<h(y)$ so $h$ is strictly increasing.
     for example $x\mapsto x+ \frac{1}{2}$ or $x\mapsto x^3$.  
 }
@@ -646,4 +646,128 @@ We will prove $\Gamma\models \varphi$ iff $\Gamma\vdash \varphi$ (the first dire
     \end{itemize}
 }
 \section{Generalization and deduction theorem}
+\note{}{Intuativly if $\Gamma$ does not assume anything about $x$ and $\Gamma$ proves $\varphi$ then $\Gamma$ proves $\forall x \varphi$}
+\prop{Generalization theorem}{If $\Gamma \vdash \varphi$ and $x$ does not occur free in $\Gamma$, then $\Gamma \vdash \forall x \varphi$}{
+    We use axiom group 4, $\alpha \to \forall x \alpha$ if $x$ is not occuring free in $\alpha$.
+    Since $x$ does not occur free in $\sigma\in\Gamma$, if $\varphi \in \Thm \Gamma$ then $\forall x \varphi \in \Thm \Gamma$.
+    Induction principle:
+    $S$ the set of flas. If $\Lambda\cup \Gamma\subseteq S$ and $S$ is closed under MP then $S$ contains $\Thm (\Gamma)$.
+    It is enough to show that $\{\varphi: \Gamma \vdash \forall x \varphi\}$ contains $\Gamma \cup \Lambda$.
+    and is closed under MP.
+    \begin{enumerate}
+        \item if $\varphi$ is a logical axiom then $\forall x \varphi$ is a generalization and therefore also a logical axiom, so $\Gamma \vdash \forall x \varphi$
+        \item Lets assume $\varphi in \Gamma$. then $x$ does not occur free in any element of $\Gamma$, then $\varphi \to \forall x \varphi$ is a logical axiom and $\Gamma \vdash \forall x \varphi$ by MP.
+        \item Closedness under MP. suppose $\varphi$ is obtained from $\psi$, $\psi \to \varphi$ by MP. Then by induction hyphothesis $\Gamma \vdash \forall x \psi$ and $\Gamma \vdash \forall x (\psi  \to \varphi)$
+        Then $\forall x (\psi \to \varphi) \to (\forall x \psi \to \forall x \varphi)$ is a logical axiom in group 3.
+        Then by MP $\Gamma \vdash \forall x \psi \to \forall x \varphi$\\
+        By MP again $\Gamma \vdash \forall x \varphi$
+    \end{enumerate}
+}
+\note{}{Suppose $x$ has free occurence in $\Gamma$ 
+    for example $Px \nvDash \forall x Px$ so we can not have $Px \vdash \forall x Px$ (want $\models$ iff $\vdash$)
+}
+\note{}{
+    Proof of Generalization theorem can be used to obtain a deduction of $\forall x \varphi$ from $\Gamma$ from a deduction of $\varphi$ from $\Gamma$.
+}
+\lemma{Rule T}{If $\Gamma\vdash \alpha_1$, $\Gamma\vdash \alpha_2$,\dots $\Gamma\vdash \alpha_n$ and $\{alpha_1,\alpha_2,\dots \alpha_n\}\models_{\text{taut}}\beta$ then $\Gamma \vdash \beta$. }{
+    $\alpha_1\to \alpha_2 \to \dots \to \alpha_n \to \beta$ is a logical axiom because it is a tautology.
+    Apply MP $n$-times.
+}
+\prop{Deduction theorem}{If $\Gamma \cup \{\gamma\}\vdash \varphi$ then $\Gamma \vdash (\gamma \to \varphi)$}{
+    Assume $\Gamma \cup \{\gamma\}\vdash \varphi$.
+    $\Gamma \cup \{\gamma\}\vdash \varphi$ iff $\Gamma \cup \{\gamma\}\cup \Lambda \models_{\text{taut}} \varphi$ \\
+    iff $\Gamma \cup \Lambda \models_{\text{taut}} \gamma \to \varphi$ (exercise sheet 1, ex 7)\\
+    iff $\Gamma \vdash (\gamma \to \varphi)$
+}
+\note{}{Deduction theorem is an equivalence. $\Gamma \vdash \gamma \to \varphi$ then $\Gamma \cup \{\gamma\}\vdash \gamma$. the statement follows by MP.}
+
+
+\coroll{(Contraposition): If $\Gamma\cup \{\varphi\}\vdash \lnot \psi$ then $\Gamma\cup \{\psi\}\vdash \lnot \varphi$ }
+\begin{proof}
+    Suppose $\Gamma\cup \{\varphi\}\vdash \lnot \psi$ then by deduction theorem $\Gamma \vdash \varphi\to \lnot \psi$
+    We observe that $\{\varphi \to \lnot \psi\}\models_{\text{taut}} \psi \to \lnot \varphi$.
+
+    By rule T: $\Gamma \vdash \psi \to \lnot \varphi$ and by the converse of the deduction theorem, by MP we have $\Gamma\cup \{\psi\}\vdash \lnot \varphi$
+\end{proof}
+
+
+\defin{}{A set of flas. $\Gamma$ is called inconsistent, if for some (euqivalent to all) fla. $\beta$ it is $\beta, \lnot \beta \in \Thm \Gamma$.}
+\note{}{If $\Gamma$ is inconsistent, then for $\alpha\in \Thm \Gamma$.
+Then $(\beta \to (\lnot \beta \to \alpha))$ is a tautology. Use $\beta$ from definition of inconsistence and use MP twice.
+}
+
+\coroll{(Reductio ad absurdum): If $\Gamma;\varphi$ inconsistent, then $\Gamma \vdash \lnot \varphi$.}
+\begin{proof}
+    Suppose that $\Gamma;\varphi$ is inconsistent. then for any $\beta$ $\Gamma;\varphi\vdash \beta$ and $\Gamma;\varphi\vdash \lnot \beta$ 
+    By the deduction theorem $\Gamma\vdash \varphi\to \beta$ and $\Gamma\vdash \varphi\to \lnot \beta$, therefore 
+    $\{\varphi \to \beta, \varphi \to \lnot \beta \}\models_{\text{taut}} \lnot \varphi$
+    By Rule T: $\Gamma \vdash \lnot \varphi$.
+\end{proof}
+
+\note{}{strategies for finding deductions can be found in the textbook \cite{EndertonHerbertB2001AMIt}.}
+\prop{Generalization on constants}{
+    Suppose $\Gamma \vdash \varphi$ and $c$ is a constant symbol that does not occur in $\Gamma$.
+    Then there is a variable $y$ ($y$ does not occur in $\varphi$) s.th. $\Gamma \vdash \forall y (\varphi)^c_y$.
+    and moreover also there is a deduction of $\forall y (\varphi)^c_y$ in which $c$ does not occur.
+}{
+    We will take a deduction $\langle\alpha_1,\dots \alpha_n \rangle$ of $\varphi$ from $\Gamma$. 
+    Pick the variable $y$ as the first variable in any $\alpha_i$ for each $i$.
+    \graybf{Claim:} $\langle(\alpha_1)^c_y,\dots (\alpha_n)^c_y \rangle$ is a deduction of $(\varphi)^c_y$ from $\Gamma$.
+    \begin{claimproof}
+        We need to verify that every member $(\alpha)^c_y$ is actually provable from $\Gamma$.
+        \begin{itemize}
+            \item if $\alpha_k\in\Gamma$ then $c$ does not occur in $\alpha_k$ then $(\alpha)^c_y = \alpha_k$
+            \item if $\alpha_k\in \Lambda$ then $(\alpha_k)^c_y$ is also a logical axiom.
+            \item lets say $\alpha_k$ was obtained by $\alpha_i$, $\alpha_i \to \alpha_k$ $i<k$ by MP.
+            Now take $(\alpha_i \to \alpha_k)^c_y = (\alpha_i)^c_y\to (\alpha_k)^c_y$. (induction hyphothesis) $(\alpha_k)^c_y$ is obtained from $(\alpha_i)^c_y$ nad $(\alpha_i \to \alpha_k)^c_y$.
+            by MP. 
+        \end{itemize}
+    \end{claimproof}
+    Because formal proofs are finite, there is a $\Gamma_0\subseteq \Gamma$ finite such that $\Gamma_0$ consists of the elements of $\Gamma$ used in our deduction 
+    $\langle(\alpha_1)^c_y,\dots (\alpha_n)^c_y \rangle$ (is therefore deduction of $(\varphi)^c_y$ from $\Gamma_0$).
+    And because we assumed that $y$ does not occur in $\Gamma_0$, so we can use the generalization theorem on $\Gamma_0\vdash (\varphi)^c_y$ and yield $\Gamma_0\vdash \forall y (\varphi)^c_y$ 
+}
+\subsubsection{Alphpabetic Variants}
+We will formalize and proof the statement "You can always rename your bound variables".
+Why is that impoirtant? Suppose we want to proof that it is provable that 
+$\forall x \forall y P(x,y)\to \forall y P(y,y)$
+If we want to use a logical axiom of group 2, we would need to check if $y$ is actually SA for $x$. We obviously do not have that because $y$ would get bounded.
+$\vdash \forall x \forall y P(x,y) \to \forall x \forall z P(x,z)$ 
+$\vdash \forall x \forall z P(x,z) \to \forall y P(y,y)$ 
+\prop{Existence of alphabetic variants}{
+    Let $\varphi$ be a fla., $x$ a variable, $t$ a term. Then there is a fla. $\varphi'$ 
+    such that $\varphi$ differs from $\varphi$ only by the choice of bound variables.
+    And \begin{enumerate}
+        \item  $\varphi' \vdash \varphi$ as well as $\varphi \vdash \varphi'$
+        \item $t$ is SA for $x$ in $\varphi'$
+    \end{enumerate}
+}{
+    Define $\varphi'$ inductively on complexity of $\varphi$.
+    \begin{itemize}
+        \item if $\varphi$ is atomic, then $\varphi'= \varphi$
+        \item $(\lnot \varphi)' = \lnot \varphi'$ \begin{enumerate}
+            \item $\varphi' \vdash \varphi$ and $\varphi \vdash \varphi'$, we want: 
+            $\lnot \varphi' \vdash \lnot \varphi$ as well as $\lnot \varphi \vdash \lnot \varphi'$
+            Ok by Contraposition.
+            \item ok by definition of SA
+        \end{enumerate}
+        \item $(\varphi \to \psi)' = \varphi' \to \psi'$
+            \begin{enumerate}
+                \item By assumption: 
+                We want $(\varphi \to \psi )\vdash (\varphi \to \psi)'$, it is enough to show $\varphi \vdash \psi$, $\varphi' \vdash \psi'$
+                TODO
+                \item ok by definition of SA
+            \end{enumerate}
+        \item $(\forall y \varphi)'$\begin{itemize}
+            \item[Case 1:] No occurence of $y$ in $t$. or $x=y$ (that is, $t$ is substitutable for $x$ in $\varphi$). We define $(\forall y \varphi)' = \forall y \varphi'$. All we need to check is part (a). 
+                We have that $\forall y \varphi \vdash \varphi$ because $\forall y \varphi \to \varphi$ is an axiom group 2.
+                So $\forall y \varphi \vdash \varphi'$ and therefore by the generalization theorem $\forall x \varphi \vdash \forall y \varphi'$
+            \item[Case 2:] Either $y$ does occur in $t$ and $x\neq y$. let $z$ be a variable that is the first variable that does not occur in $\varphi', x, t$ then
+                $(\forall y \varphi)' = \forall z (\varphi')^y_z$
+        \end{itemize}
+    \end{itemize}
+}
+
+
+
 TODO evt noch sectioons

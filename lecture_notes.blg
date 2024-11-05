@@ -1,0 +1,17 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'lecture_notes.blg'
+[350] biber-MSWIN64:340> INFO - === 
+[483] Biber.pm:419> INFO - Reading 'lecture_notes.bcf'
+[689] Biber.pm:979> INFO - Found 1 citekeys in bib section 0
+[719] Biber.pm:4419> INFO - Processing section 0
+[766] Biber.pm:4610> INFO - Looking for bibtex file 'test.bib' for section 0
+[857] bibtex.pm:1713> INFO - LaTeX decoding ...
+[875] bibtex.pm:1519> INFO - Found BibTeX data source 'test.bib'
+[1083] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1083] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1084] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[1084] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[1087] bbl.pm:660> INFO - Writing 'lecture_notes.bbl' with encoding 'UTF-8'
+[1089] bbl.pm:763> INFO - Output to lecture_notes.bbl
+[1089] Biber.pm:131> WARN - BibTeX subsystem: C:\Users\Nxan\AppData\Local\Temp\biber_tmp_5SbF\5a453152acdb3e2485a9d6a17b3ec69c_5956.utf8, line 11, warning: 1 characters of junk seen at toplevel
+[1089] Biber.pm:133> INFO - WARNINGS: 1
