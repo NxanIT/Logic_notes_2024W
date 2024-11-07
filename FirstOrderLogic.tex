@@ -193,7 +193,7 @@ which also determine the scope of the quantifier $\forall$, the meaning of all p
 }
 \note{}{To know wheter $\mathfrak{A}\models \varphi \: [s]$ it suffices to know where $s$ maps the variables that are free in $\varphi$}
 
-\prop{}{Suppose $s_1,s_2:V\to A$ agree on all variables that occur free in $\varphi$ then 
+\prop{}{\label{Thm.evalonlyfreevar}Suppose $s_1,s_2:V\to A$ agree on all variables that occur free in $\varphi$ then 
  $$\mathfrak{A}\models \varphi \:[s_1] \text{ iff }\mathfrak{A}\models \varphi \: [s_2]$$
 }{
     By complexity of $\varphi$
@@ -223,8 +223,8 @@ which also determine the scope of the quantifier $\forall$, the meaning of all p
     
 }
 Notation: $\mathfrak{A}\models \varphi $TODO means that all free variables of $\varphi$ are among $v_1,\dots v_n$ and $\mathfrak{A}\models \varphi \: [s]$ whenever $s(v_i) = a_i$ for all $1\leq i\leq n$.
-\coroll{If $\sigma$ is a sentence then $\mathfrak{A}\models \varphi \: [s]$ for all $s:V\to A$ or 
-$\mathfrak{A}\vDash \varphi \: [s]$ for all $s:V\to A$.
+\coroll{If $\sigma$ is a sentence then $\mathfrak{A}\models \sigma \: [s]$ for all $s:V\to A$ or 
+$\mathfrak{A}\vDash \sigma \: [s]$ for all $s:V\to A$.
 
 Notation: $\mathfrak{A}\models \sigma$ "$\sigma$ is true in $\mathfrak{A}$, $\mathfrak{A}$ is a model of $\sigma$ or $\sigma$ holds in $\mathfrak{A}$.
 }
@@ -735,8 +735,8 @@ If we want to use a logical axiom of group 2, we would need to check if $y$ is a
 $\vdash \forall x \forall y P(x,y) \to \forall x \forall z P(x,z)$ 
 $\vdash \forall x \forall z P(x,z) \to \forall y P(y,y)$ 
 \prop{Existence of alphabetic variants}{
-    Let $\varphi$ be a fla., $x$ a variable, $t$ a term. Then there is a fla. $\varphi'$ 
-    such that $\varphi$ differs from $\varphi$ only by the choice of bound variables.
+    Let $\varphi$ be a fla., $x$ a variable, $t$ a term. Then there exists a fla. $\varphi'$ 
+    such that $\varphi$ differs from $\varphi$ only in the choice of names of the bound variables.
     And \begin{enumerate}
         \item  $\varphi' \vdash \varphi$ as well as $\varphi \vdash \varphi'$
         \item $t$ is SA for $x$ in $\varphi'$
@@ -754,20 +754,132 @@ $\vdash \forall x \forall z P(x,z) \to \forall y P(y,y)$
         \item $(\varphi \to \psi)' = \varphi' \to \psi'$
             \begin{enumerate}
                 \item By assumption: 
-                We want $(\varphi \to \psi )\vdash (\varphi \to \psi)'$, it is enough to show $\varphi \vdash \psi$, $\varphi' \vdash \psi'$
-                TODO
+                We want $(\varphi \to \psi )\vdash (\varphi \to \psi)'$, it is enough to show $\varphi \to \psi; \varphi' \vdash \psi'$
+                We have \[\begin{aligned}
+                    \varphi \to \psi &; \varphi' \vdash \varphi\\
+                    \varphi \to \psi &; \varphi' \vdash \psi\\
+                \end{aligned}\]
                 \item ok by definition of SA
             \end{enumerate}
         \item $(\forall y \varphi)'$\begin{itemize}
             \item[Case 1:] No occurence of $y$ in $t$. or $x=y$ (that is, $t$ is substitutable for $x$ in $\varphi$). We define $(\forall y \varphi)' = \forall y \varphi'$. All we need to check is part (a). 
                 We have that $\forall y \varphi \vdash \varphi$ because $\forall y \varphi \to \varphi$ is an axiom group 2.
                 So $\forall y \varphi \vdash \varphi'$ and therefore by the generalization theorem $\forall x \varphi \vdash \forall y \varphi'$
-            \item[Case 2:] Either $y$ does occur in $t$ and $x\neq y$. let $z$ be a variable that is the first variable that does not occur in $\varphi', x, t$ then
+            \item[Case 2:] If $y$ does occur in $t$ and $x\neq y$. let $z$ be the variable that is the first variable that does not occur in $\varphi', x, t$ then set
                 $(\forall y \varphi)' = \forall z (\varphi')^y_z$
+                \begin{enumerate}
+                    \item[2.] want $t$ SA for $x$ in $(\forall y \varphi)'$ \\
+                    $z$ does not occur in $t$ (choice of $z$)
+                    $t$ is SA for $x$ in $\varphi'$. (ind assumption)
+                    Then $t$ is SA für $x$ in $\forall z (\varphi')^y_z$ iff $t$ is SA for $x$ in $(\varphi')^y_z$ because $x\neq z$.
+                    \item[1.] $\varphi \vdash \varphi'$ (by ind. assumption)
+                    Then $\forall y \varphi \vdash \forall y \varphi'$, because
+                    \[\vdash \forall y (\varphi \to \varphi')\to (\forall y \varphi \to \forall y \varphi') \text{(axiom of group 3)}\]
+                    then \[\forall y (\varphi \to \varphi')\text{gen thm}\]
+                    and by MP: \[ \forall y \varphi \to \forall y \varphi'\]
+                    
+                    We have $\forall y \varphi' \vdash (\varphi')^y_z$ (axiom of group 2, z does not occur in $\varphi'$)
+                    By Gen Thm. $\forall y \varphi' \vdash \forall z (\varphi')^y_z$
+                    Then 
+
+
+                    Want $\forall z (\varphi')^y_z \vdash \forall y \varphi$ \\
+                    $\forall z (\varphi')^y_z \vdash ((\varphi')^y_z)^z_y$ (ax of group 2.), $y$ is SA for $z$ in $(\varphi')^y_z$ bc.
+                    $\varphi'$ does not contain $z$ so all occurences of $z$ in $(\varphi')^y_z$ are free. (we substituted $z$ for free occ of $y$.)
+                    (Re-replacement lemma $ ((\varphi')^y_z)^z_y = \varphi'$ , see problem set.)
+                    So we have $\forall z (\varphi')^y_z\vdash \varphi$
+                    We also know that $\varphi' \vdash \varphi$ by the inductive hyphothesis. 
+                    So $\forall z (\varphi')^y_z \vdash \varphi$
+                    So $\forall z (\varphi')^y_z \vdash \forall y \varphi$ (Gen Thm.)
+                \end{enumerate}
         \end{itemize}
     \end{itemize}
+}
+\note{}{$\varphi'$ constructed in proof is also called an alphabetic variant of $\varphi$ }
+
+if our language contains equality:
+\begin{enumerate}
+    \item $\vdash \forall x x = x$ (ax 5.)
+    \item $\vdash \forall x \forall y (x=y \to y = x)$ p.122
+    \item $\vdash \forall x \forall y \forall z (x=y \to (y=z \to x = z))$ (Exercise 11. in \cite{EndertonHerbertB2001AMIt})
+    \item $\vdash \forall x_1 \forall x_2 \forall y_1 \forall y_2 (x_1=y_1 \to (x_2=y_2 \to (Px_1x_2 \to Py_1y_2)))$, similarly for any $n$-ary predicate. p.128
+    \item $\vdash \forall x_1 \forall x_2 \forall y_1 \forall y_2 (x_1=y_1 \to (x_2 = y_2 \to (fx_1x_2 = fy_1y_2)))$, similarly for $n$-ary formula symbol, p.122
+\end{enumerate}
+
+
+\section{Soundness and completeness of first-order logic}
+
+\begin{itemize}
+    \item soundness: If $\Gamma \vdash \varphi$ then $\Gamma \models \varphi$
+    \item completeness: If $\Gamma \models \varphi$ then $\Gamma \vdash \varphi$
+\end{itemize}
+
+In order to proof that all axioms are valid, we need the following two lemmas.
+\lemma{pre-substitution lemma}{Let be a map TODO}{}
+\lemma{Substitution lemma}{If $t$ SA $x$ in $\varphi$ then $\mathfrak{A}\models \varphi_t^x\: [s]$ iff $\mathfrak{A}\models \varphi\: [s(x|\overline{s}(t))]$}{
+    \begin{enumerate}
+        \item $\varphi$ atomic: use pre-substitution lemma.
+        \item $\varphi$ is of the form $\lnot \psi$ or $\psi \to \theta$ - use induction
+        \item $\varphi$ is of the form $\forall y \psi $ and $x$ does not occur free in $\varphi$\\
+        $\varphi^x_t = \varphi$ wts. $\mathfrak{A}\models \varphi_t^x\: [s]$ iff $\mathfrak{A}\models \varphi\: [s(x|\overline{s}(t))]$\\
+        By \ref{Thm.evalonlyfreevar}, this is indeed the case, so the lemma holds.
+        \item $\varphi$ is $\forall y \psi$ where $x$ occurs free in $\varphi$ and $t$ is SA for $x$ in $\varphi$.
+        Then it must be: $y$ does not occur in $t$ and $t$ is SA for $x$ in $\psi$.\\
+        then $\overline{s}(t) = \overline{s(y|a)}(t)$ for every $a\in A$. Moreover we also have, that $\varphi^x_t = \forall y \psi^x_t$ bc. $x\neq y$\\
+        Then $\mathfrak{A}\models \varphi_t^x \: [s]$ iff $\mathfrak{A}\models \forall y \psi_t^x \: [s]$\\
+        iff $\mathfrak{A}\models \psi_t^x \: [s(y|a)]$ and for all $a\in A$.\\
+        iff $\mathfrak{A}\models \psi \: [s(y|a)(x|\overline{s(y|a)}(t))]$ (inductive assumption) and for all $a\in A$\\
+        By above: iff $\mathfrak{A}\models \psi \: [s(y|a)(x|\overline{s}(t))]$ for all $a\in A$\\
+        iff $\mathfrak{A}\models \forall y \psi \: [s(x|\overline{s}(t))]$
+    \end{enumerate}
+}
+
+
+\prop{}{If $\Gamma \vdash \varphi$ then $\Gamma \models \varphi$}{
+    Proof by induction on $\varphi$.
+    We have to show: 
+    \begin{enumerate}
+        \item that every logical axiom is valid
+        \item logical implication is preserved by MP
+    \end{enumerate}
+    \begin{enumerate}
+        \item[2.] Assume 1. we have to show that if  $\Gamma \vdash \varphi$ then $\Gamma \models \varphi$
+        \begin{itemize}
+            \item $\varphi\in \Lambda$ by 1.
+            \item $\varphi \in \Gamma$ then $\Gamma \models \varphi$
+            \item $\varphi$ follows by MP from $\psi,\psi \to \varphi$ then by assumption $\Gamma\models \psi$ and $\Gamma\models \psi \to \varphi$
+            Therefore $\Gamma\models \varphi$
+        \end{itemize}
+        \item[1.] Exercise 6 in section 2.2 consists in showing that if a logical axiom is valid, then also its generalization.
+        So generalizations of valid formulas are valid, we therefore may only consider logical axioms that are not generalizations of another logical axiom.
+        \begin{enumerate}
+            \item[Ax of 1.] exercise 3, section 2.3
+            \item[3.] exercise 3, section 2.2
+            \item[4.] exercise 4, section 2.2
+            \item[5.] $x=x$: $\mathfrak{A}\models x = x[s]$ because $s(x) = s(x)$
+            \item[6.] $x=y \to (\alpha \to \alpha')$ where $\alpha$ is atomic fla, and $\alpha'$ is obtained from $\alpha$ by remplacing some occurances of $x$'s with $y$'s.
+            By the deduction theorem, is enough to show that the set of formulas $\{x=y, \alpha\}\models \alpha'$.
+            Let $\mathfrak{A}$ be a structure, $s$ an assigment such that $\mathfrak{A}\models x=y [s]$
+            \graybf{Claim: } for every term $t$ if $t'$ is obtained from $t$ by replacing some $x$'s by $y$'s, then $\overline{s}(t) = \overline{s}(t')$.
+            \begin{claimproof}
+                Induction on terms.
+            \end{claimproof}
+            \begin{itemize}
+                \item $\alpha$ of the form $t_1 = t_2$ then $\alpha'$ is $t_1' =t_2'$, use prev. claim.
+                \item $\alpha$ of the form $P t_1 \dots t_n$ similar
+            \end{itemize}
+            \item[2.] wts. $\forall x \varphi \to \varphi^x_t$ is valid, where $t$ is SA for $x$ in $\varphi$.\\
+            simple case: $\forall x Px \to Pt$ is valid.
+            Let $\mathfrak{A}\models \forall x P x [s]$ then $\mathfrak{A}\models \forall x P x [s(x|a)]$ for every $a\in A$. so i.p. for $a = \overline{s}(t)$
+            this means $\overline{s}(t)\in P^\mathfrak{A}$ that is $\mathfrak{A}\models Pt$.
+            In more generality we will need the substitution lemma:
+            We have $\mathfrak{A} \models \forall x \varphi \: [s]$\\
+            this is equivalent to $\forall a \in A$ we have $\mathfrak{A}\models \varphi [s(x|a)]$ 
+            then in particular $\mathfrak{A}\models \varphi [s(x|\overline{s}(t))]$ and
+            by the substitution lemma we have the equivalence to $\mathfrak{A}\models \varphi^x_t\:[s]$
+        \end{enumerate}
+    \end{enumerate}
 }
 
 
 
-TODO evt noch sectioons
