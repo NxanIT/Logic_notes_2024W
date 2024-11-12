@@ -18,7 +18,8 @@
 \contentsline {subsubsection}{Ad (1): tautologies}{21}{subsubsection*.4}%
 \contentsline {section}{\numberline {2.9}Generalization and deduction theorem}{22}{section.2.9}%
 \contentsline {subsubsection}{Alphpabetic Variants}{23}{subsubsection*.5}%
-\contentsline {section}{\numberline {2.10}Soundness and completeness of first-order logic}{24}{section.2.10}%
-\contentsline {chapter}{\numberline {3}Boolean Algebra}{26}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Set Theory}{28}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Axioms of ZFC}{28}{section.4.1}%
+\contentsline {section}{\numberline {2.10}Soundness and completeness}{24}{section.2.10}%
+\contentsline {subsubsection}{completeness}{26}{subsubsection*.6}%
+\contentsline {chapter}{\numberline {3}Boolean Algebra}{29}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Set Theory}{31}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Axioms of ZFC}{31}{section.4.1}%
