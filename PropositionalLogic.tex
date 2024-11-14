@@ -19,11 +19,11 @@ The Language \outernote{Language} of Propositional logic is a set containing
     We define \graybf{grammatically correct exp.} recursively
     \begin{enumerate}
         \item every prop. atom is a prop. sentence
-        \item if $\alpha, \beta$ are prop. sentences, then also $\lnot \alpha, \alpha \land \beta, \alpha \lor \beta, \alpha \to \beta, \alpha \leftrightarrow \beta$
+        \item if $\alpha, \beta$ are prop. sentences, then also $(\lnot \alpha), (\alpha \land \beta), (\alpha \lor \beta), (\alpha \to \beta), (\alpha \leftrightarrow \beta)$
         \item nothing else (in particular $\varnothing$ is not a prop. fla.)
     \end{enumerate}
     and call them \graybf{prop. sentences} or \graybf{prop. fla.}\outernote{prop. fla.}\outernote{prop. sentence}
-    Equivalently stated every prop. sentence is built up by applying finitly many formula building operations on atoms and the prop. sent. returned from building operations.
+    Equivalently stated every prop. sentence is built up by applying finitely many formula building operations on atoms and the prop. sent. returned from building operations.
     \[\mathcal{E}_\lnot, \mathcal{E}_\lnot(\alpha) \defeq (\lnot \alpha) \text{ for any prop. fla. $\alpha$ and similarly for } \mathcal{E}_\land,\mathcal{E}_\lor \mathcal{E}_\to, \mathcal{E}_\leftrightarrow\]
     This allows us to symbolize the \graybf{expression tree} (Here for example for $((\lnot(A_1\to A_2))\lor A_3))$
     \begin{figure}[H]
@@ -35,7 +35,9 @@ We will return to these construction trees in \ref{section_parsingalg}, where we
 truth value a given prop. sentence might have.
 \newpage
 \defin{Construction sequence}{
-    Given a prop. sentence $\alpha$ a \graybf{construction sequence}\outernote{construction sequence} of $\alpha$ is a finite sequence $\left\langle \alpha_1,\dots \alpha_{n-1},\alpha\right\rangle$ such that for all $i\leq n$
+    Given a prop. sentence $\alpha$ a \graybf{construction sequence}\outernote{construction sequence} 
+    of $\alpha$ is a finite sequence $\left\langle \alpha_1,\dots \alpha_{n-1},\alpha\right\rangle$ 
+    such that for all $i\leq n$
     the following holds
     \begin{itemize}
         \item $\alpha_i$ is a sentential atom
@@ -55,9 +57,8 @@ then $S$ is the set of all prop. sentences.
     let $PS = \text{set of all prop. sent.}$
     \begin{itemize}[leftmargin=2cm]
         \item[$S\subseteq PS$:] is clear
-        \item[$S\supseteq PS$:] let $\alpha\in PS$ then $\alpha$ has a construction seq. $\left\langle \alpha_1,\dots \alpha_{n-1},\alpha\right\rangle$ and $\alpha_1\in S$
-        lets assume that $\alpha_i$ for $i\leq k<n$ is in $S$ then $\alpha_{k+1}$ is either an atom and therefore in $S$ or its obtained by one of the formula building operations 
-        from the 
+        \item[$S\supseteq PS$:] let $\alpha\in PS$ then $\alpha$ has a construction seq. $\left\langle \alpha_1,\dots \alpha_{n-1},\alpha\right\rangle$ and $\alpha_1\in S$.
+        Let's assume that for $i\leq k<n$ each $\alpha_i$ is in $S$. Then $\alpha_{k+1}$ is either an atom and therefore in $S$ or its obtained by one of the formula building operations  
         and therefore $\alpha_{k+1}\in S$
     \end{itemize}
 \end{proof}
@@ -97,7 +98,7 @@ for all propositional atoms $A\in S$ and propositional formulas $\alpha,\beta$ i
 We also want the extention to be unique, that is
 \prop{Unique readability}{\label{extendetTruthAss}\label{ThrmUniqueExt}
     For all TA $\nu$ for a set $S$ $\exists ! \overline{\nu}:\overline{S}\to\{0,1\}$ satisfying the above properties}{}
-We will proof this later\\
+We will prove this later\\
 \newpage
 \defin{Satisfaction}{A TA $\nu$ satisfies\outernote{satisfy} a prop. sent. $\alpha$ 
     if $\overline{\nu}(\alpha)=1$ (that is, provided that everery atom of $\alpha$ is in the domain of $\nu$). 
@@ -119,31 +120,31 @@ However we can find a way to reduce satisfiability of an infinite set $\Sigma$ o
 There later will be a more elementary proof of the compactness theorem, this proof is not part of the exam.
 \prop{Compactness theorem}{Let $\Sigma$ be an infinite set of prop. sent. such that 
     \begin{equation}\tag{finite satisfiability}
-        \forall \Sigma_0 \subseteq \Sigma, \Sigma_0 \text{finite} \exists \text{ TA satisfying every member of } \Sigma_0
+        \forall \Sigma_0 \subseteq \Sigma, \Sigma_0 \ \text{finite}\  \exists \text{ TA satisfying every member of } \Sigma_0
     \end{equation}
     then there is a TA satsfying every member of $\Sigma$.}
 {
     using topology: We have our infinite set of prop. sent. which satisfies above condition. One way to look at TA is as a sequence of $0$ and $1$.
     Let $\mathcal{A} = \{A_0, A_1,\dots\}$ be the set of all prop. atoms. We are going to identify the truth assignments on $\mathcal{A}$
     with elements in $\{0,1\}^\mathcal{A}\defeq \{f: \mathcal{A}\to \{0,1\}\}$ (the set of all TAs)
-    This is a topological space with product topology, on which we will define
-    the basic open sets (called cylinders) by:
-    $ U\subseteq \{0,1\}^\mathcal{A}$ is a cylinder, if it holds $p_n(U) = \{0,1\}$for all but finite many $n$, where $p_n$ is the $n$-th projections.
+    This is a topological space with product topology, on which 
+    the basic open sets (called cylinders) are:
+    $ U\subseteq \{0,1\}^\mathcal{A}$ is a cylinder, such that $p_n(U) = \{0,1\}$for all but finite many $n$, where $p_n$ is the $n$-th projection.
     This means $U$ is a cylinder if the truth values of its elements are at finitely many places fixed, and are arbitrary on everything else.
     
-    
-    Note: This basic open sets are also closed.
-    We now define the open sets as unions of basic open sets.
+%TODO correct proof
+    Note: These basic open sets are also closed.
+    The open sets are unions of basic open sets.
     The idea is to use Tychonoffs Theorem which tells us that $\{0,1\}^\mathcal{A}$ is compact. i.e.
-    the intersection of a family of closed subsets w/ the finite intersection property (FIP) is non-empty
-    finite intersection property means the intersection of finitly many sets is non-empty.
+    the intersection of a family of closed subsets w/ the finite intersection property (FIP) is non-empty.
+    Finite intersection property means the intersection of finitely many sets is non-empty.
 
     For $\alpha \in \Sigma$ let $T_\alpha \subseteq \{0,1\}^\mathcal{A}$ be the set of TA that satisfy $\alpha$.
-    This $T_\alpha$ is a finite union of cylinders, bc. it only depends on finitly many assigments, hence $T_\alpha$ is closed.
+    This $T_\alpha$ is a finite union of cylinders, hence $T_\alpha$ is closed.
     For the family $\{T_\alpha: \alpha\in\Sigma\}$ of closed sets we have (FIP). Tychonoff tells us, 
     that $\bigcup_{\alpha\in\Sigma}{T_\alpha}\neq \varnothing$ so there is a TA satisfying $\Sigma$.}
     
-    For a list of tautogies: useful might be book p. 26-27
+    For a list of tautologies: useful might be book p. 26-27
 \section{A parsing algorithm}\label{section_parsingalg}
 To prove \ref{extendetTruthAss} We essentially need to show that we have enough parenthesis to make the reading of a prop. sent. unique.
 That is given a TA $v$ there is at most one truth value we can assign to a prop. sent.
@@ -162,9 +163,9 @@ That is given a TA $v$ there is at most one truth value we can assign to a prop.
     Let $PS = \text{set of all prop. sent.}$ and \\
     $PF = \text{set of prop. sent. s.t. no proper initial segment has \# left parenthesis = \# right parenthesis}$, 
     we will prove that these sets are the same.\\
-    Let $\alpha \in PF$. By induction over the fla. building operations
+    Let $\alpha \in PF$. By induction on the fla. building operations
     \begin{itemize}
-        \item Atoms: since the empty sequence is no prop. sent. they have no proper initial segment.
+        \item Atoms: since the empty sequence is not a prop. sent. they have no proper initial segment.
         \item If the above is true for $\alpha, \beta$ then the proper initial segments of $(\lnot \alpha)$ are of the form
         \begin{itemize}
             \item[] $(\lnot \alpha$
@@ -178,26 +179,26 @@ That is given a TA $v$ there is at most one truth value we can assign to a prop.
 }
 \subsubsection*{Parsing algorithm}
 We now give a parsing algorithm procedure. For input we take some expression $\tau$ and the algorithm will determine if $\tau$ is a prop. sent.
-If so, it will generate a unique construction tree (in form of a rooted tree) for $\tau$. (i.e. the construction tree gives us a unique readability)
+If so, it will generate a unique construction tree (in form of a rooted tree) for $\tau$. (i.e. the construction tree gives us unique readability)
 That there is a unique way to perform the algorithm is implied by \ref{NoPropIni}
 \begin{enumerate}
     \item[0.] create the root and label it $\tau$
-    \item HALT if all leaves are labled w/ prop. atom and return: "$\tau$ is a prop. sent."
+    \item HALT if all leaves are labled w/ prop. atom and return: ``$\tau$ is a prop. sent.''
     \item select a leaf of the graph which is not labled w/ prop. atom
-    \item if the first symbol of label under consideration is not a left parenthesis, then halt and return: "$\tau$ is not a prop. sent."
-    \item if the second symbol of the label is "$\lnot$" then GOTO 6.
+    \item if the first symbol of label under consideration is not a left parenthesis, then halt and return: ``$\tau$ is not a prop. sent.''
+    \item if the second symbol of the label is ``$\lnot$'' then GOTO 6.
     \item scan the expression from left to right\\
-    if we reach a proper initial segment of the form\addAbbrev{lp / rp}{left / right parenthesis} "$(\beta$" where $\# lp(\beta) = \#rp(\beta)$ and $\beta$ is followed by one of thesection
+    if we reach a proper initial segment of the form\addAbbrev{lp / rp}{left / right parenthesis} ``$(\beta$'' where $\# lp(\beta) = \#rp(\beta)$ and $\beta$ is followed by one of the five sentential connectives
     $\land,\lor,\to,\leftrightarrow$ and the remainder of the expression is of the form $\beta')$, where $\# lp(\beta') = \#rp(\beta')$
     \begin{itemize}
         \item [Then:] create two child nodes (left,right) to the selected element and label them (left $\defeq \beta$, right $\defeq \beta'$) GOTO 1.
-        \item [Else:] HALT and return "$\tau$ is not a prop. sent."
+        \item [Else:] HALT and return ``$\tau$ is not a prop. sent.''
     \end{itemize}
     
     \item if the expression is of the form $(\lnot \beta)$ where $\# lp(\beta) = \#rp(\beta)$
     \begin{itemize}
         \item [Then:] construct one childnode and label it $\beta$ and GOTO 1.
-        \item [Else:] HALT and return: "$\tau$ is not a prop. sent."
+        \item [Else:] HALT and return: ``$\tau$ is not a prop. sent.''
     \end{itemize}
 \end{enumerate}
 \bsp{}{The parsing algorithm applied to $((\lnot (A_1\to A_2))\lor A_3)$ returns the following construction tree.
@@ -221,11 +222,11 @@ That there is a unique way to perform the algorithm is implied by \ref{NoPropIni
 }
 \subsection*{Correctness of the parsing algorithm}
 \begin{itemize}
-    \item The algorithm always halts, because the length of a childs label is less than the label of a parent.
+    \item The algorithm always halts, because a child's label is shorter than the label of a parent.
     \item If the algorithm halts with the conclusion that $\tau$ is a prop. sent. 
     then we can prove inductively (starting from the leaves) that each label is a prop. sent
     \item Unique way to make choices in the algorithm: in particular $\beta, \beta'$ in step 5.
-    If there was a shorter choice for $\beta$ it would be a proper initial segment of $\beta$ but such prop. sent. can not exist.
+    If there was a shorter choice for $\beta$ it would be a proper initial segment of $\beta$ but such prop. sent. cannot exist.
     (This also works under the assumption that a longer choice exists).
     \item rejections are made correctly
 \end{itemize}
@@ -247,7 +248,7 @@ We want to construct the smallest subset $C\subseteq U$ such that $B\subseteq C$
         \item\graybf{inductive}\outernote{inductive} if $B\subseteq \mathcal{S}$ and $\mathcal{S}$ is closed under $\mathcal{F}$
     \end{itemize}
 }
-\noindent One way is from the top down $$C^* \defeq \bigcap_{B\subseteq \mathcal{S} \text{ inductive}}{S}$$
+\noindent One way is from the top down $$C^* \defeq\, \smashoperator{\bigcap_{\substack{B\subseteq {S}\\\text{ inductive}}}}\,{S}$$
 Another is from bottom up: We call $C_1 \defeq B$, 
 $$C_i \defeq C_{i-1} \cup \{f(x,y) : x,y\in C_{i-1}\}\cup \{g(x) : x\in C_{i-1}\}$$
 and $C_* \defeq \bigcup_{n\geq 1}{C_{n}}$
@@ -270,7 +271,7 @@ elements of $\mathcal{F}$, then $S = C$
     $S$ is inductive, so $C\subseteq S$.
 \end{proof}
 
-Question: under what conditions do we get "generalized unique readability?"
+Question: under what conditions do we get ``generalized unique readability?''
 The goal would be to define a function on $C$ recursively i.e. to have rules for computing $\overline{h}(x)$ for $x\in B$
 with some rules of computing $\overline{h}(f(x,y))$ and $\overline{h}(g(x))$ from $\overline{h}(x)$ and $\overline{h}(y)$.
 \newpage
@@ -285,7 +286,7 @@ with some rules of computing $\overline{h}(f(x,y))$ and $\overline{h}(g(x))$ fro
         \item $\overline{h}(-a) = \overline{h}(a)^{-1}$
     \end{itemize}
     This is not always possible. \textbf{Note:} that it is possible if $G$ is generated freely by the elements of $B$ and the set of atoms is independent
-    (one element of $B$ cannot be generated in finitly many steps by other elements of $B$).
+    (one element of $B$ cannot be generated in finitely many steps by other elements of $B$).
 }
 \defin{Freely generated set}{$C$ is \graybf{freely generated}\outernote{freely generated}from $B$ by $f,g$ if 
     \begin{itemize}
@@ -452,7 +453,7 @@ iff $\alpha \sledom\models  \beta$ (alternative notation: $\models \sledom$). Th
 \prop{}{Both $\{\lnot, \land\}$ and $\{\lnot, \lor\}$ are complete.}{
     Its sufficient to show that every $k$-place boolean function is realisable by a prop. sent.
     built up using only $\lnot$ and $\land$. This is, because $\alpha\land \beta \sledom \models \lnot (\lnot \alpha \lor \lnot \beta)$
-    We prove this by induction over the number of disjuctions of a prop. sent. $\alpha$ in DNF.
+    We prove this by induction on the number of disjuctions of a prop. sent. $\alpha$ in DNF.
     Suppose the statement is true for $k \leq n$. For $n+1$ and $\alpha = \bigvee_{j=1}^{n+1}{\gamma_j}$ there exists an $\alpha' \sledom \models \bigvee_{j=1}^{n}{\gamma_j}$ and 
     $$\alpha = \bigvee_{j=1}^{n+1}{\gamma_j} \sledom \models \alpha' \lor \gamma_{n+1} \sledom \models \lnot (\lnot \alpha' \land \lnot \gamma_{n+1})$$
     %$\alpha\land \beta \sledom \models \lnot (\lnot \alpha \lor \lnot \beta)$

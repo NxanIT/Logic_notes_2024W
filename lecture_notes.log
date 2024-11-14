@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.4.21)  12 NOV 2024 22:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.4.21)  14 NOV 2024 21:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -987,7 +987,7 @@ File: ot1txtt.fd 2000/12/15 v3.1
 
 LaTeX Warning: Marginpar on page 2 moved.
 
-<./images//1-extree.png, id=141, 1578.49725pt x 1236.41925pt>
+<./images//1-extree.png, id=156, 1578.49725pt x 1236.41925pt>
 File: ./images//1-extree.png Graphic file (type png)
 <use ./images//1-extree.png>
 Package pdftex.def Info: ./images//1-extree.png  used on input line 33.
@@ -999,7 +999,7 @@ Package pdftex.def Info: ./images//1-extree.png  used on input line 33.
 LaTeX Warning: Marginpar on page 3 moved.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--101
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
 
  []
 
@@ -1008,9 +1008,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 100--101
 LaTeX Warning: Marginpar on page 4 moved.
 
 LaTeX Font Info:    Font shape `OT1/txtt/m/it' in size <10> not available
-(Font)              Font shape `OT1/txtt/m/sl' tried instead on input line 114.
+(Font)              Font shape `OT1/txtt/m/sl' tried instead on input line 115.
 [4]
-Overfull \hbox (38.51268pt too wide) in paragraph at lines 178--178
+Overfull \hbox (38.51268pt too wide) in paragraph at lines 179--179
 \OML/cmm/m/it/10 PF \OT1/cmr/m/n/10 = []$,
  []
 
@@ -1028,9 +1028,9 @@ LaTeX Warning: Marginpar on page 8 moved.
 pdfTeX warning (ext4): destination with the same identifier (name{corollcount.1.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.491 \newpage
+l.492 \newpage
               ]
-Underfull \hbox (badness 10000) in paragraph at lines 559--559
+Underfull \hbox (badness 10000) in paragraph at lines 560--560
 
  []
 
@@ -1088,9 +1088,9 @@ Overfull \hbox (113.76021pt too wide) detected at line 987
 \OMS/cmsy/m/n/10 A j[]\OT1/cmr/m/n/10 = \OML/cmm/m/it/10 '[] \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10  [] \OT1/cmr/m/n/10 [\OML/cmm/m/it/10 s\OT1/cmr/m/n/10 ] [] \OMS/cmsy/m/n/10 A \U/msa/m/n/10 ^^O \OML/cmm/m/it/10 '[] \OT1/cmr/m/n/10 [\OML/cmm/m/it/10 s\OT1/cmr/m/n/10 ][]\OMS/cmsy/m/n/10 A j[]\OT1/cmr/m/n/10 = \OML/cmm/m/it/10  [] \OT1/cmr/m/n/10 [\OML/cmm/m/it/10 s\OT1/cmr/m/n/10 ] [] \OMS/cmsy/m/n/10 A j[]\OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 :\OML/cmm/m/it/10 '[] \OT1/cmr/m/n/10 [\OML/cmm/m/it/10 s\OT1/cmr/m/n/10 ][]\OMS/cmsy/m/n/10 A j[]\OT1/cmr/m/n/10 = \OML/cmm/m/it/10  [] \OT1/cmr/m/n/10 [\OML/cmm/m/it/10 s\OT1/cmr/m/n/10 ] [] \OMS/cmsy/m/n/10 :\OML/cmm/m/it/10 ' \OMS/cmsy/m/n/10 2 \OT1/cmr/m/n/10 ^^A[]\OML/cmm/m/it/10   \OMS/cmsy/m/n/10 2 \OT1/cmr/m/n/10 ^^A [](\OML/cmm/m/it/10 ' \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10  \OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2 \OT1/cmr/m/n/10 ^^A
  []
 
-[27]) (BooleanAlgebra.tex [28]
+[27] [28]) (BooleanAlgebra.tex [29]
 Chapter 3.
-[29
+[30
 
 ]
 Overfull \hbox (20.05716pt too wide) detected at line 58
@@ -1102,37 +1102,37 @@ Overfull \hbox (28.27293pt too wide) detected at line 109
 \OT1/cmr/m/n/10 0 []= 0\OML/cmm/m/it/10 =[] \OT1/cmr/m/n/10 1 []= 1\OML/cmm/m/it/10 =[] \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a=[]\OT1/cmr/m/n/10 )[] []= \OML/cmm/m/it/10 a[]=[] a=[] \OMS/cmsy/m/n/10 _ \OML/cmm/m/it/10 b=[] []\OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 a \OMS/cmsy/m/n/10 _ \OML/cmm/m/it/10 b\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 =[] a=[] \OMS/cmsy/m/n/10 ^ \OML/cmm/m/it/10 b=[] []\OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 a \OMS/cmsy/m/n/10 ^ \OML/cmm/m/it/10 b\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 =[]
  []
 
-) (SetTheory.tex [30]
+) (SetTheory.tex [31]
 Chapter 4.
-) (lecture_notes.dfn [31
+) (lecture_notes.dfn [32
 
-] [32])
+] [33])
 \tf@dfn=\write8
 \openout8 = `lecture_notes.dfn'.
 
- [33] [34
+ [34] [35
 
 ] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (lecture_notes.aux)
 Package rerunfilecheck Info: File `lecture_notes.out' has not changed.
-(rerunfilecheck)             Checksum: E4B317301124F81147FD8D1BE5D91FA9;3463.
+(rerunfilecheck)             Checksum: 02AB33D124D0CE9F0FBF489A88777D4F;4053.
 Package logreq Info: Writing requests to 'lecture_notes.run.xml'.
 \openout1 = `lecture_notes.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 35569 strings out of 476331
- 697923 string characters out of 5788237
- 1877660 words of memory out of 5000000
- 55160 multiletter control sequences out of 15000+600000
+ 35596 strings out of 476331
+ 698271 string characters out of 5788237
+ 1878660 words of memory out of 5000000
+ 55167 multiletter control sequences out of 15000+600000
  536668 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  101i,21n,104p,752b,1465s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Nxan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qagb.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/hoekwater/stmary10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txbtt.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txtt.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txtt.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on lecture_notes.pdf (34 pages, 786215 bytes).
+Output written on lecture_notes.pdf (35 pages, 801564 bytes).
 PDF statistics:
- 815 PDF objects out of 1000 (max. 8388607)
- 317 named destinations out of 1000 (max. 500000)
- 178 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 855 PDF objects out of 1000 (max. 8388607)
+ 337 named destinations out of 1000 (max. 500000)
+ 202 words of extra memory for PDF output out of 10000 (max. 10000000)
 

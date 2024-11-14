@@ -20,6 +20,9 @@
 \contentsline {subsubsection}{Alphpabetic Variants}{23}{subsubsection*.5}%
 \contentsline {section}{\numberline {2.10}Soundness and completeness}{24}{section.2.10}%
 \contentsline {subsubsection}{completeness}{26}{subsubsection*.6}%
-\contentsline {chapter}{\numberline {3}Boolean Algebra}{29}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Set Theory}{31}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Axioms of ZFC}{31}{section.4.1}%
+\contentsline {subsection}{\numberline {2.10.1}Sizes of models}{28}{subsection.2.10.1}%
+\contentsline {subsection}{\numberline {2.10.2}Completness for uncountable languages}{29}{subsection.2.10.2}%
+\contentsline {subsection}{\numberline {2.10.3}Löwenheim-Skolem-Theorem}{29}{subsection.2.10.3}%
+\contentsline {chapter}{\numberline {3}Boolean Algebra}{30}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Set Theory}{32}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Axioms of ZFC}{32}{section.4.1}%

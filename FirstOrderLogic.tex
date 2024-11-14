@@ -574,16 +574,16 @@ and this statement implies another statement $\beta$, then $\beta$ must also be 
     \end{itemize}
 }
 So we have to define substitutable
-\defin{substitutable}{\addAbbrev{SA}{substitutable}
+\defin{substitutable}{\addAbbrev{SUB}{substitutable}
     Let $x$ be a variable, $t$ a term. Then $t$ is substitutable for $x$ in $\alpha$ if
     \begin{enumerate}
-        \item $\alpha$ atomic then $t$ is SA for $x$ in $\alpha$
-        \item then $t$ is SA for $x$ in $\lnot \alpha$ iff then $t$ is SA for $x$ in $\alpha$
-        \item then $t$ is SA for $x$ in $\alpha\to \beta$ iff then $t$ is SA for $x$ in $\alpha$ and $\beta$
-        \item then $t$ is SA for $x$ in $\forall y \alpha$ iff either
+        \item $\alpha$ atomic then $t$ is SUB for $x$ in $\alpha$
+        \item then $t$ is SUB for $x$ in $\lnot \alpha$ iff then $t$ is SUB for $x$ in $\alpha$
+        \item then $t$ is SUB for $x$ in $\alpha\to \beta$ iff then $t$ is SUB for $x$ in $\alpha$ and $\beta$
+        \item then $t$ is SUB for $x$ in $\forall y \alpha$ iff either
         \begin{itemize}
             \item $x$ does not occur free in $\forall y \alpha$ or
-            \item $y$ does not occur in $t$ and $t$ is SA for $x$ in $\alpha$
+            \item $y$ does not occur in $t$ and $t$ is SUB for $x$ in $\alpha$
         \end{itemize}
     \end{enumerate}
 }
@@ -735,7 +735,7 @@ Then $(\beta \to (\lnot \beta \to \alpha))$ is a tautology. Use $\beta$ from def
 We will formalize and proof the statement "You can always rename your bound variables".
 Why is that impoirtant? Suppose we want to proof that it is provable that 
 $\forall x \forall y P(x,y)\to \forall y P(y,y)$
-If we want to use a logical axiom of group 2, we would need to check if $y$ is actually SA for $x$. We obviously do not have that because $y$ would get bounded.
+If we want to use a logical axiom of group 2, we would need to check if $y$ is actually SUB for $x$. We obviously do not have that because $y$ would get bounded.
 $\vdash \forall x \forall y P(x,y) \to \forall x \forall z P(x,z)$ 
 $\vdash \forall x \forall z P(x,z) \to \forall y P(y,y)$ 
 \prop{Existence of alphabetic variants}{
@@ -743,7 +743,7 @@ $\vdash \forall x \forall z P(x,z) \to \forall y P(y,y)$
     such that $\varphi$ differs from $\varphi$ only in the choice of names of the bound variables.
     And \begin{enumerate}
         \item  $\varphi' \vdash \varphi$ as well as $\varphi \vdash \varphi'$
-        \item $t$ is SA for $x$ in $\varphi'$
+        \item $t$ is SUB for $x$ in $\varphi'$
     \end{enumerate}
 }{
     Define $\varphi'$ inductively on complexity of $\varphi$.
@@ -753,7 +753,7 @@ $\vdash \forall x \forall z P(x,z) \to \forall y P(y,y)$
             \item $\varphi' \vdash \varphi$ and $\varphi \vdash \varphi'$, we want: 
             $\lnot \varphi' \vdash \lnot \varphi$ as well as $\lnot \varphi \vdash \lnot \varphi'$
             Ok by Contraposition.
-            \item ok by definition of SA
+            \item ok by definition of SUB
         \end{enumerate}
         \item $(\varphi \to \psi)' = \varphi' \to \psi'$
             \begin{enumerate}
@@ -763,7 +763,7 @@ $\vdash \forall x \forall z P(x,z) \to \forall y P(y,y)$
                     \varphi \to \psi &; \varphi' \vdash \varphi\\
                     \varphi \to \psi &; \varphi' \vdash \psi\\
                 \end{aligned}\]
-                \item ok by definition of SA
+                \item ok by definition of SUB
             \end{enumerate}
         \item $(\forall y \varphi)'$\begin{itemize}
             \item[Case 1:] No occurence of $y$ in $t$. or $x=y$ (that is, $t$ is substitutable for $x$ in $\varphi$). We define $(\forall y \varphi)' = \forall y \varphi'$. All we need to check is part (a). 
@@ -772,10 +772,10 @@ $\vdash \forall x \forall z P(x,z) \to \forall y P(y,y)$
             \item[Case 2:] If $y$ does occur in $t$ and $x\neq y$. let $z$ be the variable that is the first variable that does not occur in $\varphi', x, t$ then set
                 $(\forall y \varphi)' = \forall z (\varphi')^y_z$
                 \begin{enumerate}
-                    \item[2.] want $t$ SA for $x$ in $(\forall y \varphi)'$ \\
+                    \item[2.] want $t$ SUB for $x$ in $(\forall y \varphi)'$ \\
                     $z$ does not occur in $t$ (choice of $z$)
-                    $t$ is SA for $x$ in $\varphi'$. (ind assumption)
-                    Then $t$ is SA für $x$ in $\forall z (\varphi')^y_z$ iff $t$ is SA for $x$ in $(\varphi')^y_z$ because $x\neq z$.
+                    $t$ is SUB for $x$ in $\varphi'$. (ind assumption)
+                    Then $t$ is SUB für $x$ in $\forall z (\varphi')^y_z$ iff $t$ is SUB for $x$ in $(\varphi')^y_z$ because $x\neq z$.
                     \item[1.] $\varphi \vdash \varphi'$ (by ind. assumption)
                     Then $\forall y \varphi \vdash \forall y \varphi'$, because
                     \[\vdash \forall y (\varphi \to \varphi')\to (\forall y \varphi \to \forall y \varphi') \text{(axiom of group 3)}\]
@@ -788,7 +788,7 @@ $\vdash \forall x \forall z P(x,z) \to \forall y P(y,y)$
 
 
                     Want $\forall z (\varphi')^y_z \vdash \forall y \varphi$ \\
-                    $\forall z (\varphi')^y_z \vdash ((\varphi')^y_z)^z_y$ (ax of group 2.), $y$ is SA for $z$ in $(\varphi')^y_z$ bc.
+                    $\forall z (\varphi')^y_z \vdash ((\varphi')^y_z)^z_y$ (ax of group 2.), $y$ is SUB for $z$ in $(\varphi')^y_z$ bc.
                     $\varphi'$ does not contain $z$ so all occurences of $z$ in $(\varphi')^y_z$ are free. (we substituted $z$ for free occ of $y$.)
                     (Re-replacement lemma $ ((\varphi')^y_z)^z_y = \varphi'$ , see problem set.)
                     So we have $\forall z (\varphi')^y_z\vdash \varphi$
@@ -819,15 +819,15 @@ In first order logic it holds:
 \end{itemize}
 For the proof of soundness we will have to show that all our axioms are valid. For this we will need the following two lemmas.
 \lemma{pre-substitution lemma}{Let be a map TODO}{}
-\lemma{Substitution lemma}{If $t$ SA $x$ in $\varphi$ then $\mathcal{A}\models \varphi_t^x\: [s]$ iff $\mathcal{A}\models \varphi\: [s(x|\overline{s}(t))]$}{
+\lemma{Substitution lemma}{If $t$ SUB $x$ in $\varphi$ then $\mathcal{A}\models \varphi_t^x\: [s]$ iff $\mathcal{A}\models \varphi\: [s(x|\overline{s}(t))]$}{
     \begin{enumerate}
         \item $\varphi$ atomic: use pre-substitution lemma.
         \item $\varphi$ is of the form $\lnot \psi$ or $\psi \to \theta$ - use induction
         \item $\varphi$ is of the form $\forall y \psi $ and $x$ does not occur free in $\varphi$\\
         $\varphi^x_t = \varphi$ wts. $\mathcal{A}\models \varphi_t^x\: [s]$ iff $\mathcal{A}\models \varphi\: [s(x|\overline{s}(t))]$\\
         By \ref{Thm.evalonlyfreevar}, this is indeed the case, so the lemma holds.
-        \item $\varphi$ is $\forall y \psi$ where $x$ occurs free in $\varphi$ and $t$ is SA for $x$ in $\varphi$.
-        Then it must be: $y$ does not occur in $t$ and $t$ is SA for $x$ in $\psi$.\\
+        \item $\varphi$ is $\forall y \psi$ where $x$ occurs free in $\varphi$ and $t$ is SUB for $x$ in $\varphi$.
+        Then it must be: $y$ does not occur in $t$ and $t$ is SUB for $x$ in $\psi$.\\
         then $\overline{s}(t) = \overline{s(y|a)}(t)$ for every $a\in A$. Moreover we also have, that $\varphi^x_t = \forall y \psi^x_t$ bc. $x\neq y$\\
         Then $\mathcal{A}\models \varphi_t^x \: [s]$ iff $\mathcal{A}\models \forall y \psi_t^x \: [s]$\\
         iff $\mathcal{A}\models \psi_t^x \: [s(y|a)]$ and for all $a\in A$.\\
@@ -871,7 +871,7 @@ For the proof of soundness we will have to show that all our axioms are valid. F
                 \item $\alpha$ of the form $t_1 = t_2$ then $\alpha'$ is $t_1' =t_2'$, use prev. claim.
                 \item $\alpha$ of the form $P t_1 \dots t_n$ similar
             \end{itemize}
-            \item[2.] wts. $\forall x \varphi \to \varphi^x_t$ is valid, where $t$ is SA for $x$ in $\varphi$.\\
+            \item[2.] wts. $\forall x \varphi \to \varphi^x_t$ is valid, where $t$ is SUB for $x$ in $\varphi$.\\
             simple case: $\forall x Px \to Pt$ is valid.
             Let $\mathcal{A}\models \forall x P x [s]$ then $\mathcal{A}\models \forall x P x [s(x|a)]$ for every $a\in A$. so i.p. for $a = \overline{s}(t)$
             this means $\overline{s}(t)\in P^\mathcal{A}$ that is $\mathcal{A}\models Pt$.
@@ -994,10 +994,10 @@ For the proof of soundness we will have to show that all our axioms are valid. F
                 so we do not have $\lnot \forall x \varphi\notin \Delta$ and by maximality of $\Delta$ we have 
                 $ \forall x \varphi \in \Delta$.
 
-                Suppose $\mathcal{A}\vDash \forall x \varphi^* \: [s]$ then $\mathcal{A}\vDash \varphi^* \: [s(x|t)]$ for some $t$. By the substitution lemma (providet that $t$ is SA for $x$ in $\varphi$) we can replace $x$ by $t$ in the formula.
+                Suppose $\mathcal{A}\vDash \forall x \varphi^* \: [s]$ then $\mathcal{A}\vDash \varphi^* \: [s(x|t)]$ for some $t$. By the substitution lemma (providet that $t$ is SUB for $x$ in $\varphi$) we can replace $x$ by $t$ in the formula.
 
                 $\mathbf{A} \vDash (\varphi^x_t)^*\:  [s]$ by the inductive hyphothesis $\varphi^x_t\notin\Delta$ then $\forall x \varphi \notin \Delta$ becasue $\Delta$ is deductively closed.
-                If $t$ is not SA for $x$ in $\varphi$, we know that there exists a logically equivalent alphabetic variant $\varphi'$ of $\varphi$ such that $t$ is SA for $x$ in $\varphi'$.
+                If $t$ is not SUB for $x$ in $\varphi$, we know that there exists a logically equivalent alphabetic variant $\varphi'$ of $\varphi$ such that $t$ is SUB for $x$ in $\varphi'$.
             \end{itemize}
         \end{claimproof} 
         So at this point we have: 
@@ -1015,5 +1015,120 @@ For the proof of soundness we will have to show that all our axioms are valid. F
             $[t]E^{\mathcal{A}/_E}[s]$ iff $t E^\mathcal{A} s$ iff $[t] = [s]$ 
         }
         \graybf{Claim:} $\mathcal{A}/_E$ satisfies $\Delta$ w/ $h\circ s$.
+        \begin{claimproof}
+            Let $\varphi\in \Delta$, $\mathcal{A}\models \varphi^*[s]$ by (4)
+            Want to show $\mathcal{A}\models \varphi^*[s] \iif \mathcal{A}/_E \models \varphi^* [h\circ s]$ by Homomorphism Thm.($\varphi^*$ has no occurence of $=$, surjectivity)
+            realisation of $E$ in $A/_E$ is the equality in $A/_E$.
+            Take the reduct of $\mathcal{A}/_E$ to $\mathcal{L}$. 
+        \end{claimproof}
     \end{enumerate}
 \end{proof}
+
+Exam exam
+
+
+\coroll{compactness statements 
+\begin{enumerate}
+    \item $\Gamma \models \varphi$ then there is a finite subset $\Gamma_0\subseteq \Gamma$ s.th. $\Gamma_0\models \varphi$
+    \item every finitly satisfiable set of formulas is satisfiable
+\end{enumerate}
+}
+\begin{proof}
+    \begin{enumerate}
+        \item $\Gamma\models \varphi$ then by completeness $\Gamma \vdash \varphi$ where the deduction uses only formulas 
+        from some $\Gamma_0\subseteq \Gamma$ finite. By soundness, $\Gamma_0\models \varphi$
+        \item $\Gamma$ finitly satisfiable. Suppose $\Gamma$ is not satisfiable then by completeness $\Gamma$ is not consistent.
+        So there has to be some $\Gamma_0\subseteq \Gamma$ such that $\Gamma_0\vdash \beta \land (\lnot \beta)$ so $\Gamma$ is not finitly satisfiable (by soundness).
+    \end{enumerate}
+\end{proof}
+
+
+
+
+\subsection{Sizes of models}
+Let $\Gamma$ be a consistent set of formulas. Is it possible to 
+
+\bsp{}{
+    \begin{enumerate}
+        \item For each $n\in \NN$ there is $\Gamma$ such that all models of $\Gamma$ that have size $n$.
+        \item DLO (Dense liniear order) w/o endpoints: no finite models
+    \end{enumerate}
+}
+\lemma{}{
+    $\Gamma$ such that all models are finite. Then there has to be 
+    $m\in\NN$ such that $|\mathcal{A}|\leq m$ for every model 
+    $\mathcal{A}\in\Mod\Gamma$}{
+    
+}{  Suppose $\Gamma$ has models of arbitrarily large finite size. \\
+    Idea: Expand language by new constant symbols $c_0,c_1,\dots$.
+    \[\theta_1 \defeq \ c_0 \neq c_1\]
+    \[\theta_2 \defeq \ c_0 \neq c_1 \land c_1\neq c_2 \land c_0 \neq c_2 \]
+    \vdots
+    \[\theta_n \defeq \ \bigwedge_{i,j=0 i\neq j}^{n}c_i\neq c_j\]
+    \[\Theta \defeq \{\theta_1, \theta_2 \dots \}\]
+    $\Gamma\cup \theta$ finitely satisfiable.
+    By the compactness theorem there exists a $\Theta_0\subseteq \Theta$ finite TODO. then there is a maximal element $\theta_k$
+    By the compactness theorem reduct to language of $\Gamma$ is an infinite models 
+    of $\Gamma$ which is a contradiction to all models of $\Gamma$ are finite.
+}
+
+\note{}{There is no sentence in the language of groups / rings /\dots that would be satisfied in all finite 
+    groups/rings/\dots and not satisfied in all infinite groups/rings/\dots}
+
+
+
+Recall the proof of completeness theorem. $\mathcal{L}$, $|\mathcal{L}= \aleph_0$
+$\Gamma$ consistent set of $\mathcal{L}$-formulas. $\mathcal{A}/_E$ countable.
+
+
+\subsection{Completness for uncountable languages}
+
+Use (AC) in the form of Zorn's Lemma and Zermelo's Theorem
+\prop{Zorn's Lemma}{$P$ partially ordered set such that every chain has an upperbound in $P$ then $P$ contains a maximal element.}{}
+\prop{Zermelos's Theorem}{Every set can be well-ordered. That is linearly ordered such that every non-empty set has a smallest element.}{}
+$\omega$ is the first infinite ordinal. then it is also a cardinal and is called $\aleph_0$
+
+\[A_0 = \{(\varphi_\alpha, x_\alpha): \alpha < \lambda\}\]
+
+\vdots
+
+\[|\mathcal{A}/_E | \leq \lambda\]
+
+
+\subsection{Löwenheim-Skolem-Theorem}
+\prop{}{Supposee $\Gamma$ is a set of $\mathcal{L}$-formulas. $|\mathcal{L}| = \lambda$ and lets assume 
+    $\Gamma$ is satisfiable in some infinite structure.\\
+    Then for every cardinal $\kappa\geq \lambda$, $\Gamma$ is satisfiable in a structure of cardinality $\kappa$.
+}{
+    add $\kappa$ many new constants to the language $\mathcal{L}$.
+
+    $\mathcal{L}' = \mathcal{L}\cup \{c_\alpha : \alpha < \kappa\}$
+
+    $\Sigma = \{c_\alpha \neq c_\beta : \alpha\leq \beta, \ \alpha,\beta\leq \kappa\}$
+
+    Then $\Gamma\cup \Sigma$ is finitly satisfiable in $\mathcal{L}'$.
+    This is because $\Gamma$ is satisfiable in some infinite structure. By compactness $\Gamma\cup \Sigma$ is satisfiable.
+    We have $\mathcal{A}\models \Gamma \cup \Sigma$ then $|\mathcal{A}|\geq \kappa$.
+
+    By the proof of completeness theorem, $\Gamma\cup \Sigma$ has a model of size $\leq \kappa$.
+    Hence it is exactly of size $\kappa$. Take reduct TODO
+}
+\bsp{}{Language of ZFC $\mathcal{L} = \{\in\}$ is countable. Löwenheim-Skolem guaranties that ZFC has a countable model.
+    called skolems paradox. 
+    ZFC knows that there are uncountable sets.
+    explanation: some bijections are missing 
+}
+\bsp{}{\begin{enumerate}
+    \item $\overline{\RR}$ real field. $\Thm(\overline{\RR})$ has a countable model. $\RR_\text{alg}$
+    \item $\mathcal{N} = (\NN,0,S,+,\cdot)$\\
+    Claim: there exists a countable structure $\mathcal{M}$ such that $\mathcal{N}\equiv \mathcal{M}$ but $\mathcal{N}\ncong \mathcal{M}$
+    One way is to add new constant c to language
+    $\Sigma = \{0<c, S0<c,\dots\}$ is fin satisfiable. So $\Sigma\cup Th (\mathcal{N})$ is fin satisfiable by compactness it is satisfiable
+
+    Take the reduct to original language. $\mathcal{M}$. and $\mathcal{M}$ not isomorphic to $\mathcal{N}$, bc
+    A bijection of $M\to \NN$ would have to map $c$ somewhere but for every $S^k0<c$ for every $k$ wont be preserved by any map.
+\end{enumerate}
+
+
+
+}
