@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.4.21)  14 NOV 2024 21:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.4.21)  26 NOV 2024 14:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -853,24 +853,24 @@ LaTeX Font Info:    Overwriting symbol font `stmry' in version `bold'
  (lecture_notes.aux)
 \openout1 = `lecture_notes.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 246.
-LaTeX Font Info:    ... okay on input line 246.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 246.
-LaTeX Font Info:    ... okay on input line 246.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 246.
-LaTeX Font Info:    ... okay on input line 246.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 246.
-LaTeX Font Info:    ... okay on input line 246.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 246.
-LaTeX Font Info:    ... okay on input line 246.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 246.
-LaTeX Font Info:    ... okay on input line 246.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 246.
-LaTeX Font Info:    ... okay on input line 246.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 246.
-LaTeX Font Info:    ... okay on input line 246.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 246.
-LaTeX Font Info:    ... okay on input line 246.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 248.
+LaTeX Font Info:    ... okay on input line 248.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 248.
+LaTeX Font Info:    ... okay on input line 248.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 248.
+LaTeX Font Info:    ... okay on input line 248.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 248.
+LaTeX Font Info:    ... okay on input line 248.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 248.
+LaTeX Font Info:    ... okay on input line 248.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 248.
+LaTeX Font Info:    ... okay on input line 248.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 248.
+LaTeX Font Info:    ... okay on input line 248.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 248.
+LaTeX Font Info:    ... okay on input line 248.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 248.
+LaTeX Font Info:    ... okay on input line 248.
  (C:\Users\Nxan\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count459
@@ -890,7 +890,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (C:\Users\Nxan\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring ON on input line 246.
+Package hyperref Info: Link coloring ON on input line 248.
  (lecture_notes.out) (lecture_notes.out)
 \@outlinefile=\write5
 \openout5 = `lecture_notes.out'.
@@ -943,21 +943,21 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'lecture_notes.bbl' found.
  (lecture_notes.bbl)
-Package biblatex Info: Reference section=0 on input line 246.
-Package biblatex Info: Reference segment=0 on input line 246.
-LaTeX Font Info:    Trying to load font information for OT1+qag on input line 258.
+Package biblatex Info: Reference section=0 on input line 248.
+Package biblatex Info: Reference segment=0 on input line 248.
+LaTeX Font Info:    Trying to load font information for OT1+qag on input line 260.
  (C:\Users\Nxan\AppData\Local\Programs\MiKTeX\tex/latex/tex-gyre\ot1qag.fd
 File: ot1qag.fd 2009/09/25 v1.2 font definition file for OT1/qag
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 272.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 274.
  (C:\Users\Nxan\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 272.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 274.
  (C:\Users\Nxan\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 272.
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 274.
  (C:\Users\Nxan\AppData\Local\Programs\MiKTeX\tex/latex/stmaryrd\ustmry.fd) (lecture_notes.toc)
 \tf@toc=\write6
 \openout6 = `lecture_notes.toc'.
@@ -1088,9 +1088,19 @@ Overfull \hbox (113.76021pt too wide) detected at line 987
 \OMS/cmsy/m/n/10 A j[]\OT1/cmr/m/n/10 = \OML/cmm/m/it/10 '[] \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10  [] \OT1/cmr/m/n/10 [\OML/cmm/m/it/10 s\OT1/cmr/m/n/10 ] [] \OMS/cmsy/m/n/10 A \U/msa/m/n/10 ^^O \OML/cmm/m/it/10 '[] \OT1/cmr/m/n/10 [\OML/cmm/m/it/10 s\OT1/cmr/m/n/10 ][]\OMS/cmsy/m/n/10 A j[]\OT1/cmr/m/n/10 = \OML/cmm/m/it/10  [] \OT1/cmr/m/n/10 [\OML/cmm/m/it/10 s\OT1/cmr/m/n/10 ] [] \OMS/cmsy/m/n/10 A j[]\OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 :\OML/cmm/m/it/10 '[] \OT1/cmr/m/n/10 [\OML/cmm/m/it/10 s\OT1/cmr/m/n/10 ][]\OMS/cmsy/m/n/10 A j[]\OT1/cmr/m/n/10 = \OML/cmm/m/it/10  [] \OT1/cmr/m/n/10 [\OML/cmm/m/it/10 s\OT1/cmr/m/n/10 ] [] \OMS/cmsy/m/n/10 :\OML/cmm/m/it/10 ' \OMS/cmsy/m/n/10 2 \OT1/cmr/m/n/10 ^^A[]\OML/cmm/m/it/10   \OMS/cmsy/m/n/10 2 \OT1/cmr/m/n/10 ^^A [](\OML/cmm/m/it/10 ' \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10  \OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2 \OT1/cmr/m/n/10 ^^A
  []
 
-[27] [28]) (BooleanAlgebra.tex [29]
+[27] [28]
+Overfull \hbox (107.65453pt too wide) in paragraph at lines 1143--1143
+[][]\OT1/cmr/bx/n/10 Definition 2.36. []\OT1/txtt/m/n/10 :  []$\OMS/cmsy/m/n/10 K$ \OT1/cmr/m/n/10 some class of $\OMS/cmsy/m/n/10 L$\OT1/cmr/m/n/10 - struc-tures. Then $[](\OMS/cmsy/m/n/10 K\OT1/cmr/m/n/10 ) = []$ 
+ []
+
+[29] [30] [31] [32]
+Overfull \hbox (7.56512pt too wide) in paragraph at lines 1439--1439
+[][]\OT1/cmr/bx/n/10 Theorem 2.26. []\OT1/txtt/b/n/10 Chain rule\OT1/txtt/m/n/10 : []\OT1/cmr/m/n/10 Sup-pose $\OML/cmm/m/it/10 G[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a\OT1/cmr/m/n/10 )$ and $\OML/cmm/m/it/10 F[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 G\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a\OT1/cmr/m/n/10 ))$ ex-ist then $(\OML/cmm/m/it/10 F \OMS/cmsy/m/n/10 ^^N \OML/cmm/m/it/10 G\OT1/cmr/m/n/10 )[](\OML/cmm/m/it/10 a\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 F[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 G\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a\OT1/cmr/m/n/10 )) \OMS/cmsy/m/n/10 ^^A
+ []
+
+[33]) (BooleanAlgebra.tex [34]
 Chapter 3.
-[30
+[35
 
 ]
 Overfull \hbox (20.05716pt too wide) detected at line 58
@@ -1102,15 +1112,15 @@ Overfull \hbox (28.27293pt too wide) detected at line 109
 \OT1/cmr/m/n/10 0 []= 0\OML/cmm/m/it/10 =[] \OT1/cmr/m/n/10 1 []= 1\OML/cmm/m/it/10 =[] \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a=[]\OT1/cmr/m/n/10 )[] []= \OML/cmm/m/it/10 a[]=[] a=[] \OMS/cmsy/m/n/10 _ \OML/cmm/m/it/10 b=[] []\OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 a \OMS/cmsy/m/n/10 _ \OML/cmm/m/it/10 b\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 =[] a=[] \OMS/cmsy/m/n/10 ^ \OML/cmm/m/it/10 b=[] []\OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 a \OMS/cmsy/m/n/10 ^ \OML/cmm/m/it/10 b\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 =[]
  []
 
-) (SetTheory.tex [31]
+) (SetTheory.tex [36]
 Chapter 4.
-) (lecture_notes.dfn [32
+) (lecture_notes.dfn [37
 
-] [33])
+] [38])
 \tf@dfn=\write8
 \openout8 = `lecture_notes.dfn'.
 
- [34] [35
+ [39] [40
 
 ] 
 enddocument/afterlastpage: lastpage setting LastPage.
@@ -1122,17 +1132,17 @@ Package logreq Info: Writing requests to 'lecture_notes.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 35596 strings out of 476331
- 698271 string characters out of 5788237
+ 35650 strings out of 476331
+ 698867 string characters out of 5788237
  1878660 words of memory out of 5000000
- 55167 multiletter control sequences out of 15000+600000
+ 55173 multiletter control sequences out of 15000+600000
  536668 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  101i,21n,104p,752b,1465s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Nxan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qagb.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/hoekwater/stmary10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txbtt.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txtt.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txtt.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on lecture_notes.pdf (35 pages, 801564 bytes).
+Output written on lecture_notes.pdf (40 pages, 839618 bytes).
 PDF statistics:
- 855 PDF objects out of 1000 (max. 8388607)
- 337 named destinations out of 1000 (max. 500000)
+ 940 PDF objects out of 1000 (max. 8388607)
+ 385 named destinations out of 1000 (max. 500000)
  202 words of extra memory for PDF output out of 10000 (max. 10000000)
 
