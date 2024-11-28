@@ -1094,7 +1094,7 @@ $\omega$ is the first infinite ordinal. then it is also a cardinal and is called
 
 \[|\mathcal{A}/_E | \leq \lambda\]
 
-
+\section{Model Theory}
 \subsection{Löwenheim-Skolem-Theorem}
 \prop{}{Supposee $\Gamma$ is a set of $\mathcal{L}$-formulas. $|\mathcal{L}| = \lambda$ and lets assume 
     $\Gamma$ is satisfiable in some infinite structure.\\
@@ -1129,6 +1129,7 @@ $\omega$ is the first infinite ordinal. then it is also a cardinal and is called
     A bijection of $M\to \NN$ would have to map $c$ somewhere but for every $S^k0<c$ for every $k$ wont be preserved by any map.
 \end{enumerate}
 }
+\subsection{Theories and completeness}
 \defin{Theory}{A theory $T$ is a set of sentences that is closed under logical implication.
 \[T\models \sigma \implies \sigma \in T\]
 }
@@ -1224,6 +1225,7 @@ A theory $T$ is complete iff any to models are elementarily equivalent.
     not uncountable categorical $\overline{\mathbb{R}}$, $\overline{\mathbb{R}(\varepsilon)}, 0<\varepsilon <\frac{1}{n}$ for every $n\in \NN$.
 \end{itemize}
 }
+\subsection{Theory of algebraic closed fields}
 \prop{}{The theory of algebraic closed fields of characteristic $p$ ACF$_p$, where $p$ is either $0$ or prime is complete.}{
 \begin{itemize}
     \item  countable language
@@ -1259,7 +1261,7 @@ Steinitz: Two ACF are isomorphic iff they have the same characteristic and there
         \item ACF$_0$ $\models \sigma$
         \item for all sufficiently large primes $p$ ACF$_p$ $\models \sigma$
         \item For infinitely many primes $p$ ACF$_p$ $models \sigma$
-    \end{itemize}}{
+    \end{itemize}}{ 
 
     \begin{itemize}
         \item[(a), (b), (c)] are equivalent by completeness of ACF$_0$
@@ -1301,8 +1303,36 @@ Another use of \L oś-Vaught
     TODO
 }
 
-\subsubsection{Nonstandard Analysis}
-
+\subsection{Nonstandard Analysis}
+%TODO historical background
+\begin{enumerate}
+    \item Language $\mathcal{L}$: $=$, $\forall$ ranging over $\RR$,
+    \begin{itemize}
+        \item $P_R$ TODO
+    \end{itemize}
+    \item standard structure for $\mathcal{L}$: $\mathcal{R}$ with universe $\RR$, $c_r^\mathcal{R} = r$, $P_R^\mathcal{R} = R$, $f^\mathcal{R}_F = F$.
+    \item Nonstandard structure for $\mathcal{L}$: $\mathcal{R}^*$, which is constructed using the compactness theorem 
+    \[\Gamma \defeq \Th(\mathcal{R}) \cup \{c_r P_< v_1 : r\in \RR\}\]
+    Compactness theorem $\implies$ there exists a $\mathcal{L}$-structure $\mathcal{R}^*$ with $\mathcal{R}^*\models \Gamma [(v_1 | a)]$ for some $a\in R^*$. We have $\mathcal{R}\equiv \mathcal{R}^*$.
+    Moreover, $h: \RR \to R^*$ defined by $r\mapsto c_r^*$ is an isomorphism of $\mathcal{R}$ into $\mathcal{R}^*$
+    \begin{itemize}
+        \item $h$ is injective:
+        \item TODO
+    \end{itemize}
+\end{enumerate}
+\note{}{WMA $\mathcal{R}$ substructure of $\mathcal{R}^*$ (se PS)}
+Notation: We will write $\!^*B$ instead of $P_B^{\mathcal{R}^*}$.
+\bsp{}{what is $\!^*\RR$?
+We have that $\mathcal{R}\models \forall x P_\RR$, hence $\mathcal{R}^*\models \forall x \!^*\RR$, so $\!^*\RR = R^* = \text{universe of } \mathcal{R}^*$.
+\note{}{
+    Let $F$ be an $n$-ary operator on $\RR$. Then $F$ is the restriction of $\!^*F$ to $\RR$. $\!^*c_r = r$.
+}
+Idea: If we want to show that $\!^*R$ or $\!^*F$ has certain property, then we show
+\begin{itemize}
+    \item $R$ or $F$ have that property.
+    \item property can be expressed in $\mathcal{L}$
+\end{itemize}
+}
 TODO
 
 %26.11.2024
@@ -1437,13 +1467,14 @@ $\frac{dF}{dx}$ is an actual division.
         \[\frac{dF}{dx} =0 = F'(G(a))\frac{dG}{dx}\]
     \end{itemize}
 }
+\subsection{o-minimality}
 \bsp{}{
     $\overline{\RR} = (\RR,+,-,\cdot, 0,1,\leq)$ $\overline{\RR} = (\RR,\leq)$ TODO or at least 
     in a very similar language, 
     then by quantifier elimination (QE, Tarski) all the definable sets of $\RR$ are finite unions 
     of points and intervals.
 }
-\defin{}{Let $\mathcal{L} = \{\leq,\dots\}$, $\mathcal{M}$ is an $\mathcal{L}$-structure such that 
+\defin{o-minimality}{Let $\mathcal{L} = \{\leq,\dots\}$, $\mathcal{M}$ is an $\mathcal{L}$-structure such that 
 $\mathcal{M}\models \text{DLO}$ and the only definable subsets of $M$ are finite union of points and 
 intervalls. Then $\mathcal{M}$ or equivalent $\Th(\mathcal{M})$ is called o-minimal.}
 o-minimal is not a first order property so to say that a theory is o-minimal is non trivial.
@@ -1453,4 +1484,145 @@ o-minimal is not a first order property so to say that a theory is o-minimal is 
     in $M^2$ it is either the graph of a continuous function or everything inbetween two graphs of continuous 
     functions. (its an inductive definition)
 }
+\note{}{Have Dedekind complete for definable subets of $M$: 
+For $X\subseteq M$ definable then $\inf X, \sup X$ exist in $M_{\pm \infty}$. }
 
+\note{}{If $M$ contains infinitely small elements, for example $M = \!^*\RR$ then $(0,1)\subseteq M$ is not connected.
+$O_1 = \{x: \forall n\in \NN^* 0<x<\frac{1}{n}\}$ is open and so is its complement in $(0,1)$. We have 
+
+Note that $O_1$ is however not definable in $M$. If $O_1$ would be definable it would be a finite union 
+of points and intervals. It is convex, and not a point. But it is also not an intervall, because then it 
+would have by Dedekind completness that $\sup O_1$ exists in $M_{\pm \infty}$, a contradiction. TODO: 
+}
+\defin{definably connectedness}{$X\subseteq M^m$ is said to be definably connected, if $X$ is definable and $X$ is not the 
+disjoint union of two definable, non-empty open sets.}
+\lemma{}{
+    \begin{enumerate}
+        \item The definably connected subsets of $M$ are the intervalls (including singletons) and $\varnothing$.
+        \item The image of a definable connected subset $X\subseteq M^n$ under a definable continuous map $f:X\to M^n$ is definably connected. ($f$ is called to be definable, if its graph $\Gamma f \subseteq M^{mn}$ is).
+        \item (IVP) If $f:[a,b]\to M$ definable and continuous, then $f$ assumes all values between $f(a)$ and $f(b)$.
+    \end{enumerate}
+}{Exercise}
+\subsection{o-minimal ordered groups and rings}
+\defin{ordered group}{A ordered group is a group with a linear order such that 
+\[\forall x \forall y \forall z x<y \to (zx<zy \land xz < yz)\]
+}
+\bsp{}{
+    \begin{itemize}
+        \item $(\RR,<,+)$ 
+        \item $(\RR^{>0},<,\cdot)$
+        \item non-example: $(\RR^*, \cdot,<)$
+    \end{itemize}
+}
+Recall:
+\begin{itemize}
+    \item $(G,\cdot)$ is divisible, if $\forall n \forall g \exists x g = x^n$, equivalent to $\forall n G^n = G$.
+    \item $(G,\cdot)$ is torsion-free, if no element has finite order except for $1$.
+\end{itemize}
+\prop{}{$(M,<,\cdot, \dots)$ o-minimal such that $(M,<,\cdot)$ ordered group, then
+    $(M,<,\cdot)$ abelian, divisible and torsion-free.
+}{}
+\lemma{}{If $G$ is a definable subgroup of $M$ then $G$ is convex.
+}{
+    Suppose $G$ is not convex, then there exists $1<a<g$ for some $g\in G$ and $a\in M\backslash G$. 
+    Then 
+    \[1<a<g<ag<g^2<ag^2<g^3<\dots \]
+    but elements alternate being in $G$ and outside of $G$ so $G$ is not definable (finite union).
+}
+\lemma{}{The only definable subsets of $M$ that are subgroups are $\{1\}$ and $M$.
+}{
+    Suppose $G\neq \{1\}$ wts. $G = M$.
+    From the previous lemma we know that $G$ is convex.
+    The idea is $s\defeq \sup G$ then $1<s$ and $(1,s)\subseteq G$. If $s=+\infty$ then $G = M$.
+    Suppose $s\neq +\infty$ then 
+    Take $1<g<s$ then $g^{-1}s\in (1,s)$
+    So $s = g g^{-1}s\in G$ 
+    and $s<sg$ thats a contradiction with $s = \sup G$. 
+}
+\begin{proof}
+    of Proposition.
+    \begin{itemize}
+        \item $(M,\cdot)$ abelian:
+        For any $a\in M$ we can look at $C_a = \{x\in M : xa = ax\}$ it is a definable subgroup and contains $a$ it therefore is non-trivial and we have $C_a = M$ for every $a\in M$, so abelian.
+        \item For any $n\in \NN^{>0}$ look at $\{x^n: x\in M\}$ non trivial definable subgroup of $M$, hence $=M$.
+        \item Every ordered group is torsion-free.
+    \end{itemize}
+\end{proof}
+\defin{Ordered ring}{A ring (assumed to always be associative, with $1$)
+ equipped with a linear order such that
+\begin{enumerate}
+    \item $0<1$
+    \item $<$ translation invariant
+    \item $<$ invariant under multiplication by positive elements
+\end{enumerate}
+}
+
+\note{}{
+    \begin{itemize}
+        \item The additive group $(R,<,+)$ of an ordered ring is a ordered group. 
+        \item Ordered rings have no zero-divisors $\forall x \forall y xy = 0 \to (x=0 \lor y = 0)$
+        \item $x^2\geq 0$ 
+        \item $k\mapsto k \cdot 1 : \ZZ \to \text{ring}$ is a strictly increasing embedding with resprect to the usual ordering on $\ZZ$ that means our characteristic is $0$.
+    \end{itemize}
+}
+\note{}{
+    \begin{itemize}
+        \item A division ring is a field without commutativity of multiplication, so 
+        \[\forall x x\neq 0 \to \exists y xy = 1\]
+        \item Suppose ordered ring is also a division ring. Then such $y$ are unique and $yx=1$. Further, $x>0 \to y>0$.
+        
+        Also the additive group is divisible, the underlying set is DLO w/o endpoints and 
+        $(x,y)\to x \cdot y$
+        $x\to x^{-1}$ are continuous with resprect to itervall topology.
+    \end{itemize}
+}
+\defin{ordered field}{An ordered ring is an ordered division ring with commutative multiplication.}
+\defin{real closed field}{ordered field $R$ \outernote{RCF} such that if $f(X)\in R[X]$ and $a<b$ are such that 
+$f(a)<0<f(b)$ then there exists a $c\in (a,b)$ such that $f(c)=0$}
+\bsp{}{
+    \begin{itemize}
+        \item $(\RR,+,\cdot,<)$ is RCF
+        \item $(\mathbb{Q},+,\cdot,<)$ is not a RCF
+    \end{itemize}
+}
+\prop{}{$(M,<,+,\cdot,\dots)$ o-minimal such that $(M,<,+,\cdot)$ is ordered ring then $(M,<,+,\cdot)$ is RCF.}{
+    \begin{itemize}
+        \item wts. $(M;<,+,\cdot)$ is ordered division ring.
+            For all $a\in M$ $aM$ is additive subgroup of $(M,+)$ hence $aM = M$ if $a\neq 0$.
+
+        \item wts. commutativity of $\cdot$. $\text{Pos}(M) \defeq \{a\in M: a>0\}$ is a subgroup of the multiplicative group of $M$. Let $a\in M$ then bc $M = aM$ we have $b\in M$ such that $1=a \cdot b$ and by note $0<a$ then $0<a^{-1}$.
+        so multiplication is commutative on $M$
+        \item IVP property for polynomials:
+        The ring operations are continuous, see note and use lemma about IVP (c).
+    \end{itemize}
+}
+\subsubsection{Cell decomposition}
+Base step: 
+\prop{Monotonicity Theorem}{
+    Suppose $f:(a,b)\to M$ definable, then there are $a<c_1< \dots < c_k<b$ such that for $(a,c_1)$, $(c_i,c_{i+1})$, $(c_k,b)$ partition of $(a,b)$ we have: $f$ is either constant or strictly monotinic and continuous.
+}{}
+\lemma{}{$\exists$ subinterval on which $f$ is const or incective}{}
+\lemma{}{If $f$ injective, then strictly monotone on a subinterval}{}
+\lemma{}{If $f$ strictly monotone, then $f$ continuous on a subinterval}{}
+
+\begin{proof}
+    Proof of Monotonicity theorem:
+    Consider $$X \defeq \biggl\{x\in (a,b) : \stackrel{\text{on some subinterval containing $x$,}}
+    {\text{$f$ is either constant or strictly monotone and continuous}} \biggr\}$$
+    remark: $X$ is a definable set.
+    Look at $(a,b)-X$ is finite. If not, it would contain subinterval use lemma to get contradiction.
+    WMA:\addAbbrev{WMA}{We may assume} $X = (a,b)$ in particular we may assume $f$ continuous.
+    By subdividin $(a,b)$ further WMA that we are in one of the following cases
+    \begin{enumerate}
+        \item[Case 1:] $\forall x \in (a,b)$ $f$ constant on some neighborhood of $x$
+        \item[Case 2:] $\forall x \in (a,b)$ $f$ is strictly monotone increasing on some neighborhood of $x$
+        \item[Case 3:] $\forall x \in (a,b)$ $f$ is strictly monotone decreasing on some neighborhood of $x$
+    \end{enumerate}
+    \begin{enumerate}
+        \item[Case 1:] $x_0 \in (a,b)$ then 
+        $s \defeq \{ x: x_0<x<b \land f \text{ cont. on $[x_0,x)$}\}$
+        wts $s=b$ suppose $s<b$ then $f$ constant on neighborhood of $s$ contradiction with definition of $s$ so $f$ continuous on $[x_0,b)$. $f$ constant on $(a,x_0]$ similar.
+        \item[Case 2:] $x_0\in (a,b)$ then $s\defeq \{x: x_0<x<b \land f \text{strictly incr. on } [x_0,x) \}$. wts: $s=b$ assume $s<b$ then $f$ is strictly increasing on some neighborhood of $s$ so $f$ strictly increasing on $[x_0,s+\delta)$ for some $\delta>0$, a contradiction to definition of $s$. 
+        \item[Case 3:] similar to Case 2. 
+    \end{enumerate}
+\end{proof}

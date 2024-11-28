@@ -1,66 +1,71 @@
-\contentsline {section}{{{Definition 1.1\hspace {5px} Language of PL}}}{2}{defcount.1.1}%
-\contentsline {section}{{{Definition 1.2\hspace {5px} Expression / prop. sentence}}}{2}{defcount.1.2}%
-\contentsline {section}{{{Definition 1.3\hspace {5px} Construction sequence}}}{3}{defcount.1.3}%
-\contentsline {section}{{{Definition 1.4\hspace {5px} Closedness of a set}}}{3}{defcount.1.4}%
-\contentsline {section}{{{Definition 1.5\hspace {5px} Truth assignment}}}{3}{defcount.1.5}%
-\contentsline {section}{{{Definition 1.6\hspace {5px} Satisfaction}}}{4}{defcount.1.6}%
-\contentsline {section}{{{Definition 1.7\hspace {5px} Tautological implication}}}{4}{defcount.1.7}%
-\contentsline {section}{{{Definition 1.8\hspace {5px} Closedness, Inductiveness}}}{6}{defcount.1.8}%
-\contentsline {section}{{{Definition 1.9\hspace {5px} Freely generated set}}}{7}{defcount.1.9}%
-\contentsline {section}{{{Definition 1.10\hspace {5px} Tautological equivalence relation}}}{8}{defcount.1.10}%
-\contentsline {section}{{{Definition 1.11\hspace {5px} Satisfiability}}}{9}{defcount.1.11}%
-\contentsline {section}{{{Definition 2.1\hspace {5px} A First order Language}}}{11}{defcount.2.1}%
-\contentsline {section}{{{Definition 2.2\hspace {5px} Expression}}}{12}{defcount.2.2}%
-\contentsline {section}{{{Definition 2.3\hspace {5px} Term Building Operations}}}{12}{defcount.2.3}%
-\contentsline {section}{{{Definition 2.4\hspace {5px} Atomic formula}}}{12}{defcount.2.4}%
-\contentsline {section}{{{Definition 2.5\hspace {5px} Formulas}}}{12}{defcount.2.5}%
-\contentsline {section}{{{Definition 2.6\hspace {5px} Free variables}}}{12}{defcount.2.6}%
-\contentsline {section}{{{Definition 2.7\hspace {5px} structure}}}{13}{defcount.2.7}%
-\contentsline {section}{{{Definition 2.8\hspace {5px} Assigment}}}{13}{defcount.2.8}%
-\contentsline {section}{{{Definition 2.9\hspace {5px} Satisfy}}}{14}{defcount.2.9}%
-\contentsline {section}{{{Definition 2.10\hspace {5px} Model}}}{15}{defcount.2.10}%
-\contentsline {section}{{{Definition 2.11\hspace {5px} Logical implication}}}{15}{defcount.2.11}%
-\contentsline {section}{{{Definition 2.12\hspace {5px} Logical equivalence}}}{15}{defcount.2.12}%
-\contentsline {section}{{{Definition 2.13\hspace {5px} Valid}}}{15}{defcount.2.13}%
-\contentsline {section}{{{Definition 2.14\hspace {5px} definability in a structure}}}{16}{defcount.2.14}%
-\contentsline {section}{{{Definition 2.15\hspace {5px} definability of classes of structures}}}{16}{defcount.2.15}%
-\contentsline {section}{{{Definition 2.16\hspace {5px} Homomorphism}}}{16}{defcount.2.16}%
-\contentsline {section}{{{Definition 2.17\hspace {5px} Isomorphism}}}{17}{defcount.2.17}%
-\contentsline {section}{{{Definition 2.18\hspace {5px} Substructure}}}{17}{defcount.2.18}%
-\contentsline {section}{{{Definition 2.19\hspace {5px} elementarily equivalent}}}{18}{defcount.2.19}%
-\contentsline {section}{{{Definition 2.20\hspace {5px} Automorphism}}}{18}{defcount.2.20}%
-\contentsline {section}{{{Definition 2.21\hspace {5px} Rigid}}}{18}{defcount.2.21}%
-\contentsline {section}{{{Definition 2.22\hspace {5px} }}}{18}{defcount.2.22}%
-\contentsline {section}{{{Definition 2.23\hspace {5px} }}}{18}{defcount.2.23}%
-\contentsline {section}{{{Definition 2.24\hspace {5px} }}}{19}{defcount.2.24}%
-\contentsline {section}{{{Definition 2.25\hspace {5px} Modus Ponens}}}{19}{defcount.2.25}%
-\contentsline {section}{{{Definition 2.26\hspace {5px} Deduction}}}{19}{defcount.2.26}%
-\contentsline {section}{{{Definition 2.27\hspace {5px} Generalization}}}{20}{defcount.2.27}%
-\contentsline {section}{{{Definition 2.28\hspace {5px} Logical axioms}}}{20}{defcount.2.28}%
-\contentsline {section}{{{Definition 2.29\hspace {5px} Substitution}}}{20}{defcount.2.29}%
-\contentsline {section}{{{Definition 2.30\hspace {5px} substitutable}}}{20}{defcount.2.30}%
-\contentsline {section}{{{Definition 2.31\hspace {5px} Tautologies of first order language}}}{21}{defcount.2.31}%
-\contentsline {section}{{{Definition 2.32\hspace {5px} Inconsistence}}}{22}{defcount.2.32}%
-\contentsline {section}{{{Definition 2.33\hspace {5px} }}}{25}{defcount.2.33}%
-\contentsline {section}{{{Definition 2.34\hspace {5px} }}}{28}{defcount.2.34}%
-\contentsline {section}{{{Definition 2.35\hspace {5px} Theory}}}{29}{defcount.2.35}%
-\contentsline {section}{{{Definition 2.36\hspace {5px} }}}{29}{defcount.2.36}%
-\contentsline {section}{{{Definition 2.37\hspace {5px} }}}{30}{defcount.2.37}%
-\contentsline {section}{{{Definition 2.38\hspace {5px} axiomatizability}}}{30}{defcount.2.38}%
-\contentsline {section}{{{Definition 2.39\hspace {5px} }}}{30}{defcount.2.39}%
-\contentsline {section}{{{Definition 2.40\hspace {5px} infinitely close}}}{32}{defcount.2.40}%
-\contentsline {section}{{{Definition 2.41\hspace {5px} Convergence (non-standard definition)}}}{33}{defcount.2.41}%
-\contentsline {section}{{{Definition 2.42\hspace {5px} }}}{33}{defcount.2.42}%
-\contentsline {section}{{{Definition 2.43\hspace {5px} }}}{34}{defcount.2.43}%
-\contentsline {section}{{{Definition 3.1\hspace {5px} Boolean Algebra}}}{35}{defcount.3.1}%
-\contentsline {section}{{{Definition 3.2\hspace {5px} Opposite of boolean algebra}}}{35}{defcount.3.2}%
-\contentsline {section}{{{Definition 3.3\hspace {5px} Subalgebra}}}{35}{defcount.3.3}%
-\contentsline {section}{{{Definition 3.4\hspace {5px} Homomorphisms of boolean algebras}}}{36}{defcount.3.4}%
-\contentsline {section}{{{Definition 3.5\hspace {5px} Trivial algebras}}}{36}{defcount.3.5}%
-\contentsline {section}{{{Definition 3.6\hspace {5px} Ideal}}}{36}{defcount.3.6}%
-\contentsline {section}{{{Definition 4.1\hspace {5px} Axiom of extensionality}}}{37}{defcount.4.1}%
-\contentsline {section}{{{Definition 4.2\hspace {5px} Pairing Axiom}}}{37}{defcount.4.2}%
-\contentsline {section}{{{Definition 4.3\hspace {5px} Union Axiom}}}{37}{defcount.4.3}%
-\contentsline {section}{{{Definition 4.4\hspace {5px} Power set Axiom}}}{37}{defcount.4.4}%
-\contentsline {section}{{{Definition 4.5\hspace {5px} Axiom of replacement / substitution}}}{37}{defcount.4.5}%
-\contentsline {section}{{{Definition 4.6\hspace {5px} Axiom scheme of comprehension}}}{37}{defcount.4.6}%
+\contentsline {section}{{{Definition 1.1\hspace {5px} Language of PL}}}{3}{defcount.1.1}%
+\contentsline {section}{{{Definition 1.2\hspace {5px} Expression / prop. sentence}}}{3}{defcount.1.2}%
+\contentsline {section}{{{Definition 1.3\hspace {5px} Construction sequence}}}{4}{defcount.1.3}%
+\contentsline {section}{{{Definition 1.4\hspace {5px} Closedness of a set}}}{4}{defcount.1.4}%
+\contentsline {section}{{{Definition 1.5\hspace {5px} Truth assignment}}}{4}{defcount.1.5}%
+\contentsline {section}{{{Definition 1.6\hspace {5px} Satisfaction}}}{5}{defcount.1.6}%
+\contentsline {section}{{{Definition 1.7\hspace {5px} Tautological implication}}}{5}{defcount.1.7}%
+\contentsline {section}{{{Definition 1.8\hspace {5px} Closedness, Inductiveness}}}{7}{defcount.1.8}%
+\contentsline {section}{{{Definition 1.9\hspace {5px} Freely generated set}}}{8}{defcount.1.9}%
+\contentsline {section}{{{Definition 1.10\hspace {5px} Tautological equivalence relation}}}{9}{defcount.1.10}%
+\contentsline {section}{{{Definition 1.11\hspace {5px} Satisfiability}}}{10}{defcount.1.11}%
+\contentsline {section}{{{Definition 2.1\hspace {5px} A First order Language}}}{12}{defcount.2.1}%
+\contentsline {section}{{{Definition 2.2\hspace {5px} Expression}}}{13}{defcount.2.2}%
+\contentsline {section}{{{Definition 2.3\hspace {5px} Term Building Operations}}}{13}{defcount.2.3}%
+\contentsline {section}{{{Definition 2.4\hspace {5px} Atomic formula}}}{13}{defcount.2.4}%
+\contentsline {section}{{{Definition 2.5\hspace {5px} Formulas}}}{13}{defcount.2.5}%
+\contentsline {section}{{{Definition 2.6\hspace {5px} Free variables}}}{13}{defcount.2.6}%
+\contentsline {section}{{{Definition 2.7\hspace {5px} structure}}}{14}{defcount.2.7}%
+\contentsline {section}{{{Definition 2.8\hspace {5px} Assigment}}}{14}{defcount.2.8}%
+\contentsline {section}{{{Definition 2.9\hspace {5px} Satisfy}}}{15}{defcount.2.9}%
+\contentsline {section}{{{Definition 2.10\hspace {5px} Model}}}{16}{defcount.2.10}%
+\contentsline {section}{{{Definition 2.11\hspace {5px} Logical implication}}}{16}{defcount.2.11}%
+\contentsline {section}{{{Definition 2.12\hspace {5px} Logical equivalence}}}{16}{defcount.2.12}%
+\contentsline {section}{{{Definition 2.13\hspace {5px} Valid}}}{16}{defcount.2.13}%
+\contentsline {section}{{{Definition 2.14\hspace {5px} definability in a structure}}}{17}{defcount.2.14}%
+\contentsline {section}{{{Definition 2.15\hspace {5px} definability of classes of structures}}}{17}{defcount.2.15}%
+\contentsline {section}{{{Definition 2.16\hspace {5px} Homomorphism}}}{17}{defcount.2.16}%
+\contentsline {section}{{{Definition 2.17\hspace {5px} Isomorphism}}}{18}{defcount.2.17}%
+\contentsline {section}{{{Definition 2.18\hspace {5px} Substructure}}}{18}{defcount.2.18}%
+\contentsline {section}{{{Definition 2.19\hspace {5px} elementarily equivalent}}}{19}{defcount.2.19}%
+\contentsline {section}{{{Definition 2.20\hspace {5px} Automorphism}}}{19}{defcount.2.20}%
+\contentsline {section}{{{Definition 2.21\hspace {5px} Rigid}}}{19}{defcount.2.21}%
+\contentsline {section}{{{Definition 2.22\hspace {5px} }}}{19}{defcount.2.22}%
+\contentsline {section}{{{Definition 2.23\hspace {5px} }}}{19}{defcount.2.23}%
+\contentsline {section}{{{Definition 2.24\hspace {5px} }}}{20}{defcount.2.24}%
+\contentsline {section}{{{Definition 2.25\hspace {5px} Modus Ponens}}}{20}{defcount.2.25}%
+\contentsline {section}{{{Definition 2.26\hspace {5px} Deduction}}}{20}{defcount.2.26}%
+\contentsline {section}{{{Definition 2.27\hspace {5px} Generalization}}}{21}{defcount.2.27}%
+\contentsline {section}{{{Definition 2.28\hspace {5px} Logical axioms}}}{21}{defcount.2.28}%
+\contentsline {section}{{{Definition 2.29\hspace {5px} Substitution}}}{21}{defcount.2.29}%
+\contentsline {section}{{{Definition 2.30\hspace {5px} substitutable}}}{21}{defcount.2.30}%
+\contentsline {section}{{{Definition 2.31\hspace {5px} Tautologies of first order language}}}{22}{defcount.2.31}%
+\contentsline {section}{{{Definition 2.32\hspace {5px} Inconsistence}}}{23}{defcount.2.32}%
+\contentsline {section}{{{Definition 2.33\hspace {5px} }}}{26}{defcount.2.33}%
+\contentsline {section}{{{Definition 2.34\hspace {5px} }}}{29}{defcount.2.34}%
+\contentsline {section}{{{Definition 2.35\hspace {5px} Theory}}}{30}{defcount.2.35}%
+\contentsline {section}{{{Definition 2.36\hspace {5px} }}}{30}{defcount.2.36}%
+\contentsline {section}{{{Definition 2.37\hspace {5px} }}}{31}{defcount.2.37}%
+\contentsline {section}{{{Definition 2.38\hspace {5px} axiomatizability}}}{31}{defcount.2.38}%
+\contentsline {section}{{{Definition 2.39\hspace {5px} }}}{31}{defcount.2.39}%
+\contentsline {section}{{{Definition 2.40\hspace {5px} infinitely close}}}{34}{defcount.2.40}%
+\contentsline {section}{{{Definition 2.41\hspace {5px} Convergence (non-standard definition)}}}{34}{defcount.2.41}%
+\contentsline {section}{{{Definition 2.42\hspace {5px} }}}{35}{defcount.2.42}%
+\contentsline {section}{{{Definition 2.43\hspace {5px} o-minimality}}}{36}{defcount.2.43}%
+\contentsline {section}{{{Definition 2.44\hspace {5px} definably connectedness}}}{36}{defcount.2.44}%
+\contentsline {section}{{{Definition 2.45\hspace {5px} ordered group}}}{36}{defcount.2.45}%
+\contentsline {section}{{{Definition 2.46\hspace {5px} Ordered ring}}}{37}{defcount.2.46}%
+\contentsline {section}{{{Definition 2.47\hspace {5px} ordered field}}}{37}{defcount.2.47}%
+\contentsline {section}{{{Definition 2.48\hspace {5px} real closed field}}}{37}{defcount.2.48}%
+\contentsline {section}{{{Definition 3.1\hspace {5px} Boolean Algebra}}}{39}{defcount.3.1}%
+\contentsline {section}{{{Definition 3.2\hspace {5px} Opposite of boolean algebra}}}{39}{defcount.3.2}%
+\contentsline {section}{{{Definition 3.3\hspace {5px} Subalgebra}}}{39}{defcount.3.3}%
+\contentsline {section}{{{Definition 3.4\hspace {5px} Homomorphisms of boolean algebras}}}{40}{defcount.3.4}%
+\contentsline {section}{{{Definition 3.5\hspace {5px} Trivial algebras}}}{40}{defcount.3.5}%
+\contentsline {section}{{{Definition 3.6\hspace {5px} Ideal}}}{40}{defcount.3.6}%
+\contentsline {section}{{{Definition 4.1\hspace {5px} Axiom of extensionality}}}{41}{defcount.4.1}%
+\contentsline {section}{{{Definition 4.2\hspace {5px} Pairing Axiom}}}{41}{defcount.4.2}%
+\contentsline {section}{{{Definition 4.3\hspace {5px} Union Axiom}}}{41}{defcount.4.3}%
+\contentsline {section}{{{Definition 4.4\hspace {5px} Power set Axiom}}}{41}{defcount.4.4}%
+\contentsline {section}{{{Definition 4.5\hspace {5px} Axiom of replacement / substitution}}}{41}{defcount.4.5}%
+\contentsline {section}{{{Definition 4.6\hspace {5px} Axiom scheme of comprehension}}}{41}{defcount.4.6}%
