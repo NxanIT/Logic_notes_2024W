@@ -1,0 +1,541 @@
+\chapter{Model Theory}
+
+\section{Löwenheim-Skolem-Theorem}
+\prop{}{Supposee $\Gamma$ is a set of $\mathcal{L}$-formulas. $|\mathcal{L}| = \lambda$ and lets assume 
+    $\Gamma$ is satisfiable in some infinite structure.\\
+    Then for every cardinal $\kappa\geq \lambda$, $\Gamma$ is satisfiable in a structure of cardinality $\kappa$.
+}{
+    add $\kappa$ many new constants to the language $\mathcal{L}$.
+
+    $\mathcal{L}' = \mathcal{L}\cup \{c_\alpha : \alpha < \kappa\}$
+
+    $\Sigma = \{c_\alpha \neq c_\beta : \alpha\leq \beta, \ \alpha,\beta\leq \kappa\}$
+
+    Then $\Gamma\cup \Sigma$ is finitly satisfiable in $\mathcal{L}'$.
+    This is because $\Gamma$ is satisfiable in some infinite structure. By compactness $\Gamma\cup \Sigma$ is satisfiable.
+    We have $\mathcal{A}\models \Gamma \cup \Sigma$ then $|\mathcal{A}|\geq \kappa$.
+
+    By the proof of completeness theorem, $\Gamma\cup \Sigma$ has a model of size $\leq \kappa$.
+    Hence it is exactly of size $\kappa$. Take reduct TODO
+}
+\bsp{}{Language of ZFC $\mathcal{L} = \{\in\}$ is countable. Löwenheim-Skolem guaranties that ZFC has a countable model.
+    called skolems paradox. 
+    ZFC knows that there are uncountable sets.
+    explanation: some bijections are missing 
+}
+\bsp{}{\label{ComplNotImplyCath}\begin{enumerate}
+    \item $\overline{\RR}$ real field. $\Thm(\overline{\RR})$ has a countable model. $\RR_\text{alg}$
+    \item $\mathcal{N} = (\NN,0,S,+,\cdot)$\\
+    Claim: there exists a countable structure $\mathcal{M}$ such that $\mathcal{N}\equiv \mathcal{M}$ but $\mathcal{N}\ncong \mathcal{M}$
+    One way is to add new constant c to language
+    $\Sigma = \{0<c, S0<c,\dots\}$ is fin satisfiable. So $\Sigma\cup Th (\mathcal{N})$ is fin satisfiable by compactness it is satisfiable
+
+    Take the reduct to original language. $\mathcal{M}$. and $\mathcal{M}$ not isomorphic to $\mathcal{N}$, bc
+    A bijection of $M\to \NN$ would have to map $c$ somewhere but for every $S^k0<c$ for every $k$ wont be preserved by any map.
+\end{enumerate}
+}
+\section{Theories and completeness}
+\defin{Theory}{A theory $T$ is a set of sentences that is closed under logical implication.
+\[T\models \sigma \implies \sigma \in T\]
+}
+\note{}{If $\mathcal{L}$ is a language. Then 
+\begin{itemize}
+    \item there is a smallest $\mathcal{L}$-theory. The set of all valid $\mathcal{L}$-sentences.
+    \item and also a largest $\mathcal{L}$-theory. The set of all $\mathcal{L}$-sentences.
+\end{itemize}
+}
+
+
+\defin{Theory of structures}{Let $\mathcal{K}$ some class of $\mathcal{L}$- structures. Then 
+    $$\Th(\mathcal{K}) = \{\sigma : \sigma \text{ $\mathcal{L}$-sentence and for every $K \in \mathcal{K}$ } \sigma\in \Th(K)\}$$
+}
+\note{}{$\Th(\mathcal{K})$ is a theory. 
+\[\text{if }\Th(\mathcal{K})\models \sigma \text{ then }  \sigma\in \Th(\mathcal{K}) \]
+}
+
+\bsp{}{
+
+\begin{itemize}
+    \item $\mathcal{L} = \{0,1,+,\cdot,-\}$ $\mathcal{F}$ the class of fields then $\Th(\mathcal{F})$ is the set of sentences truein every field.
+\end{itemize}
+}
+Recalll $\Mod(\Sigma)$ is the class of all models of $\Sigma$.
+$\Th(\Mod \Sigma)$ might not be the set $\Sigma$ but it is the set of all 
+sentences true in all models of $\Sigma$.
+
+The set of all sentences that are logically implied by $\Sigma$ 
+
+The set of all consequences of $\Sigma$ $\eqdef C_n(\Sigma)$
+
+\note{}{$\Sigma$ is a theory iff $C_n(\Sigma) = \Sigma$}
+
+\defin{}{We say that a theory $T$ is complete, if for every sentence 
+$\sigma$ either $\sigma\in T$ or $\lnot \sigma\in T$.}
+
+\bsp{}{
+    $\mathcal{A}$ a $\mathcal{L}$-structure, then $\Th(\mathcal{A})$ is complete.
+}
+
+\note{}{$\Th(\mathcal{K})$ is complete, iff any $K_1,K_2\in \mathcal{K}$ are elementarily equivalent.
+
+A theory $T$ is complete iff any to models are elementarily equivalent.
+}
+
+\bsp{}{
+    \begin{itemize}
+        \item The theory of fields is not complete.
+        \item The theory of algebraically closed fields of characteristic $0$ is complete 
+        (That is non-trivial)
+    \end{itemize}
+}
+\defin{axiomatizability}{
+    \begin{itemize}
+        \item A theory $T$ is finitely axiomatizable if there is a sentence 
+        $\sigma$ such that $C_n(\sigma) = T$.
+        \item A theory $T$ is axiomatizable, if there is a decidable set 
+        $\Sigma$ such that $C_n(\Sigma) = T$.
+    \end{itemize}
+}
+\bsp{}{
+    \begin{itemize}
+        \item The theory of fields (common theory of all fields) is finitely axiomatizable.
+        \item Theo theory of fields of characteristic $0$ is axiomatizable. $\Psi\cup \{1+1\neq 0, 1+1+1\neq 0,\dots\}$ 
+        It is however not finitely axiomatizable. If 
+        $\Psi_0\subseteq \Psi\cup \{1+1\neq 0, 1+1+1\neq 0,\dots\}$ 
+        finite, then $\Psi_0$ has a model of characteristic $p$ for some sufficiently large $p$.
+    \end{itemize}
+}
+\prop{}{If $C_n(\Sigma)$ is finitlely axiomatizable then there exists a finite subset           
+    $\Sigma_0\subseteq \Sigma$ such that $C_n(\Sigma_0) = C_n(\Sigma)$}{
+    Suppose $C_n(\Sigma)$ is finitely axiomatizable. So $C_n(\sigma) = C_n(\Sigma)$. 
+    Then there is a finite subset $\Sigma_0\subseteq \Sigma$ such that $\Sigma_0 \models \sigma$.
+    And we get $C_n(\Sigma_0) = C_n(\Sigma)$
+}
+\defin{}{A theory $T$ is $\aleph_0$-categorical, if any two infinite countable models of 
+    $T$ are isomorphic.
+    Futhermore for some infinite cardinal $\kappa$ a theory $T$ is called $\kappa$-categorical, if every two models of cardinality $\kappa$ are isomorphic.
+}
+\prop{Los-Vaught test}{For a theory $T$ in a countable language with only infinite models it holds\\
+    If $T$ is $\kappa$-categorical for some infinite cardinality $\kappa$ then $T$ is complete.
+}{
+    Let $T$ be $\kappa$-categorical.
+    Want: If $\mathcal{A},\mathcal{B}\models T$ then $\mathcal{A}\equiv \mathcal{B}$.
+    Note: both $\mathcal{A}$ and $\mathcal{B}$ are infinite.
+    By LST there exists structures $\mathcal{A}'$ and $\mathcal{B}'$ with $\mathcal{A}\equiv \mathcal{A}'$ and $\mathcal{B} \equiv \mathcal{B}'$ and $|\mathcal{A}'|, |\mathcal{B}'| = \kappa$.
+    By $\kappa$-categorical we have $\mathcal{A}' \cong \mathcal{B}'$ so $\mathcal{A}\equiv \mathcal{B}$
+}
+\note{}{completness does not imply categorical.
+\begin{itemize}
+    \item The theory of natural numbers is not $\aleph_0$-categorical. See Example \ref{ComplNotImplyCath}
+    \item RCF not $\kappa$-categorical for all infinite cardinalities $\kappa$
+    Not $\aleph_0$ categorical real clo of $\mathbb{Q}(\pi)$, real closure of $\mathbb{Q}$
+    not uncountable categorical $\overline{\mathbb{R}}$, $\overline{\mathbb{R}(\varepsilon)}, 0<\varepsilon <\frac{1}{n}$ for every $n\in \NN$.
+\end{itemize}
+}
+\section{Theory of algebraic closed fields}
+\prop{}{The theory of algebraic closed fields of characteristic $p$ ACF$_p$, where $p$ is either $0$ or prime is complete.}{Note that we have a
+\begin{itemize}
+    \item  countable language
+    \item with no finite models
+\end{itemize}
+Let $\mathcal{K}_1,\mathcal{K}_2\models \text{ACF}_p$ such that $|K_1| = |K_2|=\kappa$ uncountable.
+$F_1$ prime field of $\mathcal{K}_1$, $F_2$ prime field of $\mathcal{K}_2$.
+
+Note $F_1, F_2$ are determined by $p$ if $p=0$ then $F_1 = F_2 = \mathbb{Q}$ and if $p$ prime then $F_1 = F_2 = \mathbb{F}_p$
+
+Define $F \defeq F_1 = F_2$.
+$B_1$ trancendence base of $\mathcal{K}_1$ over $F$ 
+$B_2$ trancendence base of $\mathcal{K}_2$ over $F$ 
+\begin{itemize}
+    \item $B$ is trancendence base of $K$ over $F$ if $B$ is a $\subseteq$-maximal subset of $K$ which is algebraically closed then 
+    \item $B\subseteq K$ is algebraically TODO
+\end{itemize}
+$F(B_1)$, $F(B_2)$ subfields of $\mathcal{K}_1,\mathcal{K}_2$
+\begin{itemize}
+    \item alg cl $F(B_1) = \mathcal{K}_1$
+    \item alg cl $F(B_2) = \mathcal{K}_2$
+\end{itemize}
+Fact: Let $F$ subfield of $K$. if $F$ is countable and $K$ uncountable, then any transe basis $B$ of $K$ oer $F$ is of cardinality $|K|$, hence uncountable.
+
+Steinitz: Two ACF are isomorphic iff they have the same characteristic and there trancendence spaces have the same cardinality.
+}
+\subsubsection{Lefschetz Principle}
+\prop{Lefschetz Principle}{Let $\mathcal{C} = (\mathbb{C},0,1,+,\cdot,-)$ For a sentence in the language of $\mathcal{C}$
+    Then the following are equivalent:
+    \begin{itemize}
+        \item $\mathcal{C}\models \sigma$
+        \item $\mathcal{A}\models \sigma $ for every $\mathcal{A}\models $ ACF$_0$
+        \item ACF$_0$ $\models \sigma$
+        \item for all sufficiently large primes $p$ ACF$_p$ $\models \sigma$
+        \item For infinitely many primes $p$ ACF$_p$ $models \sigma$
+    \end{itemize}}{ 
+    Sketch:
+    \begin{itemize}
+        \item[(a), (b), (c)] are equivalent by completeness of ACF$_0$
+        \item[(c)$\implies$ (d)] ACF$_0$ $\models \sigma$ 
+        so there is $T_0\subseteq \text{ACF}_0$ such that $T_0\models \sigma$ therefore there exists a sufficiently large prime $p$ such that $\text{ACF}_p\models \sigma$. 
+        \item[(d) $\implies$ (e)]TODO
+        \item[(e) $\implies$ (c)] If $\text{ACF}_0\vDash \sigma$ than $\text{ACF}_0\models \sigma$
+    \end{itemize}
+}
+Example of the Lefschetz Principle:
+\prop{Ax}{
+    Let $f:\mathbb{C}^n \to \mathbb{C}^n$ be a polynomial map. If $f$ is injective, then $f$ is surjective.
+}{
+    Our language is $\mathcal{L} = \{0,1,+,-,\cdot\}$. Note that there is an $\mathcal{L}$-sentence $\Phi_d$ such that a Field $F$ 
+    
+    $F\models \Phi_d$ iff for every polynomial map $f:F^n\to F^n$ whose TODO coord. function is of degree at most $d$, if $f$ is injective then $f$ is surjective.
+
+    By Lefschetz principle it is enough to show for sufficiently large 
+    primes $p$, $\text{ACF}_p\models \Phi_d$ for all $d\in \NN$.
+    Since $\text{ACF}_p$ is complete, it is enough to show that every injective polynomial map $f:K^n\to K^n$ is surjective, where $K = TODO$
+    Let $f:K^n\to K^n$ be a polynomial map.
+
+    Then there is a finite subfield $K_0$ of $K$ such that all coefficients of $f$ come from $K_0$.
+    Let $y\in K^n$. Then there is a finite subfield $K_1$ of $K$ such that $y\in K_1$ and $K_0\subseteq K_1 \subseteq K$. Since $f:K^n_1\to K^n_1$ is injective and $K_1$ finite, $f|_{K_1}$ is surjective onto $K_1$. So there is $x\in K_1^n$ such that $f(x)=y$.
+}
+\note{}{Later, a purely geometric proof was found by Borel.}
+
+Another use of \L oś-Vaught
+
+\prop{}{\[(\mathbb{Q},<_\mathbb{Q}) \equiv (\RR, <_\RR)\]}{
+    $\mathcal{L} = \{<\}$ and note that both $(\mathbb{Q},<_\mathbb{Q}), (\RR, <_\RR)$ are DLO without endpoints, i.e. they satisfy the following axioms
+    \begin{enumerate}
+        \item $\forall x \forall y (x<y\lor x=y\lor y<x)$
+        \item $\forall x \forall y (x<y\to \lnot(y<x))$
+        \item $\forall x \forall y \forall z ((x<y\land y<z)\to x<z)$
+        \item $\forall x \forall y (x<y\to \exists z(x<z\land z<y))$
+        \item $\forall x \exists y \exists z (y<x\land x<z)$
+    \end{enumerate}
+    TODO
+}
+
+\section{Nonstandard Analysis}
+%TODO historical background
+\begin{enumerate}
+    \item Language $\mathcal{L}$: $=$, $\forall$ ranging over $\RR$,
+    \begin{itemize}
+        \item $P_R$ TODO
+    \end{itemize}
+    \item standard structure for $\mathcal{L}$: $\mathcal{R}$ with universe $\RR$, $c_r^\mathcal{R} = r$, $P_R^\mathcal{R} = R$, $f^\mathcal{R}_F = F$.
+    \item Nonstandard structure for $\mathcal{L}$: $\mathcal{R}^*$, which is constructed using the compactness theorem 
+    \[\Gamma \defeq \Th(\mathcal{R}) \cup \{c_r P_< v_1 : r\in \RR\}\]
+    Compactness theorem $\implies$ there exists a $\mathcal{L}$-structure $\mathcal{R}^*$ with $\mathcal{R}^*\models \Gamma [(v_1 | a)]$ for some $a\in R^*$. We have $\mathcal{R}\equiv \mathcal{R}^*$.
+    Moreover, $h: \RR \to R^*$ defined by $r\mapsto c_r^*$ is an isomorphism of $\mathcal{R}$ into $\mathcal{R}^*$
+    \begin{itemize}
+        \item $h$ is injective:
+        \item TODO
+    \end{itemize}
+\end{enumerate}
+\note{}{WMA $\mathcal{R}$ substructure of $\mathcal{R}^*$ (se PS)}
+Notation: We will write $\!^*B$ instead of $P_B^{\mathcal{R}^*}$.
+\bsp{}{what is $\!^*\RR$?
+We have that $\mathcal{R}\models \forall x P_\RR$, hence $\mathcal{R}^*\models \forall x \!^*\RR$, so $\!^*\RR = R^* = \text{universe of } \mathcal{R}^*$.
+\note{}{
+    Let $F$ be an $n$-ary operator on $\RR$. Then $F$ is the restriction of $\!^*F$ to $\RR$. $\!^*c_r = r$.
+}
+Idea: If we want to show that $\!^*R$ or $\!^*F$ has certain property, then we show
+\begin{itemize}
+    \item $R$ or $F$ have that property.
+    \item property can be expressed in $\mathcal{L}$
+\end{itemize}
+}
+TODO
+
+%26.11.2024
+$\mathcal{R}^*\supseteq \mathcal{R}$ such that $\mathcal{R}^*\equiv \mathcal{R}$.
+$\mathcal{F} = \{x\in \mathcal{R}^* : \exists r\in \RR \: ^*|x|^* \leq r\}$
+$\mathcal{I} = \{x\in \mathcal{R}^* : \forall r\in \RR \: ^*|x|^* < r\}$
+\prop{}{
+    \begin{enumerate}
+        \item $\mathcal{F}$ is a subring of $\mathcal{R}^*$
+        \item $\mathcal{I}$ is an ideal in $\mathcal{R}*$
+    \end{enumerate}
+}{
+    \begin{enumerate}
+        \item Let $x,y\in \mathcal{F}$ then there exists $a,b\in \RR^{>0}$ such that $^*|x|^* \leq a$ and $^*|y|^* \leq b$. then \[
+        \begin{aligned}
+            ^*|x \pm^* y|^* \leq ^*|x|^* + ^*|y|^* \leq a+b\in \RR^{>0}\\
+            ^*|x \cdot^* y|^* = ^*|x|^*\ ^*\cdot ^*|y|^* \leq a\cdot b\in \RR^{>0}
+        \end{aligned}
+        \]
+        \item $x,y\in \mathcal{I}$ then $\forall a\in \RR^{>0}$ we have $|x|<\frac{a}{2}$
+        Then $$|x\pm y| \leq \frac{a}{2} + \frac{a}{2} = a$$
+        Let $z$ be finite then $|z|<b\in \RR^{>0}$
+        Let $a\in \RR^{>0}$ then $|x|< \frac{a}{b}$ so 
+        \[|xz| < \frac{a}{b}b = a \] 
+    \end{enumerate}
+}
+\defin{infinitely close}{$x,y$ are called to be infinitely close ($x\simeq y$),\outernote{$\simeq$} if $y-x\in \mathcal{I}$}
+\prop{}{
+    \begin{enumerate}
+        \item $\simeq$ is an equivalence relation
+        \item $\simeq$ is congruent with $^*+,^*\cdot,^*-$
+    \end{enumerate}
+}{}
+\lemma{}{Suppose $\lnot x\simeq y$ and at least one of $x,y$ is finite then there exists $q\in \RR$ 
+such that $q$ is betweeen $x$ and $y$}{
+    $y-x\notin \mathcal{I}$, wlog. $x<y$ then there exists $b\in \RR$ such that $0<b<y-x$ 
+    and by the archimedian property there is $m\in \NN^{>0}$ such that $x<mb$.
+    Let $m$ be the smallest such. i.e. $(m-1)b\leq x<mb$.
+    And $mb<y$.
+}
+\prop{}{
+    For every $x\in \mathcal{F}$ therre is exactly one $r\in \RR$ such that $x\sim r$
+}{
+    Let $S \defeq \{r\in \RR : r<x\}$. $S$ is bounded in $\RR$ because $|x|<r_0$ for 
+    some $r_0\in \RR^{>0}$.
+    Then $r\defeq \sup S$. Claim: $r\simeq x$. Lets assume by contradiction that this is not the case. 
+    By the previous lemma, there is $q\in \RR$ such that 
+    $r<q<x$ or $x<q<r$. but neither of this things can happen.
+    \begin{itemize}
+        \item $r<q<x$ is contradiction to $r$ not being an upper bound.
+        \item $x<q<r$ is contradiction to $r$ is not the least upper bound.
+    \end{itemize}
+}
+A concequence of that:
+\coroll{for each $x\in \mathcal{F}$ there is a unique way of writing of $x$ in the form $r+i$ where $r\in \RR$ and $i\in \mathcal{I}$}
+\note{}{If $x= r+i$ then we also write $\st(x) = r$.
+
+}
+\prop{}{
+    \begin{itemize}
+        \item $\st: \mathcal{F}\twoheadrightarrow \RR$ 
+        \item $\st (x) = 0$ iff $x\in \mathcal{I}$
+        \item $\st ( x\ ^* + y) = \st(x) + \st(y)$
+        \item $\st ( x\ ^* \cdot y) = \st(x) \cdot \st(y)$
+    \end{itemize}
+}{}
+\note{}{this says that $\st$ is a homomorphism of $\mathcal{F}$ onto field $\overline{\RR}$ with 
+$\ker(\st) = \mathcal{I}$ and $\mathcal{F}/_\mathcal{I}\cong \overline{\RR}$
+
+}
+\defin{Convergence (non-standard definition)}{
+    $F$ converges at $a$ to $b$ if whenever $x\simeq a$ and $x\neq a$ 
+then $^*F(x)\simeq b$.}
+\note{}{This definition is equivalent to $\varepsilon-\delta$ definition of convergence in Analysis.
+\begin{itemize}
+    \item Suppose $F$ converges to $b$ at $a$ in $\varepsilon-\delta$-sense
+    \[\mathcal{R}\models \forall \varepsilon>0 \exists \delta>0 \forall z 
+    ( |z-a|<\delta \implies |F(z)-b| < \varepsilon)\]
+    \[\mathcal{R}^*\models \forall \varepsilon>0 \exists \delta>0 \forall z 
+    ( |z-a|<\delta \implies |F(z)-b| < \varepsilon)\]
+    Let $\varepsilon>0$ and $\delta>0$ corresponding to $\varepsilon$.
+    Let $x\simeq a$ then $|x-a|<r$ for all positive $r\in \RR^{>0}$ so in particular $|x-a|<\delta$, 
+    therefore $|F(x)-b|<\varepsilon$ but $\varepsilon$ was arbitrarily, so $st(F(x))=b$.
+    \item Suppose $F$ convergences to $b$ at $a$ in the non-standard-sense.
+    Then $\forall \varepsilon \in \RR^{>0}$ 
+    $$\mathcal{R}^*\models \exists \delta >0 \forall x (|x-a|<\delta \to |F(x)-b|<\varepsilon)$$
+    Because $\delta\in \mathcal{I}$ works.
+    But then 
+    $$\mathcal{R}\models \exists \delta >0 \forall x (|x-a|<\delta \to |F(x)-b|<\varepsilon)$$
+\end{itemize}
+}
+\note{}{If $F$ converges to $b$ at $a$ then $b$ is unique such that for every $i\in \mathcal{I}$ 
+the standard part $\st (F(a+i)) = b$. And we use the general notation $\lim_{x\to a}{F(x)}=b$}
+
+\coroll{$F$ continuous at $a$ then $x\simeq a\implies \: ^*F(x)\simeq ^*F(a)$}
+Derivatives
+From Analysis: If $F:\RR \to \RR$ then $F'(a) = \lim_{h\to 0}\frac{F(a+h)-F(a)}{h}$ 
+\defin{}{We will say that $F'(a) = b$ iff $\forall dx\in \mathcal{I}$, $dx\neq 0$ then 
+\[\st\bigl(\frac{F(a+dx)-F(a)}{dx}\bigr) = b\]
+}
+$dF \defeq ^*F(a+dx) - F(a)$ then
+$F'(a) = b$ iff $\forall dx\in \mathcal{I}, dx\neq 0$  we have $\st(\frac{dF}{dx}) = b$
+$\frac{dF}{dx}$ is an actual division.
+
+\bsp{}{
+    $F(x) = x^2$
+    \[\frac{dF}{dx} = \frac{(a+dx)^2 - a^2}{dx} = \frac{2dxa + (dx)^2}{dx} = 2a + dx\]
+    and $\st\frac{dF}{dx} = 2a$
+}
+\prop{}{(standard) If $F'(a)$ exists, then $F$ is continuous at $a$.}{
+    Assume $F'(a)$ (in the standard sense) exist, then $F'(a)$ is a finite number and 
+    $F'(a) \simeq \frac{F(a+dx)-F(a)}{dx}$.
+    Therefore $F(a+dx)-F(a)$ has to be infinitesimal ($\in \mathcal{I}$). 
+    Which means $F(a+dx) \simeq F(a)$.
+}
+\prop{Chain rule}{Suppose $G'(a)$ and $F'(G(a))$ exist then $(F\circ G)'(a) = F'(G(a))\cdot G'(a)$
+}{
+    Note: $^*(F\circ G) = ^*F \circ ^* G$ because 
+    $\mathcal{R} \models \forall x F_{f\circ g}(x) = (F_{f}\circ F_{g})(x)$
+    \[dG \defeq ^*G(a+dx) - ^*G(a)\]
+    \[\begin{aligned}
+        dF \defeq& ^*(F\circ G)(a+dx) - ^*(F\circ G)(a)\\
+        =& ^*F(^*G(a+dx)) - ^*F(^*G(a))\\
+        =& ^*F(^*G(a) + dG)) - ^*F(^*G(a))\\
+    \end{aligned}
+    \]
+    We know that $G(a)$ exists so $G$ is continuous at $a$ and therefore $dG\simeq 0$
+    \begin{itemize}
+        \item case $dG\neq 0$ then $\frac{dF}{dG} \simeq F'(G(a))$.
+        We can re-write $$\frac{dF}{dx} = \frac{dF}{dG}\frac{dG}{dx} = F'(G(a)) \cdot G'(a)$$
+        \item case $dG = 0$ then $dF = 0$ and $G'(a) = \frac{dG}{dx} = 0$ and therefore ($dx\neq 0$)
+        \[\frac{dF}{dx} =0 = F'(G(a))\frac{dG}{dx}\]
+    \end{itemize}
+}
+\section{o-minimality}
+\bsp{}{
+    $\overline{\RR} = (\RR,+,-,\cdot, 0,1,\leq)$ $\overline{\RR} = (\RR,\leq)$ TODO or at least 
+    in a very similar language, 
+    then by quantifier elimination (QE, Tarski) all the definable sets of $\RR$ are finite unions 
+    of points and intervals.
+}
+\defin{o-minimality}{Let $\mathcal{L} = \{\leq,\dots\}$, $\mathcal{M}$ is an $\mathcal{L}$-structure such that 
+$\mathcal{M}\models \text{DLO}$ and the only definable subsets of $M$ are finite union of points and 
+intervalls. Then $\mathcal{M}$ or equivalent $\Th(\mathcal{M})$ is called o-minimal.}
+o-minimal is not a first order property so to say that a theory is o-minimal is non trivial.
+\note{}{Cell decomposition means 
+    Suppose $X$ is definable in an o-minimal structure $\mathcal{M}$, $X\subseteq M^n$ then 
+    $X$ is a finite union of cells (in dimension 1 these are points or intervalls)
+    in $M^2$ it is either the graph of a continuous function or everything inbetween two graphs of continuous 
+    functions. (its an inductive definition)
+}
+\note{}{Have Dedekind complete for definable subets of $M$: 
+For $X\subseteq M$ definable then $\inf X, \sup X$ exist in $M_{\pm \infty}$. }
+
+\note{}{If $M$ contains infinitely small elements, for example $M = \!^*\RR$ then $(0,1)\subseteq M$ is not connected.
+$O_1 = \{x: \forall n\in \NN^* 0<x<\frac{1}{n}\}$ is open and so is its complement in $(0,1)$. We have 
+
+Note that $O_1$ is however not definable in $M$. If $O_1$ would be definable it would be a finite union 
+of points and intervals. It is convex, and not a point. But it is also not an intervall, because then it 
+would have by Dedekind completness that $\sup O_1$ exists in $M_{\pm \infty}$, a contradiction. TODO: 
+}
+\defin{definably connectedness}{$X\subseteq M^m$ is said to be definably connected, if $X$ is definable and $X$ is not the 
+disjoint union of two definable, non-empty open sets.}
+\lemma{}{
+    \begin{enumerate}
+        \item The definably connected subsets of $M$ are the intervalls (including singletons) and $\varnothing$.
+        \item The image of a definable connected subset $X\subseteq M^n$ under a definable continuous map $f:X\to M^n$ is definably connected. ($f$ is called to be definable, if its graph $\Gamma f \subseteq M^{mn}$ is).
+        \item (IVP) If $f:[a,b]\to M$ definable and continuous, then $f$ assumes all values between $f(a)$ and $f(b)$.
+    \end{enumerate}
+}{Exercise}
+\section{o-minimal ordered groups and rings}
+\defin{ordered group}{A ordered group is a group with a linear order such that 
+\[\forall x \forall y \forall z x<y \to (zx<zy \land xz < yz)\]
+}
+\bsp{}{
+    \begin{itemize}
+        \item $(\RR,<,+)$ 
+        \item $(\RR^{>0},<,\cdot)$
+        \item non-example: $(\RR^*, \cdot,<)$
+    \end{itemize}
+}
+Recall:
+\begin{itemize}
+    \item $(G,\cdot)$ is divisible, if $\forall n \forall g \exists x g = x^n$, equivalent to $\forall n G^n = G$.
+    \item $(G,\cdot)$ is torsion-free, if no element has finite order except for $1$.
+\end{itemize}
+\prop{}{$(M,<,\cdot, \dots)$ o-minimal such that $(M,<,\cdot)$ ordered group, then
+    $(M,<,\cdot)$ abelian, divisible and torsion-free.
+}{}
+\lemma{}{If $G$ is a definable subgroup of $M$ then $G$ is convex.
+}{
+    Suppose $G$ is not convex, then there exists $1<a<g$ for some $g\in G$ and $a\in M\backslash G$. 
+    Then 
+    \[1<a<g<ag<g^2<ag^2<g^3<\dots \]
+    but elements alternate being in $G$ and outside of $G$ so $G$ is not definable (finite union).
+}
+\lemma{}{The only definable subsets of $M$ that are subgroups are $\{1\}$ and $M$.
+}{
+    Suppose $G\neq \{1\}$ wts. $G = M$.
+    From the previous lemma we know that $G$ is convex.
+    The idea is $s\defeq \sup G$ then $1<s$ and $(1,s)\subseteq G$. If $s=+\infty$ then $G = M$.
+    Suppose $s\neq +\infty$ then 
+    Take $1<g<s$ then $g^{-1}s\in (1,s)$
+    So $s = g g^{-1}s\in G$ 
+    and $s<sg$ thats a contradiction with $s = \sup G$. 
+}
+\begin{proof}
+    of Proposition.
+    \begin{itemize}
+        \item $(M,\cdot)$ abelian:
+        For any $a\in M$ we can look at $C_a = \{x\in M : xa = ax\}$ it is a definable subgroup and contains $a$ it therefore is non-trivial and we have $C_a = M$ for every $a\in M$, so abelian.
+        \item For any $n\in \NN^{>0}$ look at $\{x^n: x\in M\}$ non trivial definable subgroup of $M$, hence $=M$.
+        \item Every ordered group is torsion-free.
+    \end{itemize}
+\end{proof}
+\defin{Ordered ring}{A ring (assumed to always be associative, with $1$)
+ equipped with a linear order such that
+\begin{enumerate}
+    \item $0<1$
+    \item $<$ translation invariant
+    \item $<$ invariant under multiplication by positive elements
+\end{enumerate}
+}
+
+\note{}{
+    \begin{itemize}
+        \item The additive group $(R,<,+)$ of an ordered ring is a ordered group. 
+        \item Ordered rings have no zero-divisors $\forall x \forall y xy = 0 \to (x=0 \lor y = 0)$
+        \item $x^2\geq 0$ 
+        \item $k\mapsto k \cdot 1 : \ZZ \to \text{ring}$ is a strictly increasing embedding with resprect to the usual ordering on $\ZZ$ that means our characteristic is $0$.
+    \end{itemize}
+}
+\note{}{
+    \begin{itemize}
+        \item A division ring is a field without commutativity of multiplication, so 
+        \[\forall x x\neq 0 \to \exists y xy = 1\]
+        \item Suppose ordered ring is also a division ring. Then such $y$ are unique and $yx=1$. Further, $x>0 \to y>0$.
+        
+        Also the additive group is divisible, the underlying set is DLO w/o endpoints and 
+        $(x,y)\to x \cdot y$
+        $x\to x^{-1}$ are continuous with resprect to itervall topology.
+    \end{itemize}
+}
+\defin{ordered field}{An ordered ring is an ordered division ring with commutative multiplication.}
+\defin{real closed field}{ordered field $R$ \outernote{RCF} such that if $f(X)\in R[X]$ and $a<b$ are such that 
+$f(a)<0<f(b)$ then there exists a $c\in (a,b)$ such that $f(c)=0$}
+\bsp{}{
+    \begin{itemize}
+        \item $(\RR,+,\cdot,<)$ is RCF
+        \item $(\mathbb{Q},+,\cdot,<)$ is not a RCF
+    \end{itemize}
+}
+\prop{}{$(M,<,+,\cdot,\dots)$ o-minimal such that $(M,<,+,\cdot)$ is ordered ring then $(M,<,+,\cdot)$ is RCF.}{
+    \begin{itemize}
+        \item wts. $(M;<,+,\cdot)$ is ordered division ring.
+            For all $a\in M$ $aM$ is additive subgroup of $(M,+)$ hence $aM = M$ if $a\neq 0$.
+
+        \item wts. commutativity of $\cdot$. $\text{Pos}(M) \defeq \{a\in M: a>0\}$ is a subgroup of the multiplicative group of $M$. Let $a\in M$ then bc $M = aM$ we have $b\in M$ such that $1=a \cdot b$ and by note $0<a$ then $0<a^{-1}$.
+        so multiplication is commutative on $M$
+        \item IVP property for polynomials:
+        The ring operations are continuous, see note and use lemma about IVP (c).
+    \end{itemize}
+}
+\subsubsection{Cell decomposition}
+Base step: 
+\prop{Monotonicity Theorem}{
+    Suppose $f:(a,b)\to M$ definable, then there are $a<c_1< \dots < c_k<b$ such that for $(a,c_1)$, $(c_i,c_{i+1})$, $(c_k,b)$ partition of $(a,b)$ we have: $f$ is either constant or strictly monotinic and continuous.
+}{}
+\lemma{}{$\exists$ subinterval on which $f$ is const or incective}{}
+\lemma{}{If $f$ injective, then strictly monotone on a subinterval}{}
+\lemma{}{If $f$ strictly monotone, then $f$ continuous on a subinterval}{}
+
+\begin{proof}
+    Proof of Monotonicity theorem:
+    Consider $$X \defeq \biggl\{x\in (a,b) : \stackrel{\text{on some subinterval containing $x$,}}
+    {\text{$f$ is either constant or strictly monotone and continuous}} \biggr\}$$
+    remark: $X$ is a definable set.
+    Look at $(a,b)-X$ is finite. If not, it would contain subinterval use lemma to get contradiction.
+    WMA:\addAbbrev{WMA}{We may assume} $X = (a,b)$ in particular we may assume $f$ continuous.
+    By subdividin $(a,b)$ further WMA that we are in one of the following cases
+    \begin{enumerate}
+        \item[Case 1:] $\forall x \in (a,b)$ $f$ constant on some neighborhood of $x$
+        \item[Case 2:] $\forall x \in (a,b)$ $f$ is strictly monotone increasing on some neighborhood 
+        of $x$
+        \item[Case 3:] $\forall x \in (a,b)$ $f$ is strictly monotone decreasing on some neighborhood 
+        of $x$
+    \end{enumerate}
+    \begin{enumerate}
+        \item[Case 1:] $x_0 \in (a,b)$ then 
+        $s \defeq \{ x: x_0<x<b \land f \text{ cont. on $[x_0,x)$}\}$
+        wts $s=b$ suppose $s<b$ then $f$ constant on neighborhood of $s$ contradiction with 
+        definition of $s$ so $f$ continuous on $[x_0,b)$. $f$ constant on $(a,x_0]$ similar.
+        \item[Case 2:] $x_0\in (a,b)$ then $s\defeq \{x: x_0<x<b \land f \text{strictly incr. on } 
+        [x_0,x) \}$. wts: $s=b$ assume $s<b$ then $f$ is strictly increasing on some neighborhood of 
+        $s$ so $f$ strictly increasing on $[x_0,s+\delta)$ for some $\delta>0$, a contradiction to 
+        definition of $s$. 
+        \item[Case 3:] similar to Case 2. 
+    \end{enumerate}
+\end{proof}

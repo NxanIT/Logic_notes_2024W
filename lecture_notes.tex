@@ -8,7 +8,7 @@
 \usepackage{geometry}
 \usepackage[inline]{enumitem}%for "enumerate*" (i.e. horizontal lists)
 \usepackage{ifthen}%for "ifthenelse"
-\usepackage[twoside]{fancyhdr}
+\usepackage{fancyhdr} %note only for this document: if inconsistent behaviour - use [twoside]
 \usepackage{lastpage}
 \usepackage{datetime2}
 \usepackage{tocloft}
@@ -17,22 +17,36 @@
 \usepackage{tikz}
 \usepackage{float}%benötigt für floating point-positionierung eines bildes
 \usepackage{stmaryrd}%for double left brackets
+\usepackage{nameref}%for section names in list of theorems
+\usepackage{multicol}%for multi colums in list of theorems
 \graphicspath{ {./images/} }%relativen pfad für bilder eingeben
+
+\makeatletter
+\newcommand*{\currentname}{\@currentlabelname}
+\makeatother
 
 \setlength{\headheight}{18.0pt}
 
 \addbibresource{test.bib}
-%\addbibresource{Primo_BibTex_Export.bib} 
 
 \newcommand{\listdefinitionsname}{\Large List of definitions}
 \newlistof{definitions}{dfn}{\listdefinitionsname}
 
+\newcommand{\listtheoremsname}{\Large List of Theorems}
+\newlistof{theorems}{thn}{\listtheoremsname}
+
 \newcommand{\listofabbreviationsname}{\vspace{-1.2em}\Large List of Abbreviations\vspace{-1.5em}}
 \newlistof{abbreviations}{abf}{\listofabbreviationsname}
+
+\newcommand{\listofouternotesname}{\Large List of Outernotes}
+\newlistof{outernotes}{otf}{\listofouternotesname}
+
 \newcommand{\addAbbrev}[2]{
     \addcontentsline{abf}{section}{#1 \hspace{1em} - \hspace{1em} #2}
 }
-
+\newif\ifPrintTwosided
+%\PrintTwosidedtrue
+\ifPrintTwosided
 \geometry{
     a4paper,
     twoside,
@@ -43,6 +57,17 @@
     marginparwidth = 30mm,
     marginparsep = 5mm
 }
+\else 
+\geometry{
+    a4paper,
+    inner=20mm,
+    outer=50mm,
+    bottom=15mm,
+    top=20mm,
+    marginparwidth = 30mm,
+    marginparsep = 5mm
+}
+\fi
 
 \titleformat{\chapter}[display]{\bfseries\Large} % format
 {\fontfamily{phv}\selectfont\scshape Chapter \thechapter} % label
@@ -50,16 +75,26 @@
 {   \fontfamily{phv}\selectfont
     \bfseries\huge\centering
 } % before-code
-[\vspace{-0.7cm}] % after-code
+[
+    \vspace{-0.7cm}
+    \addcontentsline{thn}{chapter}{\color{black}\currentname}
+    \addcontentsline{dfn}{chapter}{\color{black}\currentname}
+    \addcontentsline{otf}{section}{\color{black}\textbf{Chapter \thechapter}}
+] % after-code
 
 \titleformat{\section}[display]{\Large} % format
 {} % label
 {-0.2cm} % sep
-{   \fontfamily{phv}\selectfont \scshape\thesection\quad 
+{   
+    \fontfamily{phv}\selectfont \scshape\thesection\quad
 } % before-code
-[\vspace{-0.2cm}] % after-code
+[
+    \vspace{-0.2cm}
+    \stepcounter{propcount}
+    \addcontentsline{thn}{section}{\color{black}\currentname}
+] % after-code
 
-\definecolor{purple2}{HTML}{660099}
+\definecolor{purple2}{HTML}{500066}
 \definecolor{rhoda}{HTML}{0000B7}
 \definecolor{tanita}{HTML}{5173BD}
 \definecolor{yellow}{HTML}{FCF434}
@@ -106,24 +141,20 @@
 
 %%\newtheorem{name}[counter]{Printed output}
 \newcounter{defcount}[chapter]
-\renewcommand{\thedefcount}{Definition \theHchapter.\arabic{defcount}}
+\renewcommand{\thedefcount}{\theHchapter.\arabic{defcount}}
 
-\newtheorem{defi}[defcount]{}
+\theoremstyle{definition}
+\newtheorem{defi}[defcount]{Definition}
 \newcommand{\defin}[2]{
-%    \begin{defi}
-%        \addcontentsline{dfn}{section}{\protect\numberline{\thedefi} #1}
-%        \textbf{\fontfamily{txtt}\selectfont{#1}:} \normalfont \color{black}
-%        #2
-%        \thedefcount
-%    \end{defi}
-
+    %Input: 1-Name(or empty), 2-definition
     \ifSimplifiedVersion
         #1
     \else 
         \color{rhoda}   
         \begin{defi}
-            \addcontentsline{dfn}{section}{\protect{{\thedefi \hspace{5px} #1}}} 
-            \color{tanita}\textbf{\normalfont\fontfamily{txtt}\selectfont{\textbf{#1}}:\hspace{5px}}
+            \addcontentsline{dfn}{section}{\color{rhoda}Def. \protect{\color{tanita}{\thedefi \hspace{5px} #1}}}
+            %\normalfont
+            \color{tanita}\fontfamily{txtt}\selectfont\textbf{{{#1}}:\hspace{5px}}
             \normalfont\color{black}#2
         \end{defi}
         \color{black}
@@ -132,6 +163,7 @@
 
 \newcommand{\outernote}[1]{
     \marginpar[\raggedleft #1]{\raggedright #1}
+    \addcontentsline{otf}{section}{#1}
 }
 
 %\newtheorem{notes}[]{Bemerkung}
@@ -148,69 +180,83 @@
         \color{black}
     \fi
 }
-\newcounter{propcount}[chapter]
-\renewcommand{\thepropcount}{Theorem \theHchapter.\arabic{propcount}}
 
-\newtheorem{propo}[propcount]{}
+\newcounter{propcount}[section]
+\renewcommand{\thepropcount}{\arabic{section}.\arabic{propcount}}
+\theoremstyle{plain}
+\newtheorem{propo}[propcount]{Proposition}
 \newcommand{\prop}[3]{
-    %Input: 1-Name, 2-statement, 3-proof
-    \stepcounter{corollcount}
+    %Input: 1-Name(or empty), 2-statement, 3-proof(or empty)
+    \addcontentsline{thn}{subsection}{\color{rhoda}Prop. \protect{\color{tanita}{\thepropcount \hspace{5px} #1}}} 
+    
     \ifSimplifiedVersion
         Prop: #1 - #2
 
     \else 
         \color{rhoda}   
         \begin{propo}
-            \color{tanita}\textbf{\normalfont\fontfamily{txtt}\selectfont{\textbf{#1}}:\hspace{5px}}\normalfont\color{black}
-            #2
-            \ifx\foo#3\foo
-            \else
-                \begin{proof}
-                    #3%\vspace{5pt}
-                \end{proof}
-            \fi
+            \propOrThm{#1}{#2}{#3}
         \end{propo}
         \color{black}
     \fi
 }
-\newcounter{lemmacount}[chapter]
-\renewcommand{\thelemmacount}{Lemma \theHchapter.\arabic{lemmacount}}
+%\newcounter{theoremcount}[section]
+%\renewcommand{\thetheoremcount}{\thesection.\arabic{propcount}}
 
-\newtheorem{lemmata}[lemmacount]{}
+\newtheorem{theorem}[propcount]{Theorem}
+\newcommand{\thm}[3]{
+    %Input: 1-Name(or empty), 2-statement, 3-proof(or empty)
+    \addcontentsline{thn}{subsection}{\color{rhoda}Thm. \protect{\color{tanita}{\thepropcount \hspace{5px} #1}}} 
+    
+    \ifSimplifiedVersion
+        Prop: #1 - #2
+
+    \else 
+        \color{rhoda}   
+        \begin{theorem}
+            \propOrThm{#1}{#2}{#3}
+        \end{theorem}
+        \color{black}
+    \fi
+}
+
+\newtheorem{lemmata}[propcount]{Lemma}
 \newcommand{\lemma}[3]{
     %Input: 1-Name, 2-statement, 3-proof
+    \addcontentsline{thn}{subsection}{\color{rhoda}Lemma \protect{\color{tanita}{\thepropcount \hspace{5px} #1}}} 
     \ifSimplifiedVersion
         Lemma: #1 - #2
 
     \else 
         \color{rhoda}   
         \begin{lemmata}
-            \color{tanita}\textbf{\normalfont\fontfamily{txtt}\selectfont{\textbf{#1}}: }\normalfont\color{black}
-            #2
-            \ifx\foo#3\foo
-            \else
-                \begin{proof}
-                    #3%\vspace{5pt}
-                \end{proof}
-            \fi
-% legacy: throws errror on listings in #3
-%            \ifthenelse{\equal{#3}{}}{}{
-%                %\vspace{-5pt}
-%                \begin{proof}
-%                    #3\vspace{5pt}
-%                \end{proof}
-%            }
+            \propOrThm{#1}{#2}{#3}
         \end{lemmata}
         \color{black}
     \fi
 }
 
-\newcounter{corollcount}[chapter]
-\renewcommand{\thecorollcount}{Corollary \theHchapter.\arabic{corollcount}}
+\newcommand{\propOrThm}[3]{
+    \ifx\foo#1\foo 
+    \else
+        \color{tanita}\fontfamily{txtt}\selectfont\textbf{{#1}}:\hspace{5px}
+    \fi
+    \fontfamily{cmr}\selectfont\color{black}#2
+    \ifx\foo#3\foo
+    \else
+        \begin{proof}
+            #3%\vspace{5pt}
+        \end{proof}
+    \fi
+}
 
-\newtheorem{corollary}[corollcount]{}
+
+\newcounter{subcorollcount}[propcount]
+
+\renewcommand{\thesubcorollcount}{\thepropcount-\Alph{subcorollcount}}
+\newtheorem{corollary}[subcorollcount]{Corollary}
 \newcommand{\coroll}[1]{
-    \addtocounter{corollcount}{-1}
+    %\addtocounter{corollcount}{-1}
     %Input: 1-Statement
     \ifSimplifiedVersion
         Cor: #1
@@ -218,7 +264,7 @@
     \else 
         \color{rhoda}   
         \begin{corollary}
-            \color{black}\normalfont#1\vspace{-5px}
+            \color{black}#1\vspace{-5px}
         \end{corollary}
         \color{black}
     \fi
@@ -232,7 +278,7 @@
         Bsp(#1): #2
 
     \else 
-        %\color{purple}   
+        \color{rhoda}
         \begin{example}
             \fontfamily{txtt}\selectfont{#1}: \normalfont\color{black}
             #2
@@ -240,7 +286,6 @@
         \color{black}
     \fi
 }
-
 
 \newcommand*{\claimproofname}{proof of claim.}
 \newenvironment{claimproof}[1][\claimproofname]{\vspace*{-10px}\begin{proof}[#1]\renewcommand*{\qedsymbol}{\(\boxtimes\)}}{\end{proof}}
@@ -277,17 +322,35 @@
 \setlength{\cftbeforetoctitleskip}{0em}
 \setlength{\cftaftertoctitleskip}{0em}
 \tableofcontents
-\listofabbreviations
-\newpage
+\begin{multicols}{2}
+    \listofabbreviations
+\end{multicols}
+
 
     
 \input{PropositionalLogic.tex}
 \input{FirstOrderLogic.tex}
+\input{ModelTheory.tex}
 \input{BooleanAlgebra.tex}
 \input{SetTheory.tex}
 
-\listofdefinitions
+\newgeometry{
+    outer=15mm,
+    inner=14mm,
+    %bottom=15mm,
+    %top=20mm
+}
+
+\begin{multicols}{2}
+    \listofdefinitions
+    \listoftheorems
+\end{multicols}
+
+\restoregeometry
 \printbibliography
+\begin{multicols}{3}
+    \listofouternotes
+\end{multicols}
 \end{document}
 
 %You can see this if the commit actually happend
