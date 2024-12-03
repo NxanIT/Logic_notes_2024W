@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.4.21)  29 NOV 2024 23:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.4.21)  3 DEC 2024 14:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1029,33 +1029,33 @@ Package biblatex Info: Reference segment=0 on input line 293.
 
 
 Package fancyhdr Warning: \fancyhead's `E' option without twoside option is useless.
-(fancyhdr)                Please consider using the `twoside' option on input line 298.
-
-
-Package fancyhdr Warning: \fancyhead's `E' option without twoside option is useless.
 (fancyhdr)                Please consider using the `twoside' option on input line 299.
 
 
-Package fancyhdr Warning: \fancyfoot's `E' option without twoside option is useless.
-(fancyhdr)                Please consider using the `twoside' option on input line 301.
+Package fancyhdr Warning: \fancyhead's `E' option without twoside option is useless.
+(fancyhdr)                Please consider using the `twoside' option on input line 300.
 
 
 Package fancyhdr Warning: \fancyfoot's `E' option without twoside option is useless.
 (fancyhdr)                Please consider using the `twoside' option on input line 302.
 
-LaTeX Font Info:    Trying to load font information for OT1+qag on input line 305.
+
+Package fancyhdr Warning: \fancyfoot's `E' option without twoside option is useless.
+(fancyhdr)                Please consider using the `twoside' option on input line 303.
+
+LaTeX Font Info:    Trying to load font information for OT1+qag on input line 306.
 (C:\Users\Nxan\AppData\Local\Programs\MiKTeX\tex/latex/tex-gyre\ot1qag.fd
 File: ot1qag.fd 2009/09/25 v1.2 font definition file for OT1/qag
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 319.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 320.
  (C:\Users\Nxan\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 319.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 320.
  (C:\Users\Nxan\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 319.
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 320.
  (C:\Users\Nxan\AppData\Local\Programs\MiKTeX\tex/latex/stmaryrd\ustmry.fd) (lecture_notes.toc)
 \tf@toc=\write6
 \openout6 = `lecture_notes.toc'.
@@ -1167,9 +1167,14 @@ Overfull \hbox (116.53806pt too wide) detected at line 987
 Chapter 3.
 [30
 
-] [31] [32] [33] [34] [35] [36] [37]) (BooleanAlgebra.tex [38]
+] [31] [32] [33] [34] [35] [36] [37] [38]
+Overfull \hbox (3.54073pt too wide) detected at line 604
+\OT1/cmr/m/n/10 	[](\OML/cmm/m/it/10 v\OT1/cmr/m/n/10 ) [] \OMS/cmsy/m/n/10 9\OML/cmm/m/it/10 v[]; v[] \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 I[]v[] < v < v[] \OMS/cmsy/m/n/10 ^ 8\OML/cmm/m/it/10 z[]; z[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 v[] < z[] < v \OMS/cmsy/m/n/10 ^ \OML/cmm/m/it/10 v < z[] < v[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 z[]\OT1/cmr/m/n/10 ) \OML/cmm/m/it/10 > f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 z[]\OT1/cmr/m/n/10 )[]
+ []
+
+[39]) (BooleanAlgebra.tex [40]
 Chapter 4.
-[39
+[41
 
 ]
 Overfull \hbox (20.05716pt too wide) detected at line 59
@@ -1181,9 +1186,9 @@ Overfull \hbox (28.27293pt too wide) detected at line 110
 \OT1/cmr/m/n/10 0 []= 0\OML/cmm/m/it/10 =[] \OT1/cmr/m/n/10 1 []= 1\OML/cmm/m/it/10 =[] \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a=[]\OT1/cmr/m/n/10 )[] []= \OML/cmm/m/it/10 a[]=[] a=[] \OMS/cmsy/m/n/10 _ \OML/cmm/m/it/10 b=[] []\OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 a \OMS/cmsy/m/n/10 _ \OML/cmm/m/it/10 b\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 =[] a=[] \OMS/cmsy/m/n/10 ^ \OML/cmm/m/it/10 b=[] []\OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 a \OMS/cmsy/m/n/10 ^ \OML/cmm/m/it/10 b\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 =[]
  []
 
-) (SetTheory.tex [40]
+) (SetTheory.tex [42]
 Chapter 5.
-) [41
+) [43
 
 ]
 *geometry* verbose mode - [ newgeometry ] result:
@@ -1222,19 +1227,13 @@ Chapter 5.
 \tf@dfn=\write8
 \openout8 = `lecture_notes.dfn'.
 
- (lecture_notes.thn [42
+ (lecture_notes.thn [44
 
 ])
 \tf@thn=\write9
 \openout9 = `lecture_notes.thn'.
 
-
-Overfull \vbox (10.46986pt too high) has occurred while \output is active []
-
-
-Overfull \vbox (6.52539pt too high) has occurred while \output is active []
-
- [43] (lecture_notes.otf
+ [45] [46] (lecture_notes.otf
 Underfull \hbox (badness 10000) in paragraph at lines 22--22
  \OT1/cmr/m/n/10 Disjunctive 
  []
@@ -1243,7 +1242,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 22--22
 \tf@otf=\write10
 \openout10 = `lecture_notes.otf'.
 
- [44
+ [47
 
 
 ] 
@@ -1256,17 +1255,17 @@ Package logreq Info: Writing requests to 'lecture_notes.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 35926 strings out of 476331
- 703535 string characters out of 5788237
- 1915660 words of memory out of 5000000
+ 35932 strings out of 476331
+ 703598 string characters out of 5788237
+ 1888660 words of memory out of 5000000
  55399 multiletter control sequences out of 15000+600000
  537344 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  101i,21n,104p,752b,1465s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Nxan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qagb.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/hoekwater/stmary10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txbtt.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txbtt.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txtt.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txtt.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on lecture_notes.pdf (44 pages, 931690 bytes).
+Output written on lecture_notes.pdf (47 pages, 948286 bytes).
 PDF statistics:
- 1181 PDF objects out of 1200 (max. 8388607)
- 422 named destinations out of 1000 (max. 500000)
+ 1200 PDF objects out of 1200 (max. 8388607)
+ 428 named destinations out of 1000 (max. 500000)
  250 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -31,6 +31,6 @@
 \contentsline {section}{\numberline {3.5}o-minimality}{36}{section.3.5}%
 \contentsline {section}{\numberline {3.6}o-minimal ordered groups and rings}{36}{section.3.6}%
 \contentsline {subsubsection}{Cell decomposition}{38}{subsubsection*.8}%
-\contentsline {chapter}{\numberline {4}Boolean Algebra}{39}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Set Theory}{41}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Axioms of ZFC}{41}{section.5.1}%
+\contentsline {chapter}{\numberline {4}Boolean Algebra}{41}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Set Theory}{43}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Axioms of ZFC}{43}{section.5.1}%

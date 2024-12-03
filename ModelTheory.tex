@@ -506,11 +506,11 @@ $f(a)<0<f(b)$ then there exists a $c\in (a,b)$ such that $f(c)=0$}
 \subsubsection{Cell decomposition}
 Base step: 
 \prop{Monotonicity Theorem}{
-    Suppose $f:(a,b)\to M$ definable, then there are $a<c_1< \dots < c_k<b$ such that for $(a,c_1)$, $(c_i,c_{i+1})$, $(c_k,b)$ partition of $(a,b)$ we have: $f$ is either constant or strictly monotinic and continuous.
+    Suppose $f:(a,b)\to M$ definable, then there are $a<c_1< \dots < c_k<b$ such that for $(a,c_1)$, $(c_i,c_{i+1})$, $(c_k,b)$ subsets of $(a,b)$ we have: $f$ is either constant or strictly monotinic and continuous.
 }{}
-\lemma{}{$\exists$ subinterval on which $f$ is const or incective}{}
-\lemma{}{If $f$ injective, then strictly monotone on a subinterval}{}
-\lemma{}{If $f$ strictly monotone, then $f$ continuous on a subinterval}{}
+\lemma{}{$\exists$ subinterval on which $f$ is const or incective.}{}
+\lemma{}{If $f$ injective, then strictly monotone on a subinterval.}{}
+\lemma{}{If $f$ strictly monotone, then $f$ continuous on a subinterval.}{}
 
 \begin{proof}
     Proof of Monotonicity theorem:
@@ -539,3 +539,121 @@ Base step:
         \item[Case 3:] similar to Case 2. 
     \end{enumerate}
 \end{proof}
+%03.12.2024
+Proof of Lemma 1:
+\begin{proof}
+    Statement: ``There exists a subinterval on which $f$ is constant or incective.''
+
+    \begin{itemize}
+        \item If $y\in R$ so that $f^{-1}$ is infinite (it has to be a finite union of points and intervals), 
+        then $f^{-1}(y)$ contains an interval and $f(x)=y$ on that interval.
+        \item Suppose $f^{-1}(y)$ is finite for every $y\in R$.\\
+        $f(I)$ is infinite and is definable because $f$ is definable, so it contains an interval $J$.
+        We can define an inverse to $f$ on $J$ $g:J\to I$, $g(y)$ is the first $x\in I$ such that $f(x)=y<$ (this is definable). $g$ is necessarily injective. $g(J)$ infinite, so contains a subinterval on which $f$ is injective.
+    \end{itemize}
+\end{proof}
+
+Proof of Lemma 2:
+\begin{proof}
+    Statement: ``If $f$ injective, then strictly monotone on a subinterval.''
+
+    Suppose $f$ is injective. $f:I=(a,b)\to R$
+    pick $x\in (a,b)$ then $(a,x) = \{y\in (a,x): f(y)<f(x)\} \uplus \{y\in (a,x): f(x)<f(y)\}$ is definable disjoint union of definable sets, so one of the subsets has to contain an interval $(c,x)$ with $a \leq c$, similarly for $(x,d)$.
+    So for all $x\in I$ we have $x$ satisfies one of the following:
+    \begin{itemize}
+        \item $\Phi_{++}(x)$ iff $\exists c_1,c_2 (c_1<x<c_2 \land \forall c \in (c_1,x) f(c)>f(x) \land \forall c\in (x,c_2) f(c)>f(x)$
+        \item $\Phi_{--}(x)$
+        \item $\Phi_{+-}(x)$
+        \item $\Phi_{-+}(x)$
+    \end{itemize}
+    The set of all $x$ that satisfy each $\Phi$ is definable, it therefore is a finite union of points and intervalls.
+    After passing to subinterval $(a,b)$ of $I$ WMA that each $x\in I$ 
+    satisfies the same $\Phi_{\pm\pm}$.
+    \begin{itemize}
+        \item $\Phi_{-+}(x)$, on the left everybody is smaller, on the right everybody is bigger.
+        \[\forall x\in I s(x)\defeq \sup\{s\in(x,b): f(x)<f(s)\}\]
+        If $s(x)<b$ then $\Phi_{-+}(s(x))$, and therefore there is an element $s'>s(x)$ such that $f(x)
+        \leq f(s(x))<f(s')$ so $s(x)\geq s'$ which is a contradiction to definition to $s(x)$, therefore 
+        $s(x) = b$ for every $x\in (a,b)$. Then $f$ has to be strictly increasing on $(a,b)$.
+        \item $\Phi_{+-}(x)$ similar  (monotinic decreasing)
+        \item $\Phi_{++}(x)$ $\forall x \in I$.
+        $$B \defeq \{x\in I: \forall y\in I (x<y \to f(y)>f(x))\}$$
+        $B$ is definable, if $B$ is infinite, it has to contain a subinterval on which $f$ is strictly 
+        increasing. 
+
+        WMA $B$ is finite.
+        We restrict ourselves to subinterval and may assume $B=\varnothing$. 
+        So by injectivity: 
+        $$\circledast \quad\forall x \in I \exists y\in I x<y\land f(x)>f(y)$$
+        Let $c\in I$. Claim: for every large enough $y\in I$ we have $f(y)<f(c)$.
+        \begin{claimproof}
+            By contradiction. suppose we can not find a neighborhood of $b$ such that for all elements in this neighborhood $f(y)<f(c)$
+            otherwise $f(y)>f(c)$ for all large enough $y$.
+            Let $d<b$ be minimal such that 
+            \[\forall y\in (d,b) f(y)>f(c)\]
+            \begin{itemize}
+                \item case $f(d)>f(c)$: $\Phi_{++}(d)$, contradiction with minimality of $d$.
+                \item case $f(d)<f(c)$: By $\circledast$ there has to be an $e$ with $d<e<b$ and 
+                $f(e)<f(d)$. So $f(e)<f(c)$ which is a contradiction to $\Phi_{++}(d)$
+            \end{itemize}
+        \end{claimproof} 
+        Define $y(c)$ to be the least element of $[c,b)$ for which 
+        $$\forall y y(c)<y<b \: f(c)>f(y)$$ 
+        $c$ satisfies $\Phi_{++}$, therefore $c<y(c)$ and $f(y(c))<f(c)$ if $y(c)<y<b$.
+        The minimality of $y(c)$ implies that $y(c)$ satisfies $\Psi_{+-}$, where 
+        \[\Psi_{+-}(v) \iif \exists v_1,v_2 \in I \bigl(v_1<v<v_2 \land \forall z_1,z_2 (v_1<z_1<v\land v<z_2<v_2)\to f(z_1)>f(z_2)\bigr)\]
+        But $c$ was arbitrarily so $\forall x\in I \exists v\in I (x<v\land \Psi_{+-}(v))$
+        On subinterval $\Psi_{+-}$ 
+        we have a contradiction with $\Phi_{++}$, similarly on subinterval for $\Psi_{-+}$.
+        \item $\Phi_{--}$ similar to above
+    \end{itemize}
+\end{proof}
+Proof of Lemma 3:
+\begin{proof}
+    Statement: ``If $f$ strictly monotone, then $f$ continuous on a subinterval.''
+
+    WMA: $f:(a,b)\to R$ strictly monotone increasing.
+    $f(I)$ infinite and definable, so $f(I)$ contains an interval $J$.
+    Let $r,s\in J$ $r<s$ and $d,e\in I$ with $d<e$ and $f(d)=r$ and $f(e) = s$.
+    restrict $f$ to $(d,e)$ and we get an increasing bijection $(d,e)\to (r,s)$.
+    Our topology is the order topology, so $f$ is continuous on $(d,e)$
+\end{proof}
+So we have proved the monotonicity Theorem.
+\note{}{If $f:(a,b)\to R$ is definable, then $\lim_{x\to c^-}f(x)$ exists in $R_{\infty}$ 
+    for $c\in (a,b]$. 
+    And further $\lim_{x\to c^+}f(x)$ exists in $R_\infty$ for $c\in [a,b)$ 
+    If furthermore $f:[a,b]\to R$ is continuous and definable, then $f$ assumes a 
+    minimum and maximum on $[a,b]$ 
+}
+On of the important tools in o-minimality theory is the cell cecomposition theorem:
+\defin{Cell}{
+    Let $(i_1,\dots i_n)$ a sequence in $\{0,1\}$. An $(i_1,\dots i_n)$-cell is defined inductively:
+    \begin{itemize}
+        \item $(0)$-cell: $\{r\}\subseteq R$,
+        \item $(1)$-cell: $(a,b)\subseteq R$, $a<b$, $a,b\in R$.
+        \item $(i_1,\dots i_k, 0)$-cell: $\Gamma f\subseteq R^{k+1}$, where $f$ is definable and continuous function $f:$TODO
+        \item $(i_1,\dots i_k, 1)$-cell: is a the set 
+        $$(f,g) = \{(\underline{x},x_{k+1})\in R^{k+1} : f(\underline{x}) < x_{k+1}<g(\underline{x})\}$$ 
+        $f:X\to R, g: X\to R$, $f<g$ $f,g$ are definable and continuous on $X$, which is a $(i_1,\dots i_k)$-cell. $f$ may be constantly $-\infty$ and $g$ may be constantly $\infty$.
+    \end{itemize}
+}
+\note{Cells have nice topological properties}{
+    \begin{itemize}
+        \item every $(1,\dots 1)$-cell are precisely the cells that are open in their ambient space. continuity of the functions is important.
+        \item The union of finitlely many non-open cells has empty interior.
+        \item Each cells is cocally closed i.e. open in its closure.
+        \item Each cell is homeomorphic to an open cell under a coordinate projection Example $(1,0,0,1)$-cell or $(1,0)$-cell with $(x_1,x_2)\mapsto x_2$
+        \item If $A\subseteq R^{n+1}$, then $\pi A\subseteq R^n$ cell $\pi(x_1,\dots x_{n+1})\mapsto (x_1,\dots x_n)$
+        \item Every cell is definalby connected. You can proof this by induction on the cell. $\{r\}$ and open intervals are definably connected. If the projection of a cell is definably connected, then the fibre above it is either an open interval or a single point. It is even definable path connected. If there would exist an open disjoint cover there exists an open disjoint cover of the fibre, which is not possible.
+    \end{itemize}
+}
+\defin{decomposition}{A decomposition of $R^m$ is a finite partition of $R^m$ into cells defined inductively:
+\begin{itemize}
+    \item decomposition of $R^1 = R$: 
+    \[\bigl\{(-\infty,a_1), \{a_1\},(a_1,a_2)\dots (a_k,\infty)\bigr\}\]
+
+    \item A decomposition of $R^{n+1}$ is a finite partition of $R^{n+1}$ into cells $C$ such that the collection of $\pi C$ is a decomposition of $R^n$.
+\end{itemize}
+
+}
+\thm{}{}{}
