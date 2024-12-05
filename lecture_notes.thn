@@ -44,8 +44,9 @@
 \contentsline {subsection}{\color {rhoda}Prop. {\color {tanita}{10.4\hspace {5px} Completness Theorem}}}{26}{subsubsection*.6}%
 \contentsline {subsection}{\color {rhoda}Prop. {\color {tanita}{10.5\hspace {5px} Completness Theorem'}}}{26}{propcount.2.10.5}%
 \contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{10.6\hspace {5px} }}}{28}{Item.115}%
-\contentsline {subsection}{\color {rhoda}Prop. {\color {tanita}{10.7\hspace {5px} Zorn's Lemma}}}{29}{subsection.2.10.2}%
-\contentsline {subsection}{\color {rhoda}Prop. {\color {tanita}{10.8\hspace {5px} Zermelos's Theorem}}}{29}{propcount.2.10.8}%
+\contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{10.7\hspace {5px} }}}{28}{propcount.2.10.7}%
+\contentsline {subsection}{\color {rhoda}Prop. {\color {tanita}{10.8\hspace {5px} Zorn's Lemma}}}{29}{subsection.2.10.2}%
+\contentsline {subsection}{\color {rhoda}Prop. {\color {tanita}{10.9\hspace {5px} Zermelos's Theorem}}}{29}{propcount.2.10.9}%
 \contentsline {chapter}{\color {black}Model Theory}{30}{chapter.3}%
 \contentsline {section}{\color {black}Löwenheim-Skolem-Theorem}{30}{section.3.1}%
 \contentsline {subsection}{\color {rhoda}Prop. {\color {tanita}{1.1\hspace {5px} }}}{30}{section.3.1}%
@@ -60,7 +61,7 @@
 \contentsline {section}{\color {black}Nonstandard Analysis}{33}{section.3.4}%
 \contentsline {subsection}{\color {rhoda}Prop. {\color {tanita}{4.1\hspace {5px} }}}{34}{excount.3.7}%
 \contentsline {subsection}{\color {rhoda}Prop. {\color {tanita}{4.2\hspace {5px} }}}{34}{defcount.3.6}%
-\contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{4.3\hspace {5px} }}}{34}{Item.131}%
+\contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{4.3\hspace {5px} }}}{34}{Item.135}%
 \contentsline {subsection}{\color {rhoda}Prop. {\color {tanita}{4.4\hspace {5px} }}}{34}{propcount.3.4.4}%
 \contentsline {subsection}{\color {rhoda}Prop. {\color {tanita}{4.5\hspace {5px} }}}{34}{subcorollcount.3.4.5.1}%
 \contentsline {subsection}{\color {rhoda}Prop. {\color {tanita}{4.6\hspace {5px} }}}{35}{excount.3.8}%
@@ -76,12 +77,15 @@
 \contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{6.6\hspace {5px} }}}{38}{propcount.3.6.6}%
 \contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{6.7\hspace {5px} }}}{38}{propcount.3.6.7}%
 \contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{6.8\hspace {5px} }}}{38}{propcount.3.6.8}%
-\contentsline {subsection}{\color {rhoda}Thm. {\color {tanita}{6.9\hspace {5px} }}}{40}{defcount.3.16}%
-\contentsline {chapter}{\color {black}Boolean Algebra}{41}{chapter.4}%
-\contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{1.0\hspace {5px} }}}{41}{excount.4.1}%
-\contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{1.1\hspace {5px} }}}{41}{Item.147}%
-\contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{1.2\hspace {5px} }}}{42}{excount.4.4}%
-\contentsline {chapter}{\color {black}Set Theory}{43}{chapter.5}%
-\contentsline {section}{\color {black}Axioms of ZFC}{43}{section.5.1}%
-\contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{1.1\hspace {5px} }}}{43}{defcount.5.2}%
-\contentsline {chapter}{\color {black}Bibliography}{47}{chapter*.9}%
+\contentsline {subsection}{\color {rhoda}Thm. {\color {tanita}{6.9\hspace {5px} Cell decomposition}}}{40}{defcount.3.16}%
+\contentsline {subsection}{\color {rhoda}Prop. {\color {tanita}{6.10\hspace {5px} }}}{41}{excount.3.12}%
+\contentsline {subsection}{\color {rhoda}Prop. {\color {tanita}{6.11\hspace {5px} }}}{42}{excount.3.13}%
+\contentsline {subsection}{\color {rhoda}Thm. {\color {tanita}{6.12\hspace {5px} }}}{42}{subcorollcount.3.6.12.1}%
+\contentsline {chapter}{\color {black}Boolean Algebra}{43}{chapter.4}%
+\contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{1.0\hspace {5px} }}}{43}{excount.4.1}%
+\contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{1.1\hspace {5px} }}}{43}{Item.155}%
+\contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{1.2\hspace {5px} }}}{44}{excount.4.4}%
+\contentsline {chapter}{\color {black}Set Theory}{45}{chapter.5}%
+\contentsline {section}{\color {black}Axioms of ZFC}{45}{section.5.1}%
+\contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{1.1\hspace {5px} }}}{45}{defcount.5.2}%
+\contentsline {chapter}{\color {black}Bibliography}{49}{chapter*.9}%

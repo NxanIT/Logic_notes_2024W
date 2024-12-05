@@ -1072,9 +1072,34 @@ Let $\Gamma$ be a consistent set of formulas. Is it possible to
     of $\Gamma$ which is a contradiction to all models of $\Gamma$ are finite.
 }
 
-\note{}{There is no sentence in the language of groups / rings /\dots that would be satisfied in all finite 
-    groups/rings/\dots and not satisfied in all infinite groups/rings/\dots}
+\note{}{There is no sentence in the language of groups / rings /\dots 
+    that would be satisfied in all finite 
+    groups/rings/\dots and not satisfied in all infinite groups/rings/\dots
+}
 
+
+\lemma{}{
+    \begin{enumerate}
+        \item FIN, the class of all finite $\mathcal{L}$-structures is not EC$_\Delta$
+        \item INF, the class of infinite $\mathcal{L}$-structures is EC$_\Delta$ but not EC.
+    \end{enumerate}
+}{
+    \begin{enumerate}
+        \item Suppose FIN is EC$_\Delta$. By definition there is a set of formulas $\Gamma$ such that 
+        $$\Mod \Gamma = \{\text{ the collection of all finite $\mathcal{L}$-structures}\} = \text{ FIN}$$
+        But then $\Gamma$ has only finite models, but of arbitrarily large size. That contradicts our previous lemma.
+        \item \[\begin{aligned}
+            \varphi_1 & \quad \exists x x=x\\
+            \varphi_2 & \quad \exists x_1 \exists x_2 x_1\neq x_2\\
+            \vdots&\quad \vdots\\
+            \varphi_n & \exists x_1 \dots \exists x_n \bigwedge_{i,j=0 i\neq j}^{n}{x_i \neq x_j}
+       \end{aligned}
+       \]
+       and $\Gamma \defeq \{\varphi_1, \dots\}$ and INF is indeed EC$_\Delta$.
+       Suppose INF $=\Mod(\tau)$ then $\Mod(\lnot \tau)$ would be FIN, a contradiction to (a). 
+    \end{enumerate}
+    
+}
 
 
 Recall the proof of completeness theorem. $\mathcal{L}$, $|\mathcal{L}= \aleph_0$

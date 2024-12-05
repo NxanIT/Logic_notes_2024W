@@ -42,7 +42,7 @@
 \contentsline {section}{\color {rhoda}Def. {\color {tanita}{2.29\hspace {5px} Substitution}}}{20}{defcount.2.29}%
 \contentsline {section}{\color {rhoda}Def. {\color {tanita}{2.30\hspace {5px} substitutable}}}{20}{defcount.2.30}%
 \contentsline {section}{\color {rhoda}Def. {\color {tanita}{2.31\hspace {5px} Tautologies of first order language}}}{21}{defcount.2.31}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{2.32\hspace {5px} Inconsistence}}}{22}{defcount.2.32}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{2.32\hspace {5px} Inconsistence}}}{23}{defcount.2.32}%
 \contentsline {section}{\color {rhoda}Def. {\color {tanita}{2.33\hspace {5px} }}}{25}{defcount.2.33}%
 \contentsline {section}{\color {rhoda}Def. {\color {tanita}{2.34\hspace {5px} }}}{28}{defcount.2.34}%
 \contentsline {chapter}{\color {black}Model Theory}{30}{chapter.3}%
@@ -62,18 +62,20 @@
 \contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.14\hspace {5px} real closed field}}}{37}{defcount.3.14}%
 \contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.15\hspace {5px} Cell}}}{40}{defcount.3.15}%
 \contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.16\hspace {5px} decomposition}}}{40}{defcount.3.16}%
-\contentsline {chapter}{\color {black}Boolean Algebra}{41}{chapter.4}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{4.1\hspace {5px} Boolean Algebra}}}{41}{defcount.4.1}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{4.2\hspace {5px} Opposite of boolean algebra}}}{41}{defcount.4.2}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{4.3\hspace {5px} Subalgebra}}}{41}{defcount.4.3}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{4.4\hspace {5px} Homomorphisms of boolean algebras}}}{42}{defcount.4.4}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{4.5\hspace {5px} Trivial algebras}}}{42}{defcount.4.5}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{4.6\hspace {5px} Ideal}}}{42}{defcount.4.6}%
-\contentsline {chapter}{\color {black}Set Theory}{43}{chapter.5}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.1\hspace {5px} Axiom of extensionality}}}{43}{defcount.5.1}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.2\hspace {5px} Pairing Axiom}}}{43}{defcount.5.2}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.3\hspace {5px} Union Axiom}}}{43}{defcount.5.3}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.4\hspace {5px} Power set Axiom}}}{43}{defcount.5.4}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.5\hspace {5px} Axiom of replacement / substitution}}}{43}{defcount.5.5}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.6\hspace {5px} Axiom scheme of comprehension}}}{43}{defcount.5.6}%
-\contentsline {chapter}{\color {black}Bibliography}{47}{chapter*.9}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.17\hspace {5px} }}}{41}{defcount.3.17}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.18\hspace {5px} Definable families}}}{41}{defcount.3.18}%
+\contentsline {chapter}{\color {black}Boolean Algebra}{43}{chapter.4}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{4.1\hspace {5px} Boolean Algebra}}}{43}{defcount.4.1}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{4.2\hspace {5px} Opposite of boolean algebra}}}{43}{defcount.4.2}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{4.3\hspace {5px} Subalgebra}}}{43}{defcount.4.3}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{4.4\hspace {5px} Homomorphisms of boolean algebras}}}{44}{defcount.4.4}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{4.5\hspace {5px} Trivial algebras}}}{44}{defcount.4.5}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{4.6\hspace {5px} Ideal}}}{44}{defcount.4.6}%
+\contentsline {chapter}{\color {black}Set Theory}{45}{chapter.5}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.1\hspace {5px} Axiom of extensionality}}}{45}{defcount.5.1}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.2\hspace {5px} Pairing Axiom}}}{45}{defcount.5.2}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.3\hspace {5px} Union Axiom}}}{45}{defcount.5.3}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.4\hspace {5px} Power set Axiom}}}{45}{defcount.5.4}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.5\hspace {5px} Axiom of replacement / substitution}}}{45}{defcount.5.5}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.6\hspace {5px} Axiom scheme of comprehension}}}{45}{defcount.5.6}%
+\contentsline {chapter}{\color {black}Bibliography}{49}{chapter*.9}%

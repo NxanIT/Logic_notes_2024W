@@ -483,7 +483,7 @@ Recall:
         $x\to x^{-1}$ are continuous with resprect to itervall topology.
     \end{itemize}
 }
-\defin{ordered field}{An ordered ring is an ordered division ring with commutative multiplication.}
+\defin{ordered field}{An ordered field is an ordered division ring with commutative multiplication.}
 \defin{real closed field}{ordered field $R$ \outernote{RCF} such that if $f(X)\in R[X]$ and $a<b$ are such that 
 $f(a)<0<f(b)$ then there exists a $c\in (a,b)$ such that $f(c)=0$}
 \bsp{}{
@@ -508,7 +508,7 @@ Base step:
 \prop{Monotonicity Theorem}{
     Suppose $f:(a,b)\to M$ definable, then there are $a<c_1< \dots < c_k<b$ such that for $(a,c_1)$, $(c_i,c_{i+1})$, $(c_k,b)$ subsets of $(a,b)$ we have: $f$ is either constant or strictly monotinic and continuous.
 }{}
-\lemma{}{$\exists$ subinterval on which $f$ is const or incective.}{}
+\lemma{}{$\exists$ subinterval on which $f$ is const or injective.}{}
 \lemma{}{If $f$ injective, then strictly monotone on a subinterval.}{}
 \lemma{}{If $f$ strictly monotone, then $f$ continuous on a subinterval.}{}
 
@@ -542,7 +542,7 @@ Base step:
 %03.12.2024
 Proof of Lemma 1:
 \begin{proof}
-    Statement: ``There exists a subinterval on which $f$ is constant or incective.''
+    Statement: ``There exists a subinterval on which $f$ is constant or injective.''
 
     \begin{itemize}
         \item If $y\in R$ so that $f^{-1}$ is infinite (it has to be a finite union of points and intervals), 
@@ -651,9 +651,137 @@ On of the important tools in o-minimality theory is the cell cecomposition theor
 \begin{itemize}
     \item decomposition of $R^1 = R$: 
     \[\bigl\{(-\infty,a_1), \{a_1\},(a_1,a_2)\dots (a_k,\infty)\bigr\}\]
-
     \item A decomposition of $R^{n+1}$ is a finite partition of $R^{n+1}$ into cells $C$ such that the collection of $\pi C$ is a decomposition of $R^n$.
 \end{itemize}
-
 }
-\thm{}{}{}
+\thm{Cell decomposition}{
+    \begin{itemize}
+        \item[$(\RomanNum{1} _m)$] Let  $A_1,\dots A_k\subseteq R^m$ definable sets. Then there is a decomposition of $R^m$ partitioning each $A_i$.
+        \item[$(\RomanNum{2} _m)$] Given a definalble function $f: A\to R$, $A\subseteq R^m$ there is a decomposition $\mathcal{D}$ of $R^m$ partitioning $A$ such that for every $B\in \mathcal{D}$ $f|_B:B\to R$ is continuous. 
+    \end{itemize}
+}{
+    By induction on $m$.
+    Base step: \begin{itemize}
+        \item $(\RomanNum{1} _1)$ o-minimality
+        \item $(\RomanNum{2} _1)$ monotonicity theorem.
+    \end{itemize}
+    Proof idea: Suppose we have $$
+    \begin{cases}
+        (\RomanNum{1} _1)\dots (\RomanNum{1} _m)\\
+        (\RomanNum{2} _1)\dots (\RomanNum{2} _m)
+    \end{cases}\bigr\} \implies (\RomanNum{1} _{m+1}), (\RomanNum{2} _{m+1})
+    $$ 
+}
+\defin{}{A definably connected component of a non-empty definable Subset $X\subseteq R^m$ is a definably-connected subset of $X$ which is maximal wrt being definably connected}
+\bsp{}{$X\subseteq R^m$ definable. Then it is definably connected iff $X$ definably path connected 
+i.e. 
+$$\forall x , y\in X\exists f:[0,1]\to X \text{ definable and continuous with } f(0)=x \land f(1)=y$$
+}
+
+\prop{}{Suppose $X\subseteq R^m$ is definable and non-empty, then $X$ has only finitlely many 
+    definably connected components. The components are both open and closed in $X$ and they form a 
+    finite partition of $X$.}
+{
+    Let $\{C_1, \dots C_k\}$ be a partition of $X$ into cells. $I\subseteq \{1,\dots k\}$ then
+    $C_I \defeq \bigcup_{i\in I}C_i$. 
+    Let $C'$ be the maximal among the $C_I$ that is definable connected.
+    Claim: For $Y\subseteq X$ definable connected such that $Y\cap C'\neq \varnothing$ then $Y\subseteq C'$.
+    \begin{claimproof}
+        $C_Y \defeq \bigcup \{C_i : C_i\cap Y \neq \varnothing\}$
+        Then $Y\subseteq C_Y$. and $C_Y$ is definably (finite union) connected union of definably connected set $Y$ and finitly meny cells that have non-empty intersection with $Y$.
+        Then $C_Y\cap C'$ contains $Y\cap C'\neq \varnothing$. So if we take $C_Y \cup C'$ has to be again definably connected. By maximality $C_Y \cup C'= C'$ and $Y\subseteq C_Y \subseteq C'$.
+    \end{claimproof}
+    Hence 
+    \begin{itemize}
+        \item $C'$ definably connected component of $X$
+        \item The sets $C'$ form a finite partition of $X$
+        \item $C'$ are the only definable connected components of $X$
+    \end{itemize}
+    The closure in $X$ of a definably connected subset of $X$ is definable connected. (see topology)
+    So the $C'$ are closed in $X$. 
+    They are also open because the complement in $X$ is a finite union of closed subsets.
+}
+\note{}{The above Proposition is not true if we drop the requirement ``definable''}
+
+\defin{Definable families}{
+    Let $S\subseteq R^{m+n}$ definable. For $a\in R^m$ we put
+    $$S_a = \{\underline{x}\in R^n : (a,\underline{x})\in S\}\subseteq R^n$$
+    $S$ describes the family of sets $(S_a)_{a\in R^m}$.
+    And the sets $S_a$ are called the fibers of $S$. 
+}
+\bsp{}{$\mathcal{R}=(\RR,<,+,\cdot)$ 
+\[ax^2 + bxy + c y^2 + dx + ey + f = 0\]
+defines $S\subseteq R^6\times R^2$.
+The fibers are: 
+\begin{itemize}
+    \item points, circles, ellipse, hyperbola, parabola
+    \item and the limiting cases: $\varnothing$, 2 lines intersecting each other, 2 parallel lines, one line, $RR^2$
+\end{itemize}
+}
+\note{}{In o-minimal structures there are only finitly many homomorphism types in a definably family. (If there are infinitely many fibres, then only finitlely many are not homeomorphic to each other).}
+\prop{}{
+    \begin{enumerate}
+        \item $C$ cell in $R^{m+n}$, $a\in \pi_m^{m+n}C$ (where 
+        $\pi^{m+n}_m (x_1,\dots x_{m+n}) = (x_1,\dots x_m)$) Then $C_a$ is a cell in $R^n$
+     \item $\mathcal{D}$ decomposition of $R^{m+n}$, and $a\in R^m$ then 
+     $$\mathcal{D}_a = \{C_a : C\in \mathcal{D} \land a \in \pi^{m+n}_m(C)\}$$ is a decomposition  of $R^m$.
+    \end{enumerate}
+}{
+    \begin{enumerate}
+        \item induction on $n$. If $n=1$, $a\in \pi^{m+1}_m C$ 
+        Then $C_a$ is one of the below
+        \begin{itemize}
+            \item If $C$ is a $(i_1,\dots i_m,0)$-cell then $C = \Gamma f$, $f:\pi^{m+1}_m C \to R$ definalby continuous. 
+            $a\in \pi^{m+1}_mC$ then $C_a = \{f(a)\}\subseteq R$
+            \item If $C$ is a $(i_1,\dots i_m,1)$-cell then $C = (f,g)$, $C_a = (f(a),g(a))$
+        \end{itemize}
+        Suppose the statement holds for some $n$ then let
+        $C\subseteq R^{m+n+1}$ be a cell. Consider the two projections
+        $\pi^{m+n+1}_{m+n}, \pi^{m+n}_m$ and
+        $$\pi^{m+n}_m\circ \pi^{m+n+1}_{m+n} : R^{m+n+1}\to R^m$$ 
+        Two options: 
+        Either $C = \Gamma f$, then 
+        $$C_a = \Gamma f_a \text{ where } f_a: ( \pi^{m+n+1}_{m+n} C)_a\to R$$ and
+        $f_a(x) = f(a,x)$\\
+        Or $C = (f,g)_D$ i.e. $f,g:D\to R$, $D\subseteq R^{m+n}$ cell, $D = \pi^{m+n+1}_{m+n}$
+        Then $C_a = (f_a, g_a)_E$, $E = D_a$. in both cases, $C_a$ is a cell.
+        \item Exercise.
+    \end{enumerate}
+}
+
+\coroll{Let $S\subseteq R^m \times R^n$ a definable family then there exists $M_S\in \NN$ such that 
+    for all $a\in R^m$ $S_a\subseteq R^m$ has a partition into $M_S$ many cells.
+}
+\begin{proof}
+    $S\subseteq R^m\times R^n$ $\mathcal{D}$ decomposition of $R^m\times R^n$ that partions $S$. Then $S$ is a finite union of cells from $\mathcal{D}$, each fiber $S_a$ is a finite union of $C_a, C\in \mathcal{D}$ but $C_a$ is a cell by Proposition. A bound: $|\mathcal{D}|$.
+\end{proof}
+
+\note{}{There is a uniform bound on $\#$ of definable connected somponents of sets in definable family.}
+
+
+\thm{}{$\mathcal{R}= (R;<,\dots)$ o-minimal $\mathcal{L}$-structure, $R'=(R';<,\dots)$ $\mathcal{L}$-structure. 
+If $R\equiv R'$ then $R'$ is o-minimal.
+}{
+    $S\subseteq R$ definable, $S = \{r\in R: \mathcal{R}\to \varphi(x) [r]\}$ might use parameters from 
+    $R$. If $\varphi$ is a $\mathcal{L}$-fla. over $\varnothing$.
+    Then 
+    $$\begin{aligned}
+        \mathcal{R}\models \exists x_1,x_2,x_3 &(x_1 \neq x_2\land x_1\neq x_3 \land x_2\neq x_3 \\
+        &\land \forall c ((x_1<c<x_2 \to \varphi(c))\land (c=x_3 \to \varphi(c))\\
+        &\qquad\land \lnot (x_1<c<x_2\lor c = x_3)\to \lnot \varphi(c)))
+    \end{aligned}$$ 
+    But if $\varphi$ uses parameters, we TODO
+    For all $S\subseteq R^{m+1}$ need formula $\forall \underline{a}\in R^m$ ``$S_a$ is finite union of points and intervals''
+    Idea: Subset of $R$ definableby formula w/ param is just a fiber in a definable family that is parameter-free definable.
+    $S_a\subseteq R$ definable. By the note, there is some number $M_S$ that only depends on the TODO
+    Such that for each $\underline{a}\in R^m$ $S_a$ is a finite union of at most $M_S$ cells.
+
+    Then \[\begin{aligned}
+        \mathcal{R}\models \forall \underline{z}\exists x_1 \dots \exists x_{M_S+1}&\bigl(\forall y (y<x_1 \to \varphi_{\underline{z}}(y))\lor \forall y (y<x_1 \to \lnot \varphi_{\underline{z}}(y))\bigr)\\
+        &\land \bigl(\forall y (x_1<y<x_2\to \varphi_{\underline{z}}(y))\lor\forall y (x_1<y<x_2\to \lnot\varphi_{\underline{z}}(y))\bigr)\\
+        &\dots%TODO
+    \end{aligned}\]
+    By elementarily equivalence:
+    $\mathcal{R}'\models \dots$.
+}
+%\note{}{0-min is strong o-minimality.} TODO

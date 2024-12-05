@@ -174,7 +174,8 @@
     \else 
         \color{rhoda}   
         %\begin{notes}
-            \noindent Note\fontfamily{txtt}\selectfont{}#1:\hspace{5px}\normalfont\color{black}#2
+            \noindent Note \color{tanita}\fontfamily{txtt}\selectfont{}#1:
+            \hspace{5px}\normalfont\color{black}#2
 
         %\end{notes}
         \color{black}
@@ -290,6 +291,9 @@
 \newcommand*{\claimproofname}{proof of claim.}
 \newenvironment{claimproof}[1][\claimproofname]{\vspace*{-10px}\begin{proof}[#1]\renewcommand*{\qedsymbol}{\(\boxtimes\)}}{\end{proof}}
 
+\newcommand{\RomanNum}[1]{%
+  \textup{\uppercase\expandafter{\romannumeral#1}}%
+}
 \begin{document}
 
 \fancypagestyle{plain}{}
