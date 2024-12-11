@@ -1,6 +1,28 @@
 \chapter{Boolean Algebra}
 \stepcounter{section}
-\defin{Boolean Algebra}{
+Our language in this chapter will be $\mathcal{L} = \{0,1,+,\cdot,\overline{\phantom{x}}\}$, where $+,\cdot$ are binary operations and $\overline{\phantom{x}}$ is a unary operation.
+ 
+The axioms for boolean algebras are 
+\begin{enumerate}
+    \item (Associativity of $+,\cdot$) $\forall x,y,z \bigl(x+(y+z) = (x+y)+z \land x\cdot (y\cdot z) = (x \cdot y ) \cdot z\bigr)$
+    \item (Commutativity of $+,\cdot$) $\forall x,y \bigl(x+y=y+x \land x\cdot y = y\cdot x\bigr)$
+    \item (Idempotence) $\forall x \bigl(x+x = x \land x\cdot x = x\bigr)$
+    \item (Distributivity) $+,\cdot$: $\forall x,y,z \bigl(x\cdot (y+z) = x\cdot y + x\cdot z \land x+(y\cdot z)\bigr) = $TODO
+    \item (Absorbtion) $\forall x,y \bigl(x\cdot (x\cdot y) = x \cdot y \land x\cdot (x+y) = x\bigr)$
+    \item (De Morgan's Laws) $\forall x,y \bigl(\overline{x+y} = \overline{x}\cdot \overline{y}\land \overline{x\cdot y} = \overline{x}+ \overline{y}\bigr)$
+    \item (Laws of $0,1$ and $\overline{\phantom{x}}$) $$\begin{aligned}
+        \forall x \bigl(&\quad x+0 = x \quad\land\quad x\cdot 0 = 0 \quad\land\quad x+1 = 1\quad\land\quad x\cdot 1 = x \\
+        &\land\quad x + \overline{x} = 1 \quad\land\quad x\cdot \overline{x} = 0 \quad\land\quad \overline{\overline{ x}} = x\quad\bigr)
+    \end{aligned}$$
+\end{enumerate}
+\defin{Boolean Algebra}{The theory of boolean algebras is the deductive closure of (1)-(7) above.}
+\note{}{Every boolean algebra $\mathcal{B}$ can be partially ordered by 
+$$x\leq y \quad\iif\quad x+y = y$$ 
+It is easy to see that $\leq$ is reflexive, antisymmetric and transitive. In this ordering the smallest set is $0$ and the largest one is $1$.
+In this notion the supremum and infimum of two elements are equal to
+\[\sup\{x,y\} = x+y, \quad \inf\{x,y\} = x\cdot y\quad\text{(Exercise)}\] 
+}
+\defin{Alternative Def: Boolean Algebra}{%from last year
     A \graybf{boolean algebra} is a set $B$ with
     \begin{itemize}
         \item distinguished elements $0,1$ (called zero and unit of $B$)
@@ -15,9 +37,120 @@
         \end{enumerate}
     \end{itemize}
 }
-\bsp{}{Let $S$ be a set, $B \defeq \mathcal{P}(S)$ the power set of $S$, $0\defeq \varnothing$ and $1\defeq S$, 
+\bsp{}{Let $X\neq \varnothing$ be a set, $B \defeq \mathcal{P}(X)$ the power set of $X$, $0\defeq \varnothing$ and $1\defeq S$, 
     $$': \mathcal{P}(S)\to \mathcal{P}(S), x' \defeq S\backslash x \qquad x\lor y \defeq x\cup y, \quad x\land y \defeq x\cap y \text{ for } x,y\in \mathcal{P}(S)$$
 }
+\bsp{}{$X\neq \varnothing$ and $S\subseteq \mathcal{P}(X)$ such that 
+    \begin{itemize}
+        \item $\varnothing\in S$
+        \item $X\in S$ 
+        \item $S$ is closed under (finite) intersections and unions and complements.
+    \end{itemize}
+    Then $(S; \varnothing,X,\cup,\cap,\overline{\:})$ is called a boolean algebra of sets and $\leq$ corresponds to $\subseteq$.
+}
+\note{}{Conversly, every boolean algebra is isom. to a boolean algebra of sets. (it can be embedded in )}
+\defin{}{Suppose $\mathcal{B}\models BA$ A non-empty $F\subseteq B$ is called a filter of $\mathcal{B}$ if
+\begin{itemize}
+    \item $0\notin F$
+    \item $\forall a \forall b a\in F \land b\in F \to a\cdot b\in F$
+    \item $\forall a \forall b a\in F \land a \leq b \to b\in F$
+\end{itemize}
+Ultrafilter of $\mathcal{B}$ is a filter $\mathcal{F}$ such that $\forall a\in B a\in \mathcal{F} \lor \overline{a}\in \mathcal{F}$
+$S(B) \defeq$ the set of all ultrafilters of $\mathcal{B}$ (stonespace of $\mathcal{B}$)
+}
+\note{}{
+    $\mathcal{B}\models BA$ then for a filter $F$.
+    \begin{enumerate}
+        \item $1\in F$
+        \item $F\subseteq B$ satisfying  TODO
+        \item $<a>= \{x\in S(B): a\in x\}$ where $a$ runs through $B$ forms a basis for a topology on the stonespace of $\mathcal{B}$
+    \end{enumerate}
+    Recall:
+    $(X,\tau), \tau \subseteq \mathcal{P}(X)$ is called a topological space, if 
+    \begin{enumerate}
+        \item[T1] $\varnothing, X\in \tau$
+        \item[T2] $\forall I \forall (\sigma_i)_i\in \tau^I: \bigcup_{i\in I}(\sigma_i)\in \tau$
+        \item[T3] $\forall n\in \NN \forall (\sigma_i)_i\in \tau^\{1,\dots n\}: \bigcup_{1\leq i\leq n}(\sigma_i)\in \tau$
+    \end{enumerate}
+    And $\tau'\subseteq \mathcal{P}(X)$ is a base for the topology $\tau$ on $X$,
+     if every open set in $\tau$ is the union of sets in $\tau'$.
+    Back on $<a>= \{x\in S(B): a\in x\}$:
+    \begin{itemize}
+        \item $\varnothing = <0>$, $S(B) = <1>$, $<a>\cap <b> = <a\cdot b>$
+    \end{itemize}
+    Every filter on $B$ can be extended to an ultrafilter on $\mathcal{B}$ (Zorn's Lemma).
+
+    In fact, suppose $\mathcal{F}\subseteq B$ has FIP. i.e. for any $n\in\NN$ $\forall f_1,\dots f_n\in \mathcal{F}$ it is $f_1\cdot \dots \cdot f_n \neq 0$.
+    (Exercise)
+}
+\defin{Stone space}{
+    A stone space is a non-empty topological space which 
+    \begin{enumerate}
+        \item has a basis of clopen sets
+        \item is compact (every open cover contains a finite subcover)
+        \item and hausdorff (every two distinct points can be seperated by open sets) 
+        \[\forall x \forall y x\neq y \to \exists \sigma_x\exists \sigma_y x\in \sigma_x \land y\in \sigma_y\land \sigma_x\cap \sigma_y= \varnothing\]
+    \end{enumerate}
+}
+\thm{Stone Representation Theorem}{
+    \begin{enumerate}
+        \item $\mathcal{B}\models BA$ then $S(B)$ is a Stone-space
+        \item If $S$ is a Stone space then the clopen subsets of $S$ form a boolean algebra denoted by $\mathcal{B}(S)$.
+        \item Every boolean algebra $\mathcal{B}$ is isomorphic to the boolean algebra $\mathcal{B}(S(B))$ with $a\mapsto \langle a\rangle$. Hence $\mathcal{B}$ is isomorphic to a subalgebra of boolean algebra $P(S(B))$
+        \item Every stonespace $S$ is homeomorphic to the stonespace $S(\mathcal{B}(S))$
+        $$x\mapsto \{a\in S(B) : x\in a\}$$
+    \end{enumerate}
+}{
+    \begin{enumerate}
+        \item We have the base for a topology $\langle a\rangle= \{x\in S(B): a\in x\}$. 
+        $\langle a\rangle$ is clopen : It is clearly open.
+        $$\langle a\rangle^c = \overline{\langle a\rangle} = \{x\in S(B): a\notin x\}=\{x\in S(B): \overline{a}\in x\}=  \langle \overline{a}\rangle$$
+        hausdorff: 
+        Let $x,y\in S(B)$ such that $x\neq y$.
+        then $\exists a\in B a\in x\land \overline{a}\in y$ 
+
+        then $x\in \langle a\rangle, y\in \langle \overline{a}\rangle$.
+
+        compact:
+        Fact $X$ is topological space then $T_{\text{FAE}}$ 
+
+        Every open cover of $X$ contains a finite subcover if 
+        any family of closed sets which has FIP, has non-empty intersection.
+
+        Supposed $(F_i)_{i\in I}$ a family of closed subsets of $S(B)$ such that $I\neq  \varnothing$ and $\bigcap_{i\in I}F_i = \varnothing$. we want to show that there is a finite intersection 
+        $\exists i_1, \dots i_k\in I \bigcap_{1\leq m\leq k}F_{i_m}$
+
+        WMA that $F_i = \langle a_i \rangle$ for some $a_i\in B$.
+        Assume $\bigcap_{i\in I}\langle a_i\rangle = \varnothing$.
+       
+        If $a_i\cdot \dots \cdot_{i_k} \neq 0$ For all $\{i_1,\dots i_k\}\subseteq I$ Then $\{a_i : i\in I\}\subseteq B$ has FIP, so it extends to an ultrafilter on $\mathcal{B}$ (using Zorns lemma).
+        \begin{multicols}{2}
+            $X$ set, a filter / ultrafilter on $X$ is some $\mathcal{F}\subseteq \mathcal{P}(X)$ s.th.
+            If $\mathcal{F}$ has FIP then $\mathcal{F}$ extends to UF
+        
+            $\mathcal{B}$ boolean algebra, then a filter / ultrafilter of $\mathcal{B}$ is a subset $\mathcal{F}\subseteq B$ s.th.
+            If $\mathcal{F}\subseteq B$ has FIP, then $\mathcal{F}$ extends to UF $\mathcal{U}$ of $\mathcal{B}$
+            i.e. $\forall i\in I a_i\in \mathcal{U}$ so $\mathcal{U}\in \bigcap_{i\in I}F_i $ but we assumed $\bigcap_{i\in I}\langle a_i\rangle = \varnothing$
+        \end{multicols}
+        So there exists some $i_1\dots i_k$ such that $\bigcap_{1\leq j\leq k}\langle a_{i_j}\rangle =\varnothing$
+    \end{enumerate}
+}
+\defin{Atomic, Atomless}{An atom is an element of a boolean algebra such that $a\neq 0$ and there is no element in the boolean algebra that is strictly inbetween $0$ and $a$.
+\[\forall y (0\leq y\leq a\to (y=0\lor y=a))\]
+A boolean algebra $\mathcal{B}$ is called atomic, if 
+\[\forall a (a\neq 0 \to \exists y (y\leq a \land y \text{ is atomic}))\]
+A boolean algebra is atomless if it contains no atoms
+}
+\note{}{There exists boolean algebras that are neither atomic nor atomless.}
+\note{}{Axioms for atomic boolean algebras: add
+    \[\forall a (a\neq 0 \to \exists y (y\leq x \land y\neq 0 \land \forall z(0\leq z\leq y\to (z=0\lor z=y))))\]
+
+    Axioms for atomless: add
+    \[\forall y y\neq 0 \to \exists z (0<z<y)\]
+}
+\subsection*{From here on are the lecture notes of last year}
+As they are in a diffrent notation than this year I will rephrase them after we have discussed them in the lecture.
+%from here are the lecture notes of last year
 \lemma{}{ Let $(B,',\lor,\land,0,1)$ be a boolean algebra. Then it holds
     \begin{enumerate}[label=\alph*)]
         \item $0' = 1$, $1' = 0$

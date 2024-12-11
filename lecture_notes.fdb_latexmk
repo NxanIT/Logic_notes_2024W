@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber lecture_notes"] 1733429306 "lecture_notes.bcf" "lecture_notes.bbl" "lecture_notes" 1733430098 0
+["biber lecture_notes"] 1733429306 "lecture_notes.bcf" "lecture_notes.bbl" "lecture_notes" 1733940820 0
   "./test.bib" 1729890141 732 f286dd09266ad12df2a91bb9520ff7d3 ""
-  "lecture_notes.bcf" 1733430097 108011 25abffc7098f3abc17834b49aa797d3a "pdflatex"
+  "lecture_notes.bcf" 1733940819 108011 25abffc7098f3abc17834b49aa797d3a "pdflatex"
   (generated)
   "lecture_notes.bbl"
   "lecture_notes.blg"
   (rewritten before read)
-["pdflatex"] 1733430093 "n:/Uni-Laptop/5-LOG/Github_lecture_notes_2024/Logic_notes_2024W-1/lecture_notes.tex" "lecture_notes.pdf" "lecture_notes" 1733430098 0
-  "BooleanAlgebra.tex" 1732911316 6574 bc5201a66b62e5d5a83a9432b1ee11e5 ""
+["pdflatex"] 1733940813 "n:/Uni-Laptop/5-LOG/Github_lecture_notes_2024/Logic_notes_2024W-1/lecture_notes.tex" "lecture_notes.pdf" "lecture_notes" 1733940820 0
+  "BooleanAlgebra.tex" 1733940754 15001 1a13a4e65d919b00956d2e6cfad0b720 ""
   "C:/Users/Nxan/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1730761245 125726 e2d1bc8ee1b5d56b291e4622becca371 ""
   "C:/Users/Nxan/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1682109081 11548 e41855b01d0d8e128a1d9691e07157b4 ""
   "C:/Users/Nxan/AppData/Local/MiKTeX/fonts/tfm/public/stmaryrd/stmary10.tfm" 1730761247 848 f478e0761563bbc369eca609a1741348 ""
@@ -243,21 +243,21 @@
   "C:/Users/Nxan/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656233290 56148 51a9a8571c07b9921892ae11063ae853 ""
   "C:/Users/Nxan/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656233319 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "FirstOrderLogic.tex" 1733422841 73311 ba7ca0ec54721069ca1fcd7fbbd9f90f ""
-  "ModelTheory.tex" 1733430027 43271 e56dea2f79ee509e05b5148dfc621715 ""
+  "ModelTheory.tex" 1733827567 43318 2608de10479815e7561d7fde88d04bb6 ""
   "PropositionalLogic.tex" 1731617437 36255 e006a59a8f40ed4bd01fc952de0a55e6 ""
   "SetTheory.tex" 1729890141 2587 ef6c39be2380c698c2ed6844a760a329 ""
   "images//1-extree.png" 1729890141 210346 e2dc2f11baa99e5d0a502c1c32b92dbb ""
-  "lecture_notes.abf" 1733430097 1276 bfac53c9132689e45fbdc89db656c2c9 "pdflatex"
-  "lecture_notes.aux" 1733430097 38870 67ecc8f378f848807d01441131fc8aaa "pdflatex"
+  "lecture_notes.abf" 1733940819 1276 bfac53c9132689e45fbdc89db656c2c9 "pdflatex"
+  "lecture_notes.aux" 1733940819 39679 5bd264308a75df35421aa7e6fa37dcd0 "pdflatex"
   "lecture_notes.bbl" 1733429366 2030 d23433d713f0313d33de9d50308b38fa "biber lecture_notes"
-  "lecture_notes.dfn" 1733430097 9099 8e691ee9c3984170e6fed99052ff4ad1 "pdflatex"
-  "lecture_notes.otf" 1733430097 2645 1c9d34fd015069b1e114b1ac94c44b53 "pdflatex"
-  "lecture_notes.out" 1733430097 5079 b1458919836bc17cfb43d9c9b1a635fa "pdflatex"
-  "lecture_notes.run.xml" 1733430097 2362 0683b526172f0be20be8e64b620498af "pdflatex"
-  "lecture_notes.tex" 1733430092 11102 aea0c44654e26554ec0a1a02bbfa9df8 ""
-  "lecture_notes.thn" 1733430097 9283 e67e03497aa1aeb41fdcbb863e1c763d "pdflatex"
-  "lecture_notes.toc" 1733430097 2954 7ca06c6b1e78437e2f2c78cc4343bd2d "pdflatex"
-  "n:/Uni-Laptop/5-LOG/Github_lecture_notes_2024/Logic_notes_2024W-1/lecture_notes.tex" 1733430092 11102 aea0c44654e26554ec0a1a02bbfa9df8 ""
+  "lecture_notes.dfn" 1733940819 9560 ec0371ff700ffbfab498487ae16d2a65 "pdflatex"
+  "lecture_notes.otf" 1733940819 2645 e682f4807bca33de9e1b860a837310e0 "pdflatex"
+  "lecture_notes.out" 1733940819 5079 b1458919836bc17cfb43d9c9b1a635fa "pdflatex"
+  "lecture_notes.run.xml" 1733940819 2362 0683b526172f0be20be8e64b620498af "pdflatex"
+  "lecture_notes.tex" 1733940812 11102 964178b74f5659004833f1f7b0d46e6a ""
+  "lecture_notes.thn" 1733940819 9411 f64a9741357b9cb4c53de209b7de8ee5 "pdflatex"
+  "lecture_notes.toc" 1733940819 2954 8bca25a2dcf838de91b7b938c6a5d243 "pdflatex"
+  "n:/Uni-Laptop/5-LOG/Github_lecture_notes_2024/Logic_notes_2024W-1/lecture_notes.tex" 1733940812 11102 964178b74f5659004833f1f7b0d46e6a ""
   (generated)
   "lecture_notes.abf"
   "lecture_notes.aux"

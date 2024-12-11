@@ -514,8 +514,11 @@ Base step:
 
 \begin{proof}
     Proof of Monotonicity theorem:
-    Consider $$X \defeq \biggl\{x\in (a,b) : \stackrel{\text{on some subinterval containing $x$,}}
-    {\text{$f$ is either constant or strictly monotone and continuous}} \biggr\}$$
+    Consider 
+    $$X \defeq \biggl\{x\in (a,b) : \begin{aligned}
+        &\text{on some subinterval containing $x$,}\\
+        &\text{$f$ is either constant or strictly monotone and continuous}
+    \end{aligned} \biggr\}$$
     remark: $X$ is a definable set.
     Look at $(a,b)-X$ is finite. If not, it would contain subinterval use lemma to get contradiction.
     WMA:\addAbbrev{WMA}{We may assume} $X = (a,b)$ in particular we may assume $f$ continuous.
@@ -785,3 +788,4 @@ If $R\equiv R'$ then $R'$ is o-minimal.
     $\mathcal{R}'\models \dots$.
 }
 %\note{}{0-min is strong o-minimality.} TODO
+
