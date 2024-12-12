@@ -1,5 +1,6 @@
 \chapter{Boolean Algebra}
-\stepcounter{section}
+From \cite{krivine1998théorie}?
+\section{Definition of a boolean algebra}
 Our language in this chapter will be $\mathcal{L} = \{0,1,+,\cdot,\overline{\phantom{x}}\}$, where $+,\cdot$ are binary operations and $\overline{\phantom{x}}$ is a unary operation.
  
 The axioms for boolean algebras are 
@@ -49,6 +50,7 @@ In this notion the supremum and infimum of two elements are equal to
     Then $(S; \varnothing,X,\cup,\cap,\overline{\:})$ is called a boolean algebra of sets and $\leq$ corresponds to $\subseteq$.
 }
 \note{}{Conversly, every boolean algebra is isom. to a boolean algebra of sets. (it can be embedded in )}
+\section{Stone Representation Theorem}
 \defin{}{Suppose $\mathcal{B}\models BA$ A non-empty $F\subseteq B$ is called a filter of $\mathcal{B}$ if
 \begin{itemize}
     \item $0\notin F$
@@ -148,6 +150,95 @@ A boolean algebra is atomless if it contains no atoms
     Axioms for atomless: add
     \[\forall y y\neq 0 \to \exists z (0<z<y)\]
 }
+
+
+\section{Lindenbaum-Tarski Algebras}
+Let $\mathcal{L}$ be a first order Language, $\mathcal{L}_0$ the set of all $\mathcal{L}$-sentences and $\sim$ the logical equivalence relation.
+On the quotient set $\mathcal{L}_0/_\sim$ we can define $\land,\lor,\lnot$ py passing to representatives. This is well defined and does not depend on the choice of representatives.
+
+\defin{Lindenbaum-Tarski algebra}{With the above notation
+    $$B_L = (\mathcal{L}_0/_\sim;\bot/_\sim,\top/_\sim,\lor,\land,\lnot)$$ forms then a boolean algebra.
+(it is called Lindenbaum-Tarski algebra for $\mathcal{L}$)
+
+Note that $\bot$ is logically equivalent to $\exists x x\neq x$
+and $\top$ is logically equivalent to $\forall x x=x$
+
+The construction can be extended to equivalence modulo some $\mathcal{L}$-theory $T$ (or $T\subseteq \mathcal{L}_0$)
+$\underline{x} = (x_1,\dots x_n)$
+For $\varphi,\psi\in \mathcal{L}_{\underline{x}}$, where $\mathcal{L}_{\underline{x}}$ are the $\mathcal{L}$-formulas with free variables among $\underline{x}$
+
+Define $\varphi\leq_T\psi$ iff $T\models \forall \underline{x} (\varphi\to \psi)$
+
+We can define $T$-equivalence: $\varphi \sim_T \psi$ iff $\varphi\leq_T \psi$ and $\psi\leq_T \varphi$
+
+$$\mathcal{B}_n = ({\mathcal{L}_{\underline{x}}}/_{\sim_T}; \bot/_{\sim_T},\top/_{\sim_T},\land,\lor,\lnot)$$
+Is then again a boolean algebra, whose isomorphism type depends only on $T$ and it is called the $n$-th Lindenbaum-Tarski-algebra of $T$.
+In the case we take the $0$-th L-T algebra of $\varnothing$ $B_L= B_0(\varnothing^{\models0})$
+
+}
+
+\defin{Recap}{
+    \begin{itemize}
+        \item The deductive closure of a set of sentences $\Sigma$ is $\{\varphi : \sigma \models \varphi\}$
+        \item A contradiction is any sentence of the form $\varphi \land \lnot \varphi$
+        \item A set of sentences is consistent, if its deductive closure does not contain a contradiction.
+        \item A $\mathcal{L}$-theory is a set of sentences that is consistent and deductively closed.
+    \end{itemize}
+}
+The question we know ask ourselves is: what is the stone space of a Lindenbaum-Tarski algebra?
+\note{}{
+    \begin{itemize}
+        \item $\mathcal{L}$-theories are indeed exactly the filters of $\mathcal{B}_L$
+        \item complete $\mathcal{L}$-theories are exactly the ultrafilters of $\mathcal{B}_L$
+    \end{itemize}
+}
+Let $S_L$ equal the set of all complete $\mathcal{L}$-theories then our compactness theorem
+
+\[\Gamma \models \varphi \implies \exists \Gamma'\subseteq \Gamma \text{ finite } \Gamma\models \varphi\]
+is equivalent to 
+\thm{Compactness Theorem *}{
+    $S_L$ with stone topology is compact.
+}{}
+Two things we would like to show:
+\begin{itemize}
+    \item Compactness theorem $\implies$ Compactness theorem *\\
+    By showing that $S_L=S(B_\mathcal{L})$
+    \begin{claimproof}
+        \begin{itemize}
+            \item[$\subseteq$] Let $T$ be complete $\mathcal{L}$-Theory. by consistency and abuse of notation $0\notin T$. and $T$ is closed under conjunction.
+            So for all $\varphi,\psi\in T$ we have $\varphi\land\psi\in T$.
+            $\varphi\in T$ and $\varphi\leq \psi$ then $\models \varphi\to \psi$ so $\varphi\models \psi$ and $\psi\in T$ bc. $T$ is deductively closed.
+            \item[$\supseteq$] Let $x\in S(\mathcal{B}_\mathcal{L})$ 
+            completeness: By maximality of $x$, $\forall \varphi$ either $\varphi/_\sim \in x$ or $\lnot \varphi/_\sim\in x$.
+
+            deductively cloesdness: $x\models \gamma$ then by compactness Theorem $\exists x'\subseteq x x'\models \gamma$ and $x'\in x$, so by if $x'\in x$ and $x'\leq \gamma$, then $\gamma\in x$ hence deductive closure
+
+            consistency: $0\notin x$ and $x$ is deductively closed.
+        \end{itemize}
+    \end{claimproof}
+    \item Compactness theorem * $\implies$ compactness theorem
+    $\Gamma = \{\gamma_i : i\in I\}$ set of $\mathcal{L}$-sentences.
+    We want: $\Gamma\models \varphi$ then $\exists \Gamma'\subseteq \Gamma \text{ finite } \Gamma'\models \varphi$
+
+    \begin{claimproof}
+        Suppose, by contradiction that it is not the case.
+
+        $\forall I'\stackrel{\text{ fin }}{\subseteq} I \{\gamma_i : i\in I'\}\cup \{\lnot \varphi\}$ is consistent.
+
+        \[\implies \forall I'\stackrel{\text{ fin }}{\subseteq} I \bigcap_{i\in I'} \langle\varphi_i\rangle\cap \langle\lnot \varphi\rangle \neq \varnothing\]
+
+        \[\{\langle\varphi_i\rangle : i\in I\}\cup \{ \langle\lnot \varphi\rangle \}\]
+        is a collection of closed sets with FIP.
+        By using compactness of $S_L$ with stone topology,
+        \[\bigcap_{i\in I} \langle\varphi_i\rangle\cap \langle\lnot \varphi\rangle \neq \varnothing\]
+        hence $\Gamma \not\models \varphi$.
+    \end{claimproof}
+
+\end{itemize}
+
+
+
+
 \subsection*{From here on are the lecture notes of last year}
 As they are in a diffrent notation than this year I will rephrase them after we have discussed them in the lecture.
 %from here are the lecture notes of last year

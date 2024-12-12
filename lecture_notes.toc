@@ -32,5 +32,8 @@
 \contentsline {section}{\numberline {3.6}o-minimal ordered groups and rings}{36}{section.3.6}%
 \contentsline {subsubsection}{Cell decomposition}{38}{subsubsection*.8}%
 \contentsline {chapter}{\numberline {4}Boolean Algebra}{43}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Set Theory}{48}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Axioms of ZFC}{48}{section.5.1}%
+\contentsline {section}{\numberline {4.1}Definition of a boolean algebra}{43}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Stone Representation Theorem}{44}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Lindenbaum-Tarski Algebras}{46}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Set Theory}{49}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Axioms of ZFC}{49}{section.5.1}%

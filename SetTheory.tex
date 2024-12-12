@@ -1,36 +1,100 @@
 \chapter{Set Theory}
+The contents on this chapter are at least partially sourced on \cite{krivine1998théorie}.
 \bsp{Russel's paradox}{Let $A = \{a : a\notin a\}$. If any collection of elements is a set, then $A$ would be a set.
 Question: is $A\in A$? if yes, then $A\notin A$, if not then $A\in A$}
 \noindent Trying to resolve this, we will introduce the ZFC (Zermelo-Frankel axioms w/ choice) System.
 Let $\mathcal{L}=\{\in\}$ be a Language of first order, where $\in$ \dots binary relation "beeing element of"
 For $(\mathcal{U},\in)$ 
-If $(\mathcal{U},\in)\models \text{ZFC}$, then the elements of the universe $\mathcal{U}$ are called sets.
-
-TODO
+If $\mathcal{A} = (\mathcal{U},\in^\mathcal{A})\models \text{ZFC}$, then the elements of the universe $\mathcal{U}$ are called sets.
+We will show roughly that some definably sets are not sets (in the sense of ZFC), others are not. The latter will be called classes.
 \section{Axioms of ZFC}
-
 \defin{Axiom of extensionality}{\label{Ax1}
     $$\forall x \forall y (x=y \leftrightarrow \forall u (u\in x \leftrightarrow u\in y))$$}
-\defin{Pairing Axiom}{for any two sets $a,b$ one can form a set whose elements are precicely $a,b$
+In other words, two sets are the same if they have the same elements. This will give us later uniqueness in construction of other sets.
+\defin{Pairing Axiom}{\label{Ax2}
+    for any two sets $a,b$ one can form a set whose elements are precicely $a,b$
 $$\forall x\forall y \exists z (u\in z \leftrightarrow (u = x \lor u = y))$$
 Our notation will be $z=\{x,y\}$
 }
-\note{}{$\{x,y\}$ is unique by \ref{Ax1}}
-\lemma{}{Let $x,y$ be sets. We define $(x,y) \defeq \{\{x\},\{x,y\} \}$. Then it holds $(x,y) = (a,b)$ iff $x = a$ and $y = b$
-}{\begin{itemize}
-    \item if $x=y$, then $(x,y) = \{\{x\} \}$ therefore $a=b$ and by \ref{Ax1} it holds $x=a$.
-    \item if $x\neq y$, then $\{\{x\},\{x,y\} \} = \{\{a\},\{a,b\} \}$ iff $\{x\} = \{a\}$ and $\{x,y\} = \{a,b\}$. That is, iff $x=a$ and $y=b$.
-\end{itemize} }
-TODO oredered n-tuples
+In words: For any two sets there exists a set whose members are those two sets.
+
+\note{}{
+    \begin{itemize}
+        \item $\{x,y\}$ is unique by \ref{Ax1}
+        \item $\{x\}$ is a set. from \ref{Ax2}, take $x= y$
+    \end{itemize}
+}
+\lemma{}{Let $x,y$ be sets. We define the ordered pair $(x,y) \defeq \{\{x\},\{x,y\} \}$. 
+    Then it holds $(x,y) = (a,b)$ iff $x = a$ and $y = b$
+}{By cases
+    \begin{itemize}
+        \item if $x=y$, then $(x,y) = \{\{x\} \}$ therefore $a=b$ and by \ref{Ax1} it holds $x=a$.
+        \item if $x\neq y$, then $\{\{x\},\{x,y\} \} = \{\{a\},\{a,b\} \}$ iff $\{x\} = \{a\}$ and $\{x,y\} = \{a,b\}$. That is, iff $x=a$ and $y=b$.
+    \end{itemize} }
+\note{}{The set $(x,y)$ exists, because its obtained by repeatedly using \ref{Ax2}}
+
+\lemma{}{Let $x,y,a,b$ be sets. Then $(x,y) = (a,b)$ iff $x = a$ and $y = b$}{
+    \begin{itemize}
+        \item case $x=y$, then $(x,y) = \{\{x\}\}$ is a singleton then $(a,b)$ is a singleton, 
+        wlog $\{a\} = \{a,b\}$ then $a = b = x$.
+        \item case $x\neq y$ and $\{\{x\},\{x,y\}\} = \{\{a\},\{a,b\}\}$ then $\{x\} = \{a\}$ and $\{x,y\} = \{a,b\}$ because by \ref{Ax1} a singleton can not be equal to a set of size $2$.
+    \end{itemize}
+}
+\defin{n-tuples}{
+    Define $(x_1,\dots x_n)$ inductively:
+    \begin{itemize}
+        \item $(x_1,x_2)$ already defined
+        \item $(x_1,\dots x_n) \defeq (x_1 (x_2,\dots x_n))$
+    \end{itemize}
+}
+\lemma{}{For all $n>1$
+    $(x_1,\dots, x_n) = (y_1,\dots, y_m)$ iff $n=m$ and $\forall i\leq n x_i = y_i$
+}{Exercise}
+
 \defin{Union Axiom}{For every set $x$ there is a set $z$ consisting of all elements of the elements of $x$.
-    $$\forall x \exists z \forall y (y\in z \leftrightarrow (\exists u u\in x \land y\in u))$$
-    We call $z$ the union of $x$, notation: $\bigcup_x\defeq z$}
+    $$\forall x \exists z \forall y (y\in z \leftrightarrow \exists u (u\in x \land y\in u))$$
+    We call $z$ the union of $x$, notation: $\cup_x\defeq z$}
+
+\defin{}{\[x\cup y \defeq \bigcup_{\{x,y\}}\]
+
+}
+\bsp{}{
+    \begin{enumerate}
+        \item $\bigcup_{(x,y)} = \{x,y\}$.
+        \item $(x_1,x_2,\dots x_n) = \bigcup_{\{x_1\}, {x_2,\dots x_n}}$ 
+    \end{enumerate}
+}   
+\note{}{
+    \begin{itemize}
+        \item $\forall x_1, \dots x_n$ then there is axactly one set with elements $x_1,\dots x_n$
+
+        \item $x\cup (y\cup z) = (x\cup y)\cup z$
+    \end{itemize}
+}
+
 \defin{Power set Axiom}{Let $x\subseteq y$ be the abbreviation for $\forall z(z \in x \to z\in y)$ The \graybf{Powerset Axiom} states, that for every set $x$
 there exists a set $z$ consisting of all subsetes $y\subseteq x$ that are themselve sets.
     $$\forall x\exists z \forall y (y\in z \leftrightarrow y\subseteq x)$$
     Notation: $\mathcal{P}(x)\defeq z$.
 }
-TODO class relations
+Or in words: ``For every set $x$ there is a set $z$ consisting of all subcollections of $x$ that are themselve sets.''
+class relations  
+
+
+\defin{Classes}{All the unary $\mathcal{L}$-definable relations (w/ parameters) are called classes.}
+\bsp{}{
+    \begin{itemize}
+        \item $\varphi (x) : x = x$ defines a class that is not a set
+        \item $\varphi(x) : \exists u (u\in x \land \forall v\in u (v\in x))$
+    \end{itemize}
+}
+\defin{Class functions}{
+    Suppose we have a formula $\phi(x_1,\dots x_n, y)$. Then we say $\phi$ defines a class function $R_\phi$ iff 
+    \[\forall x_1\dots \forall x_n \forall y \forall y' ((\phi(x,y)\land \phi(\underline{x},y'))\to y = y')\]
+    \[\dom R_\phi : \: \exists y \phi( \underline{x},y)\]
+    \[\imag R_\phi : \: \exists \underline{x} \phi(\underline{x},y)\]
+    Note that $R_\phi(\underline{x})=y$ iff $\phi(\underline{x},y)$
+}
 \defin{Axiom of replacement / substitution}{
     Let $\varphi(x,y,\underbar{a})$ a $\mathcal{L}$-fla., w/ free variables among $x,y$ and set-parameters $\underbar{a}$.
     Suppose $\varphi$ defines a class function on $\mathcal{U}$, than the followoing is an axiom:

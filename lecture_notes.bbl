@@ -18,7 +18,7 @@
 
 
 \refsection{0}
-  \datalist[entry]{nty/global//global/global}
+  \datalist[entry]{anyt/global//global/global}
     \entry{EndertonHerbertB2001AMIt}{book}{}
       \name{author}{2}{}{%
         {{hash=b50c15602a78b51cbc6946ab32488502}{%
@@ -48,6 +48,7 @@
       \strng{authorbibnamehash}{84b59b37e77477f40161b71218785bf9}
       \strng{authornamehash}{84b59b37e77477f40161b71218785bf9}
       \strng{authorfullhash}{84b59b37e77477f40161b71218785bf9}
+      \field{labelalpha}{EE01}
       \field{sortinit}{E}
       \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
       \field{labelnamesource}{author}
@@ -56,6 +57,67 @@
       \field{title}{A Mathematical Introduction to Logic}
       \field{year}{2001}
       \keyw{Logic Symbolic and mathematical ; Mathematics}
+    \endentry
+    \entry{krivine1998théorie}{book}{}
+      \name{author}{1}{}{%
+        {{hash=9609c0fc31b7b44c94b85e01406f0b10}{%
+           family={Krivine},
+           familyi={K\bibinitperiod},
+           given={J.L.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cassini}%
+      }
+      \strng{namehash}{9609c0fc31b7b44c94b85e01406f0b10}
+      \strng{fullhash}{9609c0fc31b7b44c94b85e01406f0b10}
+      \strng{bibnamehash}{9609c0fc31b7b44c94b85e01406f0b10}
+      \strng{authorbibnamehash}{9609c0fc31b7b44c94b85e01406f0b10}
+      \strng{authornamehash}{9609c0fc31b7b44c94b85e01406f0b10}
+      \strng{authorfullhash}{9609c0fc31b7b44c94b85e01406f0b10}
+      \field{labelalpha}{Kri98}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9782842250140}
+      \field{series}{Nouvelle bibliothèque mathématique}
+      \field{title}{Théorie des ensembles}
+      \field{year}{1998}
+      \verb{urlraw}
+      \verb https://books.google.at/books?id=O4A2AAAACAAJ
+      \endverb
+      \verb{url}
+      \verb https://books.google.at/books?id=O4A2AAAACAAJ
+      \endverb
+    \endentry
+    \entry{van1998tame}{book}{}
+      \name{author}{1}{}{%
+        {{hash=97dd7a399607209d59e3d8f7df15161c}{%
+           family={Van\bibnamedelimb den\bibnamedelima Dries},
+           familyi={V\bibinitperiod\bibinitdelim d\bibinitperiod\bibinitdelim D\bibinitperiod},
+           given={Lou},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{97dd7a399607209d59e3d8f7df15161c}
+      \strng{fullhash}{97dd7a399607209d59e3d8f7df15161c}
+      \strng{bibnamehash}{97dd7a399607209d59e3d8f7df15161c}
+      \strng{authorbibnamehash}{97dd7a399607209d59e3d8f7df15161c}
+      \strng{authornamehash}{97dd7a399607209d59e3d8f7df15161c}
+      \strng{authorfullhash}{97dd7a399607209d59e3d8f7df15161c}
+      \field{labelalpha}{Van98}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9780511525919}
+      \field{series}{London Mathematical Society lecture note series}
+      \field{title}{Tame topology and o-minimal structures}
+      \field{volume}{248}
+      \field{year}{1998}
     \endentry
   \enddatalist
 \endrefsection

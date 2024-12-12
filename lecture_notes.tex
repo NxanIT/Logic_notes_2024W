@@ -4,7 +4,7 @@
 \usepackage{titlesec}%required for \titleformat
 \usepackage{mathtools}%automatically loads amsmath and is required for \defeq macro
 \usepackage{tcolorbox}%required for \definecolor
-\usepackage[colorlinks=true, linkcolor=purple2]{hyperref}
+\usepackage[colorlinks=true, linkcolor=purple2,citecolor=purple]{hyperref}
 \usepackage{geometry}
 \usepackage[inline]{enumitem}%for "enumerate*" (i.e. horizontal lists)
 \usepackage{ifthen}%for "ifthenelse"
@@ -12,13 +12,14 @@
 \usepackage{lastpage}
 \usepackage{datetime2}
 \usepackage{tocloft}
-\usepackage[backend=biber]{biblatex}
+\usepackage[backend=biber,style=alphabetic]{biblatex}
 \usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{float}%benötigt für floating point-positionierung eines bildes
 \usepackage{stmaryrd}%for double left brackets
 \usepackage{nameref}%for section names in list of theorems
 \usepackage{multicol}%for multi colums in list of theorems
+\usepackage[acronym]{glossaries}%package to work with glossaries, %2024-12-12 not used
 \graphicspath{ {./images/} }%relativen pfad für bilder eingeben
 
 \makeatletter
@@ -90,7 +91,7 @@
 } % before-code
 [
     \vspace{-0.2cm}
-    \stepcounter{propcount}
+    %\stepcounter{propcount}
     \addcontentsline{thn}{section}{\color{black}\currentname}
 ] % after-code
 
@@ -132,6 +133,7 @@
 %\DeclareMathOperator{command}{definition}
 \DeclareMathOperator{\Th}{Th}
 \DeclareMathOperator{\st}{st}
+\DeclareMathOperator{\imag}{im}
 
 \DeclareMathOperator{\propM}{Prop} % for example in boolean algebra
 %\DeclareMathOperator{\gdw}{\quad:gdw\quad}
@@ -188,8 +190,6 @@
 \newtheorem{propo}[propcount]{Proposition}
 \newcommand{\prop}[3]{
     %Input: 1-Name(or empty), 2-statement, 3-proof(or empty)
-    \addcontentsline{thn}{subsection}{\color{rhoda}Prop. \protect{\color{tanita}{\thepropcount \hspace{5px} #1}}} 
-    
     \ifSimplifiedVersion
         Prop: #1 - #2
 
@@ -200,6 +200,7 @@
         \end{propo}
         \color{black}
     \fi
+    \addcontentsline{thn}{subsection}{\color{rhoda}Prop. \protect{\color{tanita}{\thepropcount \hspace{5px} #1}}} 
 }
 %\newcounter{theoremcount}[section]
 %\renewcommand{\thetheoremcount}{\thesection.\arabic{propcount}}
@@ -207,8 +208,6 @@
 \newtheorem{theorem}[propcount]{Theorem}
 \newcommand{\thm}[3]{
     %Input: 1-Name(or empty), 2-statement, 3-proof(or empty)
-    \addcontentsline{thn}{subsection}{\color{rhoda}Thm. \protect{\color{tanita}{\thepropcount \hspace{5px} #1}}} 
-    
     \ifSimplifiedVersion
         Prop: #1 - #2
 
@@ -219,6 +218,7 @@
         \end{theorem}
         \color{black}
     \fi
+    \addcontentsline{thn}{subsection}{\color{rhoda}Thm. \protect{\color{tanita}{\thepropcount \hspace{5px} #1}}} 
 }
 
 \newtheorem{lemmata}[propcount]{Lemma}
@@ -303,7 +303,7 @@
 \fancyhead[LE]{\small\leftmark}
 \fancyhead[LO,RE]{Logic Lecture Notes 2024W}
 \fancyfoot[C]{}
-\fancyfoot[LO,RE]{\fontfamily{cmtt}\small\color{gray}J.Petermann: LogicNotes [V0.5.1-\today{ }at \DTMcurrenttime] }% old: \href[]{https://creativecommons.org/licenses/by-nc-nd/3.0/de/}{\color{gray}CC BY-NC-ND 3.0 DE}
+\fancyfoot[LO,RE]{\fontfamily{cmtt}\small\color{gray}J.Petermann: LogicNotes [V0.6.0-\today{ }at \DTMcurrenttime] }% old: \href[]{https://creativecommons.org/licenses/by-nc-nd/3.0/de/}{\color{gray}CC BY-NC-ND 3.0 DE}
 \fancyfoot[LE,RO]{Seite \thepage \hspace{3pt}von \pageref*{LastPage}}
 
 \begin{center}
@@ -316,10 +316,7 @@
     This is a summary of the material discussed in the lecture "Mathematische Logik". 
     It is still a work in progress and there \textbf{may be mistakes} in this work. 
     If you find any, feel free to let me know and I will correct them\\\hspace{10px}
-    The content of this script is intended for educational purposes only. 
-    It relies on the book \cite{EndertonHerbertB2001AMIt} for which all rights belong to their respective 
-    owners and I do not claim ownership over this content. 
-    However the \LaTeX code I wrote is entirely my own work and is open source under the \href[]{https://choosealicense.com/licenses/mit/}{\color{gray}MIT-Licence}.
+    The content of this script relies on \cite{EndertonHerbertB2001AMIt}, \cite{van1998tame} and \cite{krivine1998théorie}
     Dieses Skript ist noch nicht vollständig und wird regelmäßig aktualisiert.}
 }
 \end{center}
@@ -328,7 +325,7 @@
 \setlength{\cftaftertoctitleskip}{0em}
 \tableofcontents
 \begin{multicols}{2}
-    \listofabbreviations
+    \listofabbreviations%\printglossary[type=\acronymtype]
 \end{multicols}
 
 

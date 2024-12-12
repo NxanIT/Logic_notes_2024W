@@ -1,6 +1,6 @@
 \chapter{Model Theory}
-
-\section{Löwenheim-Skolem-Theorem}
+The sections \ref{mt:sec:LST} to \ref{MT:sec:NSA} are sourced from \cite[chapter~1]{EndertonHerbertB2001AMIt} and and the theory of o-minimality (from \ref{MT:sec:o-min} onwards) can be found in \cite{van1998tame}.
+\section{Löwenheim-Skolem-Theorem}\label{mt:sec:LST}
 \prop{}{Supposee $\Gamma$ is a set of $\mathcal{L}$-formulas. $|\mathcal{L}| = \lambda$ and lets assume 
     $\Gamma$ is satisfiable in some infinite structure.\\
     Then for every cardinal $\kappa\geq \lambda$, $\Gamma$ is satisfiable in a structure of cardinality $\kappa$.
@@ -210,7 +210,7 @@ Another use of \L oś-Vaught
     TODO
 }
 
-\section{Nonstandard Analysis}
+\section{Nonstandard Analysis}\label{MT:sec:NSA}
 %TODO historical background
 \begin{enumerate}
     \item Language $\mathcal{L}$: $=$, $\forall$ ranging over $\RR$,
@@ -374,7 +374,7 @@ $\frac{dF}{dx}$ is an actual division.
         \[\frac{dF}{dx} =0 = F'(G(a))\frac{dG}{dx}\]
     \end{itemize}
 }
-\section{o-minimality}
+\section{o-minimality}\label{MT:sec:o-min}
 \bsp{}{
     $\overline{\RR} = (\RR,+,-,\cdot, 0,1,\leq)$ $\overline{\RR} = (\RR,\leq)$ TODO or at least 
     in a very similar language, 
@@ -634,7 +634,7 @@ On of the important tools in o-minimality theory is the cell cecomposition theor
     \begin{itemize}
         \item $(0)$-cell: $\{r\}\subseteq R$,
         \item $(1)$-cell: $(a,b)\subseteq R$, $a<b$, $a,b\in R$.
-        \item $(i_1,\dots i_k, 0)$-cell: $\Gamma f\subseteq R^{k+1}$, where $f$ is definable and continuous function $f:$TODO
+        \item $(i_1,\dots i_k, 0)$-cell: $\Gamma f\subseteq R^{k+1}$, where $f$ is definable and continuous function $f:X\to R$, where $X$ is a $(i_1,\dots, i_k)$-cell
         \item $(i_1,\dots i_k, 1)$-cell: is a the set 
         $$(f,g) = \{(\underline{x},x_{k+1})\in R^{k+1} : f(\underline{x}) < x_{k+1}<g(\underline{x})\}$$ 
         $f:X\to R, g: X\to R$, $f<g$ $f,g$ are definable and continuous on $X$, which is a $(i_1,\dots i_k)$-cell. $f$ may be constantly $-\infty$ and $g$ may be constantly $\infty$.
@@ -644,7 +644,7 @@ On of the important tools in o-minimality theory is the cell cecomposition theor
     \begin{itemize}
         \item every $(1,\dots 1)$-cell are precisely the cells that are open in their ambient space. continuity of the functions is important.
         \item The union of finitlely many non-open cells has empty interior.
-        \item Each cells is cocally closed i.e. open in its closure.
+        \item Each cells is locally closed i.e. open in its closure.
         \item Each cell is homeomorphic to an open cell under a coordinate projection Example $(1,0,0,1)$-cell or $(1,0)$-cell with $(x_1,x_2)\mapsto x_2$
         \item If $A\subseteq R^{n+1}$, then $\pi A\subseteq R^n$ cell $\pi(x_1,\dots x_{n+1})\mapsto (x_1,\dots x_n)$
         \item Every cell is definalby connected. You can proof this by induction on the cell. $\{r\}$ and open intervals are definably connected. If the projection of a cell is definably connected, then the fibre above it is either an open interval or a single point. It is even definable path connected. If there would exist an open disjoint cover there exists an open disjoint cover of the fibre, which is not possible.
@@ -660,7 +660,7 @@ On of the important tools in o-minimality theory is the cell cecomposition theor
 \thm{Cell decomposition}{
     \begin{itemize}
         \item[$(\RomanNum{1} _m)$] Let  $A_1,\dots A_k\subseteq R^m$ definable sets. Then there is a decomposition of $R^m$ partitioning each $A_i$.
-        \item[$(\RomanNum{2} _m)$] Given a definalble function $f: A\to R$, $A\subseteq R^m$ there is a decomposition $\mathcal{D}$ of $R^m$ partitioning $A$ such that for every $B\in \mathcal{D}$ $f|_B:B\to R$ is continuous. 
+        \item[$(\RomanNum{2} _m)$] Given a definable function $f: A\to R$, $A\subseteq R^m$ there is a decomposition $\mathcal{D}$ of $R^m$ partitioning $A$ such that for every $B\in \mathcal{D}$ $f|_B:B\to R$ is continuous. 
     \end{itemize}
 }{
     By induction on $m$.
