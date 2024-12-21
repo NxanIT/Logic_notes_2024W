@@ -1,10 +1,10 @@
 \chapter{Model Theory}
-The sections \ref{mt:sec:LST} to \ref{MT:sec:NSA} are sourced from \cite[chapter~1]{EndertonHerbertB2001AMIt} and and the theory of o-minimality (from \ref{MT:sec:o-min} onwards) can be found in \cite{van1998tame}.
+The sections \ref{mt:sec:LST} to \ref{MT:sec:NSA} are sourced from \cite[chapter~2]{EndertonHerbertB2001AMIt} and and the theory of o-minimality (from \ref{MT:sec:o-min} onwards) can be found in \cite{van1998tame}.
 \section{Löwenheim-Skolem-Theorem}\label{mt:sec:LST}
-\prop{}{Supposee $\Gamma$ is a set of $\mathcal{L}$-formulas. $|\mathcal{L}| = \lambda$ and lets assume 
+\thm{LST}{Let $\Gamma$ be a set of $\mathcal{L}$-formulas. $|\mathcal{L}| = \lambda$ and lets assume 
     $\Gamma$ is satisfiable in some infinite structure.\\
     Then for every cardinal $\kappa\geq \lambda$, $\Gamma$ is satisfiable in a structure of cardinality $\kappa$.
-}{
+}{ %2024-12-13: TODO check proof
     add $\kappa$ many new constants to the language $\mathcal{L}$.
 
     $\mathcal{L}' = \mathcal{L}\cup \{c_\alpha : \alpha < \kappa\}$
@@ -59,14 +59,15 @@ The sections \ref{mt:sec:LST} to \ref{MT:sec:NSA} are sourced from \cite[chapter
     \item $\mathcal{L} = \{0,1,+,\cdot,-\}$ $\mathcal{F}$ the class of fields then $\Th(\mathcal{F})$ is the set of sentences truein every field.
 \end{itemize}
 }
-Recalll $\Mod(\Sigma)$ is the class of all models of $\Sigma$.
+%2024-12-13: TODO edit below
+Recall that $\Mod(\Sigma)$ is the class of all models of $\Sigma$.
 $\Th(\Mod \Sigma)$ might not be the set $\Sigma$ but it is the set of all 
 sentences true in all models of $\Sigma$.
+Which is the set of all sentences that are logically implied by $\Sigma$ 
 
-The set of all sentences that are logically implied by $\Sigma$ 
-
-The set of all consequences of $\Sigma$ $\eqdef C_n(\Sigma)$
-
+Or in other words: The set of all consequences of $\Sigma$
+\defin{$C_n$}{$ C_n(\Sigma)\defeq \Th(\Mod \Sigma)$
+}
 \note{}{$\Sigma$ is a theory iff $C_n(\Sigma) = \Sigma$}
 
 \defin{}{We say that a theory $T$ is complete, if for every sentence 
@@ -105,7 +106,7 @@ A theory $T$ is complete iff any to models are elementarily equivalent.
         finite, then $\Psi_0$ has a model of characteristic $p$ for some sufficiently large $p$.
     \end{itemize}
 }
-\prop{}{If $C_n(\Sigma)$ is finitlely axiomatizable then there exists a finite subset           
+\thm{}{If $C_n(\Sigma)$ is finitlely axiomatizable then there exists a finite subset           
     $\Sigma_0\subseteq \Sigma$ such that $C_n(\Sigma_0) = C_n(\Sigma)$}{
     Suppose $C_n(\Sigma)$ is finitely axiomatizable. So $C_n(\sigma) = C_n(\Sigma)$. 
     Then there is a finite subset $\Sigma_0\subseteq \Sigma$ such that $\Sigma_0 \models \sigma$.
@@ -115,7 +116,7 @@ A theory $T$ is complete iff any to models are elementarily equivalent.
     $T$ are isomorphic.
     Futhermore for some infinite cardinal $\kappa$ a theory $T$ is called $\kappa$-categorical, if every two models of cardinality $\kappa$ are isomorphic.
 }
-\prop{Los-Vaught test}{For a theory $T$ in a countable language with only infinite models it holds\\
+\thm{Los-Vaught test}{For a theory $T$ in a countable language with only infinite models it holds\\
     If $T$ is $\kappa$-categorical for some infinite cardinality $\kappa$ then $T$ is complete.
 }{
     Let $T$ be $\kappa$-categorical.
@@ -133,7 +134,7 @@ A theory $T$ is complete iff any to models are elementarily equivalent.
 \end{itemize}
 }
 \section{Theory of algebraic closed fields}
-\prop{}{The theory of algebraic closed fields of characteristic $p$ ACF$_p$, where $p$ is either $0$ or prime is complete.}{Note that we have a
+\thm{}{The theory of algebraic closed fields of characteristic $p$ ACF$_p$, where $p$ is either $0$ or prime is complete.\cite[Theorem 26J, p.158]{EndertonHerbertB2001AMIt}}{Note that we have a
 \begin{itemize}
     \item  countable language
     \item with no finite models
@@ -159,7 +160,7 @@ Fact: Let $F$ subfield of $K$. if $F$ is countable and $K$ uncountable, then any
 
 Steinitz: Two ACF are isomorphic iff they have the same characteristic and there trancendence spaces have the same cardinality.
 }
-\subsubsection{Lefschetz Principle}
+\subsubsection{Lefschetz Principle}%2024-12-13: TODO source needed
 \prop{Lefschetz Principle}{Let $\mathcal{C} = (\mathbb{C},0,1,+,\cdot,-)$ For a sentence in the language of $\mathcal{C}$
     Then the following are equivalent:
     \begin{itemize}
@@ -179,7 +180,7 @@ Steinitz: Two ACF are isomorphic iff they have the same characteristic and there
     \end{itemize}
 }
 Example of the Lefschetz Principle:
-\prop{Ax}{
+\prop{Ax–Grothendieck}{\footnote{Alexander Grothendieck}
     Let $f:\mathbb{C}^n \to \mathbb{C}^n$ be a polynomial map. If $f$ is injective, then $f$ is surjective.
 }{
     Our language is $\mathcal{L} = \{0,1,+,-,\cdot\}$. Note that there is an $\mathcal{L}$-sentence $\Phi_d$ such that a Field $F$ 
@@ -198,7 +199,7 @@ Example of the Lefschetz Principle:
 
 Another use of \L oś-Vaught
 
-\prop{}{\[(\mathbb{Q},<_\mathbb{Q}) \equiv (\RR, <_\RR)\]}{
+\prop{}{\[(\mathbb{Q},<_\mathbb{Q}) \equiv (\RR, <_\RR)\]}{%2024-12-13: TODO from here on \prop might actually be theorems, check
     $\mathcal{L} = \{<\}$ and note that both $(\mathbb{Q},<_\mathbb{Q}), (\RR, <_\RR)$ are DLO without endpoints, i.e. they satisfy the following axioms
     \begin{enumerate}
         \item $\forall x \forall y (x<y\lor x=y\lor y<x)$

@@ -2,24 +2,25 @@
 The definitions, lemmata, propositions and theorems as well as the notes in this chapter are sourced from \cite[chapter~2]{EndertonHerbertB2001AMIt}.
 \defin{A First order Language}{
     consists of infinetely many distinct symbols such that no symbol is a proper 
-    initial segment of another symbol and the symbols are divided into 2 groups:
+    initial segment of another symbol. The symbols are divided into 2 groups:
     \begin{enumerate}
         \item logical symbols\outernote{logical symbols}\\
         (These elements have a fixed meaning and the equivalence symbol $=$ is optional)
         \begin{flalign*}
-            (,),\lnot, \to, v_1,v_2,\dots,=&&
+            (,\:),\: \lnot,\:  \to,\:  v_1,\: v_2,\: \dots,\: =&&
         \end{flalign*}
         \item parameters\outernote{parameters}
-        \begin{itemize}
+        \begin{enumerate}
             \item quantifier symbol: $\forall$ (the range is subject of interpretation)
             \item predicate symbols: for every $n>0$ we have a set of $n$-ary predicates $P$
-            \item constant symbols: Some set of constants (could also be $\varnothing$)
+            \item constant symbols: Some set of constants
             \item function symbols: for every $n>0$ we have a set of $n$-ary function symbols
-        \end{itemize}
+        \end{enumerate}
     \end{enumerate}
 }
 \note{}{
     \begin{itemize}
+        \item The sets in Group 2, (b)-(d) can also be the empty set
         \item We could drop constants and instead introduce $0$-ary function symbols
         \item to specify language we need to specify the parameters and say if $=$ is included
         \item In the book \cite{EndertonHerbertB2001AMIt} they assume that
@@ -35,8 +36,8 @@ The definitions, lemmata, propositions and theorems as well as the notes in this
             \item [$<$] is a binary rel. symbol
             \item [$0$] is a constant
             \item [$S$] is a unary function symbol
-            \item [$E$] exponentiation function symbol
-            \item [$+,\cdot$] binary function symbols
+            \item [$E$] is a unary function symbol (exponentiation)
+            \item [$+,\cdot$] are binary function symbols
         \end{itemize}
         \item $\mathcal{L}_\text{ring} = \{=,+,\cdot,-,0,1\}$
         \begin{itemize}
@@ -50,7 +51,7 @@ The definitions, lemmata, propositions and theorems as well as the notes in this
 
 \section{Formulas}
 \defin{Expression}{An \graybf{expression} is any finite sequence of symbols.
-    There exist two kinds of expressions that makes sense "grammatically"
+    There exist two kinds of expressions that make sense ``grammatically'' The intuition should be:
     \begin{itemize}[leftmargin=1.6cm]
         \item[Terms:] \begin{itemize}
             \item points to an object
@@ -64,16 +65,17 @@ The definitions, lemmata, propositions and theorems as well as the notes in this
     \end{itemize}
 }
 \defin{Term Building Operations}{
-    For every $n>0$ and for every $n$-place function symbol $f$ let $\mathcal{F}_f$ be an $n$-place term building operation,
-    that is $\mathcal{F}_f (t_1,\dots t_n)\defeq ft_1,\dots t_n$ (polish notation for $f(t_1,\dots t_n)$).
-    The Set of terms\outernote{term}we then define as the set of expressions that are built up from variables and constants by applying the term building operations
+    For every $n>0$ and for every $n$-place function symbol $f$, let $\mathcal{F}_f$ be an $n$-place term building operation,
+    that is $\mathcal{F}_f (t_1,\dots t_n)\defeq ft_1\dots t_n$ (polish notation for $f(t_1,\dots t_n)$).
+    The Set of terms\outernote{Term}is defined as the set of expressions that are built up from variables and constants by applying the term building operations
     finitely many times.
 }
-\bsp{}{Let $\mathcal{L} = \mathcal{L}_{arith}$ then the set of terms will contain $0$, $v_{42}$, $S0$, $SSS0$, $Sv_1$, $+SOv_1$}
+\bsp{}{Let $\mathcal{L} = \mathcal{L}_{arith}$, the set of terms will contain $0$, $v_{42}$, $S0$, $SSS0$, $Sv_1$, $+SOv_1$}
 \defin{Atomic formula}{Any expression of the form 
-    $$=t_1t_2 \text{ or } Pt_1,\dots t_n, \text{ where $t_1,\dots t_n$ are terms and $P$ is an $n$-ary predicate symbol}$$}
+    $$=t_1t_2 \text{ or } Pt_1,\dots t_n, \text{ where $t_1,\dots t_n$ are terms and $P$ is an $n$-ary predicate symbol}$$
+    is called atomic formula}
 \note{}{Atomic formulas are not defined inductively.}
-\bsp{}{\emph{cont.}\quad $=v_1 v_{42}$, $<S0 SS0$ are atomic formulas, but $\lnot = v_1 v_{42}$ is not.}
+\bsp{}{\emph{cont.}\quad $=v_1 v_{42}$ and $<S0 SS0$ are atomic formulas, but $\lnot = v_1 v_{42}$ is not.}
 \defin{Formulas}{We define $\varepsilon_\lnot$, $\varepsilon_\to, Q_i$ to be the fla. building operations, defined as follows
     $\varepsilon_\lnot(\alpha) \defeq (\lnot \alpha)$, $\varepsilon_\to \defeq (\alpha \to \beta)$ and
     $Q_i(\gamma) \defeq \forall v_i \gamma$.
@@ -81,36 +83,35 @@ The definitions, lemmata, propositions and theorems as well as the notes in this
 }
 \bsp{}{\emph{cont.} $\forall v_1 (=Sv_10)$ is a formula we get by applying $Q_1$ on the atomic formula $=Sv_1 0$.}
 \subsubsection*{Free variables}
-\bsp{}{We introduce the $\exists$\outernote{$\exists$ quantifier} quantifier by defining $\exists y \alpha$ means $\lnot \forall y \lnot \alpha$.\\
+\bsp{}{We introduce the $\exists$\outernote{$\exists$ quantifier}quantifier as an abbreviation: $\exists y \alpha$ means $\lnot \forall y \lnot \alpha$.\\
     "Every non-zero natual number is a succsesor" $\forall x (x\neq 0\to \exists y S(y)=x)$
     is different then "if a number is not $0$, then it is a succsesor" $x\neq 0\to \exists y S(y)=x$. 
-    $x$ occurs bounded\outernote{bounded variable} in the first formula, for the latter $x$ occures free in the fla.
-
+    We say, $x$ occurs bounded\outernote{bounded variable}in the first formula, for the latter $x$ occures free in the formula.
     If you have an expression without free variables, it is either true or false, on the other hand
     if a variable occurs free in a formula, the truth value of it depends on the variable itself.
 }
 \defin{Free variables}{
-    Let $x$ be a variable. $x$ occurs \graybf{free in $\varphi$} is defined inductively as follows:
+    Let $x$ be a variable. We say ``$x$ occurs \graybf{free in $\varphi$}'', if
     \begin{enumerate}
         \item If $\varphi$ is an atomic fla. then $x$ occurs \graybf{free} in $\varphi$ iff $x$ occurs in $\varphi$
-        \item If $\varphi = (\lnot \alpha)$ then $x$ occurs free in $\varphi$ iff $x$ occurs free in $\alpha$
-        \item If $\varphi = (\alpha \to \beta)$ then $x$ occurs free in $\varphi$ iff $x$ occurs free in $\alpha$ or $\beta$
-        \item If $\varphi = \forall v_i \alpha$ then $x$ occurs free in $\varphi$ iff $x$ occurs free in $\alpha$ and $x\lnot v_i$
+        \item If $\varphi \equiv (\lnot \alpha)$ then $x$ occurs free in $\varphi$ iff $x$ occurs free in $\alpha$
+        \item If $\varphi \equiv (\alpha \to \beta)$ then $x$ occurs free in $\varphi$ iff $x$ occurs free in $\alpha$ or $\beta$
+        \item If $\varphi \equiv \forall v_i \alpha$ then $x$ occurs free in $\varphi$ iff $x$ occurs free in $\alpha$ and $x\lnot v_i$
     \end{enumerate}
     A formula $\alpha$ is called a sentence,\outernote{sentence}if no variable occurs free in $\alpha$
 }
-\note{}{The above definition makes sense thanks to the recursion theorem.
-    define the function $h$ on the set of atoms: $h(\alpha) = \text{the set of var occ in fla } \alpha$, which is the set of all variables $v_i$ that occur free in $\alpha$.
-    we now want to extend $h$ to $\overline{h}$, which is the set of all formulas.
+\note{}{The above definition is well defined thanks to the recursion theorem.\\
+    To prove this, define the function $h$ on the set of atoms: $h(\alpha) = \{v\in V : v\text{ occurs free in }\alpha\}$, which is the set of all variables $v_i$ that occur free in $\alpha$.
+    we now want to extend $h$ to $\overline{h}$ on the set of all formulas. We observe
     \begin{itemize}
         \item $\overline{h}(\lnot \alpha) = \overline{h}(\alpha)$
         \item $\overline{h}( \alpha \to \beta) = \overline{h}(\alpha)\cup \overline{h}(\beta)$
         \item $\overline{h}(Q_i(\alpha)) = \overline{h}(\alpha)\backslash \{v_i\}$
     \end{itemize}
-    We say $x$ occurs free in $\alpha$ iff $x\in \overline{h}(\alpha)$.
+    Then $x$ occurs free in $\alpha$ iff $x\in \overline{h}(\alpha)$.
 }
-\note{}{We will now use $\lnot, \land,\lor,\to, \leftrightarrow, \exists v_i$ (all can be expressed in terms of $\lnot,\to,Q_i$.)
-    We will sometimes drop the $(,)$ and not always be using polish notation.
+\note{}{From now on, we will now use $\neq, \land,\lor, \leftrightarrow, \exists v_i$ as abbreviations in our formulas (all can be expressed in terms of $\lnot,\to,\forall_i$), so there is no ambiguity on the in the sense of the meaning of the formulas.
+    Note: We will sometimes drop the $(,)$ and not always be using polish notation.
 }
 \section{Semantics of first order logic}
 The equivalent scheme to our TA in predicate logic. The meaning of formulas is given by \emph{structures}, 
@@ -128,12 +129,12 @@ which also determine the scope of the quantifier $\forall$, the meaning of all p
 \bsp{}{Let $\mathcal{L} = \{\in\}$ where $\in$ is a binary relation "
     An example of an $\mathcal{L}$ structure is $(\NN, \in^\NN)$ where $\in^\NN = \{(x,y)\in \NN^2 : x<y\}$}
 \defin{Assigment}{Let $\varphi$ be a $\mathcal{L}$-fla. and $\mathcal{A}$ a $\mathcal{L}$-structure. 
-    Let $V$ be the set of all variables in $\mathcal{L}$ and $s:V\to A$ an assignment.\outernote{assigment}
+    Let $V$ be the set of all variables in $\mathcal{L}$. Any function $s:V\to A$ is called assignment.\outernote{assigment}
     We define the extention $\overline{s}$ of $s$ to the set of all $\mathcal{L}$-terms by
     \begin{itemize}
         \item if $x\in V$ then $\overline{s}(x) \defeq s(x)$
-        \item for $c\in \mathcal{L}$ a constant symbol, then $\overline{s}(c) \defeq c^\mathcal{A}$
-        \item for $t_1,\dots t_n$ $\mathcal{L}$-terms and $f\in \mathcal{L}$ an $n$-ary function symbol, then 
+        \item if $c\in \mathcal{L}$ is a constant symbol, then $\overline{s}(c) \defeq c^\mathcal{A}$
+        \item for $t_1,\dots t_n$ $\mathcal{L}$-terms and $f\in \mathcal{L}$ an $n$-ary function symbol, 
         $$\overline{s}(ft_1\dots t_n) \defeq f^\mathcal{A}(\overline{s}(t_1),\dots \overline{s}(t_n))$$
     \end{itemize}
 }
@@ -141,14 +142,15 @@ which also determine the scope of the quantifier $\forall$, the meaning of all p
 \note{}{in the previous definition point 3. for $n=1$ yields a commutative diagram.
 
 }
-\prop{}{For any given assignment $s$ there exists a unique extention $\overline{s}$ as in the previous definition.}
+\thm{}{For any given assignment $s$ there exists a unique extention $\overline{s}$ as in the previous definition.}
 {
     will follow from recursion theorem and unique decomposition of terms.
 }
 \newpage
-\subsection*{Definition of truth}
+\subsection*{Satisfaction and Models}
 \defin{Satisfy}{ We define '$\mathcal{A}$ satisfies $\varphi$ with $s$' and write
-    $\mathcal{A}\models \varphi \:[s]$\outernote{$\models_\mathcal{A}$} or $\models_\mathcal{A} \varphi \:[s]$ inductively over the complexity of the formula $\varphi$
+    $\mathcal{A}\models \varphi \:[s]$\outernote{$\models_\mathcal{A}$}\\
+    or $\models_\mathcal{A} \varphi \:[s]$, if (inductively over the complexity of the formula $\varphi$)
     \begin{enumerate}
         \item if $\varphi$ is atomic: \begin{itemize}
             \item $\mathcal{A} \models\: = t_1,t_2 \: [s]$ iff $ \overline{s}(t_1) = \overline{s}(t_2)$
@@ -161,7 +163,7 @@ which also determine the scope of the quantifier $\forall$, the meaning of all p
             \item $\mathcal{A}\models \forall x \varphi \: [s]$ iff for all $a\in A$ $\mathcal{A}\models \varphi [s(x| a)]$
             where 
             \begin{equation*}
-                s(x|a)(v) = \begin{cases}
+                s(x|a)(v) \defeq \begin{cases}
                 s(v) \text{ if } v \neq x\\
                 a \text{ if } v = x
             \end{cases}
@@ -172,8 +174,8 @@ which also determine the scope of the quantifier $\forall$, the meaning of all p
 }
 \bsp{}{
     $\mathcal{L} = \{\forall, \leq, S, 0\}$ 
-    a $\mathcal{L}$-structure then could be $\mathcal{N} = (\NN,\leq^\mathcal{N},S^\mathcal{N},0^\mathcal{N})$ together with an assignment
-    $s: v_n \mapsto n-1$ then:
+    an example of an $\mathcal{L}$-structure $\mathcal{N} = (\NN,\leq^\mathcal{N},S^\mathcal{N},0^\mathcal{N})$. Together with a specified assignment
+    $s: v_n \mapsto n-1$ 
     \begin{itemize}
         \item $s(v_1) = 0$
         \item $\overline{s}(0) = 0^\mathcal{N}$ (a constant is always mapped to its realisation, the interpretation of constant $0$ in the structure $\mathcal{N}$)
@@ -192,9 +194,9 @@ which also determine the scope of the quantifier $\forall$, the meaning of all p
         
     \end{itemize}
 }
-\note{}{To know wheter $\mathcal{A}\models \varphi \: [s]$ it suffices to know where $s$ maps the variables that are free in $\varphi$}
 
-\prop{Coincidence Lemma}{\label{Thm.evalonlyfreevar}Suppose $s_1,s_2:V\to A$ agree on all variables that occur free in $\varphi$ then 
+To know wheter $\mathcal{A}\models \varphi \: [s]$ it suffices to know where $s$ maps the variables that occur free in $\varphi$. This results from the Coincidence Lemma \ref{Thm.evalonlyfreevar}
+\thm{Coincidence Lemma}{\label{Thm.evalonlyfreevar}Suppose $s_1,s_2:V\to A$ agree on all variables that occur free in $\varphi$ then 
  $$\mathcal{A}\models \varphi \:[s_1] \text{ iff }\mathcal{A}\models \varphi \: [s_2]$$
 }{
     By complexity of $\varphi$
@@ -223,19 +225,19 @@ which also determine the scope of the quantifier $\forall$, the meaning of all p
     \end{enumerate}
     
 }
-Notation: $\mathcal{A}\models \varphi $TODO means that all free variables of $\varphi$ are among $v_1,\dots v_n$ and $\mathcal{A}\models \varphi \: [s]$ whenever $s(v_i) = a_i$ for all $1\leq i\leq n$.
-\coroll{If $\sigma$ is a sentence then $\mathcal{A}\models \sigma \: [s]$ for all $s:V\to A$ or 
+Notation: if all free variables of $\varphi$ are among $v_1,\dots v_n$ and the assigment $s(v_i) = a_i$ for all $1\leq i\leq n$ we write 
+$$\mathcal{A}\models \varphi \llbracket a_1,a_2,\dots, a_n\rrbracket\defeq \mathcal{A}\models \varphi \: [s]$$
+\note{}{If $\sigma$ is a sentence then we can not have $\mathcal{A}\models \sigma$ and $\mathcal{A}\not\models \sigma$ because $A\neq \varnothing$.}
+\coroll{If $\sigma$ is a sentence then either $\mathcal{A}\models \sigma \: [s]$ for all $s:V\to A$ or 
 $\mathcal{A}\not\models \sigma \: [s]$ for all $s:V\to A$.
-
-Notation: $\mathcal{A}\models \sigma$ and we say ``$\sigma$ is true in $\mathcal{A}$, $\mathcal{A}$ is a model of $\sigma$ or $\sigma$ holds in $\mathcal{A}$.''
 }
-\note{}{If $\sigma$ is a sentence then we can not have  $\mathcal{A}\models \sigma$ and  $\mathcal{A}\not\models \sigma$ because $A\neq \varnothing$.}
-\defin{Model}{$\mathcal{A}$ is a model of a set of sentences $\Sigma$ iff for every sentence $\sigma\in \Sigma$ it holds  $\mathcal{A}\models \sigma$ }
+\noindent Notation: $\mathcal{A}\models \sigma$ and we say ``$\sigma$ is true in $\mathcal{A}$'' or ``$\mathcal{A}$ is a model of $\sigma$'' or ``$\sigma$ holds in $\mathcal{A}$''.
+
+\defin{Model}{$\mathcal{A}$ is sayed to be ``a model of a set of sentences $\Sigma$'' $\mathcal{A}\models \Sigma$, if for every sentence $\sigma\in \Sigma$ it holds $\mathcal{A}\models \sigma$ }
 \bsp{}{$\mathcal{L} = \{0,1,+,-,\cdot\}$
-A realisation could be $\mathcal{R} = (\RR, 0,1,+,-,\cdot)$ or $\mathcal{C} = (\mathbb{C}, 0,1,+,-,\cdot)$
+A Structure could be $\mathcal{R} = (\RR, 0,1,+,-,\cdot)$ or $\mathcal{C} = (\mathbb{C}, 0,1,+,-,\cdot)$
 then the sentence 
 $\sigma: \quad \exists x (x\cdot x = -1)$ then $\mathcal{R}\not\models \sigma$ but $\mathcal{C}\models \sigma$
-
 }
 \note{}{$\land,\lor,\leftrightarrow,\exists$ work as expected. That is 
  $\mathcal{A}\models (\alpha \land \beta) \: [s]$ iff $\mathcal{A}\models \alpha \: [s]$ and $\mathcal{A}\models \beta \: [s]$
@@ -246,20 +248,18 @@ $\sigma: \quad \exists x (x\cdot x = -1)$ then $\mathcal{R}\not\models \sigma$ b
  iff there is $a\in A$ such that $\mathcal{A}\models \alpha [s(x|a)]$
 }
 
-
-\section{Logical implication}
+\subsection*{Logical implication}
 Let $\Gamma$ be a set of $\mathcal{L}$-formulas, $\varphi$ a $\mathcal{L}$-formula.
 \defin{Logical implication}{
-    $\Gamma \models \varphi$ "$\Gamma$ logically implies $\varphi$" if for every $L$-structure $\mathcal{A}$ and for every $s:V\to A$ 
-
-    if $\mathcal{A}\models \gamma \: [s]$for every $\gamma \in \Gamma$  then $\mathcal{A}\models \varphi \: [s]$
-
+    We say ``$\Gamma$ logically implies $\varphi$'' $\Gamma \models \varphi$, if\\
+    for every $L$-structure $\mathcal{A}$ and for every assigment $s:V\to A$ 
+    $$\text{if } \mathcal{A}\models \gamma [s]\text{ for every $\gamma\in \Gamma$, then }\mathcal{A}\models \varphi \: [s]$$
 }
 
-\defin{Logical equivalence}{$\varphi,\psi$ are called logically equivalent if 
+\defin{Logical equivalence}{Two formulas $\varphi,\psi$ are called logically equivalent, if 
 $\varphi \models \psi$ and $\psi \models \varphi$.
 }
-\defin{Valid}{$\varphi$ is called valid iff $\models \varphi$ i.e. $\varnothing\models \varphi$ i.e. for every $\mathcal{L}$-structure $\mathcal{A}$ and every $s:V\to A$ it is $\mathcal{A}\models \varphi \: [s]$
+\defin{Valid}{A formula $\varphi$ is called valid, if $\models \varphi$ i.e. $\varnothing\models \varphi$ i.e. for every $\mathcal{L}$-structure $\mathcal{A}$ and every $s:V\to A$ it is $\mathcal{A}\models \varphi \: [s]$
 }
 \bsp{}{
 \begin{enumerate}
@@ -270,16 +270,24 @@ $\varphi \models \psi$ and $\psi \models \varphi$.
     We need a counterexample to $\forall P x_2 \models \forall x_1 P x_1$. Let $A = \{a_1,a_2\}$ $s(x_2) = a_1$ and $P^\mathcal{A} = \{a_1\}$
     then $\mathcal{A}\models Px_2 \: [s]$.
     \item Is the following valid? $\models \exists x(Px \to \forall y P y)$ yes
-    \item $\Gamma,\alpha\models \varphi$ iff $\Gamma \models \alpha \to \varphi$. (on next problem set, quite impoirtant)
+    \item $\Gamma,\alpha\models \varphi$ iff $\Gamma \models \alpha \to \varphi$. (on next problem set, quite important)
 \end{enumerate}
 }
 
 \section{definability in a structure}
+By choosing a language $\mathcal{L}$, we specify which constant, function and relation symbols we can use when constructing formulas. If we then fix a structure $\mathcal{A}$, some $n$-ary relations that may are not in our structure, can still be expressed by a formula $\varphi$. For example given the structure $\mathcal{N} = (\NN;0,+)$ with equality and the usual addition on $\NN$, we can view the set
+\[P_< \defeq \{(n,m)\in \NN : \varphi(n,m)\},\quad \varphi(n,m)\equiv \exists x \, (\lnot(x=0)\land n+x=m)\]
+That gives us the usual interpretation of $<$ in the natural numbers, namely $n<m$ iff $\varphi(n,m)$ iff $(n,m)\in P_<$. 
 \defin{definability in a structure}{ 
     We say that a general $n$-ary relation $P$ on $A$ (we will just call it $P$, it does not have to be in the language) is definable in $\mathcal{A}$, if there is a $\mathcal{L}$-formula
     $\varphi$ with free variables among $\{v_1,\dots,v_n\}$ such that 
-    \[P = \{(a_1,\dots a_n) : \mathcal{A} \models \varphi\: \llbracket a_1,\dots a_n\rrbracket\}\]
+    \[P = \{(a_1,\dots a_n) \in A^n: \mathcal{A} \models \varphi\: \llbracket a_1,\dots a_n\rrbracket\}\]
     We also say that $\varphi$ defines $P$ in the structure $\mathcal{A}$.
+    
+    TODO definability by points:\outernote{definable by points}
+    We say that a general $n$-ary relation $P$ on $A$ is definable \graybf{by points} in $\mathcal{A}$, if there is a $\mathcal{L}$-formula
+    $\varphi$ with free variables among $\{v_1,\dots,v_{n+m}\}$ and $b_1,\dots b_m\in A$ such that 
+    \[P = \{(a_1,\dots a_n) \in A^n: \mathcal{A} \models \varphi\: \llbracket a_1,\dots a_n, b_1,\dots b_m\rrbracket\}\]
 }
 \bsp{}{
     \begin{enumerate}
@@ -297,47 +305,49 @@ $\varphi \models \psi$ and $\psi \models \varphi$.
 }
 \defin{definability of classes of structures}{
     Let $\Sigma$ be a set of sentences. $\tau$ a sentence.
-    We will say that the class of models of $\Sigma$ is the class $\Mod \Sigma =\{\mathcal{A} : \mathcal{A}\models \Sigma\}$.
+    The class of models of $\Sigma$ is the class $\Mod \Sigma =\{\mathcal{A} : \mathcal{A}\models \Sigma\}$.
     Let $K$ be a class of structures. We are going to call $K$ an elementary class (EC) if there is a single sentence $\tau$ such that $K = \Mod \tau$.
     $K$ is called an elementary class in the wider sence (EC$_\Delta$) if there is a set of sentences $\Sigma$ such that $K = \Mod \Sigma$
 
 }
-\bsp{}{$\mathcal{L} = \{0,1,+,\cdot\}$ 
-    $\tau$ is a sentence that expresses the field axioms (the unary inverse functions are not in our language but are definable.)
+\bsp{}{Let $\mathcal{L} = \{0,1,+,\cdot\}$ and 
+    $\tau$ be a sentence that expresses the field axioms (the unary inverse functions are not in our language but are definable.)
     $\Mod \tau$ is the class of all the fields, which is EC.
-    the class of all fields of characteristic $0$. Let $\sigma_p: \lnot(1 + \dots +1 = 0)$ then $\Sigma = \{\tau\} \cup \{\sigma_p : p\in \mathbb{P}\}$ 
-    yields $\Mod \Sigma$ is the class of fields with characteristic $0$, therefore EC$_\Delta$, we will later see that it is not $EC$.
-
+    The class of all fields of characteristic $0$: Let $\sigma_p: \lnot(1 + \dots +1 = 0)$ and $\Sigma = \{\tau\} \cup \{\sigma_p : p\in \mathbb{P}\}$ 
+    yields that $\Mod \Sigma$ is the class of fields with characteristic $0$, therefore it is EC$_\Delta$, we will later see that it is not EC.
 }
 \bsp{}{
     Let $E$ be a binary relation, $\mathcal{L} = \{E\}$ then a graph is a realisation $\mathcal{G} = (V,E^\mathcal{G})$ 
-    such that $v\neq \varnothing$, $E^\mathcal{G}$ is irreflexive and symmetric.
+    such that $V\neq \varnothing$, $E^\mathcal{G}$ is irreflexive and symmetric.
     By definition the universe is not empty, we still have to check irreflexive and symmetric.
     \begin{itemize}
         \item irreflexive: $\forall x (\lnot x E x)$
         \item symmetric: $\forall x \forall y (x E y \to y E x)$
     \end{itemize}
     We take $\tau$ to be $\forall x \forall y ((\lnot x E x)\land (x E y \to y E x))$
-    Then $\Mod \tau$ is the class of all graphs and is EC
+    Then $\Mod \tau$ is the class of all graphs and is therefore EC
     Note: the class of all finite graphs is neither EC nor EC$_\Delta$. proof later.
 }
-We want to have some notion that tells us when two graphs are the same or at least similar.
+Until now, we have no notion that tells us when two graphs are the same or at least similar.
 \section{Homomorphisms of structures}
 \defin{Homomorphism}{
     Suppose that $\mathcal{A},\mathcal{B}$ are two $\mathcal{L}$-structures. then a Homomorphism of $\mathcal{A}$ into $\mathcal{B}$ is a map
     $h: A \to B$ that satisfy the below conditions
     \begin{itemize}
-        \item for every $n$-ary predicate $P\in \mathcal{L}$ it is $(a_1,\dots a_n)\in P^\mathcal{A}$ iff $(h(a_1),\dots h(a_n))\in P^\mathcal{B}$ (this def. a strong Homomorphism, other textbooks maybe only reqire $\to$ direction)
-        \item for every $n$-ary function $f\in \mathcal{L}$ and for all $\underline{a} = (a_1,\dots a_n)\in A^n$ it holds $h(f^\mathcal{A}(\underline{a})) = f^\mathcal{B}(h(a_1),\dots h(a_n))$
-        \item for every constant symbol $c\in \mathcal{L}$ it is $h(c^\mathcal{A}) = c^\mathcal{B}$ (could also skip this if we consider constants as $0$-ary functions)
+        \item for every $n$-ary predicate $P\in \mathcal{L}$ it is 
+        $$(a_1,\dots a_n)\in P^\mathcal{A} \:\iif\: (h(a_1),\dots h(a_n))\in P^\mathcal{B}$$
+        (this def. a strong Homomorphism, other textbooks maybe only reqire ``$\to$'' direction)
+        \item for every $n$-ary function $f\in \mathcal{L}$ and for all $\underline{a} = (a_1,\dots a_n)\in A^n$ it holds 
+        $$h(f^\mathcal{A}(\underline{a})) = f^\mathcal{B}(h(a_1),\dots h(a_n))$$
+        \item for every constant symbol $c\in \mathcal{L}$ it is $h(c^\mathcal{A}) = c^\mathcal{B}$ \\(could also skip this if we consider constants as $0$-ary functions)
     \end{itemize}
 }
-\note{}{Intuativly a Homomorphism of $\mathcal{A}$ into $\mathcal{B}$ is a map $A \to B$ that preserve all funciton and relation symbols in some sense, (imp: not the definable relations)}
+\note{}{Intuativly a Homomorphism of $\mathcal{A}$ into $\mathcal{B}$ is a map $A \to B$ that preserve all funciton and relation symbols in some sense, (in general however not the definable relations)}
 \defin{Isomorphism}{
     \begin{itemize}
-        \item $h:A\to B$  is called isomorphism of $\mathcal{A}$ into $\mathcal{B}$ if $h$ is a Homomorphism and injective (in other textbooks: an isomorphic embedding of $\mathcal{A}$ into $\mathcal{B}$)
-        \item $h:A\to B$  is called isomorphism of $\mathcal{A}$ onto $\mathcal{B}$ if $h$ is a Homomorphism and bijective $A\to B$
-        \item \outernote{isomorphic}$\mathcal{A}$ and $\mathcal{B}$ are called isomorphic if there is an isomorphism of $\mathcal{A}$ onto $\mathcal{B}$
+        \item $h:A\to B$  is called isomorphism of $\mathcal{A}$ into $\mathcal{B}$ if $h$ is a homomorphism and injective (in other textbooks: an isomorphic embedding of $\mathcal{A}$ into $\mathcal{B}$)
+        \item $h:A\to B$  is called isomorphism of $\mathcal{A}$ onto $\mathcal{B}$,\outernote{onto}if $h$ is a bijective homomorphism $A\to B$
+        \item $\mathcal{A}$\outernote{isomorphic}and $\mathcal{B}$ are called isomorphic if there is an isomorphism of $\mathcal{A}$ onto $\mathcal{B}$
     \end{itemize}
 }
 \note{}{
@@ -391,13 +401,14 @@ We want to have some notion that tells us when two graphs are the same or at lea
 Our next question will be: what is the relation of the above notions with truth and satisfiability
 The answer will be given by the so called Homomorphism theorem.
 
-\prop{Homomorphism theorem}{
-    $h$ homomorphism of $\mathcal{A}$ into $\mathcal{B}$, $s:V\to A$ then
+\thm{Homomorphism Theorem}{
+    Let $h:A\to B$ be a homomorphism of $\mathcal{A}$ into $\mathcal{B}$ and $s:V\to A$ an assignment then $h\circ s: V\to B$ is an assigment and it holds
     \begin{enumerate}
         \item for all terms $t$ it is $h(\overline{s}(t))=\overline{(h\circ s)}(t)$
-        \item $\varphi$ a fla. that is quantifier free and does not include $=$ then $\mathcal{A}\models \varphi \: [s]$ iff $\mathcal{B}\models \varphi  \: [h\circ s]$
-        \item if $h$ is additionally injective then we can drop the requirement " no $=$".
-        \item if $h$ is homomorphism of $\mathcal{A}$ onto $\mathcal{B}$ then we can drop the requirement "q.f." in (b)
+        \item for all quantifier free formulas $\varphi$ that do not contain $=$ we have 
+        $$\mathcal{A}\models \varphi \: [s]\iif\mathcal{B}\models \varphi  \: [h\circ s]$$
+        \item if $h$ is additionally injective then we can drop the requirement ``no $=$'' in (2)
+        \item if $h$ is homomorphism of $\mathcal{A}$ onto $\mathcal{B}$ then we can drop the requirement "q.f." in (2)
     \end{enumerate}
 }{
     \begin{enumerate}
@@ -636,7 +647,7 @@ But it is a generalization of a tautology and therefore by (1) a logical axiom.
 then $\forall x Px $ they have no connection between them when viewed in propositional logic. 
 
 We will prove $\Gamma\models \varphi$ iff $\Gamma\vdash \varphi$ (the first direction is completeness and the converse soundness.)}
-\prop{}{$\Gamma\vdash \varphi$ iff $\Gamma \cup \Lambda \models_{\text{taut}}\varphi$}{
+\thm{}{$\Gamma\vdash \varphi$ iff $\Gamma \cup \Lambda \models_{\text{taut}}\varphi$}{
     \begin{itemize}
         \item Let $\Gamma \vdash \varphi$ and $v$ be a truth assigment that satiesfies every element in $\Gamma \cup \Lambda$. Induction on deduction of $\varphi$ from $\Gamma$.
             \begin{itemize}
@@ -652,7 +663,7 @@ We will prove $\Gamma\models \varphi$ iff $\Gamma\vdash \varphi$ (the first dire
 }
 \section{Generalization and deduction theorem}
 \note{}{Intuativly if $\Gamma$ does not assume anything about $x$ and $\Gamma$ proves $\varphi$ then $\Gamma$ proves $\forall x \varphi$}
-\prop{Generalization theorem}{If $\Gamma \vdash \varphi$ and $x$ does not occur free in $\Gamma$, then $\Gamma \vdash \forall x \varphi$}{
+\thm{Generalization theorem}{If $\Gamma \vdash \varphi$ and $x$ does not occur free in $\Gamma$, then $\Gamma \vdash \forall x \varphi$}{
     We use axiom group 4, $\alpha \to \forall x \alpha$ if $x$ is not occuring free in $\alpha$.
     Since $x$ does not occur free in $\sigma\in\Gamma$, if $\varphi \in \Thm \Gamma$ then $\forall x \varphi \in \Thm \Gamma$.
     Induction principle:
@@ -678,7 +689,7 @@ We will prove $\Gamma\models \varphi$ iff $\Gamma\vdash \varphi$ (the first dire
     $\alpha_1\to \alpha_2 \to \dots \to \alpha_n \to \beta$ is a logical axiom because it is a tautology.
     Apply MP $n$-times.
 }
-\prop{Deduction theorem}{If $\Gamma \cup \{\gamma\}\vdash \varphi$ then $\Gamma \vdash (\gamma \to \varphi)$}{
+\thm{Deduction theorem}{If $\Gamma \cup \{\gamma\}\vdash \varphi$ then $\Gamma \vdash (\gamma \to \varphi)$}{
     Assume $\Gamma \cup \{\gamma\}\vdash \varphi$.
     $\Gamma \cup \{\gamma\}\vdash \varphi$ iff $\Gamma \cup \{\gamma\}\cup \Lambda \models_{\text{taut}} \varphi$ \\
     iff $\Gamma \cup \Lambda \models_{\text{taut}} \gamma \to \varphi$ (exercise sheet 1, ex 7)\\
@@ -710,7 +721,7 @@ Then $(\beta \to (\lnot \beta \to \alpha))$ is a tautology. Use $\beta$ from def
 \end{proof}
 
 \note{}{strategies for finding deductions can be found in the textbook \cite{EndertonHerbertB2001AMIt}.}
-\prop{Generalization on constants}{
+\thm{Generalization on constants}{
     Suppose $\Gamma \vdash \varphi$ and $c$ is a constant symbol that does not occur in $\Gamma$.
     Then there is a variable $y$ ($y$ does not occur in $\varphi$) s.th. $\Gamma \vdash \forall y (\varphi)^c_y$.
     and moreover also there is a deduction of $\forall y (\varphi)^c_y$ in which $c$ does not occur.
@@ -739,7 +750,7 @@ $\forall x \forall y P(x,y)\to \forall y P(y,y)$
 If we want to use a logical axiom of group 2, we would need to check if $y$ is actually SUB for $x$. We obviously do not have that because $y$ would get bounded.
 $\vdash \forall x \forall y P(x,y) \to \forall x \forall z P(x,z)$ 
 $\vdash \forall x \forall z P(x,z) \to \forall y P(y,y)$ 
-\prop{Existence of alphabetic variants}{
+\thm{Existence of alphabetic variants}{
     Let $\varphi$ be a fla., $x$ a variable, $t$ a term. Then there exists a fla. $\varphi'$ 
     such that $\varphi$ differs from $\varphi$ only in the choice of names of the bound variables.
     And \begin{enumerate}
@@ -839,48 +850,48 @@ For the proof of soundness we will have to show that all our axioms are valid. F
 }
 
 
-\prop{}{If $\Gamma \vdash \varphi$ then $\Gamma \models \varphi$}{
+\thm{}{If $\Gamma \vdash \varphi$ then $\Gamma \models \varphi$}{
     Proof by induction on $\varphi$.
     We have to show: 
-    \begin{enumerate}
+    \begin{enumerate}[label=(\roman*)]
         \item that every logical axiom is valid
         \item logical implication is preserved by MP
     \end{enumerate}
     \begin{enumerate}
-        \item[2.] Assume 1. we have to show that if  $\Gamma \vdash \varphi$ then $\Gamma \models \varphi$
+        \item[On (\romanNum{2})] Assume 1. we have to show that if  $\Gamma \vdash \varphi$ then $\Gamma \models \varphi$
         \begin{itemize}
             \item $\varphi\in \Lambda$ by 1.
             \item $\varphi \in \Gamma$ then $\Gamma \models \varphi$
             \item $\varphi$ follows by MP from $\psi,\psi \to \varphi$ then by assumption $\Gamma\models \psi$ and $\Gamma\models \psi \to \varphi$
             Therefore $\Gamma\models \varphi$
         \end{itemize}
-        \item[1.] Exercise 6 in section 2.2 consists in showing that if a logical axiom is valid, then also its generalization.
+        \item[On (\romanNum{1})] \cite*[exercise 6, section 2.2]{EndertonHerbertB2001AMIt} consists in showing that if a logical axiom is valid, then also its generalization.
         So generalizations of valid formulas are valid, we therefore may only consider logical axioms that are not generalizations of another logical axiom.
         \begin{enumerate}
-            \item[Ax of 1.] exercise 3, section 2.3
-            \item[3.] exercise 3, section 2.2
-            \item[4.] exercise 4, section 2.2
-            \item[5.] $x=x$: $\mathcal{A}\models x = x[s]$ because $s(x) = s(x)$
-            \item[6.] $x=y \to (\alpha \to \alpha')$ where $\alpha$ is atomic fla, and $\alpha'$ is obtained from $\alpha$ by remplacing some occurances of $x$'s with $y$'s.
-            By the deduction theorem, is enough to show that the set of formulas $\{x=y, \alpha\}\models \alpha'$.
-            Let $\mathcal{A}$ be a structure, $s$ an assigment such that $\mathcal{A}\models x=y [s]$\\
-            \graybf{Claim: } for every term $t$ if $t'$ is obtained from $t$ by replacing some $x$'s by $y$'s, then $\overline{s}(t) = \overline{s}(t')$.
-            \begin{claimproof}
-                Induction on terms.
-            \end{claimproof}
-            \begin{itemize}
-                \item $\alpha$ of the form $t_1 = t_2$ then $\alpha'$ is $t_1' =t_2'$, use prev. claim.
-                \item $\alpha$ of the form $P t_1 \dots t_n$ similar
-            \end{itemize}
-            \item[2.] wts. $\forall x \varphi \to \varphi^x_t$ is valid, where $t$ is SUB for $x$ in $\varphi$.\\
-            simple case: $\forall x Px \to Pt$ is valid.
-            Let $\mathcal{A}\models \forall x P x [s]$ then $\mathcal{A}\models \forall x P x [s(x|a)]$ for every $a\in A$. so i.p. for $a = \overline{s}(t)$
-            this means $\overline{s}(t)\in P^\mathcal{A}$ that is $\mathcal{A}\models Pt$.
-            In more generality we will need the substitution lemma:
-            We have $\mathcal{A} \models \forall x \varphi \: [s]$\\
-            this is equivalent to $\forall a \in A$ we have $\mathcal{A}\models \varphi [s(x|a)]$ 
-            then in particular $\mathcal{A}\models \varphi [s(x|\overline{s}(t))]$ and
-            by the substitution lemma we have the equivalence to $\mathcal{A}\models \varphi^x_t\:[s]$
+            \item[Ax of 1.] can be found in \cite*[exercise 3, section 2.3]{EndertonHerbertB2001AMIt} 
+            \item[Ax of 2.] wts. $\forall x \varphi \to \varphi^x_t$ is valid, where $t$ is SUB for $x$ in $\varphi$.\\
+                simple case: $\forall x Px \to Pt$ is valid.
+                Let $\mathcal{A}\models \forall x P x [s]$ then $\mathcal{A}\models \forall x P x [s(x|a)]$ for every $a\in A$. so i.p. for $a = \overline{s}(t)$
+                this means $\overline{s}(t)\in P^\mathcal{A}$ that is $\mathcal{A}\models Pt$.
+                In more generality we will need the substitution lemma:
+                We have $\mathcal{A} \models \forall x \varphi \: [s]$\\
+                this is equivalent to $\forall a \in A$ we have $\mathcal{A}\models \varphi [s(x|a)]$ 
+                then in particular $\mathcal{A}\models \varphi [s(x|\overline{s}(t))]$ and
+                by the substitution lemma we have the equivalence to $\mathcal{A}\models \varphi^x_t\:[s]$
+            \item[Ax of 3.] can be found in \cite*[exercise 3, section 2.2]{EndertonHerbertB2001AMIt} 
+            \item[Ax of 4.] can be found in \cite*[exercise 4, section 2.2]{EndertonHerbertB2001AMIt} 
+            \item[Ax of 5.] $x=x$: $\mathcal{A}\models x = x[s]$ because $s(x) = s(x)$
+            \item[Ax of 6.] $x=y \to (\alpha \to \alpha')$ where $\alpha$ is atomic fla, and $\alpha'$ is obtained from $\alpha$ by remplacing some occurances of $x$'s with $y$'s.
+                By the deduction theorem, is enough to show that the set of formulas $\{x=y, \alpha\}\models \alpha'$.
+                Let $\mathcal{A}$ be a structure, $s$ an assigment such that $\mathcal{A}\models x=y [s]$\\
+                \graybf{Claim: } for every term $t$ if $t'$ is obtained from $t$ by replacing some $x$'s by $y$'s, then $\overline{s}(t) = \overline{s}(t')$.
+                \begin{claimproof}
+                    Induction on terms.
+                \end{claimproof}
+                \begin{itemize}
+                    \item $\alpha$ of the form $t_1 = t_2$ then $\alpha'$ is $t_1' =t_2'$, use prev. claim.
+                    \item $\alpha$ of the form $P t_1 \dots t_n$ similar
+                \end{itemize}
         \end{enumerate}
     \end{enumerate}
 }
@@ -890,14 +901,12 @@ For the proof of soundness we will have to show that all our axioms are valid. F
 \defin{}{A set of formulas $\Gamma$ is called satisfiable, whenever there is a structure $\mathcal{A}$ with an assigment into $A$ that for all $\sigma\in \Gamma$
     $\mathcal{A}\models \sigma \: [s]$
 }
-
-\coroll{If $\Gamma$ is satisfiable then $\Gamma$ is consistent}
-\note{}{This corollary is equivalent to Soundness (Exercise)}
+\coroll{\label{FO:SAT_implies_CON}If $\Gamma$ is satisfiable then $\Gamma$ is consistent}
+\note{}{Corollary \ref{FO:SAT_implies_CON} is equivalent to Soundness (see Exercises)}
 
 \subsubsection{completeness}
-\prop{Completness Theorem}{$\Gamma \models \varphi \implies \Gamma \vdash \varphi$ }{}
-
-\prop{Completness Theorem'}{Every consistent set of formulas is satisfiable.}{}
+\thm{Completness Theorem}{$\Gamma \models \varphi \implies \Gamma \vdash \varphi$ }{}
+\thm{Completness Theorem'}{Every consistent set of formulas is satisfiable.}{}
 
 \note{}{
     \begin{itemize}
@@ -1110,8 +1119,8 @@ $\Gamma$ consistent set of $\mathcal{L}$-formulas. $\mathcal{A}/_E$ countable.
 \subsection{Completness for uncountable languages}
 
 Use (AC) in the form of Zorn's Lemma and Zermelo's Theorem
-\prop{Zorn's Lemma}{$P$ partially ordered set such that every chain has an upperbound in $P$ then $P$ contains a maximal element.}{}
-\prop{Zermelos's Theorem}{Every set can be well-ordered. That is linearly ordered such that every non-empty set has a smallest element.}{}
+\thm{Zorn's Lemma}{$P$ partially ordered set such that every chain has an upperbound in $P$ then $P$ contains a maximal element.}{}
+\thm{Zermelos's Theorem}{Every set can be well-ordered. That is linearly ordered such that every non-empty set has a smallest element.}{}
 $\omega$ is the first infinite ordinal. then it is also a cardinal and is called $\aleph_0$
 
 \[A_0 = \{(\varphi_\alpha, x_\alpha): \alpha < \lambda\}\]

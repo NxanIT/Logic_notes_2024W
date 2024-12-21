@@ -91,16 +91,166 @@ class relations
 \defin{Class functions}{
     Suppose we have a formula $\phi(x_1,\dots x_n, y)$. Then we say $\phi$ defines a class function $R_\phi$ iff 
     \[\forall x_1\dots \forall x_n \forall y \forall y' ((\phi(x,y)\land \phi(\underline{x},y'))\to y = y')\]
-    \[\dom R_\phi : \: \exists y \phi( \underline{x},y)\]
-    \[\imag R_\phi : \: \exists \underline{x} \phi(\underline{x},y)\]
+    We can then define the domain and image of the class function.
+    \[\dom R_\phi : \: \{\underline{x} : \:\exists y \phi( \underline{x},y)\}\]
+    \[\imag R_\phi : \: \{y : \:\exists \underline{x} \phi(\underline{x},y)\}\]
     Note that $R_\phi(\underline{x})=y$ iff $\phi(\underline{x},y)$
 }
-\defin{Axiom of replacement / substitution}{
+\defin{Axiom of replacement / substitution}{\label{Ax5}
     Let $\varphi(x,y,\underbar{a})$ a $\mathcal{L}$-fla., w/ free variables among $x,y$ and set-parameters $\underbar{a}$.
     Suppose $\varphi$ defines a class function on $\mathcal{U}$, than the followoing is an axiom:
-    $$\forall u \exists z \forall y (y\in z \leftrightarrow \exists x (x\in u \land \varphi(x,y,\underbar{a})))$$
+    $$\forall u \exists z \forall y\: (y\in z \leftrightarrow \exists x (x\in u \land \varphi(x,y,\underbar{a})))$$
     i.e. the image of a set under a class function is a set.
 }
-\defin{Axiom scheme of comprehension}{
-    TODO
+\defin{Axiom scheme of comprehension}{\label{Ax6}
+    Let $\psi(x,\underline{a})$ be an $\mathcal{L}$-formula. Then the followoing is an axiom:
+    \[\forall u \exists z \forall v \:(v\in z \leftrightarrow(v\in u\land \forall \psi(v,\underline{a})))\]
+    i.e. all elements of a set that satisfy a given $\mathcal{L}$-formula form a set.
+}
+\note{}{\ref{Ax6} follows from \ref{Ax5}}
+\defin{Set existence}{\label{Ax7}
+    \[\exists x x = x\]
+    i.e. $U\neq \varnothing$. - this is clear when we view it as a universe of a structure.
+}
+\note{on the existence of the empty set}{
+    Let $u$ be any set (there exists one by \ref{Ax7}), $\psi(x) \equiv x\neq x$ then by \ref{Ax6} $\varnothing \defeq \{x\in u : \psi(x)\}$
+    is a set.
+}
+\note{}{We can derive pairing from replacement \ref{Ax5}, extensionality, powerset and set existence.
+From set existence: $\varnothing$ is a set
+By powerset, replacement(comprehension): $\{\varnothing\}$ is a set.
+    \[\mathcal{P}(\{\varnothing\}) = \{\varnothing ,\{\varnothing\}\}\]
+    is a set.
+    Then by defining a class function $R_\phi (x) = y$, 
+    $$\phi (x,y)\equiv (x=\varnothing\land y = a)\lor (x = \{\varnothing\}\land y = b)$$
+}
+\subsubsection*{Functions}
+\note{}{If the domain of a class function is a set then the graph of the class function is a set. %check if really is graph
+    $R_\phi$ defined by $\phi(x,y,\underline{a})$ then the domain $u\defeq \dom R_\phi \in \mathcal{U}$
+    Image $v\defeq \imag R_\phi \in \mathcal{U}$ by replacement 
+    \[\{(x,y) : x\in u \land y \in v \land \phi(x,y,\underline{a})\}\]
+    is the graph of $R_\phi$
+    The above would be a set if $u\times v$ which can be shown by using comprehenson (exercise).
+}
+\defin{Function}{A function $f:a\to b$ where $a,b$ are sets is a subset of $a\times b$ that satisfies the followoing
+    \begin{itemize}
+        \item $\forall x \: (x\in a \to \exists y \in b (x,y)\in f)$
+        \item $\forall x \forall y \forall y' (((x,y)\in f \land (x,y')\in f)\to y = y')$
+    \end{itemize}
+}
+\subsubsection*{Families of sets and cartesian products}
+Suppose we have a function $a: I \to X$. set $a_i$ to the unique $x\in X$ s.th. $(i,x)\in a$
+\defin{}{
+    \[\bigcup_{i\in I}a_i = \{z\in \bigcup X : \exists i\in I z\in a_i\}\]
+    \[\bigcap_{i\in I}a_i = \{z\in \bigcup X : \forall i\in I z\in a_i\}\]
+    \[\prod_{i\in I}a_i = \{f:I\to \bigcup X : \forall i\in I z\in a_i\}\]
+}
+\note{}{
+    If $I=\varnothing$ then $\bigcap_{i\in I}a_i = \bigcup X$
+}
+\subsubsection*{Ordinals}
+Types of well ordered sets
+\defin{}{
+    Let $R$ class relation, $C$ class
+    Then $R$ defines a strict ordering on $C$, if
+    \[\forall x \forall y \forall z R(x,y)\to (C(x)\land C(y))\]
+    \[\forall x \forall y \forall z \lnot(R(x,y)\land R(y,x))\]
+    \[\forall x \forall y \forall z R(x,y)\land R(y,z)\to R(x,z))\]
+    The ordering is linear if additionally
+    \[\forall x \forall y (C(x)\land C(y))\to (x=y\lor R(x,y)\lor R(y,x))\]
+}
+\defin{Well ordering}{Let $R$ be a strict ordering on $C$ 
+    $x$ is a set such that $\forall y \in x C(y)$
+    Then $x$ is called well-ordered by $R$, if
+    \[\forall \varnothing \neq y \subseteq x \text{has a smallest element}\]
+    i.e.
+    \[\forall y \biggl((\varnothing \neq y \land y\subseteq x) \to \exists y' (y'\in y \land \forall z (z\in y \to( R(y',z)\lor y'=z)))\biggr)\]
+}
+\defin{Initial segment}{
+    Let $x$ be a set, well ordered by $R$.
+    Then $y\subseteq x$ is called an initial segment of $x$, if
+    \[\forall x\forall t s\in x \land t \in x \to  \biggl((t\in y \land s<t)\to s\in y\biggr)\]
+}
+notation: If $y\in x$, $x$ is well-ordered
+Then $\delta_y(x) = \{z\in x : z<y\}$\
+$<$  strict, $\implies$ $y\notin \delta_y(x)$
+
+
+\note{}{If $x$ is well-ordered and $y\subseteq x$ then
+    \begin{center}
+        $y$ is an initial segment of $x$ iff $y = x $ or $y = \delta_z(x)$ for some $z\in x$
+    \end{center}
+
+    Let $y\subseteq x$ an initial segment. Suppose $x\neq y$ that means $x\backslash y \neq \varnothing$
+    Let $z$ be the smallest element of $x\backslash y$ (exists by well-ordering of $x$) 
+}
+\defin{Propper class}{A class $C$ is a proper class if it is not a set.
+    i.e. if $C$ is given by $\phi(x,\underline{a})$ then there is not $z\in \mathcal{U}$ such that
+    $\forall x x\in z \iif \phi (x,\underline{a})$
+}
+\bsp{}{$\mathcal{U}$ is a proper class
+    If $\mathcal{U}$ was a set then $\{x : x\notin x\}$ would be a set.
+
+    the class of all ordinals is a proper class.
+}
+\subsubsection*{Well-orderings of classes and ordinals}
+\defin{well-ordering (class)}{A class relation $R$ defining a strict ordering on a class $C$
+    is a well-ordering, if \\
+    For every $x\in C$ the class initial segment $\delta_x(C) = \{y : R(y,x)\}$ is a set which is well ordered by $R$
+}
+\defin{Tranistivity of sets}{A set $x$ is called transitive if 
+\[\forall y (y\in x \to y\subseteq x)\]
+}
+\note{}{
+    It corresponds to Tranistivity of the belonging relation $\in$. $z \in y\in x \to z\in x$
+}
+\defin{Ordinal}{An ordinal is a transitive set which is well ordered by $\in$}
+\note{}{The collection of all ordinals is a class TODO text
+    Write down formula 
+}
+\bsp{}{
+    \begin{itemize}
+        \item $\varnothing$, $\{\varnothing\}$, $\{\varnothing , \{\varnothing\}\}$ are ordinals
+    \end{itemize}
+}
+\lemma{Characterization of ordinals}{$\alpha$ ordinal
+    \begin{itemize}
+        \item the initil segments of $\alpha$ are $\alpha$ itself and the elements of $\alpha$
+        \item if $\beta \in \alpha$ then $\beta $ is an ordinal.
+        \item $\alpha\notin \alpha$
+    \end{itemize}
+}{Problem set}
+\lemma{}{
+    Let $\alpha,\beta\in \theta$ TODO then either $\alpha = \beta$, or $\alpha\in \beta$ or $\beta\in \alpha$.
+}{
+    Let $\gamma \defeq \alpha\cap \beta$
+    Claim: $\gamma$ is initial segment of both $\alpha $ and $\beta$
+    \begin{claimproof}
+        $x\in y\in \gamma$ then $x\in y \in \alpha$ and $x\in y \in \beta$. but $\alpha, \beta$ are ordinals, so
+        $x\in \alpha$ and $x \in \beta$ and $x \in \gamma$
+    \end{claimproof}
+    Then by previous lemma, either 
+    \begin{itemize}
+        \item $\gamma = \alpha$ and $\gamma = \beta$: done 
+        \item $\gamma = \alpha$ and $\gamma \in \beta$: $\alpha\in \beta$
+        \item $\gamma \in \alpha$ and $\gamma = \beta$: $\beta\in \alpha$.
+        \item $\gamma \in \alpha$ and $\gamma \in \beta$ we have $\gamma \in \alpha\cap \beta = \gamma$ which is impossible
+    \end{itemize}
+}
+\prop{}{$\theta_n$ is well-ordered by $\in$}{
+    We need to show that if $\alpha\in On$ then $\delta_{\alpha}(On)$ is a set that is well ordered by $\in$.
+
+    $\delta_{\alpha}(On) = \{\beta \in On : \beta\in \alpha\} = \alpha$
+    Because $\alpha$ is a well-ordered set, and by the lemma TODO $On$ is linearly ordered by $\in$
+}
+\lemma{}{
+    $On$ is a proper class
+}{
+    Suppose $On$ would be a set $z$.\\
+    $On$ is well ordered by $\in$
+    $On$ is transitive: $y\in x \in On$ then $y\in On$ by lemma
+    so $On$ would be an ordinal and $On\in On$ which is not possible by Lemma TODO.
+}
+\note{}{$\alpha,\beta\in On$ then $\alpha\subseteq \beta$ iff $\alpha\in \beta$ or $\alpha = \beta$
+    $\to$: If $\alpha\neq \beta$. Then by linear ordering of $\in$ 
 }

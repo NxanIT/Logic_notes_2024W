@@ -97,7 +97,7 @@ for all propositional atoms $A\in S$ and propositional formulas $\alpha,\beta$ i
     \end{cases}$
 \end{enumerate}
 We also want the extention to be unique, that is
-\prop{Unique readability}{\label{extendetTruthAss}\label{ThrmUniqueExt}
+\thm{Unique readability}{\label{extendetTruthAss}\label{ThrmUniqueExt}
     For all TA $\nu$ for a set $S$ $\exists ! \overline{\nu}:\overline{S}\to\{0,1\}$ satisfying the above properties}{}
 We will prove this later\\
 \newpage
@@ -119,7 +119,7 @@ We will prove this later\\
 
 However we can find a way to reduce satisfiability of an infinite set $\Sigma$ of prop. sent. to all finite subsets of $\Sigma$.
 There later will be a more elementary proof of the compactness theorem, this proof is not part of the exam.
-\prop{Compactness theorem}{Let $\Sigma$ be an infinite set of prop. sent. such that 
+\thm{Compactness theorem}{Let $\Sigma$ be an infinite set of prop. sent. such that 
     \begin{equation}\tag{finite satisfiability}
         \forall \Sigma_0 \subseteq \Sigma, \Sigma_0 \ \text{finite}\  \exists \text{ TA satisfying every member of } \Sigma_0
     \end{equation}
@@ -298,7 +298,7 @@ with some rules of computing $\overline{h}(f(x,y))$ and $\overline{h}(g(x))$ fro
         \end{enumerate}
     \end{itemize}
 }
-\prop{Recursion Theorem}{
+\thm{Recursion Theorem}{
     $C\subseteq U$ freely generated from $B$ by $f,g$ and $V$ a set and $h:B\to V$, $F:V^2\to V$, $G:V\to V$
     Then $\exists ! \overline{h}:C\to V$ s.that 
     \begin{itemize}
@@ -409,14 +409,14 @@ iff $\alpha \sledom\models  \beta$ (alternative notation: $\models \sledom$). Th
     That is for any TA $v:\{A_1,A_2\}\to \{0,1\}$ we define $B_\alpha(v(A_1),v(A_2)) = \overline{v}(\alpha)$
     %TODO extend / rearange function %edit 24.10. what does that mean?
 }
-\prop{}{If $\alpha,\beta$ are prop. sent. with at most $n$ prop. Atoms (combined), then
+\thm{}{If $\alpha,\beta$ are prop. sent. with at most $n$ prop. Atoms (combined), then
     \begin{enumerate}
         \item $\alpha \models \beta $ iff $\forall x\in \{0,1\}^n$ it holds $B_\alpha(x)\leq B_\beta(x)$
         \item $\alpha \sledom \models \beta $ iff $\forall x\in \{0,1\}^n$ it holds $B_\alpha(x) = B_\beta(x)$
         \item $\models \alpha $ iff $\forall x\in \{0,1\}^n$ it holds $B_\alpha(x)=1$
     \end{enumerate}
 }{}
-\prop{Realisation}{
+\thm{(Post)}{\footnote{Emil Post}
     Let $G$ be an $n$-ary boolean function\outernote{$n$-ary boolean func.} for $n\geq 1$. Then there is a prop. sent. $\alpha$ such that. $B_\alpha = G$.
     We say $\alpha$ realizes $G$.
 }{
@@ -451,7 +451,7 @@ iff $\alpha \sledom\models  \beta$ (alternative notation: $\models \sledom$). Th
 \coroll{$\{\lnot,\land,\lor\}$ is a complete\outernote{complete} set of logical connectives, i.e. every prop. sent. is tautologically 
     equivalent to a sentence built up from atoms and $\lnot,\land,\lor$.
 }
-\prop{}{Both $\{\lnot, \land\}$ and $\{\lnot, \lor\}$ are complete.}{
+\thm{}{Both $\{\lnot, \land\}$ and $\{\lnot, \lor\}$ are complete.}{
     Its sufficient to show that every $k$-place boolean function is realisable by a prop. sent.
     built up using only $\lnot$ and $\land$. This is, because $\alpha\land \beta \sledom \models \lnot (\lnot \alpha \lor \lnot \beta)$
     We prove this by induction on the number of disjuctions of a prop. sent. $\alpha$ in DNF.
@@ -492,7 +492,8 @@ iff $\alpha \sledom\models  \beta$ (alternative notation: $\models \sledom$). Th
 }
 \newpage
 \section{Compactness Theorem}
-\prop{Compactness Theorem}{\label{CompThrm}
+\thm{Compactness Theorem}{\label{CompThrm}
+
     $\Sigma$ is satisfiable iff every finite subset $\Sigma_0\subseteq \Sigma$ is satisfiable. (i.e. $\Sigma$ is finitely satisfiable)\outernote{finitely satisfiable}}{
     Let $\Sigma$ be a finitely satisfiable set of prop. sent. Outline of the proof:
     \begin{enumerate}
@@ -503,17 +504,17 @@ iff $\alpha \sledom\models  \beta$ (alternative notation: $\models \sledom$). Th
         \item Let $\alpha_1,\alpha_2,\dots$ be an enumeration of all prop. sent. 
         and define $\Delta_n$ inductively by $\Delta_0 \defeq \Sigma$
         $$\Delta_{n+1}\defeq \begin{cases}
-            \Delta_n\cup \{\alpha_{n+1}\} & \text{if satisfiable}\\
+            \Delta_n\cup \{\alpha_{n+1}\} & \text{if finitely satisfiable}\\
             \Delta_n\cup \{\lnot\alpha_{n+1}\} & \text{otherwise}
         \end{cases}$$
         \textbf{Claim:} $\Delta_n$ is finitely satisfiable for each $n$
         \begin{claimproof}
             By regular induction over $n$. $\Delta_0$ is finitely satisfiable. Let us assume $\Delta_n$ is finitely satisfiable.
             If $\Delta_{n+1} = \Delta_n\cup \{\alpha_{n+1}\}$ then we are finished. 
-            Otherwise let $\Delta' \subseteq \Delta_n$ be a finite set that $\Delta' \cup \{\alpha_{n+1}\}$ is not satisfiable.
+            Otherwise let $\Delta' \subseteq \Delta_n$ be a finite subset that $\Delta' \cup \{\alpha_{n+1}\}$ is not satisfiable.
             It holds $\Delta' \models \lnot \alpha_{n+1}$.
-            We assume that $\Delta_n\cup \{\lnot\alpha_{n+1}\}$ is not finitely satisfiable. 
-            Then there exists a finite subset $\Delta'' \subseteq \Delta_n $ such that $\Delta'' \cup \{\lnot\alpha_{n+1}\}$ is (finite and) not satisfiable.
+            Let us assume that $\Delta_n\cup \{\lnot\alpha_{n+1}\}$ is not finitely satisfiable. 
+            Then there exists a finite subset $\Delta'' \subseteq \Delta_n $ such that $\Delta'' \cup \{\lnot\alpha_{n+1}\}$ is not satisfiable.
             It therefore holds $\Delta'' \models \alpha_{n+1}$
             But $\Delta'\cup \Delta''$ is a finite subset of $\Delta_n$ and by above observations $\Delta'\cup \Delta''\models \alpha_{n+1}$ and $\Delta'\cup \Delta''\models \lnot \alpha_{n+1}$
             A contradiction to the assumption that $\Delta_n$ is finitely satisfiable.
@@ -522,7 +523,7 @@ iff $\alpha \sledom\models  \beta$ (alternative notation: $\models \sledom$). Th
         \begin{enumerate}
             \item $\Sigma\subseteq \Delta$
             \item (Maximality): for every prop. sent. $\alpha$ it holds $\alpha\in \Delta$ or $\lnot \alpha\in \Delta$
-            \item (Satisfiability): $\Delta$ is finitely satisfiable. For every finite subset there exists a $\Delta_n$ which is a superset.
+            \item (Satisfiability): $\Delta$ is finitely satisfiable. (For every finite subset there exists a $\Delta_n$ which is a superset.)
         \end{enumerate}
         \item Let $\nu$ be a TA for the prop. atoms $A_1, A_2,\dots$ such that $\nu(A) = 1$ iff $A\in \Delta$
         

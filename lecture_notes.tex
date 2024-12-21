@@ -156,7 +156,7 @@
         \begin{defi}
             \addcontentsline{dfn}{section}{\color{rhoda}Def. \protect{\color{tanita}{\thedefi \hspace{5px} #1}}}
             %\normalfont
-            \color{tanita}\fontfamily{txtt}\selectfont\textbf{{{#1}}:\hspace{5px}}
+            \color{tanita}\fontfamily{txtt}\selectfont\textbf{{{#1}}:}
             \normalfont\color{black}#2
         \end{defi}
         \color{black}
@@ -224,7 +224,7 @@
 \newtheorem{lemmata}[propcount]{Lemma}
 \newcommand{\lemma}[3]{
     %Input: 1-Name, 2-statement, 3-proof
-    \addcontentsline{thn}{subsection}{\color{rhoda}Lemma \protect{\color{tanita}{\thepropcount \hspace{5px} #1}}} 
+    
     \ifSimplifiedVersion
         Lemma: #1 - #2
 
@@ -235,12 +235,13 @@
         \end{lemmata}
         \color{black}
     \fi
+    \addcontentsline{thn}{subsection}{\color{rhoda}Lemma \protect{\color{tanita}{\thepropcount \hspace{5px} #1}}} 
 }
 
 \newcommand{\propOrThm}[3]{
     \ifx\foo#1\foo 
     \else
-        \color{tanita}\fontfamily{txtt}\selectfont\textbf{{#1}}:\hspace{5px}
+        \color{tanita}\fontfamily{txtt}\selectfont\textbf{\textup{#1}}:
     \fi
     \fontfamily{cmr}\selectfont\color{black}#2
     \ifx\foo#3\foo
@@ -291,8 +292,11 @@
 \newcommand*{\claimproofname}{proof of claim.}
 \newenvironment{claimproof}[1][\claimproofname]{\vspace*{-10px}\begin{proof}[#1]\renewcommand*{\qedsymbol}{\(\boxtimes\)}}{\end{proof}}
 
-\newcommand{\RomanNum}[1]{%
-  \textup{\uppercase\expandafter{\romannumeral#1}}%
+\newcommand{\romanNum}[1]{
+  \textup{{\romannumeral#1\relax}}
+}
+\newcommand{\RomanNum}[1]{
+  \textup{\uppercase\expandafter{\romannumeral#1\relax}}
 }
 \begin{document}
 
@@ -339,7 +343,7 @@
 \newgeometry{
     outer=15mm,
     inner=14mm,
-    %bottom=15mm,
+    bottom=15mm,
     %top=20mm
 }
 
