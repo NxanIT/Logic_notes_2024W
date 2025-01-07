@@ -15,6 +15,7 @@
 \usepackage[backend=biber,style=alphabetic]{biblatex}
 \usepackage{graphicx}
 \usepackage{tikz}
+\usetikzlibrary{calc}
 \usepackage{float}%benötigt für floating point-positionierung eines bildes
 \usepackage{stmaryrd}%for double left brackets
 \usepackage{nameref}%for section names in list of theorems
@@ -101,6 +102,7 @@
 \definecolor{yellow}{HTML}{FCF434}
 \definecolor{purple}{HTML}{9C59d1}
 \definecolor{darkgray}{HTML}{2C2C2C}
+\definecolor{mediumgray}{HTML}{4C4C4C}
 \definecolor{lightgray}{HTML}{C2C2C2}
 
 %Highlight
@@ -282,10 +284,14 @@
         Bsp(#1): #2
 
     \else 
+        
         \color{rhoda}
         \begin{example}
-            \fontfamily{txtt}\selectfont{#1}: \normalfont\color{black}
-            #2
+            \ifx\foo#1\foo 
+            \else
+                \color{tanita}\fontfamily{txtt}\selectfont\textbf{\textup{#1}}:
+            \fi
+            \normalfont\color{black}#2
         \end{example}
         \color{black}
     \fi
@@ -300,17 +306,64 @@
 \newcommand{\RomanNum}[1]{
   \textup{\uppercase\expandafter{\romannumeral#1\relax}}
 }
+
+\fancypagestyle{two_sided}{
+    \pagestyle{fancy}   %needed for changing headers/footers
+    \fancyhf{}          %cleares headers and footers
+    \fancyhead[RO]{\small\rightmark}
+    \fancyhead[LE]{\small\leftmark}
+    \fancyhead[LO,RE]{Logic Lecture Notes 2024W}
+    \fancyfoot[C]{}
+    \fancyfoot[LO,RE]{\fontfamily{cmtt}\small\color{gray}J.Petermann: LogicNotes [V0.6.2-\today{ }at \DTMcurrenttime] }% old: \href[]{https://creativecommons.org/licenses/by-nc-nd/3.0/de/}{\color{gray}CC BY-NC-ND 3.0 DE}
+    \fancyfoot[LE,RO]{Seite \thepage \hspace{3pt}von \pageref*{LastPage}}
+}
+\fancypagestyle{one_sided}{
+    \pagestyle{fancy}   %needed for changing headers/footers
+    \fancyhf{}          %cleares headers and footers
+    \fancyhead[R]{
+        \small\rightmark
+        % \begin{tikzpicture}[overlay,remember picture]
+        %     \fill [color=lightgray](current page.north east) rectangle
+        %         ($ (current page.south east) + (-4.5cm,0cm) $);
+        % \end{tikzpicture}
+    }
+    \fancyhead[L]{
+        Logic Lecture Notes 2024W
+        %\begin{tikzpicture}[overlay,remember picture]
+        %     \fill [color=mediumgray] (current page.north west) rectangle
+        %         ($ (current page.south west) + (1.5cm,0cm) $);
+        % \end{tikzpicture}
+    }
+    \fancyfoot[C]{}
+    \fancyfoot[L]{\fontfamily{cmtt}\small\color{gray}J.Petermann: LogicNotes [V0.6.2-\today{ }at \DTMcurrenttime] }% old: \href[]{https://creativecommons.org/licenses/by-nc-nd/3.0/de/}{\color{gray}CC BY-NC-ND 3.0 DE}
+    \fancyfoot[R]{Seite \thepage \hspace{3pt}von \pageref*{LastPage}}
+}
+\fancypagestyle{one_sided_outer}[one_sided]{
+    \fancyhead[R]{
+        \small\rightmark
+        \begin{tikzpicture}[overlay,remember picture]
+            \fill [color=lightgray](current page.north east) rectangle
+                ($ (current page.south east) + (-4.5cm,0cm) $);
+        \end{tikzpicture}
+    }
+    
+    \fancyhead[L]{
+        Logic Lecture Notes 2024W
+        \begin{tikzpicture}[overlay,remember picture]
+            \fill [color=mediumgray] (current page.north west) rectangle
+                ($ (current page.south west) + (1.5cm,0cm) $);
+        \end{tikzpicture}
+    }
+}
+
 \begin{document}
 
 \fancypagestyle{plain}{}
-\pagestyle{fancy}   %needed for changing headers/footers
-\fancyhf{}          %cleares headers and footers
-\fancyhead[RO]{\small\rightmark}
-\fancyhead[LE]{\small\leftmark}
-\fancyhead[LO,RE]{Logic Lecture Notes 2024W}
-\fancyfoot[C]{}
-\fancyfoot[LO,RE]{\fontfamily{cmtt}\small\color{gray}J.Petermann: LogicNotes [V0.6.2-\today{ }at \DTMcurrenttime] }% old: \href[]{https://creativecommons.org/licenses/by-nc-nd/3.0/de/}{\color{gray}CC BY-NC-ND 3.0 DE}
-\fancyfoot[LE,RO]{Seite \thepage \hspace{3pt}von \pageref*{LastPage}}
+\ifPrintTwosided
+\pagestyle{two_sided}
+\else
+\pagestyle{one_sided_outer}
+\fi
 
 \begin{center}
     \fontfamily{qag}\selectfont
@@ -348,7 +401,11 @@
     bottom=15mm,
     %top=20mm
 }
-
+\ifPrintTwosided
+\pagestyle{two_sided}
+\else
+\pagestyle{one_sided}
+\fi
 \begin{multicols}{2}
     \listofdefinitions
     \listoftheorems
