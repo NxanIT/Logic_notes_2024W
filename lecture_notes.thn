@@ -24,26 +24,27 @@
 \contentsline {section}{\color {black}Unique readability for terms}{19}{section.2.5}%
 \contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{5.1\hspace {5px} }}}{19}{propcount.2.5.1}%
 \contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{5.2\hspace {5px} }}}{19}{propcount.2.5.2}%
-\contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{5.3\hspace {5px} }}}{19}{propcount.2.5.3}%
+\contentsline {subsection}{\color {rhoda}Prop. {\color {tanita}{5.3\hspace {5px} Unique readability for terms}}}{19}{propcount.2.5.3}%
 \contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{5.4\hspace {5px} }}}{19}{propcount.2.5.4}%
+\contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{5.5\hspace {5px} }}}{19}{propcount.2.5.5}%
 \contentsline {section}{\color {black}A parsing algorithm for first order logic}{20}{section.2.6}%
 \contentsline {section}{\color {black}Deductions (formal proofs)}{20}{section.2.7}%
 \contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{7.1\hspace {5px} }}}{22}{propcount.2.7.1}%
 \contentsline {subsection}{\color {rhoda}Thm. {\color {tanita}{7.2\hspace {5px} }}}{22}{propcount.2.7.2}%
 \contentsline {section}{\color {black}Generalization and deduction theorem}{22}{section.2.8}%
-\contentsline {subsection}{\color {rhoda}Thm. {\color {tanita}{8.1\hspace {5px} Generalization theorem}}}{22}{Item.91}%
+\contentsline {subsection}{\color {rhoda}Thm. {\color {tanita}{8.1\hspace {5px} Generalization theorem}}}{22}{Item.98}%
 \contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{8.2\hspace {5px} Rule T}}}{23}{propcount.2.8.2}%
 \contentsline {subsection}{\color {rhoda}Thm. {\color {tanita}{8.3\hspace {5px} Deduction theorem}}}{23}{propcount.2.8.3}%
 \contentsline {subsection}{\color {rhoda}Thm. {\color {tanita}{8.4\hspace {5px} Generalization on constants}}}{23}{propcount.2.8.4}%
-\contentsline {subsection}{\color {rhoda}Thm. {\color {tanita}{8.5\hspace {5px} Existence of alphabetic variants}}}{24}{Item.97}%
+\contentsline {subsection}{\color {rhoda}Thm. {\color {tanita}{8.5\hspace {5px} Existence of alphabetic variants}}}{24}{Item.104}%
 \contentsline {section}{\color {black}Soundness and completeness}{25}{section.2.9}%
 \contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{9.1\hspace {5px} pre-substitution lemma}}}{25}{propcount.2.9.1}%
-\contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{9.2\hspace {5px} Substitution lemma}}}{25}{Item.106}%
-\contentsline {subsection}{\color {rhoda}Thm. {\color {tanita}{9.3\hspace {5px} }}}{26}{Item.108}%
+\contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{9.2\hspace {5px} Substitution lemma}}}{25}{Item.113}%
+\contentsline {subsection}{\color {rhoda}Thm. {\color {tanita}{9.3\hspace {5px} }}}{26}{Item.115}%
 \contentsline {subsection}{\color {rhoda}Thm. {\color {tanita}{9.4\hspace {5px} Completness Theorem}}}{26}{propcount.2.9.4}%
 \contentsline {subsection}{\color {rhoda}Thm. {\color {tanita}{9.5\hspace {5px} Completness Theorem'}}}{26}{propcount.2.9.5}%
 \contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{9.6\hspace {5px} }}}{29}{propcount.2.9.6}%
-\contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{9.7\hspace {5px} }}}{29}{Item.123}%
+\contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{9.7\hspace {5px} }}}{29}{Item.130}%
 \contentsline {subsection}{\color {rhoda}Thm. {\color {tanita}{9.8\hspace {5px} Zorn's Lemma}}}{30}{propcount.2.9.8}%
 \contentsline {subsection}{\color {rhoda}Thm. {\color {tanita}{9.9\hspace {5px} Zermelos's Theorem}}}{30}{propcount.2.9.9}%
 \contentsline {chapter}{\color {black}Model Theory}{31}{chapter.3}%
@@ -56,17 +57,17 @@
 \contentsline {subsection}{\color {rhoda}Thm. {\color {tanita}{3.1\hspace {5px} }}}{33}{propcount.3.3.1}%
 \contentsline {subsection}{\color {rhoda}Prop. {\color {tanita}{3.2\hspace {5px} Lefschetz Principle}}}{33}{propcount.3.3.2}%
 \contentsline {subsection}{\color {rhoda}Prop. {\color {tanita}{3.3\hspace {5px} Ax–Grothendieck}}}{34}{propcount.3.3.3}%
-\contentsline {subsection}{\color {rhoda}Prop. {\color {tanita}{3.4\hspace {5px} }}}{34}{Item.130}%
+\contentsline {subsection}{\color {rhoda}Prop. {\color {tanita}{3.4\hspace {5px} }}}{34}{Item.137}%
 \contentsline {section}{\color {black}Nonstandard Analysis}{34}{section.3.4}%
-\contentsline {subsection}{\color {rhoda}Prop. {\color {tanita}{4.1\hspace {5px} }}}{35}{Item.137}%
-\contentsline {subsection}{\color {rhoda}Prop. {\color {tanita}{4.2\hspace {5px} }}}{35}{Item.139}%
+\contentsline {subsection}{\color {rhoda}Prop. {\color {tanita}{4.1\hspace {5px} }}}{35}{Item.144}%
+\contentsline {subsection}{\color {rhoda}Prop. {\color {tanita}{4.2\hspace {5px} }}}{35}{Item.146}%
 \contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{4.3\hspace {5px} }}}{35}{propcount.3.4.3}%
 \contentsline {subsection}{\color {rhoda}Prop. {\color {tanita}{4.4\hspace {5px} }}}{35}{propcount.3.4.4}%
 \contentsline {subsection}{\color {rhoda}Prop. {\color {tanita}{4.5\hspace {5px} }}}{35}{propcount.3.4.5}%
 \contentsline {subsection}{\color {rhoda}Prop. {\color {tanita}{4.6\hspace {5px} }}}{36}{propcount.3.4.6}%
 \contentsline {subsection}{\color {rhoda}Prop. {\color {tanita}{4.7\hspace {5px} Chain rule}}}{36}{propcount.3.4.7}%
 \contentsline {section}{\color {black}o-minimality}{37}{section.3.5}%
-\contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{5.1\hspace {5px} }}}{37}{Item.142}%
+\contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{5.1\hspace {5px} }}}{37}{Item.149}%
 \contentsline {section}{\color {black}o-minimal ordered groups and rings}{37}{section.3.6}%
 \contentsline {subsection}{\color {rhoda}Prop. {\color {tanita}{6.1\hspace {5px} }}}{38}{propcount.3.6.1}%
 \contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{6.2\hspace {5px} }}}{38}{propcount.3.6.2}%
@@ -78,15 +79,15 @@
 \contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{6.8\hspace {5px} }}}{39}{propcount.3.6.8}%
 \contentsline {subsection}{\color {rhoda}Thm. {\color {tanita}{6.9\hspace {5px} Cell decomposition}}}{42}{propcount.3.6.9}%
 \contentsline {subsection}{\color {rhoda}Prop. {\color {tanita}{6.10\hspace {5px} }}}{42}{propcount.3.6.10}%
-\contentsline {subsection}{\color {rhoda}Prop. {\color {tanita}{6.11\hspace {5px} }}}{43}{Item.149}%
+\contentsline {subsection}{\color {rhoda}Prop. {\color {tanita}{6.11\hspace {5px} }}}{43}{Item.156}%
 \contentsline {subsection}{\color {rhoda}Thm. {\color {tanita}{6.12\hspace {5px} }}}{43}{propcount.3.6.12}%
 \contentsline {chapter}{\color {black}Boolean Algebra}{44}{chapter.4}%
 \contentsline {section}{\color {black}Stone Representation Theorem}{45}{section.4.1}%
-\contentsline {subsection}{\color {rhoda}Thm. {\color {tanita}{1.1\hspace {5px} Stone Representation Theorem}}}{46}{Item.172}%
+\contentsline {subsection}{\color {rhoda}Thm. {\color {tanita}{1.1\hspace {5px} Stone Representation Theorem}}}{46}{Item.179}%
 \contentsline {section}{\color {black}Lindenbaum-Tarski Algebras}{46}{section.4.2}%
 \contentsline {subsection}{\color {rhoda}Thm. {\color {tanita}{2.1\hspace {5px} Compactness Theorem *}}}{47}{propcount.4.2.1}%
-\contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{2.2\hspace {5px} }}}{48}{Item.177}%
-\contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{2.3\hspace {5px} }}}{48}{Item.180}%
+\contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{2.2\hspace {5px} }}}{48}{Item.184}%
+\contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{2.3\hspace {5px} }}}{48}{Item.187}%
 \contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{2.4\hspace {5px} }}}{49}{propcount.4.2.4}%
 \contentsline {chapter}{\color {black}Set Theory}{50}{chapter.5}%
 \contentsline {section}{\color {black}Axioms of ZFC}{50}{section.5.1}%
@@ -97,4 +98,11 @@
 \contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{1.5\hspace {5px} }}}{54}{propcount.5.1.5}%
 \contentsline {subsection}{\color {rhoda}Prop. {\color {tanita}{1.6\hspace {5px} }}}{54}{propcount.5.1.6}%
 \contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{1.7\hspace {5px} }}}{54}{propcount.5.1.7}%
-\contentsline {chapter}{\color {black}Bibliography}{57}{chapter*.9}%
+\contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{1.8\hspace {5px} }}}{54}{propcount.5.1.8}%
+\contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{1.9\hspace {5px} }}}{55}{propcount.5.1.9}%
+\contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{1.10\hspace {5px} }}}{55}{propcount.5.1.10}%
+\contentsline {subsection}{\color {rhoda}Thm. {\color {tanita}{1.11\hspace {5px} }}}{55}{propcount.5.1.11}%
+\contentsline {subsection}{\color {rhoda}Thm. {\color {tanita}{1.12\hspace {5px} }}}{55}{propcount.5.1.12}%
+\contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{1.13\hspace {5px} }}}{56}{propcount.5.1.13}%
+\contentsline {subsection}{\color {rhoda}Lemma {\color {tanita}{1.14\hspace {5px} }}}{56}{propcount.5.1.14}%
+\contentsline {chapter}{\color {black}Bibliography}{60}{chapter*.8}%

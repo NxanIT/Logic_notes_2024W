@@ -18,9 +18,9 @@
 \contentsline {section}{$\sim $}{8}{defcount.1.10}%
 \contentsline {section}{$\models \Relbar \joinrel \mathrel {|}$}{8}{defcount.1.10}%
 \contentsline {section}{$\Relbar \joinrel \mathrel {|}\models $}{8}{defcount.1.10}%
-\contentsline {section}{$n$-ary boolean func.}{9}{propcount.1.4.2}%
+\contentsline {section}{$n$-ary boolean function}{9}{propcount.1.4.2}%
 \contentsline {section}{DNF\\ Disjunctive normal form}{9}{Item.30}%
-\contentsline {section}{complete}{9}{subcorollcount.1.4.2.2}%
+\contentsline {section}{completeness (connectives)}{9}{subcorollcount.1.4.2.2}%
 \contentsline {section}{satisfiable}{9}{defcount.1.11}%
 \contentsline {section}{finitely satisfiable}{10}{propcount.1.5.1}%
 \contentsline {section}{\color {black}\textbf {Chapter 2}}{11}{chapter.2}%
@@ -43,4 +43,6 @@
 \contentsline {section}{RCF}{38}{defcount.3.15}%
 \contentsline {section}{\color {black}\textbf {Chapter 4}}{44}{chapter.4}%
 \contentsline {section}{\color {black}\textbf {Chapter 5}}{50}{chapter.5}%
-\contentsline {section}{\color {black}\textbf {Chapter 5}}{57}{chapter*.9}%
+\contentsline {section}{$\Ord $}{53}{defcount.5.20}%
+\contentsline {section}{$\On $}{53}{defcount.5.20}%
+\contentsline {section}{\color {black}\textbf {Chapter 5}}{60}{chapter*.8}%

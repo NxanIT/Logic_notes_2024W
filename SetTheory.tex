@@ -13,7 +13,7 @@ We will show roughly that some definably sets are not sets (in the sense of ZFC)
 In other words, two sets are the same if they have the same elements. This will give us later uniqueness in construction of other sets.
 \defin{Pairing Axiom}{\label{Ax2}
     for any two sets $a,b$ one can form a set whose elements are precicely $a,b$
-$$\forall x\forall y \exists z (u\in z \leftrightarrow (u = x \lor u = y))$$
+$$\forall x\forall y \exists z \forall u \: u\in z \leftrightarrow (u = x \lor u = y)$$
 Our notation will be $z=\{x,y\}$
 }
 In words: For any two sets there exists a set whose members are those two sets.
@@ -85,7 +85,7 @@ class relations
 \bsp{}{
     \begin{itemize}
         \item $\varphi (x) : x = x$ defines a class that is not a set
-        \item $\varphi(x) : \exists u (u\in x \land \forall v\in u (v\in x))$
+        \item $\varphi(x) : \exists u (u\in x \land \forall v \: (v\in u \to v\in x))$
     \end{itemize}
 }
 \defin{Class functions}{
@@ -153,23 +153,28 @@ Types of well ordered sets
 \defin{}{
     Let $R$ class relation, $C$ class
     Then $R$ defines a strict ordering on $C$, if
-    \[\forall x \forall y \forall z R(x,y)\to (C(x)\land C(y))\]
-    \[\forall x \forall y \forall z \lnot(R(x,y)\land R(y,x))\]
-    \[\forall x \forall y \forall z R(x,y)\land R(y,z)\to R(x,z))\]
-    The ordering is linear if additionally
-    \[\forall x \forall y (C(x)\land C(y))\to (x=y\lor R(x,y)\lor R(y,x))\]
+    \begin{enumerate}[label = (\roman*)]
+        \item  $ \forall x \forall y \forall z \: R(x,y)\to (C(x)\land C(y)) $ 
+        \item  $ \forall x \forall y \forall z \: \lnot(R(x,y)\land R(y,x)) $ 
+        \item  $ \forall x \forall y \forall z \: (R(x,y)\land R(y,z))\to R(x,z) $ 
+    \end{enumerate}
+    The ordering is linear, if additionally
+    \begin{enumerate}[label=(\roman*)]
+        \setcounter{enumi}{3}
+        \item $\forall x \forall y \: (C(x)\land C(y))\to (x=y\lor R(x,y)\lor R(y,x))$
+    \end{enumerate}
 }
 \defin{Well ordering}{Let $R$ be a strict ordering on $C$ 
     $x$ is a set such that $\forall y \in x C(y)$
     Then $x$ is called well-ordered by $R$, if
     \[\forall \varnothing \neq y \subseteq x \text{has a smallest element}\]
     i.e.
-    \[\forall y \biggl((\varnothing \neq y \land y\subseteq x) \to \exists y' (y'\in y \land \forall z (z\in y \to( R(y',z)\lor y'=z)))\biggr)\]
+    \[\forall y \biggl((\varnothing \neq y \land y\subseteq x) \to \exists y' \bigl(y'\in y \land \forall z (z\in y \to( R(y',z)\lor y'=z))\bigr)\biggr)\]
 }
 \defin{Initial segment}{
     Let $x$ be a set, well ordered by $R$.
     Then $y\subseteq x$ is called an initial segment of $x$, if
-    \[\forall x\forall t s\in x \land t \in x \to  \biggl((t\in y \land s<t)\to s\in y\biggr)\]
+    \[\forall s\forall t \: (s\in x \land t \in x) \to  \bigl((t\in y \land R(s,t))\to s\in y\bigr)\]
 }
 notation: If $y\in x$, $x$ is well-ordered
 Then $\delta_y(x) = \{z\in x : z<y\}$\
@@ -196,7 +201,7 @@ $<$  strict, $\implies$ $y\notin \delta_y(x)$
 \subsubsection*{Well-orderings of classes and ordinals}
 \defin{well-ordering (class)}{A class relation $R$ defining a strict ordering on a class $C$
     is a well-ordering, if \\
-    For every $x\in C$ the class initial segment $\delta_x(C) = \{y : R(y,x)\}$ is a set which is well ordered by $R$
+    For every $x\in C$ the class initial segment $\delta_x(C) = \{y : R(y,x)\}$ is a set that is well ordered by $R$
 }
 \defin{Tranistivity of sets}{A set $x$ is called transitive if 
 \[\forall y (y\in x \to y\subseteq x)\]
@@ -205,8 +210,9 @@ $<$  strict, $\implies$ $y\notin \delta_y(x)$
     It corresponds to Tranistivity of the belonging relation $\in$. $z \in y\in x \to z\in x$
 }
 \defin{Ordinal}{An ordinal is a transitive set which is well ordered by $\in$}
-\note{}{The collection of all ordinals is a class TODO text
-    Write down formula 
+\note{}{The collection of all ordinals form a class relation notation: 
+$\Ord, \On$\outernote{$\Ord$}\outernote{$\On$}\\
+    Proof: Write down formula 
 }
 \bsp{}{
     \begin{itemize}
@@ -221,7 +227,7 @@ $<$  strict, $\implies$ $y\notin \delta_y(x)$
     \end{itemize}
 }{Problem set}
 \lemma{}{
-    Let $\alpha,\beta\in \theta$ TODO then either $\alpha = \beta$, or $\alpha\in \beta$ or $\beta\in \alpha$.
+    Let $\alpha,\beta\in \On $ TODO then either $\alpha = \beta$, or $\alpha\in \beta$ or $\beta\in \alpha$.
 }{
     Let $\gamma \defeq \alpha\cap \beta$
     Claim: $\gamma$ is initial segment of both $\alpha $ and $\beta$
@@ -237,20 +243,185 @@ $<$  strict, $\implies$ $y\notin \delta_y(x)$
         \item $\gamma \in \alpha$ and $\gamma \in \beta$ we have $\gamma \in \alpha\cap \beta = \gamma$ which is impossible
     \end{itemize}
 }
-\prop{}{$\theta_n$ is well-ordered by $\in$}{
-    We need to show that if $\alpha\in On$ then $\delta_{\alpha}(On)$ is a set that is well ordered by $\in$.
+\prop{}{$\On$ is well-ordered by $\in$}{
+    We need to show that if $\alpha\in\On $ then $\delta_{\alpha}(On)$ is a set that is well ordered by $\in$.
 
-    $\delta_{\alpha}(On) = \{\beta \in On : \beta\in \alpha\} = \alpha$
-    Because $\alpha$ is a well-ordered set, and by the lemma TODO $On$ is linearly ordered by $\in$
+    $\delta_{\alpha}(On) = \{\beta \in\On  : \beta\in \alpha\} = \alpha$
+    Because $\alpha$ is a well-ordered set, and by the lemma TODO $\On $ is linearly ordered by $\in$
 }
 \lemma{}{
-    $On$ is a proper class
+    $\On$, the class of all ordinals is a proper class, well-ordered by $\in$
 }{
-    Suppose $On$ would be a set $z$.\\
-    $On$ is well ordered by $\in$
-    $On$ is transitive: $y\in x \in On$ then $y\in On$ by lemma
-    so $On$ would be an ordinal and $On\in On$ which is not possible by Lemma TODO.
+    Suppose $\On $ would be a set $z$.\\
+    $\On $ is well ordered by $\in$
+    $\On $ is transitive: $y\in x \in\On $ then $y\in\On $ by lemma
+    so $\On $ would be an ordinal and $\On \in\On $ which is not possible by Lemma TODO.
 }
-\note{}{$\alpha,\beta\in On$ then $\alpha\subseteq \beta$ iff $\alpha\in \beta$ or $\alpha = \beta$
-    $\to$: If $\alpha\neq \beta$. Then by linear ordering of $\in$ 
+
+\note{}{
+    \begin{itemize}
+        \item If $\alpha\in\On $ then the initial segments of $\alpha$ are $\alpha$ and the elements of $\alpha$.
+        \item If $\alpha\in\On $ and $\beta\in \alpha$ then $\beta \in \On $
+        \item $\alpha,\beta\in\On $ then $\alpha\subseteq \beta$ iff $\alpha\in \beta$ or $\alpha = \beta$
+        $\to$: If $\alpha\neq \beta$. Then by linear ordering of $\in$ 
+        \item $\alpha\subseteq \beta$ iff $\alpha = \beta$ or $\alpha\in \beta$.
+    \end{itemize}
+}
+
+%07.01.2025
+
+\lemma{ }{
+    If $\alpha\in \On $ then $\alpha\cup \{\alpha\} \in \On $ and $\alpha\cup \{\alpha\}$ is the successor of $\alpha$ in the ordering $\in$
+}{
+    \begin{itemize}
+        \item $\alpha\cup \{\alpha\}$ transitive:\\
+        $x\in y \in \alpha\cup \{\alpha\}$ if $y\in \alpha$ then $x\in \alpha$ hence $x\in \alpha\cup \{\alpha\}$.
+        else $y = \alpha$ then $x\in \alpha\cup \{\alpha\}$ 
+        \item $\alpha\cup \{\alpha\}$ well-ordered:\\
+        $\varnothing\neq x\subseteq  \alpha\cup \{\alpha\}$ if $x\cap \alpha\neq \varnothing$ then there is $x_0\in x\cap \alpha$ smallest.
+        $x_0 \in \alpha$ and is smallest element in  $\alpha\cup \{\alpha\}$
+        otherwise $\varnothing \neq x \subseteq \{\alpha\}$ then $\alpha$ is the smallest element.
+        \item  $\alpha\cup \{\alpha\}$ is successor of $\alpha$\\
+        $\alpha\in \alpha\cup \{\alpha\}$
+        assume  $\alpha\in \beta \in \alpha\cup \{\alpha\}$
+        if $\beta\in \alpha$ then $\alpha\in\beta\in\alpha$, so by transitivity, $\alpha\in \alpha$ which is not possible.\\
+        else $\beta = \alpha$
+    \end{itemize}
+}
+
+\note{}{If $\alpha,\beta$ are ordinals then we will use $\alpha\in \beta$, $\alpha<\beta$, $\alpha\subsetneq \beta$ interchangable.
+
+$\gamma\in \On $ then $\gamma = \{\alpha\in \On : \alpha\in \gamma\}$
+}
+\lemma{}{
+    $X$ a set of ordinals, then $\sup X = \bigcup X$ is an ordinal and $\forall \alpha\in X \alpha\subseteq \bigcup X$ and $\bigcup X$ is smallest with this property.
+}{
+    \begin{itemize}
+        \item $\bigcup X$ transitive: $x\in y\in \bigcup X$. then $\exists \alpha\in X$ such that $y\in \alpha$. then $x\in \alpha$ hence $x\in \bigcup X$
+        \item $\bigcup X$ well-ordered by $\in$: $\bigcup X$ contained in $\On $ and is a set, but $\On $ is well-ordered, so $\bigcup X$ is well-ordered.
+        \item $\alpha\in X$ then $\alpha\subseteq \bigcup X$.
+        \item $\alpha\in X$ then $\alpha\subseteq \bigcup X$.
+        Let $\beta\in \bigcup X$ then there exists $\alpha\in X$ such that $\beta\in \alpha$ so $\beta$ is not an upper bound for $X$.
+    \end{itemize}
+}
+
+\lemma{}{
+    Suppose that $\alpha,\beta\in \On $ and $f:\alpha\to \beta$ that is strictly increasing i.e. 
+    $\forall \gamma,\delta\in \alpha \gamma<\delta \to f(\gamma)<f(\delta)$
+    Then $\alpha\subseteq \beta$ and $\forall \gamma\: \gamma\leq f(\gamma)$
+}{
+    By contradiction, Let $\gamma\in \alpha$ be the smallest element with $f(\gamma)<\gamma$ then by minimality of $\gamma$,
+    $f(\gamma)\leq f(f(\gamma))$. 
+    Because $f$ is strictly increasing $f(f(\gamma))<f(\gamma)$. So we get $f(\gamma)\leq f(f(\gamma))<f(\gamma)$ but 
+    $f(\gamma)\notin f(\gamma)$ because $f(\gamma)\in \beta$.
+
+    Suppose $\beta\in \alpha$ then $f(\beta)<f(\alpha)<\beta$ so $f(\beta)<\beta$, a contradiction.
+}
+
+\thm{}{
+    $f:\alpha\to \beta$ isomorphism between $(\alpha,\in)$, $(\beta,\in)$ and $\alpha,\beta\in \On $ then $\alpha = \beta$ and $f$ is unique such isomorphism, hence $f = id_\alpha$.
+}{
+    $\alpha = \beta$:\\
+    Apply previous lemma to $f,f^{-1}$ hence $\alpha\subseteq \beta$ and $\beta\subseteq \alpha$
+    uniqueness:\\
+    $\gamma\in \alpha$ then $\gamma\leq f(\gamma)$  and $\gamma\leq f^{-1}(\gamma)$ by prev lemma
+    we get 
+    $\gamma\leq f(\gamma)\leq \gamma$ so $f(\gamma) = \gamma$
+}
+
+\note{}{$y\mapsto \beta_y$ for $y\in Y$ is function defined on $Y$ and maps to
+    $Z = \{\beta(x) : x\in Y\}$ (is a set by replacement)
+}
+
+\thm{}{
+    Let $(X,<_X)$ be well-ordered, then there is a unique isomorphism onto an ordinal $(\alpha, \in)$
+}{
+    uniqueness:\\
+    Suppose we have $f:(X,<_X)\to(\alpha,\in)$, $g:(X,<_X)\to(\beta,\in)$ isomorphisms
+    then $f\circ g^{-1}$ and by prev thm: $\alpha = \beta$ and $f\circ g^{-1}= id_\alpha$ so $f=g$.
+    
+    Existence:\\
+    define $y = \{x\in X : \: (\delta_x,<_X) \text{  is isomorphic to an ordinal}\}$
+    where $\delta_x \defeq \delta_x(X)$.
+
+    For each $y\in Y$ there is a unique ordinal $\beta_y\in \On $ such that $(\delta_y, <_X)$ 
+    and $(\beta(y), \in)$ are isomorphic.
+
+    \textbf{Claim:} $Y$ is initial segment of $X$
+    \begin{claimproof}
+        If $x<_Xy\in Y$, $f:\delta_y\to \beta(y)$ isomorphism, then $f$ maps $\delta_x\subseteq \delta_y$ to initial segment of $\beta$, hence to an ordinal. 
+    \end{claimproof}
+    $y\mapsto \beta_y$ for $y\in Y$ is function defined on $Y$ and maps to
+    $Z = \{\beta(x) : x\in Y\}$ (is a set by replacement)\\
+    \textbf{Claim:} $Z = \{\beta(x) : x\in Y\}$ is an initial segment in $\On $
+    \begin{claimproof}
+        if $\gamma\in \beta(x)$, $x\in Y$ have isomorphism between $(\delta_x,<_X)$ and $(\beta_x,\in)$ so its preimage $y$ and $(\delta_y, <_X)$ is mapped to the initial segment determined by gamma, so to $(\gamma, \in)$ hence $(\delta_y, <_X)$ isom to $\gamma$
+    \end{claimproof}
+    So $Z$ is initial segment of $\On $ and $Z$ is a set. So $\alpha\defeq Z$ is itself an ordinal
+    and $y\mapsto \beta_y$ isomorphism between $Y$ and $\alpha$.
+
+    Assuming $Y\subsetneq X$, then there is a minimal $x_0\in X\backslash Y$ 
+    $\delta_{x_0} = Y$ ($Y$ is initial segment) $Y\cong \alpha$ hence $x_0\in Y$, a contradiction.
+}
+
+\subsubsection*{Transfinite induction} % or inductive definitions
+
+Suppose $\phi(x)$ (possibly with parameters)
+to prove 
+\begin{equation}\label{star}
+    \forall \alpha\in \On  \phi(\alpha) \iif \forall \alpha \forall \beta ((\beta<\alpha\to \phi(\beta))\to \phi(\alpha))
+\end{equation}
+\ref{star} $\implies \forall \alpha\in \On  \phi(\alpha)$
+
+Suppose ther is $\alpha\in \On $ such that $\lnot \phi(\alpha)$ then let $\alpha$ be smallest with the property.
+
+proof by induction on ordinals (proof by transfinite induction) is a proof of $\forall \alpha\in \On  \phi(\alpha)$ by proving \ref{star}
+
+Let $F$ be a class function in one variable and $a$ a set contained in $\dom (F)$ 
+Then $F|_{a} = \{(x,y)\in (a,b) : F(x) = y\}$ where $b = \{F(x) : x\in a\}$ (which is a set by replacement).
+
+Let $H$ be any class function in one variable.
+
+\defin{H-inductive}{A function $f$ is called H-inductive, if 
+    \begin{enumerate*}
+        \item $\alpha \defeq \dom(f) \in \On $ and 
+        \item $\forall \beta \in \alpha f|_\beta\in \dom (H)$ and 
+        \item $f(\beta) = H(f|_\beta)$
+    \end{enumerate*}
+}   
+
+$f:\alpha\to X$ then $H$ gives you a way to extend the $f$.
+$H$ extends $f$ to a function on $\alpha\cup\{\alpha\}$
+$$f(\alpha) = H(f)$$
+
+\lemma{}{
+    For every class function $H$ and ordinal $\alpha$ there is at most one H-inductive function on $\alpha$ with domain $\alpha$.
+}{
+    Suppose not. $f,g:\alpha\to X$ different H-inductive functions.
+    Let $x_0$ the smallest element of $\alpha$ such that $f(x_0)\neq g(x_0)$. By $x_0$ smallest, 
+    $f|_{x_0}= g|_{x_0}$
+    By H-inductiveness
+    $$f(x_0) = H(f|_{x_0}= H(g|_{x_0}) = g(x_0)$$
+    A contradiction.
+}
+\lemma{}{
+    Let $H$ be a class function, $\alpha\in \On $ such that any function $f:\beta\to X$ where $\beta\in \On $
+    belongs to $\dom (H)$ then there is an H-inductive function $f:\alpha\to X$.
+}{
+    $\tau = \{\beta<\alpha : \text{ there is H-inductive }f_\beta : \alpha\to X\}$
+    $\tau$ is a set and initial segment of $\alpha$ hence $\tau \in \On $ and $\tau\subseteq \alpha$
+
+    $\beta\mapsto f_\beta$ for $\beta\in \tau$ is well-defined function by uniqueness of $f_\beta$.
+
+    Moreover for $\gamma<\beta<\tau$ we have $f|_\beta|_\gamma  = f|_\gamma$ (H-ind, uniqueness)
+
+    $f\defeq \bigcup_{\beta<\tau}f_\beta$ is H-inductive function (graphs agree on intersection, each of the $f_\beta$ are H-ind). The domain 
+    $$\dom(f) = \sup_{\beta<\tau}(\beta) = \bigcup_{\beta<\tau}(\beta) = \sigma\in \On $$
+
+    If $\sigma =\alpha$ %sigma or tau???
+    we are finished, otherwise we can define 
+
+    $\tilde{f}$ such that $\tilde{f}|_\sigma = f$ and $\tilde{f}(\sigma) = H(f)$
+    $\tilde{f}$ is now H-inductive, and $\dom (\tilde{f}) = \sigma\cup\{\sigma\}$ 
+    a contradiction $\sigma$, the domain of $f$.
 }

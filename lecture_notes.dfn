@@ -33,7 +33,7 @@
 \contentsline {section}{\color {rhoda}Def. {\color {tanita}{2.20\hspace {5px} Automorphism}}}{18}{defcount.2.20}%
 \contentsline {section}{\color {rhoda}Def. {\color {tanita}{2.21\hspace {5px} Rigid}}}{18}{defcount.2.21}%
 \contentsline {section}{\color {rhoda}Def. {\color {tanita}{2.22\hspace {5px} }}}{19}{defcount.2.22}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{2.23\hspace {5px} }}}{19}{defcount.2.23}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{2.23\hspace {5px} terminal segment}}}{19}{defcount.2.23}%
 \contentsline {section}{\color {rhoda}Def. {\color {tanita}{2.24\hspace {5px} }}}{19}{defcount.2.24}%
 \contentsline {section}{\color {rhoda}Def. {\color {tanita}{2.25\hspace {5px} Modus Ponens}}}{20}{defcount.2.25}%
 \contentsline {section}{\color {rhoda}Def. {\color {tanita}{2.26\hspace {5px} Deduction}}}{20}{defcount.2.26}%
@@ -99,4 +99,5 @@
 \contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.18\hspace {5px} well-ordering (class)}}}{53}{defcount.5.18}%
 \contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.19\hspace {5px} Tranistivity of sets}}}{53}{defcount.5.19}%
 \contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.20\hspace {5px} Ordinal}}}{53}{defcount.5.20}%
-\contentsline {chapter}{\color {black}Bibliography}{57}{chapter*.9}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.21\hspace {5px} H-inductive}}}{56}{defcount.5.21}%
+\contentsline {chapter}{\color {black}Bibliography}{60}{chapter*.8}%

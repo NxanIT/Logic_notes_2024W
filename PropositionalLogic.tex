@@ -289,7 +289,8 @@ with some rules of computing $\overline{h}(f(x,y))$ and $\overline{h}(g(x))$ fro
     This is not always possible. \textbf{Note:} that it is possible if $G$ is generated freely by the elements of $B$ and the set of atoms is independent
     (one element of $B$ cannot be generated in finitely many steps by other elements of $B$).
 }
-\defin{Freely generated set}{$C$ is \graybf{freely generated}\outernote{freely generated}from $B$ by $f,g$ if 
+\defin{Freely generated set}{\label{freely-generated}
+    $C$ is \graybf{freely generated}\outernote{freely generated}from $B$ by $f,g$ if 
     \begin{itemize}
         \item $C$ is generated from $B$ by $f,g$ 
         \item $f|_{C^2}$ and $g|_C$ are such that\begin{enumerate}
@@ -416,8 +417,9 @@ iff $\alpha \sledom\models  \beta$ (alternative notation: $\models \sledom$). Th
         \item $\models \alpha $ iff $\forall x\in \{0,1\}^n$ it holds $B_\alpha(x)=1$
     \end{enumerate}
 }{}
+\newpage
 \thm{(Post)}{\footnote{Emil Post}
-    Let $G$ be an $n$-ary boolean function\outernote{$n$-ary boolean func.} for $n\geq 1$. Then there is a prop. sent. $\alpha$ such that. $B_\alpha = G$.
+    Let $G$ be an $n$-ary boolean function for $n\geq 1$.\outernote{$n$-ary boolean function}Then there is a prop. sent. $\alpha$ such that. $B_\alpha = G$.
     We say $\alpha$ realizes $G$.
 }{
     \begin{enumerate}
@@ -448,7 +450,7 @@ iff $\alpha \sledom\models  \beta$ (alternative notation: $\models \sledom$). Th
 \note{}{$\alpha$ as constructed in the proof is in the so-called Disjunctive normal form (DNF).\outernote{DNF\\ Disjunctive normal form}}
 \coroll{Every prop. sent. is tautologically equivalent to a sentence in DNF}
 \addAbbrev{i.e.}{id est (that is)}
-\coroll{$\{\lnot,\land,\lor\}$ is a complete\outernote{complete} set of logical connectives, i.e. every prop. sent. is tautologically 
+\coroll{$\{\lnot,\land,\lor\}$ is a complete\outernote{completeness (connectives)}set of logical connectives, i.e. every prop. sent. is tautologically 
     equivalent to a sentence built up from atoms and $\lnot,\land,\lor$.
 }
 \thm{}{Both $\{\lnot, \land\}$ and $\{\lnot, \lor\}$ are complete.}{

@@ -56,7 +56,7 @@
     bottom=15mm,
     top=20mm,
     marginparwidth = 30mm,
-    marginparsep = 5mm
+    marginparsep = 10mm
 }
 \else 
 \geometry{
@@ -66,7 +66,7 @@
     bottom=15mm,
     top=20mm,
     marginparwidth = 30mm,
-    marginparsep = 5mm
+    marginparsep = 10mm
 }
 \fi
 
@@ -134,6 +134,8 @@
 \DeclareMathOperator{\Th}{Th}
 \DeclareMathOperator{\st}{st}
 \DeclareMathOperator{\imag}{im}
+\DeclareMathOperator{\On}{On}%class of all ordinals
+\DeclareMathOperator{\Ord}{Ord}%class of all ordinals
 
 \DeclareMathOperator{\propM}{Prop} % for example in boolean algebra
 %\DeclareMathOperator{\gdw}{\quad:gdw\quad}
@@ -164,7 +166,7 @@
 }
 
 \newcommand{\outernote}[1]{
-    \marginpar[\raggedleft #1]{\raggedright #1}
+    \marginpar[\raggedleft #1]{\raggedright #1}%\marginpar[\raggedright #1]{\raggedleft #1}%
     \addcontentsline{otf}{section}{#1}
 }
 
@@ -307,7 +309,7 @@
 \fancyhead[LE]{\small\leftmark}
 \fancyhead[LO,RE]{Logic Lecture Notes 2024W}
 \fancyfoot[C]{}
-\fancyfoot[LO,RE]{\fontfamily{cmtt}\small\color{gray}J.Petermann: LogicNotes [V0.6.0-\today{ }at \DTMcurrenttime] }% old: \href[]{https://creativecommons.org/licenses/by-nc-nd/3.0/de/}{\color{gray}CC BY-NC-ND 3.0 DE}
+\fancyfoot[LO,RE]{\fontfamily{cmtt}\small\color{gray}J.Petermann: LogicNotes [V0.6.2-\today{ }at \DTMcurrenttime] }% old: \href[]{https://creativecommons.org/licenses/by-nc-nd/3.0/de/}{\color{gray}CC BY-NC-ND 3.0 DE}
 \fancyfoot[LE,RO]{Seite \thepage \hspace{3pt}von \pageref*{LastPage}}
 
 \begin{center}

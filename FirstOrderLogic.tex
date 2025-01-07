@@ -332,7 +332,7 @@ Until now, we have no notion that tells us when two graphs are the same or at le
 \section{Homomorphisms of structures}
 \defin{Homomorphism}{
     Suppose that $\mathcal{A},\mathcal{B}$ are two $\mathcal{L}$-structures. then a Homomorphism of $\mathcal{A}$ into $\mathcal{B}$ is a map
-    $h: A \to B$ that satisfy the below conditions
+    $h: A \to B$ satisfying the below conditions
     \begin{itemize}
         \item for every $n$-ary predicate $P\in \mathcal{L}$ it is 
         $$(a_1,\dots a_n)\in P^\mathcal{A} \:\iif\: (h(a_1),\dots h(a_n))\in P^\mathcal{B}$$
@@ -346,7 +346,8 @@ Until now, we have no notion that tells us when two graphs are the same or at le
 \defin{Isomorphism}{
     \begin{itemize}
         \item $h:A\to B$  is called isomorphism of $\mathcal{A}$ into $\mathcal{B}$ if $h$ is a homomorphism and injective (in other textbooks: an isomorphic embedding of $\mathcal{A}$ into $\mathcal{B}$)
-        \item $h:A\to B$  is called isomorphism of $\mathcal{A}$ onto $\mathcal{B}$,\outernote{onto}if $h$ is a bijective homomorphism $A\to B$
+        \item $h:A\to B$  is called isomorphism of $\mathcal{A}$ onto $\mathcal{B}$,\outernote{onto}if \\
+        $h$ is a bijective homomorphism $A\to B$
         \item $\mathcal{A}$\outernote{isomorphic}and $\mathcal{B}$ are called isomorphic if there is an isomorphism of $\mathcal{A}$ onto $\mathcal{B}$
     \end{itemize}
 }
@@ -375,8 +376,8 @@ Until now, we have no notion that tells us when two graphs are the same or at le
     and $h(m\cdot n) = h(m)\cdot^\mathcal{B} h(n)$.
     it is indeed a Homomorphism.
 }
-\defin{Substructure}{Suppose we have two $\mathcal{L}$ structures and $A\subseteq B$ hen $\mathcal{A}$ is a substructure of $\mathcal{B}$ 
-    (notation: $\mathcal{A}\subseteq \mathcal{B}$ or we might say $\mathcal{B}$ is an extention of $\mathcal{A}$ ) if
+\defin{Substructure}{Suppose we have two $\mathcal{L}$ structures with $A\subseteq B$. We call $\mathcal{A}$ a substructure of $\mathcal{B}$ 
+    (notation: $\mathcal{A}\subseteq \mathcal{B}$ or we might say $\mathcal{B}$ is an extention of $\mathcal{A}$ ), if
     \begin{itemize}
         \item for every $n$-ary relation $P^\mathcal{A} = P^\mathcal{B}|_A$
         \item for every $n$-ary function $f^\mathcal{A} = f^\mathcal{B}|_A$
@@ -398,9 +399,10 @@ Until now, we have no notion that tells us when two graphs are the same or at le
     and if $P \in \mathcal{L}$ is an $n$-ary predicate then $P^\mathcal{A}$ should be $P^\mathcal{B}\cap A^n$.
     If $\mathcal{L}$ has no const. or fuction symbols then any subset can be made into a substructure of a structure on $\mathcal{L}$.
 }
-Our next question will be: what is the relation of the above notions with truth and satisfiability
-The answer will be given by the so called Homomorphism theorem.
 
+\noindent Our next question will be: what is the relation of the above notions with truth and satisfiability
+The answer will be given by the so called Homomorphism theorem.
+\newpage
 \thm{Homomorphism Theorem}{
     Let $h:A\to B$ be a homomorphism of $\mathcal{A}$ into $\mathcal{B}$ and $s:V\to A$ an assignment then $h\circ s: V\to B$ is an assigment and it holds
     \begin{enumerate}
@@ -414,10 +416,10 @@ The answer will be given by the so called Homomorphism theorem.
     \begin{enumerate}
         \item problem set
         \item \begin{itemize}
-            \item $\varphi: Pt$ then $\mathcal{A}\models Pt \: [s]$ iff $\overline{s}(t)\in P^\mathcal{A}$ iff $h(\overline{s}(t))\in P^\mathcal{B}$ iff $\overline{(h\circ s)}(t)\in P^\mathcal{B}$ 
+            \item case $\varphi\equiv Pt$ then $\mathcal{A}\models Pt \: [s]$ iff $\overline{s}(t)\in P^\mathcal{A}$ iff $h(\overline{s}(t))\in P^\mathcal{B}$ iff $\overline{(h\circ s)}(t)\in P^\mathcal{B}$ 
             iff $\mathcal{B}\models Pt  \: [h\circ s]$
-            \item $\varphi: \lnot \psi$ $\mathcal{A}\models \lnot \psi \: [s]$ iff $\mathcal{A}\not\models \psi \: [s]$ iff $\mathcal{A}\not\models \psi \: [s]$ iff %TODO
-            \item $\varphi: \psi \to \alpha$
+            \item case $\varphi\equiv  \lnot \psi$ $\mathcal{A}\models \lnot \psi \: [s]$ iff $\mathcal{A}\not\models \psi \: [s]$ iff $\mathcal{A}\not\models \psi \: [s]$ iff %TODO
+            \item case $\varphi\equiv  \psi \to \alpha$
         \end{itemize}
         \item $\mathcal{A}\models =t_1t_2 \: [s]$ iff $\overline{s}(t_1)=\overline{s}(t_2)$ iff $h(\overline{s}(t_1))=h(\overline{s}(t_2))$ iff (by (a))$\overline{(h\circ s)}(t_1) = \overline{(h\circ s)}(t_2)$ 
         iff $\mathcal{B}\models =t_1t_2 \: [h\circ s]$
@@ -432,34 +434,36 @@ The answer will be given by the so called Homomorphism theorem.
         By the inductive assumption $\mathcal{A}\models \lnot \varphi  \: [s(x|a)]$ and $\mathcal{A}\not\models \forall x \varphi \: [s]$
     \end{enumerate}
 }
-\note{}{$\mathcal{A}\cong \mathcal{B}$ then $\mathcal{A}$ and $\mathcal{B}$ satisfy exactly the same sentences.}
-\defin{elementarily equivalent}{$\mathcal{A}$ and $\mathcal{B}$ are called elementarily equivalent ($\mathcal{A}\equiv \mathcal{B}$) if $\mathcal{A}$ and $\mathcal{B}$ satisfy the same sentences.}
-\note{}{If $\mathcal{A}\cong \mathcal{B}$ implies $\mathcal{A}\equiv \mathcal{B}$
+
+\defin{elementarily equivalent}{$\mathcal{A}$ and $\mathcal{B}$ are called elementarily equivalent (notation: $\mathcal{A}\equiv \mathcal{B}$) if $\mathcal{A}$ and $\mathcal{B}$ satisfy the same sentences.}
+\note{}{$\mathcal{A}\cong \mathcal{B}$ implies $\mathcal{A}\equiv \mathcal{B}$
     The converse is not true.
     For instance DLO (dence linear order) w/o endpoints is complete, so two structures on DLO are equivalent 
     $(\mathbb{Q},<)\equiv (\RR,<)$ but they are not isomorphic because the universes have diffrent cardinality. 
 }
 \bsp{}{
-    $\mathcal{N} = (\NN, \leq)$ and $\mathcal{P}=(\NN^{>0},\leq )$ $h:n\mapsto n-1:\mathcal{P}\to \mathcal{N}$ isom. 
-    so in part $\mathcal{N} \equiv \mathcal{P}$.
-    but $id:\mathcal{P}\to \mathcal{N}$ is only isom embedding, so for example
-    $\forall y(x\neq y x\leq y)$  
-    $\mathcal{P}\models \alpha  \: [1]$ but $\mathcal{N}\not\models \alpha  \: [1]$
-    but $\mathcal{N}\models \alpha  \: [h(1)]$
+    $\mathcal{N} = (\NN, \leq)$ and $\mathcal{P}=(\NN^{>0},\leq )$ $h:n\mapsto n-1:\mathcal{P}\to \mathcal{N}$ isomorphism.
+    so i.p. $\mathcal{N} \equiv \mathcal{P}$.
+    but $id:\mathcal{P}\to \mathcal{N}$ is only isomorphic embedding, so for example
+
+    $\mathcal{P}\models \forall y(x\neq y\to x\leq y)  \: \llbracket 1 \rrbracket$ and
+    $\mathcal{N}\not\models \forall y(x\neq y \to x\leq y) \:\llbracket 1 \rrbracket$, but
+    $\mathcal{N}\models \forall y(x\neq y\to x\leq y) \: \llbracket h(1) \rrbracket$
 }
 \defin{Automorphism}{An automorphism is an isomorphism of the form $h:A\to A$ from $\mathcal{A}$ onto $\mathcal{A}$}
 \note{}{Every structure has a trivial automorphism $id:A\to A$}
-\defin{Rigid}{If the only automorphism on $\mathcal{A}$ is the trivial automorphism, then $\mathcal{A}$ is called rigid.}
+\defin{Rigid}{ $\mathcal{A}$ is called rigid, if the only automorphism on $\mathcal{A}$ is the trivial automorphism.}
 \bsp{}{ If every element is definable then the structure is rigid.
     For example $(\NN,0,S)$ and $(\NN,<)$ every element is definable, therefore the structures are rigid.
     %TODO examples structures with many automorphism
     }
-\coroll{
-    Let $h$ be atutom of $\mathcal{A}$, $R\subseteq A^n$ definable in $\mathcal{A}$ then $\forall a\in A^n a\in R \iif (h(a_1),\dots h(a_n))\in R$ 
-    Suppose $\varphi$ defines $R$ in $\mathcal{A}$ we want
-    $\mathcal{A}\models \varphi \: [a]$ iff  $\mathcal{A}\models \varphi \: [h(a_1),\dots h(a_n)]$ which is true by the homom. thm.
+\coroll{\label{HomThm:coroll}
+    Let $h$ be atutom of $\mathcal{A}$, $R\subseteq A^n$ definable in $\mathcal{A}$ then for all $a\in A^n$
+    $a\in R$ iff $(h(a_1),\dots h(a_n))\in R$.
+    Suppose $\varphi$ defines $R$ in $\mathcal{A}$, then 
+    $$\mathcal{A}\models \varphi \: \llbracket a_1,\dots a_n\rrbracket \quad \iif \quad \mathcal{A}\models \varphi \: \llbracket h(a_1),\dots h(a_n)\rrbracket$$
 }
-\note{}{Corol can be used to show that some $R\subseteq A^n$ is not definable in $\mathcal{A}$
+\note{}{Corollary \ref{HomThm:coroll} can be used to show that some $R\subseteq A^n$ is not definable in $\mathcal{A}$
 }
 \bsp{}{
     $\mathcal{R}=(\RR,<)$ then $\NN$ is not definable in $\mathcal{R}$.
@@ -476,35 +480,51 @@ The answer will be given by the so called Homomorphism theorem.
     $K(s_1,\dots s_n) = K(s_1) + \dots + K(s_n)$ (unique because no symbol is a finite sequence of other symbols)
 }
 \lemma{}{
-    $t$ a term then $K(t)=1$
+    Let $t$ be a term. Then $K(t)=1$
 }{
     $K(x) = 1 = K(c)$ and $K(ft_1,\dots t_n) = 1-n + n = 1$ 
 }
-\defin{}{A terminal segment of string of symbols $(s_1,\dots s_n)$ is $(s_k,s_{k+1},\dots s_n)$ for some $1\leq k\leq n$.}
+\defin{terminal segment}{A terminal segment of string of symbols $(s_1,\dots s_n)$ is $(s_k,s_{k+1},\dots s_n)$ for some $1\leq k\leq n$.}
 \lemma{}{Any terminal segment of terms is a concatenation of one or more terms.}{
     True for variables and constants. 
     $ft_1\dots t_n$ the only non trivial case is $t'_k t_{k+1}\dots t_m$ where $t_k$ is $t''_k t_k'$
 }
-\coroll{If $t_1$ is a proper initial segment of a term $t$ then 
- its $K(t_1)<1$. proof:
-    let $t$ be $t_1 t_2$ where $t_1$ is a proper initial segment then $K(t) = 1$ and $K(t_2)\geq1$ therefore $K(t_1)\leq 0$
+\coroll{\label{FO:Unique-readability-Ko}
+    If $t_1$ is a proper initial segment of a term $t$ then $K(t_1)<1$.
+    \begin{proof}
+        let $t$ be $t_1 t_2$ where $t_1$ is a proper initial segment then $K(t) = 1$ and $K(t_2)\geq1$ therefore $K(t_1)\leq 0$
+    \end{proof}
 }
-\subsubsection{Unique readability for terms}
-The set of terms is freely generated from the set of variables(Var), the set of constant symbols (Const) by the term building operations $\mathcal{F}_f$ for the function symbols $f$.
-\begin{proof}
-    
-     \begin{itemize}
-        \item disjointment of ranges: Let $f$ and $g$ be two distinct funciton symbols then $\rng\mathcal{F}_f \cap \rng\mathcal{F}_g =\varnothing$
-        $\rng\mathcal{F}_f \cap Var =\varnothing$
-        $\rng\mathcal{F}_f \cap Const =\varnothing$
-        \item $\mathcal{F}_f|_{\text{terms}}$ are 1-1:
-        assume $ft_1\dots t_n = f t'_1\dots t'_n$ and assume $t_1 \neq t_1'$ then one is an initial segment of the other.
-        Then its $K$-value has to be less than $1$ so it is not a term.
-        $t_1 = t_1' \dots t_n=t_n'$.
-     \end{itemize}
-\end{proof}
-\defin{}{Extend $K$ as follows: $K(() = -1$ $K()) = 1$ $K(\forall) = 1$ $K(\lnot) = 0$ $K(\to) = -1$ $K(P) = 1-n$ for an $n$-ary rel. symb. $P$. $K(=) = -1$.
-    Extend $K$ to the set of all expressions by $K(s_1,\dots s_n) = K(s_1) + K(s_n)$
+\prop{Unique readability for terms}{
+    The set of terms is freely generated from the set of variables(Var) and the set of constant symbols (Const) by the term building operations $\mathcal{F}_f$ (for each function symbol $f$).
+}{
+    By Definition \ref{freely-generated}:
+    \begin{itemize}
+    \item disjointment of ranges: Let $f$ and $g$ be two distinct funciton symbols then 
+        \[\begin{aligned} 
+            &\rng\mathcal{F}_f \cap \rng\mathcal{F}_g =\varnothing\\
+            &\rng\mathcal{F}_f \cap Var =\varnothing\\
+            &\rng\mathcal{F}_f \cap Const =\varnothing
+        \end{aligned}
+        \]
+    \item $\mathcal{F}_f|_{\text{terms}}$ are one-to-one (injective):
+        assume $ft_1\dots t_n = f t'_1\dots t'_n$ and assume $t_1 \neq t_1'$ 
+        then one is a proper initial segment of the other. By Corollary \ref{FO:Unique-readability-Ko} 
+        its $K$-value has to be less than $1$ so it is not a term. By induction we get 
+        $t_1 = t_1', \dots, t_n=t_n'$.
+    \end{itemize}
+}
+\defin{}{Extend $K$ to the set of all expressions by
+    \begin{enumerate*}[label=(\roman*)]
+        \item $K(() = -1$ $K()) = 1$ 
+        \item $K(\forall) = 1$ 
+        \item $K(\lnot) = 0$ 
+        \item $K(\to) = -1$ 
+        \item $K(P) = 1-n$ for an $n$-ary rel. symb. $P$. 
+        \item $K(=) = -1$
+        \item $K(s_1\dots s_n) = K(s_1) + K(s_n)$ for $s_i\in Terms\cup\{(,),\forall,\lnot,\to,P,\dots,=\}$
+    \end{enumerate*}
+     
     The idea is that $K$ tells us the number of symbols that at least need to follow to obtain a formula.
 }
 \lemma{}{
@@ -512,16 +532,17 @@ The set of terms is freely generated from the set of variables(Var), the set of 
 }{
     induction on $\varphi$
 }
-\lemma{}{for every proper initial segment $\alpha'$ of a fla. $\alpha$ we have $K(\alpha')<1$}{}
-\coroll{No proper initial segment of a fla. is a fla.}
-The set of flas. is freely generated from the set of atomic flas. by operations $\mathcal{E}_\lnot,\mathcal{E}_\to,Q_i$
-\begin{proof}
-    \begin{itemize}
-        \item $\mathcal{E}_\lnot,Q_i$ are one to one
-        \item $\mathcal{E}_\to|_{\text{Flas.}}$ then itemwise and use of prev. lemmas
-        \item p.w. disjointness of ranges
-    \end{itemize}
-\end{proof}
+\lemma{}{for every proper initial segment $\alpha'$ of a formula $\alpha$ we have $K(\alpha')<1$}{}
+\coroll{No proper initial segment of a formula is a formula.
+    The set of flas. is freely generated from the set of atomic flas. by operations $\mathcal{E}_\lnot,\mathcal{E}_\to,Q_i$
+    \begin{proof}
+        \begin{itemize}
+            \item $\mathcal{E}_\lnot,Q_i$ are one to one
+            \item $\mathcal{E}_\to|_{\text{Flas.}}$ then itemwise and use of prev. lemmas
+            \item p.w. disjointness of ranges
+        \end{itemize}
+    \end{proof}}
+
 
 \section{A parsing algorithm for first order logic}
 
