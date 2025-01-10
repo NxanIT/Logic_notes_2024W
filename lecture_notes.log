@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2024.12.29)  7 JAN 2025 18:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2024.12.29)  10 JAN 2025 20:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1106,21 +1106,21 @@ Package hyperref Info: Link coloring ON on input line 359.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(56.9055pt, 398.3386pt, 142.26378pt)
+* h-part:(L,W,R)=(39.83385pt, 426.79135pt, 130.88268pt)
 * v-part:(T,H,B)=(56.9055pt, 745.46222pt, 42.67912pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=398.3386pt
+* \textwidth=426.79135pt
 * \textheight=745.46222pt
-* \oddsidemargin=-15.36449pt
-* \evensidemargin=-15.36449pt
+* \oddsidemargin=-32.43614pt
+* \evensidemargin=-32.43614pt
 * \topmargin=-58.36449pt
 * \headheight=18.0pt
 * \headsep=25.0pt
 * \topskip=10.0pt
 * \footskip=30.0pt
 * \marginparwidth=85.35826pt
-* \marginparsep=28.45274pt
+* \marginparsep=17.07164pt
 * \columnsep=10.0pt
 * \skip\footins=9.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
@@ -1214,7 +1214,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 102--103
 LaTeX Warning: Marginpar on page 4 moved.
 
 [4]
-Overfull \hbox (38.51268pt too wide) in paragraph at lines 180--180
+Overfull \hbox (10.05992pt too wide) in paragraph at lines 180--180
 \OML/cmm/m/it/10 PF \OT1/cmr/m/n/10 = []$,
  []
 
@@ -1242,68 +1242,58 @@ Underfull \hbox (badness 10000) in paragraph at lines 196--196
 
  []
 
-[14] [15] [16] [17] [18] [19]
-Overfull \hbox (2.05698pt too wide) in paragraph at lines 556--556
-[][]\OT1/cmr/bx/n/10 Definition 2.25. []\OT1/txtt/b/n/10 Modus Ponens: []\OT1/cmr/m/n/10 We will use one rule of in-ter-fer-ence, Modus Po-nens(MP).
+[14] [15] [16]
+Overfull \hbox (7.20825pt too wide) in paragraph at lines 378--378
+[][]\OT1/cmr/bx/n/10 Example 2.14. []$\OMS/cmsy/m/n/10 L \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 +\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 ^^Ag$ $N \OT1/cmr/m/n/10 = (\U/msb/m/n/10 N\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 +[]\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 ^^A[]\OT1/cmr/m/n/10 )$ and $\OMS/cmsy/m/n/10 B \OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 B; \OT1/cmr/m/n/10 +[]\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 ^^A[]\OT1/cmr/m/n/10 )$ where $\OML/cmm/m/it/10 B \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1\OMS/cmsy/m/n/10 g$ \OT1/cmr/m/n/10 and []
  []
 
-[20] [21] [22] [23] [24] [25] [26]
+[17] [18]
+Overfull \hbox (2.63196pt too wide) in paragraph at lines 529--529
+[][]\OT1/cmr/bx/n/10 Definition 2.24. []\OT1/txtt/b/n/10 : []\OT1/cmr/m/n/10 Ex-tend $\OML/cmm/m/it/10 K$ \OT1/cmr/m/n/10 to the set of all ex-pres-sions by [][](i)[]  $\OML/cmm/m/it/10 K\OT1/cmr/m/n/10 (() = \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 1$ $\OML/cmm/m/it/10 K\OT1/cmr/m/n/10 ()) = 1$[] [](ii)[]  $\OML/cmm/m/it/10 K\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 8\OT1/cmr/m/n/10 ) = 1$[]
+ []
+
+[19] [20] [21] [22] [23] [24] [25] [26]
 Underfull \hbox (badness 10000) in paragraph at lines 1011--1012
 
  []
 
-[27]
-Overfull \hbox (116.53806pt too wide) detected at line 1018
+
+Overfull \hbox (88.0853pt too wide) detected at line 1018
 \OMS/cmsy/m/n/10 A j[]\OT1/cmr/m/n/10 = \OML/cmm/m/it/10 '[] \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10  [] \OT1/cmr/m/n/10 [\OML/cmm/m/it/10 s\OT1/cmr/m/n/10 ] [] \OMS/cmsy/m/n/10 A 6j[]\OT1/cmr/m/n/10 = \OML/cmm/m/it/10 '[] \OT1/cmr/m/n/10 [\OML/cmm/m/it/10 s\OT1/cmr/m/n/10 ][]\OMS/cmsy/m/n/10 A j[]\OT1/cmr/m/n/10 = \OML/cmm/m/it/10  [] \OT1/cmr/m/n/10 [\OML/cmm/m/it/10 s\OT1/cmr/m/n/10 ] [] \OMS/cmsy/m/n/10 A j[]\OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 :\OML/cmm/m/it/10 '[] \OT1/cmr/m/n/10 [\OML/cmm/m/it/10 s\OT1/cmr/m/n/10 ][]\OMS/cmsy/m/n/10 A j[]\OT1/cmr/m/n/10 = \OML/cmm/m/it/10  [] \OT1/cmr/m/n/10 [\OML/cmm/m/it/10 s\OT1/cmr/m/n/10 ] [] \OMS/cmsy/m/n/10 :\OML/cmm/m/it/10 ' \OMS/cmsy/m/n/10 2 \OT1/cmr/m/n/10 ^^A[]\OML/cmm/m/it/10   \OMS/cmsy/m/n/10 2 \OT1/cmr/m/n/10 ^^A [](\OML/cmm/m/it/10 ' \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10  \OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2 \OT1/cmr/m/n/10 ^^A
  []
 
-[28] [29]) (ModelTheory.tex [30]
+[27] [28]) (ModelTheory.tex [29]
 Chapter 3.
-[31
+[30
 
-] [32] [33] [34] [35] [36] [37] [38] [39]
-Overfull \hbox (3.54073pt too wide) detected at line 608
-\OT1/cmr/m/n/10 	[](\OML/cmm/m/it/10 v\OT1/cmr/m/n/10 ) [] \OMS/cmsy/m/n/10 9\OML/cmm/m/it/10 v[]; v[] \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 I[]v[] < v < v[] \OMS/cmsy/m/n/10 ^ 8\OML/cmm/m/it/10 z[]; z[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 v[] < z[] < v \OMS/cmsy/m/n/10 ^ \OML/cmm/m/it/10 v < z[] < v[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 z[]\OT1/cmr/m/n/10 ) \OML/cmm/m/it/10 > f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 z[]\OT1/cmr/m/n/10 )[]
+] [31] [32] [33] [34] [35]
+Overfull \hbox (5.99156pt too wide) in paragraph at lines 396--396
+\OT1/cmr/m/n/10 Note []\OT1/txtt/m/n/10 :  []\OT1/cmr/m/n/10 Have Dedekind com-plete for de-fin-able subets of $\OML/cmm/m/it/10 M$\OT1/cmr/m/n/10 : For $\OML/cmm/m/it/10 X \OMS/cmsy/m/n/10 ^^R \OML/cmm/m/it/10 M$ \OT1/cmr/m/n/10 de-fin-able then $[] \OML/cmm/m/it/10 X; [] X$
  []
 
-[40] [41]
-Overfull \hbox (23.52596pt too wide) in paragraph at lines 754--754
-[]$\OML/cmm/m/it/10 C$ \OT1/cmr/m/it/10 cell in $\OML/cmm/m/it/10 R[]$\OT1/cmr/m/it/10 , $\OML/cmm/m/it/10 a \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 ^^Y[]C$ \OT1/cmr/m/it/10 (where $\OML/cmm/m/it/10 ^^Y[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; [] x[]\OT1/cmr/m/n/10 ) = (\OML/cmm/m/it/10 x[]; [] x[]\OT1/cmr/m/n/10 )$\OT1/cmr/m/it/10 )
+
+Overfull \hbox (0.12218pt too wide) in paragraph at lines 432--432
+[][]\OT1/cmr/bx/n/10 Proposition 6.1. []$\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 M; <; \OMS/cmsy/m/n/10 ^^A\OML/cmm/m/it/10 ; [] \OT1/cmr/m/n/10 )$ \OT1/cmr/m/it/10 o-minimal such that $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 M; <; \OMS/cmsy/m/n/10 ^^A\OT1/cmr/m/n/10 )$ \OT1/cmr/m/it/10 or-dered group, then $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 M; <; \OMS/cmsy/m/n/10 ^^A\OT1/cmr/m/n/10 )$ \OT1/cmr/m/it/10 abelian,
  []
 
-[42]) (BooleanAlgebra.tex [43]
+[36] [37] [38] [39] [40] [41]) (BooleanAlgebra.tex [42]
 Chapter 4.
-[44
+[43
 
-] [45] [46] [47]
-Overfull \hbox (20.05716pt too wide) detected at line 282
-\OT1/cmr/m/n/10 0 []= \OMS/cmsy/m/n/10 ?\OML/cmm/m/it/10 =\OT1/cmr/m/n/10 ^^F\OML/cmm/m/it/10 ;  \OT1/cmr/m/n/10 1 []= \OMS/cmsy/m/n/10 >\OML/cmm/m/it/10 =\OT1/cmr/m/n/10 ^^F\OML/cmm/m/it/10 ;  \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 p=\OT1/cmr/m/n/10 ^^F)[] []= (\OMS/cmsy/m/n/10 :\OML/cmm/m/it/10 p\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 =\OT1/cmr/m/n/10 ^^F\OML/cmm/m/it/10 ;  \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 p=\OT1/cmr/m/n/10 ^^F \OMS/cmsy/m/n/10 _ \OML/cmm/m/it/10 q=\OT1/cmr/m/n/10 ^^F) []= (\OML/cmm/m/it/10 p \OMS/cmsy/m/n/10 _ \OML/cmm/m/it/10 q\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 =\OT1/cmr/m/n/10 ^^F\OML/cmm/m/it/10 ;  \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 p=\OT1/cmr/m/n/10 ^^F \OMS/cmsy/m/n/10 ^ \OML/cmm/m/it/10 q=\OT1/cmr/m/n/10 ^^F) []= (\OML/cmm/m/it/10 p \OMS/cmsy/m/n/10 ^ \OML/cmm/m/it/10 q\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 =\OT1/cmr/m/n/10 ^^F
- []
-
-[48]
-Overfull \hbox (28.27293pt too wide) detected at line 333
-\OT1/cmr/m/n/10 0 []= 0\OML/cmm/m/it/10 =[] \OT1/cmr/m/n/10 1 []= 1\OML/cmm/m/it/10 =[] \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a=[]\OT1/cmr/m/n/10 )[] []= \OML/cmm/m/it/10 a[]=[] a=[] \OMS/cmsy/m/n/10 _ \OML/cmm/m/it/10 b=[] []\OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 a \OMS/cmsy/m/n/10 _ \OML/cmm/m/it/10 b\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 =[] a=[] \OMS/cmsy/m/n/10 ^ \OML/cmm/m/it/10 b=[] []\OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 a \OMS/cmsy/m/n/10 ^ \OML/cmm/m/it/10 b\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 =[]
- []
-
-) (SetTheory.tex [49]
+] [44] [45] [46] [47]) (SetTheory.tex [48]
 Chapter 5.
-[50
+[49
 
-]
-Overfull \hbox (1.23505pt too wide) in paragraph at lines 109--109
-[][]\OT1/cmr/bx/n/10 Definition 5.10. []\OT1/txtt/b/n/10 Axiom scheme of comprehension: [][] \OT1/cmr/m/n/10 Let $\OML/cmm/m/it/10  \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x; []\OT1/cmr/m/n/10 )$ be an $\OMS/cmsy/m/n/10 L$\OT1/cmr/m/n/10 -formula. Then
+] [50] [51]
+
+LaTeX Warning: Marginpar on page 52 moved.
+
+[52] [53] [54]
+Underfull \hbox (badness 10000) in paragraph at lines 484--484
+
  []
 
-[51] [52]
-
-LaTeX Warning: Marginpar on page 53 moved.
-
-[53] [54]
-Overfull \hbox (2.21205pt too wide) in paragraph at lines 391--391
-[][]\OT1/cmr/bx/n/10 Definition 5.21. []\OT1/txtt/b/n/10 H-inductive: []\OT1/cmr/m/n/10 A func-tion $\OML/cmm/m/it/10 f$ \OT1/cmr/m/n/10 is called H-inductive, if [][]1.[]  $\OML/cmm/m/it/10  []\OT1/cmr/m/n/10 = [](\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2 []$
- []
-
-[55]) [56]
+[55] [56]) [57]
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: a4paper
@@ -1324,7 +1314,7 @@ Overfull \hbox (2.21205pt too wide) in paragraph at lines 391--391
 * \topskip=10.0pt
 * \footskip=30.0pt
 * \marginparwidth=85.35826pt
-* \marginparsep=28.45274pt
+* \marginparsep=17.07164pt
 * \columnsep=10.0pt
 * \skip\footins=9.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
@@ -1336,31 +1326,31 @@ Overfull \hbox (2.21205pt too wide) in paragraph at lines 391--391
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
- (lecture_notes.dfn)
+ (lecture_notes.dfn [58
+
+])
 \tf@dfn=\write8
 \openout8 = `lecture_notes.dfn'.
 
- (lecture_notes.thn [57
-
-] [58])
+ (lecture_notes.thn [59])
 \tf@thn=\write9
 \openout9 = `lecture_notes.thn'.
 
- [59]
-Overfull \hbox (25.31169pt too wide) in paragraph at lines 416--416
-\OT1/cmr/m/n/10 1998. \OT1/cmr/m/sc/10 isbn\OT1/cmr/m/n/10 : 9782842250140. \OT1/cmr/m/sc/10 url\OT1/cmr/m/n/10 : [][]$\OT1/cmtt/m/n/10 https : / / books . google . at / books ? id = O4A2AAAACAAJ$[][]\OT1/cmr/m/n/10 . 
+ [60]
+Overfull \hbox (7.48703pt too wide) in paragraph at lines 416--416
+\OT1/cmr/m/n/10 mat-i-cal So-ci-ety lec-ture note se-ries. Cam-bridge Uni-ver-sity Press, 1998. \OT1/cmr/m/sc/10 isbn\OT1/cmr/m/n/10 : 9780511525919. 
  []
 
 (lecture_notes.otf
-Underfull \hbox (badness 10000) in paragraph at lines 22--22
- \OT1/cmr/m/n/10 Disjunctive 
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+ [][] [][]\OT1/cmr/m/n/10 com-plete-ness (con- 
  []
 
 )
 \tf@otf=\write10
 \openout10 = `lecture_notes.otf'.
 
- [60
+ [61
 
 
 ] 
@@ -1373,10 +1363,10 @@ Package logreq Info: Writing requests to 'lecture_notes.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 40190 strings out of 476331
- 778708 string characters out of 5788236
- 1897660 words of memory out of 5000000
- 59458 multiletter control sequences out of 15000+600000
+ 40105 strings out of 476331
+ 776580 string characters out of 5788236
+ 1898660 words of memory out of 5000000
+ 59347 multiletter control sequences out of 15000+600000
  541641 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  101i,21n,104p,2489b,1851s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1387,9 +1377,9 @@ pdfTeX warning (dest): name{propcount.3.4.5} has been referenced but does not ex
 pdfTeX warning (dest): name{excount.3.2} has been referenced but does not exist, replaced by a fixed one
 
  <C:\Users\Nxan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qagb.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/hoekwater/stmary10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txbtt.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txtt.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txtt.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on lecture_notes.pdf (60 pages, 1080355 bytes).
+Output written on lecture_notes.pdf (61 pages, 1090918 bytes).
 PDF statistics:
- 1458 PDF objects out of 1728 (max. 8388607)
- 527 named destinations out of 1000 (max. 500000)
+ 1502 PDF objects out of 1728 (max. 8388607)
+ 553 named destinations out of 1000 (max. 500000)
  258 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -209,7 +209,7 @@ $<$  strict, $\implies$ $y\notin \delta_y(x)$
 \note{}{
     It corresponds to Tranistivity of the belonging relation $\in$. $z \in y\in x \to z\in x$
 }
-\defin{Ordinal}{An ordinal is a transitive set which is well ordered by $\in$}
+\defin{Ordinal}{An ordinal is a transitive set which is well ordered by $\in$.}
 \note{}{The collection of all ordinals form a class relation notation: 
 $\Ord, \On$\outernote{$\Ord$}\outernote{$\On$}\\
     Proof: Write down formula 
@@ -424,4 +424,167 @@ $$f(\alpha) = H(f)$$
     $\tilde{f}$ such that $\tilde{f}|_\sigma = f$ and $\tilde{f}(\sigma) = H(f)$
     $\tilde{f}$ is now H-inductive, and $\dom (\tilde{f}) = \sigma\cup\{\sigma\}$ 
     a contradiction $\sigma$, the domain of $f$.
+}
+
+%09.01.2025
+%H-induction is like transfinite recursion
+
+\thm{Transfinite Recursion}{
+    Let $A$ be a class, $M$ be a class of all functions $f:\alpha\to X$ for $\alpha\in\On$ arb.
+    $X$ a subset of $A$ and $H$ a class function in one variable defined on all of $M$ with values in $A$.
+    Then there exists a unique class function $F$ defined on $\On$ such that $\forall \alpha F(\alpha) = H(F|_\alpha)$
+}{
+    define $F$ by 
+    $$F(\alpha) = y \iif \text{there is an H-inductive function $f:\alpha\to X$, $X$ subset of $A$ and $y = H(f)$}$$
+    It is well defined by the prev two lemmas TODO
+}
+
+\subsubsection{Axiom of Choice}
+\defin{Axiom of Choice (AC)}{
+    For every set $X$ and $A\subseteq \mathcal{P}(X)$ that consists of pairwise disjoint, non-empty subsets of $X$ there is a set $T\subseteq X$ such that $\forall a\in A \:\# a\cap T = 1$. $T$ is also called a transversal.
+}
+\defin{(AC')}{
+    (Existence of choice function.) 
+    For every set $X$ there exists a function $\pi : \mathcal{P}\backslash \{\varnothing\}\to X$ such that for every non-empty subset $a\subseteq X$ $\pi(a)\in a$
+}
+\defin{(AC'')}{
+    Let $(X_i)_{i\in I}$ be an indexed family of TODO non-empty sets then $\prod_{i\in I}{X_i}\neq \varnothing$
+}
+In the next Problemset: $AC \leftrightarrow AC'\leftrightarrow AC''$
+
+\thm{Zermelo}{
+    ``Well-ordering theorem'': Every set can be well-ordered.\\
+}{
+    By contradiction. Suppose $X$ is a set which can not be well-ordered. 
+    Choose a choice function $\pi:\mathcal{P}(X)\backslash \varnothing \to X$ 
+    define a class function $H$ by $H(f) = y$ iff $f$ is a function with
+    \begin{enumerate*}[label = (\roman*)]
+        \item $\dom f = \alpha \in \On$
+        \item $\imag f\subsetneq X$
+        \item $y = \pi (X\backslash \imag f)$
+    \end{enumerate*}
+
+    note: \begin{itemize}
+        \item $H$ is defined on class of all $H$-inductive functions, 
+    whose image is a proper subset of $X$. $\imag f\subsetneq X$.
+        \item each $H$-inductive function is injective
+    \end{itemize}
+    If $f$ is a $H$-inductive function that is also surjective, then we are done because $f$ induces well-ordering on $X$.
+
+    By our assumption, every $H$-inductive function has to be not surjective.
+    So $H$ is defined on all $H$-inductive functions, and we can use Transfinite recursion theorem
+    and get an $H$-inductive class function $F:\On\to X$ 
+    which is injective
+
+    Suppose $\alpha<\beta<\gamma$ and $F(\alpha) = F(\beta)$. 
+    $F(\alpha) = \pi(X\backslash\imag F|_\alpha)$
+    $F(\beta) = \pi(X\backslash\imag F|_\beta)$
+    
+    Then $F$ is an injection from a proper class into $\imag F$, a set, which is impossible.
+}
+
+\thm{Zorn's Lemma}{
+    Let $(X,\leq)$ be a partially ordered set (poset) such that all linearly ordered subsets (called chains) have an upperbound. Then $(X,\leq)$ has a maximal element. i.e. $\exists y\in X \forall x\in X y\not < x$
+}{
+    Let $A \defeq \{Y\subseteq X : \exists x\in X \forall y\in Y y<x\}$
+    Take $\pi:\mathcal{P}(X)\backslash \{\varnothing\}\to X$ a choice function.
+
+    Define $$p:A\to X, \quad p(Y) \defeq \pi (\{x\in X : \forall y\in Y y<x\})$$
+    Define a class function $H$ by $H(f) = y$ iff 
+    \begin{enumerate*}[label = (\roman*)]
+        \item $f$ is a function with $\dom f \in \On$
+        \item $\imag f\in A$
+        \item $y = \pi(\imag f)$
+    \end{enumerate*}
+
+    We get 
+    \begin{itemize}
+        \item  any $H$-inductive $f:\alpha\to X$ is strictly increasing. ($\star$)
+        $f:\alpha\to X, f(\alpha\cup \{\alpha\}) = H(f)>\imag f$
+        \item The image of any $H$-inductive function $f:\alpha \to X$ is linearly ordered, so by assumption has an upperbound.
+        
+        i.e. $\exists x_f\in X \: \forall \beta < \alpha f(\beta) < x_f$
+    \end{itemize}
+    The idea now is similar to above therorem.
+    Suppose $f:\alpha \to X$ is $H$-inductive but $H$ is not defined on $f$, then the image of $f$ has no strict majorant, so there is $\beta<\alpha$ such that $x_f = f(\beta)$. 
+    Then $x_f$ has to be maximal for $X$.
+
+    If $H$ is actually defined on all $H$-inductive functions, then there is an $H$-inductive class function $F:\On \to X$.
+    $F$ is strictly increasing by $\star$.
+    So have injective of proper class into set. a contradiction.
+}
+
+\subsubsection{Ordinal arithmetic}
+
+Or how to think of the natural numbers to be contained in $On$
+
+\defin{}{
+    \begin{itemize}
+        \item $0\defeq \varnothing$ (smallest ordinal)
+        \item $\beta\in \On$ then its successor ordinal is $\beta+1 \defeq \beta\cup\{\beta\}$
+        \item ($\beta$ is a successor ordinal if there is $\alpha\in \On$ such that $\beta = \alpha + 1$)
+        \item $\beta\in \On$ is a limit ordinal if $\beta \neq 0$ and $\beta$ is not a successor ordinal
+        \item $\beta\in \On$ is a natual number / finite ordinal, if $\beta = 0$ or for every $\alpha\leq \beta$ $\alpha$ is a successor ordinal or $\alpha = 0$
+    \end{itemize}
+}
+\bsp{}{
+    $0 = \varnothing$, $1 = \varnothing \cup \{\varnothing\} = \{\varnothing\}$,\dots 
+}
+\note{}{
+    $(X,<_X), (Y,<_Y)$ well-ordered then we can also order their disjoint union $(X\times \{0\})\cup (Y\times \{1\})$, $X\times Y$ can be well ordered as follows:
+
+    $(a,i)<(b,j) \iif \begin{cases}
+        i=j=0 & a<_X b\\
+        \lor \: i=j=1 & a<_Y b\\
+        \lor \: i<j
+    \end{cases}$
+    and we will call this the ordering on the sum of $X$ and $Y$.
+
+    $(x_0,x_1)<(x_1,y_1)\iif y_0<_Y y_1 \lor (y_0 = y_1\land x_0<_X x_1)$ (reverse lexiographical ordering)
+}
+\defin{}{
+    Let $\alpha,\beta\in\On$ then 
+    $\alpha+\beta$ is the unique $\gamma\in \On$ such that $\gamma$ is order-isomorphic to the sum of $\alpha$ and $\beta$
+
+    $\alpha\cdot\beta$ is the unique $\gamma\in\On$ such that $\gamma$ is order-isomorphic to product of $\alpha$ and $\beta$
+}
+Properties:
+\lemma{}{
+    \begin{enumerate}
+        \item $+$ is associative, $0$ is a $2$-sided add. identity
+        \item $\cdot$ is associative
+        \item $\alpha\cdot 0 = 0$, $\alpha \cdot 1 = \alpha = 1\cdot \alpha$
+        \item $\alpha\cdot(\beta+ \gamma) = \alpha\cdot\beta + \alpha\cdot\gamma$
+        \item $\lambda$ limit ordinal then $\alpha\cdot \lambda = \sup_{\beta<\lambda} \alpha \cdot \beta$
+    \end{enumerate}
+}{Problem set}
+\note{}{
+    Right now it would be consistent to assume $\cdot$ is commutative, but no longer after the next axiom
+}
+
+\defin{Axiom of infinity}{
+    There exists an infinite ordinal.
+
+    i.e. ordinal that is not a natural number.
+}
+\note{}{
+    \begin{itemize}
+        \item The natural numbers form an initial segment in $\On$.
+        \item Let $\omega$ be the smallest infinite ordinal, i.p. $\omega$ is a limit ordinal
+    \end{itemize}
+}
+\bsp{}{
+    \begin{enumerate}
+        \item $\omega\cdot 2 \stackrel{?}{=} 2 \cdot \omega$, observations:
+            \begin{itemize}
+                \item $\omega\cdot 2 = \omega + \omega$
+                \item $2\cdot \omega = \omega$
+                \item $\omega + \omega \neq \omega$
+            \end{itemize}
+        \item $\omega + 2 \neq 2 + \omega$, observations:
+        \begin{itemize}
+            \item $2+\omega = \omega$
+            \item $\omega + 2$ has maximal element
+        \end{itemize}
+    \end{enumerate}
 }

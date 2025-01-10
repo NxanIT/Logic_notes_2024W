@@ -52,22 +52,22 @@
 \geometry{
     a4paper,
     twoside,
-    inner=20mm,
-    outer=50mm,
+    inner=14mm,
+    outer=46mm,
     bottom=15mm,
     top=20mm,
     marginparwidth = 30mm,
-    marginparsep = 10mm
+    marginparsep = 6mm
 }
 \else 
 \geometry{
     a4paper,
-    inner=20mm,
-    outer=50mm,
+    inner=14mm,
+    outer=46mm,
     bottom=15mm,
     top=20mm,
     marginparwidth = 30mm,
-    marginparsep = 10mm
+    marginparsep = 6mm
 }
 \fi
 
@@ -343,16 +343,16 @@
         \small\rightmark
         \begin{tikzpicture}[overlay,remember picture]
             \fill [color=lightgray](current page.north east) rectangle
-                ($ (current page.south east) + (-4.5cm,0cm) $);
+                ($ (current page.south east) + (-4.2cm,0cm) $);
         \end{tikzpicture}
     }
     
     \fancyhead[L]{
         Logic Lecture Notes 2024W
-        \begin{tikzpicture}[overlay,remember picture]
-            \fill [color=mediumgray] (current page.north west) rectangle
-                ($ (current page.south west) + (1.5cm,0cm) $);
-        \end{tikzpicture}
+        %\begin{tikzpicture}[overlay,remember picture]
+        %    \fill [color=mediumgray] (current page.north west) rectangle
+        %        ($ (current page.south west) + (1.5cm,0cm) $);
+        %\end{tikzpicture}
     }
 }
 

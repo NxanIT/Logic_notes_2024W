@@ -15,22 +15,24 @@
 \contentsline {subsubsection}{Logical axioms}{20}{subsubsection*.2}%
 \contentsline {subsubsection}{Ad (1): tautologies}{21}{subsubsection*.3}%
 \contentsline {section}{\numberline {2.8}Generalization and deduction theorem}{22}{section.2.8}%
-\contentsline {subsubsection}{Alphpabetic Variants}{24}{subsubsection*.4}%
+\contentsline {subsubsection}{Alphpabetic Variants}{23}{subsubsection*.4}%
 \contentsline {section}{\numberline {2.9}Soundness and completeness}{25}{section.2.9}%
 \contentsline {subsubsection}{completeness}{26}{subsubsection*.5}%
-\contentsline {subsection}{\numberline {2.9.1}Sizes of models}{29}{subsection.2.9.1}%
-\contentsline {subsection}{\numberline {2.9.2}Completness for uncountable languages}{30}{subsection.2.9.2}%
-\contentsline {chapter}{\numberline {3}Model Theory}{31}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Löwenheim-Skolem-Theorem}{31}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Theories and completeness}{31}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Theory of algebraic closed fields}{33}{section.3.3}%
-\contentsline {subsubsection}{Lefschetz Principle}{33}{subsubsection*.6}%
-\contentsline {section}{\numberline {3.4}Nonstandard Analysis}{34}{section.3.4}%
-\contentsline {section}{\numberline {3.5}o-minimality}{37}{section.3.5}%
-\contentsline {section}{\numberline {3.6}o-minimal ordered groups and rings}{37}{section.3.6}%
-\contentsline {subsubsection}{Cell decomposition}{39}{subsubsection*.7}%
-\contentsline {chapter}{\numberline {4}Boolean Algebra}{44}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Stone Representation Theorem}{45}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Lindenbaum-Tarski Algebras}{46}{section.4.2}%
-\contentsline {chapter}{\numberline {5}Set Theory}{50}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Axioms of ZFC}{50}{section.5.1}%
+\contentsline {subsection}{\numberline {2.9.1}Sizes of models}{28}{subsection.2.9.1}%
+\contentsline {subsection}{\numberline {2.9.2}Completness for uncountable languages}{29}{subsection.2.9.2}%
+\contentsline {chapter}{\numberline {3}Model Theory}{30}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Löwenheim-Skolem-Theorem}{30}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Theories and completeness}{30}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Theory of algebraic closed fields}{32}{section.3.3}%
+\contentsline {subsubsection}{Lefschetz Principle}{32}{subsubsection*.6}%
+\contentsline {section}{\numberline {3.4}Nonstandard Analysis}{33}{section.3.4}%
+\contentsline {section}{\numberline {3.5}o-minimality}{36}{section.3.5}%
+\contentsline {section}{\numberline {3.6}o-minimal ordered groups and rings}{36}{section.3.6}%
+\contentsline {subsubsection}{Cell decomposition}{38}{subsubsection*.7}%
+\contentsline {chapter}{\numberline {4}Boolean Algebra}{43}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Stone Representation Theorem}{44}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Lindenbaum-Tarski Algebras}{45}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Set Theory}{49}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Axioms of ZFC}{49}{section.5.1}%
+\contentsline {subsubsection}{Axiom of Choice}{55}{subsubsection*.8}%
+\contentsline {subsubsection}{Ordinal arithmetic}{56}{subsubsection*.9}%
