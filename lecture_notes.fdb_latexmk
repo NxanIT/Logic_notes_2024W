@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber lecture_notes"] 0 "lecture_notes.bcf" "lecture_notes.bbl" "lecture_notes" 1736538565 -1
+["biber lecture_notes"] 1736852646 "lecture_notes.bcf" "lecture_notes.bbl" "lecture_notes" 1737021755 0
   "./test.bib" 1734033330 878 0a687009c9b6e25efa402621b6193448 ""
-  "lecture_notes.bcf" 1736538564 109106 0fe18b7f100397795060ba20082f1161 "pdflatex"
+  "lecture_notes.bcf" 1737021753 109106 0fe18b7f100397795060ba20082f1161 "pdflatex"
   (generated)
   "lecture_notes.bbl"
   "lecture_notes.blg"
   (rewritten before read)
-["pdflatex"] 1736538558 "n:/Uni-Laptop/5-LOG/Github_lecture_notes_2024/Logic_notes_2024W-1/lecture_notes.tex" "lecture_notes.pdf" "lecture_notes" 1736538565 0
-  "BooleanAlgebra.tex" 1736538557 19876 a625f19049eb69492d8a8b3d01d16783 ""
+["pdflatex"] 1737021745 "n:/Uni-Laptop/5-LOG/Github_lecture_notes_2024/Logic_notes_2024W-1/lecture_notes.tex" "lecture_notes.pdf" "lecture_notes" 1737021755 0
+  "BooleanAlgebra.tex" 1736596513 19899 f14ec2b133ae61760aaacc548769b3ea ""
   "C:/Users/Nxan/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1736263937 125726 e2d1bc8ee1b5d56b291e4622becca371 ""
   "C:/Users/Nxan/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1682109081 11548 e41855b01d0d8e128a1d9691e07157b4 ""
   "C:/Users/Nxan/AppData/Local/MiKTeX/fonts/tfm/public/stmaryrd/stmary10.tfm" 1730761247 848 f478e0761563bbc369eca609a1741348 ""
@@ -286,19 +286,19 @@
   "FirstOrderLogic.tex" 1736156580 76336 dd7e3da200cb121a013dd881b19a725f ""
   "ModelTheory.tex" 1734116839 43946 32342e7a981515f71109ad748821961f ""
   "PropositionalLogic.tex" 1736260979 36480 9a65be40fb4c9c56e20c996d85eec539 ""
-  "SetTheory.tex" 1736417469 29143 00b7f6af03123bfdcdcc99488d339ae9 ""
+  "SetTheory.tex" 1737021475 44346 7a6ad434df1c8a65c813d3b9d253f898 ""
   "images//1-extree.png" 1729890141 210346 e2dc2f11baa99e5d0a502c1c32b92dbb ""
-  "lecture_notes.abf" 1736538564 1276 c37e34fbfe3cdcbfe3a44a7da2369119 "pdflatex"
-  "lecture_notes.aux" 1736538564 51729 715cd694f6b7e99f1e123433e89b3e2f "pdflatex"
-  "lecture_notes.bbl" 1736269939 4560 3f5a14c267b0145869bd32a359bac260 "biber lecture_notes"
-  "lecture_notes.dfn" 1736538564 12253 072c761ffe86186aeffdeec8e54025a6 "pdflatex"
-  "lecture_notes.otf" 1736538564 2887 0a15e18210a910bbb6b84db449e9c033 "pdflatex"
-  "lecture_notes.out" 1736538564 5310 c1d40b92ccad9209737807353ac1de8e "pdflatex"
-  "lecture_notes.run.xml" 1736538564 2368 6d01adf9d0a1254fe4ed34c0910a58c2 "pdflatex"
-  "lecture_notes.tex" 1736434796 13241 0d07cef6440caa130f1a92599c5e77fa ""
-  "lecture_notes.thn" 1736538564 11596 fb72b6744caeab627649bc1fb01185c7 "pdflatex"
-  "lecture_notes.toc" 1736538564 3104 9dbe10dd2e49df2bb3875354abe5ea53 "pdflatex"
-  "n:/Uni-Laptop/5-LOG/Github_lecture_notes_2024/Logic_notes_2024W-1/lecture_notes.tex" 1736434796 13241 0d07cef6440caa130f1a92599c5e77fa ""
+  "lecture_notes.abf" 1737021753 1276 c37e34fbfe3cdcbfe3a44a7da2369119 "pdflatex"
+  "lecture_notes.aux" 1737021753 55902 774804d2e5051b6007b926983ee73888 "pdflatex"
+  "lecture_notes.bbl" 1736852705 4560 3f5a14c267b0145869bd32a359bac260 "biber lecture_notes"
+  "lecture_notes.dfn" 1737021753 13526 0947cd34580bc89fb865af5e97fe1860 "pdflatex"
+  "lecture_notes.otf" 1737021753 3013 bb753e849d003d1c182f01739f653cab "pdflatex"
+  "lecture_notes.out" 1737021753 5310 c1d40b92ccad9209737807353ac1de8e "pdflatex"
+  "lecture_notes.run.xml" 1737021753 2368 6d01adf9d0a1254fe4ed34c0910a58c2 "pdflatex"
+  "lecture_notes.tex" 1737021734 13241 e32ebfd1a09cc12d1e16e42732dbaca8 ""
+  "lecture_notes.thn" 1737021753 12937 ecaab4f19c71a58c18a7f77a4c55181b "pdflatex"
+  "lecture_notes.toc" 1737021753 3104 9dbe10dd2e49df2bb3875354abe5ea53 "pdflatex"
+  "n:/Uni-Laptop/5-LOG/Github_lecture_notes_2024/Logic_notes_2024W-1/lecture_notes.tex" 1737021734 13241 e32ebfd1a09cc12d1e16e42732dbaca8 ""
   (generated)
   "lecture_notes.abf"
   "lecture_notes.aux"

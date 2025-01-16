@@ -441,14 +441,17 @@ $$f(\alpha) = H(f)$$
 
 \subsubsection{Axiom of Choice}
 \defin{Axiom of Choice (AC)}{
-    For every set $X$ and $A\subseteq \mathcal{P}(X)$ that consists of pairwise disjoint, non-empty subsets of $X$ there is a set $T\subseteq X$ such that $\forall a\in A \:\# a\cap T = 1$. $T$ is also called a transversal.
+    For every set $X$ and $A\subseteq \mathcal{P}(X)$ that consists of pairwise disjoint, non-empty subsets of $X$ there is a set $T\subseteq X$ such that $\forall a\in A \:\# a\cap T = 1$. \\
+    $T$ as above is called a transversal.
 }
 \defin{(AC')}{
     (Existence of choice function.) 
-    For every set $X$ there exists a function $\pi : \mathcal{P}\backslash \{\varnothing\}\to X$ such that for every non-empty subset $a\subseteq X$ $\pi(a)\in a$
+    For every set $X$ there exists a function $\pi : \mathcal{P}\setminus \{\varnothing\}\to X$ such that for every non-empty subset $a\subseteq X$ $\pi(a)\in a$
 }
 \defin{(AC'')}{
-    Let $(X_i)_{i\in I}$ be an indexed family of TODO non-empty sets then $\prod_{i\in I}{X_i}\neq \varnothing$
+    Let $(X_i)_{i\in I}$ be an indexed family of non-empty sets then \\
+    $\prod_{i\in I}{X_i}\neq \varnothing$.
+    ($(X_i)_{i\in I}$  could also be thought of as a function $i\mapsto X_i:I\to X$)
 }
 In the next Problemset: $AC \leftrightarrow AC'\leftrightarrow AC''$
 
@@ -516,7 +519,7 @@ In the next Problemset: $AC \leftrightarrow AC'\leftrightarrow AC''$
 
 \subsubsection{Ordinal arithmetic}
 
-Or how to think of the natural numbers to be contained in $On$
+Or how to think of the natural numbers to be contained in $\On$
 
 \defin{}{
     \begin{itemize}
@@ -531,24 +534,27 @@ Or how to think of the natural numbers to be contained in $On$
     $0 = \varnothing$, $1 = \varnothing \cup \{\varnothing\} = \{\varnothing\}$,\dots 
 }
 \note{}{
-    $(X,<_X), (Y,<_Y)$ well-ordered then we can also order their disjoint union $(X\times \{0\})\cup (Y\times \{1\})$, $X\times Y$ can be well ordered as follows:
+    $(X,<_X), (Y,<_Y)$ well-ordered then we can also order their disjoint union 
+    $(X\times \{0\})\cup (Y\times \{1\})$, $X\times Y$ can be well ordered as follows:
 
-    $(a,i)<(b,j) \iif \begin{cases}
+    $$(a,i)<(b,j) \iif \begin{cases}
         i=j=0 & a<_X b\\
         \lor \: i=j=1 & a<_Y b\\
         \lor \: i<j
-    \end{cases}$
-    and we will call this the ordering on the sum of $X$ and $Y$.
-
+    \end{cases}$$
+    and we will call this the ordering on the sum of $X$ and $Y$.\\
     $(x_0,x_1)<(x_1,y_1)\iif y_0<_Y y_1 \lor (y_0 = y_1\land x_0<_X x_1)$ (reverse lexiographical ordering)
-}
+}%TODO define sum of ordinals
 \defin{}{
     Let $\alpha,\beta\in\On$ then 
-    $\alpha+\beta$ is the unique $\gamma\in \On$ such that $\gamma$ is order-isomorphic to the sum of $\alpha$ and $\beta$
-
-    $\alpha\cdot\beta$ is the unique $\gamma\in\On$ such that $\gamma$ is order-isomorphic to product of $\alpha$ and $\beta$
+    \begin{enumerate}[label=(\roman*)]
+        \item $\alpha+\beta$ is the unique $\gamma\in \On$ such that $\gamma$ is order-isomorphic to the 
+        sum of $\alpha$ and $\beta$
+        \item $\alpha\cdot\beta$ is the unique $\gamma\in\On$ such that $\gamma$ is order-isomorphic to the 
+        product of $\alpha$ and $\beta$
+    \end{enumerate}
 }
-Properties:
+Properties of $+$ and $\cdot$:
 \lemma{}{
     \begin{enumerate}
         \item $+$ is associative, $0$ is a $2$-sided add. identity
@@ -565,7 +571,7 @@ Properties:
 \defin{Axiom of infinity}{
     There exists an infinite ordinal.
 
-    i.e. ordinal that is not a natural number.
+    i.e. there exists an ordinal that is not a natural number.
 }
 \note{}{
     \begin{itemize}
@@ -588,3 +594,331 @@ Properties:
         \end{itemize}
     \end{enumerate}
 }
+
+
+%14.01.2025
+
+Exponentiation
+\defin{}{
+    $\alpha^\beta$ is defined recursively on $\beta$:
+    \begin{enumerate}
+        \item $\alpha^0 = 1$
+        \item $\alpha ^{\beta+1} = \alpha^\beta \cdot \alpha$
+        \item $\alpha^\lambda = \sup_{\delta < \lambda}{\alpha^\delta}$ for a limit ordinal $\lambda$
+    \end{enumerate}
+}
+\note{}{
+    can also define exponentiation as given by the class function $EXP : \On \times \On \to \On$ defined by
+    \[Exp(\alpha,\beta) = \gamma \iif\]
+    There exists a function $f:\beta+1\to \On \text{s.th.} \forall \xi<\beta$
+    \begin{itemize}
+        \item $f(\beta) = \gamma$
+        \item if $\xi=0$ then $f(\xi) = 1$
+        \item if $\xi = \delta+1$ then $f(\xi) = f(\delta)\cdot\alpha$
+        \item if $\xi$ is a limit ordinal then $f(\xi) = \sup_{\delta < \xi}{f(\delta)}$
+    \end{itemize}
+}
+TODO
+uniqueness follows from recursion theorem.
+\subsubsection*{Cardinals}
+\defin{}{Given a set $X$, the cardinality of $X$ (denoted by $|X|$, $card(X)$) is the smallest ordinal for which there is a bijection with $X$.}
+\note{}{Every set has a cardinality. 
+This is bc every set can be well-ordered (by Zermelo's Theorem, which is equivalent to AC) and then we get an order-preserving bijection.
+In fact the statement ``$card(X)$ is defined for each set $X$'' is equivalent to AC.
+}
+\defin{}{We call two sets $X,Y$ equinumerous, if 
+there is a bijection between them.
+}
+$X,Y$ equinumerous if $|X| = |Y|$
+\thm{}{Let $X,Y$ be non-empty sets Then the following is equivalent.
+\begin{enumerate}[label = (\roman*)]
+    \item there is an injection of $X$ into $Y$
+    \item there is a surjection of $Y$ into $X$
+    \item $|X| \leq |Y|$
+\end{enumerate}
+}{
+    ``$\romannumeral 1 \implies \romannumeral 2$'' don't need AC
+    ``$\romannumeral 2 \implies \romannumeral 1$'' need AC
+    
+}
+\thm{Cantor-Schröder-Bernstein}{
+    $|X| = |Y|$ iff there is an injection $X\to Y$ and an injection $Y\to X$
+}{
+    % ``$ \implies$'' clear with AC
+    % ``$ \impliedby$'' clear with AC
+    
+}
+Proof is clear with AC, but can proof it without AC
+need to do some kind of back and fourth argument
+\thm{Cantor}{
+    For every set $X$ we have $|\mathcal{P}(X)|>|X|$
+}{
+    Suppose its not, then there exists a set $X$ with $|X|\geq |\mathcal{P}(X)$.\\
+    We can find a surjection $\pi:X\to \mathcal{P}(X)$ 
+    $Y = \{x\in X : x\notin\pi(x)\}$
+    Let $y\in X$ be such that $\pi(y) = Y$
+    Either $y\in Y$ or $y\notin Y$
+    If $y\in Y$ then by definition of $Y$, $y\notin Y$ 
+    If $y\notin Y$ then by definition $y\in Y$
+}
+Note this says: there is no largest set.
+\defin{Cardinal}{$\kappa\in\On$ is called a cardinal, if $\kappa = |\kappa|$}
+\note{}{The class $Card$ of all cardinals is a proper class.
+\begin{claimproof}
+    Suppose $Card$ is a set. then $\sup Card = \gamma\in \On$
+    Then $|\mathcal{P}(\gamma)|>|\gamma|\geq |\lambda|$ for every cardinals $\lambda\in Card$
+    that is a contradiction %TODO
+\end{claimproof}
+}
+\defin{finite sets}{A set $X$ is called finite, if 
+    $|X|$ is a finite ordinal, otherwise $X$ is called infinite.
+}
+\note{}{In particular a set is fininite iff $\omega$ injects into it.}% note: this is to keep in mind, good kriterium
+\prop{Galileo}{
+    A set $a$ is infinite iff it properly injects into itself.
+}{
+    $\implies$
+    Suppose $a$ is infinite, then by note use $\omega$ injects into it 
+    show $\omega$ injects properly in it self
+
+    $\impliedby$ want: set finite then it does not inject properly into itself
+    show: every finite ordinal is a cardinal inductively, then $\kappa = |\kappa|$
+
+}
+$\aleph$-function
+
+\note{}{
+    $Card$ is cofinial in $\On$
+    For every $\alpha\in \On$ there is $\gamma\in Card$ with $\alpha<\gamma$
+
+    And $Card$ is a proper subclass of $\On$, well ordered by the same ordering $\in$ as in $\On$
+
+    There is a unique function (class function) from the class of all ordinals to the infinite cardinals 
+    that preserves $\in$ \dots this function is called $\aleph$
+    
+}
+\defin{}{Instead of $\aleph(0)$ we will write subscript $\aleph_0$
+}
+\begin{itemize}
+    \item $\aleph_0 = |\omega|$
+    \item $\aleph_{\alpha+1}$ is the smallest cardinal larger than $\aleph_\alpha$
+\end{itemize}
+\note{}{For every cardinal $\kappa$ there is a smallest cardinal $\kappa^+$ such that $\kappa<\kappa^+$ this is not the successor in the sense of the ordinals. It is
+\begin{itemize}
+    \item $n^+ = n+1$
+    \item $\aleph_\alpha^+ = \aleph_{\alpha+1}$
+\end{itemize}
+}
+\note{}{For every ordinal $\gamma$ we have
+    $|\gamma|\leq \gamma<|\gamma^+|$
+}
+Similarly as with ordinals we will call cardinals of the form $\kappa^+$ successor cardinals.\outernote{successor cardinals} and non-zero, non-successor cardinals will be called limit cardinals.\outernote{limit cardinals}
+\prop{}{\label{Aleph:cont}
+    The function $\aleph$ is continuous with respect to the interval topology induced by $\in$. i.e.
+    If $\lambda$ is a limit ordinal then $\aleph_\lambda = \sup_{\delta<\lambda}{\aleph_\delta}$
+}{
+    let $\gamma \defeq \sup_{\delta<\lambda}\aleph_{\delta}$
+    have $|\gamma|\leq \gamma <|\gamma|^+$
+    Assume $\gamma<\aleph_\lambda$
+    then there exist a $\xi_0<\lambda$ such that $|\gamma| = \alpha_{\xi_0}$
+    
+    Then we would have $\gamma<|\gamma|^+=\aleph_{\xi_0+1}\leq \sup_{\delta<\lambda} \aleph_{\delta}$
+    which is a contradiction.
+    
+    we have shown that $\aleph_\lambda\leq \sup_{\delta<\lambda}\aleph_{\delta}$ (TODO: other direction?)
+}
+\defin{countable sets}{
+    A set $X$ is called to be countable iff $|X|\leq \aleph_0$ 
+    and we say $X$ is uncountable otherwise.}
+
+\subsubsection*{Continuum hypothesis (CH)}
+\[|\mathcal{P}(\omega)| = \aleph_1\]
+i.e. there is no cardinality between $|\RR|$ and $|\NN|$
+or $|\RR|$ is the first uncountable cardinality.
+
+It can be shown that CH is independent of ZFC. (method to show this is called forcing, very popular method)
+
+\subsubsection*{Cardinal arithmetic}
+\defin{}{Let 
+    $\kappa,\lambda$ be cardinals then 
+    $\kappa\otimes \lambda\defeq |\kappa\times\lambda|$
+    $\kappa\oplus \lambda\defeq |(\kappa\times\{0\})\cup(\lambda\times\{1\})|$
+    
+}
+\note{}{$\oplus,\otimes$ are commutative and associative.}
+\thm{}{
+    If $\kappa$ is infinite, then $\kappa\otimes\kappa = \kappa$
+}{
+    By induction on $\kappa$. What is ment by that is induction on $\alpha$ where $\aleph_\alpha =\kappa$.
+
+    Base case: We should check it for $\omega$ 
+    $\aleph_0\times \aleph_0 = \aleph_0$ is like finding bijection of $\omega^2 $ onto $\omega$.(diagonal)
+
+    Now suppose: 
+    $\forall \beta<\kappa |\beta|\otimes |\beta||\beta\times\beta| = |\beta|$
+
+    On The cartesian product define order such that we get order isomorphism, then this is also a bijection.
+
+    Define ordering on $\kappa\times \kappa$
+    \[(\alpha,\beta)\prec (\alpha',\beta')\iff \begin{cases}
+        \max\{\alpha,\beta\}<\max\{\alpha',\beta'\}\\
+        \max\{\alpha,\beta\} = \max\{\alpha',\beta'\}\text{ and } \alpha<\alpha'\\
+        \max\{\alpha,\beta\} = \max\{\alpha',\beta'\}\text{ and } \alpha =\alpha'\text{ and }\beta<\beta'\\
+    \end{cases}\]
+    \textbf{Claim:}$\prec$ is a well-ordering (Exercise)
+
+    \textbf{Claim:} $(\kappa\times \kappa,\prec)$ is order-isomorphic to $(\kappa,\in)$
+    From the claim we imediately get $|\kappa\times \kappa| = |\kappa|$
+    \begin{claimproof}
+        $\kappa\times \kappa = \bigcup_{\alpha<\kappa}\alpha\times \alpha$
+        increasing union.
+        then $\{\xi\times \xi\}$ is an initial segment of $\kappa\times\kappa$ (with respect to $\prec$)
+        Consider $(\xi\times\xi,\prec)$ then by our inductive assumption this will have to be isomorphic to some ordinal $\gamma\in\On$.
+        We know that the cardinality of that ordinal $\gamma$
+        $|\gamma| = |\xi\times \xi| \stackrel{\text{ind. Hyp.}}{=}|\xi|<|\kappa|$
+        So also $|\gamma|<|\kappa|$. so then $(\kappa\times\kappa,\prec)$ is order-isomorphic to $(\kappa,\in)$
+    \end{claimproof}
+}
+\coroll{
+    For every infinite cardinal $\kappa$ we have $\kappa \oplus \kappa = \kappa$
+}
+\begin{proof}
+    Proof of corollary:
+    $\kappa\oplus \kappa = |\kappa\times 2| \leq |\kappa\times\kappa| =|\kappa|$
+\end{proof}
+
+\defin{}{Define for $\kappa,\lambda$ cardinals
+    $\kappa^\lambda \defeq |\{f: f \text{ is a function from $\lambda$ to $kappa$}\}|$
+}
+Note $2^\kappa = |\mathcal{P}(X)|$
+\lemma{}{
+    If $\lambda\geq \omega$ and $2\leq \kappa\leq \lambda$ then $\kappa^\lambda = 2^\lambda$.
+}{
+    \[2 ^{\lambda} = 2 ^{\lambda\otimes\lambda} = 2 ^{\lambda^\lambda}\geq\lambda^\lambda\geq \kappa^\lambda\]
+    $ 2 ^{\lambda^\lambda}\geq\lambda^\lambda$ think of function that constantly maps to $0$ is part TODO image 5
+    The other implication is obvious.
+}
+%16.01.2025
+\defin{}{
+    A function $f:\alpha\to\beta$, where $\alpha,\beta$ are ordinals is said to be cofinal,
+    if $\imag f$ is unbounded in $\beta$
+    i.e. 
+    \[\forall \gamma\in \beta\exists \xi \in \alpha \gamma\leq f(\xi)\]
+}
+The cofiniality of $\beta\in\On$ (denoted by $cof(\beta)$)
+    is the smallest ordinal $\alpha$ such that there exists a function $f:\alpha\to\beta$ that is cofinal. Note: $cof(\beta)\leq \beta$, 
+
+\bsp{}{
+    $cof 1 = cof (\{\varnothing\}) = 1$ and in more generality
+    $cof(\alpha + 1) = cof(\alpha \cup \{\alpha\}) = 1$
+}
+\note{}{ $cof (\beta)$ is always a cardinal.
+    Let $\beta\in \On$ and let $f:cof(\beta)\to \beta$ be cofinal.
+    Then $|cof(\beta)|\leq cof (\beta)|$ and there exists a bijection $h: |cof(\beta)|\to cof\beta$,
+    so $f\circ h$ yields cofinal map and by minimality of $cof(\beta)$ have $|cof(\beta)| = cof (\beta)|$ 
+
+    If $\beta$ limit ordinal then there is a strict increasing cofinal map $h:cof(\beta)\to \beta$ 
+    Let $f:cof(\beta)\to \beta$ be cofinal define $h:cof(\beta)\to \beta$ by
+    $$h(\xi) \defeq \max\{f(\xi), \sup_{\gamma<\xi}(h(\gamma)+1)\}$$
+}
+\prop{}{\label{limit:samecof}
+    Suppose $\alpha,\beta$ are limit ordinals, $f:\alpha\to \beta$ strictly increasing and cofinal.
+    Then $cof(\alpha) = cof(\beta)$
+}{ One side is obvious
+    \begin{itemize}
+        \item $cof(\alpha)\geq cof(\beta)$ is clear
+        \item $cof(\alpha)\leq cof(\beta)$
+        Let $g:cof(\beta)\to \beta$ be cofinal
+        define $h:cof(\beta)\to\alpha$ by 
+        $$h(\xi) = \min\{\gamma<\alpha : f(\gamma)>g(\xi)\}$$
+        cofinal in $\alpha$
+    \end{itemize}
+}
+\coroll{For a limit ordinal $\alpha$, $cof(\aleph_\alpha) = cof(\alpha)$}
+\begin{proof}
+    Use \ref{Aleph:cont} and \ref{limit:samecof} on $f = \aleph$
+\end{proof}
+\coroll{For every ordinal $\beta$, $cof(\beta) = cof(cof(\beta))$}
+\begin{proof}
+    By cases
+    \begin{itemize}
+        \item $\beta$, $cof(\beta)$ are limit ordinals: there exists a strictly increasing map $cof(\beta) \to \beta$ result follows from \ref{limit:samecof}
+        \item $\beta, cof(\beta)$ are not limits
+        then $\beta = \alpha\cup \{\alpha\}$, $cof(\beta) = 1$ and $cof(cof(\beta)) = cof(1) = 1$
+    \end{itemize}
+\end{proof}
+\defin{regular ordinals}{An ordinal $\beta$ is called regular, if $cof(\beta) = \beta$ (it is fixed point of cofininality map)}
+\note{}{regular ordinals are cardinals and the first regular, infinite cardinal is $\omega$}
+\lemma{}{$\kappa^+$ is reglular for $\kappa\geq \omega$}{
+    If $f:\alpha\to \kappa^+$ is cofinal, then $\kappa^+ = \bigcup_{\gamma<\alpha} f(\gamma) = \sup_{\gamma<\alpha}f(\gamma)$.
+    Each $f(\gamma)$ is an ordinal of cardinality less then $\kappa^+$ hence is less or equal than $\kappa$
+    $$\kappa^+ = |\bigcup_{\gamma<\alpha}f(\gamma)| \leq |\alpha\times \kappa| \leq \max\{|\alpha|,|\kappa|\}$$
+    because $\kappa<\kappa^+$ we have $\kappa^+ \leq|\alpha| = \alpha$ TODO check
+}
+\note{}{$\alpha$ limit ordinal then $cof(\aleph_\alpha) = \alpha$\\
+If $\aleph_\alpha$ is regular then $cof \aleph_\alpha = cof \alpha \leq \alpha\leq \aleph_\alpha$
+So $\alpha = \aleph_\alpha$
+}
+\defin{}{
+    \begin{itemize}
+        \item A cardinal $\kappa$ is called weakly inaccessible, if
+    $\alpha$ is a regular limit cardinal strictly greater than $\omega$
+    \item A cardinal $\kappa$ is called (strongly) inaccessible, if $\kappa>\omega$, $\kappa$ regular and
+    for every $\lambda<\omega$ we have $2^\lambda<\kappa$
+    \end{itemize}
+}
+We will se that 
+    $\kappa$ inaccessible implies that $\kappa$ is not a union of fewer that $\kappa$ sets each of cardinality less that $\kappa$
+\note{}{Existence of inaccessible cardinals does not follow from ZFC.}
+Why care then?
+
+Axiom of existence of inaccessible cardinals:
+\begin{equation}
+    (IC) \text{inaccessible cardinals exist}
+\end{equation}
+
+AC has less desirable consequences e.g. Banach-Tarski-Paradox
+
+If we drop AC we could not prove that the lebesgue meassure is countably additive,
+so we may want to replace AC by something weaker (e.g. DC, dependent choice).
+Various nice results that depent on AC still hold. 
+
+LM the axiom that states: every set of reals is lebesgue meassurable
+\thm{}{Con\dots consistency. 
+    Con(ZF+DC+LM) is equal to Con(ZF + IC)
+}{}
+Note: We do now that ZF can not prove IC, but we dont know yet if ZF can prove the negation of IC.
+
+\lemma{}{
+    If $\kappa$ is an infinite cardinal and $\lambda\geq cof(\kappa)$ then $\kappa^\lambda>\kappa$
+}{
+    Fix a cofinal map $f:\lambda\to \kappa$.
+    Consider any function $G:\kappa\to\kappa^\lambda$
+    It suffices to show that $G$ can not be surjective.
+
+    $\kappa^\lambda$ is technically the set of functions $\lambda\to\kappa$
+    define $h:\lambda\to\kappa$ by 
+
+    \[h(\xi) = \min\{\kappa \setminus(G(\alpha)(\xi)) : \alpha \leq f(\xi)\}\]
+    If $h\in \imag G$ then there is $\alpha\in \kappa$ s.t. $G(\alpha) = \kappa$
+    pick $\xi <\lambda$ s.t. $f(\xi)\geq \alpha$
+    Then $h(\xi) = G(\alpha)(\xi)$ but by construction of $h$, $G(\alpha)(\xi) \neq h(\xi)$ so contradiction.
+}
+\coroll{If $\lambda\geq \omega$ then $cof(2^\lambda)>\lambda$
+}
+\begin{proof}
+    We know that $(2^\lambda)^\lambda = 2^{(\lambda\otimes \lambda)} = 2^\lambda$
+    So if $cof(2^\lambda)\leq \lambda$ then by lemma $(2^\lambda)^\lambda>2^\lambda$, a contradiction.
+\end{proof}
+\thm{(König)}{
+    Let $I$ be a set, $(A_i)_{i\in I}$ and $(B_i)_{i\in I}$ indexed families of sets.
+
+    If $\forall i\in I |A_i|<|B_i|$ then 
+    $|\bigsqcup_{i\in I}A_i|<|\prod_{i\in I}B_i|$
+}{Exercise with hints.}
+Note: above thm is equivalent to AC
+
+One can use König theorem to show that:
+``$\kappa$ inaccessible implies that $\kappa$ is not a union of fewer that $\kappa$ sets each of cardinality less that $\kappa$''TODO: check if actually true
+
+Next time : ZF can not proof ZFC
