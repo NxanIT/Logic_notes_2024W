@@ -78,7 +78,7 @@
 \contentsline {section}{\color {rhoda}Def. {\color {tanita}{4.10\hspace {5px} Homomorphisms of boolean algebras}}}{47}{defcount.4.10}%
 \contentsline {section}{\color {rhoda}Def. {\color {tanita}{4.11\hspace {5px} Trivial algebras}}}{48}{defcount.4.11}%
 \contentsline {section}{\color {rhoda}Def. {\color {tanita}{4.12\hspace {5px} Ideal}}}{48}{defcount.4.12}%
-\contentsline {chapter}{\color {black}Set Theory}{49}{chapter.5}%
+\contentsline {chapter}{\color {black}Set Theory of ZFC}{49}{chapter.5}%
 \contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.1\hspace {5px} Axiom of extensionality}}}{49}{defcount.5.1}%
 \contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.2\hspace {5px} Pairing Axiom}}}{49}{defcount.5.2}%
 \contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.3\hspace {5px} n-tuples}}}{50}{defcount.5.3}%
@@ -114,8 +114,13 @@
 \contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.33\hspace {5px} }}}{58}{defcount.5.33}%
 \contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.34\hspace {5px} countable sets}}}{59}{defcount.5.34}%
 \contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.35\hspace {5px} }}}{59}{defcount.5.35}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.36\hspace {5px} }}}{59}{defcount.5.36}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.36\hspace {5px} }}}{60}{defcount.5.36}%
 \contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.37\hspace {5px} }}}{60}{defcount.5.37}%
 \contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.38\hspace {5px} regular ordinals}}}{60}{defcount.5.38}%
 \contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.39\hspace {5px} }}}{61}{defcount.5.39}%
-\contentsline {chapter}{\color {black}Bibliography}{65}{chapter*.10}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.40\hspace {5px} Axiom of foundation (AF)}}}{61}{defcount.5.40}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.41\hspace {5px} }}}{62}{defcount.5.41}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.42\hspace {5px} }}}{62}{defcount.5.42}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.43\hspace {5px} inductive closure}}}{62}{defcount.5.43}%
+\contentsline {chapter}{\color {black}Outernotes, Abbreviations, Overview}{64}{chapter.6}%
+\contentsline {chapter}{\color {black}Bibliography}{68}{chapter*.8}%

@@ -138,6 +138,9 @@
 \DeclareMathOperator{\imag}{im}
 \DeclareMathOperator{\On}{On}%class of all ordinals
 \DeclareMathOperator{\Ord}{Ord}%class of all ordinals
+\DeclareMathOperator{\cof}{cof}
+\DeclareMathOperator{\rk}{rk}%rank of sets / ordinal
+\DeclareMathOperator{\cl}{cl}% closure of a set
 
 \DeclareMathOperator{\propM}{Prop} % for example in boolean algebra
 %\DeclareMathOperator{\gdw}{\quad:gdw\quad}
@@ -240,6 +243,20 @@
         \color{black}
     \fi
     \addcontentsline{thn}{subsection}{\color{rhoda}Lemma \protect{\color{tanita}{\thepropcount \hspace{5px} #1}}} 
+}
+\newtheorem{hypo}[propcount]{Hypothesis}
+\newcommand{\hypothesis}[2]{
+    \ifSimplifiedVersion
+        Hypo: #1 - #2
+
+    \else 
+        \color{rhoda}   
+        \begin{hypo}
+            \propOrThm{#1}{#2}{}
+        \end{hypo}
+        \color{black}
+    \fi
+    \addcontentsline{thn}{subsection}{\color{rhoda}Hyp. \protect{\color{tanita}{\thepropcount \hspace{5px} #1}}} 
 }
 
 \newcommand{\propOrThm}[3]{
@@ -371,7 +388,7 @@
     \normalfont
 \end{center}
 \begin{center}
-    \framebox[14cm]{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{
+    \framebox[15cm]{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{
     This is a summary of the material discussed in the lecture "Mathematische Logik". 
     It is still a work in progress and there \textbf{may be mistakes} in this work. 
     If you find any, feel free to let me know and I will correct them\\\hspace{10px}
@@ -383,9 +400,7 @@
 \setlength{\cftbeforetoctitleskip}{0em}
 \setlength{\cftaftertoctitleskip}{0em}
 \tableofcontents
-\begin{multicols}{2}
-    \listofabbreviations%\printglossary[type=\acronymtype]
-\end{multicols}
+
 
 
     
@@ -395,6 +410,14 @@
 \input{BooleanAlgebra.tex}
 \input{SetTheory.tex}
 
+\chapter{Outernotes, Abbreviations, Overview}
+\begin{multicols}{3}
+    \listofouternotes
+\end{multicols}
+\begin{multicols}{2}
+    \listofabbreviations%\printglossary[type=\acronymtype]
+\end{multicols}
+\newpage
 \newgeometry{
     outer=15mm,
     inner=14mm,
@@ -413,10 +436,9 @@
 
 \restoregeometry
 \printbibliography
-\begin{multicols}{3}
-    \listofouternotes
-\end{multicols}
+
 \end{document}
+
 
 %You can see this if the commit actually happend
 %ello i am not a robot

@@ -1462,11 +1462,6 @@ INPUT .\lecture_notes.toc
 INPUT lecture_notes.toc
 INPUT lecture_notes.toc
 OUTPUT lecture_notes.toc
-INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
-INPUT .\lecture_notes.abf
-INPUT lecture_notes.abf
-INPUT lecture_notes.abf
-OUTPUT lecture_notes.abf
 INPUT .\PropositionalLogic.tex
 INPUT PropositionalLogic.tex
 INPUT .\PropositionalLogic.tex
@@ -1475,6 +1470,7 @@ INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr9.tfm
 INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt9.tfm
 INPUT C:\Users\Nxan\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\tex-gyre\q-rm.enc
+INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\ot1phv.fd
 INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\ot1phv.fd
 INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\ot1phv.fd
@@ -1548,6 +1544,14 @@ INPUT .\SetTheory.tex
 INPUT SetTheory.tex
 INPUT .\SetTheory.tex
 INPUT SetTheory.tex
+INPUT .\lecture_notes.otf
+INPUT lecture_notes.otf
+INPUT lecture_notes.otf
+OUTPUT lecture_notes.otf
+INPUT .\lecture_notes.abf
+INPUT lecture_notes.abf
+INPUT lecture_notes.abf
+OUTPUT lecture_notes.abf
 INPUT .\lecture_notes.dfn
 INPUT lecture_notes.dfn
 INPUT lecture_notes.dfn
@@ -1558,10 +1562,6 @@ INPUT lecture_notes.thn
 OUTPUT lecture_notes.thn
 INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmcsc10.tfm
 INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt10.tfm
-INPUT .\lecture_notes.otf
-INPUT lecture_notes.otf
-INPUT lecture_notes.otf
-OUTPUT lecture_notes.otf
 INPUT lecture_notes.aux
 INPUT .\lecture_notes.out
 INPUT .\lecture_notes.out

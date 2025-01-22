@@ -1,4 +1,4 @@
-\chapter{Set Theory}
+\chapter{Set Theory of ZFC}
 The contents on this chapter are at least partially sourced on \cite{krivine1998théorie}.
 \bsp{Russel's paradox}{Let $A = \{a : a\notin a\}$. If any collection of elements is a set, then $A$ would be a set.
 Question: is $A\in A$? if yes, then $A\notin A$, if not then $A\in A$}
@@ -7,7 +7,7 @@ Let $\mathcal{L}=\{\in\}$ be a Language of first order, where $\in$ \dots binary
 For $(\mathcal{U},\in)$ 
 If $\mathcal{A} = (\mathcal{U},\in^\mathcal{A})\models \text{ZFC}$, then the elements of the universe $\mathcal{U}$ are called sets.
 We will show roughly that some definably sets are not sets (in the sense of ZFC), others are not. The latter will be called classes.
-\section{Axioms of ZFC}
+\section{First axioms of ZFC}
 \defin{Axiom of extensionality}{\label{Ax1}
     $$\forall x \forall y (x=y \leftrightarrow \forall u (u\in x \leftrightarrow u\in y))$$}
 In other words, two sets are the same if they have the same elements. This will give us later uniqueness in construction of other sets.
@@ -80,7 +80,7 @@ there exists a set $z$ consisting of all subsetes $y\subseteq x$ that are themse
 Or in words: ``For every set $x$ there is a set $z$ consisting of all subcollections of $x$ that are themselve sets.''
 class relations  
 
-
+\subsection{Classes and functions}
 \defin{Classes}{All the unary $\mathcal{L}$-definable relations (w/ parameters) are called classes.}
 \bsp{}{
     \begin{itemize}
@@ -124,7 +124,7 @@ By powerset, replacement(comprehension): $\{\varnothing\}$ is a set.
     Then by defining a class function $R_\phi (x) = y$, 
     $$\phi (x,y)\equiv (x=\varnothing\land y = a)\lor (x = \{\varnothing\}\land y = b)$$
 }
-\subsubsection*{Functions}
+
 \note{}{If the domain of a class function is a set then the graph of the class function is a set. %check if really is graph
     $R_\phi$ defined by $\phi(x,y,\underline{a})$ then the domain $u\defeq \dom R_\phi \in \mathcal{U}$
     Image $v\defeq \imag R_\phi \in \mathcal{U}$ by replacement 
@@ -148,7 +148,7 @@ Suppose we have a function $a: I \to X$. set $a_i$ to the unique $x\in X$ s.th. 
 \note{}{
     If $I=\varnothing$ then $\bigcap_{i\in I}a_i = \bigcup X$
 }
-\subsubsection*{Ordinals}
+\subsubsection*{Class relations and well ordering}
 Types of well ordered sets
 \defin{}{
     Let $R$ class relation, $C$ class
@@ -198,11 +198,12 @@ $<$  strict, $\implies$ $y\notin \delta_y(x)$
 
     the class of all ordinals is a proper class.
 }
-\subsubsection*{Well-orderings of classes and ordinals}
+
 \defin{well-ordering (class)}{A class relation $R$ defining a strict ordering on a class $C$
     is a well-ordering, if \\
     For every $x\in C$ the class initial segment $\delta_x(C) = \{y : R(y,x)\}$ is a set that is well ordered by $R$
 }
+\section{Ordinals}
 \defin{Tranistivity of sets}{A set $x$ is called transitive if 
 \[\forall y (y\in x \to y\subseteq x)\]
 }
@@ -364,7 +365,7 @@ $\gamma\in \On $ then $\gamma = \{\alpha\in \On : \alpha\in \gamma\}$
     $\delta_{x_0} = Y$ ($Y$ is initial segment) $Y\cong \alpha$ hence $x_0\in Y$, a contradiction.
 }
 
-\subsubsection*{Transfinite induction} % or inductive definitions
+\subsection{Transfinite induction} % or inductive definitions
 
 Suppose $\phi(x)$ (possibly with parameters)
 to prove 
@@ -439,7 +440,7 @@ $$f(\alpha) = H(f)$$
     It is well defined by the prev two lemmas TODO
 }
 
-\subsubsection{Axiom of Choice}
+\subsection{Axiom of Choice}
 \defin{Axiom of Choice (AC)}{
     For every set $X$ and $A\subseteq \mathcal{P}(X)$ that consists of pairwise disjoint, non-empty subsets of $X$ there is a set $T\subseteq X$ such that $\forall a\in A \:\# a\cap T = 1$. \\
     $T$ as above is called a transversal.
@@ -517,7 +518,7 @@ In the next Problemset: $AC \leftrightarrow AC'\leftrightarrow AC''$
     So have injective of proper class into set. a contradiction.
 }
 
-\subsubsection{Ordinal arithmetic}
+\subsection{Ordinal arithmetic}
 
 Or how to think of the natural numbers to be contained in $\On$
 
@@ -662,6 +663,7 @@ need to do some kind of back and fourth argument
     If $y\notin Y$ then by definition $y\in Y$
 }
 Note this says: there is no largest set.
+\subsection{Cardinals}
 \defin{Cardinal}{$\kappa\in\On$ is called a cardinal, if $\kappa = |\kappa|$}
 \note{}{The class $Card$ of all cardinals is a proper class.
 \begin{claimproof}
@@ -732,9 +734,11 @@ Similarly as with ordinals we will call cardinals of the form $\kappa^+$ success
     and we say $X$ is uncountable otherwise.}
 
 \subsubsection*{Continuum hypothesis (CH)}
-\[|\mathcal{P}(\omega)| = \aleph_1\]
-i.e. there is no cardinality between $|\RR|$ and $|\NN|$
-or $|\RR|$ is the first uncountable cardinality.
+\hypothesis{(CH)}{
+    \[|\mathcal{P}(\omega)| = \aleph_1\]
+    i.e. there is no cardinality between $|\RR|$ and $|\NN|$
+    or $|\RR|$ is the first uncountable cardinality.
+}
 
 It can be shown that CH is independent of ZFC. (method to show this is called forcing, very popular method)
 
@@ -859,11 +863,11 @@ The cofiniality of $\beta\in\On$ (denoted by $cof(\beta)$)
 If $\aleph_\alpha$ is regular then $cof \aleph_\alpha = cof \alpha \leq \alpha\leq \aleph_\alpha$
 So $\alpha = \aleph_\alpha$
 }
-\defin{}{
+\defin{}{Let $\kappa$ be a cardinal.
     \begin{itemize}
-        \item A cardinal $\kappa$ is called weakly inaccessible, if
+        \item $\kappa$ is called weakly inaccessible, if
     $\alpha$ is a regular limit cardinal strictly greater than $\omega$
-    \item A cardinal $\kappa$ is called (strongly) inaccessible, if $\kappa>\omega$, $\kappa$ regular and
+    \item $\kappa$ is called (strongly) inaccessible, if $\kappa>\omega$, $\kappa$ regular and
     for every $\lambda<\omega$ we have $2^\lambda<\kappa$
     \end{itemize}
 }
@@ -877,7 +881,7 @@ Axiom of existence of inaccessible cardinals:
     (IC) \text{inaccessible cardinals exist}
 \end{equation}
 
-AC has less desirable consequences e.g. Banach-Tarski-Paradox
+(AC) has less desirable consequences e.g. Banach-Tarski-Paradox
 
 If we drop AC we could not prove that the lebesgue meassure is countably additive,
 so we may want to replace AC by something weaker (e.g. DC, dependent choice).
@@ -922,3 +926,211 @@ One can use König theorem to show that:
 ``$\kappa$ inaccessible implies that $\kappa$ is not a union of fewer that $\kappa$ sets each of cardinality less that $\kappa$''TODO: check if actually true
 
 Next time : ZF can not proof ZFC
+
+%21.01.2025
+%Omega is not cofinal in aleph_1, also why cofinality is different from cardinality
+Today we are going to state our last axiom, the axiom of foundation. We are also going to show a relative consistency theorem.
+We are going to finish prob next course thursday
+
+\defin{Axiom of foundation (AF)}{
+    Beeing an element of, does not admit an infinite decreasing chain.
+    $$\forall x x\neq \varnothing \to \exists y(y\in x\land \forall z\in y z \notin x)$$
+}
+\note{}{
+    Suppose we have a sequence of sets $(u_n)_{n\in\omega}$ s.t. $\forall n u_{n+1}\in u_n$ then $\{u_n : n\in \NN\}$ would contradict AF.
+    and have $\forall x (x\notin x)$ too.
+}
+\defin{}{
+    Class function
+    $V:\On \to \mathcal{U}$ by transfinite induction on ordinals 
+    and set $V_\beta \defeq \bigcup_{\alpha<\beta}{\mathcal{P}(V_\alpha)}$
+    $V_0 = \varnothing$
+    If $\alpha\leq \beta$ then $V_\alpha\subseteq V_\beta$ 
+    (an example of increasing sequence, in contrast to note on axiom AF)
+    $V_{\beta+1} = \mathcal{P}(V_\beta)$
+
+    If $\lambda$ is a limit ordinal then $V_\lambda = \bigcup_{\alpha<\lambda}V_\alpha$
+
+    $V$ is also a class given by $V(x)\equiv \exists \alpha\in\On\: x\in V_\alpha$
+}
+$V$ also gives us a way to associate a rank to each set.
+\defin{}{
+    For every $x$ such that $V(x)$ we define
+    $\rk(x)\defeq \min\{\alpha : \: x\in V_\alpha\}$
+}
+\note{}{
+    The rank $\rk(x)$ is always a successor ordinal.
+}
+\lemma{}{
+    $V(x)$ iff $\forall y \: y\in x\to V(y)$
+    And also if $V(x)$ then $\forall y (y\in x \to \rk(y)<\rk(x))$
+}{
+    ``$\implies$'' direction: 
+    $V(x)$ and $\rk(x) = \beta+1$ then 
+    $x\in V_{\beta+1}$ so $x\subseteq V_\beta$ hence $\forall y\in x \: y\in V_\beta$
+    Also $\rk(y)\leq \beta <\beta+1 = \rk(x)$
+
+    ``$\impliedby$''-direction:
+    Suppose $\forall y\in x V(y)$
+    Note that $\rk : V\to \On$ is bounded on $x$.
+    Else, $\{\rk y : y \in x\}$ is unbounded in $\On$ and it is a set (image of function $\rk$ of a set)
+    Take $\bigcup\{\rk y : y\in x\}\in \On$ and it would be an ordinal bigger than any other set, TODO
+
+    Suppose $\{\rk y : y\in x\}$ is bounded by $\beta$ then $\forall y \in x y\in V_\beta$
+    so $x\in V_{\beta+1}$.
+}
+\lemma{}{
+    For every ordinal $\alpha\in \On$ we have $V(\alpha)$ and $\rk (\alpha) = \alpha+1$.
+}{Exercise}
+\defin{inductive closure}{
+    For any set $x$ we define the function with domain $\omega$ 
+    $f(0) \defeq x$
+    $f(n+1) \defeq \bigcup_{y\in f(n)}y = \bigcup f(n)$
+    and we define the closure of $x$ to be the union 
+    $\cl x \defeq \bigcup_{n<\omega}f(n)$
+}
+\note{}{
+    \begin{itemize}
+        \item $x\subseteq \cl x$
+        \item $\cl$ is transitive
+        \item If $z$ is transitive set that contains $x$ then then $\cl x\subseteq z$ 
+        ($\cl x$ is the unique transitive closure of $x$)
+    \end{itemize}
+}
+\thm{}{
+    (AF) holds iff $\forall x V(x)$
+}{
+    ``$\impliedby$''-direction: Suppose $\forall x V(x)$.
+    We need to show that any set contains an element 
+    Let $a\neq \varnothing$. Let $y\in a$ be of minimal rank.
+    Then for every $c\in y$ we know $\rk c<\rk y$ so $c\notin a$ by minimality of $\rk y$.
+    So $y\in a$ s.t. $y\cap a = \varnothing$
+    
+    ``$\implies$'' direction: Lets assume the axiom of foundation and by contradiction that $x$ is a set
+    for which $\lnot V(x)$
+    Have $x\subseteq \cl x$ 
+    \textbf{Claim:} $Y = \{y\in \cl x : \: \lnot V(y)\}\neq \varnothing$
+    \begin{claimproof}
+        If $Y = \varnothing$ then $\forall y \in Y V(y)$ and $\rk$ bounded on $Y$. %TODO
+    \end{claimproof}
+    Let $y\in Y$. Then $\lnot V(y)$ so i.p. $y\not \subseteq V$, 
+    so for some $z\in y$ have $\lnot V(z)$
+    but because $\cl x $ is transitive, $z\in \cl x$ hence $z\in Y$
+    hence $\forall y\in Y y\cap Y \neq \varnothing$, a contradiction with (AF).
+}
+
+By Gödels 2-nd incompletness theorem ZFC can not prove its own consistency.
+There is a way to express consistency in the formal level, by coding and using peano arithmetic, and the above statement says that ZFC can not prove this sentence.
+All we can hope for are relative consistency results, and therefore relate two theories with each other.
+For example some theories are less debated about 
+and it shows a way to prove independence of certain axioms from others.
+
+\begin{itemize}
+    \item ZFC The axioms \begin{enumerate*}
+        \item extensionality
+        \item union
+        \item power-set
+        \item ax scheme of replacement
+        \item set ax
+        \item axiom of infinity
+        \item AC
+        \item AF
+    \end{enumerate*}
+    (recall pairing and comprehension follow from the other)
+
+    \item ZFC$^-$ is  ZFC without (AF)
+    \item ZF is ZFC without (AC)
+    \item ZF$^-$ is ZF without (AF)
+\end{itemize}
+
+We will use a tool that is in set theory called Relativization
+
+Let $C$ be a class, $\phi(\underline{x},\underline{a})$, $\underline{a}\in C$
+
+$\phi^C(\underline{x},\underline{a})$ defined by induction on compl of $\phi$
+\begin{itemize}
+    \item If $\phi$ is atomic then $\phi^C = \phi$
+    \item $(\lnot \phi)^C = \lnot (\phi^C)$,  $( \phi\lor \psi)^C =  (\phi^C)\lor(\psi^C)$  
+    \item $(\exists y \phi)^C = \exists y (C(y)\land \phi^C)$
+    \item $(\forall y \phi)^C = \forall y (C(y)\to \phi^C)$
+\end{itemize}
+
+
+\thm{}{
+    Suppose $(\mathcal{U},\in)\models ZF^-$ then $V$ constructed in $\mathcal{U}$ is such that
+    $(V,\in)\models ZF$ 
+    i.e. assume $ZF^-$ is consistent (has a model) and we get a model of ZF 
+}{
+    ZF$^-$
+    Take 
+    \begin{enumerate*}
+        \item extensionality
+        \item union
+        \item power-set
+        \item ax scheme of replacement
+        \item set ax
+        \item axiom of infinity
+    \end{enumerate*}
+    (recall pairing and comprehension follow from the other)
+    Need to check if  $(\mathcal{U},\in)\models ZF^-$ and $V$ class defined by 
+    $V = \bigcup_{\alpha\in \On}V_\alpha$, $V_\beta \defeq \bigcup_{\alpha<\beta}{\mathcal{P}(V_\alpha)}$
+    then $(V,\in )\models ZF^-$ (AF will follow from prev. result)
+
+    \begin{enumerate}
+        \item Let $x,y\in V$ wts $(\forall z\in V z\in x\leftrightarrow z\in y)\leftrightarrow x=y$ 
+        $x,y\in V$ so $x,y\subseteq V$
+        and can use Axiom of extensionality in $\mathcal{U}$
+        $(\forall z\in \mathcal{U} z\in x\leftrightarrow z\in y)\leftrightarrow x=y$
+        
+        \item Let $x\in V$ $U_x = \{z : \exists y \in x z\in y\}\subseteq V$
+        so $\bigcup_x\in V$.
+        \item Let $x\in V$ then $x\subseteq V$. so every subset of $x$ is a subset of $V$ hence is an 
+        element of $V$. Powerset  $\mathcal{P} (x)\subseteq V$ hence  $\mathcal{P} (x)\in V$
+        %TODO (range funciton is bounded on the ???)
+        \item $\varphi(x,y)$ with parameters from $V$ and assume that $\varphi(x,y)$ defines a class function in $V$ i.e.
+        $$\biggl(\forall x \exists ^{\leq 1}y \varphi (x,y)\biggr)^V$$
+        i.e.
+        $$\forall x (V(x)\to (\exists ^{\leq 1}y \varphi (x,y)) )$$
+        Then $\psi (x,y)\defaq V(x)\land V(y)\land \varphi^V(x,y)$
+        defines a class function in $\mathcal{U}$, use replacement in $\mathcal{U}$
+        That yields 
+
+        $$\forall a \exists b y\in b \iif (\exists x \in A \varphi(x,y))\iif \exists x\in a \varphi^V(x,y)\land V(y)$$
+        $b\subseteq V$ hence $b\in V$ and $b$ is the image of $a$ under the class function given by $\varphi$.
+        \item Since we proved that every ordinal is in $V$, $\varnothing\in V$.
+        \item enough to show that $\omega\in V$. in fact we know that any ordinal is in $V$.
+    \end{enumerate}
+}
+
+An ordinal $\alpha$ is called regular, if it is equal to its own cardinality $\cof \alpha = \alpha$
+A cardinal $\kappa$ is called inaccessible if $\kappa > \omega$ and $\kappa $ is regular.
+
+It suffices to say $\forall \lambda<\omega 2^\lambda <\kappa$
+Suppose now that $(\mathcal{U}, \in)\models ZFC$ 
+\lemma{}{
+    If $\kappa$ is an inaccessible cardinal, then $|V_\kappa| = \kappa$ and Moreover 
+    for every $a\subseteq V_\kappa$ have $a\in V_\kappa$ iff $|a|<\kappa$
+}{
+    Recall, if $\alpha\in \On$ then $\alpha\subseteq V_\alpha$. i.p.
+    $\kappa\subseteq V_\kappa$ so $|\kappa|\leq |V_\kappa|$
+    
+    The other direction: 
+    For this we are going to show inductively that for all $\xi<\kappa$ that $|V_\xi|<\kappa$
+    Then $\kappa\geq |V_\kappa|$ follows.
+    If $|V_\xi|<\kappa$ then $|V_{\xi+1}| = |\mathcal{P}(V_\xi)|\leq |2^{|V_\xi|}|<\kappa$
+    by $\kappa$ inaccessible.
+    Suppose  $|V_\xi|<\kappa$ for all $\xi<\lambda<\kappa$ where $\lambda$ is a limit ordinal.
+    \[|V_\lambda|  = |\bigcup_{\xi<\lambda}V_\xi| \leq  \sup{\xi<\lambda}|V_\xi |<\kappa\]
+    here we use regularity of $\kappa$.
+
+    So have $|V_\kappa| = \kappa$.
+    Left to show: for every $a\subseteq V_\kappa$ have $a\in V_\kappa$ iff $|a|<\kappa$
+    \begin{itemize}
+        \item ``$\impliedby$''-direction: Assume $a\subseteq V_\kappa$ and $|a|<\kappa$ 
+        $\rk: a \to \On$ is not cofinal in $\kappa$ because $cof \kappa = \kappa > |a|$
+        So for some ordinal $\beta$ have $a\subseteq V_\beta$ and then $a\in V_{\beta+1}\subseteq V_\kappa$
+        \item ``$\implies$''-direction: it suffices $a\in V_\kappa$ then $|a|<\kappa$
+        Exercise.
+    \end{itemize}
+}
+
