@@ -1107,9 +1107,9 @@ A cardinal $\kappa$ is called inaccessible if $\kappa > \omega$ and $\kappa $ is
 
 It suffices to say $\forall \lambda<\omega 2^\lambda <\kappa$
 Suppose now that $(\mathcal{U}, \in)\models ZFC$ 
-\lemma{}{
-    If $\kappa$ is an inaccessible cardinal, then $|V_\kappa| = \kappa$ and Moreover 
-    for every $a\subseteq V_\kappa$ have $a\in V_\kappa$ iff $|a|<\kappa$
+\lemma{}{\label{lem:inacc1}
+    If $\kappa$ is an inaccessible cardinal, then $|V_\kappa| = \kappa$. Moreover 
+    for every $a\subseteq V_\kappa$ we have $a\in V_\kappa$ iff $|a|<\kappa$
 }{
     Recall, if $\alpha\in \On$ then $\alpha\subseteq V_\alpha$. i.p.
     $\kappa\subseteq V_\kappa$ so $|\kappa|\leq |V_\kappa|$
@@ -1134,3 +1134,86 @@ Suppose now that $(\mathcal{U}, \in)\models ZFC$
     \end{itemize}
 }
 
+%23.01.2025
+
+
+\lemma{}{Let $(\mathcal{U},\in)\models ZFC$. If $\kappa$ is inaccessible, then $V_\kappa\models ZFC$.}{
+    Will check (AC) and replacement, the remaining axioms are an exercise.
+    \begin{itemize}
+        \item[(AC)]: Suppose $a\in V_\kappa$ and $a$ is a family of pairwise disjoint, non-empty sets.
+            By (AC) in $\mathcal{U}$ there is a transversal $T$ in $\mathcal{U}$ for the set $a$. What is 
+            left to show is $T\in V_\kappa$.
+            Have $a\subseteq V_\kappa$ then every subset of $a$ is a subset of $V_\kappa$ so in particular 
+            $T\subseteq V_\kappa$.
+            We do know that $a\in V_\kappa$ so $|a|<\kappa$ and $T\subseteq a$ we have $|T|\leq |a|$ so by 
+            the previous lemma $T\in V_\kappa$.
+        \item[(RE)]: $\varphi(x,y)$ a formula with parameters in $V_\kappa$ that defines a class function in 
+            $V_\kappa$. i.e. $$\forall x\in V_\kappa \exists^{\leq 1} y\in 
+            V_\kappa \varphi^{V_\kappa}(x,y)$$ 
+            let $a\in V_\kappa$ then $\psi(x,y) \equiv x\in V_\kappa \land y\in V_\kappa \land \varphi(x,y)$
+            does define a class function on $\mathcal{U}$ with domain contained in $V_\kappa$ 
+            %TODO check class and on cal(U)
+            So $f[a]\subseteq V_\kappa$ and $ |f[a]|<\kappa$ so $f[a]\in V_\kappa$.
+    \end{itemize}
+}
+Now we are ready to state our meta-theorem, it is not a statement in first order language of set theory.
+\thm{}{
+    If ZFC is consistent then ZFC + ``There are no strongly inaccessible cardinals'' is also consistent
+}{
+    Assume we have a model of ZFC, $(\mathcal{U},\in)\models ZFC$.
+    \begin{itemize}
+        \item If $\mathcal{U}$ does not contain any inaccessible cardinals then we are done.
+        \item Assume that $\mathcal{U}$ does contain inaccessible cardinals. Let $\kappa$ be the smallest inaccessible cardinal. 
+    \end{itemize}
+    What we want to show is that there are no inaccessible cardinals in $V_\kappa$.
+    An ordinal is by definition a transitive set, well-ordered by $\in$.
+    By (AF) $\alpha$ is transitive and $\alpha$ is linearly ordered by $\in$.
+    i.e. $\alpha$ ordinal iff 
+    \begin{equation}\label{equation:ordinal}
+        \forall x,y \in \alpha (x\in y \lor y\in x \lor x=y)
+    \land \forall x(x\in \alpha \to x\subseteq \alpha)
+    \end{equation}
+    \textbf{Claim 1: }The ordinals in $V_\kappa$ are the ordinals below 
+    $\kappa$ i.e. $Ord^{V_\kappa}=\kappa$.\\
+    \begin{claimproof}
+        If $\alpha<\kappa$ then $\alpha\subseteq V_\kappa$ ($\rk \alpha = \alpha+1$ and $V_{\alpha+1}
+        \subseteq V_\kappa$ so $\alpha\in V_\kappa$ ($\alpha+1<\kappa$)) $\alpha$ is an ordinal so \ref
+        {equation:ordinal} holds. and $\alpha\in \On^{V_\kappa}$
+        If $\alpha\in \On^{V_\kappa}$ then $\alpha\in V_\kappa$ and $\alpha$ is transitive and totally 
+        ordered by $\in$.
+        % TODO check: All elements of $\alpha$ are elements of $V_\kappa$. 
+        Hence $\alpha$ is an ordinal. Left to show $\alpha$ is below $\kappa$.
+        Have $|\alpha|<\kappa$,
+        by the Lemma \ref{lem:inacc1} $\alpha<\kappa$.
+    \end{claimproof}
+    \textbf{Claim 2: }The cardinals in $V_\kappa$ are the cardinals that are below $\kappa$.\\
+    \begin{claimproof}
+        Suppose $\lambda$ is a cardinal in $V_\kappa$. in particular $\lambda$ is an ordinal in $V_\kappa$ 
+        and therefore an ordinal in $\mathcal{U}$ and by the lemma \ref{lem:inacc1} $\lambda = |\lambda| 
+        <\kappa$.
+        left to show: $\lambda$ is an actual cardinal in $\mathcal{U}$
+        Suppose there is a bijection $f:\lambda\to \alpha$ to some smaller ordinal $\alpha$. Then by 
+        Claim 1, $\alpha\in \On^{V_\kappa}$ and $f\subseteq V_\kappa$ (the graph $f\subseteq \lambda\times 
+        \alpha\subseteq \lambda \times \lambda$ so $f\subseteq \mathcal{P}\mathcal{P}\mathcal{P}(V_{\lambda
+        +1})\eqdef V_\beta$, $\rk \lambda = \lambda+1$ and have $\beta<\kappa$ by inaccessability).
+        $f\subseteq V_\kappa$ and $|f|<\kappa$ so by lemma \ref{lem:inacc1} $f\in V_\kappa$.
+        $f$ is a bijection in $V_\kappa$ between $\lambda$ and a smaller ordinal, a contradiction.
+
+        Suppose $\lambda<\kappa$ and $\lambda$ cardinal, then by lemma \ref{lem:inacc1} $\lambda\in V_\kappa$ and $\lambda\in \On^{V_\kappa}$.
+        If there would be a bijection in $V_\kappa$ between $\lambda$ and a strictly smaller ordinal 
+        $\alpha$ then $\alpha$ would be an actual ordinal. By an argument as before would get a bijection in 
+        $\mathcal{U}$ between $\lambda$ and smaller ordinal.
+    \end{claimproof}
+    If $\lambda\in V_\kappa$ is a cardinal in $V_\kappa$ then $\lambda<\kappa$ and by claim 2 it is a cardinal in $\mathcal{U}$, $\lambda$ can not be inaccessible. by choice of $\kappa$.
+
+    Note that only $\mathcal{U}$ knows that $\lambda$ is not inaccessible. We therefore need to check that also $V_\kappa$ knows that $\lambda$ is inaccessible.
+    Reasons for $\lambda$ to not be inaccessible:
+    \begin{itemize}
+        \item $\lambda\leq \omega$ (in $\mathcal{U}$ ) hence $(\lambda\leq \omega)^{V_\kappa}$ bc. $\omega\in V_\kappa$
+        \item $\lambda\leq 2^\xi$ for some $\xi <\lambda<\kappa$ hence
+        $\xi,2^xi\in V_\kappa$ and have $(\xi<\lambda<2^\xi)^{V_\kappa}$
+        \item $\lambda$ is not regular, if we have a function $f:\alpha\to \lambda$ cofinal and $\alpha$ an ordinal $\alpha<\lambda$, then $\alpha\in V_\kappa$ hence $f\in V_\kappa$ then $\lambda$ is not regular in $V_\kappa$.
+    \end{itemize}
+}
+
+Note: $Ord^{V_\kappa}=\kappa$. but $Ord^{V_\kappa}$ is no set in $V_\kappa$.

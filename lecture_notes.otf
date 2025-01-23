@@ -26,11 +26,15 @@
 \contentsline {section}{\color {black}\textbf {Chapter 2}}{11}{chapter.2}%
 \contentsline {section}{logical symbols}{11}{Item.40}%
 \contentsline {section}{parameters}{11}{Item.41}%
+\contentsline {section}{expression}{12}{defcount.2.2}%
 \contentsline {section}{Term}{12}{defcount.2.3}%
+\contentsline {section}{atomic formula}{12}{defcount.2.4}%
 \contentsline {section}{formula}{12}{defcount.2.5}%
 \contentsline {section}{$\exists $ quantifier}{12}{excount.2.5}%
 \contentsline {section}{bounded variable}{12}{excount.2.5}%
 \contentsline {section}{sentence}{12}{Item.49}%
+\contentsline {section}{structures}{13}{section.2.2}%
+\contentsline {section}{structure}{13}{defcount.2.7}%
 \contentsline {section}{interpretation}{13}{defcount.2.7}%
 \contentsline {section}{assigment}{13}{defcount.2.8}%
 \contentsline {section}{$\models _\mathcal {A}$}{14}{defcount.2.9}%
@@ -42,10 +46,12 @@
 \contentsline {section}{$\simeq $}{34}{defcount.3.7}%
 \contentsline {section}{RCF}{37}{defcount.3.15}%
 \contentsline {section}{\color {black}\textbf {Chapter 4}}{43}{chapter.4}%
+\contentsline {section}{Ultrafilter}{44}{defcount.4.3}%
+\contentsline {section}{$S(B)$}{44}{defcount.4.3}%
 \contentsline {section}{\color {black}\textbf {Chapter 5}}{49}{chapter.5}%
 \contentsline {section}{$\Ord $}{52}{defcount.5.20}%
 \contentsline {section}{$\On $}{52}{defcount.5.20}%
 \contentsline {section}{successor cardinals}{59}{defcount.5.33}%
 \contentsline {section}{limit cardinals}{59}{defcount.5.33}%
-\contentsline {section}{\color {black}\textbf {Chapter 6}}{64}{chapter.6}%
-\contentsline {section}{\color {black}\textbf {Chapter 6}}{68}{chapter*.8}%
+\contentsline {section}{\color {black}\textbf {Chapter 6}}{65}{chapter.6}%
+\contentsline {section}{\color {black}\textbf {Chapter 6}}{69}{chapter*.8}%

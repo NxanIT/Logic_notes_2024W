@@ -109,6 +109,7 @@
 \newcommand{\purplebf}[1]{\color{purple}\textbf{#1 }\color{black}}
 \newcommand{\graybf}[1]{\color{darkgray}\textbf{#1\hspace{4px}}\color{black}}
 \newcommand{\bigemph}[1]{\fontfamily{qag}\selectfont\color{darkgray}\textbf{#1 }\color{black}\normalfont}
+\newcommand{\imp}[1]{\textbf{#1}\outernote{#1}\hspace{-3px}}
 
 \newcommand{\defeq}{\vcentcolon=} 
 \newcommand{\eqdef}{=\vcentcolon}
@@ -173,6 +174,7 @@
 \newcommand{\outernote}[1]{
     \marginpar[\raggedleft #1]{\raggedright #1}%\marginpar[\raggedright #1]{\raggedleft #1}%
     \addcontentsline{otf}{section}{#1}
+    \hspace{-6px}
 }
 
 %\newtheorem{notes}[]{Bemerkung}

@@ -50,15 +50,18 @@ In this notion the supremum and infimum of two elements are equal to
 }
 \note{}{Conversly, every boolean algebra is isom. to a boolean algebra of sets. (it can be embedded in )}
 \section{Stone Representation Theorem}
-\defin{}{Suppose $\mathcal{B}\models BA$ A non-empty $F\subseteq B$ is called a filter of $\mathcal{B}$ if
+\defin{(Ultra-)Filter}{Suppose $\mathcal{B}\models BA$. A non-empty subset $F\subseteq B$ is called a filter of $\mathcal{B}$, if
 \begin{itemize}
     \item $0\notin F$
     \item $\forall a \forall b a\in F \land b\in F \to a\cdot b\in F$
     \item $\forall a \forall b a\in F \land a \leq b \to b\in F$
 \end{itemize}
-Ultrafilter of $\mathcal{B}$ is a filter $\mathcal{F}$ such that $\forall a\in B a\in \mathcal{F} \lor \overline{a}\in \mathcal{F}$
-$S(B) \defeq$ the set of all ultrafilters of $\mathcal{B}$ (stonespace of $\mathcal{B}$)
+An \imp{Ultrafilter}of $\mathcal{B}$ is a filter $\mathcal{F}$ such that $\forall a\in B a\in \mathcal{F} \lor \overline{a}\in \mathcal{F}$.\\
+
 }
+\noindent We define $S(B)$,\outernote{$S(B)$}the stonespace of $\mathcal{B}$ to be 
+$S(B) \defeq\{\text{the set of all ultrafilters of $\mathcal{B}$} \}$
+
 \note{}{
     $\mathcal{B}\models BA$ then for a filter $F$.
     \begin{enumerate}
