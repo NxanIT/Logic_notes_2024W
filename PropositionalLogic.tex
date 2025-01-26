@@ -1,31 +1,30 @@
 \chapter{Propositional logic}
 The definitions, lemmata, propositions and theorems as well as the notes in this chapter are sourced from \cite[chapter~1]{EndertonHerbertB2001AMIt}.
-\addAbbrev{prop.}{propositional}
+%\addAbbrev{prop.}{propositional}
 \defin{Language of PL}{
-The Language \outernote{Language} of Propositional logic is a set containing
+The \imp{Language} of Propositional logic is a set containing
     \begin{itemize}
         \item logical symbols: consisting of the \graybf{sentential connective} symbols $\lnot, \land, \lor, \to, \leftrightarrow$ and parenthesis $(,)$
-        \item non-logical symbols: $ A_1, A_2,A_3,\dots$ (also called sentential atoms, variables)
+        \item non-logical symbols: $ A_1, A_2,A_3,\dots$ (also called sentential \imp{atoms}, variables)
     \end{itemize}
     from which we assume (for unique readability) that no symbol is a finite sequence of any other symbols.
 }
 \note{}{
     \begin{enumerate}
         \item The role of the logical symbols doesn't change, the sentential atoms we see as variables, they function as placeholders or variables.
-        \item we assumed the set of non-logical symbols is countable, for most of our conclusions you could use any set of prop. atoms of any size
+        \item we assumed the set of non-logical symbols is countable, for most of our conclusions you could use any set of propositional atoms of any size
     \end{enumerate}
 }
 \addAbbrev{exp.}{expression(s)}
-\defin{Expression / prop. sentence}{An \graybf{expression}\outernote{expression}is a any finite sequence of symbols
+\defin{Expression / prop. sentence}{An \imp{expression} is a any finite sequence of symbols
     We define \graybf{grammatically correct exp.} recursively
     \begin{enumerate}
-        \item every prop. atom is a prop. sentence
-        \item if $\alpha, \beta$ are prop. sentences, then also $(\lnot \alpha), (\alpha \land \beta), (\alpha \lor \beta), (\alpha \to \beta), (\alpha \leftrightarrow \beta)$
-        \item nothing else (in particular $\varnothing$ is not a prop. fla.)
+        \item every propositional atom is a propositional sentence
+        \item if $\alpha, \beta$ are propositional sentences, then also $(\lnot \alpha), (\alpha \land \beta), (\alpha \lor \beta), (\alpha \to \beta), (\alpha \leftrightarrow \beta)$
+        \item nothing else (in particular $\varnothing$ is not a propositional fla.)
     \end{enumerate}
-    and call them \graybf{prop. sentences} or \graybf{prop. fla.}\outernote{prop. fla.}\outernote{prop. sentence}
-    Equivalently stated every prop. sentence is built up by applying finitely many formula building operations on atoms and the prop. sent. returned from building operations.
-    \[\mathcal{E}_\lnot, \mathcal{E}_\lnot(\alpha) \defeq (\lnot \alpha) \text{ for any prop. fla. $\alpha$ and similarly for } \mathcal{E}_\land,\mathcal{E}_\lor \mathcal{E}_\to, \mathcal{E}_\leftrightarrow\]
+    and call them \imp{propositional sentences} or \graybf{propositional fla.}. Equivalently stated every propositional sentence is built up by applying finitely many formula building operations on atoms and the propositional sent. returned from building operations.
+    \[\mathcal{E}_\lnot, \mathcal{E}_\lnot(\alpha) \defeq (\lnot \alpha) \text{ for any propositional fla. $\alpha$ and similarly for } \mathcal{E}_\land,\mathcal{E}_\lor \mathcal{E}_\to, \mathcal{E}_\leftrightarrow\]
     This allows us to symbolize the \graybf{expression tree} (Here for example for $((\lnot(A_1\to A_2))\lor A_3))$
     \begin{figure}[H]
         \centering\includegraphics[width = 6cm]{1-extree.png}
@@ -33,10 +32,10 @@ The Language \outernote{Language} of Propositional logic is a set containing
     
 }
 We will return to these construction trees in \ref{section_parsingalg}, where we answer the question of what 
-truth value a given prop. sentence might have.
+truth value a given propositional sentence might have.
 \newpage
 \defin{Construction sequence}{
-    Given a prop. sentence $\alpha$ a \graybf{construction sequence}\outernote{construction sequence} 
+    Given a propositional sentence $\alpha$ a \graybf{construction sequence}\outernote{construction sequence} 
     of $\alpha$ is a finite sequence $\left\langle \alpha_1,\dots \alpha_{n-1},\alpha\right\rangle$ 
     such that for all $i\leq n$
     the following holds
@@ -51,11 +50,11 @@ truth value a given prop. sentence might have.
 }
 \addAbbrev{sent.}{sentence(s)}
 \addAbbrev{seq.}{sequence}
-\noindent\graybf{Induction principle:} Suppose $S$ is a set of prop. sentences
-containing all prop. atoms and closed under the 5 formula building operations, 
-then $S$ is the set of all prop. sentences.
+\noindent\graybf{Induction principle:} Suppose $S$ is a set of propositional sentences
+containing all propositional atoms and closed under the 5 formula building operations, 
+then $S$ is the set of all propositional sentences.
 \begin{proof}
-    let $PS = \text{set of all prop. sent.}$
+    let $PS = \text{set of all propositional sent.}$
     \begin{itemize}[leftmargin=2cm]
         \item[$S\subseteq PS$:] is clear
         \item[$S\supseteq PS$:] let $\alpha\in PS$ then $\alpha$ has a construction seq. $\left\langle \alpha_1,\dots \alpha_{n-1},\alpha\right\rangle$ and $\alpha_1\in S$.
@@ -65,15 +64,15 @@ then $S$ is the set of all prop. sentences.
 \end{proof}
 \addAbbrev{TA}{truth assignment}
 \section{Truth assignments}
-%We will answer the question when does a prop. sent. follow from other prop. sentences.
-The interpretation of a prop. atom is either true or false, denoted by $0 / 1$ or $T / F$ or $\top / \bot$. 
+%We will answer the question when does a propositional sent. follow from other propositional sentences.
+The interpretation of a propositional atom is either true or false, denoted by $0 / 1$ or $T / F$ or $\top / \bot$. 
 A truth assigment is simply any map $\nu:S\mapsto \{0,1\}$, where $S$ is a map of propositional atoms. 
 Our goal is going to be to extend any truth assigment $v$ to a function $\overline{v}: \overline{S}\mapsto \{0,1\}$, where $\overline{S}$ is the closure
 of $S$ under the $5$ fla. building operations. 
 \addAbbrev{fla.}{formula}
 \addAbbrev{TV}{truth value}
 \defin{Truth assignment}{\label{TAConditions}
-Let $\{0,1\}$ be the set of truth values. \outernote{Truth assigment} A truth assignment \outernote{TA}(TA) for a set $S$ of prop. atoms is a map $\nu:S\to\{0,1\}$}
+Let $\{0,1\}$ be the set of truth values. \outernote{Truth assigment} A truth assignment \outernote{TA}(TA) for a set $S$ of propositional atoms is a map $\nu:S\to\{0,1\}$}
 We now want to extend $\nu$ to $\overline{\nu}: \overline{S}\to \{0,1\}$, where $\overline{S}$ is the closure of $S$ under the 5 fla. building operations such that
 for all propositional atoms $A\in S$ and propositional formulas $\alpha,\beta$ in $\overline{S}$
 \begin{enumerate}
@@ -101,32 +100,32 @@ We also want the extention to be unique, that is
     For all TA $\nu$ for a set $S$ $\exists ! \overline{\nu}:\overline{S}\to\{0,1\}$ satisfying the above properties}{}
 We will prove this later\\
 \newpage
-\defin{Satisfaction}{A TA $\nu$ satisfies\outernote{satisfy} a prop. sent. $\alpha$ 
+\defin{Satisfaction}{A TA $\nu$ satisfies\outernote{satisfy} a propositional sent. $\alpha$ 
     if $\overline{\nu}(\alpha)=1$ (that is, provided that everery atom of $\alpha$ is in the domain of $\nu$). 
     We call $\alpha$ satisfiable\outernote{satisfiable} if there exists a TA that satisfies it.}
 \defin{Tautological implication}{\outernote{taut. implication $\models$}\addAbbrev{taut.}{tautological}
-    Let $\Sigma$ be a set of prop. sent. and $\alpha$ a prop. sent. then we say:
+    Let $\Sigma$ be a set of propositional sent. and $\alpha$ a propositional sent. then we say:
     $\Sigma$ tautologically imlies $\alpha$ if for all TA that satisfy $\Sigma$, $\alpha$ is also satisfied and we write $\Sigma\models \alpha$.
     If $\Sigma = \{\beta\}$, we simply write $\beta \models \alpha$ If $\Sigma = \varnothing$ then $\alpha$ is called a \graybf{tautology} and we write $\models \alpha$ instead of $\varnothing \models \alpha$ \\
     $\alpha, \beta$ are called \graybf{tautologically equivalent} iff $\alpha\models \beta$ and $\beta\models \alpha$, we then write $\alpha \sledom \models \beta$
 }
 
 \note{}{In other words, tautological implication $\Sigma\models \alpha$ means that you can not find a TA, that satisfy all members of $\Sigma$ but not $\alpha$.
-    A tautology is satisfied by every TA. Suppose there is no TA that satisfies $\Sigma$, then we have $\Sigma \models \alpha$ for every prop. sent. $\alpha$}
+    A tautology is satisfied by every TA. Suppose there is no TA that satisfies $\Sigma$, then we have $\Sigma \models \alpha$ for every propositional sent. $\alpha$}
 \bsp{}{$\{\lnot A \lor B\} \sledom \models A \to B$ }
-\note{}{In order to check if a prop. sent. is satisfiable we need to check $2^N$ TAs, where $N=\text{\# of atoms}$. It is unknown if this can be done by an algorithm in polynomial time. Answering this 
+\note{}{In order to check if a propositional sent. is satisfiable we need to check $2^N$ TAs, where $N=\text{\# of atoms}$. It is unknown if this can be done by an algorithm in polynomial time. Answering this 
     would settle the debate whether $P=NP$}
 
-However we can find a way to reduce satisfiability of an infinite set $\Sigma$ of prop. sent. to all finite subsets of $\Sigma$.
+However we can find a way to reduce satisfiability of an infinite set $\Sigma$ of propositional sent. to all finite subsets of $\Sigma$.
 There later will be a more elementary proof of the compactness theorem, this proof is not part of the exam.
-\thm{Compactness theorem}{Let $\Sigma$ be an infinite set of prop. sent. such that 
+\thm{Compactness theorem}{Let $\Sigma$ be an infinite set of propositional sent. such that 
     \begin{equation}\tag{finite satisfiability}
         \forall \Sigma_0 \subseteq \Sigma, \Sigma_0 \ \text{finite}\  \exists \text{ TA satisfying every member of } \Sigma_0
     \end{equation}
     then there is a TA satsfying every member of $\Sigma$.}
 {
-    using topology: We have our infinite set of prop. sent. which satisfies above condition. One way to look at TA is as a sequence of $0$ and $1$.
-    Let $\mathcal{A} = \{A_0, A_1,\dots\}$ be the set of all prop. atoms. We are going to identify the truth assignments on $\mathcal{A}$
+    using topology: We have our infinite set of propositional sent. which satisfies above condition. One way to look at TA is as a sequence of $0$ and $1$.
+    Let $\mathcal{A} = \{A_0, A_1,\dots\}$ be the set of all propositional atoms. We are going to identify the truth assignments on $\mathcal{A}$
     with elements in $\{0,1\}^\mathcal{A}\defeq \{f: \mathcal{A}\to \{0,1\}\}$ (the set of all TAs)
     This is a topological space with product topology, on which 
     the basic open sets (called cylinders) are:
@@ -147,26 +146,26 @@ There later will be a more elementary proof of the compactness theorem, this pro
     
     For a list of tautologies: useful might be book p. 26-27
 \section{A parsing algorithm}\label{section_parsingalg}
-To prove \ref{extendetTruthAss} We essentially need to show that we have enough parenthesis to make the reading of a prop. sent. unique.
-That is given a TA $v$ there is at most one truth value we can assign to a prop. sent.
+To prove \ref{extendetTruthAss} We essentially need to show that we have enough parenthesis to make the reading of a propositional sent. unique.
+That is given a TA $v$ there is at most one truth value we can assign to a propositional sent.
 \addAbbrev{w/}{with}
-\lemma{}{Every prop. sent. has the same number of left and right parenthesis.}{
-    Let $M = \text{set of prop. sent. w/ \# left parenthesis = \# right parenthesis}$ and \\
-    $PS = \text{set of all prop. sent.}$
+\lemma{}{Every propositional sent. has the same number of left and right parenthesis.}{
+    Let $M = \text{set of propositional sent. w/ \# left parenthesis = \# right parenthesis}$ and \\
+    $PS = \text{set of all propositional sent.}$
     We have $M\subseteq PS$. Since atoms have no parenthesis, they are in $M$. we just need to show that
     $M$ is closed under the 5 construction operations.\\
     $\mathcal{E}_{\lnot} = (\lnot \alpha)$ \dots
 }
 \newpage
-\lemma{}{No proper initial segment of a prop. sent. is itself a prop. sent.}{\label{NoPropIni}
-    Let $\alpha = \alpha_1\alpha_2\dots \alpha_n$ be a prop. sent. By proper initial segment we understand $\beta = \alpha_1\dots \alpha_i$ for $1\leq i<n$.    
+\lemma{}{No proper initial segment of a propositional sent. is itself a propositional sent.}{\label{NoPropIni}
+    Let $\alpha = \alpha_1\alpha_2\dots \alpha_n$ be a propositional sent. By proper initial segment we understand $\beta = \alpha_1\dots \alpha_i$ for $1\leq i<n$.    
     We will prove that every proper initial segment has an excess of left parenthesis, then we use the previous lemma.
-    Let $PS = \text{set of all prop. sent.}$ and \\
-    $PF = \text{set of prop. sent. s.t. no proper initial segment has \# left parenthesis = \# right parenthesis}$, 
+    Let $PS = \text{set of all propositional sent.}$ and \\
+    $PF = \text{set of propositional sent. s.t. no proper initial segment has \# left parenthesis = \# right parenthesis}$, 
     we will prove that these sets are the same.\\
     Let $\alpha \in PF$. By induction on the fla. building operations
     \begin{itemize}
-        \item Atoms: since the empty sequence is not a prop. sent. they have no proper initial segment.
+        \item Atoms: since the empty sequence is not a propositional sent. they have no proper initial segment.
         \item If the above is true for $\alpha, \beta$ then the proper initial segments of $(\lnot \alpha)$ are of the form
         \begin{itemize}
             \item[] $(\lnot \alpha$
@@ -179,27 +178,27 @@ That is given a TA $v$ there is at most one truth value we can assign to a prop.
     \end{itemize}
 }
 \subsubsection*{Parsing algorithm}
-We now give a parsing algorithm procedure. For input we take some expression $\tau$ and the algorithm will determine if $\tau$ is a prop. sent.
+We now give a parsing algorithm procedure. For input we take some expression $\tau$ and the algorithm will determine if $\tau$ is a propositional sent.
 If so, it will generate a unique construction tree (in form of a rooted tree) for $\tau$. (i.e. the construction tree gives us unique readability)
 That there is a unique way to perform the algorithm is implied by \ref{NoPropIni}
 \begin{enumerate}
     \item[0.] create the root and label it $\tau$
-    \item HALT if all leaves are labled w/ prop. atom and return: ``$\tau$ is a prop. sent.''
-    \item select a leaf of the graph which is not labled w/ prop. atom
-    \item if the first symbol of label under consideration is not a left parenthesis, then halt and return: ``$\tau$ is not a prop. sent.''
+    \item HALT if all leaves are labled w/ propositional atom and return: ``$\tau$ is a propositional sent.''
+    \item select a leaf of the graph which is not labled w/ propositional atom
+    \item if the first symbol of label under consideration is not a left parenthesis, then halt and return: ``$\tau$ is not a propositional sent.''
     \item if the second symbol of the label is ``$\lnot$'' then GOTO 6.
     \item scan the expression from left to right\\
     if we reach a proper initial segment of the form\addAbbrev{lp / rp}{left / right parenthesis} ``$(\beta$'' where $\# lp(\beta) = \#rp(\beta)$ and $\beta$ is followed by one of the five sentential connectives
     $\land,\lor,\to,\leftrightarrow$ and the remainder of the expression is of the form $\beta')$, where $\# lp(\beta') = \#rp(\beta')$
     \begin{itemize}
         \item [Then:] create two child nodes (left,right) to the selected element and label them (left $\defeq \beta$, right $\defeq \beta'$) GOTO 1.
-        \item [Else:] HALT and return ``$\tau$ is not a prop. sent.''
+        \item [Else:] HALT and return ``$\tau$ is not a propositional sent.''
     \end{itemize}
     
     \item if the expression is of the form $(\lnot \beta)$ where $\# lp(\beta) = \#rp(\beta)$
     \begin{itemize}
         \item [Then:] construct one childnode and label it $\beta$ and GOTO 1.
-        \item [Else:] HALT and return: ``$\tau$ is not a prop. sent.''
+        \item [Else:] HALT and return: ``$\tau$ is not a propositional sent.''
     \end{itemize}
 \end{enumerate}
 \bsp{}{The parsing algorithm applied to $((\lnot (A_1\to A_2))\lor A_3)$ returns the following construction tree.
@@ -224,10 +223,10 @@ That there is a unique way to perform the algorithm is implied by \ref{NoPropIni
 \subsection*{Correctness of the parsing algorithm}
 \begin{itemize}
     \item The algorithm always halts, because a child's label is shorter than the label of a parent.
-    \item If the algorithm halts with the conclusion that $\tau$ is a prop. sent. 
-    then we can prove inductively (starting from the leaves) that each label is a prop. sent
+    \item If the algorithm halts with the conclusion that $\tau$ is a propositional sent. 
+    then we can prove inductively (starting from the leaves) that each label is a propositional sent
     \item Unique way to make choices in the algorithm: in particular $\beta, \beta'$ in step 5.
-    If there was a shorter choice for $\beta$ it would be a proper initial segment of $\beta$ but such prop. sent. cannot exist.
+    If there was a shorter choice for $\beta$ it would be a proper initial segment of $\beta$ but such propositional sent. cannot exist.
     (This also works under the assumption that a longer choice exists).
     \item rejections are made correctly
 \end{itemize}
@@ -235,7 +234,7 @@ That there is a unique way to perform the algorithm is implied by \ref{NoPropIni
 
 
 Back to proving the existence and uniqueness of $\overline{\nu}$ in \ref{ThrmUniqueExt}.
-Let $\alpha$ be a prop. sent. of $\overline{S}$. We apply the parsing algorithm to $\alpha$ to get a unique construction tree
+Let $\alpha$ be a propositional sent. of $\overline{S}$. We apply the parsing algorithm to $\alpha$ to get a unique construction tree
 For the leaves, use $\nu$ go get the truth values then work our way up using the conditions (1-6) in \ref{TAConditions}.
 %\subsection*{A more formal notation}
 \section{Induction and recursion}
@@ -322,7 +321,7 @@ Before we proof the recursion theorem, we will show how unique readability easil
     \textbf{Claim:} The formula building operations are one-to-one.
     \begin{claimproof}
         {$\mathcal{F}_\lor$ is one to one, suppose $(\alpha \lor \beta) = (\delta \lor \gamma)$ then $\alpha \lor \beta) = \delta \lor \gamma)$
-            And $\alpha,\delta$ are prop. formulas, so they equal to each other (else one is an initial segment of the other, hence not a prop. fla.)
+            And $\alpha,\delta$ are propositional formulas, so they equal to each other (else one is an initial segment of the other, hence not a propositional fla.)
             By the same argument we get $\beta$ is equal to $\gamma$.
         }
     \end{claimproof}
@@ -398,19 +397,19 @@ and $f(x,y),g(x)\in S$, therefore $S$ is inductive.
 
 
 \section{Sentential connectives}
-\defin{Tautological equivalence relation}{\outernote{tautological equivalence}For $\alpha,\beta$ prop. sent. we define $\alpha \sim \beta$ \outernote{$\sim$} \outernote{$\models \sledom$} \outernote{$\sledom \models$}
+\defin{Tautological equivalence relation}{\outernote{tautological equivalence}For $\alpha,\beta$ propositional sent. we define $\alpha \sim \beta$ \outernote{$\sim$} \outernote{$\models \sledom$} \outernote{$\sledom \models$}
 iff $\alpha \sledom\models  \beta$ (alternative notation: $\models \sledom$). This defines an equivalent relation.}
 \bsp{}{$A \to B \sledom\models  \lnot A \lor B$}
 \note{}{
     A $k$-place boolean function is a functon of the form $f: \{0,1\}^k\to \{0,1\}$ and we 
     define $0,1$ as the $0$-place boolean functions.\\
-    If $\alpha$ is a prop. sent. then it determines a $k$-place boolean function, 
+    If $\alpha$ is a propositional sent. then it determines a $k$-place boolean function, 
     where $k$ is the number of atoms, $\alpha$ is built up from.
     If $\alpha$ is $(A_1\lor \lnot A_2)$ then $B_\alpha: \{0,1\}^2\to \{0,1\}$ and asign its values corresponding a truth value of $\alpha$.
     That is for any TA $v:\{A_1,A_2\}\to \{0,1\}$ we define $B_\alpha(v(A_1),v(A_2)) = \overline{v}(\alpha)$
     %TODO extend / rearange function %edit 24.10. what does that mean?
 }
-\thm{}{If $\alpha,\beta$ are prop. sent. with at most $n$ prop. Atoms (combined), then
+\thm{}{If $\alpha,\beta$ are propositional sent. with at most $n$ propositional Atoms (combined), then
     \begin{enumerate}
         \item $\alpha \models \beta $ iff $\forall x\in \{0,1\}^n$ it holds $B_\alpha(x)\leq B_\beta(x)$
         \item $\alpha \sledom \models \beta $ iff $\forall x\in \{0,1\}^n$ it holds $B_\alpha(x) = B_\beta(x)$
@@ -419,7 +418,7 @@ iff $\alpha \sledom\models  \beta$ (alternative notation: $\models \sledom$). Th
 }{}
 \newpage
 \thm{(Post)}{\footnote{Emil Post}
-    Let $G$ be an $n$-ary boolean function for $n\geq 1$.\outernote{$n$-ary boolean function}Then there is a prop. sent. $\alpha$ such that. $B_\alpha = G$.
+    Let $G$ be an $n$-ary boolean function for $n\geq 1$.\outernote{$n$-ary boolean function}Then there is a propositional sent. $\alpha$ such that. $B_\alpha = G$.
     We say $\alpha$ realizes $G$.
 }{
     \begin{enumerate}
@@ -448,15 +447,15 @@ iff $\alpha \sledom\models  \beta$ (alternative notation: $\models \sledom$). Th
     \end{enumerate}
 }
 \note{}{$\alpha$ as constructed in the proof is in the so-called Disjunctive normal form (DNF).\outernote{DNF\\ Disjunctive normal form}}
-\coroll{Every prop. sent. is tautologically equivalent to a sentence in DNF}
+\coroll{Every propositional sent. is tautologically equivalent to a sentence in DNF}
 \addAbbrev{i.e.}{id est (that is)}
-\coroll{$\{\lnot,\land,\lor\}$ is a complete\outernote{completeness (connectives)}set of logical connectives, i.e. every prop. sent. is tautologically 
+\coroll{$\{\lnot,\land,\lor\}$ is a complete\outernote{completeness (connectives)}set of logical connectives, i.e. every propositional sent. is tautologically 
     equivalent to a sentence built up from atoms and $\lnot,\land,\lor$.
 }
 \thm{}{Both $\{\lnot, \land\}$ and $\{\lnot, \lor\}$ are complete.}{
-    Its sufficient to show that every $k$-place boolean function is realisable by a prop. sent.
+    Its sufficient to show that every $k$-place boolean function is realisable by a propositional sent.
     built up using only $\lnot$ and $\land$. This is, because $\alpha\land \beta \sledom \models \lnot (\lnot \alpha \lor \lnot \beta)$
-    We prove this by induction on the number of disjuctions of a prop. sent. $\alpha$ in DNF.
+    We prove this by induction on the number of disjuctions of a propositional sent. $\alpha$ in DNF.
     Suppose the statement is true for $k \leq n$. For $n+1$ and $\alpha = \bigvee_{j=1}^{n+1}{\gamma_j}$ there exists an $\alpha' \sledom \models \bigvee_{j=1}^{n}{\gamma_j}$ and 
     $$\alpha = \bigvee_{j=1}^{n+1}{\gamma_j} \sledom \models \alpha' \lor \gamma_{n+1} \sledom \models \lnot (\lnot \alpha' \land \lnot \gamma_{n+1})$$
     %$\alpha\land \beta \sledom \models \lnot (\lnot \alpha \lor \lnot \beta)$
@@ -490,20 +489,20 @@ iff $\alpha \sledom\models  \beta$ (alternative notation: $\models \sledom$). Th
     We can conclude that $\{\lnot,\to\}$ and $\{\to, \bot\}$ are both complete, it holds $\lnot A \sledom \models A\to \bot$
 }
 \defin{Satisfiability}{
-    A set of prop. sent. $\Sigma$ is called \graybf{satisfiable}\outernote{satisfiable}if there exists a TA that satisfies every member of $\Sigma$.
+    A set of propositional sent. $\Sigma$ is called \graybf{satisfiable}\outernote{satisfiable}if there exists a TA that satisfies every member of $\Sigma$.
 }
 \newpage
 \section{Compactness Theorem}
 \thm{Compactness Theorem}{\label{CompThrm}
 
     $\Sigma$ is satisfiable iff every finite subset $\Sigma_0\subseteq \Sigma$ is satisfiable. (i.e. $\Sigma$ is finitely satisfiable)\outernote{finitely satisfiable}}{
-    Let $\Sigma$ be a finitely satisfiable set of prop. sent. Outline of the proof:
+    Let $\Sigma$ be a finitely satisfiable set of propositional sent. Outline of the proof:
     \begin{enumerate}
-        \item extend $\Sigma$ to a maximal finitely satisfiable set $\Delta$ of prop. sent.
+        \item extend $\Sigma$ to a maximal finitely satisfiable set $\Delta$ of propositional sent.
         \item construct a thruth assigment using $\Delta$
     \end{enumerate}
     \begin{enumerate}
-        \item Let $\alpha_1,\alpha_2,\dots$ be an enumeration of all prop. sent. 
+        \item Let $\alpha_1,\alpha_2,\dots$ be an enumeration of all propositional sent. 
         and define $\Delta_n$ inductively by $\Delta_0 \defeq \Sigma$
         $$\Delta_{n+1}\defeq \begin{cases}
             \Delta_n\cup \{\alpha_{n+1}\} & \text{if finitely satisfiable}\\
@@ -524,12 +523,12 @@ iff $\alpha \sledom\models  \beta$ (alternative notation: $\models \sledom$). Th
         We set $\Delta \defeq \bigcup_{i\in\NN}{\Delta_i}$ and get
         \begin{enumerate}
             \item $\Sigma\subseteq \Delta$
-            \item (Maximality): for every prop. sent. $\alpha$ it holds $\alpha\in \Delta$ or $\lnot \alpha\in \Delta$
+            \item (Maximality): for every propositional sent. $\alpha$ it holds $\alpha\in \Delta$ or $\lnot \alpha\in \Delta$
             \item (Satisfiability): $\Delta$ is finitely satisfiable. (For every finite subset there exists a $\Delta_n$ which is a superset.)
         \end{enumerate}
-        \item Let $\nu$ be a TA for the prop. atoms $A_1, A_2,\dots$ such that $\nu(A) = 1$ iff $A\in \Delta$
+        \item Let $\nu$ be a TA for the propositional atoms $A_1, A_2,\dots$ such that $\nu(A) = 1$ iff $A\in \Delta$
         
-        \textbf{Claim:} For every prop. sent. $\varphi$ it holds $\overline{\nu}(\varphi) =1 $ iff $\varphi\in\Delta$.
+        \textbf{Claim:} For every propositional sent. $\varphi$ it holds $\overline{\nu}(\varphi) =1 $ iff $\varphi\in\Delta$.
         \begin{claimproof}
             Let $S = \{\varphi \in PS \text{ s.t. } \overline{\nu}(\varphi) = 1 \text{ iff } \varphi \in \Delta\}$. \\
             \begin{itemize}

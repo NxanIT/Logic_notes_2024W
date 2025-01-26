@@ -211,7 +211,7 @@ $<$  strict, $\implies$ $y\notin \delta_y(x)$
     It corresponds to Tranistivity of the belonging relation $\in$. $z \in y\in x \to z\in x$
 }
 \defin{Ordinal}{An ordinal is a transitive set which is well ordered by $\in$.}
-\note{}{The collection of all ordinals form a class relation notation: 
+\note{}{The collection of all ordinals form a class relation, notation: 
 $\Ord, \On$\outernote{$\Ord$}\outernote{$\On$}\\
     Proof: Write down formula 
 }
@@ -228,7 +228,7 @@ $\Ord, \On$\outernote{$\Ord$}\outernote{$\On$}\\
     \end{itemize}
 }{Problem set}
 \lemma{}{
-    Let $\alpha,\beta\in \On $ TODO then either $\alpha = \beta$, or $\alpha\in \beta$ or $\beta\in \alpha$.
+    Let $\alpha,\beta\in \Ord $ TODO then either $\alpha = \beta$, or $\alpha\in \beta$ or $\beta\in \alpha$.
 }{
     Let $\gamma \defeq \alpha\cap \beta$
     Claim: $\gamma$ is initial segment of both $\alpha $ and $\beta$
@@ -244,26 +244,26 @@ $\Ord, \On$\outernote{$\Ord$}\outernote{$\On$}\\
         \item $\gamma \in \alpha$ and $\gamma \in \beta$ we have $\gamma \in \alpha\cap \beta = \gamma$ which is impossible
     \end{itemize}
 }
-\prop{}{$\On$ is well-ordered by $\in$}{
-    We need to show that if $\alpha\in\On $ then $\delta_{\alpha}(On)$ is a set that is well ordered by $\in$.
+\prop{}{$\Ord$ is well-ordered by $\in$}{
+    We need to show that if $\alpha\in\Ord $ then $\delta_{\alpha}(On)$ is a set that is well ordered by $\in$.
 
-    $\delta_{\alpha}(On) = \{\beta \in\On  : \beta\in \alpha\} = \alpha$
-    Because $\alpha$ is a well-ordered set, and by the lemma TODO $\On $ is linearly ordered by $\in$
+    $\delta_{\alpha}(On) = \{\beta \in\Ord  : \beta\in \alpha\} = \alpha$
+    Because $\alpha$ is a well-ordered set, and by the lemma TODO $\Ord $ is linearly ordered by $\in$
 }
 \lemma{}{
-    $\On$, the class of all ordinals is a proper class, well-ordered by $\in$
+    $\Ord$, the class of all ordinals is a proper class, well-ordered by $\in$
 }{
-    Suppose $\On $ would be a set $z$.\\
-    $\On $ is well ordered by $\in$
-    $\On $ is transitive: $y\in x \in\On $ then $y\in\On $ by lemma
-    so $\On $ would be an ordinal and $\On \in\On $ which is not possible by Lemma TODO.
+    Suppose $\Ord $ would be a set $z$.\\
+    $\Ord $ is well ordered by $\in$
+    $\Ord $ is transitive: $y\in x \in\Ord $ then $y\in\Ord $ by lemma
+    so $\Ord $ would be an ordinal and $\Ord \in\Ord $ which is not possible by Lemma TODO.
 }
 
 \note{}{
     \begin{itemize}
-        \item If $\alpha\in\On $ then the initial segments of $\alpha$ are $\alpha$ and the elements of $\alpha$.
-        \item If $\alpha\in\On $ and $\beta\in \alpha$ then $\beta \in \On $
-        \item $\alpha,\beta\in\On $ then $\alpha\subseteq \beta$ iff $\alpha\in \beta$ or $\alpha = \beta$
+        \item If $\alpha\in\Ord $ then the initial segments of $\alpha$ are $\alpha$ and the elements of $\alpha$.
+        \item If $\alpha\in\Ord $ and $\beta\in \alpha$ then $\beta \in \Ord $
+        \item $\alpha,\beta\in\Ord $ then $\alpha\subseteq \beta$ iff $\alpha\in \beta$ or $\alpha = \beta$
         $\to$: If $\alpha\neq \beta$. Then by linear ordering of $\in$ 
         \item $\alpha\subseteq \beta$ iff $\alpha = \beta$ or $\alpha\in \beta$.
     \end{itemize}
@@ -272,7 +272,7 @@ $\Ord, \On$\outernote{$\Ord$}\outernote{$\On$}\\
 %07.01.2025
 
 \lemma{ }{
-    If $\alpha\in \On $ then $\alpha\cup \{\alpha\} \in \On $ and $\alpha\cup \{\alpha\}$ is the successor of $\alpha$ in the ordering $\in$
+    If $\alpha\in \Ord $ then $\alpha\cup \{\alpha\} \in \Ord $ and $\alpha\cup \{\alpha\}$ is the successor of $\alpha$ in the ordering $\in$
 }{
     \begin{itemize}
         \item $\alpha\cup \{\alpha\}$ transitive:\\
@@ -292,14 +292,14 @@ $\Ord, \On$\outernote{$\Ord$}\outernote{$\On$}\\
 
 \note{}{If $\alpha,\beta$ are ordinals then we will use $\alpha\in \beta$, $\alpha<\beta$, $\alpha\subsetneq \beta$ interchangable.
 
-$\gamma\in \On $ then $\gamma = \{\alpha\in \On : \alpha\in \gamma\}$
+$\gamma\in \Ord $ then $\gamma = \{\alpha\in \Ord : \alpha\in \gamma\}$
 }
 \lemma{}{
     $X$ a set of ordinals, then $\sup X = \bigcup X$ is an ordinal and $\forall \alpha\in X \alpha\subseteq \bigcup X$ and $\bigcup X$ is smallest with this property.
 }{
     \begin{itemize}
         \item $\bigcup X$ transitive: $x\in y\in \bigcup X$. then $\exists \alpha\in X$ such that $y\in \alpha$. then $x\in \alpha$ hence $x\in \bigcup X$
-        \item $\bigcup X$ well-ordered by $\in$: $\bigcup X$ contained in $\On $ and is a set, but $\On $ is well-ordered, so $\bigcup X$ is well-ordered.
+        \item $\bigcup X$ well-ordered by $\in$: $\bigcup X$ contained in $\Ord $ and is a set, but $\Ord $ is well-ordered, so $\bigcup X$ is well-ordered.
         \item $\alpha\in X$ then $\alpha\subseteq \bigcup X$.
         \item $\alpha\in X$ then $\alpha\subseteq \bigcup X$.
         Let $\beta\in \bigcup X$ then there exists $\alpha\in X$ such that $\beta\in \alpha$ so $\beta$ is not an upper bound for $X$.
@@ -307,7 +307,7 @@ $\gamma\in \On $ then $\gamma = \{\alpha\in \On : \alpha\in \gamma\}$
 }
 
 \lemma{}{
-    Suppose that $\alpha,\beta\in \On $ and $f:\alpha\to \beta$ that is strictly increasing i.e. 
+    Suppose that $\alpha,\beta\in \Ord $ and $f:\alpha\to \beta$ that is strictly increasing i.e. 
     $\forall \gamma,\delta\in \alpha \gamma<\delta \to f(\gamma)<f(\delta)$
     Then $\alpha\subseteq \beta$ and $\forall \gamma\: \gamma\leq f(\gamma)$
 }{
@@ -320,7 +320,7 @@ $\gamma\in \On $ then $\gamma = \{\alpha\in \On : \alpha\in \gamma\}$
 }
 
 \thm{}{
-    $f:\alpha\to \beta$ isomorphism between $(\alpha,\in)$, $(\beta,\in)$ and $\alpha,\beta\in \On $ then $\alpha = \beta$ and $f$ is unique such isomorphism, hence $f = id_\alpha$.
+    $f:\alpha\to \beta$ isomorphism between $(\alpha,\in)$, $(\beta,\in)$ and $\alpha,\beta\in \Ord $ then $\alpha = \beta$ and $f$ is unique such isomorphism, hence $f = id_\alpha$.
 }{
     $\alpha = \beta$:\\
     Apply previous lemma to $f,f^{-1}$ hence $\alpha\subseteq \beta$ and $\beta\subseteq \alpha$
@@ -345,7 +345,7 @@ $\gamma\in \On $ then $\gamma = \{\alpha\in \On : \alpha\in \gamma\}$
     define $y = \{x\in X : \: (\delta_x,<_X) \text{  is isomorphic to an ordinal}\}$
     where $\delta_x \defeq \delta_x(X)$.
 
-    For each $y\in Y$ there is a unique ordinal $\beta_y\in \On $ such that $(\delta_y, <_X)$ 
+    For each $y\in Y$ there is a unique ordinal $\beta_y\in \Ord $ such that $(\delta_y, <_X)$ 
     and $(\beta(y), \in)$ are isomorphic.
 
     \textbf{Claim:} $Y$ is initial segment of $X$
@@ -354,11 +354,11 @@ $\gamma\in \On $ then $\gamma = \{\alpha\in \On : \alpha\in \gamma\}$
     \end{claimproof}
     $y\mapsto \beta_y$ for $y\in Y$ is function defined on $Y$ and maps to
     $Z = \{\beta(x) : x\in Y\}$ (is a set by replacement)\\
-    \textbf{Claim:} $Z = \{\beta(x) : x\in Y\}$ is an initial segment in $\On $
+    \textbf{Claim:} $Z = \{\beta(x) : x\in Y\}$ is an initial segment in $\Ord $
     \begin{claimproof}
         if $\gamma\in \beta(x)$, $x\in Y$ have isomorphism between $(\delta_x,<_X)$ and $(\beta_x,\in)$ so its preimage $y$ and $(\delta_y, <_X)$ is mapped to the initial segment determined by gamma, so to $(\gamma, \in)$ hence $(\delta_y, <_X)$ isom to $\gamma$
     \end{claimproof}
-    So $Z$ is initial segment of $\On $ and $Z$ is a set. So $\alpha\defeq Z$ is itself an ordinal
+    So $Z$ is initial segment of $\Ord $ and $Z$ is a set. So $\alpha\defeq Z$ is itself an ordinal
     and $y\mapsto \beta_y$ isomorphism between $Y$ and $\alpha$.
 
     Assuming $Y\subsetneq X$, then there is a minimal $x_0\in X\backslash Y$ 
@@ -370,13 +370,13 @@ $\gamma\in \On $ then $\gamma = \{\alpha\in \On : \alpha\in \gamma\}$
 Suppose $\phi(x)$ (possibly with parameters)
 to prove 
 \begin{equation}\label{star}
-    \forall \alpha\in \On  \phi(\alpha) \iif \forall \alpha \forall \beta ((\beta<\alpha\to \phi(\beta))\to \phi(\alpha))
+    \forall \alpha\in \Ord  \phi(\alpha) \iif \forall \alpha \forall \beta ((\beta<\alpha\to \phi(\beta))\to \phi(\alpha))
 \end{equation}
-\ref{star} $\implies \forall \alpha\in \On  \phi(\alpha)$
+\ref{star} $\implies \forall \alpha\in \Ord  \phi(\alpha)$
 
-Suppose ther is $\alpha\in \On $ such that $\lnot \phi(\alpha)$ then let $\alpha$ be smallest with the property.
+Suppose ther is $\alpha\in \Ord $ such that $\lnot \phi(\alpha)$ then let $\alpha$ be smallest with the property.
 
-proof by induction on ordinals (proof by transfinite induction) is a proof of $\forall \alpha\in \On  \phi(\alpha)$ by proving \ref{star}
+proof by induction on ordinals (proof by transfinite induction) is a proof of $\forall \alpha\in \Ord  \phi(\alpha)$ by proving \ref{star}
 
 Let $F$ be a class function in one variable and $a$ a set contained in $\dom (F)$ 
 Then $F|_{a} = \{(x,y)\in (a,b) : F(x) = y\}$ where $b = \{F(x) : x\in a\}$ (which is a set by replacement).
@@ -385,7 +385,7 @@ Let $H$ be any class function in one variable.
 
 \defin{H-inductive}{A function $f$ is called H-inductive, if 
     \begin{enumerate*}
-        \item $\alpha \defeq \dom(f) \in \On $ and 
+        \item $\alpha \defeq \dom(f) \in \Ord $ and 
         \item $\forall \beta \in \alpha f|_\beta\in \dom (H)$ and 
         \item $f(\beta) = H(f|_\beta)$
     \end{enumerate*}
@@ -406,18 +406,18 @@ $$f(\alpha) = H(f)$$
     A contradiction.
 }
 \lemma{}{
-    Let $H$ be a class function, $\alpha\in \On $ such that any function $f:\beta\to X$ where $\beta\in \On $
+    Let $H$ be a class function, $\alpha\in \Ord $ such that any function $f:\beta\to X$ where $\beta\in \Ord $
     belongs to $\dom (H)$ then there is an H-inductive function $f:\alpha\to X$.
 }{
     $\tau = \{\beta<\alpha : \text{ there is H-inductive }f_\beta : \alpha\to X\}$
-    $\tau$ is a set and initial segment of $\alpha$ hence $\tau \in \On $ and $\tau\subseteq \alpha$
+    $\tau$ is a set and initial segment of $\alpha$ hence $\tau \in \Ord $ and $\tau\subseteq \alpha$
 
     $\beta\mapsto f_\beta$ for $\beta\in \tau$ is well-defined function by uniqueness of $f_\beta$.
 
     Moreover for $\gamma<\beta<\tau$ we have $f|_\beta|_\gamma  = f|_\gamma$ (H-ind, uniqueness)
 
     $f\defeq \bigcup_{\beta<\tau}f_\beta$ is H-inductive function (graphs agree on intersection, each of the $f_\beta$ are H-ind). The domain 
-    $$\dom(f) = \sup_{\beta<\tau}(\beta) = \bigcup_{\beta<\tau}(\beta) = \sigma\in \On $$
+    $$\dom(f) = \sup_{\beta<\tau}(\beta) = \bigcup_{\beta<\tau}(\beta) = \sigma\in \Ord $$
 
     If $\sigma =\alpha$ %sigma or tau???
     we are finished, otherwise we can define 
@@ -431,9 +431,9 @@ $$f(\alpha) = H(f)$$
 %H-induction is like transfinite recursion
 
 \thm{Transfinite Recursion}{
-    Let $A$ be a class, $M$ be a class of all functions $f:\alpha\to X$ for $\alpha\in\On$ arb.
+    Let $A$ be a class, $M$ be a class of all functions $f:\alpha\to X$ for $\alpha\in\Ord$ arb.
     $X$ a subset of $A$ and $H$ a class function in one variable defined on all of $M$ with values in $A$.
-    Then there exists a unique class function $F$ defined on $\On$ such that $\forall \alpha F(\alpha) = H(F|_\alpha)$
+    Then there exists a unique class function $F$ defined on $\Ord$ such that $\forall \alpha F(\alpha) = H(F|_\alpha)$
 }{
     define $F$ by 
     $$F(\alpha) = y \iif \text{there is an H-inductive function $f:\alpha\to X$, $X$ subset of $A$ and $y = H(f)$}$$
@@ -463,7 +463,7 @@ In the next Problemset: $AC \leftrightarrow AC'\leftrightarrow AC''$
     Choose a choice function $\pi:\mathcal{P}(X)\backslash \varnothing \to X$ 
     define a class function $H$ by $H(f) = y$ iff $f$ is a function with
     \begin{enumerate*}[label = (\roman*)]
-        \item $\dom f = \alpha \in \On$
+        \item $\dom f = \alpha \in \Ord$
         \item $\imag f\subsetneq X$
         \item $y = \pi (X\backslash \imag f)$
     \end{enumerate*}
@@ -477,7 +477,7 @@ In the next Problemset: $AC \leftrightarrow AC'\leftrightarrow AC''$
 
     By our assumption, every $H$-inductive function has to be not surjective.
     So $H$ is defined on all $H$-inductive functions, and we can use Transfinite recursion theorem
-    and get an $H$-inductive class function $F:\On\to X$ 
+    and get an $H$-inductive class function $F:\Ord\to X$ 
     which is injective
 
     Suppose $\alpha<\beta<\gamma$ and $F(\alpha) = F(\beta)$. 
@@ -496,7 +496,7 @@ In the next Problemset: $AC \leftrightarrow AC'\leftrightarrow AC''$
     Define $$p:A\to X, \quad p(Y) \defeq \pi (\{x\in X : \forall y\in Y y<x\})$$
     Define a class function $H$ by $H(f) = y$ iff 
     \begin{enumerate*}[label = (\roman*)]
-        \item $f$ is a function with $\dom f \in \On$
+        \item $f$ is a function with $\dom f \in \Ord$
         \item $\imag f\in A$
         \item $y = \pi(\imag f)$
     \end{enumerate*}
@@ -513,49 +513,52 @@ In the next Problemset: $AC \leftrightarrow AC'\leftrightarrow AC''$
     Suppose $f:\alpha \to X$ is $H$-inductive but $H$ is not defined on $f$, then the image of $f$ has no strict majorant, so there is $\beta<\alpha$ such that $x_f = f(\beta)$. 
     Then $x_f$ has to be maximal for $X$.
 
-    If $H$ is actually defined on all $H$-inductive functions, then there is an $H$-inductive class function $F:\On \to X$.
+    If $H$ is actually defined on all $H$-inductive functions, then there is an $H$-inductive class function $F:\Ord \to X$.
     $F$ is strictly increasing by $\star$.
     So have injective of proper class into set. a contradiction.
 }
 
 \subsection{Ordinal arithmetic}
 
-Or how to think of the natural numbers to be contained in $\On$
+Or how to think of the natural numbers to be contained in $\Ord$
 
-\defin{}{
+\defin{successor / limit ordinals}{
     \begin{itemize}
-        \item $0\defeq \varnothing$ (smallest ordinal)
-        \item $\beta\in \On$ then its successor ordinal is $\beta+1 \defeq \beta\cup\{\beta\}$
-        \item ($\beta$ is a successor ordinal if there is $\alpha\in \On$ such that $\beta = \alpha + 1$)
-        \item $\beta\in \On$ is a limit ordinal if $\beta \neq 0$ and $\beta$ is not a successor ordinal
-        \item $\beta\in \On$ is a natual number / finite ordinal, if $\beta = 0$ or for every $\alpha\leq \beta$ $\alpha$ is a successor ordinal or $\alpha = 0$
+        \item $0\defeq \varnothing$ is the smallest ordinal
+        \item $\beta\in \Ord$ then its successor ordinal is defined by $\beta+1 \defeq \beta\cup\{\beta\}$
+        \item $\beta$ is called a \imp{successor ordinal} if there is $\alpha\in \Ord$ such that 
+        $\beta = \alpha + 1$
+        \item $\beta\in \Ord$ is called a \imp{limit ordinal} if $\beta \neq 0$ and $\beta$ is not a successor ordinal
+        \item $\beta\in \Ord$ is called a natual number / finite ordinal, if $\beta = 0$ or for every $\alpha\leq \beta$ we have ``$\alpha$ is a successor ordinal or $\alpha = 0$''
     \end{itemize}
 }
 \bsp{}{
     $0 = \varnothing$, $1 = \varnothing \cup \{\varnothing\} = \{\varnothing\}$,\dots 
 }
 \note{}{
-    $(X,<_X), (Y,<_Y)$ well-ordered then we can also order their disjoint union 
-    $(X\times \{0\})\cup (Y\times \{1\})$, $X\times Y$ can be well ordered as follows:
-
-    $$(a,i)<(b,j) \iif \begin{cases}
-        i=j=0 & a<_X b\\
-        \lor \: i=j=1 & a<_Y b\\
-        \lor \: i<j
+    If $(X,<_X), (Y,<_Y)$ are well-ordered sets then we can well-order both their cartesian product 
+    $X\times Y$
+    and \imp{disjoint union} $X \sqcup Y\defeq (X\times \{0\})\cup (Y\times \{1\})$ by the reverse lexiographical order:
+    $$(x_0,y_0)\sphericalangle (x_1,y_1)\iif y_0<_Y y_1 \lor (y_0 = y_1\land x_0<_X x_1)$$
+    For $(x_0,y_0), (x_1,y_1)$ in $X\times Y$ or $X\sqcup Y$, in the latter case $y_0 <_Y y_1$, if $y_0 = 0$ and $y_1 = 1$.
+    Note that in this case the the ordering of $X \sqcup Y$ corresponds to
+    $$(a,i)\sphericalangle (b,j) \iif \begin{cases}
+        i=j=0 \text{ and } a<_X b\text{, or}\\
+         i=j=1 \text{ and } a<_Y b\text{, or}\\
+         i<j
     \end{cases}$$
-    and we will call this the ordering on the sum of $X$ and $Y$.\\
-    $(x_0,x_1)<(x_1,y_1)\iif y_0<_Y y_1 \lor (y_0 = y_1\land x_0<_X x_1)$ (reverse lexiographical ordering)
-}%TODO define sum of ordinals
-\defin{}{
-    Let $\alpha,\beta\in\On$ then 
+}
+\newpage
+\defin{Sum and product of ordinals}{
+    Let $\alpha,\beta\in\Ord$, then 
     \begin{enumerate}[label=(\roman*)]
-        \item $\alpha+\beta$ is the unique $\gamma\in \On$ such that $\gamma$ is order-isomorphic to the 
-        sum of $\alpha$ and $\beta$
-        \item $\alpha\cdot\beta$ is the unique $\gamma\in\On$ such that $\gamma$ is order-isomorphic to the 
+        \item $\alpha+\beta$ is the unique $\gamma\in \Ord$ such that $\gamma$ is order-isomorphic to the 
+        sum / disjoint union $\alpha\sqcup\beta$
+        \item $\alpha\cdot\beta$ is the unique $\gamma\in\Ord$ such that $\gamma$ is order-isomorphic to the 
         product of $\alpha$ and $\beta$
     \end{enumerate}
 }
-Properties of $+$ and $\cdot$:
+Properties of sum and product.
 \lemma{}{
     \begin{enumerate}
         \item $+$ is associative, $0$ is a $2$-sided add. identity
@@ -576,7 +579,7 @@ Properties of $+$ and $\cdot$:
 }
 \note{}{
     \begin{itemize}
-        \item The natural numbers form an initial segment in $\On$.
+        \item The natural numbers form an initial segment in $\Ord$.
         \item Let $\omega$ be the smallest infinite ordinal, i.p. $\omega$ is a limit ordinal
     \end{itemize}
 }
@@ -603,15 +606,16 @@ Exponentiation
 \defin{}{
     $\alpha^\beta$ is defined recursively on $\beta$:
     \begin{enumerate}
-        \item $\alpha^0 = 1$
-        \item $\alpha ^{\beta+1} = \alpha^\beta \cdot \alpha$
-        \item $\alpha^\lambda = \sup_{\delta < \lambda}{\alpha^\delta}$ for a limit ordinal $\lambda$
+        \item $\alpha^0 \defeq 1$
+        \item $\alpha ^{\beta+1} \defeq \alpha^\beta \cdot \alpha$
+        \item $\alpha^\lambda \defeq \sup_{\delta < \lambda}{\alpha^\delta}$ for a limit ordinal $\lambda$
     \end{enumerate}
 }
 \note{}{
-    can also define exponentiation as given by the class function $EXP : \On \times \On \to \On$ defined by
-    \[Exp(\alpha,\beta) = \gamma \iif\]
-    There exists a function $f:\beta+1\to \On \text{s.th.} \forall \xi<\beta$
+    We can define exponentiation as given by the class function $EXP : \Ord \times \Ord \to \Ord$ defined by
+    \[Exp(\alpha,\beta) = \gamma \quad\iif\quad \text{There exists a function } f:\beta+1\to \Ord 
+    \text{ such that for all } \xi<\beta\text{ it holds}\]
+     
     \begin{itemize}
         \item $f(\beta) = \gamma$
         \item if $\xi=0$ then $f(\xi) = 1$
@@ -664,10 +668,10 @@ need to do some kind of back and fourth argument
 }
 Note this says: there is no largest set.
 \subsection{Cardinals}
-\defin{Cardinal}{$\kappa\in\On$ is called a cardinal, if $\kappa = |\kappa|$}
+\defin{Cardinal}{$\kappa\in\Ord$ is called a cardinal, if $\kappa = |\kappa|$}
 \note{}{The class $Card$ of all cardinals is a proper class.
 \begin{claimproof}
-    Suppose $Card$ is a set. then $\sup Card = \gamma\in \On$
+    Suppose $Card$ is a set. then $\sup Card = \gamma\in \Ord$
     Then $|\mathcal{P}(\gamma)|>|\gamma|\geq |\lambda|$ for every cardinals $\lambda\in Card$
     that is a contradiction %TODO
 \end{claimproof}
@@ -690,10 +694,10 @@ Note this says: there is no largest set.
 $\aleph$-function
 
 \note{}{
-    $Card$ is cofinial in $\On$
-    For every $\alpha\in \On$ there is $\gamma\in Card$ with $\alpha<\gamma$
+    $Card$ is cofinial in $\Ord$
+    For every $\alpha\in \Ord$ there is $\gamma\in Card$ with $\alpha<\gamma$
 
-    And $Card$ is a proper subclass of $\On$, well ordered by the same ordering $\in$ as in $\On$
+    And $Card$ is a proper subclass of $\Ord$, well ordered by the same ordering $\in$ as in $\Ord$
 
     There is a unique function (class function) from the class of all ordinals to the infinite cardinals 
     that preserves $\in$ \dots this function is called $\aleph$
@@ -765,8 +769,8 @@ It can be shown that CH is independent of ZFC. (method to show this is called fo
 
     Define ordering on $\kappa\times \kappa$
     \[(\alpha,\beta)\prec (\alpha',\beta')\iff \begin{cases}
-        \max\{\alpha,\beta\}<\max\{\alpha',\beta'\}\\
-        \max\{\alpha,\beta\} = \max\{\alpha',\beta'\}\text{ and } \alpha<\alpha'\\
+        \max\{\alpha,\beta\}<\max\{\alpha',\beta'\}\text{, or}\\
+        \max\{\alpha,\beta\} = \max\{\alpha',\beta'\}\text{ and } \alpha<\alpha'\text{, or}\\
         \max\{\alpha,\beta\} = \max\{\alpha',\beta'\}\text{ and } \alpha =\alpha'\text{ and }\beta<\beta'\\
     \end{cases}\]
     \textbf{Claim:}$\prec$ is a well-ordering (Exercise)
@@ -777,7 +781,7 @@ It can be shown that CH is independent of ZFC. (method to show this is called fo
         $\kappa\times \kappa = \bigcup_{\alpha<\kappa}\alpha\times \alpha$
         increasing union.
         then $\{\xi\times \xi\}$ is an initial segment of $\kappa\times\kappa$ (with respect to $\prec$)
-        Consider $(\xi\times\xi,\prec)$ then by our inductive assumption this will have to be isomorphic to some ordinal $\gamma\in\On$.
+        Consider $(\xi\times\xi,\prec)$ then by our inductive assumption this will have to be isomorphic to some ordinal $\gamma\in\Ord$.
         We know that the cardinality of that ordinal $\gamma$
         $|\gamma| = |\xi\times \xi| \stackrel{\text{ind. Hyp.}}{=}|\xi|<|\kappa|$
         So also $|\gamma|<|\kappa|$. so then $(\kappa\times\kappa,\prec)$ is order-isomorphic to $(\kappa,\in)$
@@ -809,7 +813,7 @@ Note $2^\kappa = |\mathcal{P}(X)|$
     i.e. 
     \[\forall \gamma\in \beta\exists \xi \in \alpha \gamma\leq f(\xi)\]
 }
-The cofiniality of $\beta\in\On$ (denoted by $cof(\beta)$)
+The cofiniality of $\beta\in\Ord$ (denoted by $cof(\beta)$)
     is the smallest ordinal $\alpha$ such that there exists a function $f:\alpha\to\beta$ that is cofinal. Note: $cof(\beta)\leq \beta$, 
 
 \bsp{}{
@@ -817,7 +821,7 @@ The cofiniality of $\beta\in\On$ (denoted by $cof(\beta)$)
     $cof(\alpha + 1) = cof(\alpha \cup \{\alpha\}) = 1$
 }
 \note{}{ $cof (\beta)$ is always a cardinal.
-    Let $\beta\in \On$ and let $f:cof(\beta)\to \beta$ be cofinal.
+    Let $\beta\in \Ord$ and let $f:cof(\beta)\to \beta$ be cofinal.
     Then $|cof(\beta)|\leq cof (\beta)|$ and there exists a bijection $h: |cof(\beta)|\to cof\beta$,
     so $f\circ h$ yields cofinal map and by minimality of $cof(\beta)$ have $|cof(\beta)| = cof (\beta)|$ 
 
@@ -942,7 +946,7 @@ We are going to finish prob next course thursday
 }
 \defin{}{
     Class function
-    $V:\On \to \mathcal{U}$ by transfinite induction on ordinals 
+    $V:\Ord \to \mathcal{U}$ by transfinite induction on ordinals 
     and set $V_\beta \defeq \bigcup_{\alpha<\beta}{\mathcal{P}(V_\alpha)}$
     $V_0 = \varnothing$
     If $\alpha\leq \beta$ then $V_\alpha\subseteq V_\beta$ 
@@ -951,7 +955,7 @@ We are going to finish prob next course thursday
 
     If $\lambda$ is a limit ordinal then $V_\lambda = \bigcup_{\alpha<\lambda}V_\alpha$
 
-    $V$ is also a class given by $V(x)\equiv \exists \alpha\in\On\: x\in V_\alpha$
+    $V$ is also a class given by $V(x)\equiv \exists \alpha\in\Ord\: x\in V_\alpha$
 }
 $V$ also gives us a way to associate a rank to each set.
 \defin{}{
@@ -972,15 +976,15 @@ $V$ also gives us a way to associate a rank to each set.
 
     ``$\impliedby$''-direction:
     Suppose $\forall y\in x V(y)$
-    Note that $\rk : V\to \On$ is bounded on $x$.
-    Else, $\{\rk y : y \in x\}$ is unbounded in $\On$ and it is a set (image of function $\rk$ of a set)
-    Take $\bigcup\{\rk y : y\in x\}\in \On$ and it would be an ordinal bigger than any other set, TODO
+    Note that $\rk : V\to \Ord$ is bounded on $x$.
+    Else, $\{\rk y : y \in x\}$ is unbounded in $\Ord$ and it is a set (image of function $\rk$ of a set)
+    Take $\bigcup\{\rk y : y\in x\}\in \Ord$ and it would be an ordinal bigger than any other set, TODO
 
     Suppose $\{\rk y : y\in x\}$ is bounded by $\beta$ then $\forall y \in x y\in V_\beta$
     so $x\in V_{\beta+1}$.
 }
 \lemma{}{
-    For every ordinal $\alpha\in \On$ we have $V(\alpha)$ and $\rk (\alpha) = \alpha+1$.
+    For every ordinal $\alpha\in \Ord$ we have $V(\alpha)$ and $\rk (\alpha) = \alpha+1$.
 }{Exercise}
 \defin{inductive closure}{
     For any set $x$ we define the function with domain $\omega$ 
@@ -1073,7 +1077,7 @@ $\phi^C(\underline{x},\underline{a})$ defined by induction on compl of $\phi$
     \end{enumerate*}
     (recall pairing and comprehension follow from the other)
     Need to check if  $(\mathcal{U},\in)\models ZF^-$ and $V$ class defined by 
-    $V = \bigcup_{\alpha\in \On}V_\alpha$, $V_\beta \defeq \bigcup_{\alpha<\beta}{\mathcal{P}(V_\alpha)}$
+    $V = \bigcup_{\alpha\in \Ord}V_\alpha$, $V_\beta \defeq \bigcup_{\alpha<\beta}{\mathcal{P}(V_\alpha)}$
     then $(V,\in )\models ZF^-$ (AF will follow from prev. result)
 
     \begin{enumerate}
@@ -1111,7 +1115,7 @@ Suppose now that $(\mathcal{U}, \in)\models ZFC$
     If $\kappa$ is an inaccessible cardinal, then $|V_\kappa| = \kappa$. Moreover 
     for every $a\subseteq V_\kappa$ we have $a\in V_\kappa$ iff $|a|<\kappa$
 }{
-    Recall, if $\alpha\in \On$ then $\alpha\subseteq V_\alpha$. i.p.
+    Recall, if $\alpha\in \Ord$ then $\alpha\subseteq V_\alpha$. i.p.
     $\kappa\subseteq V_\kappa$ so $|\kappa|\leq |V_\kappa|$
     
     The other direction: 
@@ -1127,7 +1131,7 @@ Suppose now that $(\mathcal{U}, \in)\models ZFC$
     Left to show: for every $a\subseteq V_\kappa$ have $a\in V_\kappa$ iff $|a|<\kappa$
     \begin{itemize}
         \item ``$\impliedby$''-direction: Assume $a\subseteq V_\kappa$ and $|a|<\kappa$ 
-        $\rk: a \to \On$ is not cofinal in $\kappa$ because $cof \kappa = \kappa > |a|$
+        $\rk: a \to \Ord$ is not cofinal in $\kappa$ because $cof \kappa = \kappa > |a|$
         So for some ordinal $\beta$ have $a\subseteq V_\beta$ and then $a\in V_{\beta+1}\subseteq V_\kappa$
         \item ``$\implies$''-direction: it suffices $a\in V_\kappa$ then $|a|<\kappa$
         Exercise.
@@ -1178,8 +1182,8 @@ Now we are ready to state our meta-theorem, it is not a statement in first order
     \begin{claimproof}
         If $\alpha<\kappa$ then $\alpha\subseteq V_\kappa$ ($\rk \alpha = \alpha+1$ and $V_{\alpha+1}
         \subseteq V_\kappa$ so $\alpha\in V_\kappa$ ($\alpha+1<\kappa$)) $\alpha$ is an ordinal so \ref
-        {equation:ordinal} holds. and $\alpha\in \On^{V_\kappa}$
-        If $\alpha\in \On^{V_\kappa}$ then $\alpha\in V_\kappa$ and $\alpha$ is transitive and totally 
+        {equation:ordinal} holds. and $\alpha\in \Ord^{V_\kappa}$
+        If $\alpha\in \Ord^{V_\kappa}$ then $\alpha\in V_\kappa$ and $\alpha$ is transitive and totally 
         ordered by $\in$.
         % TODO check: All elements of $\alpha$ are elements of $V_\kappa$. 
         Hence $\alpha$ is an ordinal. Left to show $\alpha$ is below $\kappa$.
@@ -1193,13 +1197,13 @@ Now we are ready to state our meta-theorem, it is not a statement in first order
         <\kappa$.
         left to show: $\lambda$ is an actual cardinal in $\mathcal{U}$
         Suppose there is a bijection $f:\lambda\to \alpha$ to some smaller ordinal $\alpha$. Then by 
-        Claim 1, $\alpha\in \On^{V_\kappa}$ and $f\subseteq V_\kappa$ (the graph $f\subseteq \lambda\times 
+        Claim 1, $\alpha\in \Ord^{V_\kappa}$ and $f\subseteq V_\kappa$ (the graph $f\subseteq \lambda\times 
         \alpha\subseteq \lambda \times \lambda$ so $f\subseteq \mathcal{P}\mathcal{P}\mathcal{P}(V_{\lambda
         +1})\eqdef V_\beta$, $\rk \lambda = \lambda+1$ and have $\beta<\kappa$ by inaccessability).
         $f\subseteq V_\kappa$ and $|f|<\kappa$ so by lemma \ref{lem:inacc1} $f\in V_\kappa$.
         $f$ is a bijection in $V_\kappa$ between $\lambda$ and a smaller ordinal, a contradiction.
 
-        Suppose $\lambda<\kappa$ and $\lambda$ cardinal, then by lemma \ref{lem:inacc1} $\lambda\in V_\kappa$ and $\lambda\in \On^{V_\kappa}$.
+        Suppose $\lambda<\kappa$ and $\lambda$ cardinal, then by lemma \ref{lem:inacc1} $\lambda\in V_\kappa$ and $\lambda\in \Ord^{V_\kappa}$.
         If there would be a bijection in $V_\kappa$ between $\lambda$ and a strictly smaller ordinal 
         $\alpha$ then $\alpha$ would be an actual ordinal. By an argument as before would get a bijection in 
         $\mathcal{U}$ between $\lambda$ and smaller ordinal.

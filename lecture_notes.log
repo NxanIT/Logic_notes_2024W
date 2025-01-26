@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2024.12.29)  23 JAN 2025 18:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2024.12.29)  25 JAN 2025 19:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1055,24 +1055,24 @@ Package: glossary-tree 2024/11/01 v4.55 (NLCT)
  (lecture_notes.aux)
 \openout1 = `lecture_notes.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 378.
-LaTeX Font Info:    ... okay on input line 378.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 378.
-LaTeX Font Info:    ... okay on input line 378.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 378.
-LaTeX Font Info:    ... okay on input line 378.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 378.
-LaTeX Font Info:    ... okay on input line 378.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 378.
-LaTeX Font Info:    ... okay on input line 378.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 378.
-LaTeX Font Info:    ... okay on input line 378.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 378.
-LaTeX Font Info:    ... okay on input line 378.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 378.
-LaTeX Font Info:    ... okay on input line 378.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 378.
-LaTeX Font Info:    ... okay on input line 378.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 380.
+LaTeX Font Info:    ... okay on input line 380.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 380.
+LaTeX Font Info:    ... okay on input line 380.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 380.
+LaTeX Font Info:    ... okay on input line 380.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 380.
+LaTeX Font Info:    ... okay on input line 380.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 380.
+LaTeX Font Info:    ... okay on input line 380.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 380.
+LaTeX Font Info:    ... okay on input line 380.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 380.
+LaTeX Font Info:    ... okay on input line 380.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 380.
+LaTeX Font Info:    ... okay on input line 380.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 380.
+LaTeX Font Info:    ... okay on input line 380.
  (C:\Users\Nxan\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count498
@@ -1092,7 +1092,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (C:\Users\Nxan\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring ON on input line 378.
+Package hyperref Info: Link coloring ON on input line 380.
  (lecture_notes.out) (lecture_notes.out)
 \@outlinefile=\write5
 \openout5 = `lecture_notes.out'.
@@ -1145,21 +1145,21 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'lecture_notes.bbl' found.
  (lecture_notes.bbl)
-Package biblatex Info: Reference section=0 on input line 378.
-Package biblatex Info: Reference segment=0 on input line 378.
-LaTeX Font Info:    Trying to load font information for OT1+qag on input line 388.
+Package biblatex Info: Reference section=0 on input line 380.
+Package biblatex Info: Reference segment=0 on input line 380.
+LaTeX Font Info:    Trying to load font information for OT1+qag on input line 390.
  (C:\Users\Nxan\AppData\Local\Programs\MiKTeX\tex/latex/tex-gyre\ot1qag.fd
 File: ot1qag.fd 2009/09/25 v1.2 font definition file for OT1/qag
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 399.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 401.
  (C:\Users\Nxan\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 399.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 401.
  (C:\Users\Nxan\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 399.
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 401.
  (C:\Users\Nxan\AppData\Local\Programs\MiKTeX\tex/latex/stmaryrd\ustmry.fd) (lecture_notes.toc)
 \tf@toc=\write6
 \openout6 = `lecture_notes.toc'.
@@ -1182,26 +1182,23 @@ LaTeX Font Info:    Trying to load font information for OT1+txtt on input line 1
  (C:\Users\Nxan\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\ot1txtt.fd
 File: ot1txtt.fd 2000/12/15 v3.1
 )
-
-LaTeX Warning: Marginpar on page 2 moved.
-
 <./images//1-extree.png, id=209, 1578.49725pt x 1236.41925pt>
 File: ./images//1-extree.png Graphic file (type png)
 <use ./images//1-extree.png>
-Package pdftex.def Info: ./images//1-extree.png  used on input line 34.
+Package pdftex.def Info: ./images//1-extree.png  used on input line 33.
 (pdftex.def)             Requested size: 170.71652pt x 133.70485pt.
-[2
+ [2
 
 {C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc} <./images//1-extree.png>]
 
 LaTeX Warning: Marginpar on page 3 moved.
 
 LaTeX Font Info:    Font shape `OT1/txtt/m/it' in size <10> not available
-(Font)              Font shape `OT1/txtt/m/sl' tried instead on input line 101.
+(Font)              Font shape `OT1/txtt/m/sl' tried instead on input line 100.
 LaTeX Font Info:    Font shape `OT1/txtt/b/it' in size <10> not available
-(Font)              Font shape `OT1/txtt/b/sl' tried instead on input line 101.
+(Font)              Font shape `OT1/txtt/b/sl' tried instead on input line 100.
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--103
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
 
  []
 
@@ -1210,7 +1207,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 102--103
 LaTeX Warning: Marginpar on page 4 moved.
 
 [4]
-Overfull \hbox (10.05992pt too wide) in paragraph at lines 180--180
+Overfull \hbox (43.17113pt too wide) in paragraph at lines 179--179
 \OML/cmm/m/it/10 PF \OT1/cmr/m/n/10 = []$,
  []
 
@@ -1225,7 +1222,7 @@ LaTeX Warning: Marginpar on page 8 moved.
 LaTeX Warning: Marginpar on page 8 moved.
 
 [8] [9]
-Underfull \hbox (badness 10000) in paragraph at lines 564--564
+Underfull \hbox (badness 10000) in paragraph at lines 563--563
 
  []
 
@@ -1355,7 +1352,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 23--23
 \openout10 = `lecture_notes.thn'.
 
  [68]
-Overfull \hbox (7.48703pt too wide) in paragraph at lines 441--441
+Overfull \hbox (7.48703pt too wide) in paragraph at lines 443--443
 \OT1/cmr/m/n/10 mat-i-cal So-ci-ety lec-ture note se-ries. Cam-bridge Uni-ver-sity Press, 1998. \OT1/cmr/m/sc/10 isbn\OT1/cmr/m/n/10 : 9780511525919. 
  []
 
@@ -1378,7 +1375,7 @@ Here is how much of TeX's memory you used:
  59385 multiletter control sequences out of 15000+600000
  541641 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 101i,21n,104p,2489b,1851s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,21n,104p,2489b,1846s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{propcount.3.4.5} has been referenced but does not exist, replaced by a fixed one
 
@@ -1386,9 +1383,9 @@ pdfTeX warning (dest): name{propcount.3.4.5} has been referenced but does not ex
 pdfTeX warning (dest): name{excount.3.2} has been referenced but does not exist, replaced by a fixed one
 
  <C:\Users\Nxan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qagb.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/hoekwater/stmary10.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txbtt.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txtt.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txtt.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/Nxan/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on lecture_notes.pdf (69 pages, 1163094 bytes).
+Output written on lecture_notes.pdf (69 pages, 1164571 bytes).
 PDF statistics:
- 1711 PDF objects out of 1728 (max. 8388607)
+ 1713 PDF objects out of 1728 (max. 8388607)
  637 named destinations out of 1000 (max. 500000)
  314 words of extra memory for PDF output out of 10000 (max. 10000000)
 
