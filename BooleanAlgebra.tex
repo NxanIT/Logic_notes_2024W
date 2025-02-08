@@ -1,44 +1,29 @@
 \chapter{Boolean Algebra}
 From \cite{krivine1998théorie}?
-Our language in this chapter will be $\mathcal{L} = \{0,1,+,\cdot,\overline{\phantom{x}}\}$, where $+,\cdot$ are binary operations and $\overline{\phantom{x}}$ is a unary operation.
- 
-The axioms for boolean algebras are 
-\begin{enumerate}
-    \item (Associativity of $+,\cdot$) $\forall x,y,z \bigl(x+(y+z) = (x+y)+z \land x\cdot (y\cdot z) = (x \cdot y ) \cdot z\bigr)$
-    \item (Commutativity of $+,\cdot$) $\forall x,y \bigl(x+y=y+x \land x\cdot y = y\cdot x\bigr)$
-    \item (Idempotence) $\forall x \bigl(x+x = x \land x\cdot x = x\bigr)$
-    \item (Distributivity) $+,\cdot$: $\forall x,y,z \bigl(x\cdot (y+z) = x\cdot y + x\cdot z \land x+(y\cdot z)\bigr) = $TODO
-    \item (Absorbtion) $\forall x,y \bigl(x\cdot (x+ y) = x  \land x\cdot (x+y) = x\bigr)$
-    \item (De Morgan's Laws) $\forall x,y \bigl(\overline{x+y} = \overline{x}\cdot \overline{y}\land \overline{x\cdot y} = \overline{x}+ \overline{y}\bigr)$
-    \item (Laws of $0,1$ and $\overline{\phantom{x}}$) $$\begin{aligned}
-        \forall x \bigl(&\quad x+0 = x \quad\land\quad x\cdot 0 = 0 \quad\land\quad x+1 = 1\quad\land\quad x\cdot 1 = x \\
-        &\land\quad x + \overline{x} = 1 \quad\land\quad x\cdot \overline{x} = 0 \quad\land\quad \overline{\overline{ x}} = x\quad\bigr)
-    \end{aligned}$$
-\end{enumerate}
-\defin{Boolean Algebra}{The theory of boolean algebras is the deductive closure of (1)-(7) above.}
+Our language in this chapter will be $\mathcal{L} = \{0,1,+,\cdot,\overline{\phantom{x}}\}$, where $+,\cdot$ are binary operations and $\overline{\phantom{x}}$ is a unary operation. We will sometimes write $x+y\cdot z$ instead of $x + (y\cdot z)$ for more clarity.
+The axioms for boolean algebras are
+\begin{equation*}
+    \begin{matrix*}[l]
+        \forall x,y,z \: \bigl(x+(y+z) = (x+y)+z \land x\cdot (y\cdot z) = (x \cdot y ) \cdot z\bigr) & \text{(Associativity $+,\cdot$)}\\[3pt]
+        \forall x,y \: \bigl(x+y=y+x \land x\cdot y = y\cdot x\bigr) & \text{(Commutativity of $+,\cdot$) }\\[3pt]
+        \forall x \: \bigl(x+x = x \land x\cdot x = x\bigr)& \text{(Idempotence) }\\[3pt]
+        \forall x,y,z \: \bigl(x\cdot (y+z) = x\cdot y + x\cdot z \land x+(y\cdot z) = (x+y)\cdot (x+z)\bigr) & \text{(Distributivity) }\\[3pt]
+        \forall x,y \: \bigl(x\cdot (x+ y) = x  = x+ (x\cdot y) \bigr)& \text{(Absorbtion)}\\[3pt]
+        \forall x,y \: \bigl(\overline{x+y} = \overline{x}\cdot \overline{y}\land \overline{x\cdot y} = \overline{x}+ \overline{y}\bigr)& \text{(De Morgan's Laws) }\\[3pt]
+        \forall x \: \bigl( x+0 = x \land x\cdot 0 = 0 \bigr)& \text{(Laws of $0$)}\\[3pt]
+        \forall x \: \bigl( x+1 = 1\land x\cdot 1 = x \bigr)& \text{(Laws of $1$)}\\[3pt]
+        \forall x \: \bigl(x + \overline{x} = 1 \land x\cdot \overline{x} = 0 \land \overline{\overline{x}} = x\bigr)& \text{(Laws of $\overline{\phantom{x}}$)}\\
+    \end{matrix*}
+\end{equation*}
+$BA$ denotes the $\mathcal{L}$-theory of boolean algebras, i.e. the deductive closure of the axioms above.\\%TODO is this needed? 2025-02-07
+Every model of $BA$ is called a boolean algebra.
+
 \note{}{Every boolean algebra $\mathcal{B}$ can be partially ordered by 
 $$x\leq y \quad\iif\quad x+y = y$$ 
 It is easy to see that $\leq$ is reflexive, antisymmetric and transitive. In this ordering the smallest set is $0$ and the largest one is $1$.
 In this notion the supremum and infimum of two elements are equal to
-\[\sup\{x,y\} = x+y, \quad \inf\{x,y\} = x\cdot y\quad\text{(Exercise)}\] 
-}
-\defin{Alternative Def: Boolean Algebra}{%from last year
-    A \graybf{boolean algebra} is a set $B$ with
-    \begin{itemize}
-        \item distinguished elements $0,1$ (called zero and unit of $B$)
-        \item a unary operation $'$ on $B$ (called \graybf{complementation})
-        \item two binary operations $\lor$ called \graybf{join} and $\land$ called \graybf{meet} s.t. for all $x,y,z \in B$ 
-        \begin{enumerate}
-            \item $x\lor 0 = x$ \qquad  $x\land 1 = x$
-            \item $x\lor x' = 1$ \qquad   $x\land x' = 0$
-            \item $x \lor y = y \lor x$ \qquad   $x\land y = y\land x$
-            \item $(x\lor y)\lor z = x\lor (y\lor z)$ \qquad   $(x\land y)\land z = x\land (y\land z)$
-            \item $x\lor (y\land z) = (x\lor y)\land (x\lor z)$\qquad    $x\land (y\lor z) = (x\land y)\lor (x\land z)$
-        \end{enumerate}
-    \end{itemize}
-}
-\bsp{}{Let $X\neq \varnothing$ be a set, $B \defeq \mathcal{P}(X)$ the power set of $X$, $0\defeq \varnothing$ and $1\defeq S$, 
-    $$': \mathcal{P}(S)\to \mathcal{P}(S), x' \defeq S\backslash x \qquad x\lor y \defeq x\cup y, \quad x\land y \defeq x\cap y \text{ for } x,y\in \mathcal{P}(S)$$
+\[\sup\{x,y\} = x+y, \quad \inf\{x,y\} = x\cdot y\quad\text{(see Exercises)}\]
+That makes every boolean algebra to a complemented, distributive \imp{lattice}, see appendix.
 }
 \bsp{}{$X\neq \varnothing$ and $S\subseteq \mathcal{P}(X)$ such that 
     \begin{itemize}
@@ -46,46 +31,21 @@ In this notion the supremum and infimum of two elements are equal to
         \item $X\in S$ 
         \item $S$ is closed under (finite) intersections and unions and complements.
     \end{itemize}
-    Then $(S; \varnothing,X,\cup,\cap,\overline{\:})$ is called a boolean algebra of sets and $\leq$ corresponds to $\subseteq$.
+    Then $(S; \varnothing,X,\cup,\cap,\overline{\phantom{x}})$ is called a boolean algebra of sets and $\leq$ corresponds to $\subseteq$.
 }
-\note{}{Conversly, every boolean algebra is isom. to a boolean algebra of sets. (it can be embedded in )}
+\note{}{Conversly, it is true that every boolean algebra is isomorphic to a boolean algebra of sets. In fact it can be embedded in a boolean algebra of all subsets of a set. The next section yields the choice of the set.}
 \section{Stone Representation Theorem}
-\defin{(Ultra-)Filter}{Suppose $\mathcal{B}\models BA$. A non-empty subset $F\subseteq B$ is called a filter of $\mathcal{B}$, if
-\begin{itemize}
-    \item $0\notin F$
-    \item $\forall a \forall b a\in F \land b\in F \to a\cdot b\in F$
-    \item $\forall a \forall b a\in F \land a \leq b \to b\in F$
+\defin{(Ultra-)Filter}{Suppose $\mathcal{B}\models BA$. A non-empty subset $F\subseteq B$ is called a filter on $\mathcal{B}$, if
+\begin{itemize}[leftmargin=1.5cm]
+    \item[(F1)] $0\notin F$
+    \item[(F2)] $\forall a \forall b\: (a\in F \land b\in F) \to a\cdot b\in F$
+    \item[(F3)] $\forall a \forall b\: (a\in F \land a \leq b) \to b\in F$
 \end{itemize}
-An \imp{Ultrafilter}of $\mathcal{B}$ is a filter $\mathcal{F}$ such that $\forall a\in B a\in \mathcal{F} \lor \overline{a}\in \mathcal{F}$.\\
+An \imp{Ultrafilter}of $\mathcal{B}$ is a filter $\mathcal{F}$ that satisfies
+\begin{itemize}[leftmargin=1.5cm]
+    \item[(UF)]$\forall a\in B a\in \mathcal{F} \lor \overline{a}\in \mathcal{F}$.
+\end{itemize}
 
-}
-\noindent We define $S(B)$,\outernote{$S(B)$}the stonespace of $\mathcal{B}$ to be 
-$S(B) \defeq\{\text{the set of all ultrafilters of $\mathcal{B}$} \}$
-
-\note{}{
-    $\mathcal{B}\models BA$ then for a filter $F$.
-    \begin{enumerate}
-        \item $1\in F$
-        \item $F\subseteq B$ satisfying  TODO
-        \item $<a>= \{x\in S(B): a\in x\}$ where $a$ runs through $B$ forms a basis for a topology on the stonespace of $\mathcal{B}$
-    \end{enumerate}
-    Recall:
-    $(X,\tau), \tau \subseteq \mathcal{P}(X)$ is called a topological space, if 
-    \begin{enumerate}
-        \item[T1] $\varnothing, X\in \tau$
-        \item[T2] $\forall I \forall (\sigma_i)_i\in \tau^I: \bigcup_{i\in I}(\sigma_i)\in \tau$
-        \item[T3] $\forall n\in \NN \forall (\sigma_i)_i\in \tau^\{1,\dots n\}: \bigcup_{1\leq i\leq n}(\sigma_i)\in \tau$
-    \end{enumerate}
-    And $\tau'\subseteq \mathcal{P}(X)$ is a base for the topology $\tau$ on $X$,
-     if every open set in $\tau$ is the union of sets in $\tau'$.
-    Back on $<a>= \{x\in S(B): a\in x\}$:
-    \begin{itemize}
-        \item $\varnothing = <0>$, $S(B) = <1>$, $<a>\cap <b> = <a\cdot b>$
-    \end{itemize}
-    Every filter on $B$ can be extended to an ultrafilter on $\mathcal{B}$ (Zorn's Lemma).
-
-    In fact, suppose $\mathcal{F}\subseteq B$ has FIP. i.e. for any $n\in\NN$ $\forall f_1,\dots f_n\in \mathcal{F}$ it is $f_1\cdot \dots \cdot f_n \neq 0$.
-    (Exercise)
 }
 \defin{Stone space}{
     A stone space is a non-empty topological space which 
@@ -95,22 +55,57 @@ $S(B) \defeq\{\text{the set of all ultrafilters of $\mathcal{B}$} \}$
         \item and hausdorff (every two distinct points can be seperated by open sets) 
         \[\forall x \forall y x\neq y \to \exists \sigma_x\exists \sigma_y x\in \sigma_x \land y\in \sigma_y\land \sigma_x\cap \sigma_y= \varnothing\]
     \end{enumerate}
+
+    Let $\mathcal{B}$ be a boolean algebra. We define 
+    $S(\mathcal{B}) \defeq\{\text{the set of all ultrafilters on $\mathcal{B}$}\}$
+    to be the stonespace of $\mathcal{B}$.\outernote{$S(\mathcal{B})$}
 }
-\thm{Stone Representation Theorem}{
+The clarification that $S(\mathcal{B})$ is indeed a stonespace in the sense of the above definition will be given by the Stone-Representation theorem.
+
+
+\note{}{
+    Let $\mathcal{B}\models BA$ then 
     \begin{enumerate}
-        \item $\mathcal{B}\models BA$ then $S(B)$ is a Stone-space
-        \item If $S$ is a Stone space then the clopen subsets of $S$ form a boolean algebra denoted by $\mathcal{B}(S)$.
-        \item Every boolean algebra $\mathcal{B}$ is isomorphic to the boolean algebra $\mathcal{B}(S(B))$ with $a\mapsto \langle a\rangle$. Hence $\mathcal{B}$ is isomorphic to a subalgebra of boolean algebra $P(S(B))$
-        \item Every stonespace $S$ is homeomorphic to the stonespace $S(\mathcal{B}(S))$
-        $$x\mapsto \{a\in S(B) : x\in a\}$$
+        \item for a filter $F$ on $\mathcal{B}$ it holds $1\in F$ (by $F\neq \varnothing$ and (F3))
+        \item Any subset $F'\subseteq B$ satisfying (F3) satisfies (F1) iff $F'\neq B$.
+        \item $\langle a\rangle \defeq \{x\in S(\mathcal{B}): a\in x\}$ where $a$ runs through $B$ forms a basis for a topology on the stonespace of $\mathcal{B}$
+    \end{enumerate}
+    Recall: Let $X\neq \varnothing$, $\tau \subseteq \mathcal{P}(X)$ then $(X,\tau)$ is called a topological space, if 
+    \begin{enumerate}[leftmargin=1.5cm]
+        \item[(T1)] $\varnothing, X\in \tau$
+        \item[(T2)] $\forall I \forall (\sigma_i)_i\in \tau^I: \bigcup_{i\in I}(\sigma_i)\in \tau$
+        \item[(T3)] $\forall n\in \NN \forall (\sigma_i)_i\in \tau^\{1,\dots n\}: \bigcup_{1\leq i\leq n}(\sigma_i)\in \tau$
+    \end{enumerate}
+    And $\tau'\subseteq \mathcal{P}(X)$ is called a base for the topology $\tau$ on $X$,
+    if every open set in $\tau$ is the union of sets in $\tau'$.
+
+    Back on $\langle a\rangle = \{x\in S(\mathcal{B}): a\in x\}$. It holds
+    \begin{itemize}
+        \item $\varnothing = \langle 0\rangle $
+        \item $S(\mathcal{B}) = \langle 1\rangle $
+        \item $\langle a\rangle \cap \langle b\rangle  = \langle a\cdot b\rangle $
+    \end{itemize}
+    Every filter on $B$ can be extended to an ultrafilter on $\mathcal{B}$ (Zorn's Lemma).
+
+    In fact, suppose $\mathcal{F}\subseteq B$ has FIP. i.e. for any $n\in\NN$ $\forall f_1,\dots f_n\in \mathcal{F}$ it is $f_1\cdot \dots \cdot f_n \neq 0$. Then $\mathcal{F}$ extends to an ultrafilter on $\mathcal{B}$.
+    (see Exercises)
+}
+
+\thm{Stone Representation Theorem}{
+    \begin{enumerate}[label=(\roman*)]
+        \item If $\mathcal{B}\models BA$, then $S(\mathcal{B})$ is a Stone-space
+        \item If $\mathcal{S}$ is a Stone space then the clopen subsets of $\mathcal{S}$ form a boolean algebra denoted by $B(\mathcal{S})$.
+        \item Every boolean algebra $\mathcal{B}$ is isomorphic to the boolean algebra $B(S(\mathcal{B}))$ with $a\mapsto \langle a\rangle$. Hence $\mathcal{B}$ is isomorphic to a subalgebra of the boolean algebra $\mathcal{P}(S(\mathcal{B}))$ of sets
+        \item Every stonespace $\mathcal{S}$ is homeomorphic to the stonespace $S(B(\mathcal{S}))$
+        $$x\mapsto \{a\in S(\mathcal{B}) : x\in a\}$$
     \end{enumerate}
 }{
     \begin{enumerate}
-        \item We have the base for a topology $\langle a\rangle= \{x\in S(B): a\in x\}$. 
+        \item We have the base for a topology $\langle a\rangle= \{x\in S(\mathcal{B}): a\in x\}$. 
         $\langle a\rangle$ is clopen : It is clearly open.
-        $$\langle a\rangle^c = \overline{\langle a\rangle} = \{x\in S(B): a\notin x\}=\{x\in S(B): \overline{a}\in x\}=  \langle \overline{a}\rangle$$
+        $$\langle a\rangle^c = \overline{\langle a\rangle} = \{x\in S(\mathcal{B}): a\notin x\}=\{x\in S(\mathcal{B}): \overline{a}\in x\}=  \langle \overline{a}\rangle$$
         hausdorff: 
-        Let $x,y\in S(B)$ such that $x\neq y$.
+        Let $x,y\in S(\mathcal{B})$ such that $x\neq y$.
         then $\exists a\in B a\in x\land \overline{a}\in y$ 
 
         then $x\in \langle a\rangle, y\in \langle \overline{a}\rangle$.
@@ -121,7 +116,7 @@ $S(B) \defeq\{\text{the set of all ultrafilters of $\mathcal{B}$} \}$
         Every open cover of $X$ contains a finite subcover if 
         any family of closed sets which has FIP, has non-empty intersection.
 
-        Supposed $(F_i)_{i\in I}$ a family of closed subsets of $S(B)$ such that $I\neq  \varnothing$ and $\bigcap_{i\in I}F_i = \varnothing$. we want to show that there is a finite intersection 
+        Supposed $(F_i)_{i\in I}$ a family of closed subsets of $S(\mathcal{B})$ such that $I\neq  \varnothing$ and $\bigcap_{i\in I}F_i = \varnothing$. we want to show that there is a finite intersection 
         $\exists i_1, \dots i_k\in I \bigcap_{1\leq m\leq k}F_{i_m}$
 
         WMA that $F_i = \langle a_i \rangle$ for some $a_i\in B$.
@@ -238,102 +233,6 @@ Two things we would like to show:
 
 \end{itemize}
 
-
-
-
-\subsection*{From here on are the lecture notes of last year}
-As they are in a diffrent notation than this year I will rephrase them after we have discussed them in the lecture.
-%from here are the lecture notes of last year
-\lemma{}{ Let $(B,',\lor,\land,0,1)$ be a boolean algebra. Then it holds
-    \begin{enumerate}[label=\alph*)]
-        \item $0' = 1$, $1' = 0$
-        \item $x\lor x = x$, $x\land x = x$
-        \item $(x')'= x$
-        \item $(x\lor y)' = x' \land y'$, $(x\land y)' = x' \lor y'$
-        \item $x\lor y = y \text{ iff } x\land y = x$
-    \end{enumerate}
-}{}
-\lemma{}{
-    \begin{enumerate}[label=\alph*)]
-        \item $x\leq y \defaq x\lor y = y$ defines a partial ordering on $B$ (inclusion) and it holds
-        \item $x\lor y$ is the least upper bound of $\{x,y\}$ in $B$\\
-            $x\land y$ is the greatest lower bound of  $\{x,y\}$ in $B$
-        \item $0\leq x\leq 1$ for all $x\in B$
-    \end{enumerate}
-}{}
-\note{}{A boolean algebra is a complemented distributive lattice.}
-\defin{Opposite of boolean algebra}{Let $(B,',\lor,\land,0,1)$ be a boolean algebra. The boolean algebra $B^{\text{op}}$ is defined by
-    $$B^\text{op}\defeq B,\quad 0^\text{op} \defeq 1,\quad 1^\text{op} \defeq 0,\quad' \text{ stayes the same as for} B,\quad\lor^\text{op} \defeq \land,\quad\land^\text{op} \defeq \lor$$
-    Note: $(B^\text{op})^\text{op} = B$
-}
-\defin{Subalgebra}{A \graybf{subalgebra} of $B$ is a subset $A\subseteq B$ s.t. $0,1\in A$ and $A$ is closed under $',\land,\lor$.
-    The subalgebra generated by $P\subseteq B$ is defined to be the smallest subalgebra containing $P$. Equivalently it is the 
-    intersection of all Subalgebras of $B$ that contain $P$.
-}
-\bsp{Power set algebra}{Let $S$ be a set then $\mathcal{P}(S)$ defines a boolean algebra on $S$.
-    $B \defeq \{x\in \mathcal{P}(S): x \text{is finite or cofinite}\}$ is a subalgebra of $\mathcal{P}(S)$
-    w/ set of generators $\{\{s\}:s\in S\}$}
-\note{}{We will prove the Tarski-Stone Theorem: every boolean algebra is isomorphic to an algebra on a set.}
-
-\bsp{Lindenbaum Algebra of $\Sigma$}{
-    Let $A$ be a set of prop. atoms, $\propM(A)$ the set of prop. generated by $A$.
-    Further let $\Sigma \subseteq \propM(A)$ and $p,q,r$ range over $\propM(A)$.\\
-    We say $p$ is $\Sigma$-equivalent to $q$ iff $\Sigma \models_\text{taut} p\leftrightarrow q$
-    $\Sigma$-Equivalence is an equivalent relation on $\propM(A)$ and $\propM(A)/\Sigma$ is a boolean algebra with
-    $$0\defeq \bot/\Sigma,\quad1\defeq \top/\Sigma,\quad(p/\Sigma)' \defeq (\lnot p)/ \Sigma,\quad(p/\Sigma \lor q/ \Sigma)\defeq (p\lor q)/ \Sigma,\quad(p/\Sigma \land q/ \Sigma)\defeq (p\land q)/ \Sigma$$
-    a set of generators is $\{a/\Sigma : a\in A\}$
-}
-\defin{Homomorphisms of boolean algebras}{Let $B,C$ be boolean algebras. A map $\phi: B\to C$ is a (homo)morphism of boolean algebras iff
-    $\forall x,y\in B$ it holds
-    \begin{itemize}
-        \item $\phi(0_B) = 0_C$
-        \item $\phi(x') = \phi(x)'$
-        \item $\phi(x\lor y) = \phi(x)\lor \phi(y)$
-        \item $\phi(x\land y) = \phi(x)\land \phi(y)$
-    \end{itemize}
-    If $\phi:B\to C$ is bijective too , we call $\phi$ an isomorphism and $\phi^{-1}:C\to B$ is also a morphism of boolean algebras.
-}
-\note{}{$\phi(B)$ is subalgebra of $C$}
-\bsp{}{Let $S,T$ be sets then a function $f:S\to T$ induces a morphism of boolean algebras $\mathcal{P}(T)\to \mathcal{P}(S): y\mapsto f^{-1}(y)$
-If $S\subseteq T$ and $f$ the inclusion map $S\hookrightarrow T$ then we get a boolean algebra morphism $Y\to Y\cap S$.\\
-    \begin{itemize*}
-        \item $id_B: B\to B$ \qquad 
-        \item $x\mapsto x': B\to B^{\text{op}}$ are both isomorphism
-    \end{itemize*}
-}
-\note{}{A boolean algebra morphism $\phi: B\to C$ is injective iff $\ker f = 0_B$}
-\lemma{}{\label{boolLemma}
-    Let $X_1,\dots X_m\subseteq S$ and $\mathcal{A}$ a boolean algebra on $S$ generated by $\{X_1,\dots X_m\}$. Then $\mathcal{A}$ 
-    is finite and isomorphic to $\mathcal{P}(\{1,2,\dots n\})$ for some $n\leq 2^m$.
-}{
-    TODO
-}
-\defin{Trivial algebras}{\begin{itemize}
-    \item $B$ is trivial if $|B| = 1$ (equivalently $0=1\in B$) 
-    according to \ref{boolLemma} $B$ is isomorphic to $\mathcal{P}(\varnothing)$
-    \item If $|S|=1$ then $|\mathcal{P}(S)| = 2$ 
-    TODO
-\end{itemize}}
-\defin{Ideal}{An ideal of $B$ is a subset of $I\subseteq B$ s.t.
-    \begin{itemize}
-        \item[(I1)] $0\in I$
-        \item[(I2)] $\forall a,b \in B$ it holds \qquad 
-            $a\leq b$ and $b \in I\implies a\in I$\qquad and \qquad $a,b\in I\implies a\lor b\in I$ 
-    \end{itemize}
-}
-\bsp{}{$F_{\text{in}} = \{F\subseteq S: F \text{ finite}\}$
-    is ideal in $\mathcal{P}(S)$.
-}
-\note{}{If $I$ is an ideal of $B$ then 
-    $I\lor b \defeq \{x\in B: x = a\lor b \text{ for some } a \in I\}$ is the smallest ideal w/ respect of $\subseteq$ of $B$ that contains $I\cup \{b\}$.
-}
-\bsp{}{\begin{itemize}
-\item For a boolean algebra morphism $\phi: B\to C$ the kernel $\ker(\phi)$ is an ideal in $B$.
-\item If $I$ is an ideal in $B$ then $a =_I b \defaq a\lor x = b\lor x$ for some $x\in I$ defines an equivalent relation and
-$B/_{=_I}$ is a boolean algebra w/ 
-$$0\defeq 0/_{=_I}\quad 1\defeq 1/_{=_I}\quad (a/_{=_I})' \defeq a'/_{=_I}\quad a/_{=_I}\lor b/_{=_I} \defeq (a\lor b)/_{=_I}\quad a/_{=_I}\land b/_{=_I} \defeq (a\land b)/_{=_I}$$
-Then $\phi: B\to B/_{=_I}: b\mapsto b/_{=_I}$ is a boolean algebra morphism w/ $\ker(\phi)=I$
-\end{itemize}}
 
 
 

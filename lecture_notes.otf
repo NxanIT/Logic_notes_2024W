@@ -33,7 +33,6 @@
 \contentsline {section}{$\exists $ quantifier}{12}{excount.2.5}%
 \contentsline {section}{bounded variable}{12}{excount.2.5}%
 \contentsline {section}{sentence}{12}{Item.49}%
-\contentsline {section}{structures}{13}{section.2.2}%
 \contentsline {section}{structure}{13}{defcount.2.7}%
 \contentsline {section}{interpretation}{13}{defcount.2.7}%
 \contentsline {section}{assigment}{13}{defcount.2.8}%
@@ -46,15 +45,21 @@
 \contentsline {section}{$\simeq $}{34}{defcount.3.7}%
 \contentsline {section}{RCF}{37}{defcount.3.15}%
 \contentsline {section}{\color {black}\textbf {Chapter 4}}{43}{chapter.4}%
-\contentsline {section}{Ultrafilter}{44}{defcount.4.3}%
-\contentsline {section}{$S(B)$}{44}{defcount.4.3}%
-\contentsline {section}{\color {black}\textbf {Chapter 5}}{49}{chapter.5}%
-\contentsline {section}{$\Ord $}{52}{defcount.5.20}%
-\contentsline {section}{$\On $}{52}{defcount.5.20}%
-\contentsline {section}{successor ordinal}{56}{defcount.5.25}%
-\contentsline {section}{limit ordinal}{56}{defcount.5.25}%
-\contentsline {section}{disjoint union}{56}{excount.5.6}%
-\contentsline {section}{successor cardinals}{59}{defcount.5.33}%
-\contentsline {section}{limit cardinals}{59}{defcount.5.33}%
-\contentsline {section}{\color {black}\textbf {Chapter 6}}{65}{chapter.6}%
-\contentsline {section}{\color {black}\textbf {Chapter 6}}{69}{chapter*.8}%
+\contentsline {section}{lattice}{43}{chapter.4}%
+\contentsline {section}{Ultrafilter}{43}{defcount.4.1}%
+\contentsline {section}{$S(\mathcal {B})$}{44}{Item.159}%
+\contentsline {section}{\color {black}\textbf {Chapter 5}}{47}{chapter.5}%
+\contentsline {section}{$\Ord $}{50}{defcount.5.20}%
+\contentsline {section}{$\On $}{50}{defcount.5.20}%
+\contentsline {section}{successor ordinal}{54}{defcount.5.25}%
+\contentsline {section}{limit ordinal}{54}{defcount.5.25}%
+\contentsline {section}{disjoint union}{54}{excount.5.6}%
+\contentsline {section}{successor cardinals}{57}{defcount.5.33}%
+\contentsline {section}{limit cardinals}{57}{defcount.5.33}%
+\contentsline {section}{\color {black}\textbf {Chapter A}}{63}{appendix.A}%
+\contentsline {section}{lattice}{63}{defcount.A.1}%
+\contentsline {subsection}{distributive}{63}{defcount.A.1}%
+\contentsline {subsection}{bounded}{63}{defcount.A.1}%
+\contentsline {subsection}{complemented}{63}{defcount.A.1}%
+\contentsline {section}{\color {black}\textbf {Chapter B}}{66}{appendix.B}%
+\contentsline {section}{\color {black}\textbf {Chapter B}}{70}{appendix*.8}%

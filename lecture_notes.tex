@@ -48,6 +48,8 @@
 \newcommand{\addAbbrev}[2]{
     \addcontentsline{abf}{section}{#1 \hspace{1em} - \hspace{1em} #2}
 }
+
+\newcommand{\version}{0.7.0}
 \newif\ifPrintTwosided
 %\PrintTwosidedtrue
 \ifPrintTwosided
@@ -59,7 +61,7 @@
     bottom=15mm,
     top=20mm,
     marginparwidth = 30mm,
-    marginparsep = 6mm
+    marginparsep = 8mm
 }
 \else 
 \geometry{
@@ -69,12 +71,12 @@
     bottom=15mm,
     top=20mm,
     marginparwidth = 30mm,
-    marginparsep = 6mm
+    marginparsep = 8mm
 }
 \fi
 
 \titleformat{\chapter}[display]{\bfseries\Large} % format
-{\fontfamily{phv}\selectfont\scshape Chapter \thechapter} % label
+{\vspace{-1cm}\fontfamily{phv}\selectfont\scshape Chapter \thechapter} % label
 {1ex} % sep
 {   \fontfamily{phv}\selectfont
     \bfseries\huge\centering
@@ -88,7 +90,7 @@
 
 \titleformat{\section}[display]{\Large} % format
 {} % label
-{-0.2cm} % sep
+{-0.4cm} % sep
 {   
     \fontfamily{phv}\selectfont \scshape\thesection\quad
 } % before-code
@@ -112,6 +114,7 @@
 \newcommand{\graybf}[1]{\color{darkgray}\textbf{#1\hspace{4px}}\color{black}}
 \newcommand{\bigemph}[1]{\fontfamily{qag}\selectfont\color{darkgray}\textbf{#1 }\color{black}\normalfont}
 \newcommand{\imp}[1]{\textbf{#1}\outernote{#1}\hspace{-3px}}
+\newcommand{\subimp}[1]{\underline{\smash{#1}}\subouternote{#1}\hspace{-3px}}%the smash is for a closer underline
 
 \newcommand{\defeq}{\vcentcolon=} 
 \newcommand{\eqdef}{=\vcentcolon}
@@ -179,6 +182,12 @@
     \hspace{-6px}
 }
 
+\newcommand{\subouternote}[1]{
+    \marginpar[\raggedleft #1]{\raggedright #1}%\marginpar[\raggedright #1]{\raggedleft #1}%
+    \addcontentsline{otf}{subsection}{#1}
+    \hspace{-6px}
+}
+
 %\newtheorem{notes}[]{Bemerkung}
 \newcommand{\note}[2]{
     \ifSimplifiedVersion
@@ -196,7 +205,8 @@
 }
 
 \newcounter{propcount}[section]
-\renewcommand{\thepropcount}{\arabic{section}.\arabic{propcount}}
+\renewcommand{\thepropcount}{\theHchapter.\arabic{section}.\arabic{propcount}}
+
 \theoremstyle{plain}
 \newtheorem{propo}[propcount]{Proposition}
 \newcommand{\prop}[3]{
@@ -335,7 +345,7 @@
     \fancyhead[LE]{\small\leftmark}
     \fancyhead[LO,RE]{Logic Lecture Notes 2024W}
     \fancyfoot[C]{}
-    \fancyfoot[LO,RE]{\fontfamily{cmtt}\small\color{gray}J.Petermann: LogicNotes [V0.6.2-\today{ }at \DTMcurrenttime] }% old: \href[]{https://creativecommons.org/licenses/by-nc-nd/3.0/de/}{\color{gray}CC BY-NC-ND 3.0 DE}
+    \fancyfoot[LO,RE]{\fontfamily{cmtt}\small\color{gray}J.Petermann: LogicNotes [V\version-\today{ }at \DTMcurrenttime] }% old: \href[]{https://creativecommons.org/licenses/by-nc-nd/3.0/de/}{\color{gray}CC BY-NC-ND 3.0 DE}
     \fancyfoot[LE,RO]{Seite \thepage \hspace{3pt}von \pageref*{LastPage}}
 }
 \fancypagestyle{one_sided}{
@@ -356,15 +366,17 @@
         % \end{tikzpicture}
     }
     \fancyfoot[C]{}
-    \fancyfoot[L]{\fontfamily{cmtt}\small\color{gray}J.Petermann: LogicNotes [V0.6.3-\today{ }at \DTMcurrenttime] }% old: \href[]{https://creativecommons.org/licenses/by-nc-nd/3.0/de/}{\color{gray}CC BY-NC-ND 3.0 DE}
+    \fancyfoot[L]{\fontfamily{cmtt}\small\color{gray}J.Petermann: LogicNotes [V\version-\today{ }at \DTMcurrenttime] }% old: \href[]{https://creativecommons.org/licenses/by-nc-nd/3.0/de/}{\color{gray}CC BY-NC-ND 3.0 DE}
     \fancyfoot[R]{Seite \thepage \hspace{3pt}von \pageref*{LastPage}}
 }
 \fancypagestyle{one_sided_outer}[one_sided]{
     \fancyhead[R]{
-        \small\rightmark
+        \small\rightmark%(current page.north east)
         \begin{tikzpicture}[overlay,remember picture]
-            \fill [color=lightgray](current page.north east) rectangle
-                ($ (current page.south east) + (-4.2cm,0cm) $);
+            \fill [color=lightgray]
+            ($ (current page.north east) + (-4.2cm,-1cm) $)
+            rectangle
+            ($ (current page.south east) + (-4.cm,+1cm) $);
         \end{tikzpicture}
     }
     
@@ -413,14 +425,7 @@
 \input{ModelTheory.tex}
 \input{BooleanAlgebra.tex}
 \input{SetTheory.tex}
-
-\chapter{Outernotes, Abbreviations, Overview}
-\begin{multicols}{3}
-    \listofouternotes
-\end{multicols}
-\begin{multicols}{2}
-    \listofabbreviations%\printglossary[type=\acronymtype]
-\end{multicols}
+\input{Addidtional.tex}
 \newpage
 \newgeometry{
     outer=15mm,
@@ -433,6 +438,16 @@
 \else
 \pagestyle{one_sided}
 \fi
+
+\chapter{Outernotes, Abbreviations, Overview}
+\begin{multicols}{3}
+    \listofouternotes
+\end{multicols}
+\begin{multicols}{2}
+    \listofabbreviations%\printglossary[type=\acronymtype]
+\end{multicols}
+\newpage
+
 \begin{multicols}{2}
     \listofdefinitions
     \listoftheorems

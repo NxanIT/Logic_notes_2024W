@@ -1,7 +1,8 @@
 \chapter{Model Theory}
 The sections \ref{mt:sec:LST} to \ref{MT:sec:NSA} are sourced from \cite[chapter~2]{EndertonHerbertB2001AMIt} and and the theory of o-minimality (from \ref{MT:sec:o-min} onwards) can be found in \cite{van1998tame}.
-\section{Löwenheim-Skolem-Theorem}\label{mt:sec:LST}
-\thm{LST}{Let $\Gamma$ be a set of $\mathcal{L}$-formulas. $|\mathcal{L}| = \lambda$ and lets assume 
+\section{LST-Theorem}\label{mt:sec:LST}
+LST stands for Löwenheim-Skolem-Tarski and is the combination of the ``upward Löwenheim-Skolem theorem'' with the ``downward Löwenheim-Skolem theorem''.
+\thm{LST-Theorem}{Let $\Gamma$ be a set of $\mathcal{L}$-formulas. $|\mathcal{L}| = \lambda$ and lets assume 
     $\Gamma$ is satisfiable in some infinite structure.\\
     Then for every cardinal $\kappa\geq \lambda$, $\Gamma$ is satisfiable in a structure of cardinality $\kappa$.
 }{ %2024-12-13: TODO check proof
@@ -16,12 +17,12 @@ The sections \ref{mt:sec:LST} to \ref{MT:sec:NSA} are sourced from \cite[chapter
     We have $\mathcal{A}\models \Gamma \cup \Sigma$ then $|\mathcal{A}|\geq \kappa$.
 
     By the proof of completeness theorem, $\Gamma\cup \Sigma$ has a model of size $\leq \kappa$.
-    Hence it is exactly of size $\kappa$. Take reduct TODO
+    Hence it is exactly of size $\kappa$. Take the reduct of $\mathcal{A}$ to the language $\mathcal{L}$.%TODO: define reduct
 }
-\bsp{}{Language of ZFC $\mathcal{L} = \{\in\}$ is countable. Löwenheim-Skolem guaranties that ZFC has a countable model.
-    called skolems paradox. 
-    ZFC knows that there are uncountable sets.
-    explanation: some bijections are missing 
+\bsp{}{The language of ZFC $\mathcal{L} = \{\in\}$ is countable, so Löwenheim-Skolem guaranties that ZFC has a countable model.
+But ZFC knows that there are uncountable sets (see Cantors Theorem \ref{5:Thm:Cantor}).
+This is called skolems paradox.
+explanation: some bijections are missing
 }
 \bsp{}{\label{ComplNotImplyCath}\begin{enumerate}
     \item $\overline{\RR}$ real field. $\Thm(\overline{\RR})$ has a countable model. $\RR_\text{alg}$

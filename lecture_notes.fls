@@ -1544,6 +1544,11 @@ INPUT .\SetTheory.tex
 INPUT SetTheory.tex
 INPUT .\SetTheory.tex
 INPUT SetTheory.tex
+INPUT .\Addidtional.tex
+INPUT Addidtional.tex
+INPUT .\Addidtional.tex
+INPUT Addidtional.tex
+INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt8.tfm
 INPUT .\lecture_notes.otf
 INPUT lecture_notes.otf
 INPUT lecture_notes.otf
@@ -1611,6 +1616,8 @@ INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm
 INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti7.pfb
 INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt10.pfb
 INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt10.pfb
+INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt8.pfb
+INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt8.pfb
 INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt9.pfb
 INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt9.pfb
 INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msam10.pfb
