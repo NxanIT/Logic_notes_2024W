@@ -45,23 +45,38 @@ An \imp{Ultrafilter}of $\mathcal{B}$ is a filter $\mathcal{F}$ that satisfies
 \begin{itemize}[leftmargin=1.5cm]
     \item[(UF)]$\forall a\in B a\in \mathcal{F} \lor \overline{a}\in \mathcal{F}$.
 \end{itemize}
-
 }
+The congruence with filters defined in functional analisis seems unambiguous, 
+however the one key difference
+here is that a filter on $\mathcal{B}$ is a subset of $B$. If $\mathcal{B}$ is a boolean algebra of 
+the set $X$ then a filter in our definition would coincide with a filter on the maximal element $X$.
+
+Recall: Let $X\neq \varnothing$, $\tau \subseteq \mathcal{P}(X)$ then $(X,\tau)$ is called a topological space, if 
+    \begin{enumerate}[leftmargin=1.5cm]
+        \item[(T1)] $\varnothing, X\in \tau$
+        \item[(T2)] $\forall I \forall (\sigma_i)_i\in \tau^I: \bigcup_{i\in I}(\sigma_i)\in \tau$
+        \item[(T3)] $\forall n\in \NN \forall (\sigma_i)_i\in \tau^\{1,\dots n\}: \bigcup_{1\leq i\leq n}(\sigma_i)\in \tau$
+    \end{enumerate}
+    And $\tau'\subseteq \mathcal{P}(X)$ is called a base for the topology $\tau$ on $X$,
+    if every open set in $\tau$ is the union of sets in $\tau'$.
 \defin{Stone space}{
-    A stone space is a non-empty topological space which 
+    A stone space is a non-empty topological space $(X,\tau)$ which 
     \begin{enumerate}
-        \item has a basis of clopen sets
+        \item has a basis $\sigma \subseteq \tau$ (for the topology) of clopen sets
+        \[\begin{matrix*}[l]
+            \forall V \in \sigma \: X\setminus V \in \tau & \text{(clopen)}\\[3px]
+            \forall U \in \tau \forall x\in U \exists V\in \sigma \: x\in V\subseteq U & \text{(basis)}
+        \end{matrix*}\]
         \item is compact (every open cover contains a finite subcover)
         \item and hausdorff (every two distinct points can be seperated by open sets) 
-        \[\forall x \forall y x\neq y \to \exists \sigma_x\exists \sigma_y x\in \sigma_x \land y\in \sigma_y\land \sigma_x\cap \sigma_y= \varnothing\]
+        \[\forall x, y\in X\: x\neq y \to \exists U_x,U_y\in \tau \: x\in U_x \land y\in U_y\land U_x\cap U_y= \varnothing\]
     \end{enumerate}
 
     Let $\mathcal{B}$ be a boolean algebra. We define 
     $S(\mathcal{B}) \defeq\{\text{the set of all ultrafilters on $\mathcal{B}$}\}$
-    to be the stonespace of $\mathcal{B}$.\outernote{$S(\mathcal{B})$}
+    and call it the stonespace of $\mathcal{B}$.\outernote{$S(\mathcal{B})$}
 }
 The clarification that $S(\mathcal{B})$ is indeed a stonespace in the sense of the above definition will be given by the Stone-Representation theorem.
-
 
 \note{}{
     Let $\mathcal{B}\models BA$ then 
@@ -70,26 +85,17 @@ The clarification that $S(\mathcal{B})$ is indeed a stonespace in the sense of t
         \item Any subset $F'\subseteq B$ satisfying (F3) satisfies (F1) iff $F'\neq B$.
         \item $\langle a\rangle \defeq \{x\in S(\mathcal{B}): a\in x\}$ where $a$ runs through $B$ forms a basis for a topology on the stonespace of $\mathcal{B}$
     \end{enumerate}
-    Recall: Let $X\neq \varnothing$, $\tau \subseteq \mathcal{P}(X)$ then $(X,\tau)$ is called a topological space, if 
-    \begin{enumerate}[leftmargin=1.5cm]
-        \item[(T1)] $\varnothing, X\in \tau$
-        \item[(T2)] $\forall I \forall (\sigma_i)_i\in \tau^I: \bigcup_{i\in I}(\sigma_i)\in \tau$
-        \item[(T3)] $\forall n\in \NN \forall (\sigma_i)_i\in \tau^\{1,\dots n\}: \bigcup_{1\leq i\leq n}(\sigma_i)\in \tau$
-    \end{enumerate}
-    And $\tau'\subseteq \mathcal{P}(X)$ is called a base for the topology $\tau$ on $X$,
-    if every open set in $\tau$ is the union of sets in $\tau'$.
-
-    Back on $\langle a\rangle = \{x\in S(\mathcal{B}): a\in x\}$. It holds
-    \begin{itemize}
-        \item $\varnothing = \langle 0\rangle $
-        \item $S(\mathcal{B}) = \langle 1\rangle $
-        \item $\langle a\rangle \cap \langle b\rangle  = \langle a\cdot b\rangle $
-    \end{itemize}
-    Every filter on $B$ can be extended to an ultrafilter on $\mathcal{B}$ (Zorn's Lemma).
-
-    In fact, suppose $\mathcal{F}\subseteq B$ has FIP. i.e. for any $n\in\NN$ $\forall f_1,\dots f_n\in \mathcal{F}$ it is $f_1\cdot \dots \cdot f_n \neq 0$. Then $\mathcal{F}$ extends to an ultrafilter on $\mathcal{B}$.
-    (see Exercises)
 }
+Back on $\langle a\rangle = \{x\in S(\mathcal{B}): a\in x\}$. It holds
+\begin{itemize}
+    \item $\varnothing = \langle 0\rangle $
+    \item $S(\mathcal{B}) = \langle 1\rangle $
+    \item $\langle a\rangle \cap \langle b\rangle  = \langle a\cdot b\rangle $
+\end{itemize}
+Every filter on $B$ can be extended to an ultrafilter on $\mathcal{B}$ (Zorn's Lemma).
+
+In fact, suppose $\mathcal{F}\subseteq B$ has (FIP). i.e. for any $n\in\NN$ $\forall f_1,\dots f_n\in \mathcal{F}$ it is $f_1\cdot \dots \cdot f_n \neq 0$. Then $\mathcal{F}$ extends to an ultrafilter on $\mathcal{B}$.
+(see Exercises)
 
 \thm{Stone Representation Theorem}{
     \begin{enumerate}[label=(\roman*)]
@@ -100,7 +106,7 @@ The clarification that $S(\mathcal{B})$ is indeed a stonespace in the sense of t
         $$x\mapsto \{a\in S(\mathcal{B}) : x\in a\}$$
     \end{enumerate}
 }{
-    \begin{enumerate}
+    \begin{enumerate}[label=(\roman*)]
         \item We have the base for a topology $\langle a\rangle= \{x\in S(\mathcal{B}): a\in x\}$. 
         $\langle a\rangle$ is clopen : It is clearly open.
         $$\langle a\rangle^c = \overline{\langle a\rangle} = \{x\in S(\mathcal{B}): a\notin x\}=\{x\in S(\mathcal{B}): \overline{a}\in x\}=  \langle \overline{a}\rangle$$
@@ -111,27 +117,27 @@ The clarification that $S(\mathcal{B})$ is indeed a stonespace in the sense of t
         then $x\in \langle a\rangle, y\in \langle \overline{a}\rangle$.
 
         compact:
-        Fact $X$ is topological space then $T_{\text{FAE}}$ 
+        we use the fact: If $X$ is a topological space then 
 
-        Every open cover of $X$ contains a finite subcover if 
-        any family of closed sets which has FIP, has non-empty intersection.
+        Every open cover of $X$ contains a finite subcover iff 
+        any family of closed sets which has (FIP), has non-empty intersection.
 
-        Supposed $(F_i)_{i\in I}$ a family of closed subsets of $S(\mathcal{B})$ such that $I\neq  \varnothing$ and $\bigcap_{i\in I}F_i = \varnothing$. we want to show that there is a finite intersection 
-        $\exists i_1, \dots i_k\in I \bigcap_{1\leq m\leq k}F_{i_m}$
+        Supposed $(F_i)_{i\in I}$ a family of closed subsets of $S(\mathcal{B})$ such that $I\neq  \varnothing$ and $\bigcap_{i\in I}F_i = \varnothing$. we want to show that there is a finite intersection which is empty, i.e. $\exists i_1, \dots i_k\in I \bigcap_{1\leq m\leq k}F_{i_m}$
+        such that $(F_i)_{i\in I}$ can not have (FIP).
 
         WMA that $F_i = \langle a_i \rangle$ for some $a_i\in B$.
         Assume $\bigcap_{i\in I}\langle a_i\rangle = \varnothing$.
        
-        If $a_i\cdot \dots \cdot_{i_k} \neq 0$ For all $\{i_1,\dots i_k\}\subseteq I$ Then $\{a_i : i\in I\}\subseteq B$ has FIP, so it extends to an ultrafilter on $\mathcal{B}$ (using Zorns lemma).
+        If $a_i\cdot \dots \cdot_{i_k} \neq 0$ For all $\{i_1,\dots i_k\}\subseteq I$ Then $\{a_i : i\in I\}\subseteq B$ has (FIP), so it extends to an ultrafilter on $\mathcal{B}$ (using Zorns lemma).
         \begin{multicols}{2}
             $X$ set, a filter / ultrafilter on $X$ is some $\mathcal{F}\subseteq \mathcal{P}(X)$ s.th.
-            If $\mathcal{F}$ has FIP then $\mathcal{F}$ extends to UF
+            If $\mathcal{F}$ has (FIP) then $\mathcal{F}$ extends to UF
         
             $\mathcal{B}$ boolean algebra, then a filter / ultrafilter of $\mathcal{B}$ is a subset $\mathcal{F}\subseteq B$ s.th.
-            If $\mathcal{F}\subseteq B$ has FIP, then $\mathcal{F}$ extends to UF $\mathcal{U}$ of $\mathcal{B}$
+            If $\mathcal{F}\subseteq B$ has (FIP), then $\mathcal{F}$ extends to UF $\mathcal{U}$ of $\mathcal{B}$
             i.e. $\forall i\in I a_i\in \mathcal{U}$ so $\mathcal{U}\in \bigcap_{i\in I}F_i $ but we assumed $\bigcap_{i\in I}\langle a_i\rangle = \varnothing$
         \end{multicols}
-        So there exists some $i_1\dots i_k$ such that $\bigcap_{1\leq j\leq k}\langle a_{i_j}\rangle =\varnothing$
+        So there exists some $i_1\dots i_k$ such that $\bigcap_{1\leq j\leq k}\langle a_{i_j}\rangle =\varnothing$ and 
     \end{enumerate}
 }
 \defin{Atomic, Atomless}{An atom is an element of a boolean algebra such that $a\neq 0$ and there is no element in the boolean algebra that is strictly inbetween $0$ and $a$.
@@ -225,7 +231,7 @@ Two things we would like to show:
         \[\implies \forall I'\stackrel{\text{ fin }}{\subseteq} I \bigcap_{i\in I'} \langle\varphi_i\rangle\cap \langle\lnot \varphi\rangle \neq \varnothing\]
 
         \[\{\langle\varphi_i\rangle : i\in I\}\cup \{ \langle\lnot \varphi\rangle \}\]
-        is a collection of closed sets with FIP.
+        is a collection of closed sets with (FIP).
         By using compactness of $S_L$ with stone topology,
         \[\bigcap_{i\in I} \langle\varphi_i\rangle\cap \langle\lnot \varphi\rangle \neq \varnothing\]
         hence $\Gamma \not\models \varphi$.

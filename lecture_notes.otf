@@ -27,7 +27,7 @@
 \contentsline {section}{logical symbols}{11}{Item.40}%
 \contentsline {section}{parameters}{11}{Item.41}%
 \contentsline {section}{expression}{12}{defcount.2.2}%
-\contentsline {section}{Term}{12}{defcount.2.3}%
+\contentsline {section}{$\TERMS $}{12}{defcount.2.3}%
 \contentsline {section}{atomic formula}{12}{defcount.2.4}%
 \contentsline {section}{formula}{12}{defcount.2.5}%
 \contentsline {section}{$\exists $ quantifier}{12}{excount.2.5}%
@@ -38,28 +38,29 @@
 \contentsline {section}{assigment}{13}{defcount.2.8}%
 \contentsline {section}{$\models _\mathcal {A}$}{14}{defcount.2.9}%
 \contentsline {section}{definable by points}{16}{defcount.2.14}%
+\contentsline {section}{into}{17}{defcount.2.17}%
 \contentsline {section}{onto}{17}{defcount.2.17}%
 \contentsline {section}{isomorphic}{17}{defcount.2.17}%
-\contentsline {section}{MP}{20}{defcount.2.25}%
-\contentsline {section}{\color {black}\textbf {Chapter 3}}{30}{chapter.3}%
-\contentsline {section}{$\simeq $}{34}{defcount.3.7}%
-\contentsline {section}{RCF}{37}{defcount.3.15}%
-\contentsline {section}{\color {black}\textbf {Chapter 4}}{43}{chapter.4}%
-\contentsline {section}{lattice}{43}{chapter.4}%
-\contentsline {section}{Ultrafilter}{43}{defcount.4.1}%
-\contentsline {section}{$S(\mathcal {B})$}{44}{Item.159}%
-\contentsline {section}{\color {black}\textbf {Chapter 5}}{47}{chapter.5}%
-\contentsline {section}{$\Ord $}{50}{defcount.5.20}%
-\contentsline {section}{$\On $}{50}{defcount.5.20}%
-\contentsline {section}{successor ordinal}{54}{defcount.5.25}%
-\contentsline {section}{limit ordinal}{54}{defcount.5.25}%
-\contentsline {section}{disjoint union}{54}{excount.5.6}%
-\contentsline {section}{successor cardinals}{57}{defcount.5.33}%
-\contentsline {section}{limit cardinals}{57}{defcount.5.33}%
-\contentsline {section}{\color {black}\textbf {Chapter A}}{63}{appendix.A}%
-\contentsline {section}{lattice}{63}{defcount.A.1}%
-\contentsline {subsection}{distributive}{63}{defcount.A.1}%
-\contentsline {subsection}{bounded}{63}{defcount.A.1}%
-\contentsline {subsection}{complemented}{63}{defcount.A.1}%
-\contentsline {section}{\color {black}\textbf {Chapter B}}{66}{appendix.B}%
-\contentsline {section}{\color {black}\textbf {Chapter B}}{70}{appendix*.8}%
+\contentsline {section}{MP}{20}{defcount.2.24}%
+\contentsline {section}{\color {black}\textbf {Chapter 3}}{31}{chapter.3}%
+\contentsline {section}{$\simeq $}{35}{defcount.3.7}%
+\contentsline {section}{RCF}{38}{defcount.3.15}%
+\contentsline {section}{\color {black}\textbf {Chapter 4}}{44}{chapter.4}%
+\contentsline {section}{lattice}{44}{chapter.4}%
+\contentsline {section}{Ultrafilter}{44}{defcount.4.1}%
+\contentsline {section}{$S(\mathcal {B})$}{45}{Item.161}%
+\contentsline {section}{\color {black}\textbf {Chapter 5}}{48}{chapter.5}%
+\contentsline {section}{$\Ord $}{51}{defcount.5.20}%
+\contentsline {section}{$\On $}{51}{defcount.5.20}%
+\contentsline {section}{successor ordinal}{55}{defcount.5.25}%
+\contentsline {section}{limit ordinal}{55}{defcount.5.25}%
+\contentsline {section}{disjoint union}{55}{excount.5.6}%
+\contentsline {section}{successor cardinals}{58}{defcount.5.33}%
+\contentsline {section}{limit cardinals}{58}{defcount.5.33}%
+\contentsline {section}{\color {black}\textbf {Chapter A}}{65}{appendix.A}%
+\contentsline {section}{lattice}{65}{defcount.A.1}%
+\contentsline {subsection}{distributive}{65}{defcount.A.1}%
+\contentsline {subsection}{bounded}{65}{defcount.A.1}%
+\contentsline {subsection}{complemented}{65}{defcount.A.1}%
+\contentsline {section}{\color {black}\textbf {Chapter B}}{68}{appendix.B}%
+\contentsline {section}{\color {black}\textbf {Chapter B}}{72}{appendix*.8}%

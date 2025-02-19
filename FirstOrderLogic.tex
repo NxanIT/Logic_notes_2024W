@@ -63,11 +63,12 @@ The definitions, lemmata, propositions and theorems as well as the notes in this
             \item atomic formulas these are built up from terms using predicate symbols and $=$, if included
         \end{itemize}
     \end{itemize}
+    The set of all expressions is denoted by $\EXPR$.
 }
 \defin{Term Building Operations}{
     For every $n>0$ and for every $n$-place function symbol $f$, let $\mathcal{F}_f$ be an $n$-place term building operation,
     that is $\mathcal{F}_f (t_1,\dots t_n)\defeq ft_1\dots t_n$ (polish notation for $f(t_1,\dots t_n)$).
-    \imp{Term}, the set of terms is defined as the set of expressions that are built up from variables and constants by applying the term building operations
+    \imp{$\TERMS$}, the set of all terms is defined as the set of expressions that are built up from variables and constants by applying the term building operations
     finitely many times.
 }
 \bsp{}{Let $\mathcal{L} = \mathcal{L}_{arith}$, the set of terms will contain $0$, $v_{42}$, $S0$, $SSS0$, $Sv_1$, $+SOv_1$}
@@ -96,7 +97,7 @@ The definitions, lemmata, propositions and theorems as well as the notes in this
         \item If $\varphi$ is an atomic fla. then $x$ occurs \graybf{free} in $\varphi$ iff $x$ occurs in $\varphi$
         \item If $\varphi \equiv (\lnot \alpha)$ then $x$ occurs free in $\varphi$ iff $x$ occurs free in $\alpha$
         \item If $\varphi \equiv (\alpha \to \beta)$ then $x$ occurs free in $\varphi$ iff $x$ occurs free in $\alpha$ or $\beta$
-        \item If $\varphi \equiv \forall v_i \alpha$ then $x$ occurs free in $\varphi$ iff $x$ occurs free in $\alpha$ and $x\lnot v_i$
+        \item If $\varphi \equiv \forall v_i \alpha$ then $x$ occurs free in $\varphi$ iff $x$ occurs free in $\alpha$ and $x\neq v_i$
     \end{enumerate}
     A formula $\alpha$ is called a \imp{sentence}, if no variable occurs free in $\alpha$
 }
@@ -151,7 +152,7 @@ which also determine the scope of the quantifier $\forall$, the meaning of all p
 \defin{Satisfy}{ We define '$\mathcal{A}$ satisfies $\varphi$ with $s$' and write
     $\mathcal{A}\models \varphi \:[s]$\outernote{$\models_\mathcal{A}$}\\
     or $\models_\mathcal{A} \varphi \:[s]$, if (inductively over the complexity of the formula $\varphi$)
-    \begin{enumerate}
+    \begin{enumerate}[label=(\roman*)]
         \item if $\varphi$ is atomic: \begin{itemize}
             \item $\mathcal{A} \models\: = t_1,t_2 \: [s]$ iff $ \overline{s}(t_1) = \overline{s}(t_2)$
             \item $\mathcal{A} \models P t_1,\dots t_n \: [s]$ iff $(\overline{s}(t_1),\dots \overline{s}(t_2))\in P^\mathcal{A}$
@@ -160,22 +161,20 @@ which also determine the scope of the quantifier $\forall$, the meaning of all p
         \begin{itemize}
             \item $\mathcal{A}\models \lnot\varphi \: [s]$ iff $\mathcal{A}\not\models \varphi \: [s]$
             \item $\mathcal{A}\models \varphi\to \psi \: [s]$ iff $\mathcal{A}\models \psi \: [s]$ or $\mathcal{A}\not\models  \varphi \: [s]$
-            \item $\mathcal{A}\models \forall x \varphi \: [s]$ iff for all $a\in A$ $\mathcal{A}\models \varphi [s(x| a)]$
-            where 
+            \item $\mathcal{A}\models \forall x \varphi \: [s]$ iff for all $a\in A$ we have $\mathcal{A} \models \varphi [s(x| a)]$, where 
             \begin{equation*}
                 s(x|a)(v) \defeq \begin{cases}
                 s(v) \text{ if } v \neq x\\
                 a \text{ if } v = x
             \end{cases}
             \end{equation*}
-            
         \end{itemize}
     \end{enumerate}
 }
 \bsp{}{
-    $\mathcal{L} = \{\forall, \leq, S, 0\}$ 
-    an example of an $\mathcal{L}$-structure $\mathcal{N} = (\NN,\leq^\mathcal{N},S^\mathcal{N},0^\mathcal{N})$. Together with a specified assignment
-    $s: v_n \mapsto n-1$ 
+    Let $\mathcal{L} = \{\forall, \leq, S, 0\}$ be our language.
+    An example of an $\mathcal{L}$-structure is $\mathcal{N} = (\NN,\leq^\mathcal{N},S^\mathcal{N},0^\mathcal{N})$. Together with a specified assignment
+    $s: v_n \mapsto n-1$ we can analyse 
     \begin{itemize}
         \item $s(v_1) = 0$
         \item $\overline{s}(0) = 0^\mathcal{N}$ (a constant is always mapped to its realisation, the interpretation of constant $0$ in the structure $\mathcal{N}$)
@@ -345,10 +344,11 @@ Until now, we have no notion that tells us when two graphs are the same or at le
 \note{}{Intuativly a Homomorphism of $\mathcal{A}$ into $\mathcal{B}$ is a map $A \to B$ that preserve all funciton and relation symbols in some sense, (in general however not the definable relations)}
 \defin{Isomorphism}{
     \begin{itemize}
-        \item $h:A\to B$  is called isomorphism of $\mathcal{A}$ into $\mathcal{B}$ if $h$ is a homomorphism and injective (in other textbooks: an isomorphic embedding of $\mathcal{A}$ into $\mathcal{B}$)
-        \item $h:A\to B$  is called isomorphism of $\mathcal{A}$ onto $\mathcal{B}$,\outernote{onto}if \\
+        \item $h:A\to B$ is called isomorphism of $\mathcal{A}$ \imp{into} $\mathcal{B}$ if $h$ is an injective homomorphism $A\to B$ \\
+        (in other textbooks it may be called an isomorphic embedding of $\mathcal{A}$ into $\mathcal{B}$)
+        \item $h:A\to B$ is called isomorphism of $\mathcal{A}$ \imp{onto} $\mathcal{B}$, if \\
         $h$ is a bijective homomorphism $A\to B$
-        \item $\mathcal{A}$\outernote{isomorphic}and $\mathcal{B}$ are called isomorphic if there is an isomorphism of $\mathcal{A}$ onto $\mathcal{B}$
+        \item $\mathcal{A}$\outernote{isomorphic}and $\mathcal{B}$ are called isomorphic if there exists an isomorphism $h:A\to B$ of $\mathcal{A}$ onto $\mathcal{B}$
     \end{itemize}
 }
 \note{}{
@@ -473,14 +473,24 @@ The answer will be given by the so called Homomorphism theorem.
 }
 \section{Unique readability for terms}
 \defin{}{
-    We define $K$ on symbols from which terms are built up (variables, constants, function symbols).
-    $K(s) = 1-n$ where $s$ is a symbol and $n$ is the number of terms that need to follow s in order to obtain a term.
-    $K(x) = 1 = K(c)$ and $K(f) = 1-n$ where f is an $n$-ary funciton symbol
-    We now extend $K$ to the set of all expressions which are built up from above symbols (variables, constants, function symbols):
-    $K(s_1,\dots s_n) = K(s_1) + \dots + K(s_n)$ (unique because no symbol is a finite sequence of other symbols)
+    We define a function $K: \TERMSYMB\to \ZZ$ on the set $\TERMSYMB$ of symbols from which terms are built up (variables, constants, function symbols).
+    $$\TERMSYMB = \VARIAB \cup \CONST \cup \FUNCT$$
+    $K(s) \defeq 1-n$ where $s\in \TERMSYMB$ and $n$ is the number of terms that need to follow s in order to obtain a term.
+    More precicely
+    \begin{enumerate}[label=(\roman*)]
+        \item $K(x) \defeq 1$ for $x\in \VARIAB$ 
+        \item $ K(c)\defeq 1$ for $c\in \CONST$
+        \item and $K(f) = 1-n$ for $f\in \FUNCT$, where $n$ is the arity of the function symbol $f$.
+    \end{enumerate}
+    
+    $K$ extends to a function on the set $\overline{\TERMSYMB}$ of all expressions build up from the set $\TERMSYMB$ by setting
+    $$K(s_1,\dots s_n) = K(s_1) + \dots + K(s_n)$$ 
 }
+The idea is that $K$ tells us the number of symbols that at least need to follow to obtain a formula. (This number is unique because no symbol is a finite sequence of other symbols)
+Note that the following set inclusions hold:
+ $\TERMS\subseteq \overline{\TERMSYMB}\subseteq \EXPR$.
 \lemma{}{
-    Let $t$ be a term. Then $K(t)=1$
+    Let $t\in \TERMS$ be a term. Then $K(t)=1$
 }{
     $K(x) = 1 = K(c)$ and $K(ft_1,\dots t_n) = 1-n + n = 1$ 
 }
@@ -514,19 +524,17 @@ The answer will be given by the so called Homomorphism theorem.
         $t_1 = t_1', \dots, t_n=t_n'$.
     \end{itemize}
 }
-\defin{}{Extend $K$ to the set of all expressions by
-    \begin{enumerate*}[label=(\roman*)]
-        \item $K(() = -1$ $K()) = 1$ 
-        \item $K(\forall) = 1$ 
-        \item $K(\lnot) = 0$ 
-        \item $K(\to) = -1$ 
-        \item $K(P) = 1-n$ for an $n$-ary rel. symb. $P$. 
-        \item $K(=) = -1$
-        \item $K(s_1\dots s_n) = K(s_1) + K(s_n)$ for $s_i\in Terms\cup\{(,),\forall,\lnot,\to,P,\dots,=\}$
-    \end{enumerate*}
-     
-    The idea is that $K$ tells us the number of symbols that at least need to follow to obtain a formula.
-}
+\lemma{}{$K:\overline{\TERMSYMB}\to \ZZ$ extends to a function $K:\EXPR\to \ZZ$ on the set of all expressions by adding to the above definition:
+    \begin{enumerate}[label=(\roman*)]
+        \setcounter{enumi}{3}
+        \item $K(() \defeq -1$ and $K()) \defeq 1$ 
+        \item $K(\forall) \defeq 1$, $K(\lnot) \defeq 0$ and $K(\to) \defeq -1$ 
+        \item $K(P) \defeq 1-n$ for an $n$-ary rel. symb. $P$. 
+        \item $K(=) \defeq -1$
+        \item $K(s_1\dots s_n) \defeq K(s_1) + K(s_n)$ for $s_i\in \TERMS\cup\{(,),\forall,\lnot,\to,P,\dots,=\}$
+        \item $K(s_1,\dots s_n) \defeq K(s_1) + \dots + K(s_n)$ for $s_i \in \EXPR$ if none of the above definitions apply.
+    \end{enumerate}
+}{}
 \lemma{}{
     for every formula $\varphi$ it is $K(\varphi) = 1$
 }{

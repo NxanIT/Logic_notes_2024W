@@ -16,8 +16,8 @@ The \imp{Language} of Propositional logic is a set containing
     \end{enumerate}
 }
 \addAbbrev{exp.}{expression(s)}
-\defin{Expression / prop. sentence}{An \imp{expression} is a any finite sequence of symbols
-    We define \graybf{grammatically correct exp.} recursively
+\defin{Expression / prop. sentence}{An \imp{expression}(exp.) is any finite sequence of symbols from the Language of propositional logic.
+    We define \graybf{grammatically correct exp.} recursively by:
     \begin{enumerate}
         \item every propositional atom is a propositional sentence
         \item if $\alpha, \beta$ are propositional sentences, then also $(\lnot \alpha), (\alpha \land \beta), (\alpha \lor \beta), (\alpha \to \beta), (\alpha \leftrightarrow \beta)$
@@ -77,7 +77,7 @@ We now want to extend $\nu$ to $\overline{\nu}: \overline{S}\to \{0,1\}$, where 
 for all propositional atoms $A\in S$ and propositional formulas $\alpha,\beta$ in $\overline{S}$
 \begin{enumerate}
     \item $\overline{\nu}(A) = \nu(A)$ 
-    \item $\overline{\nu}(\lnot \alpha) = 1- \nu(\alpha)$ 
+    \item $\overline{\nu}(\lnot \alpha) = 1- \overline{\nu}(\alpha)$ 
     \item $\overline{\nu}(\alpha \land \beta) = \begin{cases}
         1 & \text{iff } \overline{\nu}(\alpha) = 1 = \overline{\nu}(\beta)\\
         0 & \text{otherwise}

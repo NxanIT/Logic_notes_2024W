@@ -34,94 +34,93 @@
 \contentsline {section}{\color {rhoda}Def. {\color {tanita}{2.21\hspace {5px} Rigid}}}{18}{defcount.2.21}%
 \contentsline {section}{\color {rhoda}Def. {\color {tanita}{2.22\hspace {5px} }}}{19}{defcount.2.22}%
 \contentsline {section}{\color {rhoda}Def. {\color {tanita}{2.23\hspace {5px} terminal segment}}}{19}{defcount.2.23}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{2.24\hspace {5px} }}}{19}{defcount.2.24}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{2.25\hspace {5px} Modus Ponens}}}{20}{defcount.2.25}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{2.26\hspace {5px} Deduction}}}{20}{defcount.2.26}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{2.27\hspace {5px} Generalization}}}{20}{defcount.2.27}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{2.28\hspace {5px} Logical axioms}}}{20}{defcount.2.28}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{2.29\hspace {5px} Substitution}}}{20}{defcount.2.29}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{2.30\hspace {5px} substitutable}}}{21}{defcount.2.30}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{2.31\hspace {5px} Tautologies of first order language}}}{21}{defcount.2.31}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{2.32\hspace {5px} Inconsistence}}}{23}{defcount.2.32}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{2.33\hspace {5px} }}}{26}{defcount.2.33}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{2.34\hspace {5px} }}}{28}{defcount.2.34}%
-\contentsline {chapter}{\color {black}Model Theory}{30}{chapter.3}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.1\hspace {5px} Theory}}}{30}{defcount.3.1}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.2\hspace {5px} Theory of structures}}}{30}{defcount.3.2}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.3\hspace {5px} $C_n$}}}{31}{defcount.3.3}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.4\hspace {5px} }}}{31}{defcount.3.4}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.5\hspace {5px} axiomatizability}}}{31}{defcount.3.5}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.6\hspace {5px} }}}{31}{defcount.3.6}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.7\hspace {5px} infinitely close}}}{34}{defcount.3.7}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.8\hspace {5px} Convergence (non-standard definition)}}}{34}{defcount.3.8}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.9\hspace {5px} }}}{35}{defcount.3.9}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.10\hspace {5px} o-minimality}}}{36}{defcount.3.10}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.11\hspace {5px} definably connectedness}}}{36}{defcount.3.11}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.12\hspace {5px} ordered group}}}{36}{defcount.3.12}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.13\hspace {5px} Ordered ring}}}{37}{defcount.3.13}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.14\hspace {5px} ordered field}}}{37}{defcount.3.14}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.15\hspace {5px} real closed field}}}{37}{defcount.3.15}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.16\hspace {5px} Cell}}}{40}{defcount.3.16}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.17\hspace {5px} decomposition}}}{40}{defcount.3.17}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.18\hspace {5px} }}}{41}{defcount.3.18}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.19\hspace {5px} Definable families}}}{41}{defcount.3.19}%
-\contentsline {chapter}{\color {black}Boolean Algebra}{43}{chapter.4}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{4.1\hspace {5px} (Ultra-)Filter}}}{43}{defcount.4.1}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{4.2\hspace {5px} Stone space}}}{44}{defcount.4.2}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{4.3\hspace {5px} Atomic, Atomless}}}{45}{defcount.4.3}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{4.4\hspace {5px} Lindenbaum-Tarski algebra}}}{45}{defcount.4.4}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{4.5\hspace {5px} Recap}}}{45}{defcount.4.5}%
-\contentsline {chapter}{\color {black}Set Theory of ZFC}{47}{chapter.5}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.1\hspace {5px} Axiom of extensionality}}}{47}{defcount.5.1}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.2\hspace {5px} Pairing Axiom}}}{47}{defcount.5.2}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.3\hspace {5px} n-tuples}}}{47}{defcount.5.3}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.4\hspace {5px} Union Axiom}}}{48}{defcount.5.4}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.5\hspace {5px} }}}{48}{defcount.5.5}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.6\hspace {5px} Power set Axiom}}}{48}{defcount.5.6}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.7\hspace {5px} Classes}}}{48}{defcount.5.7}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.8\hspace {5px} Class functions}}}{48}{defcount.5.8}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.9\hspace {5px} Axiom of replacement / substitution}}}{48}{defcount.5.9}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.10\hspace {5px} Axiom scheme of comprehension}}}{49}{defcount.5.10}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.11\hspace {5px} Set existence}}}{49}{defcount.5.11}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.12\hspace {5px} Function}}}{49}{defcount.5.12}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.13\hspace {5px} }}}{49}{defcount.5.13}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.14\hspace {5px} }}}{49}{defcount.5.14}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.15\hspace {5px} Well ordering}}}{50}{defcount.5.15}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.16\hspace {5px} Initial segment}}}{50}{defcount.5.16}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.17\hspace {5px} Propper class}}}{50}{defcount.5.17}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.18\hspace {5px} well-ordering (class)}}}{50}{defcount.5.18}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.19\hspace {5px} Tranistivity of sets}}}{50}{defcount.5.19}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.20\hspace {5px} Ordinal}}}{50}{defcount.5.20}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.21\hspace {5px} H-inductive}}}{52}{defcount.5.21}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.22\hspace {5px} Axiom of Choice (AC)}}}{53}{defcount.5.22}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.23\hspace {5px} (AC')}}}{53}{defcount.5.23}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.24\hspace {5px} (AC'')}}}{53}{defcount.5.24}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.25\hspace {5px} successor / limit ordinals}}}{54}{defcount.5.25}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.26\hspace {5px} Sum and product of ordinals}}}{55}{defcount.5.26}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.27\hspace {5px} Axiom of infinity}}}{55}{defcount.5.27}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.28\hspace {5px} }}}{55}{defcount.5.28}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.29\hspace {5px} }}}{56}{defcount.5.29}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.30\hspace {5px} }}}{56}{defcount.5.30}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.31\hspace {5px} Cardinal}}}{56}{defcount.5.31}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.32\hspace {5px} finite sets}}}{56}{defcount.5.32}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.33\hspace {5px} }}}{56}{defcount.5.33}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.34\hspace {5px} countable sets}}}{57}{defcount.5.34}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.35\hspace {5px} }}}{57}{defcount.5.35}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.36\hspace {5px} }}}{58}{defcount.5.36}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.37\hspace {5px} }}}{58}{defcount.5.37}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.38\hspace {5px} regular ordinals}}}{58}{defcount.5.38}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.39\hspace {5px} }}}{59}{defcount.5.39}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.40\hspace {5px} Axiom of foundation (AF)}}}{59}{defcount.5.40}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.41\hspace {5px} }}}{60}{defcount.5.41}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.42\hspace {5px} }}}{60}{defcount.5.42}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.43\hspace {5px} inductive closure}}}{60}{defcount.5.43}%
-\contentsline {chapter}{\color {black}Appendix}{63}{appendix.A}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{A.1\hspace {5px} lattice}}}{63}{defcount.A.1}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{A.2\hspace {5px} Alternative Def: Boolean Algebra}}}{63}{defcount.A.2}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{A.3\hspace {5px} Opposite of boolean algebra}}}{64}{defcount.A.3}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{A.4\hspace {5px} Subalgebra}}}{64}{defcount.A.4}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{A.5\hspace {5px} Homomorphisms of boolean algebras}}}{64}{defcount.A.5}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{A.6\hspace {5px} Trivial algebras}}}{65}{defcount.A.6}%
-\contentsline {section}{\color {rhoda}Def. {\color {tanita}{A.7\hspace {5px} Ideal}}}{65}{defcount.A.7}%
-\contentsline {chapter}{\color {black}Outernotes, Abbreviations, Overview}{66}{appendix.B}%
-\contentsline {chapter}{\color {black}Bibliography}{70}{appendix*.8}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{2.24\hspace {5px} Modus Ponens}}}{20}{defcount.2.24}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{2.25\hspace {5px} Deduction}}}{20}{defcount.2.25}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{2.26\hspace {5px} Generalization}}}{20}{defcount.2.26}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{2.27\hspace {5px} Logical axioms}}}{20}{defcount.2.27}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{2.28\hspace {5px} Substitution}}}{21}{defcount.2.28}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{2.29\hspace {5px} substitutable}}}{21}{defcount.2.29}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{2.30\hspace {5px} Tautologies of first order language}}}{21}{defcount.2.30}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{2.31\hspace {5px} Inconsistence}}}{23}{defcount.2.31}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{2.32\hspace {5px} }}}{26}{defcount.2.32}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{2.33\hspace {5px} }}}{28}{defcount.2.33}%
+\contentsline {chapter}{\color {black}Model Theory}{31}{chapter.3}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.1\hspace {5px} Theory}}}{31}{defcount.3.1}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.2\hspace {5px} Theory of structures}}}{31}{defcount.3.2}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.3\hspace {5px} $C_n$}}}{32}{defcount.3.3}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.4\hspace {5px} }}}{32}{defcount.3.4}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.5\hspace {5px} axiomatizability}}}{32}{defcount.3.5}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.6\hspace {5px} }}}{32}{defcount.3.6}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.7\hspace {5px} infinitely close}}}{35}{defcount.3.7}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.8\hspace {5px} Convergence (non-standard definition)}}}{35}{defcount.3.8}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.9\hspace {5px} }}}{36}{defcount.3.9}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.10\hspace {5px} o-minimality}}}{37}{defcount.3.10}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.11\hspace {5px} definably connectedness}}}{37}{defcount.3.11}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.12\hspace {5px} ordered group}}}{37}{defcount.3.12}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.13\hspace {5px} Ordered ring}}}{38}{defcount.3.13}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.14\hspace {5px} ordered field}}}{38}{defcount.3.14}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.15\hspace {5px} real closed field}}}{38}{defcount.3.15}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.16\hspace {5px} Cell}}}{41}{defcount.3.16}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.17\hspace {5px} decomposition}}}{41}{defcount.3.17}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.18\hspace {5px} }}}{42}{defcount.3.18}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{3.19\hspace {5px} Definable families}}}{42}{defcount.3.19}%
+\contentsline {chapter}{\color {black}Boolean Algebra}{44}{chapter.4}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{4.1\hspace {5px} (Ultra-)Filter}}}{44}{defcount.4.1}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{4.2\hspace {5px} Stone space}}}{45}{defcount.4.2}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{4.3\hspace {5px} Atomic, Atomless}}}{46}{defcount.4.3}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{4.4\hspace {5px} Lindenbaum-Tarski algebra}}}{46}{defcount.4.4}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{4.5\hspace {5px} Recap}}}{47}{defcount.4.5}%
+\contentsline {chapter}{\color {black}Set Theory of ZFC}{48}{chapter.5}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.1\hspace {5px} Axiom of extensionality}}}{48}{defcount.5.1}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.2\hspace {5px} Pairing Axiom}}}{48}{defcount.5.2}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.3\hspace {5px} n-tuples}}}{48}{defcount.5.3}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.4\hspace {5px} Union Axiom}}}{49}{defcount.5.4}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.5\hspace {5px} }}}{49}{defcount.5.5}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.6\hspace {5px} Power set Axiom}}}{49}{defcount.5.6}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.7\hspace {5px} Classes}}}{49}{defcount.5.7}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.8\hspace {5px} Class functions}}}{49}{defcount.5.8}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.9\hspace {5px} Axiom of replacement / substitution}}}{49}{defcount.5.9}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.10\hspace {5px} Axiom scheme of comprehension}}}{50}{defcount.5.10}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.11\hspace {5px} Set existence}}}{50}{defcount.5.11}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.12\hspace {5px} Function}}}{50}{defcount.5.12}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.13\hspace {5px} }}}{50}{defcount.5.13}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.14\hspace {5px} }}}{50}{defcount.5.14}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.15\hspace {5px} Well ordering}}}{51}{defcount.5.15}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.16\hspace {5px} Initial segment}}}{51}{defcount.5.16}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.17\hspace {5px} Propper class}}}{51}{defcount.5.17}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.18\hspace {5px} well-ordering (class)}}}{51}{defcount.5.18}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.19\hspace {5px} Tranistivity of sets}}}{51}{defcount.5.19}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.20\hspace {5px} Ordinal}}}{51}{defcount.5.20}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.21\hspace {5px} H-inductive}}}{53}{defcount.5.21}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.22\hspace {5px} Axiom of Choice (AC)}}}{54}{defcount.5.22}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.23\hspace {5px} (AC')}}}{54}{defcount.5.23}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.24\hspace {5px} (AC'')}}}{54}{defcount.5.24}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.25\hspace {5px} successor / limit ordinals}}}{55}{defcount.5.25}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.26\hspace {5px} Sum and product of ordinals}}}{56}{defcount.5.26}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.27\hspace {5px} Axiom of infinity}}}{56}{defcount.5.27}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.28\hspace {5px} }}}{56}{defcount.5.28}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.29\hspace {5px} }}}{57}{defcount.5.29}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.30\hspace {5px} }}}{57}{defcount.5.30}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.31\hspace {5px} Cardinal}}}{57}{defcount.5.31}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.32\hspace {5px} finite sets}}}{57}{defcount.5.32}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.33\hspace {5px} }}}{57}{defcount.5.33}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.34\hspace {5px} countable sets}}}{58}{defcount.5.34}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.35\hspace {5px} }}}{58}{defcount.5.35}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.36\hspace {5px} }}}{59}{defcount.5.36}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.37\hspace {5px} }}}{59}{defcount.5.37}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.38\hspace {5px} regular ordinals}}}{59}{defcount.5.38}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.39\hspace {5px} }}}{60}{defcount.5.39}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.40\hspace {5px} Axiom of foundation (AF)}}}{61}{defcount.5.40}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.41\hspace {5px} }}}{61}{defcount.5.41}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.42\hspace {5px} }}}{61}{defcount.5.42}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{5.43\hspace {5px} inductive closure}}}{61}{defcount.5.43}%
+\contentsline {chapter}{\color {black}Appendix}{65}{appendix.A}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{A.1\hspace {5px} lattice}}}{65}{defcount.A.1}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{A.2\hspace {5px} Alternative Def: Boolean Algebra}}}{65}{defcount.A.2}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{A.3\hspace {5px} Opposite of boolean algebra}}}{66}{defcount.A.3}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{A.4\hspace {5px} Subalgebra}}}{66}{defcount.A.4}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{A.5\hspace {5px} Homomorphisms of boolean algebras}}}{66}{defcount.A.5}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{A.6\hspace {5px} Trivial algebras}}}{67}{defcount.A.6}%
+\contentsline {section}{\color {rhoda}Def. {\color {tanita}{A.7\hspace {5px} Ideal}}}{67}{defcount.A.7}%
+\contentsline {chapter}{\color {black}Outernotes, Abbreviations, Overview}{68}{appendix.B}%
+\contentsline {chapter}{\color {black}Bibliography}{72}{appendix*.8}%
