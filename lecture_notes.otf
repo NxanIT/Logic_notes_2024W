@@ -48,7 +48,7 @@
 \contentsline {section}{\color {black}\textbf {Chapter 4}}{44}{chapter.4}%
 \contentsline {section}{lattice}{44}{chapter.4}%
 \contentsline {section}{Ultrafilter}{44}{defcount.4.1}%
-\contentsline {section}{$S(\mathcal {B})$}{45}{Item.161}%
+\contentsline {section}{$S(\mathcal {B})$}{45}{Item.166}%
 \contentsline {section}{\color {black}\textbf {Chapter 5}}{48}{chapter.5}%
 \contentsline {section}{$\Ord $}{51}{defcount.5.20}%
 \contentsline {section}{$\On $}{51}{defcount.5.20}%
@@ -62,5 +62,11 @@
 \contentsline {subsection}{distributive}{65}{defcount.A.1}%
 \contentsline {subsection}{bounded}{65}{defcount.A.1}%
 \contentsline {subsection}{complemented}{65}{defcount.A.1}%
-\contentsline {section}{\color {black}\textbf {Chapter B}}{68}{appendix.B}%
-\contentsline {section}{\color {black}\textbf {Chapter B}}{72}{appendix*.8}%
+\contentsline {section}{topological space}{67}{defcount.A.8}%
+\contentsline {subsection}{compact}{67}{Item.240}%
+\contentsline {subsection}{T0-space}{67}{Item.241}%
+\contentsline {subsection}{T2-space}{67}{Item.242}%
+\contentsline {subsection}{totally seperated}{67}{Item.243}%
+\contentsline {subsection}{zero-dimensional}{67}{Item.244}%
+\contentsline {section}{\color {black}\textbf {Chapter B}}{69}{appendix.B}%
+\contentsline {section}{\color {black}\textbf {Chapter B}}{73}{appendix*.8}%

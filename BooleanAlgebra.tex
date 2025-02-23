@@ -43,22 +43,23 @@ That makes every boolean algebra to a complemented, distributive \imp{lattice}, 
 \end{itemize}
 An \imp{Ultrafilter}of $\mathcal{B}$ is a filter $\mathcal{F}$ that satisfies
 \begin{itemize}[leftmargin=1.5cm]
-    \item[(UF)]$\forall a\in B a\in \mathcal{F} \lor \overline{a}\in \mathcal{F}$.
+    \item[(UF)]$\forall a\in B \:a\in \mathcal{F} \,\lor \, \overline{a}\in \mathcal{F}$.
 \end{itemize}
 }
 The congruence with filters defined in functional analisis seems unambiguous, 
 however the one key difference
 here is that a filter on $\mathcal{B}$ is a subset of $B$. If $\mathcal{B}$ is a boolean algebra of 
-the set $X$ then a filter in our definition would coincide with a filter on the maximal element $X$.
+the set $X$ then a filter in our definition would coincide with a filter (in the sense of the usual definition) on the maximal element $X$.
 
-Recall: Let $X\neq \varnothing$, $\tau \subseteq \mathcal{P}(X)$ then $(X,\tau)$ is called a topological space, if 
+Recall: Let $X\neq \varnothing$ be a set, $\tau \subseteq \mathcal{P}(X)$ then $(X,\tau)$ is called a \textbf{topological} space, if 
     \begin{enumerate}[leftmargin=1.5cm]
         \item[(T1)] $\varnothing, X\in \tau$
-        \item[(T2)] $\forall I \forall (\sigma_i)_i\in \tau^I: \bigcup_{i\in I}(\sigma_i)\in \tau$
-        \item[(T3)] $\forall n\in \NN \forall (\sigma_i)_i\in \tau^\{1,\dots n\}: \bigcup_{1\leq i\leq n}(\sigma_i)\in \tau$
+        \item[(T2)] $\forall I \,\forall (\sigma_i)_i\in \tau^I\: \bigcup_{i\in I}(\sigma_i)\in \tau$
+        \item[(T3)] $\forall n\in \NN \,\forall (\sigma_i)_i\in \tau^{\{1,\dots n\}}\: \bigcap_{1\leq i\leq n}(\sigma_i)\in \tau$
     \end{enumerate}
     And $\tau'\subseteq \mathcal{P}(X)$ is called a base for the topology $\tau$ on $X$,
-    if every open set in $\tau$ is the union of sets in $\tau'$.
+    if every (open) set in $\tau$ is the union of sets in $\tau'$. 
+    In other words, if $\tau = \{\bigcup_{U\in \mathcal{S}} U : \mathcal{S}\subseteq \tau'\}$
 \defin{Stone space}{
     A stone space is a non-empty topological space $(X,\tau)$ which 
     \begin{enumerate}
@@ -67,23 +68,24 @@ Recall: Let $X\neq \varnothing$, $\tau \subseteq \mathcal{P}(X)$ then $(X,\tau)$
             \forall V \in \sigma \: X\setminus V \in \tau & \text{(clopen)}\\[3px]
             \forall U \in \tau \forall x\in U \exists V\in \sigma \: x\in V\subseteq U & \text{(basis)}
         \end{matrix*}\]
-        \item is compact (every open cover contains a finite subcover)
+        \item is compact (every open cover of $X$ contains a finite subcover)
         \item and hausdorff (every two distinct points can be seperated by open sets) 
         \[\forall x, y\in X\: x\neq y \to \exists U_x,U_y\in \tau \: x\in U_x \land y\in U_y\land U_x\cap U_y= \varnothing\]
     \end{enumerate}
 
     Let $\mathcal{B}$ be a boolean algebra. We define 
     $S(\mathcal{B}) \defeq\{\text{the set of all ultrafilters on $\mathcal{B}$}\}$
-    and call it the stonespace of $\mathcal{B}$.\outernote{$S(\mathcal{B})$}
+    and call it the Stone space of $\mathcal{B}$.\outernote{$S(\mathcal{B})$}
 }
-The clarification that $S(\mathcal{B})$ is indeed a stonespace in the sense of the above definition will be given by the Stone-Representation theorem.
+The clarification that $S(\mathcal{B})$ is indeed a Stone space in the sense of the above definition will be given by the Stone-Representation theorem below.
+There exists other equivalent definitions of Stone spaces and some equivalence will be shown in the appendix 
 
 \note{}{
     Let $\mathcal{B}\models BA$ then 
     \begin{enumerate}
         \item for a filter $F$ on $\mathcal{B}$ it holds $1\in F$ (by $F\neq \varnothing$ and (F3))
         \item Any subset $F'\subseteq B$ satisfying (F3) satisfies (F1) iff $F'\neq B$.
-        \item $\langle a\rangle \defeq \{x\in S(\mathcal{B}): a\in x\}$ where $a$ runs through $B$ forms a basis for a topology on the stonespace of $\mathcal{B}$
+        \item $\langle a\rangle \defeq \{x\in S(\mathcal{B}): a\in x\}$ where $a$ runs through $B$ forms a basis for a topology on the Stone space of $\mathcal{B}$
     \end{enumerate}
 }
 Back on $\langle a\rangle = \{x\in S(\mathcal{B}): a\in x\}$. It holds
@@ -102,7 +104,7 @@ In fact, suppose $\mathcal{F}\subseteq B$ has (FIP). i.e. for any $n\in\NN$ $\fo
         \item If $\mathcal{B}\models BA$, then $S(\mathcal{B})$ is a Stone-space
         \item If $\mathcal{S}$ is a Stone space then the clopen subsets of $\mathcal{S}$ form a boolean algebra denoted by $B(\mathcal{S})$.
         \item Every boolean algebra $\mathcal{B}$ is isomorphic to the boolean algebra $B(S(\mathcal{B}))$ with $a\mapsto \langle a\rangle$. Hence $\mathcal{B}$ is isomorphic to a subalgebra of the boolean algebra $\mathcal{P}(S(\mathcal{B}))$ of sets
-        \item Every stonespace $\mathcal{S}$ is homeomorphic to the stonespace $S(B(\mathcal{S}))$
+        \item Every Stone space $\mathcal{S}$ is homeomorphic to the Stone space $S(B(\mathcal{S}))$
         $$x\mapsto \{a\in S(\mathcal{B}) : x\in a\}$$
     \end{enumerate}
 }{

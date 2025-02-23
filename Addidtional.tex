@@ -74,7 +74,7 @@ However we must be careful, a subalgebra of a Boolean algebra must again be clos
         \item $0\leq x\leq 1$ for all $x\in B$
     \end{enumerate}
 }{}
-\note{}{A boolean algebra is a complemented distributive lattice.}
+
 \defin{Opposite of boolean algebra}{Let $(B,',\lor,\land,0,1)$ be a boolean algebra. The boolean algebra $B^{\text{op}}$ is defined by
     $$B^\text{op}\defeq B,\quad 0^\text{op} \defeq 1,\quad 1^\text{op} \defeq 0,\quad' \text{ stayes the same as for} B,\quad\lor^\text{op} \defeq \land,\quad\land^\text{op} \defeq \lor$$
     Note: $(B^\text{op})^\text{op} = B$
@@ -147,5 +147,50 @@ $B/_{=_I}$ is a boolean algebra w/
 $$0\defeq 0/_{=_I}\quad 1\defeq 1/_{=_I}\quad (a/_{=_I})' \defeq a'/_{=_I}\quad a/_{=_I}\lor b/_{=_I} \defeq (a\lor b)/_{=_I}\quad a/_{=_I}\land b/_{=_I} \defeq (a\land b)/_{=_I}$$
 Then $\phi: B\to B/_{=_I}: b\mapsto b/_{=_I}$ is a boolean algebra morphism w/ $\ker(\phi)=I$
 \end{itemize}}
+
+\subsection{Notes on Stone spaces}
+\defin{Some topological properties}{
+    Let $X$ be a \imp{topological space}. $X$ is called 
+    \begin{enumerate}[label=(\roman*)]
+        \item \subimp{compact}, if 
+        every open cover of $X$ has a finite subcover.
+        \item a \subimp{T0-space} or equivalently hausdorff, if
+        \[\forall x \forall y \: x\neq y \to \exists U,V\in \tau \: (x\in U\land y \notin U)\lor (x\notin V \land y\in V)\]
+        \item a \subimp{T2-space}, if 
+        \[\forall x \forall y \: x\neq y \to \exists U,V\in \tau \: (x\in U\land y\in V \land U\cap V = \varnothing)\]
+        \item \subimp{totally seperated}, if 
+        \[\forall x \forall y \: x\neq y \to \exists U,V\in \tau \: (x\in U\land y\in V \land U\cap V = \varnothing \land U\cup V = X)\]
+        \item \subimp{zero-dimensional} with respect to the \textunderscore{small inductive dimension}, if it has a base for the topology consisting of clopen sets.
+        \[\forall U \in \tau \,\forall x\in U \, \exists W\in \tau \: (x\in W\subseteq U\land W^c\in \tau)\]
+    \end{enumerate}
+
+}
+\defin{Stone space}{
+    A Stone space is a zero-dimensional, compact, hausdorff topological space $X$.
+}
+There are other equivalent equivalent definitions of Stone spaces in other mathematical works.
+\lemma{}{The following statements are equivalent:
+    \begin{enumerate}[label=(\roman*)]
+        \item $X$ is a Stone space
+        \item $X$ is compact and totally seperated
+        \item $X$ is compact, T0 and zero-dimensional
+    \end{enumerate}
+}{
+    Since $(\romanNum{1})\implies (\romanNum{3})$ is for free, we show $(\romanNum{1})\Longleftrightarrow (\romanNum{2})$ and $(\romanNum{3})\implies (\romanNum{1})$
+    \begin{enumerate}[leftmargin=2cm]
+        \item[$(\romanNum{1})\implies(\romanNum{2})$]: We just have to show that $X$ is totally seperated. Let $x,y\in X$ with $x\neq y$. Since $X$ is hausdorff there exists a open set $U$ such that $x\in U$ and $y\notin U$. For this $U$ there exists a $W\subset U$ with $x\in W$ which is clopen. Therefore $W^c$ is clopen too and $y\in U^c\subseteq W^c$, $W^c \cup W = X$.
+        \item[$(\romanNum{1})\impliedby(\romanNum{2})$]: T2 follows from totally seperatedness, so
+        let $U$ be an open set and $x\in U$. We have to show that there exists a clopen subset $W\subseteq U$ with $x\in W$. We define $V_y$ to be the clopen set $V$ we get from totally seperatedness with respect to $x$ and $y$. From $y\in V_y$ we get that
+        $\{U\}\cup \{V_y : y\in U^c\}$ is an open cover of $X$, which is compact so there is a natural number $n$ and $y_1, \dots y_n\in U^c$ with $U\cup \bigcup_{i\leq n} V_{y_i} = X$,
+        hence $\bigcup_{i\leq n} V_{y_i}\supseteq U^c$ and therefore $\bigcap_{i\leq n} V_{y_i}^c\subseteq U$.
+        $W\defeq \bigcap_{i\leq n} V_{y_i}^c$ is clopen, since finite intersections of clopen sets are clopen. Furthermore for every $i\leq n$ we have $x\in V_{y_i}^c$, so $x\in W$.
+        \item[$(\romanNum{3})\implies (\romanNum{1})$]: Let $x,y\in X$ with $x\neq y$. Since $X$ is T0,
+        There exists open sets $U,V$ with $x\in U\land y \notin U$ or $x\notin V \land y\in V$
+        Assuming $x\in U\land y \notin U$ does not hold, then $x\notin V \land y\in V$.
+        Since $X$ is zero-dimensional with respect to the small inductive dimension, there exists 
+        a clopen set $W\subseteq V$ with $y\in W$. Therefore $W^c\in \tau$, $x\in W^c$ and we have shown that $X$ is a T2-space.
+    \end{enumerate}
+    \vspace{-0.7cm}
+}
 
 

@@ -36,10 +36,10 @@ The definitions, lemmata, propositions and theorems as well as the notes in this
             \item [$<$] is a binary rel. symbol
             \item [$0$] is a constant
             \item [$S$] is a unary function symbol
-            \item [$E$] is a unary function symbol (exponentiation)
+            \item [$E$] is a binary function symbol (exponentiation) %TODO or perhaps unary
             \item [$+,\cdot$] are binary function symbols
         \end{itemize}
-        \item $\mathcal{L}_\text{ring} = \{=,+,\cdot,-,0,1\}$
+        \item $\mathcal{L}_\text{ring} = \{+,\cdot,-,0,1\}$
         \begin{itemize}
             \item [$=$] included
             \item [$0,1$] are constants
@@ -117,8 +117,7 @@ The definitions, lemmata, propositions and theorems as well as the notes in this
 \section{Semantics of first order logic}
 The equivalent scheme to our TA in predicate logic. The meaning of formulas is given by {structures}, 
 which also determine the scope of the quantifier $\forall$, the meaning of all parameters.
-\defin{structure}{A \imp{structure} $\mathcal{A}$ for a first order language $\mathcal{L}$ is a non-empty set
-    set $A$ called \graybf{universe} or \graybf{underlying set of $\mathcal{A}$} together with an interpretation of each parameters of $\mathcal{L}$ i.e.
+\defin{structure}{A \imp{structure} $\mathcal{A}$ for a first order language $\mathcal{L}$ is a non-empty set $A$ called \graybf{universe} or \graybf{underlying set of $\mathcal{A}$} together with an interpretation of each parameters of $\mathcal{L}$ i.e.
     \begin{itemize}
         \item $\forall$ ranges over the universe $A$
         \item for an $n$-ary pred. symbol $P\in \mathcal{L}$ its interpretation $P^\mathcal{A}$ is a subset of $A^n$\outernote{interpretation}
@@ -251,7 +250,7 @@ $\sigma: \quad \exists x (x\cdot x = -1)$ then $\mathcal{R}\not\models \sigma$ b
 Let $\Gamma$ be a set of $\mathcal{L}$-formulas, $\varphi$ a $\mathcal{L}$-formula.
 \defin{Logical implication}{
     We say ``$\Gamma$ logically implies $\varphi$'' $\Gamma \models \varphi$, if\\
-    for every $L$-structure $\mathcal{A}$ and for every assigment $s:V\to A$ 
+    for every $\mathcal{L}$-structure $\mathcal{A}$ and for every assigment $s:V\to A$ 
     $$\text{if } \mathcal{A}\models \gamma [s]\text{ for every $\gamma\in \Gamma$, then }\mathcal{A}\models \varphi \: [s]$$
 }
 
@@ -265,8 +264,8 @@ $\varphi \models \psi$ and $\psi \models \varphi$.
     \item $\forall x_1 P x_1 \models P x_2$\\
     Suppose $\mathcal{A}\models \forall x_1 P x_1 \: [s]$.
     then for all $a\in A$ it is $\mathcal{A}\models P x_1 [s(x_1|a)]$ in particular, $a\in P^\mathcal{A}$ for $a = s(x_2)$
-    \item  $\forall P x_2 \not\models \forall x_1 P x_1$\\
-    We need a counterexample to $\forall P x_2 \models \forall x_1 P x_1$. Let $A = \{a_1,a_2\}$ $s(x_2) = a_1$ and $P^\mathcal{A} = \{a_1\}$
+    \item  $ P x_2 \not\models \forall x_1 P x_1$\\
+    We need a counterexample to $ P x_2 \models \forall x_1 P x_1$. Let $A = \{a_1,a_2\}$ $s(x_2) = a_1$ and $P^\mathcal{A} = \{a_1\}$ %TODO skizze einfügen
     then $\mathcal{A}\models Px_2 \: [s]$.
     \item Is the following valid? $\models \exists x(Px \to \forall y P y)$ yes
     \item $\Gamma,\alpha\models \varphi$ iff $\Gamma \models \alpha \to \varphi$. (on next problem set, quite important)
@@ -341,7 +340,7 @@ Until now, we have no notion that tells us when two graphs are the same or at le
         \item for every constant symbol $c\in \mathcal{L}$ it is $h(c^\mathcal{A}) = c^\mathcal{B}$ \\(could also skip this if we consider constants as $0$-ary functions)
     \end{itemize}
 }
-\note{}{Intuativly a Homomorphism of $\mathcal{A}$ into $\mathcal{B}$ is a map $A \to B$ that preserve all funciton and relation symbols in some sense, (in general however not the definable relations)}
+\note{}{Intuatively a Homomorphism of $\mathcal{A}$ into $\mathcal{B}$ is a map $A \to B$ that preserve all funciton and relation symbols in some sense, (in general however not the definable relations)}
 \defin{Isomorphism}{
     \begin{itemize}
         \item $h:A\to B$ is called isomorphism of $\mathcal{A}$ \imp{into} $\mathcal{B}$ if $h$ is an injective homomorphism $A\to B$ \\
@@ -357,16 +356,18 @@ Until now, we have no notion that tells us when two graphs are the same or at le
 \bsp{}{
     $\mathcal{L}= \{+,\cdot\}$
     $\mathcal{N} = (\NN, +^\NN, \cdot^\NN)$ and $\mathcal{B} = (B,+^\mathcal{B},\cdot^\mathcal{B})$ where $B = \{0,1\}$ and 
-    \begin{tabular}{c|c c}
-        $+^\mathcal{B}$ & $e$ & 0\\\hline
-        $e$ & $e$ & 0\\
-        0 & 0 & $e$
-    \end{tabular}
-    \begin{tabular}{c|c c}
-        $\cdot^\mathcal{B}$ & $e$ & 0\\\hline
-        $e$ & $e$ & $e$\\
-        0 & $e$ & 0
-    \end{tabular}
+    \begin{equation*}
+        \begin{tabular}{c|c c}
+            $+^\mathcal{B}$ & $e$ & 0\\\hline
+            $e$ & $e$ & 0\\
+            0 & 0 & $e$
+        \end{tabular}\qquad
+        \begin{tabular}{c|c c}
+            $\cdot^\mathcal{B}$ & $e$ & 0\\\hline
+            $e$ & $e$ & $e$\\
+            0 & $e$ & 0
+        \end{tabular}
+    \end{equation*}
     let $h:\NN \to B$ a Homomorphism?
     $h(n) = \begin{cases}
         e & \text{ if $n$ is even}\\
@@ -438,7 +439,7 @@ The answer will be given by the so called Homomorphism theorem.
 \defin{elementarily equivalent}{$\mathcal{A}$ and $\mathcal{B}$ are called elementarily equivalent (notation: $\mathcal{A}\equiv \mathcal{B}$) if $\mathcal{A}$ and $\mathcal{B}$ satisfy the same sentences.}
 \note{}{$\mathcal{A}\cong \mathcal{B}$ implies $\mathcal{A}\equiv \mathcal{B}$
     The converse is not true.
-    For instance DLO (dence linear order) w/o endpoints is complete, so two structures on DLO are equivalent 
+    For instance DLO (dense linear order) w/o endpoints is complete, so two structures on DLO are equivalent 
     $(\mathbb{Q},<)\equiv (\RR,<)$ but they are not isomorphic because the universes have diffrent cardinality. 
 }
 \bsp{}{
@@ -488,7 +489,7 @@ The answer will be given by the so called Homomorphism theorem.
 }
 The idea is that $K$ tells us the number of symbols that at least need to follow to obtain a formula. (This number is unique because no symbol is a finite sequence of other symbols)
 Note that the following set inclusions hold:
- $\TERMS\subseteq \overline{\TERMSYMB}\subseteq \EXPR$.
+$\TERMS\subseteq \overline{\TERMSYMB}\subseteq \EXPR$.
 \lemma{}{
     Let $t\in \TERMS$ be a term. Then $K(t)=1$
 }{
@@ -563,7 +564,7 @@ and this statement implies another statement $\beta$, then $\beta$ must also be 
 
 }
 \defin{Deduction}{A formal proof (decuction) of a fla $\varphi$ from a set of formulas $\Sigma$ is a finite sequence of formulas 
-    $(\alpha_0,\alpha_1,\dots,\alpha_n)$ such that $\alpha_n = \varphi$ and for every $i<n$ $\alpha_i$ is either a logical axiom or $\alpha_i\in\Sigma$ or 
+    $(\alpha_0,\alpha_1,\dots,\alpha_n)$ such that $\alpha_n = \varphi$ and for every $i\leq n$ $\alpha_i$ is either a logical axiom or $\alpha_i\in\Sigma$ or 
     $\alpha_i$ is obtained from $\alpha_k$ and $\alpha_l$ where $0\leq k,l<i$ by the use of MP, in particular $\alpha_k = \beta \to \alpha_i$ and $\alpha_l = \beta$.
     If a deduction of $\varphi$ from $\Sigma$ exists, we say "$\varphi$ is deducible from $\Sigma$" or "$\varphi$ is a theorem of $\Sigma$".
 }
@@ -619,9 +620,9 @@ So we have to define substitutable
     Let $x$ be a variable, $t$ a term. Then $t$ is substitutable for $x$ in $\alpha$ if
     \begin{enumerate}
         \item $\alpha$ atomic then $t$ is SUB for $x$ in $\alpha$
-        \item then $t$ is SUB for $x$ in $\lnot \alpha$ iff then $t$ is SUB for $x$ in $\alpha$
-        \item then $t$ is SUB for $x$ in $\alpha\to \beta$ iff then $t$ is SUB for $x$ in $\alpha$ and $\beta$
-        \item then $t$ is SUB for $x$ in $\forall y \alpha$ iff either
+        \item  $t$ is SUB for $x$ in $\lnot \alpha$ iff  $t$ is SUB for $x$ in $\alpha$
+        \item  $t$ is SUB for $x$ in $\alpha\to \beta$ iff $t$ is SUB for $x$ in $\alpha$ and $\beta$
+        \item  $t$ is SUB for $x$ in $\forall y \alpha$ iff either
         \begin{itemize}
             \item $x$ does not occur free in $\forall y \alpha$ or
             \item $y$ does not occur in $t$ and $t$ is SUB for $x$ in $\alpha$
@@ -649,10 +650,11 @@ So we have to define substitutable
     So any first order formula is built up from the prime formulas using finitly many times the formula building operations. $\mathcal{E}_\lnot$ $\mathcal{E}_\to$ 
     We have unique readability because the set of formulas is freely generated.
 }
-\bsp{}{\[\lnot (\forall y (Px \to Py))\to (Px\to \forall y \lnot Py)\]
-is built up from $\lnot (\forall y (Px \to Py))$ and $Px\to \forall y \lnot Py$.
-which itself $\forall y (Px \to Py)$ and 
-$Px$ and $\forall y \lnot Py$ where they are all prime formulas.
+\bsp{}{Consider the formula
+\[\lnot (\forall y (Px \to Py))\to (Px\to \forall y \lnot Py)\]
+which is built up from $\varphi \equiv \lnot (\forall y (Px \to Py))$ and $\psi \equiv Px\to \forall y \lnot Py$. Furthermore,
+$\varphi$ is built up from $\forall y (Px \to Py)$ and 
+$\psi$ is built up from $Px$ and  $\forall y \lnot Py$. The latter beeing prime formulas.
 }
 \bsp{}{Is the following a tautology?
 \[(\forall y (\lnot Py)\to \lnot Px)\to (Px\to \lnot\forall y \lnot Py)\]
@@ -666,9 +668,14 @@ But it is a generalization of a tautology and therefore by (1) a logical axiom.
         \item $\forall x Px \to Px$ is not a tautology but is a logical axiom by group (2).
     \end{itemize}
 }
-\note{}{
-    $\Gamma \models_{\text{taut}} \varphi$ from propositional logic can be translated to first order logic.
+\note{}{%TODO make def below
+    The definition of tautological implication $\Gamma \models_{\text{taut}} \varphi$ from propositional logic can be translated to \graybf{tautological implication} in first order logic.\\
+    Let $\Gamma$ be a set of first order formulas, $\varphi$ a first order formula and $\mathbb{A} = \{A_1, A_2,\dots\}$ our set of atoms. We aim to construct a propositional sentence $\beta$ that behaves in some sense similar to $\varphi$ and a propositional sentence $\alpha_\gamma$ for each $\gamma\in \Gamma$ in the same way.
+    If we 
 }
+\defin{Let $\Gamma$ be a set of first order formulas and $\varphi$ a first order formula. We say 
+    $\Gamma$ tautologically implies $\varphi$, iff 
+}{}
 \lemma{}{If $\Gamma\models_{\text{taut}}\varphi$ then $\Gamma \models\varphi$}{
     Problem set.
 }
@@ -686,8 +693,9 @@ We will prove $\Gamma\models \varphi$ iff $\Gamma\vdash \varphi$ (the first dire
                 $\{\alpha, \alpha\to \varphi \} \models_{\text{taut}} \varphi$
             \end{itemize}
         \item Assume $\Gamma \cup \Lambda \models_{\text{taut}}\varphi$. Then by the compactness theorem for propositional logic there are $\gamma_1\dots, \gamma_n\in\Gamma$ and $\lambda_1,\dots \lambda_m\in\Lambda$ such that
-            \[\gamma_1\to \gamma_2\to \dots \to \gamma_n \to \lambda_1\to \dots \to \lambda_m\]
-            is a tautology (always grouped to the left) because $\Gamma \cup \{\alpha\}\models_{\text{taut}}\beta$ iff $\Gamma \models_{\text{taut}}(\alpha \to \beta)$
+            \[\gamma_1\to \gamma_2\to \dots \to \gamma_n \to \lambda_1\to \dots \to \lambda_m\to \varphi \]
+            is a tautology (always grouped to the right) %TODO check grouping direction
+            because $\Gamma \cup \{\alpha\}\models_{\text{taut}}\beta$ iff $\Gamma \models_{\text{taut}}(\alpha \to \beta)$
     \end{itemize}
 }
 \section{Generalization and deduction theorem}
@@ -1081,9 +1089,6 @@ Exam exam
     \end{enumerate}
 \end{proof}
 
-
-
-
 \subsection{Sizes of models}
 Let $\Gamma$ be a consistent set of formulas. Is it possible to 
 
@@ -1094,11 +1099,9 @@ Let $\Gamma$ be a consistent set of formulas. Is it possible to
     \end{enumerate}
 }
 \lemma{}{
-    $\Gamma$ such that all models are finite. Then there has to be 
+    Let $\Gamma$ be a set of formulas such that all models are finite. Then there has to be an
     $m\in\NN$ such that $|\mathcal{A}|\leq m$ for every model 
-    $\mathcal{A}\in\Mod\Gamma$}{
-    
-}{  Suppose $\Gamma$ has models of arbitrarily large finite size. \\
+    $\mathcal{A}\in\Mod\Gamma$}{  Suppose $\Gamma$ has models of arbitrarily large finite size. \\
     Idea: Expand language by new constant symbols $c_0,c_1,\dots$.
     \[\theta_1 \defeq \ c_0 \neq c_1\]
     \[\theta_2 \defeq \ c_0 \neq c_1 \land c_1\neq c_2 \land c_0 \neq c_2 \]

@@ -142,7 +142,7 @@ There later will be a more elementary proof of the compactness theorem, this pro
     For $\alpha \in \Sigma$ let $T_\alpha \subseteq \{0,1\}^\mathcal{A}$ be the set of TA that satisfy $\alpha$.
     This $T_\alpha$ is a finite union of cylinders, hence $T_\alpha$ is closed.
     For the family $\{T_\alpha: \alpha\in\Sigma\}$ of closed sets we have (FIP). Tychonoff tells us, 
-    that $\bigcup_{\alpha\in\Sigma}{T_\alpha}\neq \varnothing$ so there is a TA satisfying $\Sigma$.}
+    that $\bigcap_{\alpha\in\Sigma}{T_\alpha}\neq \varnothing$ so there is a TA satisfying $\Sigma$.}
     
     For a list of tautologies: useful might be book p. 26-27
 \section{A parsing algorithm}\label{section_parsingalg}
@@ -160,9 +160,12 @@ That is given a TA $v$ there is at most one truth value we can assign to a propo
 \lemma{}{No proper initial segment of a propositional sent. is itself a propositional sent.}{\label{NoPropIni}
     Let $\alpha = \alpha_1\alpha_2\dots \alpha_n$ be a propositional sent. By proper initial segment we understand $\beta = \alpha_1\dots \alpha_i$ for $1\leq i<n$.    
     We will prove that every proper initial segment has an excess of left parenthesis, then we use the previous lemma.
-    Let $PS = \text{set of all propositional sent.}$ and \\
-    $PF = \text{set of propositional sent. s.t. no proper initial segment has \# left parenthesis = \# right parenthesis}$, 
-    we will prove that these sets are the same.\\
+    Let $PS$ be the set of all prop. sentences
+    and $\lp, \rp : PS \to \NN_0$ functions that compute the number of left and right parenthesis of a given formula.
+    $$PF = \{\alpha = \alpha_1\alpha_2\dots \alpha_n\in PS \: : \: \forall i<n :\: 
+    \lp(\alpha_1\alpha_2\dots \alpha_i) \neq \rp(\alpha_1\alpha_2\dots \alpha_n)\}
+    $$ 
+    we will prove that $PF$ = $PS$.\\
     Let $\alpha \in PF$. By induction on the fla. building operations
     \begin{itemize}
         \item Atoms: since the empty sequence is not a propositional sent. they have no proper initial segment.

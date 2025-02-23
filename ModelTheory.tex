@@ -57,7 +57,7 @@ explanation: some bijections are missing
 \bsp{}{
 
 \begin{itemize}
-    \item $\mathcal{L} = \{0,1,+,\cdot,-\}$ $\mathcal{F}$ the class of fields then $\Th(\mathcal{F})$ is the set of sentences truein every field.
+    \item $\mathcal{L} = \{0,1,+,\cdot,-\}$ $\mathcal{F}$ the class of fields then $\Th(\mathcal{F})$ is the set of sentences true in every field.
 \end{itemize}
 }
 %2024-12-13: TODO edit below
@@ -101,7 +101,7 @@ A theory $T$ is complete iff any to models are elementarily equivalent.
 \bsp{}{
     \begin{itemize}
         \item The theory of fields (common theory of all fields) is finitely axiomatizable.
-        \item Theo theory of fields of characteristic $0$ is axiomatizable. $\Psi\cup \{1+1\neq 0, 1+1+1\neq 0,\dots\}$ 
+        \item The theory of fields of characteristic $0$ is axiomatizable. Let $\Psi$ be the finitely many axioms of fields. $\Psi\cup \{1+1\neq 0, 1+1+1\neq 0,\dots\}$ axiomatizes the fields of characteristic $0$.
         It is however not finitely axiomatizable. If 
         $\Psi_0\subseteq \Psi\cup \{1+1\neq 0, 1+1+1\neq 0,\dots\}$ 
         finite, then $\Psi_0$ has a model of characteristic $p$ for some sufficiently large $p$.
@@ -168,20 +168,20 @@ Steinitz: Two ACF are isomorphic iff they have the same characteristic and there
         \item $\mathcal{C}\models \sigma$
         \item $\mathcal{A}\models \sigma $ for every $\mathcal{A}\models $ ACF$_0$
         \item ACF$_0$ $\models \sigma$
-        \item for all sufficiently large primes $p$ ACF$_p$ $\models \sigma$
-        \item For infinitely many primes $p$ ACF$_p$ $models \sigma$
+        \item for all sufficiently large primes $p$ it is ACF$_p$ $\models \sigma$
+        \item For infinitely many primes $p$ it is ACF$_p$ $models \sigma$ %could also state that:  exists $\mathcal{K}$ structure that logically implies $\sigma$.
     \end{itemize}}{ 
     Sketch:
     \begin{itemize}
         \item[(a), (b), (c)] are equivalent by completeness of ACF$_0$
         \item[(c)$\implies$ (d)] ACF$_0$ $\models \sigma$ 
         so there is $T_0\subseteq \text{ACF}_0$ such that $T_0\models \sigma$ therefore there exists a sufficiently large prime $p$ such that $\text{ACF}_p\models \sigma$. 
-        \item[(d) $\implies$ (e)]TODO
+        \item[(d) $\implies$ (e)] If it is true for all sufficiently large primes that it holds for infinitely many.
         \item[(e) $\implies$ (c)] If $\text{ACF}_0\vDash \sigma$ than $\text{ACF}_0\models \sigma$
     \end{itemize}
 }
 Example of the Lefschetz Principle:
-\prop{Ax–Grothendieck}{\footnote{Alexander Grothendieck}
+\prop{Ax-Grothendieck}{\footnote{Named by Alexander Grothendieck and James Burton Ax}
     Let $f:\mathbb{C}^n \to \mathbb{C}^n$ be a polynomial map. If $f$ is injective, then $f$ is surjective.
 }{
     Our language is $\mathcal{L} = \{0,1,+,-,\cdot\}$. Note that there is an $\mathcal{L}$-sentence $\Phi_d$ such that a Field $F$ 
@@ -283,7 +283,7 @@ such that $q$ is betweeen $x$ and $y$}{
     And $mb<y$.
 }
 \prop{}{
-    For every $x\in \mathcal{F}$ therre is exactly one $r\in \RR$ such that $x\sim r$
+    For every $x\in \mathcal{F}$ there is exactly one $r\in \RR$ such that $x\sim r$
 }{
     Let $S \defeq \{r\in \RR : r<x\}$. $S$ is bounded in $\RR$ because $|x|<r_0$ for 
     some $r_0\in \RR^{>0}$.
@@ -339,9 +339,9 @@ the standard part $\st (F(a+i)) = b$. And we use the general notation $\lim_{x\t
 \coroll{$F$ continuous at $a$ then $x\simeq a\implies \: ^*F(x)\simeq ^*F(a)$}
 Derivatives
 From Analysis: If $F:\RR \to \RR$ then $F'(a) = \lim_{h\to 0}\frac{F(a+h)-F(a)}{h}$ 
-\defin{}{We will say that $F'(a) = b$ iff $\forall dx\in \mathcal{I}$, $dx\neq 0$ then 
-\[\st\bigl(\frac{F(a+dx)-F(a)}{dx}\bigr) = b\]
-}
+\defin{}{We will say that $F'(a) = b$, iff for all $dx\in \mathcal{I}$, $dx\neq 0$ we have 
+\[\st\biggl(\frac{F(a+dx)-F(a)}{dx}\biggr) = b\]
+}%TODO check pls
 $dF \defeq ^*F(a+dx) - F(a)$ then
 $F'(a) = b$ iff $\forall dx\in \mathcal{I}, dx\neq 0$  we have $\st(\frac{dF}{dx}) = b$
 $\frac{dF}{dx}$ is an actual division.
@@ -417,11 +417,11 @@ disjoint union of two definable, non-empty open sets.}
 \[\forall x \forall y \forall z x<y \to (zx<zy \land xz < yz)\]
 }
 \bsp{}{
-    \begin{itemize}
+    \begin{enumerate*}[label = (\roman*)]
         \item $(\RR,<,+)$ 
         \item $(\RR^{>0},<,\cdot)$
-        \item non-example: $(\RR^*, \cdot,<)$
-    \end{itemize}
+        \item non-example: $(\RR^*, <,\cdot)$
+    \end{enumerate*}
 }
 Recall:
 \begin{itemize}
@@ -458,7 +458,7 @@ Recall:
     \end{itemize}
 \end{proof}
 \defin{Ordered ring}{A ring (assumed to always be associative, with $1$)
- equipped with a linear order such that
+ equipped with a linear order $<$ such that
 \begin{enumerate}
     \item $0<1$
     \item $<$ translation invariant
@@ -482,19 +482,19 @@ Recall:
         
         Also the additive group is divisible, the underlying set is DLO w/o endpoints and 
         $(x,y)\to x \cdot y$
-        $x\to x^{-1}$ are continuous with resprect to itervall topology.
+        $x\to x^{-1}$ are continuous with resprect to intervall topology.
     \end{itemize}
 }
 \defin{ordered field}{An ordered field is an ordered division ring with commutative multiplication.}
 \defin{real closed field}{ordered field $R$ \outernote{RCF} such that if $f(X)\in R[X]$ and $a<b$ are such that 
 $f(a)<0<f(b)$ then there exists a $c\in (a,b)$ such that $f(c)=0$}
 \bsp{}{
-    \begin{itemize}
+    \begin{enumerate*}[label=(\roman*)]
         \item $(\RR,+,\cdot,<)$ is RCF
         \item $(\mathbb{Q},+,\cdot,<)$ is not a RCF
-    \end{itemize}
+    \end{enumerate*}
 }
-\prop{}{$(M,<,+,\cdot,\dots)$ o-minimal such that $(M,<,+,\cdot)$ is ordered ring then $(M,<,+,\cdot)$ is RCF.}{
+\prop{}{Let $(M,<,+,\cdot,\dots)$ be an o-minimal structure, such that $(M,<,+,\cdot)$ is an ordered ring. Then $(M,<,+,\cdot)$ is already an RCF.}{
     \begin{itemize}
         \item wts. $(M;<,+,\cdot)$ is ordered division ring.
             For all $a\in M$ $aM$ is additive subgroup of $(M,+)$ hence $aM = M$ if $a\neq 0$.

@@ -14,7 +14,7 @@
 \contentsline {section}{\numberline {2.7}Deductions (formal proofs)}{20}{section.2.7}%
 \contentsline {subsubsection}{Logical axioms}{20}{subsubsection*.2}%
 \contentsline {subsubsection}{Ad (1): tautologies}{21}{subsubsection*.3}%
-\contentsline {section}{\numberline {2.8}Generalization and deduction theorem}{22}{section.2.8}%
+\contentsline {section}{\numberline {2.8}Generalization and deduction theorem}{23}{section.2.8}%
 \contentsline {subsubsection}{Alphpabetic Variants}{24}{subsubsection*.4}%
 \contentsline {section}{\numberline {2.9}Soundness and completeness}{25}{section.2.9}%
 \contentsline {subsubsection}{completeness}{26}{subsubsection*.5}%
@@ -45,4 +45,5 @@
 \contentsline {chapter}{\numberline {A}Appendix}{65}{appendix.A}%
 \contentsline {section}{\numberline {A.3}On Model theory}{65}{section.A.3}%
 \contentsline {section}{\numberline {A.4}On Boolean Algebras}{65}{section.A.4}%
-\contentsline {chapter}{\numberline {B}Outernotes, Abbreviations, Overview}{68}{appendix.B}%
+\contentsline {subsection}{\numberline {A.4.1}Notes on Stone spaces}{67}{subsection.A.4.1}%
+\contentsline {chapter}{\numberline {B}Outernotes, Abbreviations, Overview}{69}{appendix.B}%
