@@ -147,23 +147,64 @@ $B/_{=_I}$ is a boolean algebra w/
 $$0\defeq 0/_{=_I}\quad 1\defeq 1/_{=_I}\quad (a/_{=_I})' \defeq a'/_{=_I}\quad a/_{=_I}\lor b/_{=_I} \defeq (a\lor b)/_{=_I}\quad a/_{=_I}\land b/_{=_I} \defeq (a\land b)/_{=_I}$$
 Then $\phi: B\to B/_{=_I}: b\mapsto b/_{=_I}$ is a boolean algebra morphism w/ $\ker(\phi)=I$
 \end{itemize}}
-
-\subsection{Notes on Stone spaces}
-\defin{Some topological properties}{
-    Let $X$ be a \imp{topological space}. $X$ is called 
+\newpage
+\subsection{Notes on Stone spaces}\label{Appendix:Stone}
+\defin{topological properties}{\label{Appendix:def:top}
+    Let $X$ be a \imp{topological space}. $X$ is said to 
     \begin{enumerate}[label=(\roman*)]
-        \item \subimp{compact}, if 
-        every open cover of $X$ has a finite subcover.
-        \item a \subimp{T0-space} or equivalently hausdorff, if
+        \item be \subimp{compact}, if 
+        every open cover of $X$ has a finite subcover. A subset $K\subseteq X$ of a topological space is called compact if it is a compact subspace of $X$.
+        \item be a \subimp{T0-space} or equivalently hausdorff, if
         \[\forall x \forall y \: x\neq y \to \exists U,V\in \tau \: (x\in U\land y \notin U)\lor (x\notin V \land y\in V)\]
-        \item a \subimp{T2-space}, if 
+        \item be a \subimp{T2-space}, if 
         \[\forall x \forall y \: x\neq y \to \exists U,V\in \tau \: (x\in U\land y\in V \land U\cap V = \varnothing)\]
-        \item \subimp{totally seperated}, if 
+        \item be \subimp{totally seperated}, if 
         \[\forall x \forall y \: x\neq y \to \exists U,V\in \tau \: (x\in U\land y\in V \land U\cap V = \varnothing \land U\cup V = X)\]
-        \item \subimp{zero-dimensional} with respect to the \textunderscore{small inductive dimension}, if it has a base for the topology consisting of clopen sets.
+        \item be \subimp{zero-dimensional} with respect to the \underline{small inductive dimension}, if it has a base for the topology consisting of clopen sets.
         \[\forall U \in \tau \,\forall x\in U \, \exists W\in \tau \: (x\in W\subseteq U\land W^c\in \tau)\]
+        \item\label{Appendix:Top:irred} be \subimp{irreducible}, if one of the equivalent conditions below is satisfied
+        \footnote{from: \url{https://en.wikipedia.org/wiki/Hyperconnected_space}}
+        \begin{enumerate}
+            \item No two nonempty open sets are disjoint.
+            \item $X$ cannot be written as the union of two proper closed subsets. Proper means that none of the sets are equal to $X$ or the empty set.
+            \item Every nonempty open set is dense in $X$.
+            \item The interior of every proper closed subset of $X$ is empty.
+            \item Every subset is dense or nowhere dense in $X$.
+            \item\label{Appendix:Top:irred:cond6} No two points can be separated by disjoint neighbourhoods.
+        \end{enumerate}
+        An irreducible set is a subset of a topological space for which the subspace topology is irreducible.
+        \item have a \subimp{generic point}, if there is a singleton $\{p\}\subseteq X$, whose closure is $X$.
+        A subset $Z\subseteq$ of a topological space is said to have a gerneric point, if
+        \[\exists! p\in Z \: \overline{\{p\}} = Z\]%TODO check uniqueness
+        \item be \subimp{sober}, if every nonempty irreducible closed subset of $X$ has a (necessarily unique) generic point.
+        \[\exists p\in X \: \overline{\{p\}}=X\]%TODO check if needs to be unique
+        \item be \subimp{coherent}, if all of the following conditions are satisfied.\\
+        Let $K^\circ(X) = \{V \subseteq X : V\in \tau \land V \text{ is compact}\}$
+        \begin{enumerate}
+            \item $X$ is compact, T0 and sober
+            \item $K^\circ(X)$ is a basis for the topology
+            \item $K^\circ(X)$ is closed under finite intersections
+        \end{enumerate}
     \end{enumerate}
 
+}
+\newpage
+\lemma{}{
+    The definitions in \ref{Appendix:def:top} \ref{Appendix:Top:irred} are indeed equivalent.
+}{  $(c)\implies(d)$, $(d)\implies(e)$ and $(f)\implies(a)$ are left as an exercise.
+    \begin{enumerate}[leftmargin=2.1cm]
+        \item[$(a)\implies(b)$] Suppose $X$ can be written es the union of two proper closed sets. 
+        Then $X = A \cup B$ with $A,B\neq \varnothing$ and $A,B\neq X$. Then $A^c,B^c$ are open, nonempty and disjoint ($A^c\cap B^c = (A\cup B)^c = \varnothing$).
+        \item[$(b)\implies(c)$] Suppose there is a nonempty open set $U$ with $\overline{U} \neq X$.
+        Take $A \defeq U^c$ and $B \defeq \overline{U}$. We have $\varnothing \neq \overline{U}^c\subseteq U^c \neq X$ and $\varnothing \neq U\subseteq \overline{U} \neq X$ so $A,B$ are proper closed sets with $X = A \cup B$.
+        \item[$(e)\implies(f)$] Suppose $(f)$ fails, then there exist $x,y\in X$ with $x\neq y$ and 
+        there exist neighbourhoods $U_x\in \mathcal{U}(x)$ and $U_y\in \mathcal{U}(y)$ with 
+        $U_x\cap U_y = \varnothing$. By definition there exist $V_x, V_y\in \tau$ with 
+        $x\in V_x\subseteq U_x$ and 
+        $y\in V_y\subseteq U_y$. Hence $x\in V_x^\circ = V_x$ and 
+        $y\notin \overline{V_x}\subseteq V_y^c$ and $(e)$ fails too.
+    \end{enumerate}
+    \vspace{-0.6cm}
 }
 \defin{Stone space}{
     A Stone space is a zero-dimensional, compact, hausdorff topological space $X$.
@@ -174,23 +215,41 @@ There are other equivalent equivalent definitions of Stone spaces in other mathe
         \item $X$ is a Stone space
         \item $X$ is compact and totally seperated
         \item $X$ is compact, T0 and zero-dimensional
+        \item $X$ is T2 and coherent
     \end{enumerate}
 }{
-    Since $(\romanNum{1})\implies (\romanNum{3})$ is for free, we show $(\romanNum{1})\Longleftrightarrow (\romanNum{2})$ and $(\romanNum{3})\implies (\romanNum{1})$
+    We show $(\romanNum{1})\Longleftrightarrow (\romanNum{2})$, $(\romanNum{3})\implies (\romanNum{1})$, $(\romanNum{1})\implies (\romanNum{4})$, $(\romanNum{4})\implies (\romanNum{3})$
     \begin{enumerate}[leftmargin=2cm]
-        \item[$(\romanNum{1})\implies(\romanNum{2})$]: We just have to show that $X$ is totally seperated. Let $x,y\in X$ with $x\neq y$. Since $X$ is hausdorff there exists a open set $U$ such that $x\in U$ and $y\notin U$. For this $U$ there exists a $W\subset U$ with $x\in W$ which is clopen. Therefore $W^c$ is clopen too and $y\in U^c\subseteq W^c$, $W^c \cup W = X$.
-        \item[$(\romanNum{1})\impliedby(\romanNum{2})$]: T2 follows from totally seperatedness, so
+        \item[$(\romanNum{1})\implies(\romanNum{2})$:] We just have to show that $X$ is totally seperated. Let $x,y\in X$ with $x\neq y$. Since $X$ is hausdorff there exists a open set $U$ such that $x\in U$ and $y\notin U$. For this $U$ there exists a $W\subset U$ with $x\in W$ which is clopen. Therefore $W^c$ is clopen too and $y\in U^c\subseteq W^c$, $W^c \cup W = X$.
+        
+        \item[$(\romanNum{1})\impliedby(\romanNum{2})$:] T2 follows from totally seperatedness, so
         let $U$ be an open set and $x\in U$. We have to show that there exists a clopen subset $W\subseteq U$ with $x\in W$. We define $V_y$ to be the clopen set $V$ we get from totally seperatedness with respect to $x$ and $y$. From $y\in V_y$ we get that
         $\{U\}\cup \{V_y : y\in U^c\}$ is an open cover of $X$, which is compact so there is a natural number $n$ and $y_1, \dots y_n\in U^c$ with $U\cup \bigcup_{i\leq n} V_{y_i} = X$,
         hence $\bigcup_{i\leq n} V_{y_i}\supseteq U^c$ and therefore $\bigcap_{i\leq n} V_{y_i}^c\subseteq U$.
         $W\defeq \bigcap_{i\leq n} V_{y_i}^c$ is clopen, since finite intersections of clopen sets are clopen. Furthermore for every $i\leq n$ we have $x\in V_{y_i}^c$, so $x\in W$.
-        \item[$(\romanNum{3})\implies (\romanNum{1})$]: Let $x,y\in X$ with $x\neq y$. Since $X$ is T0,
-        There exists open sets $U,V$ with $x\in U\land y \notin U$ or $x\notin V \land y\in V$
+
+        \item[$(\romanNum{3})\implies (\romanNum{1})$:] Let $x,y\in X$ with $x\neq y$. Since $X$ is T0,
+        There exists open sets $U,V$ with \\
+        $x\in U\land y \notin U$ or $x\notin V \land y\in V$
         Assuming $x\in U\land y \notin U$ does not hold, then $x\notin V \land y\in V$.
         Since $X$ is zero-dimensional with respect to the small inductive dimension, there exists 
         a clopen set $W\subseteq V$ with $y\in W$. Therefore $W^c\in \tau$, $x\in W^c$ and we have shown that $X$ is a T2-space.
+
+        \item[$(\romanNum{1})\implies (\romanNum{4})$:] 
+        \begin{enumerate}
+            \item compact and T2 are clear, we have to show that $X$ is sober.
+            Let $Z\subseteq X$ be a nonempty irreducible closed subset. Subspaces of T2 are T2, and 
+            since $Z$ is irreducible, using condition \ref{Appendix:Top:irred:cond6}
+            ``No two points can be separated by disjoint neighbourhoods.'' we get that $Z$ has to be a singleton, and for T2-spaces, singletons have a unique generic point, hence $X$ is sober.
+            \item Let $\sigma$ be the basis for the topology $\tau$ consisting of clopen sets. Since $X$ is T2, the closed sets are exactly the compact sets. Therefore
+            $\sigma\subseteq K^\circ(X)\subseteq \tau$ and $K^\circ(X)$ is a basis for the topology.
+            \item Let $n\in \NN$, $A_1,\dots A_n\in K^\circ(X)$. Like above, all $A_i$ are closed, hence
+            clopen. The finite intersection of clopen sets $\bigcap_{i\leq n}A_i$ is clopen and therefore open and compact and we have $\bigcap_{i\leq n}A_i\in K^\circ(X)$
+        \end{enumerate}
+        \item[$(\romanNum{4})\implies (\romanNum{3})$:]
+        Compact and T0 are given by definition. $K^\circ(X)$ is a basis for the topology and since $X$ is T2, every set of $K^\circ(X)$ is closed, hence $X$ is zero-dimensional.
     \end{enumerate}
     \vspace{-0.7cm}
 }
-
+Note that in the previous lemma $(\romanNum{1})\implies (\romanNum{3})$ is for free.
 

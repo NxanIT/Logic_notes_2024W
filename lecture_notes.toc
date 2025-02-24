@@ -45,5 +45,5 @@
 \contentsline {chapter}{\numberline {A}Appendix}{65}{appendix.A}%
 \contentsline {section}{\numberline {A.3}On Model theory}{65}{section.A.3}%
 \contentsline {section}{\numberline {A.4}On Boolean Algebras}{65}{section.A.4}%
-\contentsline {subsection}{\numberline {A.4.1}Notes on Stone spaces}{67}{subsection.A.4.1}%
-\contentsline {chapter}{\numberline {B}Outernotes, Abbreviations, Overview}{69}{appendix.B}%
+\contentsline {subsection}{\numberline {A.4.1}Notes on Stone spaces}{68}{subsection.A.4.1}%
+\contentsline {chapter}{\numberline {B}Outernotes, Abbreviations, Overview}{70}{appendix.B}%
