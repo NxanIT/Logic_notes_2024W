@@ -1,4 +1,5 @@
 \chapter{Propositional logic}
+\datenote{01.10.2024}
 The definitions, lemmata, propositions and theorems as well as the notes in this chapter are sourced from \cite[chapter~1]{EndertonHerbertB2001AMIt}.
 %\addAbbrev{prop.}{propositional}
 \defin{Language of PL}{
@@ -64,6 +65,7 @@ then $S$ is the set of all propositional sentences.
 \end{proof}
 \addAbbrev{TA}{truth assignment}
 \section{Truth assignments}
+\datenote{03.10.2024}
 %We will answer the question when does a propositional sent. follow from other propositional sentences.
 The interpretation of a propositional atom is either true or false, denoted by $0 / 1$ or $T / F$ or $\top / \bot$. 
 A truth assigment is simply any map $\nu:S\mapsto \{0,1\}$, where $S$ is a map of propositional atoms. 
@@ -241,6 +243,7 @@ Let $\alpha$ be a propositional sent. of $\overline{S}$. We apply the parsing al
 For the leaves, use $\nu$ go get the truth values then work our way up using the conditions (1-6) in \ref{TAConditions}.
 %\subsection*{A more formal notation}
 \section{Induction and recursion}
+\datenote{10.10.2024}
 \subsubsection*{Generalization of induction principle:}
 Let $U$ be a set and $B\subseteq U$ our initial set.
 $\mathcal{F} = \{f,g\}$ a class of functions containing just $f$ and $g$, where $$f:U\times U\to U, \qquad g: U\to U$$
@@ -400,6 +403,7 @@ and $f(x,y),g(x)\in S$, therefore $S$ is inductive.
 
 
 \section{Sentential connectives}
+\datenote{15.10.2024}
 \defin{Tautological equivalence relation}{\outernote{tautological equivalence}For $\alpha,\beta$ propositional sent. we define $\alpha \sim \beta$ \outernote{$\sim$} \outernote{$\models \sledom$} \outernote{$\sledom \models$}
 iff $\alpha \sledom\models  \beta$ (alternative notation: $\models \sledom$). This defines an equivalent relation.}
 \bsp{}{$A \to B \sledom\models  \lnot A \lor B$}

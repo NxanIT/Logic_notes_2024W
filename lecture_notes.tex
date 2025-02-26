@@ -146,6 +146,7 @@
 \DeclareMathOperator{\imag}{im}
 \DeclareMathOperator{\On}{On}%class of all ordinals
 \DeclareMathOperator{\Ord}{Ord}%class of all ordinals
+\DeclareMathOperator{\Card}{Card}
 \DeclareMathOperator{\cof}{cof}
 \DeclareMathOperator{\rk}{rk}%rank of sets / ordinal
 \DeclareMathOperator{\cl}{cl}% closure of a set
@@ -165,26 +166,70 @@
 \newif\ifSimplifiedVersion
 %\SimplifiedVersiontrue
 
+\newcounter{TotalDEcount}
+\newcounter{TotalLEcount}
+\newcounter{TotalPRcount}
+\newcounter{TotalTHcount}
+\newcounter{TotalCOcount}
+\newcounter{TotalHYcount}
+\newcounter{TotalEXcount}
+\newcounter{TotalNOcount}
+
 %%\newtheorem{name}[counter]{Printed output}
+%Parent counter used for entry in listing
 \newcounter{defcount}[chapter]
 \renewcommand{\thedefcount}{\theHchapter.\arabic{defcount}}
 
+\newcounter{DEcount}[chapter]
+\renewcommand{\theDEcount}{Definition \theHchapter.\arabic{defcount}}
+
+\newcounter{AXcount}[chapter]
+\renewcommand{\theAXcount}{Axiom \arabic{AXcount}}
+
 \theoremstyle{definition}
-\newtheorem{defi}[defcount]{Definition}
+
+\newtheorem{defi}[DEcount]{}
 \newcommand{\defin}[2]{
+    \stepcounter{defcount}
+    \stepcounter{TotalDEcount}%for displaying the number of usages of this theoremstyle total
     %Input: 1-Name(or empty), 2-definition
     \ifSimplifiedVersion
         #1
     \else 
         \color{rhoda}   
         \begin{defi}
-            \addcontentsline{dfn}{section}{\color{rhoda}Def. \protect{\color{tanita}{\thedefi \hspace{5px} #1}}}
+            \addcontentsline{dfn}{section}{\color{rhoda}Def. \protect{\color{tanita}{\thedefcount \hspace{5px} #1}}}
             %\normalfont
             \color{tanita}\fontfamily{txtt}\selectfont\textbf{{{#1}}:}
             \normalfont\color{black}#2
         \end{defi}
         \color{black}
     \fi
+}
+
+\newtheorem{axio}[AXcount]{}
+\newcommand{\axiom}[2]{
+    \stepcounter{defcount}
+    \stepcounter{TotalDEcount}%for displaying the number of usages of this theoremstyle total
+    %Input: 1-Name(or empty), 2-definition
+    \ifSimplifiedVersion
+        #1
+    \else 
+        \color{rhoda}   
+        \begin{axio}
+            \textbf{(Def. \theHchapter.\arabic{defcount})}
+            \addcontentsline{dfn}{section}{\color{rhoda}Axiom \protect{\color{tanita}{\arabic{AXcount}
+            \hspace{5px} #1}}}
+            %\normalfont
+            \color{tanita}\fontfamily{txtt}\selectfont\textbf{{{#1}}:}
+            \normalfont\color{black}#2
+        \end{axio}
+        \color{black}
+    \fi
+}
+
+\newcommand{\datenote}[1]{
+    \color{gray}\marginpar[\raggedleft $\Lsh $ #1]{\raggedright $\Lsh $ #1}\color{black}
 }
 
 \newcommand{\outernote}[1]{
@@ -201,6 +246,7 @@
 
 %\newtheorem{notes}[]{Bemerkung}
 \newcommand{\note}[2]{
+    \stepcounter{TotalNOcount}%for displaying the number of usages of this command
     \ifSimplifiedVersion
         Bem: #1 - #2
 
@@ -214,14 +260,29 @@
         \color{black}
     \fi
 }
-
+%parent counter
 \newcounter{propcount}[section]
 \renewcommand{\thepropcount}{\theHchapter.\arabic{section}.\arabic{propcount}}
 
+%counters for automatically writing Proposition / .. when referenced
+\newcounter{PRcount}[section]
+\renewcommand{\thePRcount}{Proposition \theHchapter.\arabic{section}.\arabic{propcount}}
+
+\newcounter{Thcount}[section]
+\renewcommand{\theThcount}{Theorem \theHchapter.\arabic{section}.\arabic{propcount}}
+
+\newcounter{LEcount}[section]
+\renewcommand{\theLEcount}{Lemma \theHchapter.\arabic{section}.\arabic{propcount}}
+
+\newcounter{HYcount}[section]
+\renewcommand{\theHYcount}{Hypothesis \theHchapter.\arabic{section}.\arabic{propcount}}
+
 \theoremstyle{plain}
-\newtheorem{propo}[propcount]{Proposition}
+\newtheorem{propo}[PRcount]{}
 \newcommand{\prop}[3]{
     %Input: 1-Name(or empty), 2-statement, 3-proof(or empty)
+    \stepcounter{TotalPRcount}%for displaying the number of usages of this theoremstyle total
+    \stepcounter{propcount}%needs to be stepped, since the individual counters for prop / thm / ... are not displaying themselve, instead they are displaying their parent counter propcount
     \ifSimplifiedVersion
         Prop: #1 - #2
 
@@ -237,11 +298,13 @@
 %\newcounter{theoremcount}[section]
 %\renewcommand{\thetheoremcount}{\thesection.\arabic{propcount}}
 
-\newtheorem{theorem}[propcount]{Theorem}
+\newtheorem{theorem}[Thcount]{}
 \newcommand{\thm}[3]{
     %Input: 1-Name(or empty), 2-statement, 3-proof(or empty)
+    \stepcounter{TotalTHcount}%for displaying the number of usages of this theoremstyle total
+    \stepcounter{propcount}%needs to be stepped, since the individual counters for prop / thm / ... are not displaying themselve, instead they are displaying their parent counter propcount
     \ifSimplifiedVersion
-        Prop: #1 - #2
+        Thm: #1 - #2
 
     \else 
         \color{rhoda}   
@@ -253,10 +316,11 @@
     \addcontentsline{thn}{subsection}{\color{rhoda}Thm. \protect{\color{tanita}{\thepropcount \hspace{5px} #1}}} 
 }
 
-\newtheorem{lemmata}[propcount]{Lemma}
+\newtheorem{lemmata}[LEcount]{}
 \newcommand{\lemma}[3]{
     %Input: 1-Name, 2-statement, 3-proof
-    
+    \stepcounter{TotalLEcount}%for displaying the number of usages of this theoremstyle total
+    \stepcounter{propcount}%needs to be stepped, since the individual counters for prop / thm / ... are not displaying themselve, instead they are displaying their parent counter propcount
     \ifSimplifiedVersion
         Lemma: #1 - #2
 
@@ -269,8 +333,10 @@
     \fi
     \addcontentsline{thn}{subsection}{\color{rhoda}Lemma \protect{\color{tanita}{\thepropcount \hspace{5px} #1}}} 
 }
-\newtheorem{hypo}[propcount]{Hypothesis}
+\newtheorem{hypo}[HYcount]{}
 \newcommand{\hypothesis}[2]{
+    \stepcounter{TotalHYcount}%for displaying the number of usages of this theoremstyle total
+    \stepcounter{propcount}%needs to be stepped, since the individual counters for prop / thm / ... are not displaying themselve, instead they are displaying their parent counter propcount
     \ifSimplifiedVersion
         Hypo: #1 - #2
 
@@ -284,12 +350,13 @@
     \addcontentsline{thn}{subsection}{\color{rhoda}Hyp. \protect{\color{tanita}{\thepropcount \hspace{5px} #1}}} 
 }
 
+
 \newcommand{\propOrThm}[3]{
     \ifx\foo#1\foo 
     \else
         \color{tanita}\fontfamily{txtt}\selectfont\textbf{\textup{#1}}:
     \fi
-    \fontfamily{cmr}\selectfont\color{black}#2
+    \fontfamily{cmr}\selectfont\normalcolor #2
     \ifx\foo#3\foo
     \else
         \begin{proof}
@@ -298,14 +365,20 @@
     \fi
 }
 
-
+%parent counter Corollary
 \newcounter{subcorollcount}[propcount]
-
 \renewcommand{\thesubcorollcount}{\thepropcount-\Alph{subcorollcount}}
-\newtheorem{corollary}[subcorollcount]{Corollary}
+
+\newcounter{subKOcount}[propcount]
+\renewcommand{\thesubKOcount}{Corollary \thepropcount-\Alph{subcorollcount}}
+
+
+\newtheorem{corollary}[subKOcount]{}
 \newcommand{\coroll}[1]{
     %\addtocounter{corollcount}{-1}
     %Input: 1-Statement
+    \stepcounter{subcorollcount}
+    \stepcounter{TotalCOcount}%for displaying the number of usages of this theoremstyle total
     \ifSimplifiedVersion
         Cor: #1
 
@@ -320,8 +393,10 @@
 
 \newcounter{excount}[chapter]
 \renewcommand{\theexcount}{\theHchapter.\arabic{excount}}
+
 \newtheorem{example}[excount]{Example}
 \newcommand{\bsp}[2]{
+    \stepcounter{TotalEXcount}%for displaying the number of usages of this theoremstyle total
     \ifSimplifiedVersion
         Bsp(#1): #2
 
@@ -450,7 +525,7 @@
 \pagestyle{one_sided}
 \fi
 
-\chapter{Outernotes, Abbreviations, Overview}
+\chapter*{Outernotes, Abbreviations, Overview}
 \begin{multicols}{3}
     \listofouternotes
 \end{multicols}
@@ -464,6 +539,19 @@
     \listoftheorems
 \end{multicols}
 
+
+\begin{center}
+    \begin{tabular}{l r}
+        Total number of Definitions: & \theTotalDEcount\\
+        Total number of Lemmatas: & \theTotalLEcount\\
+        Total number of Propositions: & \theTotalPRcount\\
+        Total number of Theorems: & \theTotalTHcount\\
+        Total number of Corollaries: & \theTotalCOcount\\
+        Total number of Hypotheses: & \theTotalHYcount\\
+        Total number of Examples: & \theTotalEXcount\\
+        Total number of Notes: & \theTotalNOcount\\
+    \end{tabular}
+\end{center}
 \restoregeometry
 \printbibliography
 

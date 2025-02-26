@@ -1544,6 +1544,12 @@ INPUT .\SetTheory.tex
 INPUT SetTheory.tex
 INPUT .\SetTheory.tex
 INPUT SetTheory.tex
+INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi12.tfm
+INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
+INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmex10.tfm
+INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT C:\Users\Nxan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT C:\Users\Nxan\AppData\Local\MiKTeX\fonts\tfm\public\stmaryrd\stmary10.tfm
 INPUT .\Addidtional.tex
 INPUT Addidtional.tex
 INPUT .\Addidtional.tex

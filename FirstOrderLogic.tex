@@ -1,4 +1,5 @@
 \chapter{Predicate - / first order logic}
+\datenote{17.10.2024}
 The definitions, lemmata, propositions and theorems as well as the notes in this chapter are sourced from \cite[chapter~2]{EndertonHerbertB2001AMIt}.
 \defin{A First order Language}{
     consists of infinetely many distinct symbols such that no symbol is a proper 
@@ -193,7 +194,7 @@ which also determine the scope of the quantifier $\forall$, the meaning of all p
     \end{itemize}
 }
 
-To know wheter $\mathcal{A}\models \varphi \: [s]$ it suffices to know where $s$ maps the variables that occur free in $\varphi$. This results from the Coincidence Lemma \ref{Thm.evalonlyfreevar}
+To know wheter $\mathcal{A}\models \varphi \: [s]$ it suffices to know where $s$ maps the variables that occur free in $\varphi$. This results from the Coincidence \ref{Thm.evalonlyfreevar}
 \thm{Coincidence Lemma}{\label{Thm.evalonlyfreevar}Suppose $s_1,s_2:V\to A$ agree on all variables that occur free in $\varphi$ then 
  $$\mathcal{A}\models \varphi \:[s_1] \text{ iff }\mathcal{A}\models \varphi \: [s_2]$$
 }{
@@ -211,7 +212,8 @@ To know wheter $\mathcal{A}\models \varphi \: [s]$ it suffices to know where $s$
             \end{itemize}
         \end{claimproof}
         \item if $\varphi$ is $ =t_1,t_2$ is similar
-        \item if $\varphi$ is $\lnot \alpha$ then $\mathcal{A}\models \lnot \alpha  \: [s_1]$ iff $\mathcal{A}\not\models \alpha  \: [s_1]$ iff $\mathcal{A}\not\models \alpha  \: [s_2]$ iff $\mathcal{A}\models \lnot \alpha  \: [s_1]$
+        \item \datenote{22.10.2024}
+        if $\varphi$ is $\lnot \alpha$ then $\mathcal{A}\models \lnot \alpha  \: [s_1]$ iff $\mathcal{A}\not\models \alpha  \: [s_1]$ iff $\mathcal{A}\not\models \alpha  \: [s_2]$ iff $\mathcal{A}\models \lnot \alpha  \: [s_1]$
         \item if $\varphi$ is $\alpha \to \beta$ then $\mathcal{A}\models  \alpha \to \beta  \: [s_1]$ iff .. or .. iff for s2 iff ... or .. 
         \item if $\varphi$ is $ \forall x \alpha$ then the assumption is that $s_1,s_2$ .. the free variables of $\alpha$ are the free variables of $\varphi$ exept for $x$.
         but because $s_1(x|a) = s_2(x|a)$ they both agree on all free variables of $\alpha$.
@@ -273,19 +275,20 @@ $\varphi \models \psi$ and $\psi \models \varphi$.
 }
 
 \section{definability in a structure}
+\datenote{24.10.2024}
 By choosing a language $\mathcal{L}$, we specify which constant, function and relation symbols we can use when constructing formulas. If we then fix a structure $\mathcal{A}$, some $n$-ary relations that may are not in our structure, can still be expressed by a formula $\varphi$. For example given the structure $\mathcal{N} = (\NN;0,+)$ with equality and the usual addition on $\NN$, we can view the set
 \[P_< \defeq \{(n,m)\in \NN : \varphi(n,m)\},\quad \varphi(n,m)\equiv \exists x \, (\lnot(x=0)\land n+x=m)\]
 That gives us the usual interpretation of $<$ in the natural numbers, namely $n<m$ iff $\varphi(n,m)$ iff $(n,m)\in P_<$. 
 \defin{definability in a structure}{ 
     We say that a general $n$-ary relation $P$ on $A$ (we will just call it $P$, it does not have to be in the language) is definable in $\mathcal{A}$, if there is a $\mathcal{L}$-formula
     $\varphi$ with free variables among $\{v_1,\dots,v_n\}$ such that 
-    \[P = \{(a_1,\dots a_n) \in A^n: \mathcal{A} \models \varphi\: \llbracket a_1,\dots a_n\rrbracket\}\]
+    \[P = \bigl\{(a_1,\dots a_n) \in A^n: \mathcal{A} \models \varphi\: \llbracket a_1,\dots a_n\rrbracket\bigr\}\]
     We also say that $\varphi$ defines $P$ in the structure $\mathcal{A}$.
     
     TODO definability by points:\outernote{definable by points}
     We say that a general $n$-ary relation $P$ on $A$ is definable \graybf{by points} in $\mathcal{A}$, if there is a $\mathcal{L}$-formula
     $\varphi$ with free variables among $\{v_1,\dots,v_{n+m}\}$ and $b_1,\dots b_m\in A$ such that 
-    \[P = \{(a_1,\dots a_n) \in A^n: \mathcal{A} \models \varphi\: \llbracket a_1,\dots a_n, b_1,\dots b_m\rrbracket\}\]
+    \[P = \bigl\{(a_1,\dots a_n) \in A^n: \mathcal{A} \models \varphi\: \llbracket a_1,\dots a_n, b_1,\dots b_m\rrbracket\bigr\}\]
 }
 \bsp{}{
     \begin{enumerate}
@@ -404,7 +407,7 @@ Until now, we have no notion that tells us when two graphs are the same or at le
 \noindent Our next question will be: what is the relation of the above notions with truth and satisfiability
 The answer will be given by the so called Homomorphism theorem.
 \newpage
-\thm{Homomorphism Theorem}{
+\thm{Homomorphism Theorem}{\datenote{29.10.2024}
     Let $h:A\to B$ be a homomorphism of $\mathcal{A}$ into $\mathcal{B}$ and $s:V\to A$ an assignment then $h\circ s: V\to B$ is an assigment and it holds
     \begin{enumerate}
         \item for all terms $t$ it is $h(\overline{s}(t))=\overline{(h\circ s)}(t)$
@@ -464,7 +467,7 @@ The answer will be given by the so called Homomorphism theorem.
     Suppose $\varphi$ defines $R$ in $\mathcal{A}$, then 
     $$\mathcal{A}\models \varphi \: \llbracket a_1,\dots a_n\rrbracket \quad \iif \quad \mathcal{A}\models \varphi \: \llbracket h(a_1),\dots h(a_n)\rrbracket$$
 }
-\note{}{Corollary \ref{HomThm:coroll} can be used to show that some $R\subseteq A^n$ is not definable in $\mathcal{A}$
+\note{}{\ref{HomThm:coroll} can be used to show that some $R\subseteq A^n$ is not definable in $\mathcal{A}$
 }
 \bsp{}{
     $\mathcal{R}=(\RR,<)$ then $\NN$ is not definable in $\mathcal{R}$.
@@ -472,7 +475,8 @@ The answer will be given by the so called Homomorphism theorem.
     $h:\RR\to \RR$ is a bijection and $x<y$ iff $h(x)<h(y)$ so $h$ is strictly increasing.
     for example $x\mapsto x+ \frac{1}{2}$ or $x\mapsto x^3$.  
 }
-\section{Unique readability for terms}
+\section{Unique readability for terms and formulas}
+\subsection*{Unique readability for terms}
 \defin{}{
     We define a function $K: \TERMSYMB\to \ZZ$ on the set $\TERMSYMB$ of symbols from which terms are built up (variables, constants, function symbols).
     $$\TERMSYMB = \VARIAB \cup \CONST \cup \FUNCT$$
@@ -520,11 +524,12 @@ $\TERMS\subseteq \overline{\TERMSYMB}\subseteq \EXPR$.
         \]
     \item $\mathcal{F}_f|_{\text{terms}}$ are one-to-one (injective):
         assume $ft_1\dots t_n = f t'_1\dots t'_n$ and assume $t_1 \neq t_1'$ 
-        then one is a proper initial segment of the other. By Corollary \ref{FO:Unique-readability-Ko} 
+        then one is a proper initial segment of the other. By \ref{FO:Unique-readability-Ko} 
         its $K$-value has to be less than $1$ so it is not a term. By induction we get 
         $t_1 = t_1', \dots, t_n=t_n'$.
     \end{itemize}
 }
+\subsection*{Unique readability for formulas}
 \lemma{}{$K:\overline{\TERMSYMB}\to \ZZ$ extends to a function $K:\EXPR\to \ZZ$ on the set of all expressions by adding to the above definition:
     \begin{enumerate}[label=(\roman*)]
         \setcounter{enumi}{3}
@@ -553,9 +558,10 @@ $\TERMS\subseteq \overline{\TERMSYMB}\subseteq \EXPR$.
     \end{proof}}
 
 
-\section{A parsing algorithm for first order logic}
+%\section{A parsing algorithm for first order logic} Not in this years lecture
 
 \section{Deductions (formal proofs)}
+\datenote{31.10.2024}
 \defin{Modus Ponens}{We will use one rule of interference, Modus Ponens(MP).\addAbbrev{MP}{Modus Ponens}\outernote{MP} Our notation will be: 
 $$\frac{\alpha, \alpha\to \beta}{\beta}$$
 And it reads as follwos: "If $\alpha$ and $\alpha \to \beta$ then $\beta$."
@@ -673,9 +679,11 @@ But it is a generalization of a tautology and therefore by (1) a logical axiom.
     Let $\Gamma$ be a set of first order formulas, $\varphi$ a first order formula and $\mathbb{A} = \{A_1, A_2,\dots\}$ our set of atoms. We aim to construct a propositional sentence $\beta$ that behaves in some sense similar to $\varphi$ and a propositional sentence $\alpha_\gamma$ for each $\gamma\in \Gamma$ in the same way.
     If we 
 }
-\defin{Let $\Gamma$ be a set of first order formulas and $\varphi$ a first order formula. We say 
+\defin{tautological implication}{
+    Let $\Gamma$ be a set of first order formulas and $\varphi$ a first order formula. We say 
     $\Gamma$ tautologically implies $\varphi$, iff 
-}{}
+    TODO
+}
 \lemma{}{If $\Gamma\models_{\text{taut}}\varphi$ then $\Gamma \models\varphi$}{
     Problem set.
 }
@@ -699,6 +707,7 @@ We will prove $\Gamma\models \varphi$ iff $\Gamma\vdash \varphi$ (the first dire
     \end{itemize}
 }
 \section{Generalization and deduction theorem}
+\datenote{05.11.2024}
 \note{}{Intuativly if $\Gamma$ does not assume anything about $x$ and $\Gamma$ proves $\varphi$ then $\Gamma$ proves $\forall x \varphi$}
 \thm{Generalization theorem}{If $\Gamma \vdash \varphi$ and $x$ does not occur free in $\Gamma$, then $\Gamma \vdash \forall x \varphi$}{
     We use axiom group 4, $\alpha \to \forall x \alpha$ if $x$ is not occuring free in $\alpha$.
@@ -854,18 +863,20 @@ if our language contains equality:
 \begin{enumerate}
     \item $\vdash \forall x x = x$ (ax 5.)
     \item $\vdash \forall x \forall y (x=y \to y = x)$ p.122
-    \item $\vdash \forall x \forall y \forall z (x=y \to (y=z \to x = z))$ (Exercise 11. in \cite{EndertonHerbertB2001AMIt})
-    \item $\vdash \forall x_1 \forall x_2 \forall y_1 \forall y_2 (x_1=y_1 \to (x_2=y_2 \to (Px_1x_2 \to Py_1y_2)))$, similarly for any $n$-ary predicate. p.128
-    \item $\vdash \forall x_1 \forall x_2 \forall y_1 \forall y_2 (x_1=y_1 \to (x_2 = y_2 \to (fx_1x_2 = fy_1y_2)))$, similarly for $n$-ary formula symbol, p.122
+    \item $\vdash \forall x \forall y \forall z (x=y \to (y=z \to x = z))$ 
+    (\cite[Exercise 11 of 2.4][130]{EndertonHerbertB2001AMIt})
+    \item $\vdash \forall x_1 \forall x_2 \forall y_1 \forall y_2 (x_1=y_1 \to (x_2=y_2 \to (Px_1x_2 \to Py_1y_2)))$, similarly for any $n$-ary predicate. (see \cite[p.128]{EndertonHerbertB2001AMIt})
+    \item $\vdash \forall x_1 \forall x_2 \forall y_1 \forall y_2 (x_1=y_1 \to (x_2 = y_2 \to (fx_1x_2 = fy_1y_2)))$, similarly for $n$-ary formula symbol, (see \cite[p.122]{EndertonHerbertB2001AMIt})
 \end{enumerate}
 
 
-\section{Soundness and completeness}
+\datenote{07.11.2024}
 In first order logic it holds:
 \begin{itemize}
     \item soundness: If $\Gamma \vdash \varphi$ then $\Gamma \models \varphi$
     \item completeness: If $\Gamma \models \varphi$ then $\Gamma \vdash \varphi$
 \end{itemize}
+\section{Soundness of first order logic}
 For the proof of soundness we will have to show that all our axioms are valid. For this we will need the following two lemmas.
 \lemma{pre-substitution lemma}{Let be a map TODO}{}
 \lemma{Substitution lemma}{If $t$ SUB $x$ in $\varphi$ then $\mathcal{A}\models \varphi_t^x\: [s]$ iff $\mathcal{A}\models \varphi\: [s(x|\overline{s}(t))]$}{
@@ -887,7 +898,7 @@ For the proof of soundness we will have to show that all our axioms are valid. F
 }
 
 
-\thm{}{If $\Gamma \vdash \varphi$ then $\Gamma \models \varphi$}{
+\thm{Soundness Theorem}{If $\Gamma \vdash \varphi$ then $\Gamma \models \varphi$}{
     Proof by induction on $\varphi$.
     We have to show: 
     \begin{enumerate}[label=(\roman*)]
@@ -932,16 +943,16 @@ For the proof of soundness we will have to show that all our axioms are valid. F
         \end{enumerate}
     \end{enumerate}
 }
-
+\datenote{12.11.2024}
 \coroll{$ \vdash \varphi \leftrightarrow \psi$ then $\varphi,\psi$ are logically equivalent.}
 \coroll{$\varphi'$ an alphabetic variant of $\varphi$ then $\varphi,\varphi'$ are logically equivalent.}
 \defin{}{A set of formulas $\Gamma$ is called satisfiable, whenever there is a structure $\mathcal{A}$ with an assigment into $A$ that for all $\sigma\in \Gamma$
     $\mathcal{A}\models \sigma \: [s]$
 }
 \coroll{\label{FO:SAT_implies_CON}If $\Gamma$ is satisfiable then $\Gamma$ is consistent}
-\note{}{Corollary \ref{FO:SAT_implies_CON} is equivalent to Soundness (see Exercises)}
+\note{}{\ref{FO:SAT_implies_CON} is equivalent to Soundness (see Exercises)}
 
-\subsubsection{completeness}
+\section{Completeness of first order logic}
 \thm{Completness Theorem}{$\Gamma \models \varphi \implies \Gamma \vdash \varphi$ }{}
 \thm{Completness Theorem'}{Every consistent set of formulas is satisfiable.}{}
 
@@ -1031,7 +1042,17 @@ For the proof of soundness we will have to show that all our axioms are valid. F
                 \item $\lnot \varphi$
                 \[\mathcal{A}\models \lnot\varphi^* \: [s] \iif \mathcal{A}\not\models \varphi \: [s] \iif \varphi\notin \Delta \iif \lnot \varphi \in \Delta\]
                 \item $\varphi \to \psi$
-                \[\mathcal{A}\models \varphi^*\to \psi^* \: [s] \iif \mathcal{A}\not\models \varphi^* \: [s] \text{ or }\mathcal{A}\models \psi^* \: [s] \iif \mathcal{A}\models \lnot \varphi^* \: [s] \text{ or }\mathcal{A}\models \psi^* \: [s] \iif \lnot \varphi \in \Delta \text{ or } \psi\in \Delta \iif (\varphi \to \psi)\in \Delta\]
+                \[
+                \begin{aligned}
+                    \mathcal{A}\models \varphi^*\to \psi^* \: [s] 
+                    &\iif \mathcal{A}\not\models \varphi^* \: [s] \text{ or }
+                    \mathcal{A}\models \psi^* \: [s] \\
+                    &\iif \mathcal{A}\models \lnot \varphi^* \: [s] \text{ or }
+                    \mathcal{A}\models \psi^* \: [s] \\
+                    & \iif \lnot \varphi \in \Delta \text{ or } 
+                    \psi\in \Delta \\
+                    &\iif (\varphi \to \psi)\in \Delta
+                \end{aligned}\]
                 \item $\forall x \varphi$
                 wts. $\mathcal{A}\models \forall x \varphi^* \: [s] \iif \forall x \varphi \in \Delta$
                 Suppose $\mathcal{A}\models \forall x \varphi^* \: [s]$ then $\mathcal{A}\models \varphi^* \: [s(x|c)]$ where $c$ is such that $\lnot \forall x \varphi \to \lnot \varphi^x_c\in \Delta$
@@ -1071,9 +1092,9 @@ For the proof of soundness we will have to show that all our axioms are valid. F
     \end{enumerate}
 \end{proof}
 
-Exam exam
-
-
+%Exam exam
+%TODO what does that above mean?
+\datenote{14.11.2024}
 \coroll{compactness statements 
 \begin{enumerate}
     \item $\Gamma \models \varphi$ then there is a finite subset $\Gamma_0\subseteq \Gamma$ s.th. $\Gamma_0\models \varphi$
@@ -1089,7 +1110,7 @@ Exam exam
     \end{enumerate}
 \end{proof}
 
-\subsection{Sizes of models}
+\subsection{Sizes of models / completness for uncountable languages}
 Let $\Gamma$ be a consistent set of formulas. Is it possible to 
 
 \bsp{}{
@@ -1148,7 +1169,7 @@ Recall the proof of completeness theorem. $\mathcal{L}$, $|\mathcal{L}= \aleph_0
 $\Gamma$ consistent set of $\mathcal{L}$-formulas. $\mathcal{A}/_E$ countable.
 
 
-\subsection{Completness for uncountable languages}
+\subsection*{Completness for uncountable languages}
 
 Use (AC) in the form of Zorn's Lemma and Zermelo's Theorem
 \thm{Zorn's Lemma}{$P$ partially ordered set such that every chain has an upperbound in $P$ then $P$ contains a maximal element.}{}

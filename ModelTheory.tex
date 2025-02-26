@@ -20,7 +20,7 @@ LST stands for Löwenheim-Skolem-Tarski and is the combination of the ``upward L
     Hence it is exactly of size $\kappa$. Take the reduct of $\mathcal{A}$ to the language $\mathcal{L}$.%TODO: define reduct
 }
 \bsp{}{The language of ZFC $\mathcal{L} = \{\in\}$ is countable, so Löwenheim-Skolem guaranties that ZFC has a countable model.
-But ZFC knows that there are uncountable sets (see Cantors Theorem \ref{5:Thm:Cantor}).
+But ZFC knows that there are uncountable sets (see Cantor's \ref{5:Thm:Cantor}).
 This is called skolems paradox.
 explanation: some bijections are missing
 }
@@ -36,6 +36,7 @@ explanation: some bijections are missing
 \end{enumerate}
 }
 \section{Theories and completeness}
+\datenote{14.11.2024}
 \defin{Theory}{A theory $T$ is a set of sentences that is closed under logical implication.
 \[T\models \sigma \implies \sigma \in T\]
 }
@@ -82,7 +83,7 @@ $\sigma$ either $\sigma\in T$ or $\lnot \sigma\in T$.}
 
 A theory $T$ is complete iff any to models are elementarily equivalent.
 }
-
+\datenote{19.11.2024}
 \bsp{}{
     \begin{itemize}
         \item The theory of fields is not complete.
@@ -164,23 +165,24 @@ Steinitz: Two ACF are isomorphic iff they have the same characteristic and there
 \subsubsection{Lefschetz Principle}%2024-12-13: TODO source needed
 \prop{Lefschetz Principle}{Let $\mathcal{C} = (\mathbb{C},0,1,+,\cdot,-)$ For a sentence in the language of $\mathcal{C}$
     Then the following are equivalent:
-    \begin{itemize}
+    \begin{enumerate}[label=(\alph*)]
         \item $\mathcal{C}\models \sigma$
         \item $\mathcal{A}\models \sigma $ for every $\mathcal{A}\models $ ACF$_0$
         \item ACF$_0$ $\models \sigma$
         \item for all sufficiently large primes $p$ it is ACF$_p$ $\models \sigma$
         \item For infinitely many primes $p$ it is ACF$_p$ $models \sigma$ %could also state that:  exists $\mathcal{K}$ structure that logically implies $\sigma$.
-    \end{itemize}}{ 
+    \end{enumerate}}{ 
     Sketch:
-    \begin{itemize}
+    \begin{itemize}[leftmargin=2cm]
         \item[(a), (b), (c)] are equivalent by completeness of ACF$_0$
         \item[(c)$\implies$ (d)] ACF$_0$ $\models \sigma$ 
         so there is $T_0\subseteq \text{ACF}_0$ such that $T_0\models \sigma$ therefore there exists a sufficiently large prime $p$ such that $\text{ACF}_p\models \sigma$. 
-        \item[(d) $\implies$ (e)] If it is true for all sufficiently large primes that it holds for infinitely many.
-        \item[(e) $\implies$ (c)] If $\text{ACF}_0\vDash \sigma$ than $\text{ACF}_0\models \sigma$
+        \item[(d)$\implies$(e)] If it is true for all sufficiently large primes that it holds for infinitely many.
+        \item[(e)$\implies$(c)] If $\text{ACF}_0\vDash \sigma$ than $\text{ACF}_0\models \sigma$
     \end{itemize}
 }
 Example of the Lefschetz Principle:
+\datenote{21.11.2024}
 \prop{Ax-Grothendieck}{\footnote{Named by Alexander Grothendieck and James Burton Ax}
     Let $f:\mathbb{C}^n \to \mathbb{C}^n$ be a polynomial map. If $f$ is injective, then $f$ is surjective.
 }{
@@ -244,7 +246,7 @@ Idea: If we want to show that $\!^*R$ or $\!^*F$ has certain property, then we s
 }
 TODO
 
-%26.11.2024
+\datenote{26.11.2024}
 $\mathcal{R}^*\supseteq \mathcal{R}$ such that $\mathcal{R}^*\equiv \mathcal{R}$.
 $\mathcal{F} = \{x\in \mathcal{R}^* : \exists r\in \RR \: ^*|x|^* \leq r\}$
 $\mathcal{I} = \{x\in \mathcal{R}^* : \forall r\in \RR \: ^*|x|^* < r\}$
@@ -377,6 +379,7 @@ $\frac{dF}{dx}$ is an actual division.
     \end{itemize}
 }
 \section{o-minimality}\label{MT:sec:o-min}
+\datenote{28.11.2024}
 \bsp{}{
     $\overline{\RR} = (\RR,+,-,\cdot, 0,1,\leq)$ $\overline{\RR} = (\RR,\leq)$ TODO or at least 
     in a very similar language, 
@@ -412,7 +415,6 @@ disjoint union of two definable, non-empty open sets.}
         \item (IVP) If $f:[a,b]\to M$ definable and continuous, then $f$ assumes all values between $f(a)$ and $f(b)$.
     \end{enumerate}
 }{Exercise}
-\section{o-minimal ordered groups and rings}
 \defin{ordered group}{A ordered group is a group with a linear order such that 
 \[\forall x \forall y \forall z x<y \to (zx<zy \land xz < yz)\]
 }
@@ -505,8 +507,10 @@ $f(a)<0<f(b)$ then there exists a $c\in (a,b)$ such that $f(c)=0$}
         The ring operations are continuous, see note and use lemma about IVP (c).
     \end{itemize}
 }
-\subsubsection{Cell decomposition}
-Base step: 
+%TODO: what does that mean? are we misssing something here?
+% \subsubsection{Cell decomposition}
+% Base step: 
+\section{Monotonicity Theorem}
 \prop{Monotonicity Theorem}{
     Suppose $f:(a,b)\to M$ definable, then there are $a<c_1< \dots < c_k<b$ such that for $(a,c_1)$, $(c_i,c_{i+1})$, $(c_k,b)$ subsets of $(a,b)$ we have: $f$ is either constant or strictly monotinic and continuous.
 }{}
@@ -544,7 +548,7 @@ Base step:
         \item[Case 3:] similar to Case 2. 
     \end{enumerate}
 \end{proof}
-%03.12.2024
+\datenote{03.12.2024}
 Proof of Lemma 1:
 \begin{proof}
     Statement: ``There exists a subinterval on which $f$ is constant or injective.''
@@ -652,6 +656,7 @@ On of the important tools in o-minimality theory is the cell cecomposition theor
         \item Every cell is definalby connected. You can proof this by induction on the cell. $\{r\}$ and open intervals are definably connected. If the projection of a cell is definably connected, then the fibre above it is either an open interval or a single point. It is even definable path connected. If there would exist an open disjoint cover there exists an open disjoint cover of the fibre, which is not possible.
     \end{itemize}
 }
+\section{Cell decomposition Theorem}
 \defin{decomposition}{A decomposition of $R^m$ is a finite partition of $R^m$ into cells defined inductively:
 \begin{itemize}
     \item decomposition of $R^1 = R$: 
@@ -677,6 +682,7 @@ On of the important tools in o-minimality theory is the cell cecomposition theor
     \end{cases}\bigr\} \implies (\RomanNum{1} _{m+1}), (\RomanNum{2} _{m+1})
     $$ 
 }
+\datenote{05.12.2024}
 \defin{}{A definably connected component of a non-empty definable Subset $X\subseteq R^m$ is a definably-connected subset of $X$ which is maximal wrt being definably connected}
 \bsp{}{$X\subseteq R^m$ definable. Then it is definably connected iff $X$ definably path connected 
 i.e. 

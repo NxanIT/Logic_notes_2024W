@@ -8,10 +8,10 @@ For $(\mathcal{U},\in)$
 If $\mathcal{A} = (\mathcal{U},\in^\mathcal{A})\models \text{ZFC}$, then the elements of the universe $\mathcal{U}$ are called sets.
 We will show roughly that some definably sets are not sets (in the sense of ZFC), others are not. The latter will be called classes.
 \section{First axioms of ZFC}
-\defin{Axiom of extensionality}{\label{Ax1}
+\axiom{Axiom of extensionality}{\label{Set:Ax1}
     $$\forall x \forall y (x=y \leftrightarrow \forall u (u\in x \leftrightarrow u\in y))$$}
 In other words, two sets are the same if they have the same elements. This will give us later uniqueness in construction of other sets.
-\defin{Pairing Axiom}{\label{Ax2}
+\axiom{Pairing Axiom}{\label{Set:Ax2}
     for any two sets $a,b$ one can form a set whose elements are precicely $a,b$
 $$\forall x\forall y \exists z \forall u \: u\in z \leftrightarrow (u = x \lor u = y)$$
 Our notation will be $z=\{x,y\}$
@@ -20,43 +20,42 @@ In words: For any two sets there exists a set whose members are those two sets.
 
 \note{}{
     \begin{itemize}
-        \item $\{x,y\}$ is unique by \ref{Ax1}
-        \item $\{x\}$ is a set. from \ref{Ax2}, take $x= y$
+        \item $\{x,y\}$ is unique by \ref{Set:Ax1}
+        \item $\{x\}$ is a set. from \ref{Set:Ax2}, take $x= y$
     \end{itemize}
 }
-\lemma{}{Let $x,y$ be sets. We define the ordered pair $(x,y) \defeq \{\{x\},\{x,y\} \}$. 
-    Then it holds $(x,y) = (a,b)$ iff $x = a$ and $y = b$
-}{By cases
-    \begin{itemize}
-        \item if $x=y$, then $(x,y) = \{\{x\} \}$ therefore $a=b$ and by \ref{Ax1} it holds $x=a$.
-        \item if $x\neq y$, then $\{\{x\},\{x,y\} \} = \{\{a\},\{a,b\} \}$ iff $\{x\} = \{a\}$ and $\{x,y\} = \{a,b\}$. That is, iff $x=a$ and $y=b$.
-    \end{itemize} }
-\note{}{The set $(x,y)$ exists, because its obtained by repeatedly using \ref{Ax2}}
+% \lemma{}{Let $x,y$ be sets. We define the ordered pair $(x,y) \defeq \{\{x\},\{x,y\} \}$. 
+%     Then it holds $(x,y) = (a,b)$ iff $x = a$ and $y = b$
+% }{By cases
+%     \begin{itemize}
+%         \item if $x=y$, then $(x,y) = \{\{x\} \}$ therefore $a=b$ and by \ref{Set:Ax1} it holds $x=a$.
+%         \item if $x\neq y$, then $\{\{x\},\{x,y\} \} = \{\{a\},\{a,b\} \}$ iff $\{x\} = \{a\}$ and $\{x,y\} = \{a,b\}$. That is, iff $x=a$ and $y=b$.
+%     \end{itemize} }
+
+Let $x_1,x_2,\dots x_n$ be sets We define the \imp{n-tuple} $(x_1,\dots x_n)$ inductively:
+\begin{itemize}
+    \item  $(x_1,x_2) \defeq \{\{x\},\{x,y\} \}$. 
+    \item $(x_1,\dots x_n) \defeq (x_1 (x_2,\dots x_n))$
+\end{itemize}
+\note{}{The set $(x,y)$ exists, because its obtained by repeatedly using \ref{Set:Ax2}}
 
 \lemma{}{Let $x,y,a,b$ be sets. Then $(x,y) = (a,b)$ iff $x = a$ and $y = b$}{
+    If $x = a$ and $y = b$ then by \ref{Set:Ax1} $(x,y) = (a,b)$. The other direction by cases:
     \begin{itemize}
         \item case $x=y$, then $(x,y) = \{\{x\}\}$ is a singleton then $(a,b)$ is a singleton, 
         wlog $\{a\} = \{a,b\}$ then $a = b = x$.
-        \item case $x\neq y$ and $\{\{x\},\{x,y\}\} = \{\{a\},\{a,b\}\}$ then $\{x\} = \{a\}$ and $\{x,y\} = \{a,b\}$ because by \ref{Ax1} a singleton can not be equal to a set of size $2$.
+        \item case $x\neq y$ and $\{\{x\},\{x,y\}\} = \{\{a\},\{a,b\}\}$ then $\{x\} = \{a\}$ and $\{x,y\} = \{a,b\}$ because by \ref{Set:Ax1} a singleton can not be equal to a set of size $2$.
     \end{itemize}
+    
 }
-\defin{n-tuples}{
-    Define $(x_1,\dots x_n)$ inductively:
-    \begin{itemize}
-        \item $(x_1,x_2)$ already defined
-        \item $(x_1,\dots x_n) \defeq (x_1 (x_2,\dots x_n))$
-    \end{itemize}
-}
-\lemma{}{For all $n>1$
+\lemma{}{For all $n,m>1$ and for all sets $x_1,\dots, x_n,y_1,\dots, y_m$:\\
     $(x_1,\dots, x_n) = (y_1,\dots, y_m)$ iff $n=m$ and $\forall i\leq n x_i = y_i$
-}{Exercise}
+}{By induction, left as an exercise}
 
-\defin{Union Axiom}{For every set $x$ there is a set $z$ consisting of all elements of the elements of $x$.
+\axiom{Union Axiom}{For every set $x$ there is a set $z$ consisting of all elements of the elements of $x$.
     $$\forall x \exists z \forall y (y\in z \leftrightarrow \exists u (u\in x \land y\in u))$$
-    We call $z$ the union of $x$, notation: $\cup_x\defeq z$}
-
-\defin{}{\[x\cup y \defeq \bigcup_{\{x,y\}}\]
-
+    We call $z$ the union of $x$, notation: $\cup_x\defeq z$\\
+    The union of two sets is often abbreviated with $x\cup y \defeq \cup_{\{x,y\}}$
 }
 \bsp{}{
     \begin{enumerate}
@@ -66,49 +65,46 @@ In words: For any two sets there exists a set whose members are those two sets.
 }   
 \note{}{
     \begin{itemize}
-        \item $\forall x_1, \dots x_n$ then there is axactly one set with elements $x_1,\dots x_n$
-
-        \item $x\cup (y\cup z) = (x\cup y)\cup z$
+        \item For all sets $ x_1, \dots x_n$ there is exactly one set with elements $x_1,\dots x_n$
+        \item The union is asociative $x\cup (y\cup z) = (x\cup y)\cup z$
     \end{itemize}
 }
-
-\defin{Power set Axiom}{Let $x\subseteq y$ be the abbreviation for $\forall z(z \in x \to z\in y)$ The \graybf{Powerset Axiom} states, that for every set $x$
+\axiom{Power set Axiom}{Let $x\subseteq y$ be the abbreviation for $\forall z(z \in x \to z\in y)$.
+For every set $x$
 there exists a set $z$ consisting of all subsetes $y\subseteq x$ that are themselve sets.
     $$\forall x\exists z \forall y (y\in z \leftrightarrow y\subseteq x)$$
     Notation: $\mathcal{P}(x)\defeq z$.
 }
 Or in words: ``For every set $x$ there is a set $z$ consisting of all subcollections of $x$ that are themselve sets.''
-class relations  
-
 \subsection{Classes and functions}
 \defin{Classes}{All the unary $\mathcal{L}$-definable relations (w/ parameters) are called classes.}
 \bsp{}{
     \begin{itemize}
-        \item $\varphi (x) : x = x$ defines a class that is not a set
-        \item $\varphi(x) : \exists u (u\in x \land \forall v \: (v\in u \to v\in x))$
+        \item $\varphi (x) \equiv x = x$ defines the universe $\mathcal{U}$, a class that is not a set
+        \item $\varphi(x) \equiv \exists u (u\in x \land \forall v \: (v\in u \to v\in x))$
     \end{itemize}
 }
 \defin{Class functions}{
     Suppose we have a formula $\phi(x_1,\dots x_n, y)$. Then we say $\phi$ defines a class function $R_\phi$ iff 
-    \[\forall x_1\dots \forall x_n \forall y \forall y' ((\phi(x,y)\land \phi(\underline{x},y'))\to y = y')\]
+    \[\forall x_1\dots \forall x_n \forall y \forall y' ((\phi(\underline{x},y)\land \phi(\underline{x},y'))\to y = y')\]
     We can then define the domain and image of the class function.
-    \[\dom R_\phi : \: \{\underline{x} : \:\exists y \phi( \underline{x},y)\}\]
-    \[\imag R_\phi : \: \{y : \:\exists \underline{x} \phi(\underline{x},y)\}\]
+    \[\dom R_\phi \defeq\{(x_1,\dots x_n) : \:\exists y \phi( \underline{x},y)\}\]
+    \[\imag R_\phi \defeq\{y : \:\exists \underline{x} \phi(\underline{x},y)\}\]
     Note that $R_\phi(\underline{x})=y$ iff $\phi(\underline{x},y)$
 }
-\defin{Axiom of replacement / substitution}{\label{Ax5}
+\axiom{Axiom of replacement / substitution}{\label{Ax5}
     Let $\varphi(x,y,\underbar{a})$ a $\mathcal{L}$-fla., w/ free variables among $x,y$ and set-parameters $\underbar{a}$.
     Suppose $\varphi$ defines a class function on $\mathcal{U}$, than the followoing is an axiom:
     $$\forall u \exists z \forall y\: (y\in z \leftrightarrow \exists x (x\in u \land \varphi(x,y,\underbar{a})))$$
     i.e. the image of a set under a class function is a set.
 }
-\defin{Axiom scheme of comprehension}{\label{Ax6}
+\axiom{Axiom scheme of comprehension}{\label{Ax6}
     Let $\psi(x,\underline{a})$ be an $\mathcal{L}$-formula. Then the followoing is an axiom:
     \[\forall u \exists z \forall v \:(v\in z \leftrightarrow(v\in u\land \forall \psi(v,\underline{a})))\]
     i.e. all elements of a set that satisfy a given $\mathcal{L}$-formula form a set.
 }
 \note{}{\ref{Ax6} follows from \ref{Ax5}}
-\defin{Set existence}{\label{Ax7}
+\axiom{Set existence}{\label{Ax7}
     \[\exists x x = x\]
     i.e. $U\neq \varnothing$. - this is clear when we view it as a universe of a structure.
 }
@@ -116,6 +112,7 @@ class relations
     Let $u$ be any set (there exists one by \ref{Ax7}), $\psi(x) \equiv x\neq x$ then by \ref{Ax6} $\varnothing \defeq \{x\in u : \psi(x)\}$
     is a set.
 }
+\datenote{17.12.2024}
 \note{}{We can derive pairing from replacement \ref{Ax5}, extensionality, powerset and set existence.
 From set existence: $\varnothing$ is a set
 By powerset, replacement(comprehension): $\{\varnothing\}$ is a set.
@@ -125,7 +122,7 @@ By powerset, replacement(comprehension): $\{\varnothing\}$ is a set.
     $$\phi (x,y)\equiv (x=\varnothing\land y = a)\lor (x = \{\varnothing\}\land y = b)$$
 }
 
-\note{}{If the domain of a class function is a set then the graph of the class function is a set. %check if really is graph
+\note{}{If the domain of a class function happens to be a set then the graph of the class function is a set. %check if really is graph
     $R_\phi$ defined by $\phi(x,y,\underline{a})$ then the domain $u\defeq \dom R_\phi \in \mathcal{U}$
     Image $v\defeq \imag R_\phi \in \mathcal{U}$ by replacement 
     \[\{(x,y) : x\in u \land y \in v \land \phi(x,y,\underline{a})\}\]
@@ -134,28 +131,28 @@ By powerset, replacement(comprehension): $\{\varnothing\}$ is a set.
 }
 \defin{Function}{A function $f:a\to b$ where $a,b$ are sets is a subset of $a\times b$ that satisfies the followoing
     \begin{itemize}
-        \item $\forall x \: (x\in a \to \exists y \in b (x,y)\in f)$
-        \item $\forall x \forall y \forall y' (((x,y)\in f \land (x,y')\in f)\to y = y')$
+        \item $\forall x \: (x\in a \to \exists y \in b \:(x,y)\in f)$
+        \item $\forall x \forall y \forall y' \:(((x,y)\in f \land (x,y')\in f)\to y = y')$
     \end{itemize}
 }
 \subsubsection*{Families of sets and cartesian products}
-Suppose we have a function $a: I \to X$. set $a_i$ to the unique $x\in X$ s.th. $(i,x)\in a$
-\defin{}{
-    \[\bigcup_{i\in I}a_i = \{z\in \bigcup X : \exists i\in I z\in a_i\}\]
-    \[\bigcap_{i\in I}a_i = \{z\in \bigcup X : \forall i\in I z\in a_i\}\]
-    \[\prod_{i\in I}a_i = \{f:I\to \bigcup X : \forall i\in I z\in a_i\}\]
-}
+Suppose we have a function $a: I \to X$. Let $a_i$ be the unique $x\in X$ s.th. $(i,x)\in a$.
+We define the following sets:
+    \[\bigcup_{i\in I}a_i \defeq \{z\in \bigcup X : \exists i\in I z\in a_i\}\]
+    \[\bigcap_{i\in I}a_i \defeq \{z\in \bigcup X : \forall i\in I z\in a_i\}\]
+    \[\prod_{i\in I}a_i \defeq \{f:I\to \bigcup X : \forall i\in I z\in a_i\}\]
+
 \note{}{
     If $I=\varnothing$ then $\bigcap_{i\in I}a_i = \bigcup X$
 }
 \subsubsection*{Class relations and well ordering}
 Types of well ordered sets
-\defin{}{
-    Let $R$ class relation, $C$ class
+\defin{Strict (linear) order}{
+    Let $R$ be a class relation, $C$ be a class.\\
     Then $R$ defines a strict ordering on $C$, if
     \begin{enumerate}[label = (\roman*)]
         \item  $ \forall x \forall y \forall z \: R(x,y)\to (C(x)\land C(y)) $ 
-        \item  $ \forall x \forall y \forall z \: \lnot(R(x,y)\land R(y,x)) $ 
+        \item  $ \forall x \forall y  \: \lnot(R(x,y)\land R(y,x)) $ 
         \item  $ \forall x \forall y \forall z \: (R(x,y)\land R(y,z))\to R(x,z) $ 
     \end{enumerate}
     The ordering is linear, if additionally
@@ -164,51 +161,57 @@ Types of well ordered sets
         \item $\forall x \forall y \: (C(x)\land C(y))\to (x=y\lor R(x,y)\lor R(y,x))$
     \end{enumerate}
 }
-\defin{Well ordering}{Let $R$ be a strict ordering on $C$ 
-    $x$ is a set such that $\forall y \in x C(y)$
+\defin{Well ordering}{Let $R$ be a strict ordering on $C$ and 
+    $x$ be a set such that $\forall y \in x \: C(y)$
     Then $x$ is called well-ordered by $R$, if
-    \[\forall \varnothing \neq y \subseteq x \text{has a smallest element}\]
+    \[\forall \varnothing \neq y \subseteq x \text{ $y$ has a smallest element}\]
     i.e.
-    \[\forall y \biggl((\varnothing \neq y \land y\subseteq x) \to \exists y' \bigl(y'\in y \land \forall z (z\in y \to( R(y',z)\lor y'=z))\bigr)\biggr)\]
+    \[\forall y \bigl((\varnothing \neq y \land y\subseteq x) \to \exists y' \bigl(y'\in y \land \forall z (z\in y \to( R(z,y')\lor y'=z))\bigr)\bigr)\]
 }
 \defin{Initial segment}{
     Let $x$ be a set, well ordered by $R$.
     Then $y\subseteq x$ is called an initial segment of $x$, if
     \[\forall s\forall t \: (s\in x \land t \in x) \to  \bigl((t\in y \land R(s,t))\to s\in y\bigr)\]
+    Let $x$ be well-ordered by $<$ and $y\in x$.
+    Then $\delta^\leq_y(x) \defeq \{z\in x : z<y\}$. 
+    If there is no ambiguity among the well ordering, we abbreviate $\delta_z(x) \defeq \delta^\leq_y(x)$.
+    With
+    $<$ above strict it holds $y\notin \delta_y(x)$
 }
-notation: If $y\in x$, $x$ is well-ordered
-Then $\delta_y(x) = \{z\in x : z<y\}$\
-$<$  strict, $\implies$ $y\notin \delta_y(x)$
 
-
-\note{}{If $x$ is well-ordered and $y\subseteq x$ then
+\note{}{If $x$ is well-ordered by $<$ and $y\subseteq x$ then
     \begin{center}
         $y$ is an initial segment of $x$ iff $y = x $ or $y = \delta_z(x)$ for some $z\in x$
     \end{center}
-
-    Let $y\subseteq x$ an initial segment. Suppose $x\neq y$ that means $x\backslash y \neq \varnothing$
-    Let $z$ be the smallest element of $x\backslash y$ (exists by well-ordering of $x$) 
+    \begin{proof}
+        $\delta_z(x)$ is well ordered for $z\in x$.\\
+        Let $y\subseteq x$ an initial segment. Suppose $x\neq y$ that means $x\smallsetminus y \neq \varnothing$
+        Let $z$ be the smallest element of $x\smallsetminus y$ (exists by well-ordering of $x$).
+        Suppose $y \neq \delta_z(x)$. Then there is $a\in y$ $z<a$ and $y$ is not an initial segment.
+    \end{proof}
+    
 }
-\defin{Propper class}{A class $C$ is a proper class if it is not a set.
-    i.e. if $C$ is given by $\phi(x,\underline{a})$ then there is not $z\in \mathcal{U}$ such that
+\defin{Propper class}{A class $C$ is called a proper class if it is not a set.\\
+    i.e. if $C$ is given by $\phi(x,\underline{a})$ then there is no $z\in \mathcal{U}$ such that
     $\forall x x\in z \iif \phi (x,\underline{a})$
 }
-\bsp{}{$\mathcal{U}$ is a proper class
+\bsp{}{$\mathcal{U}$ is a proper class: 
     If $\mathcal{U}$ was a set then $\{x : x\notin x\}$ would be a set.
 
-    the class of all ordinals is a proper class.
+    $\Ord$, the class of all ordinals is a proper class.
 }
 
 \defin{well-ordering (class)}{A class relation $R$ defining a strict ordering on a class $C$
-    is a well-ordering, if \\
-    For every $x\in C$ the class initial segment $\delta_x(C) = \{y : R(y,x)\}$ is a set that is well ordered by $R$
+    is called a well-ordering, if \\
+    for every $x\in C$ the class initial segment $\delta^R_x(C) = \{y : R(y,x)\}$ is a set that is well ordered by $R$.
+    \[\forall x C(x)\to \exists z \: z = \delta^R_x(C) \land \text{ $z$ has a smallest element}\]
 }
 \section{Ordinals}
-\defin{Tranistivity of sets}{A set $x$ is called transitive if 
-\[\forall y (y\in x \to y\subseteq x)\]
+\defin{Tranistivity of sets}{A set $x$ is called transitive, if 
+$\forall y\: (y\in x \to y\subseteq x)$
 }
 \note{}{
-    It corresponds to Tranistivity of the belonging relation $\in$. $z \in y\in x \to z\in x$
+    It corresponds to Tranistivity of the belonging relation ``$\in$''. $z \in y\in x \to z\in x$
 }
 \defin{Ordinal}{An ordinal is a transitive set which is well ordered by $\in$.}
 \note{}{The collection of all ordinals form a class relation, notation: 
@@ -220,43 +223,45 @@ $\Ord, \On$\outernote{$\Ord$}\outernote{$\On$}\\
         \item $\varnothing$, $\{\varnothing\}$, $\{\varnothing , \{\varnothing\}\}$ are ordinals
     \end{itemize}
 }
-\lemma{Characterization of ordinals}{$\alpha$ ordinal
+\lemma{Characterization of ordinals}{\label{Set:Lemma:CharOfOrdinals}
+    Let $\alpha$ be a set. $\alpha$ is an ordinal, iff
     \begin{itemize}
         \item the initil segments of $\alpha$ are $\alpha$ itself and the elements of $\alpha$
         \item if $\beta \in \alpha$ then $\beta $ is an ordinal.
         \item $\alpha\notin \alpha$
     \end{itemize}
 }{Problem set}
-\lemma{}{
-    Let $\alpha,\beta\in \Ord $ TODO then either $\alpha = \beta$, or $\alpha\in \beta$ or $\beta\in \alpha$.
+\lemma{}{\label{Set:Lemma:InisLinearOrder}
+    Let $\alpha,\beta\in \Ord $ then either $\alpha = \beta$, or $\alpha\in \beta$ or $\beta\in \alpha$.
 }{
-    Let $\gamma \defeq \alpha\cap \beta$
-    Claim: $\gamma$ is initial segment of both $\alpha $ and $\beta$
+    Let $\gamma \defeq \alpha\cap \beta$\\
+    \textbf{Claim:} $\gamma$ is initial segment of both $\alpha $ and $\beta$
     \begin{claimproof}
         $x\in y\in \gamma$ then $x\in y \in \alpha$ and $x\in y \in \beta$. but $\alpha, \beta$ are ordinals, so
         $x\in \alpha$ and $x \in \beta$ and $x \in \gamma$
     \end{claimproof}
     Then by previous lemma, either 
     \begin{itemize}
-        \item $\gamma = \alpha$ and $\gamma = \beta$: done 
-        \item $\gamma = \alpha$ and $\gamma \in \beta$: $\alpha\in \beta$
-        \item $\gamma \in \alpha$ and $\gamma = \beta$: $\beta\in \alpha$.
+        \item $\gamma = \alpha$ and $\gamma = \beta$ and we are done 
+        \item $\gamma = \alpha$ and $\gamma \in \beta$, so $\alpha\in \beta$
+        \item $\gamma \in \alpha$ and $\gamma = \beta$, so we have $\beta\in \alpha$.
         \item $\gamma \in \alpha$ and $\gamma \in \beta$ we have $\gamma \in \alpha\cap \beta = \gamma$ which is impossible
     \end{itemize}
+    Hence the statement follows.
 }
 \prop{}{$\Ord$ is well-ordered by $\in$}{
-    We need to show that if $\alpha\in\Ord $ then $\delta_{\alpha}(On)$ is a set that is well ordered by $\in$.
+    We need to show that if $\alpha\in\Ord $ then $\delta_{\alpha}(\Ord)$ is a set which is well ordered by $\in$.
 
-    $\delta_{\alpha}(On) = \{\beta \in\Ord  : \beta\in \alpha\} = \alpha$
-    Because $\alpha$ is a well-ordered set, and by the lemma TODO $\Ord $ is linearly ordered by $\in$
+    $\delta_{\alpha}(\Ord) = \{\beta \in\Ord  : \beta\in \alpha\} = \alpha$
+    And $\alpha$ is a well-ordered set. By \ref{Set:Lemma:InisLinearOrder} $\Ord $ is even linearly ordered by $\in$.
 }
 \lemma{}{
-    $\Ord$, the class of all ordinals is a proper class, well-ordered by $\in$
+    $\Ord$, the class of all ordinals is a proper class.
 }{
     Suppose $\Ord $ would be a set $z$.\\
     $\Ord $ is well ordered by $\in$
-    $\Ord $ is transitive: $y\in x \in\Ord $ then $y\in\Ord $ by lemma
-    so $\Ord $ would be an ordinal and $\Ord \in\Ord $ which is not possible by Lemma TODO.
+    $\Ord $ is transitive: $y\in x \in\Ord $ then $y\in\Ord $ by \ref{Set:Lemma:CharOfOrdinals}
+    so $\Ord $ would be an ordinal itself and we would have $\Ord \in\Ord $ which is not possible by \ref{Set:Lemma:CharOfOrdinals}.
 }
 
 \note{}{
@@ -264,12 +269,11 @@ $\Ord, \On$\outernote{$\Ord$}\outernote{$\On$}\\
         \item If $\alpha\in\Ord $ then the initial segments of $\alpha$ are $\alpha$ and the elements of $\alpha$.
         \item If $\alpha\in\Ord $ and $\beta\in \alpha$ then $\beta \in \Ord $
         \item $\alpha,\beta\in\Ord $ then $\alpha\subseteq \beta$ iff $\alpha\in \beta$ or $\alpha = \beta$
-        $\to$: If $\alpha\neq \beta$. Then by linear ordering of $\in$ 
         \item $\alpha\subseteq \beta$ iff $\alpha = \beta$ or $\alpha\in \beta$.
     \end{itemize}
 }
 
-%07.01.2025
+\datenote{07.01.2025}
 
 \lemma{ }{
     If $\alpha\in \Ord $ then $\alpha\cup \{\alpha\} \in \Ord $ and $\alpha\cup \{\alpha\}$ is the successor of $\alpha$ in the ordering $\in$
@@ -365,7 +369,7 @@ $\gamma\in \Ord $ then $\gamma = \{\alpha\in \Ord : \alpha\in \gamma\}$
     $\delta_{x_0} = Y$ ($Y$ is initial segment) $Y\cong \alpha$ hence $x_0\in Y$, a contradiction.
 }
 
-\subsection{Transfinite induction} % or inductive definitions
+\section{Transfinite induction/recursion} % or inductive definitions
 
 Suppose $\phi(x)$ (possibly with parameters)
 to prove 
@@ -427,7 +431,7 @@ $$f(\alpha) = H(f)$$
     a contradiction $\sigma$, the domain of $f$.
 }
 
-%09.01.2025
+\datenote{09.01.2025}
 %H-induction is like transfinite recursion
 
 \thm{Transfinite Recursion}{
@@ -440,8 +444,8 @@ $$f(\alpha) = H(f)$$
     It is well defined by the prev two lemmas TODO
 }
 
-\subsection{Axiom of Choice}
-\defin{Axiom of Choice (AC)}{
+\section{Axiom of Choice and Zermelo's Theorem}
+\axiom{Axiom of Choice (AC)}{
     For every set $X$ and $A\subseteq \mathcal{P}(X)$ that consists of pairwise disjoint, non-empty subsets of $X$ there is a set $T\subseteq X$ such that $\forall a\in A \:\# a\cap T = 1$. \\
     $T$ as above is called a transversal.
 }
@@ -518,7 +522,7 @@ In the next Problemset: $AC \leftrightarrow AC'\leftrightarrow AC''$
     So have injective of proper class into set. a contradiction.
 }
 
-\subsection{Ordinal arithmetic}
+\section{Ordinal arithmetic and the size of a set}
 
 Or how to think of the natural numbers to be contained in $\Ord$
 
@@ -572,7 +576,7 @@ Properties of sum and product.
     Right now it would be consistent to assume $\cdot$ is commutative, but no longer after the next axiom
 }
 
-\defin{Axiom of infinity}{
+\axiom{Axiom of infinity}{
     There exists an infinite ordinal.
 
     i.e. there exists an ordinal that is not a natural number.
@@ -600,10 +604,10 @@ Properties of sum and product.
 }
 
 
-%14.01.2025
+\datenote{14.01.2025}
 
-Exponentiation
-\defin{}{
+
+\defin{Exponentiation}{
     $\alpha^\beta$ is defined recursively on $\beta$:
     \begin{enumerate}
         \item $\alpha^0 \defeq 1$
@@ -612,7 +616,7 @@ Exponentiation
     \end{enumerate}
 }
 \note{}{
-    We can define exponentiation as given by the class function $EXP : \Ord \times \Ord \to \Ord$ defined by
+    Alternatively, we can define exponentiation as given by the class function $EXP : \Ord \times \Ord \to \Ord$ defined by
     \[Exp(\alpha,\beta) = \gamma \quad\iif\quad \text{There exists a function } f:\beta+1\to \Ord 
     \text{ such that for all } \xi<\beta\text{ it holds}\]
      
@@ -625,17 +629,17 @@ Exponentiation
 }
 TODO
 uniqueness follows from recursion theorem.
-\subsubsection*{Cardinals}
-\defin{}{Given a set $X$, the cardinality of $X$ (denoted by $|X|$, $card(X)$) is the smallest ordinal for which there is a bijection with $X$.}
+
+\defin{Cardinality}{\label{Set:Def:Cardinality}Given a set $X$, the cardinality of $X$ (denoted by $|X|$, $card(X)$) is the smallest ordinal for which there is a bijection with $X$.}
 \note{}{Every set has a cardinality. 
 This is bc every set can be well-ordered (by Zermelo's Theorem, which is equivalent to AC) and then we get an order-preserving bijection.
 In fact the statement ``$card(X)$ is defined for each set $X$'' is equivalent to AC.
 }
-\defin{}{We call two sets $X,Y$ equinumerous, if 
+\defin{Equinumerous sets}{We call two sets $X,Y$ equinumerous, if 
 there is a bijection between them.
 }
-$X,Y$ equinumerous if $|X| = |Y|$
-\thm{}{Let $X,Y$ be non-empty sets Then the following is equivalent.
+By the previous \ref{Set:Def:Cardinality} we have: $X,Y$ equinumerous iff $|X| = |Y|$
+\thm{}{Let $X,Y$ be non-empty sets Then the following are equivalent.
 \begin{enumerate}[label = (\roman*)]
     \item there is an injection of $X$ into $Y$
     \item there is a surjection of $Y$ into $X$
@@ -667,19 +671,19 @@ need to do some kind of back and fourth argument
     If $y\notin Y$ then by definition $y\in Y$
 }
 Note this says: there is no largest set.
-\subsection{Cardinals}
+
 \defin{Cardinal}{$\kappa\in\Ord$ is called a cardinal, if $\kappa = |\kappa|$}
-\note{}{The class $Card$ of all cardinals is a proper class.
+\note{}{\textbf{Claim: }The class $\Card$ of all cardinals is a proper class.
 \begin{claimproof}
-    Suppose $Card$ is a set. then $\sup Card = \gamma\in \Ord$
-    Then $|\mathcal{P}(\gamma)|>|\gamma|\geq |\lambda|$ for every cardinals $\lambda\in Card$
+    Suppose $\Card$ is a set. then $\sup \Card = \gamma\in \Ord$
+    Then $|\mathcal{P}(\gamma)|>|\gamma|\geq |\lambda|$ for every cardinals $\lambda\in \Card$
     that is a contradiction %TODO
 \end{claimproof}
 }
 \defin{finite sets}{A set $X$ is called finite, if 
     $|X|$ is a finite ordinal, otherwise $X$ is called infinite.
 }
-\note{}{In particular a set is fininite iff $\omega$ injects into it.}% note: this is to keep in mind, good kriterium
+\note{}{In particular a set is infinite iff $\omega$ injects into it.}% note: this is to keep in mind, good kriterium
 \prop{Galileo}{
     A set $a$ is infinite iff it properly injects into itself.
 }{
@@ -691,13 +695,11 @@ Note this says: there is no largest set.
     show: every finite ordinal is a cardinal inductively, then $\kappa = |\kappa|$
 
 }
-$\aleph$-function
-
+\subsection*{The $\aleph$-function}
 \note{}{
-    $Card$ is cofinial in $\Ord$
-    For every $\alpha\in \Ord$ there is $\gamma\in Card$ with $\alpha<\gamma$
+    $\Card$ is cofinial in $\Ord$. That is for every $\alpha\in \Ord$ there is $\gamma\in \Card$ with $\alpha<\gamma$
 
-    And $Card$ is a proper subclass of $\Ord$, well ordered by the same ordering $\in$ as in $\Ord$
+    And $\Card$ is a proper subclass of $\Ord$, well ordered by the same ordering $\in$ as in $\Ord$
 
     There is a unique function (class function) from the class of all ordinals to the infinite cardinals 
     that preserves $\in$ \dots this function is called $\aleph$
@@ -746,7 +748,7 @@ Similarly as with ordinals we will call cardinals of the form $\kappa^+$ success
 
 It can be shown that CH is independent of ZFC. (method to show this is called forcing, very popular method)
 
-\subsubsection*{Cardinal arithmetic}
+\section{Cardinal arithmetic}
 \defin{}{Let 
     $\kappa,\lambda$ be cardinals then 
     $\kappa\otimes \lambda\defeq |\kappa\times\lambda|$
@@ -806,7 +808,7 @@ Note $2^\kappa = |\mathcal{P}(X)|$
     $ 2 ^{\lambda^\lambda}\geq\lambda^\lambda$ think of function that constantly maps to $0$ is part TODO image 5
     The other implication is obvious.
 }
-%16.01.2025
+\datenote{16.01.2025}
 \defin{}{
     A function $f:\alpha\to\beta$, where $\alpha,\beta$ are ordinals is said to be cofinal,
     if $\imag f$ is unbounded in $\beta$
@@ -931,12 +933,12 @@ One can use König theorem to show that:
 
 Next time : ZF can not proof ZFC
 \section{Consistency of a theory}
-%21.01.2025
+\datenote{21.01.2025}
 %Omega is not cofinal in aleph_1, also why cofinality is different from cardinality
 Today we are going to state our last axiom, the axiom of foundation. We are also going to show a relative consistency theorem.
 We are going to finish prob next course thursday
 
-\defin{Axiom of foundation (AF)}{
+\axiom{Axiom of foundation (AF)}{
     Beeing an element of, does not admit an infinite decreasing chain.
     $$\forall x x\neq \varnothing \to \exists y(y\in x\land \forall z\in y z \notin x)$$
 }
@@ -1140,7 +1142,7 @@ Suppose now that $(\mathcal{U}, \in)\models ZFC$
     \end{itemize}
 }
 
-%23.01.2025
+\datenote{23.01.2025}
 
 
 \lemma{}{Let $(\mathcal{U},\in)\models ZFC$. If $\kappa$ is inaccessible, then $V_\kappa\models ZFC$.}{
@@ -1190,22 +1192,22 @@ Now we are ready to state our meta-theorem, it is not a statement in first order
         % TODO check: All elements of $\alpha$ are elements of $V_\kappa$. 
         Hence $\alpha$ is an ordinal. Left to show $\alpha$ is below $\kappa$.
         Have $|\alpha|<\kappa$,
-        by the Lemma \ref{lem:inacc1} $\alpha<\kappa$.
+        by the \ref{lem:inacc1} $\alpha<\kappa$.
     \end{claimproof}
     \textbf{Claim 2: }The cardinals in $V_\kappa$ are the cardinals that are below $\kappa$.\\
     \begin{claimproof}
         Suppose $\lambda$ is a cardinal in $V_\kappa$. in particular $\lambda$ is an ordinal in $V_\kappa$ 
-        and therefore an ordinal in $\mathcal{U}$ and by the lemma \ref{lem:inacc1} $\lambda = |\lambda| 
+        and therefore an ordinal in $\mathcal{U}$ and by the \ref{lem:inacc1} $\lambda = |\lambda| 
         <\kappa$.
         left to show: $\lambda$ is an actual cardinal in $\mathcal{U}$
         Suppose there is a bijection $f:\lambda\to \alpha$ to some smaller ordinal $\alpha$. Then by 
         Claim 1, $\alpha\in \Ord^{V_\kappa}$ and $f\subseteq V_\kappa$ (the graph $f\subseteq \lambda\times 
         \alpha\subseteq \lambda \times \lambda$ so $f\subseteq \mathcal{P}\mathcal{P}\mathcal{P}(V_{\lambda
         +1})\eqdef V_\beta$, $\rk \lambda = \lambda+1$ and have $\beta<\kappa$ by inaccessability).
-        $f\subseteq V_\kappa$ and $|f|<\kappa$ so by lemma \ref{lem:inacc1} $f\in V_\kappa$.
+        $f\subseteq V_\kappa$ and $|f|<\kappa$ so by \ref{lem:inacc1} $f\in V_\kappa$.
         $f$ is a bijection in $V_\kappa$ between $\lambda$ and a smaller ordinal, a contradiction.
 
-        Suppose $\lambda<\kappa$ and $\lambda$ cardinal, then by lemma \ref{lem:inacc1} $\lambda\in V_\kappa$ and $\lambda\in \Ord^{V_\kappa}$.
+        Suppose $\lambda<\kappa$ and $\lambda$ cardinal, then by \ref{lem:inacc1} $\lambda\in V_\kappa$ and $\lambda\in \Ord^{V_\kappa}$.
         If there would be a bijection in $V_\kappa$ between $\lambda$ and a strictly smaller ordinal 
         $\alpha$ then $\alpha$ would be an actual ordinal. By an argument as before would get a bijection in 
         $\mathcal{U}$ between $\lambda$ and smaller ordinal.

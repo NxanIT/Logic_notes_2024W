@@ -9,41 +9,38 @@
 \contentsline {section}{\numberline {2.2}Semantics of first order logic}{13}{section.2.2}%
 \contentsline {section}{\numberline {2.3}definability in a structure}{16}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Homomorphisms of structures}{17}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Unique readability for terms}{19}{section.2.5}%
-\contentsline {section}{\numberline {2.6}A parsing algorithm for first order logic}{20}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Deductions (formal proofs)}{20}{section.2.7}%
-\contentsline {subsubsection}{Logical axioms}{20}{subsubsection*.2}%
-\contentsline {subsubsection}{Ad (1): tautologies}{21}{subsubsection*.3}%
-\contentsline {section}{\numberline {2.8}Generalization and deduction theorem}{23}{section.2.8}%
+\contentsline {section}{\numberline {2.5}Unique readability for terms and formulas}{19}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Deductions (formal proofs)}{20}{section.2.6}%
+\contentsline {subsubsection}{Logical axioms}{21}{subsubsection*.2}%
+\contentsline {subsubsection}{Ad (1): tautologies}{22}{subsubsection*.3}%
+\contentsline {section}{\numberline {2.7}Generalization and deduction theorem}{23}{section.2.7}%
 \contentsline {subsubsection}{Alphpabetic Variants}{24}{subsubsection*.4}%
-\contentsline {section}{\numberline {2.9}Soundness and completeness}{25}{section.2.9}%
-\contentsline {subsubsection}{completeness}{26}{subsubsection*.5}%
-\contentsline {subsection}{\numberline {2.9.1}Sizes of models}{29}{subsection.2.9.1}%
-\contentsline {subsection}{\numberline {2.9.2}Completness for uncountable languages}{30}{subsection.2.9.2}%
+\contentsline {section}{\numberline {2.8}Soundness of first order logic}{25}{section.2.8}%
+\contentsline {section}{\numberline {2.9}Completeness of first order logic}{26}{section.2.9}%
+\contentsline {subsection}{\numberline {2.9.1}Sizes of models / completness for uncountable languages}{29}{subsection.2.9.1}%
 \contentsline {chapter}{\numberline {3}Model Theory}{31}{chapter.3}%
 \contentsline {section}{\numberline {3.1}LST-Theorem}{31}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Theories and completeness}{31}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Theory of algebraic closed fields}{33}{section.3.3}%
-\contentsline {subsubsection}{Lefschetz Principle}{33}{subsubsection*.6}%
+\contentsline {subsubsection}{Lefschetz Principle}{33}{subsubsection*.5}%
 \contentsline {section}{\numberline {3.4}Nonstandard Analysis}{34}{section.3.4}%
 \contentsline {section}{\numberline {3.5}o-minimality}{37}{section.3.5}%
-\contentsline {section}{\numberline {3.6}o-minimal ordered groups and rings}{37}{section.3.6}%
-\contentsline {subsubsection}{Cell decomposition}{39}{subsubsection*.7}%
+\contentsline {section}{\numberline {3.6}Monotonicity Theorem}{39}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Cell decomposition Theorem}{41}{section.3.7}%
 \contentsline {chapter}{\numberline {4}Boolean Algebra}{44}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Stone Representation Theorem}{44}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Lindenbaum-Tarski Algebras}{46}{section.4.2}%
-\contentsline {chapter}{\numberline {5}Set Theory of ZFC}{48}{chapter.5}%
-\contentsline {section}{\numberline {5.1}First axioms of ZFC}{48}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Classes and functions}{49}{subsection.5.1.1}%
-\contentsline {section}{\numberline {5.2}Ordinals}{51}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Transfinite induction}{53}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Axiom of Choice}{54}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}Ordinal arithmetic}{55}{subsection.5.2.3}%
-\contentsline {subsection}{\numberline {5.2.4}Cardinals}{57}{subsection.5.2.4}%
-\contentsline {section}{\numberline {5.3}Consistency of a theory}{61}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}relative consistency}{62}{subsection.5.3.1}%
-\contentsline {chapter}{\numberline {A}Appendix}{65}{appendix.A}%
-\contentsline {section}{\numberline {A.3}On Model theory}{65}{section.A.3}%
-\contentsline {section}{\numberline {A.4}On Boolean Algebras}{65}{section.A.4}%
-\contentsline {subsection}{\numberline {A.4.1}Notes on Stone spaces}{68}{subsection.A.4.1}%
-\contentsline {chapter}{\numberline {B}Outernotes, Abbreviations, Overview}{70}{appendix.B}%
+\contentsline {section}{\numberline {4.2}Lindenbaum-Tarski Algebras}{47}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Set Theory of ZFC}{49}{chapter.5}%
+\contentsline {section}{\numberline {5.1}First axioms of ZFC}{49}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Classes and functions}{50}{subsection.5.1.1}%
+\contentsline {section}{\numberline {5.2}Ordinals}{52}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Transfinite induction/recursion}{54}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Axiom of Choice and Zermelo's Theorem}{55}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Ordinal arithmetic and the size of a set}{56}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Cardinal arithmetic}{59}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Consistency of a theory}{62}{section.5.7}%
+\contentsline {subsection}{\numberline {5.7.1}relative consistency}{63}{subsection.5.7.1}%
+\contentsline {chapter}{\numberline {A}Appendix}{66}{appendix.A}%
+\contentsline {section}{\numberline {A.3}On Model theory}{66}{section.A.3}%
+\contentsline {section}{\numberline {A.4}On Boolean Algebras}{66}{section.A.4}%
+\contentsline {subsection}{\numberline {A.4.1}Notes on Stone spaces}{69}{subsection.A.4.1}%
